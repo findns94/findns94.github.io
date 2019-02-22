@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="坐姿检测,创新实践,论文,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Abstract Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to impl">
+<meta name="keywords" content="坐姿检测,创新实践,论文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera">
+<meta property="og:url" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/index.html">
+<meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="Abstract Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to impl">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/SDK.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/motion_sensing_camera.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/body_joints.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/lateral_side.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/definition.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/four_steps.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/input.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/mark_pixel.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/output.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/skeleton_thinning.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/averaging_process.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/depth.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/difference.png">
+<meta property="og:updated_time" content="2019-02-22T15:41:41.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera">
+<meta name="twitter:description" content="Abstract Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to impl">
+<meta name="twitter:image" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/SDK.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://findnorthstar.github.io/2019/02/22/sitting_posture/">
+
+
+
+
+
+  <title>Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silver Bullet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/02/22/sitting_posture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Martin Zhao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver Bullet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T20:00:00+08:00">
+                2019-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/科研/" itemprop="url" rel="index">
+                    <span itemprop="name">科研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>Abstract</strong> Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to implement an application using skeleton detecting technology. In this paper, a method is introduced to detect sitting posture from a lateral view without disturbing the user. To analyse video stream information, a skeleton thinning algorithm is described and averaging process aims to locate main joints specifically from the lateral side. The results show this method has high accuracy when detecting improper sitting postures.<br><strong>Keywords</strong> Ergonomics; Motion-sensing Camera; Gesture Recognition; OpenNI</p>
+<a id="more"></a>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Incorrect sitting posture is considered a danger to adolescent body growth. Prolonged sitting with wrong posture can cause a series of health problems. Former researches have pointed out the following consequences: back pain prevalence among children and adolescents; musculoskeletal discomfort and low back pain; biomechanical, circulatory and visual problems; awkward postures adopted for extended periods of time affect academic performance[1].<br>In the industrialized countries, musculoskeletal disorders are an important health problem. In modern society, the most common examples are disorders in back, shoulder and neck. According to a report conducted by National Institute for Occupational Safety and Health (NIOSH)[2], there is strong evidence that low-back musculoskeletal disorders and neck and shoulder musculoskeletal disorders are related prolonged and improper sitting postures. Angela et al.[3] finds occupational groups exposed to awkward postures while sitting have an increased risk of having low back pain.<br>People have developed some ideas and implementations to reduce the potential harms resulted from incorrect sitting posture. Using a motion-sensing camera is helpful to detect real-time sitting posture. Both the depth and three-dimensional coordinates information of the body can be obtained from the motion-sensing camera. Based on OpenNI and NiTE, the Portable Ergonomic Observation (PEO) model is applied on improper sitting posture detection. After analysing video streams and image processing, a threshold method is setup to locate main joints like neck and head. With the joints and medical research, improper sitting posture can be detected and defined.</p>
+<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><h2 id="Artificial-observation"><a href="#Artificial-observation" class="headerlink" title="Artificial observation"></a>Artificial observation</h2><p>Professionals use painting, photography or text description to record sitting posture for further analysis. From 1974, this kind of method has been fully developed, including Priel’s method[4], Ovako Working Posture Analyzing System[5], Posture Targeting Method[6] and Posture Recording Model[7].</p>
+<h2 id="Video-recording-analysis"><a href="#Video-recording-analysis" class="headerlink" title="Video recording analysis"></a>Video recording analysis</h2><p>This method applies computer or video recording equipment to record user’s postures and movement. Then it uses a computer to analyze the user’s postures. Some cases implement real-time monitoring. Kind of method includes Rapid Upper Limb Assessment (RULA)[8], Rapid Entire Body Assessment (REBA)[9], Hand-Arm-Movement Analysis method (HAMA)[10] and Quick Exposure Check method (QEC)[11].</p>
+<h2 id="Wearable-sensor"><a href="#Wearable-sensor" class="headerlink" title="Wearable sensor"></a>Wearable sensor</h2><p>Specialized sensors need to be put on the user’s body to collect information of sitting postures. The sensors include Sitting Posture Sensor, electromyogram (EMG) telemetry instrument, tri-axial accelerometers and skin-mounted electromagnetic tracking sensors[12][13].</p>
+<h1 id="Hardware-and-Software"><a href="#Hardware-and-Software" class="headerlink" title="Hardware and Software"></a>Hardware and Software</h1><p>With the development of 3D motion-sensing cameras, a real-time image processing method is able to be implemented. PrimeSense, an Israeli company merged and acquired by Apple Inc. in 2013, developed the range camera technology in the first generation Kinect[14]. The OpenNI framework is an open source SDK used for the development of 3D sensing middleware libraries and applications[15]. The PrimeSense NiTETM is the most advance and robust 3D computer vision middleware. The algorithms utilize the depth, colour information received from the hardware device, which enable them to perform functions such as separation of users from background and accurate user skeleton joint tracking[16].</p>
+<p>Fig. 1 shows the OpenNI SDK architecture.<br>Fig. 2 shows a motion-sensing camera.<br>Fig. 3 shows the Body joints tracked by OpenNI framework.</p>
+<p><img src="/2019/02/22/sitting_posture/SDK.png" alt="SDK"></p>
+<div align="center">Fig. 1: SDK architecture[15]</div>
+
+<p><img src="/2019/02/22/sitting_posture/motion_sensing_camera.png" alt="motion_sensing_camera"></p>
+<div align="center">Fig. 2: motion-sensing camera</div>
+
+<p><img src="/2019/02/22/sitting_posture/body_joints.png" alt="body_joints"></p>
+<div align="center">Fig. 3: Body joints tracked by OpenNI framework[17]</div>
+
+<h1 id="Detecting-Improper-Sitting-Posture"><a href="#Detecting-Improper-Sitting-Posture" class="headerlink" title="Detecting Improper Sitting Posture"></a>Detecting Improper Sitting Posture</h1><h2 id="Lateral-view-of-the-user"><a href="#Lateral-view-of-the-user" class="headerlink" title="Lateral view of the user"></a>Lateral view of the user</h2><p>Fig. 4 shows the setup of the experiment. The advantage of this setup is the view of camera would not be blocked by the desk. The following experiment is based on this setup.</p>
+<p><img src="/2019/02/22/sitting_posture/lateral_side.png" alt="lateral_side"></p>
+<div align="center">Fig. 4: Detect from the lateral side of the user</div>
+
+<p><img src="/2019/02/22/sitting_posture/definition.png" alt="definition"></p>
+<div align="center">Fig. 5: Definition of hand position, neck and trunk flexion[18]</div>
+
+<h2 id="Apply-PEO-Model"><a href="#Apply-PEO-Model" class="headerlink" title="Apply PEO Model"></a>Apply PEO Model</h2><h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>The camera is placed on the table, 1.0 meter from the ground. The user sits on the chair, about 2.0 meters away from the camera. Make sure that the entire body appears in the view of the camera.</p>
+<h3 id="Main-skeleton-and-joints"><a href="#Main-skeleton-and-joints" class="headerlink" title="Main skeleton and joints"></a>Main skeleton and joints</h3><p>From PEO model, Fig. 5 shows the definition of hand position, along with neck and trunk flexion. It can be seen that the effective joints are among the trunk, neck and head. Through observing the bodies forward posture, a threshold is chosen for neck and head to determine whether the sitting posture is awkward or not.<br>Therefore, an ideal healthy sitting posture needs to be defined. According to the research of O’Sullivan et al.[8], there are few differences between subjectively perceived ideal posture and tester perceived neutral posture. Therefore, this model uses the parameters of the PEO model.<br>This method focuses on neck flexion. Based on observations, humans tends to bend their neck when their body leans forward. Thus, the neck flexion can reflect the body posture.</p>
+<h3 id="Analyse-video-stream"><a href="#Analyse-video-stream" class="headerlink" title="Analyse video stream"></a>Analyse video stream</h3><h4 id="Find-an-active-user-in-a-specific-scene"><a href="#Find-an-active-user-in-a-specific-scene" class="headerlink" title="Find an active user in a specific scene"></a>Find an active user in a specific scene</h4><p>Thanks to the OpenNI and NiTE API, the user can be separated from the background and get all the data about the user. At first, the tester needs to move a few steps in front of the camera. Once his body is tracked, the area being tracked is monitored steadily. The user sits on the chair, the detection begins.<br>The resolution of the video stream is 320×240. Each pixel has its own coordinate in the frame and a depth property. The accuracy of the depth can reach one millimetre. The depth refers to the distance between the pixel in the real world and the camera. Fig. 10 shows the four detection steps which are introduced below.</p>
+<p><img src="/2019/02/22/sitting_posture/four_steps.png" alt="four steps"></p>
+<div align="center">Fig. 6: Four steps of detection</div>
+
+<h4 id="Skeleton-thinning-algorithm"><a href="#Skeleton-thinning-algorithm" class="headerlink" title="Skeleton thinning algorithm"></a>Skeleton thinning algorithm</h4><p>Here an algorithm is designed to reduce the area of the body to a consecutive curve. The curve consists of the head and neck that can be located in the next step.<br>The coordinate of the upper-left corner of the frame is set to (0,0), and the lower-right corner of the frame is set to (320,240). All of the pixels are checked in each frame row by row. After encountering a part of the body, each line of pixels is reduced to 1~2 pixels. In order to draw a consecutive curve, the pixels being marked must be adjacent to the pixels in the last row. Fig. 8 shows the flow chart of the algorithm. Fig. 7 shows the simulation process of thinning algorithm. Fig. 7 (a) shows the input of the algorithm. The green area refers to the body. Fig. 7 (b) shows all the midpoints of each row are marked as a blue triangle in the green area. Based on the rule of adjacent pixels, the yellow triangle would be marked. Fig. 7 (c) shows the result (yellow pixels) after the algorithm is completed.</p>
+<p><img src="/2019/02/22/sitting_posture/input.png" alt="input"></p>
+<div align="center">(a)Input</div>
+
+<p><img src="/2019/02/22/sitting_posture/mark_pixel.png" alt="mark pixel"></p>
+<div align="center">(b)Mark the pixels</div>
+
+<p><img src="/2019/02/22/sitting_posture/output.png" alt="output"></p>
+<div align="center">(c)Output</div>
+
+<div align="center">Fig. 7: Example of skeleton thinning algorithm</div>
+
+<p><img src="/2019/02/22/sitting_posture/skeleton_thinning.png" alt="skeleton thinning"></p>
+<div align="center">Fig. 8: Skeleton thinning algorithm</div>
+
+<p><img src="/2019/02/22/sitting_posture/averaging_process.png" alt="saveraging process"></p>
+<div align="center">Fig. 9: Averaging process</div>
+
+<h4 id="Averaging-process"><a href="#Averaging-process" class="headerlink" title="Averaging process"></a>Averaging process</h4><p>Because the head of the user is perpendicular to the direction of the camera, the user’s arm is closer to the camera than the head through observation.<br>Considering the depths of the thinning line of the body. The depths of the head area change steadily. The depths of the arm area are lower than the depths of the head area because the arm is closer to the camera than the head. To locate the pixels which generate abrupt changes in depth, an averaging process is applied to deal with it.<br>Fig. 9 shows the flow chart of the averaging process. The first 20 row of pixels have the possibility of mixing with the background. These pixels are skipped to avoid the error caused by inaccurate depth in adjacent pixels. The depths of next 10 rows of pixels are averaged as the average depths of the head. The depth of next pixel continues to be averaged unless the depth meets an abrupt change(-60).<br>Fig. 10 shows the trends of raw depth and depth after averaging process. Fig. 11 shows the trends of raw depth difference and depth difference after the averaging process. There is no abrupt change in raw depth difference. The abrupt change happens in the 53th~68th pixel, where the depth is less than -40. Combining with observation, -60 is chosen as an abrupt change, which means the 57th pixel is approximate neck.<br>Then choose the midpoint between neck and the first pixel on the consecutive curve to identify the position of head. The midpoint is also on the curve. The number of pixels skipped and averaged is based on the distance between camera and user and the effect of detection. Thus the first 20 pixels are skipped.</p>
+<p><img src="/2019/02/22/sitting_posture/depth.png" alt="depth"></p>
+<div align="center">Fig. 10: Depth from top to bottom</div>
+
+<p><img src="/2019/02/22/sitting_posture/difference.png" alt="difference"></p>
+<div align="center">Fig. 11: Difference in depth from top to bottom</div>
+
+<h4 id="Threshold"><a href="#Threshold" class="headerlink" title="Threshold"></a>Threshold</h4><p>Chaffin and Kilbom found that there is strong evidence that shows positive correlation between musculoskeletal disorders and neck flexion over 20°[19]. With the position of neck and head, the flexion angle is defined as α which can be calculated as follows:</p>
+<p>$$\alpha = \arctan{\left| \frac{x_{neck}-x_{head}}{y_{neck}-y_{head}} \right|}$$</p>
+<p>OpenNI provides two different coordinate systems—depth coordinates and world coordinates. Depth coordinates are the native data representation. World coordinates superimpose a more familiar 3D Cartesian coordinate system on the world, with the camera lens at the origin[20]. Here the coordinates of neck and head are converted from depth coordinates and world coordinates to get xneck, yneck, xhead and yhead.<br>Once α exceeds 20°, the user would be alerted to inform him/her to correct sitting posture by sound. Hearing the alarm, the user should understand the sitting posture is improper and sit straight. When α is below 20°, sitting posture fits the health indicators, so keeps detecting without disturbing the user.</p>
+<h1 id="Test-and-Evaluation"><a href="#Test-and-Evaluation" class="headerlink" title="Test and Evaluation"></a>Test and Evaluation</h1><p>Fig. 4 shows the experiment environment. One volunteer was invited to perform a set of sitting postures. To test the accuracy of the method, the test includes 200 different improper sitting postures. There is no significant difference in the time of completing the track of the body among the tests. Based on identifying the joints and threshold method, the results of the test are shown in Table 1.</p>
+<div align="center">Table 1. TEST RESULT OF DETECTING THE SITTING POSTURE</div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Total number of the improper sitting postures</th>
+<th style="text-align:center">Number of the detected improper sitting postures</th>
+<th style="text-align:center">Number of the undetected improper sitting postures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center">188</td>
+<td style="text-align:center">12</td>
+</tr>
+</tbody>
+</table>
+<p>In order to find whether factors like body shape and clothes affect the accuracy of the detection, five volunteers were invited to participate in the tests. The volunteers repeated making improper sitting posture for 50 times. The results are shown in Table 2.</p>
+<div align="center">Table 2. TEST RESULT OF DIFFERENT FACTORS</div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type of the factors</th>
+<th style="text-align:center">Height and weight</th>
+<th style="text-align:center">Total number of the improper sitting postures</th>
+<th style="text-align:center">Number of the detected improper sitting postures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fat</td>
+<td style="text-align:center">180cm 105kg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">Thin</td>
+<td style="text-align:center">174cm 62kg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">48</td>
+</tr>
+<tr>
+<td style="text-align:center">Tall</td>
+<td style="text-align:center">180cm 55kg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">48</td>
+</tr>
+<tr>
+<td style="text-align:center">Short</td>
+<td style="text-align:center">165cm 50kg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">47</td>
+</tr>
+<tr>
+<td style="text-align:center">Thin clothes</td>
+<td style="text-align:center">170cm 70kg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">Thick clothes</td>
+<td style="text-align:center">170cm 70kg</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">47</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>This paper presented a system aiming at detecting improper sitting posture with the technology of motion-sensing cameras. The system includes skeleton thinning algorithm, averaging process and threshold method. Detecting improper sitting posture provides a way to prevent musculoskeletal disorders. The experiment shows that this method can work efficiently, and is invariant to the user’s clothes and body shape.</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>[1] Mebarki, B. (2009). Effect of school furniture design and traditional sitting habits,On sitting postures of middle school pupils in Touet region-Algeria. PROCEEDINGS OF 17TH WORLD CONGRESS ON ERGONOMICS.<br>[2] Putz-Anderson, V., Bernard, B. P., Burt, S. E., Cole, L. L., Fairfield-Estill, C., Fine, L. J., … &amp; Tanaka, S. (1997). Musculoskeletal disorders and workplace factors. National Institute for Occupational Safety and Health (NIOSH).<br>[3] Lis, A. M., Black, K. M., Korn, H., &amp; Nordin, M. (2007). Association between sitting and occupational LBP. European Spine Journal, 16(2), 283-298.<br>[4] Priel, V. Z. (1974). A numerical definition of posture. Human Factors: The Journal of the Human Factors and Ergonomics Society, 16(6), 576-584.<br>[5] Karhu, O., Kansi, P., &amp; Kuorinka, I. (1977). Correcting working postures in industry: a practical method for analysis. Applied ergonomics, 8(4), 199-201.<br>[6] Corlett, E. N., MADELEY†, S., &amp; MANENICA‡, I. (1979). Posture targeting: a technique for recording working postures. Ergonomics, 22(3), 357-366.Gil, H. C., &amp; Tunes, E. (1989). Posture recording: a model for sitting posture.Applied ergonomics, 20(1), 53-57.<br>[7] Gil, H. C., &amp; Tunes, E. (1989). Posture recording: a model for sitting posture.Applied ergonomics, 20(1), 53-57.<br>[8] McAtamney, L., &amp; Corlett, E. N. (1993). RULA: a survey method for the investigation of work-related upper limb disorders. Applied ergonomics,24(2), 91-99.<br>[9] Hignett, S., &amp; McAtamney, L. (2000). Rapid entire body assessment (REBA).Applied ergonomics, 31(2), 201-205.<br>[10] Christmansson, M. (1994). Repetitive and manual jobs—content and effects in terms of physical stress and work‐related musculoskeletal disorders.International Journal of Human Factors in Manufacturing, 4(3), 281-292.<br>[11] Li, G., &amp; Buckle, P. (1999). Evaluating change in exposure to risk for musculoskeletal disorders: A practical tool. HSE Books.<br>[12] Finley, M. A., &amp; Lee, R. Y. (2003). Effect of sitting posture on 3-dimensional scapular kinematics measured by skin-mounted electromagnetic tracking sensors. Archives of physical medicine and rehabilitation, 84(4), 563-568.<br>[13] Wong, W. Y., &amp; Wong, M. S. (2008). Detecting spinal posture change in sitting positions with tri-axial accelerometers. Gait &amp; Posture, 27(1), 168-171.<br>[14] Microsoft, “PrimeSense Supplies 3-D-Sensing Technology to “Project Natal” for Xbox 360” [Online], Available: <a href="https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/" target="_blank" rel="noopener">https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/</a>, [February 1, 2016].<br>[15] PrimeSense, Ltd., “What is OpenNI?”, [Online], Available: <a href="http://www.openni.ru/index.html" target="_blank" rel="noopener">http://www.openni.ru/index.html</a>, [February 1, 2016].<br>[16] PrimeSense, Ltd., “NiTE 2.2.0.11”, [Online], Available: <a href="http://www.openni.ru/files/nite/index.html" target="_blank" rel="noopener">http://www.openni.ru/files/nite/index.html</a>, [February 1, 2016].<br>[17] NiTE, JointType, [Online], Available: <a href="http://img.my.csdn.net/uploads/201111/8/0_13207656556UXJ.gif" target="_blank" rel="noopener">http://img.my.csdn.net/uploads/201111/8/0_13207656556UXJ.gif</a>, [February 1, 2016].<br>[18] Fransson-Hall, C., Gloria, R., Kilbom, Å., Winkel, J., Karlqvist, L., Wiktorin, C., &amp; Group123, S. (1995). A portable ergonomic observation method (PEO) for computerized on-line recording of postures and manual handling. Applied ergonomics, 26(2), 93-100.<br>[19] O’Sullivan, K., O’Dea, P., Dankaerts, W., O’Sullivan, P., Clifford, A., &amp; O’Sullivan, L. (2010). Neutral lumbar spine sitting posture in pain-free subjects. Manual therapy, 15(6), 557-561<br>[20] PrimeSense, Ltd., “openni::CoordinateConverter Class Reference”, [Online], Available: <a href="http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html" target="_blank" rel="noopener">http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html</a>, [February 1, 2016]</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/坐姿检测/" rel="tag"># 坐姿检测</a>
+          
+            <a href="/tags/创新实践/" rel="tag"># 创新实践</a>
+          
+            <a href="/tags/论文/" rel="tag"># 论文</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Martin Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-Work"><span class="nav-number">2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Artificial-observation"><span class="nav-number">2.1.</span> <span class="nav-text">Artificial observation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-recording-analysis"><span class="nav-number">2.2.</span> <span class="nav-text">Video recording analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wearable-sensor"><span class="nav-number">2.3.</span> <span class="nav-text">Wearable sensor</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hardware-and-Software"><span class="nav-number">3.</span> <span class="nav-text">Hardware and Software</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detecting-Improper-Sitting-Posture"><span class="nav-number">4.</span> <span class="nav-text">Detecting Improper Sitting Posture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lateral-view-of-the-user"><span class="nav-number">4.1.</span> <span class="nav-text">Lateral view of the user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apply-PEO-Model"><span class="nav-number">4.2.</span> <span class="nav-text">Apply PEO Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preparation"><span class="nav-number">4.2.1.</span> <span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-skeleton-and-joints"><span class="nav-number">4.2.2.</span> <span class="nav-text">Main skeleton and joints</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-video-stream"><span class="nav-number">4.2.3.</span> <span class="nav-text">Analyse video stream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-an-active-user-in-a-specific-scene"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">Find an active user in a specific scene</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Skeleton-thinning-algorithm"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">Skeleton thinning algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Averaging-process"><span class="nav-number">4.2.3.3.</span> <span class="nav-text">Averaging process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Threshold"><span class="nav-number">4.2.3.4.</span> <span class="nav-text">Threshold</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Test-and-Evaluation"><span class="nav-number">5.</span> <span class="nav-text">Test and Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">6.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
