@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="合作项目,JVM,">
 
 
 
@@ -79,13 +79,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Silver Bullet">
-<meta property="og:url" content="https://findnorthstar.github.io/index.html">
+<meta name="description" content="当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。 为了解决当前并">
+<meta name="keywords" content="合作项目,JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM应用程序的多线程并发缺陷检测">
+<meta property="og:url" content="https://findnorthstar.github.io/2019/02/28/confu/index.html">
 <meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。 为了解决当前并">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/28/confu/confu_architecture.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/28/confu/ASM.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/02/28/confu/npd.png">
+<meta property="og:updated_time" content="2019-02-28T15:46:02.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Silver Bullet">
+<meta name="twitter:title" content="JVM应用程序的多线程并发缺陷检测">
+<meta name="twitter:description" content="当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。 为了解决当前并">
+<meta name="twitter:image" content="https://findnorthstar.github.io/2019/02/28/confu/confu_architecture.jpg">
 
 
 
@@ -115,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://findnorthstar.github.io/">
+  <link rel="canonical" href="https://findnorthstar.github.io/2019/02/28/confu/">
 
 
 
 
 
-  <title>Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>JVM应用程序的多线程并发缺陷检测 | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -140,8 +149,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +222,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/28/confu/" itemprop="url">JVM应用程序的多线程并发缺陷检测</a></h1>
+          <h1 class="post-title" itemprop="name headline">JVM应用程序的多线程并发缺陷检测</h1>
         
 
         <div class="post-meta">
@@ -320,9 +326,7 @@
       
 
       
-        
-          
-            <p>当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。</p>
+        <p>当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。</p>
 <p>为了解决当前并发程序测试面临的巨大挑战，清华大学软件学院DATE团队开发了基于程序动态测试技术的针对JVM应用的多线程并发缺陷检测工具DATE-Confu。该工具以待测JVM可执行程序（.class文件或.jar文件）为输入，输出为在待测程序中检测到的并发缺陷集合。目前，该工具可检测包括数据竞争、死锁、空指针引用等在内的六类严重并发缺陷，用户可根据需求选择检测哪些类型的并发缺陷。</p>
 <p>DATE-Confu工具的创新点是其有效地结合了有目标的程序调度模糊测试技术（guided schedule fuzzing techniques）与基于符号执行的轨迹分析技术（symbolictrace analysis techniques）。下图为DATE-Confu工具的框架示意图。该工具使用模糊测试技术能够高效遍历多线程程序巨大的状态空间，并且基于符号执行的轨迹分析技术快速发现被测程序中尚未探索到的控制分支，从而为迭代模糊测试提供有效信息，使得DATE-Confu能更快达到更高的覆盖率。目前DATE-Confu已在多个工业级别的项目上进行测试，通过目前已经进行的实验发现，DATE-Confu的测试效率高且能挖掘到隐藏更深的并发缺陷。</p>
 <p><img src="/2019/02/28/confu/confu_architecture.jpg" alt="confu_architecture"></p>
@@ -361,8 +365,6 @@
 <h1 id="GoodLock检测算法"><a href="#GoodLock检测算法" class="headerlink" title="GoodLock检测算法"></a>GoodLock检测算法</h1><p>多线程程序中，一个线程集合中的每一个线程都在各自等待另一个线程占据的互斥性资源，由此导致的循环等待即为死锁．在所有并发缺陷中，死锁是其中比较常见和的一种，而且若是死锁一旦发生，将可能导致多线程程序响应时间增长、吞吐量下降甚至宕机崩溃，严重威胁并发程序的可用性与可靠性．与其他并发缺陷一样，死锁具有难以暴露、重演和调试的特点。</p>
 <p>DATE-ConFu工具检测死锁并发缺陷主要是通过实现GoodLock算法。GoodLock算法能够在运行时检测被测并发程序是否有可能发生死锁。该算法主要是通过构建加锁树的方式来进行判断，目前的GoodLock算法能够用来解决任意数量线程之间的死锁问题。该算法主要是将各个线程的加锁树连接起来形成一个加锁图，通过遍历所有可能的路径来寻找有效环路，从而判断程序是否有可能发生死锁。除此之外，GoodLock算法将运行时检测与静态分析相结合，在原先的基础上实现了新的类型系统，不仅可以检测Java程序中的死锁问题，并且可以提供更强的原子性保证。</p>
 
-          
-        
       
     </div>
     
@@ -377,307 +379,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/02/23/recommendation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Martin Zhao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silver Bullet">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/23/recommendation/" itemprop="url">个性化简历推荐</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T20:59:16+08:00">
-                2019-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科研/" itemprop="url" rel="index">
-                    <span itemprop="name">科研</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/合作项目/" rel="tag"># 合作项目</a>
           
-
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>本系统采用机器学习方法与大数据平台训练海量的求职者的简历，不同于普通的条件筛选，该系统能高效准确地从大数据处理角度就IT类招聘方所要招聘的岗位提供合适可靠的人才推荐，减小招聘方的招聘成本，让大数据技术拉近招聘方与优秀人才的距离。</p>
-<p>对海量简历数据和公司招聘信息进行研究，分析描述个人简历、公司以及公司职位的特征信息，站在招聘者的角度，围绕个性化推荐技术进行探索研究，以帮助招聘人员以更准确、更高效的方式获取人才信息。基于该思想实现一个原型系统，该系统可以根据招聘职位的特征来自动为其推荐更合理的简历。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/23/recommendation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/23/recommendation/" rel="next" title="个性化简历推荐">
+                <i class="fa fa-chevron-left"></i> 个性化简历推荐
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/02/22/sitting_posture/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Martin Zhao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silver Bullet">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/22/sitting_posture/" itemprop="url">Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T20:00:00+08:00">
-                2019-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科研/" itemprop="url" rel="index">
-                    <span itemprop="name">科研</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><strong>Abstract</strong> Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to implement an application using skeleton detecting technology. In this paper, a method is introduced to detect sitting posture from a lateral view without disturbing the user. To analyse video stream information, a skeleton thinning algorithm is described and averaging process aims to locate main joints specifically from the lateral side. The results show this method has high accuracy when detecting improper sitting postures.<br><strong>Keywords</strong> Ergonomics; Motion-sensing Camera; Gesture Recognition; OpenNI</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/22/sitting_posture/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -687,10 +420,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -698,6 +432,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -718,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -779,6 +526,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插桩"><span class="nav-number">1.</span> <span class="nav-text">插桩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程调度"><span class="nav-number">2.</span> <span class="nav-text">线程调度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FastTrack算法"><span class="nav-number">3.</span> <span class="nav-text">FastTrack算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NPD检测算法"><span class="nav-number">4.</span> <span class="nav-text">NPD检测算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GoodLock检测算法"><span class="nav-number">5.</span> <span class="nav-text">GoodLock检测算法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -912,6 +675,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
