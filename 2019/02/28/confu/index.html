@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://findnorthstar.github.io/2019/02/28/confu/confu_architecture.jpg">
 <meta property="og:image" content="https://findnorthstar.github.io/2019/02/28/confu/ASM.jpg">
 <meta property="og:image" content="https://findnorthstar.github.io/2019/02/28/confu/npd.png">
-<meta property="og:updated_time" content="2019-02-28T15:46:02.082Z">
+<meta property="og:updated_time" content="2019-02-28T15:48:42.852Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM应用程序的多线程并发缺陷检测">
 <meta name="twitter:description" content="当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。 为了解决当前并">
@@ -327,8 +327,9 @@
 
       
         <p>当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。</p>
-<p>为了解决当前并发程序测试面临的巨大挑战，清华大学软件学院DATE团队开发了基于程序动态测试技术的针对JVM应用的多线程并发缺陷检测工具DATE-Confu。该工具以待测JVM可执行程序（.class文件或.jar文件）为输入，输出为在待测程序中检测到的并发缺陷集合。目前，该工具可检测包括数据竞争、死锁、空指针引用等在内的六类严重并发缺陷，用户可根据需求选择检测哪些类型的并发缺陷。</p>
+<p>为了解决当前并发程序测试面临的巨大挑战，DATE团队开发了基于程序动态测试技术的针对JVM应用的多线程并发缺陷检测工具DATE-Confu。该工具以待测JVM可执行程序（.class文件或.jar文件）为输入，输出为在待测程序中检测到的并发缺陷集合。目前，该工具可检测包括数据竞争、死锁、空指针引用等在内的六类严重并发缺陷，用户可根据需求选择检测哪些类型的并发缺陷。</p>
 <p>DATE-Confu工具的创新点是其有效地结合了有目标的程序调度模糊测试技术（guided schedule fuzzing techniques）与基于符号执行的轨迹分析技术（symbolictrace analysis techniques）。下图为DATE-Confu工具的框架示意图。该工具使用模糊测试技术能够高效遍历多线程程序巨大的状态空间，并且基于符号执行的轨迹分析技术快速发现被测程序中尚未探索到的控制分支，从而为迭代模糊测试提供有效信息，使得DATE-Confu能更快达到更高的覆盖率。目前DATE-Confu已在多个工业级别的项目上进行测试，通过目前已经进行的实验发现，DATE-Confu的测试效率高且能挖掘到隐藏更深的并发缺陷。</p>
+<a id="more"></a>
 <p><img src="/2019/02/28/confu/confu_architecture.jpg" alt="confu_architecture"></p>
 <div align="center">DATE-Confu框架示意图</div>
 
