@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="对抗样本,RNN,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。 首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2">
+<meta name="keywords" content="对抗样本,RNN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于RNN生成对抗输入序列">
+<meta property="og:url" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/index.html">
+<meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。 首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/original_grad.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/original_grad_after_sign.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/was_prob.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/being_prob.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/binary_classification.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/multi_classification.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/s_prob.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/b_prob.png">
+<meta property="og:updated_time" content="2019-03-09T16:37:27.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于RNN生成对抗输入序列">
+<meta name="twitter:description" content="本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。 首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2">
+<meta name="twitter:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/">
+
+
+
+
+
+  <title>基于RNN生成对抗输入序列 | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silver Bullet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Martin Zhao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver Bullet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于RNN生成对抗输入序列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-09T23:14:03+08:00">
+                2019-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/科研/" itemprop="url" rel="index">
+                    <span itemprop="name">科研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。</p>
+<p>首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2类，非导向性攻击只需要使得图片的预测结果与先前标签不一致，而导向性攻击则需要把图片错误预测成特定的类别。值得注意的一点是研究人员发现生成的对抗样本对其它的模型仍然有效，这就是对抗样本的可迁移性。</p>
+<a id="more"></a>
+<p>这里展示的结果主要是在卷积神经网络CNN上生成的对抗样本：</p>
+<p><img src="/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG" alt="cnn_adversarial_example"></p>
+<h1 id="生成PTB语言模型的对抗输入序列"><a href="#生成PTB语言模型的对抗输入序列" class="headerlink" title="生成PTB语言模型的对抗输入序列"></a>生成PTB语言模型的对抗输入序列</h1><h2 id="模型准备"><a href="#模型准备" class="headerlink" title="模型准备"></a>模型准备</h2><p>首先尝试运行tensorflow提供的语言模型训练<a href="https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py" target="_blank" rel="noopener">代码</a>，经过运行发现该代码仅打印模型的perplexity，没有提供输入一段话/一个词，预测下一个词的接口，因此又参考了Rani Nelken在GitHub上基于PTB语言模型训练代码修改的<a href="https://github.com/nelken/tf/blob/master/ptb_word_lm.py" target="_blank" rel="noopener">版本</a>，其不同之处在于：</p>
+<ul>
+<li>建立了数字id到单词id的互相映射</li>
+<li>微调了RNN的结构，主要修改了RNN的output到计算loss的过程，保留中间结果logits从而得到下一个词预测的概率</li>
+<li>修改了读取文件的代码，每轮迭代返回test文本中的上一个词x和下一个词y</li>
+</ul>
+<p>根据Rani Nelken版本的代码，经过small参数的训练13轮后得到可以用于测试的语言模型权重。</p>
+<h2 id="对抗输入序列生成思路"><a href="#对抗输入序列生成思路" class="headerlink" title="对抗输入序列生成思路"></a>对抗输入序列生成思路</h2><p>这里模仿<strong>FGSM</strong>方法来生成对抗输入序列，首先对FGSM方法[1]进行简要介绍：<br>FGSM方法是Ian Goodfellow等人在2015年提出的计算对抗扰动的方法。FGSM利用高维空间中深层网络模型的“线性”性质（而此时此类模型通常被认为是高度非线性的）来高效生成大量的对抗样本。<br>Fast Gradient Sign Method(FGSM)方法计算扰动的公式如下：</p>
+<script type="math/tex; mode=display">p = \epsilon sign(\nabla J(\theta,I_c,l))</script><p>其中$I_c$代表原始图片，$l$是错误分类的类别标记，$\theta$是神经网络的参数，$\nabla J$表示计算当前原始图片$I_c$对于网络模型参数$\theta$的梯度，$sign$是示性函数（将原本非线性的扰动变为线性的扰动），定义如下：</p>
+<script type="math/tex; mode=display">
+sign(x) = \begin{cases}
+1, & x>0 \\
+0, & x=0 \\
+-1, & x<0 \\
+\end{cases}</script><p>而$\epsilon$的作用是限制扰动的强度在尽可能小的范围内。下面的2张图分别直观的展示了原始梯度和示性函数处理后梯度的例子</p>
+<p><img src="/2019/03/09/rnn-adversarial/original_grad.png" alt="original_grad"></p>
+<div align="center">原始梯度</div>
+
+<p><img src="/2019/03/09/rnn-adversarial/original_grad_after_sign.png" alt="original_grad_after_sign"></p>
+<div align="center">示性函数处理后梯度</div>
+
+<p>而在语言模型的执行过程中，计算扰动p的公式如下：</p>
+<script type="math/tex; mode=display">p = \epsilon \nabla J(\theta,I_c,l)</script><p>其中$I_c$代表原始输入序列对应的embedding，$l$是RNN输出的final state的output计算logits后分类的类别标记，$\theta$是神经网络的参数，$\nabla J$表示计算当前输入序列对应的embedding $I_c$对于网络模型参数$\theta$的梯度，$\epsilon$是可以人为控制的扰动幅度。</p>
+<p>这里没有使用示性函数$sign$的原因主要是考虑到扰动的数量级(大约为$10^{-3}$~$10^{-2}$)比embedding的数量级(大约为$10^{-1}$)要小，因此如果使用示性函数$sign$导致得到的扰动embedding过大，导致计算的距离较大，与“微小”扰动的目的相差较大。</p>
+<p>由于RNN语言模型的输入序列是离散的，即输入的单词在转化为数字id后，还经过一层embedding转化为向量再参与RNN的计算，即使直接将扰动p加在原始embedding $I_c$上，有很大的概率仍然不能直接将embedding转化一个单词id。因此这里使用计算最近的欧式方式将加上扰动后的embedding转化为某个距离最近的单词id，这样就改变了输入的序列。过程如下，其中$e$代表原始单词id对应的embedding，$p$代表扰动，$e^*$代表加上扰动后的embedding：</p>
+<script type="math/tex; mode=display">e^* = e + p</script><p>然后求解距离扰动embedding $e^*$最近的embedding对应的id，其中n为语料库单词的数目，在本实验中n=20000：</p>
+<script type="math/tex; mode=display">argmin_{id}{\sqrt{\sum_{id=0}^{n}(e^{*}-e_{id})^2}}</script><h2 id="对抗输入序列生成结果"><a href="#对抗输入序列生成结果" class="headerlink" title="对抗输入序列生成结果"></a>对抗输入序列生成结果</h2><h3 id="对抗输入序列示例"><a href="#对抗输入序列示例" class="headerlink" title="对抗输入序列示例"></a>对抗输入序列示例</h3><p>这里使用的原始测试输入序列为<code>{no it was n&#39;t}</code>，我们对倒数第2个单词<code>was</code>进行对抗输入序列的生成，通过添加求得的扰动得到对抗序列为<code>{no it being n&#39;t}</code>，这样我们就可以观察导数第2个单词的下一个词的预测概率的变化。</p>
+<h3 id="预测下一个词的概率分布可视化"><a href="#预测下一个词的概率分布可视化" class="headerlink" title="预测下一个词的概率分布可视化"></a>预测下一个词的概率分布可视化</h3><p><img src="/2019/03/09/rnn-adversarial/was_prob.png" alt="was_prob"></p>
+<div align="center">was的下一个词预测概率</div>
+
+<p><img src="/2019/03/09/rnn-adversarial/being_prob.png" alt="being_prob"></p>
+<div align="center">being的下一个词预测概率</div>
+
+<p>可以看到，对抗序列的下一个词的预测Top 10概率分布发生了变化，尤其是Top 1预测的词从<code>the</code>变成了<code>&lt;unk&gt;</code>。本实验仍然存在这一些不足，例如没有使用量化指标（例如perplexity等）来评估所生成对抗输入序列的质量。未来可以考虑加对抗序列加入语言模型的重训练过程。</p>
+<h1 id="生成seq2seq语言纠错模型的对抗输入序列"><a href="#生成seq2seq语言纠错模型的对抗输入序列" class="headerlink" title="生成seq2seq语言纠错模型的对抗输入序列"></a>生成seq2seq语言纠错模型的对抗输入序列</h1><h2 id="模型准备-1"><a href="#模型准备-1" class="headerlink" title="模型准备"></a>模型准备</h2><p>这里采用的语言纠错模型来自于David Currie在Github上开源的<a href="https://github.com/Currie32/Spell-Checker/blob/master/SpellChecker.py" target="_blank" rel="noopener">代码</a>，其主要采用了基于seq2seq的encoder和decoder的网络结构，同时还使用了attention和双向LSTM等结构，其目的是训练英语语料的语言纠错模型，其示例如下：</p>
+<blockquote>
+<p>原始序列：<strong>Spellin</strong> is difficult, <strong>whch</strong> is <strong>wyh</strong> you need to study everyday.<br>纠正序列：<strong>Spelling</strong> is difficult, <strong>which</strong> is <strong>why</strong> you need to study everyday.</p>
+<p>原始序列：The first days of her existence in <strong>th</strong> country were <strong>vrey</strong> hard for Dolly.<br>纠正序列：The first days of her existence in <strong>the</strong> country were <strong>very</strong> hard for Dolly.</p>
+</blockquote>
+<p>根据David Currie的代码，经过调整若干参数后进行训练后可以得到用于生成语言纠错模型的对抗输入序列的模型权重。由于训练参数等原因，实际纠错效果并没有作者演示的那样好，仍然会出现一些单词未能纠正的情况，不过这不会影响本次实验。</p>
+<h2 id="对抗输入序列生成思路-1"><a href="#对抗输入序列生成思路-1" class="headerlink" title="对抗输入序列生成思路"></a>对抗输入序列生成思路</h2><p>这里模仿<strong>DeepFool</strong>方法来生成对抗输入序列，首先对DeepFool方法[2]进行简要介绍：<br>给定一个分类器模型f，Moosavi-Dezfooli等人首先定义了一张图片的最小扰动r，使其分类结果k出错，如下列式子所示：</p>
+<script type="math/tex; mode=display">\Delta(x, \hat{k}) = min_r||r||_2, s.t.\ \hat{k}(x+r) \ne \hat{k}(x)</script><p>给出以上定义以后，Moosavi-Dezfooli 提出了DeepFool模型：<strong>迭代方式计算给定图像最佳扰动方向</strong>，在该扰动方向上，快速有效的生成大量的对抗样本。<br>以一个简单的二分类模型来看，生成对抗样本的方向如下图所示：</p>
+<p><img src="/2019/03/09/rnn-adversarial/binary_classification.png" alt="binary_classification"></p>
+<div align="center">二分类问题生成对抗样本方向</div>
+
+<p><img src="/2019/03/09/rnn-adversarial/multi_classification.png" alt="multi_classification"></p>
+<div align="center">多分类问题生成对抗样本方向</div>
+
+<p>FGSM和DeepFool的目的都是为了使得模型预测分类错误，因此需要变异原图片$x_0$，使得它朝着分类错误的方向移动，也就是梯度上升的方向变异（虚线箭头方向）。在二分类模型上，DeepFool和FGSM模型在扰动方向上没有区别，但在多分类问题上，却有很大的不同，具体的示意如上图所示。</p>
+<p>在这个简单的三分类问题中，假设原图片$x_0$被模型分类为$y_1$，为了使之分类错误，FGSM模型会朝着$y_1$分类错误的方向，也就是图中红色箭头方向添加扰动进行变异。</p>
+<p>而DeepFool方法认为，若将$x_0$移动到图中三角区域，则被分类错误的概率将大大增加，因此，基于此假设，DeepFool会同时计算出Top 1分类结果的梯度和Top 2分类结果的梯度，并将这两个梯度进行矢量相加，得到图片添加扰动的方向，即黑色实线为原图片$x_0$的变异方向。</p>
+<p>而在语言纠错模型的执行过程中，计算扰动p的公式如下：</p>
+<script type="math/tex; mode=display">p = \epsilon \nabla J(\theta,I_c,\sum_{i=1}^4l_i - l_0)</script><p>其中$I_c$代表原始输入序列对应的embedding，$l_0$是RNN输出的预测序列中随机选择一个字母对应的final state的output计算logits后分类的Top 1类别标记，$\sum_{i=1}^4l_i$为分类的Top2 ~ Top5类别标记的矢量求和，$\theta$是神经网络的参数，$\nabla J$表示计算当前输入序列对应的embedding $I_c$对于网络模型参数$\theta$的梯度，$\epsilon$是可以人为控制的扰动幅度。</p>
+<p>这里没有使用示性函数sign的原因同样主要是考虑到扰动的数量级(大约为$10^{-3}$~$10^<br>{-2}$)比embedding的数量级(大约为$10^{-1}$)要小，因此如果使用示性函数$sign$导致得到的扰动embedding过大，导致计算的距离较大，与“微小”扰动的目的相差较大。</p>
+<p>由于RNN语言模型的输入序列是离散的，即输入的单词在转化为数字id后，还经过一层embedding转化为向量再参与RNN的计算，即使直接将扰动p加在原始embedding $I_c$上，有很大的概率仍然不能直接将embedding转化一个单词id。因此这里使用计算最近的欧式方式将加上扰动后的embedding转化为某个距离最近的单词id，这样就改变了输入的序列。过程如下，其中$e$代表原始单词id对应的embedding，$p$代表扰动，$e^*$代表加上扰动后的embedding：</p>
+<script type="math/tex; mode=display">e^* = e + p</script><p>然后求解距离扰动embedding $e^*$最近的embedding对应的id，其中n为语料库单词的数目，在本实验中n=79：</p>
+<script type="math/tex; mode=display">argmin_{id}{\sqrt{\sum_{id=0}^{n}(e^{*}-e_{id})^2}}</script><h2 id="对抗输入序列生成结果-1"><a href="#对抗输入序列生成结果-1" class="headerlink" title="对抗输入序列生成结果"></a>对抗输入序列生成结果</h2><h3 id="对抗输入序列示例-1"><a href="#对抗输入序列示例-1" class="headerlink" title="对抗输入序列示例"></a>对抗输入序列示例</h3><p>这里使用的原始测试输入序列为</p>
+<blockquote>
+<p>Spellin i<strong>s</strong> difficult, whch is wyh you need to study everyday.</p>
+</blockquote>
+<p>我们对第36个单词<code>o</code>进行对抗输入序列的生成，通过对每个可能的输入字母的embedding添加求得的扰动得到某一个对抗序列为</p>
+<blockquote>
+<p>Spellin i<strong>b</strong> difficult, whch is wyh you need to study everyday.</p>
+</blockquote>
+<p>这2个序列的不同之处在于<code>is</code>的<code>s</code>被替换为<code>b</code>，这样我们就可以观察替换前后对应位置纠错字母预测概率的变化。</p>
+<h3 id="预测纠错词的概率分布可视化"><a href="#预测纠错词的概率分布可视化" class="headerlink" title="预测纠错词的概率分布可视化"></a>预测纠错词的概率分布可视化</h3><p>可以看到，对抗序列的对应位置字母的预测Top 10概率分布发生了变化，尤其是Top 1预测的词从<code>s</code>变成了<code>b</code>，从纠正结果看<code>ib</code>并没有被纠正成为<code>is</code>。</p>
+<p><img src="/2019/03/09/rnn-adversarial/s_prob.png" alt="s_prob"></p>
+<div align="center">“s”的纠正词预测概率</div>
+
+<p><img src="/2019/03/09/rnn-adversarial/b_prob.png" alt="b_prob"></p>
+<div align="center">“b”的纠正词预测概率</div>
+
+<p>本实验仍然存在这一些不足，例如没有使用量化指标（例如perplexity或BLEU等）来评估所生成语言纠错模型对抗输入序列的质量；此外本方法生成的对抗序列仅限于对某一个字母进行替换，还未实现增加或删除的策略。未来可以考虑加对抗序列加入语言纠错模型的重训练过程。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] Goodfellow, I. J., Shlens, J., &amp; Szegedy, C. Explaining and harnessing adversarial examples (2014). arXiv preprint arXiv:1412.6572.<br>[2] Moosavi-Dezfooli, S. M., Fawzi, A., &amp; Frossard, P. (2016). Deepfool: a simple and accurate method to fool deep neural networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2574-2582).</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/对抗样本/" rel="tag"># 对抗样本</a>
+          
+            <a href="/tags/RNN/" rel="tag"># RNN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/28/confu/" rel="next" title="JVM应用程序的多线程并发缺陷检测">
+                <i class="fa fa-chevron-left"></i> JVM应用程序的多线程并发缺陷检测
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Martin Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#生成PTB语言模型的对抗输入序列"><span class="nav-number">1.</span> <span class="nav-text">生成PTB语言模型的对抗输入序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型准备"><span class="nav-number">1.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对抗输入序列生成思路"><span class="nav-number">1.2.</span> <span class="nav-text">对抗输入序列生成思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对抗输入序列生成结果"><span class="nav-number">1.3.</span> <span class="nav-text">对抗输入序列生成结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对抗输入序列示例"><span class="nav-number">1.3.1.</span> <span class="nav-text">对抗输入序列示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预测下一个词的概率分布可视化"><span class="nav-number">1.3.2.</span> <span class="nav-text">预测下一个词的概率分布可视化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成seq2seq语言纠错模型的对抗输入序列"><span class="nav-number">2.</span> <span class="nav-text">生成seq2seq语言纠错模型的对抗输入序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型准备-1"><span class="nav-number">2.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对抗输入序列生成思路-1"><span class="nav-number">2.2.</span> <span class="nav-text">对抗输入序列生成思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对抗输入序列生成结果-1"><span class="nav-number">2.3.</span> <span class="nav-text">对抗输入序列生成结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对抗输入序列示例-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">对抗输入序列示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预测纠错词的概率分布可视化"><span class="nav-number">2.3.2.</span> <span class="nav-text">预测纠错词的概率分布可视化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

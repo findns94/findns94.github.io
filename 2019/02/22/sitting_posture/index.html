@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="坐姿检测,创新实践,论文,">
+  <meta name="keywords" content="创新实践,坐姿检测,论文,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Abstract Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to impl">
-<meta name="keywords" content="坐姿检测,创新实践,论文">
+<meta name="keywords" content="创新实践,坐姿检测,论文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera">
 <meta property="og:url" content="https://findnorthstar.github.io/2019/02/22/sitting_posture/index.html">
@@ -392,11 +392,11 @@
 <div align="center">Fig. 11: Difference in depth from top to bottom</div>
 
 <h4 id="Threshold"><a href="#Threshold" class="headerlink" title="Threshold"></a>Threshold</h4><p>Chaffin and Kilbom found that there is strong evidence that shows positive correlation between musculoskeletal disorders and neck flexion over 20°[19]. With the position of neck and head, the flexion angle is defined as α which can be calculated as follows:</p>
-<p>$$\alpha = \arctan{\left| \frac{x_{neck}-x_{head}}{y_{neck}-y_{head}} \right|}$$</p>
-<p>OpenNI provides two different coordinate systems—depth coordinates and world coordinates. Depth coordinates are the native data representation. World coordinates superimpose a more familiar 3D Cartesian coordinate system on the world, with the camera lens at the origin[20]. Here the coordinates of neck and head are converted from depth coordinates and world coordinates to get xneck, yneck, xhead and yhead.<br>Once α exceeds 20°, the user would be alerted to inform him/her to correct sitting posture by sound. Hearing the alarm, the user should understand the sitting posture is improper and sit straight. When α is below 20°, sitting posture fits the health indicators, so keeps detecting without disturbing the user.</p>
+<script type="math/tex; mode=display">\alpha = \arctan{\left| \frac{x_{neck}-x_{head}}{y_{neck}-y_{head}} \right|}</script><p>OpenNI provides two different coordinate systems—depth coordinates and world coordinates. Depth coordinates are the native data representation. World coordinates superimpose a more familiar 3D Cartesian coordinate system on the world, with the camera lens at the origin[20]. Here the coordinates of neck and head are converted from depth coordinates and world coordinates to get xneck, yneck, xhead and yhead.<br>Once α exceeds 20°, the user would be alerted to inform him/her to correct sitting posture by sound. Hearing the alarm, the user should understand the sitting posture is improper and sit straight. When α is below 20°, sitting posture fits the health indicators, so keeps detecting without disturbing the user.</p>
 <h1 id="Test-and-Evaluation"><a href="#Test-and-Evaluation" class="headerlink" title="Test and Evaluation"></a>Test and Evaluation</h1><p>Fig. 4 shows the experiment environment. One volunteer was invited to perform a set of sitting postures. To test the accuracy of the method, the test includes 200 different improper sitting postures. There is no significant difference in the time of completing the track of the body among the tests. Based on identifying the joints and threshold method, the results of the test are shown in Table 1.</p>
 <div align="center">Table 1. TEST RESULT OF DETECTING THE SITTING POSTURE</div>
 
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -413,9 +413,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>In order to find whether factors like body shape and clothes affect the accuracy of the detection, five volunteers were invited to participate in the tests. The volunteers repeated making improper sitting posture for 50 times. The results are shown in Table 2.</p>
 <div align="center">Table 2. TEST RESULT OF DIFFERENT FACTORS</div>
 
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -464,6 +466,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>This paper presented a system aiming at detecting improper sitting posture with the technology of motion-sensing cameras. The system includes skeleton thinning algorithm, averaging process and threshold method. Detecting improper sitting posture provides a way to prevent musculoskeletal disorders. The experiment shows that this method can work efficiently, and is invariant to the user’s clothes and body shape.</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>[1] Mebarki, B. (2009). Effect of school furniture design and traditional sitting habits,On sitting postures of middle school pupils in Touet region-Algeria. PROCEEDINGS OF 17TH WORLD CONGRESS ON ERGONOMICS.<br>[2] Putz-Anderson, V., Bernard, B. P., Burt, S. E., Cole, L. L., Fairfield-Estill, C., Fine, L. J., … &amp; Tanaka, S. (1997). Musculoskeletal disorders and workplace factors. National Institute for Occupational Safety and Health (NIOSH).<br>[3] Lis, A. M., Black, K. M., Korn, H., &amp; Nordin, M. (2007). Association between sitting and occupational LBP. European Spine Journal, 16(2), 283-298.<br>[4] Priel, V. Z. (1974). A numerical definition of posture. Human Factors: The Journal of the Human Factors and Ergonomics Society, 16(6), 576-584.<br>[5] Karhu, O., Kansi, P., &amp; Kuorinka, I. (1977). Correcting working postures in industry: a practical method for analysis. Applied ergonomics, 8(4), 199-201.<br>[6] Corlett, E. N., MADELEY†, S., &amp; MANENICA‡, I. (1979). Posture targeting: a technique for recording working postures. Ergonomics, 22(3), 357-366.Gil, H. C., &amp; Tunes, E. (1989). Posture recording: a model for sitting posture.Applied ergonomics, 20(1), 53-57.<br>[7] Gil, H. C., &amp; Tunes, E. (1989). Posture recording: a model for sitting posture.Applied ergonomics, 20(1), 53-57.<br>[8] McAtamney, L., &amp; Corlett, E. N. (1993). RULA: a survey method for the investigation of work-related upper limb disorders. Applied ergonomics,24(2), 91-99.<br>[9] Hignett, S., &amp; McAtamney, L. (2000). Rapid entire body assessment (REBA).Applied ergonomics, 31(2), 201-205.<br>[10] Christmansson, M. (1994). Repetitive and manual jobs—content and effects in terms of physical stress and work‐related musculoskeletal disorders.International Journal of Human Factors in Manufacturing, 4(3), 281-292.<br>[11] Li, G., &amp; Buckle, P. (1999). Evaluating change in exposure to risk for musculoskeletal disorders: A practical tool. HSE Books.<br>[12] Finley, M. A., &amp; Lee, R. Y. (2003). Effect of sitting posture on 3-dimensional scapular kinematics measured by skin-mounted electromagnetic tracking sensors. Archives of physical medicine and rehabilitation, 84(4), 563-568.<br>[13] Wong, W. Y., &amp; Wong, M. S. (2008). Detecting spinal posture change in sitting positions with tri-axial accelerometers. Gait &amp; Posture, 27(1), 168-171.<br>[14] Microsoft, “PrimeSense Supplies 3-D-Sensing Technology to “Project Natal” for Xbox 360” [Online], Available: <a href="https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/" target="_blank" rel="noopener">https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/</a>, [February 1, 2016].<br>[15] PrimeSense, Ltd., “What is OpenNI?”, [Online], Available: <a href="http://www.openni.ru/index.html" target="_blank" rel="noopener">http://www.openni.ru/index.html</a>, [February 1, 2016].<br>[16] PrimeSense, Ltd., “NiTE 2.2.0.11”, [Online], Available: <a href="http://www.openni.ru/files/nite/index.html" target="_blank" rel="noopener">http://www.openni.ru/files/nite/index.html</a>, [February 1, 2016].<br>[17] NiTE, JointType, [Online], Available: <a href="http://img.my.csdn.net/uploads/201111/8/0_13207656556UXJ.gif" target="_blank" rel="noopener">http://img.my.csdn.net/uploads/201111/8/0_13207656556UXJ.gif</a>, [February 1, 2016].<br>[18] Fransson-Hall, C., Gloria, R., Kilbom, Å., Winkel, J., Karlqvist, L., Wiktorin, C., &amp; Group123, S. (1995). A portable ergonomic observation method (PEO) for computerized on-line recording of postures and manual handling. Applied ergonomics, 26(2), 93-100.<br>[19] O’Sullivan, K., O’Dea, P., Dankaerts, W., O’Sullivan, P., Clifford, A., &amp; O’Sullivan, L. (2010). Neutral lumbar spine sitting posture in pain-free subjects. Manual therapy, 15(6), 557-561<br>[20] PrimeSense, Ltd., “openni::CoordinateConverter Class Reference”, [Online], Available: <a href="http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html" target="_blank" rel="noopener">http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html</a>, [February 1, 2016]</p>
 
@@ -483,9 +486,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/坐姿检测/" rel="tag"># 坐姿检测</a>
-          
             <a href="/tags/创新实践/" rel="tag"># 创新实践</a>
+          
+            <a href="/tags/坐姿检测/" rel="tag"># 坐姿检测</a>
           
             <a href="/tags/论文/" rel="tag"># 论文</a>
           
@@ -585,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
