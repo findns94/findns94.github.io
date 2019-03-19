@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="区块链,比特币,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="仿真内容分为3个部分  P2P网络仿真 使⽤Mininet搭建不同拓扑的网络（如星型、环形、树形、网状）限制不用链路的带宽 每个结点可以生成某种类型的数据，结点间进行通信，在本地建立数据库，记录不同节点的地址，以及各个结点的数据类型 在不同的节点间传输数据（不同大小，多个数量）      区块链仿真 实现区块链网络的仿真 模拟p2p网络的交易（区块）及其传播逻辑 实现PoW算法模拟挖矿 限制链路带">
+<meta name="keywords" content="区块链,比特币">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链网络仿真">
+<meta property="og:url" content="https://findnorthstar.github.io/2019/03/19/blockchain/index.html">
+<meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="仿真内容分为3个部分  P2P网络仿真 使⽤Mininet搭建不同拓扑的网络（如星型、环形、树形、网状）限制不用链路的带宽 每个结点可以生成某种类型的数据，结点间进行通信，在本地建立数据库，记录不同节点的地址，以及各个结点的数据类型 在不同的节点间传输数据（不同大小，多个数量）      区块链仿真 实现区块链网络的仿真 模拟p2p网络的交易（区块）及其传播逻辑 实现PoW算法模拟挖矿 限制链路带">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/design.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/demo.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/module.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/initialnode.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/time.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/pbft.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/network.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/nodeinfo.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/transaction.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/blockchain.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/createtx.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/BGPnetwork.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/beforeBGPvictim.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/attack.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/afterBGPnetwork.PNG">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/afterBGPvictim.PNG">
+<meta property="og:updated_time" content="2019-03-19T13:25:13.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="区块链网络仿真">
+<meta name="twitter:description" content="仿真内容分为3个部分  P2P网络仿真 使⽤Mininet搭建不同拓扑的网络（如星型、环形、树形、网状）限制不用链路的带宽 每个结点可以生成某种类型的数据，结点间进行通信，在本地建立数据库，记录不同节点的地址，以及各个结点的数据类型 在不同的节点间传输数据（不同大小，多个数量）      区块链仿真 实现区块链网络的仿真 模拟p2p网络的交易（区块）及其传播逻辑 实现PoW算法模拟挖矿 限制链路带">
+<meta name="twitter:image" content="https://findnorthstar.github.io/2019/03/19/blockchain/design.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://findnorthstar.github.io/2019/03/19/blockchain/">
+
+
+
+
+
+  <title>区块链网络仿真 | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silver Bullet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/03/19/blockchain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Martin Zhao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver Bullet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">区块链网络仿真</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T21:14:51+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程/" itemprop="url" rel="index">
+                    <span itemprop="name">课程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>仿真内容分为3个部分</p>
+<ul>
+<li><strong>P2P网络仿真</strong><ul>
+<li>使⽤Mininet搭建不同拓扑的网络（如星型、环形、树形、网状）限制不用链路的带宽</li>
+<li>每个结点可以生成某种类型的数据，结点间进行通信，在本地建立数据库，记录不同节点的地址，以及各个结点的数据类型</li>
+<li>在不同的节点间传输数据（不同大小，多个数量）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>区块链仿真</strong><ul>
+<li>实现区块链网络的仿真</li>
+<li>模拟p2p网络的交易（区块）及其传播逻辑</li>
+<li>实现PoW算法模拟挖矿</li>
+<li>限制链路带宽，测试在不同区块大小及区块产⽣间隔的情况下的网络时延状况、分叉状况</li>
+<li>使⽤PBFT协议进⾏共识</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>攻击仿真</strong><ul>
+<li>在仿真的比特币网络基础上进行实验</li>
+<li>进行仿真实验，记录不同的算力攻击下，攻击成功（可以产生更长的链使现有的某些区块无效）的概率</li>
+<li>选做BGP劫持、Eclipse攻击</li>
+</ul>
+</li>
+</ul>
+<p>项目地址为<a href="https://github.com/131250106/bitcoin" target="_blank" rel="noopener">https://github.com/131250106/bitcoin</a></p>
+<a id="more"></a>
+<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>本项目的系统架构图如下图所示：</p>
+<p><img src="/2019/03/19/blockchain/design.png" alt="image"></p>
+<p>本项目主要分为5层，下面详细介绍</p>
+<h3 id="mininet层"><a href="#mininet层" class="headerlink" title="mininet层"></a>mininet层</h3><p>Mininet 作为一个轻量级软件定义网络研发和测试平台，其主要特性包括:</p>
+<ul>
+<li>支持 Openflow、OpenvSwitch 等软定义网络部件</li>
+<li>方便多人协同开发</li>
+<li>支持系统级的还原测试支持复杂拓扑、自定义拓扑</li>
+<li>提供 Python API</li>
+<li>很好的硬件移植性（Linux 兼容），结果有更好的说服力</li>
+<li>高扩展性，支持超过 4096 台主机的网络结构</li>
+</ul>
+<p>在本实验中，我们使用mininet来搭建星型、环形、树形、⽹状等不同拓扑形状的网络，并且通过限制不同链路的带宽和延迟来模拟网络的不同状况来进行实验。</p>
+<p>mininet层主要提供了虚拟化的IP和端口，并建立代表不同节点的host实体，为Async IO层进行网络通信提供基础。</p>
+<h3 id="Async-IO层"><a href="#Async-IO层" class="headerlink" title="Async IO层"></a>Async IO层</h3><p>由于P2P网络需要模拟分布式的环境以及各种远程方法调用，一般的单线程/单进程编程模型难以满足模拟分布式系统的需求，因此我们引入了Python 3.x中支持的Asynic IO异步方法库，其主要支持的特性如下：</p>
+<ul>
+<li>异步网络操作</li>
+<li>并发</li>
+<li>协程</li>
+</ul>
+<p>我们主要用到的Asynic IO中的一些关键字如下：</p>
+<ul>
+<li>event_loop 事件循环：程序开启一个无限循环，把一些函数注册到事件循环上，当满足事件发生的时候，调用相应的协程函数</li>
+<li>coroutine 协程：协程对象，指一个使用async关键字定义的函数，它的调用不会立即执行函数，而是会返回一个协程对象。协程对象需要注册到事件循环，由事件循环调用。</li>
+<li>task 任务：一个协程对象就是一个原生可以挂起的函数，任务则是对协程进一步封装，其中包含了任务的各种状态</li>
+<li>future：代表将来执行或没有执行的任务的结果。它和task上没有本质上的区别</li>
+<li>async/await 关键字：python3.5用于定义协程的关键字，async定义一个协程，await用于挂起阻塞的异步调用接口</li>
+</ul>
+<p>在具体的实验过程中，我们基于mininet提供的IP和端口，模拟出各个网络中的节点host，使用Async IO封装底层socket通信的接口进行数据通信和消息发送，从而搭建出最基础的网络架构。在此基础之上，我们还引入了路由表，以及基于Kademila协议实现了DHT分布式哈希表。</p>
+<h3 id="Channel层"><a href="#Channel层" class="headerlink" title="Channel层"></a>Channel层</h3><p>本层主要实现的功能是支持外部IO输入指定的命令操作网络执行相应的功能，例如：</p>
+<ul>
+<li>新建节点</li>
+<li>删除节点</li>
+<li>创建交易Transaction</li>
+<li>……</li>
+</ul>
+<p>主要提供了2种方式输入命令，分别是：</p>
+<ul>
+<li>文件读取命令：通过异步调用监控输入命令文件的变化，随时执行写入命令文件的指令</li>
+<li>Xterm读取命令：通过在命令窗口Xterm输入相应的命令执行操作</li>
+</ul>
+<h3 id="Django层"><a href="#Django层" class="headerlink" title="Django层"></a>Django层</h3><p>Django是一个开源的Web应用框架，由Python语言编写，其主要使用了模型(model)-视图(view)-控制器(controller)模型，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。主要结构如下：</p>
+<ul>
+<li>模型(model)：定义数据库相关的内容，一般位于models.py文件中。</li>
+<li>视图(view)：定义HTML等静态网页文件相关，包含HTML、CSS、JavaScript等前端内容。</li>
+<li>控制器(controller)：定义业务逻辑相关的主要代码。</li>
+</ul>
+<p>本实验使用Django框架解析前端页面发来的请求，通过相应控制器中的方法调用异步命令对P2P网络进行操作，同时将区块链、当前Transaction、当前节点地址等信息保存在本地Seqlite中，实现存储的持久化。</p>
+<h3 id="Web层"><a href="#Web层" class="headerlink" title="Web层"></a>Web层</h3><p>本层主要实现了可视化和页面交互的功能，通过引入D3.js可视化框架形象地展示当前网络拓扑结构，此外引入JQuery封装向后台发送的请求地址，最终实现了包含展示区块链信息，交易信息，节点动态增加和删除等功能的前端页面，提供了用户友好的区块链系统仿真交互界面。</p>
+<p>最终页面展示效果如下图所示：</p>
+<p><img src="/2019/03/19/blockchain/demo.PNG" alt="image"></p>
+<p>在<a href="#jump">演示形式</a>章节会有详细介绍。</p>
+<h2 id="系统模块设计"><a href="#系统模块设计" class="headerlink" title="系统模块设计"></a>系统模块设计</h2><p>本项目的系统模块图如下图所示：</p>
+<p><img src="/2019/03/19/blockchain/module.png" alt="image"></p>
+<p>本系统以<code>Node</code>模块为核心，搭建了区块链仿真系统，其功能主要包括：</p>
+<ul>
+<li>启动星型、环形、树形、⽹状等不同拓扑形状的网络</li>
+<li>通过命令控制系统执行某些操作</li>
+<li>使用异步消息传递和远程方法调用实现节点间的通信</li>
+<li>日志记录、DHT、实现简化版区块链和钱包</li>
+<li>相关数据的序列化</li>
+</ul>
+<p>下面分模块详细介绍：</p>
+<h3 id="系统启动模块"><a href="#系统启动模块" class="headerlink" title="系统启动模块"></a>系统启动模块</h3><p>本项目从<code>main</code>函数入口启动，依次执行网络拓扑生成、启动mininet网络、注册Node节点等操作，确保各个节点能在网络中正常通信。同时会启动监控命令行输入的循环，用于接受命令行输入执行相应的指令。</p>
+<h3 id="Node模块"><a href="#Node模块" class="headerlink" title="Node模块"></a><code>Node</code>模块</h3><p>Node模块是本系统的核心模块，其主要功能有：</p>
+<ul>
+<li>生成节点ID、路由表、本地IP、本地区块链等初始化数据结构</li>
+<li>提供ping、更新路由表、下载邻居节点的区块链、挖矿等异步方法</li>
+<li>保存日志、序列化区块链和钱包</li>
+<li>处理广播、请求和回复等消息</li>
+<li>监听文件命令行输入和Xterm命令行输入</li>
+</ul>
+<h3 id="RPC模块"><a href="#RPC模块" class="headerlink" title="RPC模块"></a><code>RPC</code>模块</h3><p><code>RPC</code>模块是基于Async IO异步方法封装的简易协议，支持功能如下：</p>
+<ul>
+<li>发送消息，分为3类<ul>
+<li>发送请求</li>
+<li>发送回复</li>
+<li>发送广播</li>
+</ul>
+</li>
+<li>处理消息，分为4类<ul>
+<li>处理广播消息</li>
+<li>处理普通请求</li>
+<li>处理回复消息</li>
+<li>处理超时消息</li>
+</ul>
+</li>
+</ul>
+<h3 id="Node子模块"><a href="#Node子模块" class="headerlink" title="Node子模块"></a><code>Node</code>子模块</h3><p>包含Node中调用的重要模块，简介如下：</p>
+<ul>
+<li>日志模块：负责保存运行时操作日志，以及序列化一些重要信息到文件系统</li>
+<li>DHT模块：基于Kademila协议实现分布式哈希表</li>
+<li>区块链模块：基本实现了生成区块、proof验证、PoW工作量证明等方法</li>
+<li>钱包模块：用于计算当前节点剩余的财产</li>
+</ul>
+<h2 id="创世节点启动流程"><a href="#创世节点启动流程" class="headerlink" title="创世节点启动流程"></a>创世节点启动流程</h2><p>本项目的创世节点启动流程如下图所示：</p>
+<p><img src="/2019/03/19/blockchain/initialnode.png" alt="image"></p>
+<p>过程如下：</p>
+<ul>
+<li>当一个节点在启动加入网络后ping过预先定义的节点后发现路由表为空</li>
+<li>该节点新建区块链，新建新的空钱包</li>
+<li>该节点创造一个新的交易，从地址为0的特殊节点获取若干比特币</li>
+<li>该节点开始挖矿，加交易打包进创世区块</li>
+<li>创世节点启动完毕，开始监听各种消息，根据命令输入发出相应消息</li>
+</ul>
+<h2 id="其它节点启动时序"><a href="#其它节点启动时序" class="headerlink" title="其它节点启动时序"></a>其它节点启动时序</h2><p>本项目的其它节点启动时序图如下图所示：</p>
+<p><img src="/2019/03/19/blockchain/time.png" alt="image"></p>
+<p>其他节点的启动时进行的操作如下：</p>
+<ul>
+<li>向初始节点发动ping请求，得到相应回复</li>
+<li>发送请求更新DHT，得到路由表信息</li>
+<li>向邻居节点发送拉取区块链的消息，对收到的区块链进行长度的比较，保留最长的链，并序列化到本地</li>
+<li>收到相应命令时经过验证新建交易，并广播该交易给邻居节点</li>
+<li>启动命令监控循环</li>
+<li>新开线程，执行挖矿逻辑</li>
+<li>启动事件的监听和响应操作</li>
+</ul>
+<h1 id="核心算法设计与实现"><a href="#核心算法设计与实现" class="headerlink" title="核心算法设计与实现"></a>核心算法设计与实现</h1><h2 id="PoW共识算法设计与实现"><a href="#PoW共识算法设计与实现" class="headerlink" title="PoW共识算法设计与实现"></a>PoW共识算法设计与实现</h2><p>本实验对PoW共识算法进行了简易模拟，主要流程如下：</p>
+<ol>
+<li>所有节点启动完毕后，新开一个线程，执行挖矿逻辑</li>
+<li>某个节点一旦挖到某个block后，从transaction池中拉取TX，验证并放入新的block中</li>
+<li>该节点将new block 广播出去后，继续挖下一个区块</li>
+<li>某一节点一旦收到某个new block，立即发送一个信号量，停止当前挖矿行为</li>
+<li>验证该收到的new block<ul>
+<li>5.1 如果验证通过，则将该new block添加到自己的链上</li>
+<li>5.2 验证不通过：<ul>
+<li>5.2.1 从自己的routing table中的所有邻居节点拉取区块链</li>
+<li>5.2.2 逐个与自身区块链进行对比<ul>
+<li>5.2.2.1 若区块链比自己的长，则用该区块链覆盖掉自己的链</li>
+<li>5.2.2.2 若区块链与自己的一样长，寻找fork分支点，进行fork操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继续挖下一个区块</li>
+</ol>
+<p>PoW共识算法通过进行一定的运算和消耗一定的时间来计算一个合适的工作量值提供给各节点快速验证，以防止区块链系统被算力攻击导致的数据资源滥用，确保区块链上交易的公平和安全。</p>
+<h3 id="PoW算法实现验证-——-模拟双花操作："><a href="#PoW算法实现验证-——-模拟双花操作：" class="headerlink" title="PoW算法实现验证 —— 模拟双花操作："></a>PoW算法实现验证 —— 模拟双花操作：</h3><p>为了验证PoW算法的有效性，我们设计了相应的场景以模拟算法是否正确的发挥作用。</p>
+<p>我们随机选择某一节点将某笔钱分别不同节点发送两次，经过实验模拟，发现同一时刻，只有一个交易会被确认，双花发生概率为0.</p>
+<p>PS：另一笔交易会在将来某个时候该节点中钱包的余额大于交易额时，被其他人或自己所确认，最终花费出去，钱包余额再次减少。</p>
+<h2 id="POS共识算法设计与实现"><a href="#POS共识算法设计与实现" class="headerlink" title="POS共识算法设计与实现"></a>POS共识算法设计与实现</h2><p>PoS(Proof of stake)直观来看就是拥有更多财产的节点，有更大的概率获得记账权，然后获得奖励。具体模拟的过程如下：</p>
+<ol>
+<li>每个节点根据当前钱包中的比特币数量num从[0,num]随机生成一个值，代表其权益大小，并且向所有节点广播。</li>
+<li>当所有节点都收到来自其他节点的权益广播后，将记账权赋予当前具有最大权益值的节点。</li>
+<li>具有记账权的节点将该节点上的交易验证后打包进区块，计算hash之后广播该区块。</li>
+<li>其余节点收到广播的区块，经过验证后将其加到区块链的尾部，完成区块链的增长。</li>
+</ol>
+<h2 id="PBFT共识算法设计与实现"><a href="#PBFT共识算法设计与实现" class="headerlink" title="PBFT共识算法设计与实现"></a>PBFT共识算法设计与实现</h2><ul>
+<li>发起节点i,创建block，调用1号节点，pre-prepare(self.id, block）</li>
+<li>1号节点发送广播（除发起节点i外），调用其它结点的prepare方法</li>
+<li>所有节点的prepare方法里广播调用其它结点的prepare方法，计数自己被调用次数，若结果大于一半的N，则广播调用commit方法</li>
+<li>commit方法里计数被调了多少次，若大于一半的N，则记录这个block, 同时调用交易节点的reply方法</li>
+<li>交易结点的reply方法里计数，若大于一半的N，记录这个block,钱包扣钱， 调用大家的计数清零函数</li>
+</ul>
+<p><img src="/2019/03/19/blockchain/pbft.png" alt="image"></p>
+<h1 id="攻击仿真实验"><a href="#攻击仿真实验" class="headerlink" title="攻击仿真实验"></a>攻击仿真实验</h1><h2 id="不同算力攻击成功概率"><a href="#不同算力攻击成功概率" class="headerlink" title="不同算力攻击成功概率"></a>不同算力攻击成功概率</h2><p>为了统计不同算力占比的条件下攻击成功额概率，这里使用双花攻击的场景进行模拟，流程如下：</p>
+<ol>
+<li>攻击节点一旦挖到新的区块时，除了从transaction池中拉取TX外，立即新建一个TX，花费自己所有的钱，给-1号地址（模拟取现过程），并创建两个new block，block1 包含该TX，block2不包含这个TX</li>
+<li>攻击节点给正常节点发送block1，给攻击节点发送block2</li>
+<li>正常节点收到该block时，会校验block1的合法性，发现正常，确认该TX，此时取现过程被确认，攻击者取到第一笔现金</li>
+<li>攻击节点收到该block时，会校验block2的合法性，正常，接收该block<ul>
+<li>4.1 若攻击节点再次挖到新的区块，除了从transaction池中拉取TX外，立即新建一个TX，再次花费自己所有的钱，给-1号地址（模拟取现过程），重复1步骤<ul>
+<li>4.1.1 攻击节点收到块，验证，不冲突，加入区块链</li>
+<li>4.1.2 正常节点收到块，验证，冲突，拉取其它节点的区块链，若链比自己长，则覆盖（最终上次的取现交易被覆盖掉，成功双花）</li>
+</ul>
+</li>
+<li>4.2 若正常节点再次挖到新的区块，则进行正常逻辑，区块链正常运行</li>
+</ul>
+</li>
+<li>一段时间后，观察攻击节点给-1号地址的TX的所有金额，即全部取现金额，若金额大于本身比特币金额，则表示攻击成功。</li>
+<li>记录不同算力下攻击成功概率</li>
+</ol>
+<h3 id="模拟实验结果："><a href="#模拟实验结果：" class="headerlink" title="模拟实验结果："></a>模拟实验结果：</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>攻击者算力占比</th>
+<th>20%</th>
+<th>40%</th>
+<th>60%</th>
+<th>80%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>攻击成功概率</td>
+<td>2/38</td>
+<td>7/48</td>
+<td>9/35</td>
+<td>22/65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注：A/B A表示攻击者提现次数，B表示挖矿的总轮数</p>
+<h2 id="不同带宽下分叉概率"><a href="#不同带宽下分叉概率" class="headerlink" title="不同带宽下分叉概率"></a>不同带宽下分叉概率</h2><p>通过设置mininet中不同link的bw(带宽)和delay(延迟)，记录区块链发生分叉的概率</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>带宽(MB)/延迟(ms)</th>
+<th>1000MB/0ms</th>
+<th>100MB/1ms</th>
+<th>10MB/0ms</th>
+<th>10MB/100ms</th>
+<th>10MB/1000ms</th>
+<th>1MB/1000ms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分叉概率</td>
+<td>0/(20*5)</td>
+<td>0/(20*5)</td>
+<td>0/(20*5)</td>
+<td>0/(20*5)</td>
+<td>4/(20*5)</td>
+<td>12/(20*5)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注：A/(B*N) A表示分叉出现的次数，B表示挖矿的总轮数,N表示节点数</p>
+<h2 id="BGP劫持攻击模拟"><a href="#BGP劫持攻击模拟" class="headerlink" title="BGP劫持攻击模拟"></a>BGP劫持攻击模拟</h2><h3 id="BGP劫持攻击"><a href="#BGP劫持攻击" class="headerlink" title="BGP劫持攻击"></a>BGP劫持攻击</h3><p>根据相关资料，我们模拟的BGP劫持攻击的流程如下：</p>
+<ol>
+<li>攻击者发动BGP劫持，将网络分割为<strong>两部分</strong>（先前2个网络正常连通并挖矿），一个大网络、一个小网络。用mininet可以限制2个网络之间的延迟，延迟设为无穷大则视为ping不通，即2个网络发生分割。</li>
+<li>在小网络中，攻击者发布交易卖出自己全部的加密货币，并兑换为法币。页面展示为攻击者生成transaction，钱包余额转移到某个特殊地址（例如“1”）。</li>
+<li>经过小网络的“全网确认”生成新block，这笔交易生效，攻击者获得等值的法币，攻击者节点钱包余额为0。</li>
+<li>攻击者释放BGP劫持，大网络与小网络互通，小网络上的一切交易被大网络否定（大网络区块链长于小网络），攻击者的加密货币全部回归到账户，而交易得来的法币，依然还在攻击者手中，完成获利。即攻击者节点区块链被大网络覆盖，钱包余额恢复至小网络区块链分叉前状态。</li>
+</ol>
+<h1 id="演示形式"><a href="#演示形式" class="headerlink" title="演示形式"></a><span id="jump">演示形式<span></span></span></h1><h2 id="可视化页面内容展示"><a href="#可视化页面内容展示" class="headerlink" title="可视化页面内容展示"></a>可视化页面内容展示</h2><h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p><img src="/2019/03/19/blockchain/network.PNG" alt="image"></p>
+<p>可以展示的网络拓扑结构有星型、环形、树形等，上图为星形拓扑，有5个节点，s1为交换机。</p>
+<h3 id="节点信息"><a href="#节点信息" class="headerlink" title="节点信息"></a>节点信息</h3><p><img src="/2019/03/19/blockchain/nodeinfo.PNG" alt="image"></p>
+<p>主要展示节点ID、节点地址、钱包余额信息。</p>
+<h3 id="交易信息"><a href="#交易信息" class="headerlink" title="交易信息"></a>交易信息</h3><p><img src="/2019/03/19/blockchain/transaction.PNG" alt="image"></p>
+<p>主要展示节点中未确认的交易信息。</p>
+<h3 id="区块链信息"><a href="#区块链信息" class="headerlink" title="区块链信息"></a>区块链信息</h3><p><img src="/2019/03/19/blockchain/blockchain.PNG" alt="image"></p>
+<p>主要展示节点中的区块链信息。</p>
+<h3 id="创建交易功能展示"><a href="#创建交易功能展示" class="headerlink" title="创建交易功能展示"></a>创建交易功能展示</h3><p><img src="/2019/03/19/blockchain/createtx.PNG" alt="image"></p>
+<p>主要展示通过提供IP和比特币数量创建交易功能。</p>
+<h2 id="BGP攻击过程展示"><a href="#BGP攻击过程展示" class="headerlink" title="BGP攻击过程展示"></a>BGP攻击过程展示</h2><h3 id="网络结构-1"><a href="#网络结构-1" class="headerlink" title="网络结构"></a>网络结构</h3><p><img src="/2019/03/19/blockchain/BGPnetwork.PNG" alt="image"></p>
+<p>上图为星形拓扑，有5个节点，s1为交换机。h5s1为攻击者节点，其余节点为受害者节点。</p>
+<h3 id="受害者节点信息"><a href="#受害者节点信息" class="headerlink" title="受害者节点信息"></a>受害者节点信息</h3><p><img src="/2019/03/19/blockchain/beforeBGPvictim.PNG" alt="image"></p>
+<p>可以看出受害者节点区块链长度为2。</p>
+<h3 id="攻击者节点信息"><a href="#攻击者节点信息" class="headerlink" title="攻击者节点信息"></a>攻击者节点信息</h3><p><img src="/2019/03/19/blockchain/attack.PNG" alt="image"></p>
+<p>可以看出攻击者节点区块链长度为5。</p>
+<h3 id="BGP攻击后网络结构"><a href="#BGP攻击后网络结构" class="headerlink" title="BGP攻击后网络结构"></a>BGP攻击后网络结构</h3><p><img src="/2019/03/19/blockchain/afterBGPnetwork.PNG" alt="image"></p>
+<p>可以看出攻击者释放BGP劫持后2个网络互通。</p>
+<h3 id="BGP攻击后受害者节点信息"><a href="#BGP攻击后受害者节点信息" class="headerlink" title="BGP攻击后受害者节点信息"></a>BGP攻击后受害者节点信息</h3><p><img src="/2019/03/19/blockchain/afterBGPvictim.PNG" alt="image"></p>
+<p>可以看出BGP劫持后受害者节点的区块链被攻击者所覆盖。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/区块链/" rel="tag"># 区块链</a>
+          
+            <a href="/tags/比特币/" rel="tag"># 比特币</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/19/hmm/" rel="next" title="隐马尔可夫语言模型">
+                <i class="fa fa-chevron-left"></i> 隐马尔可夫语言模型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Martin Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统设计"><span class="nav-number">1.</span> <span class="nav-text">系统设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统架构"><span class="nav-number">1.1.</span> <span class="nav-text">系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mininet层"><span class="nav-number">1.1.1.</span> <span class="nav-text">mininet层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Async-IO层"><span class="nav-number">1.1.2.</span> <span class="nav-text">Async IO层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel层"><span class="nav-number">1.1.3.</span> <span class="nav-text">Channel层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Django层"><span class="nav-number">1.1.4.</span> <span class="nav-text">Django层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web层"><span class="nav-number">1.1.5.</span> <span class="nav-text">Web层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统模块设计"><span class="nav-number">1.2.</span> <span class="nav-text">系统模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统启动模块"><span class="nav-number">1.2.1.</span> <span class="nav-text">系统启动模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node模块"><span class="nav-number">1.2.2.</span> <span class="nav-text">Node模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RPC模块"><span class="nav-number">1.2.3.</span> <span class="nav-text">RPC模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node子模块"><span class="nav-number">1.2.4.</span> <span class="nav-text">Node子模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创世节点启动流程"><span class="nav-number">1.3.</span> <span class="nav-text">创世节点启动流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它节点启动时序"><span class="nav-number">1.4.</span> <span class="nav-text">其它节点启动时序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心算法设计与实现"><span class="nav-number">2.</span> <span class="nav-text">核心算法设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PoW共识算法设计与实现"><span class="nav-number">2.1.</span> <span class="nav-text">PoW共识算法设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PoW算法实现验证-——-模拟双花操作："><span class="nav-number">2.1.1.</span> <span class="nav-text">PoW算法实现验证 —— 模拟双花操作：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POS共识算法设计与实现"><span class="nav-number">2.2.</span> <span class="nav-text">POS共识算法设计与实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PBFT共识算法设计与实现"><span class="nav-number">2.3.</span> <span class="nav-text">PBFT共识算法设计与实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#攻击仿真实验"><span class="nav-number">3.</span> <span class="nav-text">攻击仿真实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不同算力攻击成功概率"><span class="nav-number">3.1.</span> <span class="nav-text">不同算力攻击成功概率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟实验结果："><span class="nav-number">3.1.1.</span> <span class="nav-text">模拟实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同带宽下分叉概率"><span class="nav-number">3.2.</span> <span class="nav-text">不同带宽下分叉概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP劫持攻击模拟"><span class="nav-number">3.3.</span> <span class="nav-text">BGP劫持攻击模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP劫持攻击"><span class="nav-number">3.3.1.</span> <span class="nav-text">BGP劫持攻击</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#演示形式"><span class="nav-number">4.</span> <span class="nav-text">演示形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化页面内容展示"><span class="nav-number">4.1.</span> <span class="nav-text">可视化页面内容展示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">4.1.1.</span> <span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点信息"><span class="nav-number">4.1.2.</span> <span class="nav-text">节点信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交易信息"><span class="nav-number">4.1.3.</span> <span class="nav-text">交易信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链信息"><span class="nav-number">4.1.4.</span> <span class="nav-text">区块链信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建交易功能展示"><span class="nav-number">4.1.5.</span> <span class="nav-text">创建交易功能展示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP攻击过程展示"><span class="nav-number">4.2.</span> <span class="nav-text">BGP攻击过程展示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#受害者节点信息"><span class="nav-number">4.2.2.</span> <span class="nav-text">受害者节点信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#攻击者节点信息"><span class="nav-number">4.2.3.</span> <span class="nav-text">攻击者节点信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP攻击后网络结构"><span class="nav-number">4.2.4.</span> <span class="nav-text">BGP攻击后网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP攻击后受害者节点信息"><span class="nav-number">4.2.5.</span> <span class="nav-text">BGP攻击后受害者节点信息</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
