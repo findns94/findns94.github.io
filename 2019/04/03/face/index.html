@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="大规模多媒体,深度学习,人脸识别,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="人脸识别的研究历史比较悠久。Galton早在 1888 年和 1910 年就分别在《Nature》杂志发表了两篇关于利用人脸进行身份识别的文章，对人类自身的人脸识别能力进行了分析。但当时还不可能涉及到人脸的自动识别问题。近年来，人脸识别研究得到了诸多研究人员的青睐，涌现出了诸多技术方法。尤其是1990年以来，人脸识别更得到了长足的发展。几乎所有知名的理工科大学和主要IT产业公司都有研究组在从事相关">
+<meta name="keywords" content="大规模多媒体,深度学习,人脸识别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人脸识别迁移学习">
+<meta property="og:url" content="https://findnorthstar.github.io/2019/04/03/face/index.html">
+<meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="人脸识别的研究历史比较悠久。Galton早在 1888 年和 1910 年就分别在《Nature》杂志发表了两篇关于利用人脸进行身份识别的文章，对人类自身的人脸识别能力进行了分析。但当时还不可能涉及到人脸的自动识别问题。近年来，人脸识别研究得到了诸多研究人员的青睐，涌现出了诸多技术方法。尤其是1990年以来，人脸识别更得到了长足的发展。几乎所有知名的理工科大学和主要IT产业公司都有研究组在从事相关">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/haar_origin.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/haar_extract.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/mtcnn_origin.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/mtcnn_extract.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_1.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_2.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_3.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_4.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_5.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_6.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_7.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_8.jpg">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/loss_1.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/loss_2.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/facenet.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_1.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_2.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_3.png">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_4.png">
+<meta property="og:updated_time" content="2019-04-03T15:17:11.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人脸识别迁移学习">
+<meta name="twitter:description" content="人脸识别的研究历史比较悠久。Galton早在 1888 年和 1910 年就分别在《Nature》杂志发表了两篇关于利用人脸进行身份识别的文章，对人类自身的人脸识别能力进行了分析。但当时还不可能涉及到人脸的自动识别问题。近年来，人脸识别研究得到了诸多研究人员的青睐，涌现出了诸多技术方法。尤其是1990年以来，人脸识别更得到了长足的发展。几乎所有知名的理工科大学和主要IT产业公司都有研究组在从事相关">
+<meta name="twitter:image" content="https://findnorthstar.github.io/2019/04/03/face/haar_origin.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://findnorthstar.github.io/2019/04/03/face/">
+
+
+
+
+
+  <title>人脸识别迁移学习 | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silver Bullet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/04/03/face/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Martin Zhao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver Bullet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">人脸识别迁移学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T22:49:31+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程/" itemprop="url" rel="index">
+                    <span itemprop="name">课程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>人脸识别的研究历史比较悠久。Galton早在 1888 年和 1910 年就分别在《Nature》杂志发表了两篇关于利用人脸进行身份识别的文章，对人类自身的人脸识别能力进行了分析。但当时还不可能涉及到人脸的自动识别问题。近年来，人脸识别研究得到了诸多研究人员的青睐，涌现出了诸多技术方法。尤其是1990年以来，人脸识别更得到了长足的发展。几乎所有知名的理工科大学和主要IT产业公司都有研究组在从事相关研究。</p>
+<p>初期，传统的人脸识别通常只是作为一个一般性的模式识别问题来研究，所采用的主要技术方案是基于人脸几何结构特征（Geometric feature based）的方法。这集中体现在人们对于剪影（Profile）的研究上，人们对面部剪影曲线的结构特征提取与分析方面进行了大量研究。随后，Eigen Face, Fisher Face和弹性图匹配等基于人脸表观的建模方法不断被提出。从1990年末期开始，大家开始关注面向真实条件的人脸识别问题，提出了不同的人脸空间模型，包括以线性判别分析为代表的线性建模方法，以Kernel方法为代表的非线性建模方法和基于3D信息的3D人脸识别方法。提出了新的特征表示，包括局部描述子（Gabor Face, LBP Face等）和深度学习方法。</p>
+<p>2014年以来，深度学习+大数据（海量的有标注人脸数据）已经成为人脸识别领域的主流技术路线，其中VGGFace，DeepFace，FaceNet等深层神经网络不断被提出，人脸识别准确率也不断的提升。2014年，Facebook发表于CVPR14的工作DeepFace将大数据（400万人脸数据）与深度卷积网络相结合，在LFW数据集上逼近了人类的识别精度。Google发表于CVPR2015的工作FaceNet采用Triplet Loss损失函数在LFW数据集上超越了人类的识别精度。</p>
+<a id="more"></a>
+<h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><p>人脸识别任务常用的数据集包括LFW数据集，LFW数据库是真实条件下的人脸识别问题的一个测试基准。LFW数据集包括来源于Internet的5,749人的13,233张人脸图像，其中有1680人有两张或以上的图像。LFW的标准测试协议包括6000对人脸的十折确认任务，每折包括300对正例和300对反例，采用十折平均精度作为性能评价指标。</p>
+<p>Google于2015年首次提出FaceNet, 一个在LFW数据集上十折平均精度高达到99.63%，也是当所有工作中最高的一个结果，几乎宣告了LFW上从2008年到2015年长达8年之久的性能竞赛的结束。FaceNet采用了22层的深层卷积网络和海量的人脸数据（800万人的2亿张图像）以及常用于图像检索任务的Triplet Loss损失函数。FaceNet并没有用传统的softmax的方式去进行分类学习，它去掉了sofmax后的结构，经过L2的归一化，然后得到特征表示，基于这个特征表示计算三元组损失。使用元组计算距离的方式来进行模型的训练，这种方式学到的图像表示非常紧致，128位足以表示其特征。</p>
+<p>VGGFace是牛津大学视觉研究所于2015提出的，他们采用VGGNet作为网络架构，网络的最后一层是分类器(W,b)，分类的误差用softmax log-loss来计算。一旦学习过程完成后，就可以把分类器(W,b)去除，分数向量ϕ(lt)便可以作为特征通过计算欧式距离进行人脸校验。 上面得到的分数向量能够进一步得到改善，通过在欧式空间里面使用“triplet loss”的方式进行训练。它最终在LFW模型上的准确率为98.95%。</p>
+<p>2016年提出的MTCNN是一种高效的人脸检测方法。MTCNN由3个网络结构组成（P-Net,R-Net,O-Net）。Proposal Network (P-Net)：该网络结构主要获得了人脸区域的候选窗口和边界框的回归向量。并用该边界框做回归，对候选窗口进行校准，然后通过非极大值抑制（NMS）来合并高度重叠的候选框。 Refine Network (R-Net)：该网络结构还是通过边界框回归和NMS来去掉那些false-positive区域。只是由于该网络结构和P-Net网络结构有差异，多了一个全连接层，所以会取得更好的抑制false-positive的作用。Output Network (O-Net)：该层比R-Net层又多了一层卷积层，所以处理的结果会更加精细。作用和R-Net层作用一样。但是该层对人脸区域进行了更多的监督，同时还会输出5个landmark。</p>
+<h1 id="实验方法"><a href="#实验方法" class="headerlink" title="实验方法"></a>实验方法</h1><h2 id="人脸对齐"><a href="#人脸对齐" class="headerlink" title="人脸对齐"></a>人脸对齐</h2><p>由于获得的人脸图像常常形状各异，这时就需要对人脸形状进行统一处理方便进行比较。具体使用的对齐操作主要有切割出人脸、对人脸进行旋转，其目的主要是去除背景噪声对人脸比较的影响，使得2个人脸尽量在提取出有效特征的前提下进行比较。</p>
+<h3 id="利用opencv的haar特征提取人脸"><a href="#利用opencv的haar特征提取人脸" class="headerlink" title="利用opencv的haar特征提取人脸"></a>利用opencv的haar特征提取人脸</h3><p>由于haar特征值反映了图像的灰度变化情况，所以加载opencv训练好的脸部的特征的xml文件[1]可以用来提取人脸，具体使用过的xml特征文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">haarcascade_frontalface_default.xml</span><br><span class="line">haarcascade_frontalface_alt.xml</span><br><span class="line">haarcascade_frontalface_alt2.xml</span><br><span class="line">haarcascade_frontalface_alt_tree.xml</span><br><span class="line">haarcascade_profileface.xml</span><br></pre></td></tr></table></figure>
+<p>其中前4个xml文件用于提取正脸，后4个xml文件用于提取侧脸，提取出的示例如下图：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">原始图片</th>
+<th style="text-align:center">提取后图片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2019/04/03/face/haar_origin.jpg" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/haar_extract.jpg" alt="image"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实际提取的效果如下表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">训练集提取数目</th>
+<th style="text-align:center">训练集提取百分比</th>
+<th style="text-align:center">测试集提取数目</th>
+<th style="text-align:center">测试集提取百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1569</td>
+<td style="text-align:center">78.45%</td>
+<td style="text-align:center">1554</td>
+<td style="text-align:center">77.7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="利用MTCNN提取人脸"><a href="#利用MTCNN提取人脸" class="headerlink" title="利用MTCNN提取人脸"></a>利用MTCNN提取人脸</h3><p>MTCNN是发表在ECCV 2016的工作，采用级联的卷积神经网络进行人脸五官特征点检测，适用于人脸对齐的任务。</p>
+<p>这里使用的是实现在MxNet框架下的MTCNN进行人脸对齐，实验示例如下图：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">原始图片</th>
+<th style="text-align:center">提取后图片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2019/04/03/face/mtcnn_origin.jpg" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/mtcnn_extract.jpg" alt="image"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">训练集提取数目</th>
+<th style="text-align:center">训练集提取百分比</th>
+<th style="text-align:center">测试集提取数目</th>
+<th style="text-align:center">测试集提取百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1965</td>
+<td style="text-align:center">98.25%</td>
+<td style="text-align:center">1971</td>
+<td style="text-align:center">98.55%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>相比于opencv和haar特征提取人脸的方法，MCTNN不仅能提取出更多的人脸，而且能对倾斜的人脸进行旋转，得到正脸能有效提高提高比较人脸时的准确率。</p>
+<h2 id="数据增广"><a href="#数据增广" class="headerlink" title="数据增广"></a>数据增广</h2><p>在深度学习中，增加数据量能提高模型的泛化能力。主要采用Keras的ImageDataGenerator和imgaug进行数据增广。</p>
+<h3 id="利用ImageDataGenerator进行数据增广"><a href="#利用ImageDataGenerator进行数据增广" class="headerlink" title="利用ImageDataGenerator进行数据增广"></a>利用ImageDataGenerator进行数据增广</h3><p>ImageDataGenerator是Keras提供的API，主要提供的数据增广方式如下：</p>
+<ul>
+<li>旋转 | 反射变换(Rotation/reflection): 随机旋转图像一定角度；改变图像内容的朝向</li>
+<li>翻转变换(flip): 沿着水平或者垂直方向翻转图像</li>
+<li>缩放变换(zoom): 按照一定的比例放大或者缩小图像</li>
+<li>平移变换(shift): 在图像平面上对图像以一定方式进行平移；可以采用随机或人为定义的方式指定平移范围和平移步长, 沿水平或竖直方向进行平移. 改变图像内容的位置</li>
+<li>尺度变换(scale): 对图像按照指定的尺度因子, 进行放大或缩小； 或者参照SIFT特征提取思想, 利用指定的尺度因子对图像滤波构造尺度空间. 改变图像内容的大小或模糊程度</li>
+<li>对比度变换(contrast): 在图像的HSV颜色空间，改变饱和度S和V亮度分量，保持色调H不变. 对每个像素的S和V分量进行指数运算(指数因子在0.25到4之间), 增加光照变化</li>
+<li>噪声扰动(noise): 对图像的每个像素RGB进行随机扰动, 常用的噪声模式是椒盐噪声和高斯噪声</li>
+</ul>
+<p>实际产生的数据增广例子如下图所示：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">增广样例1</th>
+<th style="text-align:center">增广样例2</th>
+<th style="text-align:center">增广样例3</th>
+<th style="text-align:center">增广样例4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_1.png" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_2.jpg" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_3.jpg" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_4.jpg" alt="image"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="利用imgaug进行数据增广"><a href="#利用imgaug进行数据增广" class="headerlink" title="利用imgaug进行数据增广"></a>利用imgaug进行数据增广</h3><p>imgaug[2]是一个封装好的用来进行图像增广的python库，支持多种图像变换。</p>
+<p>主要支持的图像变换功能如下：</p>
+<ul>
+<li>图像缩放</li>
+<li>图像截取(crop)或者填充(pad)</li>
+<li>水平镜面翻转、上下翻转</li>
+<li>变成灰度图</li>
+<li>高斯扰动</li>
+<li>锐化</li>
+<li>浮雕效果</li>
+<li>图像变亮或变暗</li>
+</ul>
+<p>实际产生的数据增广例子如下图所示：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">增广样例1</th>
+<th style="text-align:center">增广样例2</th>
+<th style="text-align:center">增广样例3</th>
+<th style="text-align:center">增广样例4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_5.png" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_6.jpg" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_7.jpg" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/augmentation_8.jpg" alt="image"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实际实验共生成了91702张训练图片，平均每张训练集图片生成44.85张数据增广图片。</p>
+<h2 id="基于VGGFace进行Finetune"><a href="#基于VGGFace进行Finetune" class="headerlink" title="基于VGGFace进行Finetune"></a>基于VGGFace进行Finetune</h2><p>在Github上，作者rcmalli使用Keras在VGGFace数据集训练了人脸识别模型[3]，其使用的架构如下：</p>
+<ul>
+<li>VGG16</li>
+<li>RESNET50</li>
+<li>SENET50</li>
+<li>作者基于这3种网络架构，使用牛津大学VGGFace的人脸数据训练了用于人脸识别的网络。本次实验基于RESNET50架构的网络模型，保留其全连接层之前的权重，使用数据增广后的训练集图片对全连接层进行Finetune，训练过程中训练集和测试集的精度变化曲线如下：</li>
+</ul>
+<p><img src="/2019/04/03/face/loss_1.png" alt="image"></p>
+<p><img src="/2019/04/03/face/loss_2.png" alt="image"></p>
+<p>可以看出，经过50轮训练，训练集最高准确率达到0.9307，测试集最高准确率达到0.3375。<br>经过测试，得到Top 1准确率为0.3375，Top 5准确率为0.489。</p>
+<h2 id="基于FaceNet进行Lazy-Learning"><a href="#基于FaceNet进行Lazy-Learning" class="headerlink" title="基于FaceNet进行Lazy Learning"></a>基于FaceNet进行Lazy Learning</h2><p>2015年Google的研究人员提出了FaceNet，其通过训练一个网络来得到人脸的128维特征向量，从而通过计算特征向量之间的欧氏距离来得到人脸相似程度。</p>
+<p>在Github上，作者davidsandberg使用Inception ResNet v1架构，基于VGGFace2的数据训练的FaceNet[4]在LFW上评测精度达到0.9965。</p>
+<p>Lazy Learning的思想是计算测试样本与训练集样本的距离，所以仿照Lazy Learning的做法对于每个测试的人脸图片，计算其与所有训练集人脸的相似度，对得到的距离从低到高进行排列，从而返回与测试图片最相近的训练集人脸图片。</p>
+<p>提取人脸的过程如下图所示：</p>
+<p><img src="/2019/04/03/face/facenet.png" alt="image"></p>
+<p>FaceNet使用MTCNN提取输入图片的人脸部分，之后使用作者提供的compare.py计算给定2个图片的相似度，实验的过程中每张测试集的图片都需要与训练集的2000张图片的计算相似度，可以通过预先计算好图片提取人脸后的结果保存在硬盘上，然后计算人脸距离时读取之前保存的人脸提取的结果即可，这样可以极大的加快计算人脸距离的速度。</p>
+<p>最终得到的人脸距离示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0          0       1.3858</span><br><span class="line">0          1       1.3257</span><br><span class="line">0          2       1.5103</span><br><span class="line">0          3       1.1707</span><br><span class="line">0          4       1.0327</span><br><span class="line">0          5       1.4050</span><br><span class="line">0          6       1.5472</span><br><span class="line">0          7       1.3509</span><br><span class="line">0          8       1.3133</span><br><span class="line">0          9       1.4988</span><br></pre></td></tr></table></figure>
+<p>第1列为测试图片的下标，第2列为训练图片的下标，第3列为图片的距离。</p>
+<p>对所有图片的距离小到大排列后，输出其top 5下标，示例结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">120:332,120,1534,405,356</span><br><span class="line">121:121,193,1536,1252,1984</span><br><span class="line">122:122,987,1165,780,1317</span><br><span class="line">123:123,1077,1154,135,1222</span><br><span class="line">124:550,600,124,1292,589</span><br><span class="line">125:953,549,125,1981,1729</span><br><span class="line">126:126,138,1820,1699,462</span><br><span class="line">127:127,1003,1013,1441,325</span><br><span class="line">128:201,817,1002,2,717</span><br></pre></td></tr></table></figure>
+<p>第一列是测试集图片下标，“:”后是训练集中距离最近的top 5图片的下标。</p>
+<p>经过测试，使用原始的facenet自带模型，得到Top 1准确率为0.446，Top 5准确率为0.6115。</p>
+<h2 id="FaceNet-Finetune"><a href="#FaceNet-Finetune" class="headerlink" title="FaceNet Finetune"></a>FaceNet Finetune</h2><p>之前直接使用facenet的原始模型，里面没有这2000张人脸的信息。因此，我们基于原始的facenet模型，使用2000人脸图片作为训练集重新进行fine-tune</p>
+<ol>
+<li>loss：softmaxloss + centerloss + 正则项之和 ；训练集为2000张训练图片以及2000张对应的灰度图片. 加载facenet在vgg上的模型，进行finetune</li>
+<li>loss：triploss ； 训练集为2000张训练图片以及8000张对应的增广图片，加载facenet在vgg上的模型，进行finetune</li>
+</ol>
+<p>取得finetune后的模型后，已然按照上述过程对图片进行KNN（k=1,距离度量：欧式距离）分类器的训练。</p>
+<h2 id="集成分类器"><a href="#集成分类器" class="headerlink" title="集成分类器"></a>集成分类器</h2><p>三个基分类器的diversity主要体现在下面几点:</p>
+<ul>
+<li>Fine-tune时 参数，loss函数和训练图片不同<ul>
+<li>第一个模型:没有fine-tune</li>
+<li>第二个模型:softmaxloss + 2000张训练图片以及2000张对应的灰度图片</li>
+<li>第三个模型:triploss + 2000张训练图片以及8000张对应的增广图片</li>
+</ul>
+</li>
+<li>提取特征时，图片处理方式不同<ul>
+<li>第一个模型:原始图片使用MTCNN处理</li>
+<li>第二个模型:原始图片使用MTCNN和Opencv同时处理</li>
+<li>第三个模型:灰度图片使用MTCNN和Opencv同时处理</li>
+</ul>
+</li>
+</ul>
+<p>最终集成的结果Top 1准确率为0.6975，Top 5准确率为0.821。</p>
+<h1 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h1><p><img src="/2019/04/03/face/visualization_1.png" alt="image"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">导入模型跑出来的最终结果数据</th>
+<th style="text-align:center">输入待检测对象ID（id与所给测试集一致）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2019/04/03/face/visualization_2.png" alt="image"></td>
+<td style="text-align:center"><img src="/2019/04/03/face/visualization_3.png" alt="image"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>最后会展示最接近的5个人脸结果:</p>
+<p><img src="/2019/04/03/face/visualization_4.png" alt="image"></p>
+<h1 id="结论与思考"><a href="#结论与思考" class="headerlink" title="结论与思考"></a>结论与思考</h1><p>经过测试，得到Top 1准确率为0.6975，Top 5准确率为0.821。</p>
+<p>限于时间和资源的关系，可以改进和提升的点如下：</p>
+<ul>
+<li>可以对dlib、haar特征和MTCNN这3种人脸对齐的方法进行集成，可以更好地从训练图片和测试图片中切割出人脸区域，提高人脸比对的精确度</li>
+<li>可以考虑对眼睛、鼻子和耳朵等五官特征进行提取之后使用神经网络进行训练，会涉及到大量的人工给数据打标签的工作和五官特征提取方法的调研，然后对于每个五官特征训练出的分类器进行集成，利用多数投票机制根据五官特征的匹配结果匹配人脸，可能准确率会更高。</li>
+<li>通过人工分析，发现分类器出错的图片主要为人的正侧脸匹配错误，可以通过一些技术，例如tp-gan，把侧脸图片转为正脸图片</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades" target="_blank" rel="noopener">https://github.com/opencv/opencv/tree/master/data/haarcascades</a><br>[2] <a href="https://github.com/aleju/imgaug" target="_blank" rel="noopener">https://github.com/aleju/imgaug</a><br>[3] <a href="https://github.com/rcmalli/keras-vggface" target="_blank" rel="noopener">https://github.com/rcmalli/keras-vggface</a><br>[4] <a href="https://github.com/davidsandberg/facenet" target="_blank" rel="noopener">https://github.com/davidsandberg/facenet</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大规模多媒体/" rel="tag"># 大规模多媒体</a>
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+            <a href="/tags/人脸识别/" rel="tag"># 人脸识别</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/28/risk/" rel="next" title="网贷行业风险分析平台">
+                <i class="fa fa-chevron-left"></i> 网贷行业风险分析平台
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Martin Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相关工作"><span class="nav-number">1.</span> <span class="nav-text">相关工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验方法"><span class="nav-number">2.</span> <span class="nav-text">实验方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸对齐"><span class="nav-number">2.1.</span> <span class="nav-text">人脸对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用opencv的haar特征提取人脸"><span class="nav-number">2.1.1.</span> <span class="nav-text">利用opencv的haar特征提取人脸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用MTCNN提取人脸"><span class="nav-number">2.1.2.</span> <span class="nav-text">利用MTCNN提取人脸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据增广"><span class="nav-number">2.2.</span> <span class="nav-text">数据增广</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用ImageDataGenerator进行数据增广"><span class="nav-number">2.2.1.</span> <span class="nav-text">利用ImageDataGenerator进行数据增广</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用imgaug进行数据增广"><span class="nav-number">2.2.2.</span> <span class="nav-text">利用imgaug进行数据增广</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于VGGFace进行Finetune"><span class="nav-number">2.3.</span> <span class="nav-text">基于VGGFace进行Finetune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于FaceNet进行Lazy-Learning"><span class="nav-number">2.4.</span> <span class="nav-text">基于FaceNet进行Lazy Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FaceNet-Finetune"><span class="nav-number">2.5.</span> <span class="nav-text">FaceNet Finetune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成分类器"><span class="nav-number">2.6.</span> <span class="nav-text">集成分类器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可视化"><span class="nav-number">3.</span> <span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论与思考"><span class="nav-number">4.</span> <span class="nav-text">结论与思考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
