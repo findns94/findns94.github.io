@@ -92,8 +92,8 @@
 <meta property="og:image" content="https://findnorthstar.github.io/2019/04/22/dao-validation/user_state.PNG">
 <meta property="og:image" content="https://findnorthstar.github.io/2019/04/22/dao-validation/contract.PNG">
 <meta property="og:image" content="https://findnorthstar.github.io/2019/04/22/dao-validation/stack.PNG">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/22/dao-validation/splitDao_core.PNG">
-<meta property="og:updated_time" content="2019-04-22T15:07:02.065Z">
+<meta property="og:image" content="https://findnorthstar.github.io/2019/04/22/dao-validation/splitDao_core.png">
+<meta property="og:updated_time" content="2019-04-22T15:08:48.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="智能合约的形式化验证">
 <meta name="twitter:description" content="智能合约是一种代码合约和算法合同，将成为未来数字社会的基础技术，它利用协议和用户接口，完成合约过程的所有步骤。本文总结了智能合约主要技术特点和现存的可信，安全等问题，提出将形式化方法应用于智能合约的建模，模型检测和模型验证过程，以支持规模化智能合约的生成。">
@@ -357,7 +357,7 @@
 <h2 id="splitDao模块主要状态机"><a href="#splitDao模块主要状态机" class="headerlink" title="splitDao模块主要状态机"></a>splitDao模块主要状态机</h2><p>由于Nusmv不支持函数调用，所以为了模拟出函数调用栈的行为，我们又创建出了建议的stack栈模块，它的主要状态机如下图所示：</p>
 <h3 id="Stack模块状态机图"><a href="#Stack模块状态机图" class="headerlink" title="Stack模块状态机图"></a>Stack模块状态机图</h3><p><img src="/2019/04/22/dao-validation/stack.PNG" alt="image"></p>
 <p>当发来的operation操作为push操作时，该栈会把当前状态存入function_stack数组中，并且对应的指针counts+1；当operation为pop时，会将function_stack数组中指针当前指向的状态返回，同时指针counts-1；当operation为relax时，状态不变。</p>
-<h3 id="splitDao模块状态机核心状态图"><a href="#splitDao模块状态机核心状态图" class="headerlink" title="splitDao模块状态机核心状态图"></a>splitDao模块状态机核心状态图</h3><p><img src="/2019/04/22/dao-validation/splitDao_core.PNG" alt="image"></p>
+<h3 id="splitDao模块状态机核心状态图"><a href="#splitDao模块状态机核心状态图" class="headerlink" title="splitDao模块状态机核心状态图"></a>splitDao模块状态机核心状态图</h3><p><img src="/2019/04/22/dao-validation/splitDao_core.png" alt="image"></p>
 <p>splitDao初始状态投票数votingNum的值为0，当有合同发起split请求后，投票数目就会相应的增加1，当投票的数目达到某一个阈值（我们这里假设为20）后，splitDao开始进行split操作，当splitDao发起分裂请求后，时间now就会一直累加1，根据TheDao的设计，需要等待7天后，split操作才会完全生效，之后将会创建一个新的child_Dao，并将访问控制权child_token设置为true并返回给所有的split请求者。</p>
 <p>之后，splitDao需要将原合同的Ether转到新的child_Dao中，并且计算全合同的reward值，一并转入到child_Dao。因此splitDao会发起withdraw请求，并将状态设为withdraw_reward_for状态。在这里，它会先检查paidout是否小于reward（这一步很重要，之后会详细的介绍），如果满足条件，它就会调用payout方法。</p>
 <p>而在payout方法中，它首先会去调用用户原合同中自定义的callbackFunction，然后紧接着就会调用真实的转账函数Payout，若callback函数中递归调用spiltDao，那么每次payout调用真实转账函数Payout都会暂时将其压入栈中，直到递归结束，栈中实际转账任务依次执行。这里我们通过我们自己定义的简单栈模拟这一过程：每次调用callback之前将operation置为push，将PayOut操作push进入栈。当callback不在调用splitDao时，将operation置为pop，此时栈中的PayOut操作将会依次被pop出来执行。</p>
