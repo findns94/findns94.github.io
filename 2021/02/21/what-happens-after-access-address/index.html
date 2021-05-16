@@ -88,7 +88,7 @@
 <meta property="og:description" content="地址访问案例以访问用户态虚拟地址0x0000007000003000为例，有如下代码。 1234567891011#include &amp;lt;sys/mman.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    unsigned long long *x = (unsigned long long)0x0000007000003000;    int *">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://findnorthstar.github.io/2021/02/21/what-happens-after-access-address/page_table.png">
-<meta property="og:updated_time" content="2021-02-26T15:18:11.906Z">
+<meta property="og:updated_time" content="2021-03-14T02:37:38.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Arm-Linux中访问地址后的缺页过程">
 <meta name="twitter:description" content="地址访问案例以访问用户态虚拟地址0x0000007000003000为例，有如下代码。 1234567891011#include &amp;lt;sys/mman.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    unsigned long long *x = (unsigned long long)0x0000007000003000;    int *">
@@ -326,7 +326,7 @@
       
         <h1 id="地址访问案例"><a href="#地址访问案例" class="headerlink" title="地址访问案例"></a>地址访问案例</h1><p>以访问用户态<strong>虚拟地址</strong>0x0000007000003000为例，有如下代码。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> *x = (<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>)<span class="number">0x0000007000003000</span>;</span><br><span class="line">    <span class="keyword">int</span> *p = (<span class="keyword">int</span>*)mmap(<span class="number">0x0000007000003000</span>, <span class="keyword">sizeof</span>(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>) * <span class="number">10</span>, PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, <span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"before write, x = %llu\n"</span>, *x);</span><br><span class="line">    *x = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after write,  x = %llu\n"</span>, *x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果没有对用户态虚拟地址<code>0x0000007000003000</code>通过mmap提前进行映射并设置读写权限，会出现<code>Segmentation fault (core dumped)</code>，原因是<code>0x0000007000003000</code>并未再进程的虚拟地址空间通过mmap或者brk分配vma(vitrual memory areat)进行管理，此时该虚拟地址是无法访问的。编译后输出的结果如下。</p>
+<p>如果没有对用户态虚拟地址<code>0x0000007000003000</code>通过mmap提前进行映射并设置读写权限，会出现<code>Segmentation fault (core dumped)</code>，原因是<code>0x0000007000003000</code>并未再进程的虚拟地址空间通过mmap或者brk分配vma(vitrual memory area)进行管理，此时该虚拟地址是无法访问的。编译后输出的结果如下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">before write, x = 0</span><br><span class="line">after write,  x = 1</span><br></pre></td></tr></table></figure>
 <p>可以看到成功向用户态虚拟地址<code>0x0000007000003000</code>写入了新的值。</p>
 <a id="more"></a>
@@ -455,6 +455,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/05/16/learn-arm-assembly-language/" rel="prev" title="学习Arm-v8汇编-环境准备">
+                学习Arm-v8汇编-环境准备 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -530,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -552,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

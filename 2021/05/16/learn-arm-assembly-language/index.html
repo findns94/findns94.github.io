@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Arm,汇编,">
 
 
 
@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Silver Bullet">
-<meta property="og:url" content="https://findnorthstar.github.io/page/2/index.html">
+<meta name="description" content="环境准备 安装编译调试组件 由于手头只有带有WSL的x86环境，需要采用模拟执行的方式编译运行和调试arm程序 参考这篇gist文章，可实现在x86环境上通过执行armv8程序，有以下几个步骤 在WSL上安装 交叉编译环境：sudo apt-get install libc6-dev-arm64-cross gcc-aarch64-linux-gnu QEMU模拟环境：sudo apt-get i">
+<meta name="keywords" content="Arm,汇编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Arm-v8汇编-环境准备">
+<meta property="og:url" content="https://findnorthstar.github.io/2021/05/16/learn-arm-assembly-language/index.html">
 <meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="环境准备 安装编译调试组件 由于手头只有带有WSL的x86环境，需要采用模拟执行的方式编译运行和调试arm程序 参考这篇gist文章，可实现在x86环境上通过执行armv8程序，有以下几个步骤 在WSL上安装 交叉编译环境：sudo apt-get install libc6-dev-arm64-cross gcc-aarch64-linux-gnu QEMU模拟环境：sudo apt-get i">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://findnorthstar.github.io/2021/05/16/learn-arm-assembly-language/gdb_multiarch_sample.PNG">
+<meta property="og:updated_time" content="2021-05-16T14:35:11.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Silver Bullet">
+<meta name="twitter:title" content="学习Arm-v8汇编-环境准备">
+<meta name="twitter:description" content="环境准备 安装编译调试组件 由于手头只有带有WSL的x86环境，需要采用模拟执行的方式编译运行和调试arm程序 参考这篇gist文章，可实现在x86环境上通过执行armv8程序，有以下几个步骤 在WSL上安装 交叉编译环境：sudo apt-get install libc6-dev-arm64-cross gcc-aarch64-linux-gnu QEMU模拟环境：sudo apt-get i">
+<meta name="twitter:image" content="https://findnorthstar.github.io/2021/05/16/learn-arm-assembly-language/gdb_multiarch_sample.PNG">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://findnorthstar.github.io/page/2/">
+  <link rel="canonical" href="https://findnorthstar.github.io/2021/05/16/learn-arm-assembly-language/">
 
 
 
 
 
-  <title>Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>学习Arm-v8汇编-环境准备 | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -140,8 +147,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -229,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/02/23/recommendation/">
+    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2021/05/16/learn-arm-assembly-language/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Martin Zhao">
@@ -246,9 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/23/recommendation/" itemprop="url">个性化简历推荐</a></h1>
+          <h1 class="post-title" itemprop="name headline">学习Arm-v8汇编-环境准备</h1>
         
 
         <div class="post-meta">
@@ -260,8 +264,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T20:59:16+08:00">
-                2019-02-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-16T20:25:50+08:00">
+                2021-05-16
               </time>
             
 
@@ -283,8 +287,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科研/" itemprop="url" rel="index">
-                    <span itemprop="name">科研</span>
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
                   </a>
                 </span>
 
@@ -320,17 +324,56 @@
       
 
       
-        
-          <p>本系统采用机器学习方法与大数据平台训练海量的求职者的简历，不同于普通的条件筛选，该系统能高效准确地从大数据处理角度就IT类招聘方所要招聘的岗位提供合适可靠的人才推荐，减小招聘方的招聘成本，让大数据技术拉近招聘方与优秀人才的距离。</p>
-<p>对海量简历数据和公司招聘信息进行研究，分析描述个人简历、公司以及公司职位的特征信息，站在招聘者的角度，围绕个性化推荐技术进行探索研究，以帮助招聘人员以更准确、更高效的方式获取人才信息。基于该思想实现一个原型系统，该系统可以根据招聘职位的特征来自动为其推荐更合理的简历。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/23/recommendation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><ul>
+<li>安装编译调试组件<ul>
+<li>由于手头只有带有WSL的x86环境，需要采用模拟执行的方式编译运行和调试arm程序</li>
+<li>参考这篇<a href="https://gist.github.com/luk6xff/9f8d2520530a823944355e59343eadc1" target="_blank" rel="noopener">gist文章</a>，可实现在x86环境上通过执行armv8程序，有以下几个步骤<ul>
+<li>在WSL上安装<ul>
+<li>交叉编译环境：<code>sudo apt-get install libc6-dev-arm64-cross gcc-aarch64-linux-gnu</code></li>
+<li>QEMU模拟环境：<code>sudo apt-get install qemu qemu-system qemu-user</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>编译运行命令<ul>
+<li>准备源代码<code>hello.c</code>，内容一般是打印<code>hello ARM</code>之类的</li>
+<li>静态链接编译：<code>aarch64-linux-gnu-gcc -static -ohello hello.c</code><ul>
+<li>优点：运行不需要依赖动态库，指令执行地址确定</li>
+<li>缺点：编译出的二进制体积较大，依赖库升级比较麻烦</li>
+</ul>
+</li>
+<li>静态编译运行：<code>qemu-aarch64 hello</code></li>
+<li>动态链接编译：<code>aarch64-linux-gnu-gcc -ohello hello.c</code><ul>
+<li>运行需要指定动态链接库目录</li>
+</ul>
+</li>
+<li>动态编译运行：<code>qemu-aarch64 -L /usr/aarch64-linux-gnu/ hello</code></li>
+</ul>
+</li>
+<li>调试命令<ul>
+<li>根据这篇<a href="http://ubuntuforums.org/showthread.php?t=2010979&amp;s=096fb05dbd59acbfc8542b71f4b590db&amp;p=12061325#post12061325" target="_blank" rel="noopener">文章</a>以及<a href="https://stackoverflow.com/questions/20590155/how-to-single-step-arm-assembly-in-gdb-on-qemu" target="_blank" rel="noopener">stackoverflow</a>的讨论，可以通过安装gdb-multiarch来调试程序</li>
+<li>编译选项加入取消地址随机化的和编译带调试符号的选项<ul>
+<li><code>aarch64-linux-gnu-gcc -fno-pie -ggdb3 -no-pie -o hello hello.c</code></li>
+</ul>
+</li>
+<li>运行选项同样指定动态链接库目录<ul>
+<li><code>qemu-aarch64 -L /usr/aarch64-linux-gnu/ -g 10101 ./hello</code></li>
+</ul>
+</li>
+<li>新开窗口通过gdb-multiarch连上10101端口进行调试<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gdb-multiarch -q --nh \</span><br><span class="line">  -ex 'set architecture aarch64' \</span><br><span class="line">  -ex 'set sysroot /usr/aarch64-linux-gnu/' \</span><br><span class="line">  -ex 'file hello' \</span><br><span class="line">  -ex 'target remote localhost:10101' \</span><br><span class="line">  -ex 'break main' \</span><br><span class="line">  -ex continue \</span><br><span class="line">  -ex 'layout split'</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>调试的示例如下，可以通过分割layout查看调试的源代码和汇编指令等，比较方便。可以看到printf实际上是调用到libc提供的puts是实现的，有gdb之后单步调试就比较方便了。</p>
+<p><img src="/2021/05/16/learn-arm-assembly-language/gdb_multiarch_sample.PNG" alt="four steps"></p>
+<p>通过以上的配置，基本就可以愉快的开始调试和学习Arm-v8汇编了。</p>
+
       
     </div>
     
@@ -345,160 +388,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/02/22/sitting_posture/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Martin Zhao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silver Bullet">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/22/sitting_posture/" itemprop="url">Detecting Improper Sitting Posture with a Lateral Positioned Motion-sensing Camera</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T20:00:00+08:00">
-                2019-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/科研/" itemprop="url" rel="index">
-                    <span itemprop="name">科研</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Arm/" rel="tag"># Arm</a>
           
-
+            <a href="/tags/汇编/" rel="tag"># 汇编</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><strong>Abstract</strong> Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing camera and relative software development kit(SDK), it is possible to implement an application using skeleton detecting technology. In this paper, a method is introduced to detect sitting posture from a lateral view without disturbing the user. To analyse video stream information, a skeleton thinning algorithm is described and averaging process aims to locate main joints specifically from the lateral side. The results show this method has high accuracy when detecting improper sitting postures.<br><strong>Keywords</strong> Ergonomics; Motion-sensing Camera; Gesture Recognition; OpenNI</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/22/sitting_posture/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/02/21/what-happens-after-access-address/" rel="next" title="Arm-Linux中访问地址后的缺页过程">
+                <i class="fa fa-chevron-left"></i> Arm-Linux中访问地址后的缺页过程
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -508,14 +429,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -523,6 +441,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -543,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +535,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境准备"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -737,6 +684,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
