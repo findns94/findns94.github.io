@@ -83,34 +83,34 @@
 <meta name="keywords" content="大规模多媒体,深度学习,人脸识别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人脸识别迁移学习">
-<meta property="og:url" content="https://findnorthstar.github.io/2019/04/03/face/index.html">
+<meta property="og:url" content="https://findns94.github.io/2019/04/03/face/index.html">
 <meta property="og:site_name" content="Silver Bullet">
 <meta property="og:description" content="人脸识别的研究历史比较悠久。Galton早在 1888 年和 1910 年就分别在《Nature》杂志发表了两篇关于利用人脸进行身份识别的文章，对人类自身的人脸识别能力进行了分析。但当时还不可能涉及到人脸的自动识别问题。近年来，人脸识别研究得到了诸多研究人员的青睐，涌现出了诸多技术方法。尤其是1990年以来，人脸识别更得到了长足的发展。几乎所有知名的理工科大学和主要IT产业公司都有研究组在从事相关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/haar_origin.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/haar_extract.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/mtcnn_origin.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/mtcnn_extract.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_1.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_2.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_3.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_4.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_5.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_6.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_7.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/augmentation_8.jpg">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/loss_1.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/loss_2.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/facenet.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_1.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_2.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_3.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/04/03/face/visualization_4.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/haar_origin.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/haar_extract.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/mtcnn_origin.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/mtcnn_extract.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_1.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_2.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_3.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_4.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_5.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_6.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_7.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/augmentation_8.jpg">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/loss_1.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/loss_2.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/facenet.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/visualization_1.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/visualization_2.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/visualization_3.png">
+<meta property="og:image" content="https://findns94.github.io/2019/04/03/face/visualization_4.png">
 <meta property="og:updated_time" content="2019-04-03T15:17:44.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人脸识别迁移学习">
 <meta name="twitter:description" content="人脸识别的研究历史比较悠久。Galton早在 1888 年和 1910 年就分别在《Nature》杂志发表了两篇关于利用人脸进行身份识别的文章，对人类自身的人脸识别能力进行了分析。但当时还不可能涉及到人脸的自动识别问题。近年来，人脸识别研究得到了诸多研究人员的青睐，涌现出了诸多技术方法。尤其是1990年以来，人脸识别更得到了长足的发展。几乎所有知名的理工科大学和主要IT产业公司都有研究组在从事相关">
-<meta name="twitter:image" content="https://findnorthstar.github.io/2019/04/03/face/haar_origin.jpg">
+<meta name="twitter:image" content="https://findns94.github.io/2019/04/03/face/haar_origin.jpg">
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://findnorthstar.github.io/2019/04/03/face/">
+  <link rel="canonical" href="https://findns94.github.io/2019/04/03/face/">
 
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/04/03/face/">
+    <link itemprop="mainEntityOfPage" href="https://findns94.github.io/2019/04/03/face/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Martin Zhao">
@@ -691,7 +691,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -766,7 +766,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

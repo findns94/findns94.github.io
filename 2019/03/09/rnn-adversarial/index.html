@@ -83,24 +83,24 @@
 <meta name="keywords" content="对抗样本,RNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于RNN生成对抗输入序列">
-<meta property="og:url" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/index.html">
+<meta property="og:url" content="https://findns94.github.io/2019/03/09/rnn-adversarial/index.html">
 <meta property="og:site_name" content="Silver Bullet">
 <meta property="og:description" content="本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。 首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/original_grad.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/original_grad_after_sign.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/was_prob.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/being_prob.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/binary_classification.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/multi_classification.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/s_prob.png">
-<meta property="og:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/b_prob.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/original_grad.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/original_grad_after_sign.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/was_prob.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/being_prob.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/binary_classification.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/multi_classification.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/s_prob.png">
+<meta property="og:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/b_prob.png">
 <meta property="og:updated_time" content="2019-04-03T15:27:22.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于RNN生成对抗输入序列">
 <meta name="twitter:description" content="本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。 首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2">
-<meta name="twitter:image" content="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG">
+<meta name="twitter:image" content="https://findns94.github.io/2019/03/09/rnn-adversarial/cnn_adversarial_example.PNG">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/">
+  <link rel="canonical" href="https://findns94.github.io/2019/03/09/rnn-adversarial/">
 
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://findnorthstar.github.io/2019/03/09/rnn-adversarial/">
+    <link itemprop="mainEntityOfPage" href="https://findns94.github.io/2019/03/09/rnn-adversarial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Martin Zhao">
@@ -572,7 +572,7 @@ sign(x) = \begin{cases}
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -647,7 +647,7 @@ sign(x) = \begin{cases}
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

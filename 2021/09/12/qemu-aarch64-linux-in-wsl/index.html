@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="编译busybox生成_install安装编译依赖bison/flex12sudo apt-get install bison -ysudo apt-get install flex -y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在WSL中编译aarch64平台内核使用qemu启动">
+<meta property="og:url" content="https://findns94.github.io/2021/09/12/qemu-aarch64-linux-in-wsl/index.html">
+<meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="编译busybox生成_install安装编译依赖bison/flex12sudo apt-get install bison -ysudo apt-get install flex -y">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-05-07T12:41:35.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在WSL中编译aarch64平台内核使用qemu启动">
+<meta name="twitter:description" content="编译busybox生成_install安装编译依赖bison/flex12sudo apt-get install bison -ysudo apt-get install flex -y">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://findns94.github.io/2021/09/12/qemu-aarch64-linux-in-wsl/">
+
+
+
+
+
+  <title>在WSL中编译aarch64平台内核使用qemu启动 | Silver Bullet</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silver Bullet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://findns94.github.io/2021/09/12/qemu-aarch64-linux-in-wsl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Martin Zhao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver Bullet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在WSL中编译aarch64平台内核使用qemu启动</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-12T22:15:59+08:00">
+                2021-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="编译busybox生成-install"><a href="#编译busybox生成-install" class="headerlink" title="编译busybox生成_install"></a>编译busybox生成_install</h2><h3 id="安装编译依赖bison-flex"><a href="#安装编译依赖bison-flex" class="headerlink" title="安装编译依赖bison/flex"></a>安装编译依赖bison/flex</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install bison -y</span><br><span class="line">sudo apt-get install flex -y</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="编译busybox"><a href="#编译busybox" class="headerlink" title="编译busybox"></a>编译busybox</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">tar jxvf busybox-1.32.0.tar.bz2</span><br><span class="line">cd busybox-1.32.0</span><br><span class="line">mkdir build</span><br><span class="line">make O=build ARCH=arm64 defconfig</span><br><span class="line">make O=build ARCH=arm64 menuconfig</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改以下配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Don<span class="string">'t use /usr</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Build static binary (no shared libs)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> (aarch64-linux-gnu-) Cross compiler prefix</span></span><br><span class="line">make O=build</span><br><span class="line">make O=build install</span><br><span class="line">cd build/_install</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建空目录</span></span><br><span class="line">mkdir -pv &#123;etc,proc,sys,usr/&#123;bin,sbin&#125;&#125;</span><br><span class="line">vim init</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改init文件如下</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="comment">#!/bin/sh</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> mount -t proc none /proc</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> mount -t sysfs none /sys</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">echo</span> -e <span class="string">"\nBoot took <span class="variable">$(cut -d' ' -f1 /proc/uptime)</span> seconds\n"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">exec</span> /bin/sh</span></span><br><span class="line">chmod +x init</span><br><span class="line"><span class="meta">#</span><span class="bash"> 打包cpio文件系统生成busybox ramdisk filesystem</span></span><br><span class="line">find . -print0 | cpio --null -ov --format=newc | gzip &gt; ../initramfs.cpio.gz</span><br></pre></td></tr></table></figure>
+<h2 id="编译linux内核"><a href="#编译linux内核" class="headerlink" title="编译linux内核"></a>编译linux内核</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">cd /xxx/linux-4.19.157</span><br><span class="line">mkdir build</span><br><span class="line">make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- allnoconfig</span><br><span class="line">make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改以下配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; General setup</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; General setup</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -&gt; Configure standard kernel features</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Enable support <span class="keyword">for</span> printk</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; Executable file formats / Emulations</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Kernel support <span class="keyword">for</span> ELF binaries</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Kernel support <span class="keyword">for</span> scripts starting with <span class="comment">#!</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; Device Drivers</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -&gt; Generic Driver Options</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Maintain a devtmpfs filesystem to mount at /dev</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*]   Automount devtmpfs at /dev, after the kernel mounted the rootfs</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; Device Drivers</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -&gt; Character devices</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] Enable TTY</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; Device Drivers</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -&gt; Character devices</span></span><br><span class="line"><span class="meta">#</span><span class="bash">     -&gt; Serial drivers</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] ARM AMBA PL010 serial port support</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*]   Support <span class="keyword">for</span> console on AMBA serial port</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] ARM AMBA PL011 serial port support</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*]   Support <span class="keyword">for</span> console on AMBA serial port</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -&gt; File systems</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -&gt; Pseudo filesystems</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] /proc file system support</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [*] sysfs file system support</span></span><br><span class="line">make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8</span><br></pre></td></tr></table></figure>
+<h2 id="使用qemu启动linux"><a href="#使用qemu启动linux" class="headerlink" title="使用qemu启动linux"></a>使用qemu启动linux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-aarch64 \</span><br><span class="line">    -machine virt -cpu cortex-a53 -smp 1 -m 2G \</span><br><span class="line">    -kernel /xxx/linux-4.19.157/build/arch/arm64/boot/Image \</span><br><span class="line">    -append &quot;console=ttyAMA0&quot; \</span><br><span class="line">    -initrd /yyy/busybox-1.32.0/build/initramfs.cpio.gz \</span><br><span class="line">    -nographic</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/16/learn-arm-assembly-language/" rel="next" title="学习Arm-v8汇编-环境准备">
+                <i class="fa fa-chevron-left"></i> 学习Arm-v8汇编-环境准备
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/12/05/learn-linux-step-1/" rel="prev" title="linux内核学习-其一">
+                linux内核学习-其一 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Martin Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译busybox生成-install"><span class="nav-number">1.</span> <span class="nav-text">编译busybox生成_install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装编译依赖bison-flex"><span class="nav-number">1.1.</span> <span class="nav-text">安装编译依赖bison/flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译busybox"><span class="nav-number">1.2.</span> <span class="nav-text">编译busybox</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译linux内核"><span class="nav-number">2.</span> <span class="nav-text">编译linux内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用qemu启动linux"><span class="nav-number">3.</span> <span class="nav-text">使用qemu启动linux</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Martin Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
