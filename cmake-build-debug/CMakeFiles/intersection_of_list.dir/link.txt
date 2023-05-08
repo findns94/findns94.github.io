@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/intersection_of_list.dir/List/intersection_of_two_linked_lists.cpp.o  -o intersection_of_list 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/merge_two_list.dir/List/merge_two_sorted_lists.cpp.o  -o merge_two_list 

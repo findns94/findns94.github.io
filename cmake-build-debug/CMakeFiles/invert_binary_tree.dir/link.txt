@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/invert_binary_tree.dir/BinaryTree/invert_binary_tree.cpp.o  -o invert_binary_tree 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/island_num.dir/dfs/island_number.cpp.o  -o island_num 

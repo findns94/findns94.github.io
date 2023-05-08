@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/atoi.dir/IQ/atoi.cpp.o  -o atoi 

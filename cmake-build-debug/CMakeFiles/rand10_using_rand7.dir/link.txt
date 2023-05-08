@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/rand10_using_rand7.dir/IQ/rand10_using_rand7.cpp.o  -o rand10_using_rand7 

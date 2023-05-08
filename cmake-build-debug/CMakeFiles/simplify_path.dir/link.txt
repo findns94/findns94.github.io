@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/simplify_path.dir/data_structure/simplify_path.cpp.o  -o simplify_path 

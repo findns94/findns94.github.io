@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/max_subarray.dir/DP/max_subarray.cpp.o  -o max_subarray 

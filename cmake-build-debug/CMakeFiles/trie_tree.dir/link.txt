@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/trie_tree.dir/BinaryTree/trie_tree.cpp.o  -o trie_tree 

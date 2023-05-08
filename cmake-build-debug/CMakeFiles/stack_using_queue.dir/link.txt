@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/stack_using_queue.dir/data_structure/implement_stack_using_queue.cpp.o  -o stack_using_queue 

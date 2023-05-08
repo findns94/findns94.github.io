@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/spiral_order_matrix.dir/IQ/spiral_order_matrix.cpp.o  -o spiral_order_matrix 

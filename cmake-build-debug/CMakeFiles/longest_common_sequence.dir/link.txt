@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/longest_common_sequence.dir/DP/longest_common_sequence.cpp.o  -o longest_common_sequence 

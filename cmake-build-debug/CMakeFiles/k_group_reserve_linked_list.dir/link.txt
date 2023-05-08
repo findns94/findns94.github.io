@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/k_group_reserve_linked_list.dir/List/k_group_reserve_linked_list.cpp.o  -o k_group_reserve_linked_list 

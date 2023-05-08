@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/merge_two_sorted_array.dir/dual_pointer/merge_two_sorted_array.cpp.o  -o merge_two_sorted_array 

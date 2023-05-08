@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/next_permutation.dir/IQ/next_permutation.cpp.o  -o next_permutation 

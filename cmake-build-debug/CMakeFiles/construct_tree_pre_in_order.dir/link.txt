@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/construct_tree_pre_in_order.dir/BinaryTree/construct_tree_from_preorder_and_inorder.cpp.o  -o construct_tree_pre_in_order 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/rotate_matrix.dir/IQ/rotate_matrix.cpp.o  -o rotate_matrix 

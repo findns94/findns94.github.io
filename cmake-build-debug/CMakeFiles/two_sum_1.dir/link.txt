@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/two_sum_1.dir/dual_pointer/two_sum.cpp.o  -o two_sum_1 

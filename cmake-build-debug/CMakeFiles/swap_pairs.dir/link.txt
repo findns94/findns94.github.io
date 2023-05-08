@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/swap_pairs.dir/List/swap_nodes_in_pairs.cpp.o  -o swap_pairs 

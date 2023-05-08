@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/min_stack.dir/data_structure/min_stack.cpp.o  -o min_stack 

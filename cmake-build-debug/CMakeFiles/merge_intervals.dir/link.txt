@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/merge_intervals.dir/dual_pointer/merge_intervals.cpp.o  -o merge_intervals 

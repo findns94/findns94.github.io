@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/delete_nodes_tree.dir/BinaryTree/delete_nodes_and_return_forest.cpp.o  -o delete_nodes_tree 

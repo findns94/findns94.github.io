@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/insert_intervals.dir/dual_pointer/insert_intervals.cpp.o  -o insert_intervals 

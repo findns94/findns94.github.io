@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/is_symmetric.dir/BinaryTree/symmetric_tree.cpp.o  -o is_symmetric 

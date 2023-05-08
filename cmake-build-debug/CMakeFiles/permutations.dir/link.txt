@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/permutations.dir/dfs/permutations.cpp.o  -o permutations 

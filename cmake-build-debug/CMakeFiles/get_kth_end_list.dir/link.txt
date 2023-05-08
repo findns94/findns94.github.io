@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/get_kth_end_list.dir/List/get_kth_from_end_in_list.cpp.o  -o get_kth_end_list 

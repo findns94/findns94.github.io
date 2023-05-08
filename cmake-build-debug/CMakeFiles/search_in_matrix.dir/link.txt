@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/search_in_matrix.dir/binary/search_in_matrix.cpp.o  -o search_in_matrix 

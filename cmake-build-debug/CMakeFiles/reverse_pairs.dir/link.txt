@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/reverse_pairs.dir/sort/reserve_pairs.cpp.o  -o reverse_pairs 

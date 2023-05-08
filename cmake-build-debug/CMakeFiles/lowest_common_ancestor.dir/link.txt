@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lowest_common_ancestor.dir/BinaryTree/lowest_common_ancestor.cpp.o  -o lowest_common_ancestor 
