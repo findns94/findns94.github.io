@@ -1,0 +1,80 @@
+/* rehype-pretty-code figure/code block styling */
+[data-rehype-pretty-code-figure] {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+[data-rehype-pretty-code-title] {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b7280;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: ui-monospace, 'SFMono-Regular', monospace;
+}
+
+[data-rehype-pretty-code-figure] pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  background: transparent;
+}
+
+[data-rehype-pretty-code-figure] code {
+  font-family: ui-monospace, 'SFMono-Regular', 'Fira Code', monospace;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-weight: 500;
+  font-family: ui-monospace, 'SFMono-Regular', monospace;
+}
+
+/* Line highlighting */
+[data-highlighted-line] {
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 3px solid #3b82f6;
+  padding-left: calc(1rem - 3px);
+  margin-left: -1rem;
+  padding-right: 1rem;
+  margin-right: -1rem;
+  display: block;
+}
+
+/* Line numbers */
+[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.8em;
+}
+
+/* KaTeX rendering improvements */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+.katex {
+  font-size: 1.05em;
+}
