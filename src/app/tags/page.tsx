@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getAllTags } from '@/lib/posts'
 
 export const metadata = {
-  title: '标签',
+  title: 'Tags',
 }
 
 export default function TagsPage() {
@@ -10,10 +10,10 @@ export default function TagsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">标签</h1>
+      <h1 className="text-3xl font-bold mb-8">Tags</h1>
 
       {tags.length === 0 ? (
-        <p className="text-gray-500">暂无标签</p>
+        <p className="text-gray-500">No tags yet.</p>
       ) : (
         <div className="flex flex-wrap gap-3">
           {tags.map(({ tag, count }) => (

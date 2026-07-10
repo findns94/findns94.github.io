@@ -1,43 +1,43 @@
 ---
-title: 基于RNN生成对抗输入序列
+title: Generating Adversarial Input Sequences Based on RNN
 date: 2019-03-09 23:14:03
-tags: [对抗样本, RNN]
-categories: [科研]
+tags: [Adversarial Examples, RNN]
+categories: [Research]
 math: true
 ---
 
 
-本文是2018年秋季计算语言学课程第6次作业的总结，任务为基于RNN生成对抗输入序列。
+This article is a summary of the 6th assignment for the Fall 2018 Computational Linguistics course, with the task of generating adversarial input sequences based on RNN.
 
-首先总体介绍一下对抗样本攻击的概念，一些研究人员发现尽管深度神经网络具有很高的精确度，但是通过对输入进行微小的扰动，会导致模型预测结果完全错误。对于图片来说，这样的扰动通常十分微小而不能被察觉（人类直观上感觉不到图片的扰动），但这些对抗输入样本却能成功地欺骗深度学习模型。这种欺骗神经网络模型的攻击类型大致分为2类，非导向性攻击只需要使得图片的预测结果与先前标签不一致，而导向性攻击则需要把图片错误预测成特定的类别。值得注意的一点是研究人员发现生成的对抗样本对其它的模型仍然有效，这就是对抗样本的可迁移性。
+First, let me give an overall introduction to the concept of adversarial example attacks. Some researchers have found that although deep neural networks achieve very high accuracy, applying small perturbations to the input can cause the model's prediction results to be completely wrong. For images, such perturbations are usually so subtle that they are imperceptible (humans cannot intuitively perceive the perturbation in the image), yet these adversarial input examples can successfully fool deep learning models. This type of attack that deceives neural network models can be broadly divided into two categories: untargeted attacks only need to make the predicted result of the image inconsistent with the original label, while targeted attacks need to misclassify the image as a specific class. It is worth noting that researchers have found that generated adversarial examples are still effective on other models, which is known as the transferability of adversarial examples.
 
 <!-- more -->
 
-这里展示的结果主要是在卷积神经网络CNN上生成的对抗样本：
+The results shown here are mainly adversarial examples generated on convolutional neural networks (CNNs):
 
 ![cnn_adversarial_example](/posts/rnn-adversarial/images/cnn_adversarial_example.PNG)
 
-# 生成PTB语言模型的对抗输入序列
+# Generating Adversarial Input Sequences for a PTB Language Model
 
-## 模型准备
+## Model Preparation
 
-首先尝试运行tensorflow提供的语言模型训练[代码](https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py)，经过运行发现该代码仅打印模型的perplexity，没有提供输入一段话/一个词，预测下一个词的接口，因此又参考了Rani Nelken在GitHub上基于PTB语言模型训练代码修改的[版本](https://github.com/nelken/tf/blob/master/ptb_word_lm.py)，其不同之处在于：
+First, I tried to run the language model training [code](https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py) provided by TensorFlow. After running it, I found that this code only prints the model's perplexity and does not provide an interface to input a sentence/a word and predict the next word. Therefore, I also referenced the [version](https://github.com/nelken/tf/blob/master/ptb_word_lm.py) modified by Rani Nelken on GitHub based on the PTB language model training code. The differences are:
 
-- 建立了数字id到单词id的互相映射
-- 微调了RNN的结构，主要修改了RNN的output到计算loss的过程，保留中间结果logits从而得到下一个词预测的概率
-- 修改了读取文件的代码，每轮迭代返回test文本中的上一个词x和下一个词y
+- Established bidirectional mapping between numeric IDs and word IDs
+- Fine-tuned the RNN structure, mainly modifying the process from the RNN output to the loss computation, retaining the intermediate results logits to obtain the probabilities for the next word prediction
+- Modified the file reading code so that each iteration returns the previous word x and the next word y from the test text
 
-根据Rani Nelken版本的代码，经过small参数的训练13轮后得到可以用于测试的语言模型权重。
+Using Rani Nelken's version of the code, after 13 epochs of training with the small parameters, the language model weights usable for testing were obtained.
 
-## 对抗输入序列生成思路
+## Approach for Generating Adversarial Input Sequences
 
-这里模仿**FGSM**方法来生成对抗输入序列，首先对FGSM方法[1]进行简要介绍：
-FGSM方法是Ian Goodfellow等人在2015年提出的计算对抗扰动的方法。FGSM利用高维空间中深层网络模型的“线性”性质（而此时此类模型通常被认为是高度非线性的）来高效生成大量的对抗样本。
-Fast Gradient Sign Method(FGSM)方法计算扰动的公式如下：
+Here, I mimic the **FGSM** method to generate adversarial input sequences. First, let me give a brief introduction to the FGSM method [1]:
+The FGSM method is an approach for computing adversarial perturbations proposed by Ian Goodfellow et al. in 2015. FGSM exploits the "linear" property of deep network models in high-dimensional space (while such models are typically considered highly nonlinear) to efficiently generate large numbers of adversarial examples.
+The formula for computing perturbations using the Fast Gradient Sign Method (FGSM) is as follows:
 
 $$p = \epsilon sign(\nabla J(\theta,I_c,l))$$
 
-其中$I_c$代表原始图片，$l$是错误分类的类别标记，$\theta$是神经网络的参数，$\nabla J$表示计算当前原始图片$I_c$对于网络模型参数$\theta$的梯度，$sign$是示性函数（将原本非线性的扰动变为线性的扰动），定义如下：
+Where $I_c$ represents the original image, $l$ is the label of the misclassified category, $\theta$ is the neural network parameters, $\nabla J$ denotes the gradient of the cost function with respect to the network model parameters $\theta$ computed on the current original image $I_c$, and $sign$ is the sign function (turning the originally nonlinear perturbation into a linear perturbation), defined as follows:
 
 $$
 sign(x) = \begin{cases}
@@ -47,118 +47,117 @@ sign(x) = \begin{cases}
 \end{cases}
 $$
 
-而$\epsilon$的作用是限制扰动的强度在尽可能小的范围内。下面的2张图分别直观的展示了原始梯度和示性函数处理后梯度的例子
+The role of $\epsilon$ is to constrain the strength of the perturbation to be as small as possible. The two figures below intuitively show examples of the original gradient and the gradient after the sign function is applied, respectively.
 
-|原始梯度|示性函数处理后梯度|
+|Original Gradient|Gradient After Sign Function|
 |:---:|:---:|
 |![original_grad](/posts/rnn-adversarial/images/original_grad.png)|![original_grad_after_sign](/posts/rnn-adversarial/images/original_grad_after_sign.png)|
 
-而在语言模型的执行过程中，计算扰动p的公式如下：
+During the execution of the language model, the formula for computing the perturbation p is as follows:
 
 $$p = \epsilon \nabla J(\theta,I_c,l)$$
 
-其中$I_c$代表原始输入序列对应的embedding，$l$是RNN输出的final state的output计算logits后分类的类别标记，$\theta$是神经网络的参数，$\nabla J$表示计算当前输入序列对应的embedding $I_c$对于网络模型参数$\theta$的梯度，$\epsilon$是可以人为控制的扰动幅度。
+Where $I_c$ represents the embedding corresponding to the original input sequence, $l$ is the label classified from the final state output of the RNN after computing logits, $\theta$ is the neural network parameters, $\nabla J$ denotes the gradient of the cost function with respect to the network model parameters $\theta$ computed on the embedding $I_c$ corresponding to the current input sequence, and $\epsilon$ is the perturbation magnitude that can be manually controlled.
 
-这里没有使用示性函数$sign$的原因主要是考虑到扰动的数量级(大约为$10^{-3}$~$10^{-2}$)比embedding的数量级(大约为$10^{-1}$)要小，因此如果使用示性函数$sign$导致得到的扰动embedding过大，导致计算的距离较大，与“微小”扰动的目的相差较大。
+The reason for not using the sign function $sign$ here is mainly that the magnitude of the perturbation (approximately $10^{-3}$~$10^{-2}$) is smaller than the magnitude of the embedding (approximately $10^{-1}$). Therefore, if the sign function $sign$ is used, the resulting perturbation embedding would be too large, leading to a large computed distance, which deviates significantly from the goal of a "small" perturbation.
 
-由于RNN语言模型的输入序列是离散的，即输入的单词在转化为数字id后，还经过一层embedding转化为向量再参与RNN的计算，即使直接将扰动p加在原始embedding $I_c$上，有很大的概率仍然不能直接将embedding转化一个单词id。因此这里使用计算最近的欧式方式将加上扰动后的embedding转化为某个距离最近的单词id，这样就改变了输入的序列。过程如下，其中$e$代表原始单词id对应的embedding，$p$代表扰动，$e^*$代表加上扰动后的embedding：
+Since the input sequence to the RNN language model is discrete — i.e., the input words, after being converted to numeric IDs, are further converted into vectors through an embedding layer before participating in the RNN computation — even if the perturbation p is directly added to the original embedding $I_c$, there is a high probability that the embedding still cannot be directly converted to a word ID. Therefore, the approach here is to compute the nearest Euclidean distance to convert the perturbed embedding into the word ID of the nearest embedding, thereby changing the input sequence. The process is as follows, where $e$ represents the embedding corresponding to the original word ID, $p$ represents the perturbation, and $e^*$ represents the embedding after adding the perturbation:
 
 $$e^* = e + p$$
 
-然后求解距离扰动embedding $e^*$最近的embedding对应的id，其中n为语料库单词的数目，在本实验中n=20000：
+Then, solve for the embedding ID nearest to the perturbed embedding $e^*$, where n is the number of words in the corpus; in this experiment, n=20000:
 
 $$argmin_{id}{\sqrt{\sum_{id=0}^{n}(e^{*}-e_{id})^2}}$$
 
-## 对抗输入序列生成结果
+## Results of Adversarial Input Sequence Generation
 
-### 对抗输入序列示例
+### Example of Adversarial Input Sequence
 
-这里使用的原始测试输入序列为`{no it was n't}`，我们对倒数第2个单词`was`进行对抗输入序列的生成，通过添加求得的扰动得到对抗序列为`{no it being n't}`，这样我们就可以观察导数第2个单词的下一个词的预测概率的变化。
+The original test input sequence used here is `{no it was n't}`. We generate an adversarial input sequence for the second-to-last word `was`. By adding the computed perturbation, the adversarial sequence obtained is `{no it being n't}`. This allows us to observe the change in the prediction probabilities of the next word for the second-to-last word.
 
-### 预测下一个词的概率分布可视化
+### Visualization of the Probability Distribution for Predicting the Next Word
 
-|was的下一个词预测概率|being的下一个词预测概率|
+|Next Word Prediction Probabilities for "was"|Next Word Prediction Probabilities for "being"|
 |:---:|:---:|
 |![was_prob](/posts/rnn-adversarial/images/was_prob.png)|![being_prob](/posts/rnn-adversarial/images/being_prob.png)|
 
-可以看到，对抗序列的下一个词的预测Top 10概率分布发生了变化，尤其是Top 1预测的词从`the`变成了`<unk>`。本实验仍然存在这一些不足，例如没有使用量化指标（例如perplexity等）来评估所生成对抗输入序列的质量。未来可以考虑加对抗序列加入语言模型的重训练过程。
+It can be seen that the Top 10 probability distribution of the next word prediction for the adversarial sequence has changed, especially the Top 1 predicted word, which changed from `the` to `<unk>`. There are still some shortcomings in this experiment, such as the lack of quantitative metrics (e.g., perplexity, etc.) to evaluate the quality of the generated adversarial input sequences. In the future, adding adversarial sequences to the retraining process of the language model could be considered.
 
-# 生成seq2seq语言纠错模型的对抗输入序列
+# Generating Adversarial Input Sequences for a seq2seq Language Correction Model
 
-## 模型准备
+## Model Preparation
 
-这里采用的语言纠错模型来自于David Currie在Github上开源的[代码](https://github.com/Currie32/Spell-Checker/blob/master/SpellChecker.py)，其主要采用了基于seq2seq的encoder和decoder的网络结构，同时还使用了attention和双向LSTM等结构，其目的是训练英语语料的语言纠错模型，其示例如下：
+The language correction model used here is based on the open-source [code](https://github.com/Currie32/Spell-Checker/blob/master/SpellChecker.py) by David Currie on GitHub, which mainly adopts an encoder-decoder network structure based on seq2seq, and also uses attention and bidirectional LSTM structures. Its purpose is to train a language correction model for English corpora. Examples are shown below:
 
-> 原始序列：**Spellin** is difficult, **whch** is **wyh** you need to study everyday.
-纠正序列：**Spelling** is difficult, **which** is **why** you need to study everyday.
+> Original sequence: **Spellin** is difficult, **whch** is **wyh** you need to study everyday.
+Corrected sequence: **Spelling** is difficult, **which** is **why** you need to study everyday.
 
-> 原始序列：The first days of her existence in **th** country were **vrey** hard for Dolly.
-纠正序列：The first days of her existence in **the** country were **very** hard for Dolly.
+> Original sequence: The first days of her existence in **th** country were **vrey** hard for Dolly.
+Corrected sequence: The first days of her existence in **the** country were **very** hard for Dolly.
 
-根据David Currie的代码，经过调整若干参数后进行训练后可以得到用于生成语言纠错模型的对抗输入序列的模型权重。由于训练参数等原因，实际纠错效果并没有作者演示的那样好，仍然会出现一些单词未能纠正的情况，不过这不会影响本次实验。
+Using David Currie's code, after adjusting several parameters and training, the model weights for generating adversarial input sequences for the language correction model were obtained. Due to training parameters and other factors, the actual correction effect is not as good as demonstrated by the author, and there are still cases where some words are not corrected; however, this does not affect this experiment.
 
-## 对抗输入序列生成思路
+## Approach for Generating Adversarial Input Sequences
 
-这里模仿**DeepFool**方法来生成对抗输入序列，首先对DeepFool方法[2]进行简要介绍：
-给定一个分类器模型f，Moosavi-Dezfooli等人首先定义了一张图片的最小扰动r，使其分类结果k出错，如下列式子所示：
+Here, I mimic the **DeepFool** method to generate adversarial input sequences. First, let me give a brief introduction to the DeepFool method [2]:
+Given a classifier model f, Moosavi-Dezfooli et al. first defined the minimal perturbation r for an image that causes its classification result k to be incorrect, as shown in the following equation:
 
 $$\Delta(x, \hat{k}) = min_r||r||_2, s.t.\ \hat{k}(x+r) \ne \hat{k}(x)$$
 
-给出以上定义以后，Moosavi-Dezfooli 提出了DeepFool模型：**迭代方式计算给定图像最佳扰动方向**，在该扰动方向上，快速有效的生成大量的对抗样本。
-以一个简单的二分类模型来看，生成对抗样本的方向如下图所示：
+After giving the above definition, Moosavi-Dezfooli proposed the DeepFool model: **iteratively computing the optimal perturbation direction for a given image**, in which direction large numbers of adversarial examples can be generated quickly and effectively.
+Viewed from the perspective of a simple binary classification model, the direction for generating adversarial examples is illustrated in the figures below:
 
-|二分类问题生成对抗样本方向|多分类问题生成对抗样本方向|
+|Adversarial Example Direction for Binary Classification|Adversarial Example Direction for Multi-class Classification|
 |:---:|:---:|
 |![binary_classification](/posts/rnn-adversarial/images/binary_classification.png)|![multi_classification](/posts/rnn-adversarial/images/multi_classification.png)|
 
-FGSM和DeepFool的目的都是为了使得模型预测分类错误，因此需要变异原图片$x_0$，使得它朝着分类错误的方向移动，也就是梯度上升的方向变异（虚线箭头方向）。在二分类模型上，DeepFool和FGSM模型在扰动方向上没有区别，但在多分类问题上，却有很大的不同，具体的示意如上图所示。
+Both FGSM and DeepFool aim to make the model predict an incorrect classification, so they need to mutate the original image $x_0$ so that it moves in the direction of misclassification — that is, the direction of gradient ascent to mutate (the dashed arrow direction). On binary classification models, DeepFool and FGSM do not differ in the perturbation direction. However, on multi-class problems, they differ significantly, as illustrated in the figure above.
 
-在这个简单的三分类问题中，假设原图片$x_0$被模型分类为$y_1$，为了使之分类错误，FGSM模型会朝着$y_1$分类错误的方向，也就是图中红色箭头方向添加扰动进行变异。
+In this simple three-class classification problem, assume the original image $x_0$ is classified by the model as $y_1$. To make the classification incorrect, the FGSM model will mutate by adding a perturbation in the direction of the $y_1$ misclassification — the direction of the red arrow in the figure.
 
-而DeepFool方法认为，若将$x_0$移动到图中三角区域，则被分类错误的概率将大大增加，因此，基于此假设，DeepFool会同时计算出Top 1分类结果的梯度和Top 2分类结果的梯度，并将这两个梯度进行矢量相加，得到图片添加扰动的方向，即黑色实线为原图片$x_0$的变异方向。
+The DeepFool method, on the other hand, argues that moving $x_0$ to the triangular region in the figure would greatly increase the probability of misclassification. Therefore, based on this assumption, DeepFool simultaneously computes the gradient of the Top 1 classification result and the gradient of the Top 2 classification result, and adds these two gradients as vectors to obtain the direction in which to add perturbation to the image — that is, the black solid line represents the mutation direction of the original image $x_0$.
 
-而在语言纠错模型的执行过程中，计算扰动p的公式如下：
+During the execution of the language correction model, the formula for computing the perturbation p is as follows:
 
 $$p = \epsilon \nabla J(\theta,I_c,\sum_{i=1}^4l_i - l_0)$$
 
-其中$I_c$代表原始输入序列对应的embedding，$l_0$是RNN输出的预测序列中随机选择一个字母对应的final state的output计算logits后分类的Top 1类别标记，$\sum_{i=1}^4l_i$为分类的Top2 ~ Top5类别标记的矢量求和，$\theta$是神经网络的参数，$\nabla J$表示计算当前输入序列对应的embedding $I_c$对于网络模型参数$\theta$的梯度，$\epsilon$是可以人为控制的扰动幅度。
+Where $I_c$ represents the embedding corresponding to the original input sequence, $l_0$ is the Top 1 classification label computed from the output of a randomly selected letter in the predicted sequence of the RNN final state after computing logits, $\sum_{i=1}^4l_i$ is the vector sum of the Top 2 ~ Top 5 classification labels, $\theta$ is the neural network parameters, $\nabla J$ denotes the gradient of the cost function with respect to the network model parameters $\theta$ computed on the embedding $I_c$ corresponding to the current input sequence, and $\epsilon$ is the perturbation magnitude that can be manually controlled.
 
-这里没有使用示性函数sign的原因同样主要是考虑到扰动的数量级(大约为$10^{-3}$~$10^
-{-2}$)比embedding的数量级(大约为$10^{-1}$)要小，因此如果使用示性函数$sign$导致得到的扰动embedding过大，导致计算的距离较大，与“微小”扰动的目的相差较大。
+The reason for not using the sign function here is also mainly that the magnitude of the perturbation (approximately $10^{-3}$~$10^{-2}$) is smaller than the magnitude of the embedding (approximately $10^{-1}$). Therefore, if the sign function $sign$ is used, the resulting perturbation embedding would be too large, leading to a large computed distance, which deviates significantly from the goal of a "small" perturbation.
 
-由于RNN语言模型的输入序列是离散的，即输入的单词在转化为数字id后，还经过一层embedding转化为向量再参与RNN的计算，即使直接将扰动p加在原始embedding $I_c$上，有很大的概率仍然不能直接将embedding转化一个单词id。因此这里使用计算最近的欧式方式将加上扰动后的embedding转化为某个距离最近的单词id，这样就改变了输入的序列。过程如下，其中$e$代表原始单词id对应的embedding，$p$代表扰动，$e^*$代表加上扰动后的embedding：
+Since the input sequence to the RNN language model is discrete — i.e., the input words, after being converted to numeric IDs, are further converted into vectors through an embedding layer before participating in the RNN computation — even if the perturbation p is directly added to the original embedding $I_c$, there is a high probability that the embedding still cannot be directly converted to a word ID. Therefore, the approach here is to compute the nearest Euclidean distance to convert the perturbed embedding into the word ID of the nearest embedding, thereby changing the input sequence. The process is as follows, where $e$ represents the embedding corresponding to the original word ID, $p$ represents the perturbation, and $e^*$ represents the embedding after adding the perturbation:
 
 $$e^* = e + p$$
 
-然后求解距离扰动embedding $e^*$最近的embedding对应的id，其中n为语料库单词的数目，在本实验中n=79：
+Then, solve for the embedding ID nearest to the perturbed embedding $e^*$, where n is the number of words in the corpus; in this experiment, n=79:
 
 $$argmin_{id}{\sqrt{\sum_{id=0}^{n}(e^{*}-e_{id})^2}}$$
 
-## 对抗输入序列生成结果
+## Results of Adversarial Input Sequence Generation
 
-### 对抗输入序列示例
+### Example of Adversarial Input Sequence
 
-这里使用的原始测试输入序列为
+The original test input sequence used here is
 
 > Spellin i**s** difficult, whch is wyh you need to study everyday.
 
-我们对第36个单词`o`进行对抗输入序列的生成，通过对每个可能的输入字母的embedding添加求得的扰动得到某一个对抗序列为
+We generate an adversarial input sequence for the 36th character `o`. By adding the computed perturbation to the embeddings of each possible input character, we obtain a certain adversarial sequence:
 
 > Spellin i**b** difficult, whch is wyh you need to study everyday.
 
-这2个序列的不同之处在于`is`的`s`被替换为`b`，这样我们就可以观察替换前后对应位置纠错字母预测概率的变化。
+The difference between these two sequences is that the `s` in `is` is replaced by `b`, which allows us to observe the change in the prediction probabilities of the correction character at the corresponding position before and after the replacement.
 
-### 预测纠错词的概率分布可视化
+### Visualization of the Probability Distribution for Predicting the Corrected Character
 
-可以看到，对抗序列的对应位置字母的预测Top 10概率分布发生了变化，尤其是Top 1预测的词从`s`变成了`b`，从纠正结果看`ib`并没有被纠正成为`is`。
+It can be seen that the Top 10 probability distribution of the character prediction at the corresponding position in the adversarial sequence has changed, especially the Top 1 predicted character, which changed from `s` to `b`. From the correction results, `ib` was not corrected to `is`.
 
-|“s”的纠正词预测概率|“b”的纠正词预测概率|
+|Correction Character Prediction Probabilities for "s"|Correction Character Prediction Probabilities for "b"|
 |:---:|:---:|
 |![s_prob](/posts/rnn-adversarial/images/s_prob.png)|![b_prob](/posts/rnn-adversarial/images/b_prob.png)|
 
-本实验仍然存在这一些不足，例如没有使用量化指标（例如perplexity或BLEU等）来评估所生成语言纠错模型对抗输入序列的质量；此外本方法生成的对抗序列仅限于对某一个字母进行替换，还未实现增加或删除的策略。未来可以考虑加对抗序列加入语言纠错模型的重训练过程。
+There are still some shortcomings in this experiment, such as the lack of quantitative metrics (e.g., perplexity or BLEU, etc.) to evaluate the quality of the adversarial input sequences generated for the language correction model. In addition, the adversarial sequences generated by this method are limited to replacing a single character, and strategies for insertion or deletion have not yet been implemented. In the future, adding adversarial sequences to the retraining process of the language correction model could be considered.
 
-# 参考资料
+# References
 
 [1] Goodfellow, I. J., Shlens, J., & Szegedy, C. Explaining and harnessing adversarial examples (2014). arXiv preprint arXiv:1412.6572.
 [2] Moosavi-Dezfooli, S. M., Fawzi, A., & Frossard, P. (2016). Deepfool: a simple and accurate method to fool deep neural networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2574-2582).

@@ -7,7 +7,7 @@ export async function GET() {
 
   const feed = new Feed({
     title: 'Silver Bullet',
-    description: 'Martin Zhao 的个人博客',
+    description: 'Martin Zhao\'s Blog',
     id: siteUrl,
     link: siteUrl,
     language: 'zh-CN',

@@ -1,328 +1,331 @@
 ---
-title: 网贷行业风险分析平台
+title: P2P Lending Industry Risk Analysis Platform
 date: 2019-03-28 21:36:21
-tags: [机器学习, 大数据基础]
-categories: [课程]
+tags: [Machine Learning, Big Data Fundamentals]
+categories: [Course]
 math: true
 ---
 
 
-本项目旨在完成P2P互联网金融行业的风险分析，建立标准化的风险测评维度和风险测评模型，识别高风险P2P互联网金融企业，最终生成自动化P2P互联网金融企业风险分析报告。
+The goal of this project is to perform risk analysis for the P2P Internet finance industry, establish standardized risk assessment dimensions and risk assessment models, identify high-risk P2P Internet finance enterprises, and ultimately generate automated risk analysis reports for P2P Internet finance enterprises.
 
-本项目选取了P2P互联网金融行业中八百余家代表性企业，基于这些企业多方面、多维度的海量历史数据，选取了恰当的风险测评维度，建立风险测评模型，分析这些P2P互联网金融企业目前所面临的风险，并对各个企业的整体风险状况及其不同领域的风险状况进行评估，生成P2P互联网金融企业风险报告，直观、准确地展示了企业各方面的风险数据、风险指标和风险等级，满足互联网金融监管需求，方便对于互联网金融企业进行风险监控。
+This project selected over 800 representative enterprises in the P2P Internet finance industry. Based on massive historical data from multiple aspects and dimensions of these enterprises, appropriate risk assessment dimensions were chosen and risk assessment models were built to analyze the risks currently faced by these P2P Internet finance enterprises. The overall risk profile and risk profiles across different domains of each enterprise were evaluated, and risk reports for P2P Internet finance enterprises were generated, providing an intuitive and accurate display of risk data, risk indicators, and risk ratings across all aspects of the enterprises. This meets the regulatory needs of Internet finance supervision and facilitates risk monitoring of Internet finance enterprises.
 
 <!-- more -->
 
-# 技术路线
+# Technical Roadmap
 
 ![image](/posts/risk/images/main_tech.png)
 
-## 数据维度
+## Data Dimensions
 
-选取了司法维度信息（包括裁判文书，执行公告，司法曝光，失信公告，司法拍卖，破产信息），税务维度信息，工商维度信息，招聘维度信息，违规维度信息，舆情维度信息和通过[网贷之家](https://www.wdzj.com/)爬取的经营维度信息（包括交易规模，贷款逾期，投资人情况，贷款情况等）。获取这些信息后，经过数据清洗，转换（转为统一的CSV格式）和集成，将非格式化的数据存储到结构化的MySQL数据库。
+The judicial dimension information was collected (including court judgments, execution announcements, judicial exposure, dishonesty announcements, judicial auctions, and bankruptcy information), along with tax dimension information, industry and commerce dimension information, recruitment dimension information, violation dimension information, public opinion dimension information, and business dimension information crawled from [Wangdaizhijia](https://www.wdzj.com/) (including transaction scale, loan defaults, investor conditions, loan conditions, etc.). After acquiring this information, the unformatted data was stored into a structured MySQL database through data cleaning, conversion (into unified CSV format), and integration.
 
-## 模型构建
+## Model Construction
 
-对于记录数据较为完整的经营方面的数据，进行机器学习模型的构建。为了使得预测结果更加准确，分别选取了SVM模型，决策树模型，随机森林模型和LightGBM模型对这些数据进行模型的训练和测试，从中选取预测效果最好的模型进行使用。而对于领域知识比较强，数据记录比较少，离散化数据较多的非经营维度指标，采取了层次分析法和一致性检验的方式进行了人工模型的构建。最后将两种模型（人工模型和机器学习模型）进行了交叉验证，保证了模型的正确性。
+For the business dimension data with relatively complete records, machine learning models were constructed. To make prediction results more accurate, SVM models, decision tree models, random forest models, and LightGBM models were selected to train and test the data, and the model with the best prediction performance was selected for use. For non-business dimension indicators with strong domain knowledge relevance, fewer data records, and more discretized data, the Analytic Hierarchy Process (AHP) and consistency testing methods were adopted to build models manually. Finally, the two models (manual models and machine learning models) were cross-validated to ensure the correctness of the models.
 
-## 项目架构
+## Project Architecture
 
-整体项目架构包括最初的数据爬取，数据清洗，数据存储等数据相关的处理流程，以及后续得到人工模型，机器学习模型等模型层面的构建，最后以一个可视化网站的形式进行结果的展示
+The overall project architecture includes the initial data crawling, data cleaning, data storage, and other data-related processing workflows, followed by the construction of model layers such as manual models and machine learning models, and finally the presentation of results in the form of a visualization website.
 
-## 数据可视化
+## Data Visualization
 
-数据可视化采用[D3.js](https://d3js.org/)技术，通过后台Django传来的数据，进行可视化效果展示。展示主要包括两个方面：
+Data visualization uses [D3.js](https://d3js.org/) technology to present visualization effects through data transmitted from the Django backend. The presentation mainly includes two aspects:
 
-首先是p2p行业整体数据的可视化，其中包括`风险维度气泡图`，`全国p2p平台分布情况图`，`全国p2p平台力向导图`以及`主要p2p平台风险值列表`。
-其次是具体某个平台风险维度的可视化，其中包括`整体风险雷达图`，`企业照面信息表格`，`司法案件力导向图`，`司法案件时间线`，`司法案件热点区域图`，`平台成交量走势图`，`平台收益率流动图`，`舆情关键词词频统计`，`舆情关键词词云`，`招聘人数走势图`，`招聘学历分布图`以及`招聘人数薪资比例图`等。
+The first is visualization of overall P2P industry data, including `Risk Dimension Bubble Charts`, `National P2P Platform Distribution Maps`, `National P2P Platform Force-Directed Guide Maps`, and `Major P2P Platform Risk Value Lists`.
+The second is visualization of risk dimensions for specific platforms, including `Overall Risk Radar Charts`, `Enterprise Profile Information Tables`, `Judicial Case Force-Directed Maps`, `Judicial Case Timelines`, `Judicial Case Hotspot Region Maps`, `Platform Transaction Volume Trend Charts`, `Platform Yield Rate Flow Maps`, `Public Opinion Keyword Frequency Statistics`, `Public Opinion Keyword Word Clouds`, `Recruitment Number Trend Charts`, `Recruitment Education Distribution Maps`, and `Recruitment Number-to-Salary Ratio Charts`, among others.
 
-# 风险点甄别
+# Risk Point Identification
 
-## 风险维度及说明
+## Risk Dimensions and Descriptions
 
-|维度|子维度|说明|
+|Dimension|Sub-dimension|Description|
 |:---:|:---:|:---:|
-|涉诉信息|破产信息、司法拍卖、失信公告、司法曝光台、执行公告、裁判文书|涉诉信息，即司法信息，描述了企业涉及法律诉讼案件的信息，企业的违法信息，企业被告信息，以及企业涉及司法拍卖和破产的信息。一个企业是否依法经营、是否有违法行为在很大程度上可以反映出一个企业的风险情况，企业行为合法合规是一个企业稳定发展的必要条件，而企业涉诉过多、企业违法行为严重则说明企业存在问题过多，说明企业风险过大。|
-|工商信息|严重违法、工商行政处罚信息、经营异常、关联信息、变更信息、工商公示信息、企业公示信息|（1）工商信息描述了企业的资本、法人、经营范围等工商基本信息，作为描述企业的重要信息，当工商信息发生异常变动和重要变更时，则说明企业存在异常，可能会出现较高风险。（2）此外项目注重关联方的风险信息。关联信息描述了和该企业相关的其他企业，包括企业和法人的对外投资、子公司等。变更信息描述了工商信息的变更情况，当出现异常变更或较大变更时，意味着其在风险的出现。|
-|税务信息|非正常户、行政处罚、欠税公告、纳税信用等级(ABCD)|税务信息描述了企业是否按时报税、缴税，曝光了企业欠税漏税的行为，在一定程度上反映出企业信用出现问题。企业出现长期欠税，或被税务部门列为纳税非正常户，说明企业已违反法律犯规，其经营出现异常，可能已经出现财务或资金问题，说明企业存在较大风险。|
-|经营信息|贷款逾期情况、交易规模|经营信息数据提取自网贷之家、网贷天眼和和互联网金融等级披露服务平台，通过定量指标评估网贷平台的交易规模和贷款逾期情况。|
-|舆情信息|新闻媒体|通过抓取微信、微博和新闻客户端中关于P2P网贷平台的相关信息，分析新闻中是否包含关键词“诈骗、提现困难、逾期、无法访问、收益、利率、红包、加息、监管、存管、坑爹、无语、不透明、造假、自融、曝光、打不通、打不开、频繁变更”等字段，判读新闻事件的严重程度。|
-|违规信息|ICP认证、银行存管、央行处罚、银监会处罚|（1）ICP认证是所有互联网经营必备许可证，若P2P平台无ICP认证记录，则可判定为非法经营。（2）2016年8月出台的《网络贷款资金存款业务指引》要求所有P2P平台完成银行存管。银行存管使得P2P企业自身资金账户与用户资金相隔离，做到资金与交易的分离，避免用户资金被直接挪用。若平台无银行存管记录，则可能出现较高风险。|
-|招聘信息|管理层学历、招聘学历分布、岗位数量与招聘人数|项目通过分析平台发布的招聘信息分析平台团队的学历分布，尤其是管理层学历分布。若出现短时间大量无门槛招聘，管理人员岗位严重空缺等情况，则说明平台可能出现风险。|
+|Litigation Information|Bankruptcy information, judicial auctions, dishonesty announcements, judicial exposure platform, execution announcements, court judgments|Litigation information, i.e., judicial information, describes information about legal cases involving the enterprise, the enterprise's illegal activities, information about the enterprise being sued, and information about judicial auctions and bankruptcy involving the enterprise. Whether an enterprise operates in accordance with the law and whether it has illegal activities can largely reflect the enterprise's risk situation. Legal and compliant enterprise behavior is a necessary condition for stable enterprise development, whereas excessive litigation and serious illegal activities indicate that the enterprise has too many problems and that the enterprise risk is too high.|
+|Industry & Commerce Information|Serious violations, administrative penalty information by industry and commerce authorities, abnormal operations, affiliated information, change information, industry and commerce public disclosure information, enterprise public disclosure information|(1) Industry and commerce information describes basic industry and commerce information such as the enterprise's capital, legal representative, and business scope. As important information describing the enterprise, abnormal changes and significant modifications in industry and commerce information indicate that anomalies exist in the enterprise and that higher risks may arise. (2) In addition, the project focuses on risk information of affiliated parties. Affiliated information describes other enterprises related to the enterprise, including outbound investments by the enterprise and the legal representative, subsidiaries, etc. Change information describes changes in industry and commerce information. Anomalous changes or significant changes imply the emergence of risk.|
+|Tax Information|Abnormal taxpayers, administrative penalties, tax arrears announcements, tax credit ratings (ABCD)|Tax information describes whether the enterprise files and pays taxes on time, exposes tax evasion and tax arrears behavior by enterprises, and to some extent reflects problems with enterprise credit. Long-term tax arrears or being classified as an abnormal taxpayer by tax authorities indicate that the enterprise has violated laws and regulations, its operations are abnormal, and financial or funding problems may have arisen, indicating significant enterprise risk.|
+|Business Information|Loan default conditions, transaction scale|Business data is extracted from Wangdaizhijia, Wangdaitianyan, and the Internet Finance Level Disclosure Service Platform. It evaluates the transaction scale and loan default conditions of P2P lending platforms through quantitative indicators.|
+|Public Opinion Information|News media|By crawling information related to P2P lending platforms from WeChat, Weibo, and news apps, the analysis examines whether news articles contain keywords such as "fraud, withdrawal difficulties, defaults, inaccessible, yield, interest rate, cash coupons, interest rate hikes, regulation, custodiary, terrible, speechless, opaque, falsification, self-financing, exposure, cannot connect, cannot open, frequent changes" and other fields to determine the severity of news events.|
+|Violation Information|ICP certification, bank custody, central bank penalties, CBRC penalties|(1) ICP certification is a mandatory license for all Internet business operations. If a P2P platform has no ICP certification record, it can be determined to be operating illegally. (2) The "Guidelines for Network Loan Fund Custody Business" issued in August 2016 requires all P2P platforms to complete bank custody. Bank custody separates the P2P enterprise's own fund accounts from user funds, achieving separation of funds and transactions and preventing direct misappropriation of user funds. If a platform has no bank custody record, higher risk may arise.|
+|Recruitment Information|Management education level, recruitment education distribution, number of positions and number of recruits|The project analyzes the education distribution of the platform team through recruitment information published by the platform, especially the education distribution of management. If there is a large number of barrier-free recruitments in a short period or serious vacancies in management positions, it indicates that the platform may be at risk.|
 
-## 项目信用风险评级指标体系
+## Project Credit Risk Rating Indicator System
 
-层次分析法，具体指标略。
+Analytic Hierarchy Process — specific indicators omitted.
 
-# 系统搭建
+# System Setup
 
-- D3.js(前端可视化)
-- Python+Django(后端请求处理)
-- Mysql（后台数据库）
-- 访问端口：8000
+- D3.js (frontend visualization)
+- Python + Django (backend request handling)
+- MySQL (backend database)
+- Access port: 8000
 
-# 数据提取及处理
+# Data Extraction and Processing
 
-本项目的数据来源主要有2个，一是通过网页爬取的p2p平台的经营信息，二是由企业方提供的工商信息等数据。本节将描述如何通过爬虫提取数据，以及如何处理企业提供的数据，并将其经过数据清洗过程后形成结构化的数据存储在MySQL数据库中。
+There are two main data sources for this project: one is the business information of P2P platforms crawled from web pages, and the other is industry and commerce information and other data provided by the enterprises. This section describes how to extract data through crawlers and how to process the data provided by enterprises, forming structured data stored in a MySQL database after the data cleaning process.
 
 ![image](/posts/risk/images/data_clean.PNG)
 
-<div align="center">总体系统数据处理流程图</div>
+<div align="center">Overall System Data Processing Flowchart</div>
 
-## 爬虫提取数据
+## Data Extraction via Crawlers
 
-### Scrapy框架
+### Scrapy Framework
 
-Scrapy是基于Python语言开发的一个快速,高层次的web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy用途广泛，可以用于数据挖掘、监测和自动化测试。
+Scrapy is a fast, high-level web crawling framework developed based on the Python language, used to crawl websites and extract structured data from pages. Scrapy has a wide range of uses and can be employed for data mining, monitoring, and automated testing.
 
-### 数据主要来源
+### Main Data Sources
 
-来自各大p2p平台网站，以经营数据为例，选取了[网贷之家](http://shuju.wdzj.com/)的平台成交数据和中国互联网金融协会的[互联网金融登记披露服务平台](https://dp.nifa.org.cn/HomePage?method=getOperateInfo/)的运营信息作为经营数据的来源。在这些网站上可以获取到p2p平台的交易总额、交易总笔数、融资人总数、投资人总数、项目逾期率和金额逾期率等信息，作为数据爬取的对象。
+The data comes from major P2P platform websites. Taking business data as an example, the platform transaction data from [Wangdaizhijia](http://shuju.wdzj.com/) and the operational information from the [Internet Finance Registration and Disclosure Service Platform](https://dp.nifa.org.cn/HomePage?method=getOperateInfo/) of the China Internet Finance Association were selected as sources of business information. From these websites, information such as total transaction amount, total number of transactions, total number of financiers, total number of investors, project default rate, and amount default rate of P2P platforms can be obtained as targets for data crawling.
 
 ![image](/posts/risk/images/data_hujin.png)
 
-<div align="center">中国互联网金融协会的互联网金融登记披露服务平台的运营信息示例</div>
+<div align="center">Example of Operational Information from the Internet Finance Registration and Disclosure Service Platform of the China Internet Finance Association</div>
 
 <p/>
 
 ![image](/posts/risk/images/data_wdzj.png)
 
-<div align="center">网贷之家的平台成交数据示例</div>
+<div align="center">Example of Platform Transaction Data from Wangdaizhijia</div>
 
-### 数据获取
+### Data Acquisition
 
-由于中国互联网金融协会的互联网金融登记披露服务平台的运营信息在网页上是动态加载的，从网页源代码中对应标签内的数字可以获取到对应的数据，例如下图展示了从网页展示平台成交量到获取成交量的具体数值的过程：
+Since the operational information on the Internet Finance Registration and Disclosure Service Platform of the China Internet Finance Association is dynamically loaded on the web page, the corresponding data can be obtained from the numbers within the corresponding tags in the web page source code. For example, the following figure shows the process from displaying platform transaction volume on the web page to obtaining the specific numerical value of the transaction volume:
 
 ![image](/posts/risk/images/website_data.PNG)
 
-<div align="center">网页抽取数据过程示例</div>
+<div align="center">Example of Data Extraction from Web Page</div>
 
-在提取数字过程中还是使用了一些正则表达式用于抽取表格标签中的数据，例如下图展示了正则表达式匹配数字的过程：
+Some regular expressions were still used to extract data from table tags, for example, the following figure shows the process of regular expression matching of numbers:
 
 ![image](/posts/risk/images/regex.PNG)
 
-<div align="center">正则表达式抽取数据过程示例</div>
+<div align="center">Example of Data Extraction via Regular Expressions</div>
 
-而对于网贷之家的平台成交数据，通过查看网页的Javascript代码，找到了网页的json请求接口，然后使用Python和Scrapy框架模拟了data表单的post请求获得了不同时间段的p2p平台经营信息：
+For the platform transaction data from Wangdaizhijia, by examining the JavaScript code of the web page, the JSON request interface of the page was found. Then Python and the Scrapy framework were used to simulate form POST requests for data to obtain business information of P2P platforms across different time periods:
 
 ![image](/posts/risk/images/wdzj_post.PNG)
 
-<div align="center">模拟请求获取数据过程示例</div>
+<div align="center">Example of Simulated Request for Data Acquisition</div>
 
-## 爬虫数据的数据库存储
+## Database Storage of Crawler Data
 
-项目使用MySQL数据库存储数据,由于2个信息披露平台的数据格式不同，所以需要建立对应的表结构分别存储网贷之家的平台成交数据和中国互联网金融协会的互联网金融登记披露服务平台的运营信息，所建立的数据表如下：
+The project uses a MySQL database to store data. Since the data formats of the two disclosure platforms differ, corresponding table structures need to be established to store the platform transaction data from Wangdaizhijia and the operational information from the Internet Finance Registration and Disclosure Service Platform of the China Internet Finance Association, respectively. The established data tables are as follows:
 
-|列名|含义|
+|Column Name|Meaning|
 |:---:|:---:|
-|bussinessInfo|互联网金融协会披露经营数据|
-|platform_name|平台名称|
-|end_time|信息截止日期|
-|trade_amount|交易总额(万元)|
-|trade_total_number|交易总笔数(笔)|
-|invest_total_number|投资总笔数(笔)|
-|financiers_number|融资人总数(人)|
-|invester_number|投资人总数(人)|
-|repaid_amount|待偿金额(万元)|
-|past_amount|逾期金额(万元)|
-|project_past_rate|项目逾期率(%)|
-|amount_past_rate|金额逾期率(%)|
-|project_past_number|逾期项目数|
-|average_financialer_amount|人均累计融资金额(万元)|
-|average_invest_amount|人均累计投资金额(万元)|
-|average_finacing_amount|笔均融资金额(万元)|
-|top1_finacing_rate|最大单户融资余额占比(%)|
-|top10_finacing_rate|最大10户融资余额占比(%)|
-|top1_invest_rate|最大单户投资余额占比(%)|
-|top10_invest_rate|最大10户投资余额占比(%)|
-|project_past90_rate|项目分级逾期率（90天）(%)|
-|project_past180_rate|项目分级逾期率（91-180天）(%)|
-|project_past181_rate|项目分级逾期率（181天以上）(%)|
-|amount_past90_rate|金额分级逾期率（90天）(%)|
-|amount_past180_rate|金额分级逾期率（91-180天）(%)|
-|amount_past181_rate|金额分级逾期率（181天以上）(%)|
-|history_project_past_amount|历史项目逾期金额(万元)|
-|history_project_past_rate|历史项目逾期率(%)|
-|total_past_amount|累计逾期代偿金额(万元)|
-|total_past_number|累计逾期代偿笔数(笔)|
-|bussinessInfoId|交易信息唯一标识符ID|
+|bussinessInfo|Business data disclosed by the Internet Finance Association|
+|platform_name|Platform name|
+|end_time|Information cutoff date|
+|trade_amount|Total transaction amount (10,000 CNY)|
+|trade_total_number|Total number of transactions (transactions)|
+|invest_total_number|Total number of investments (transactions)|
+|financiers_number|Total number of financiers (people)|
+|invester_number|Total number of investors (people)|
+|repaid_amount|Amount to be repaid (10,000 CNY)|
+|past_amount|Default amount (10,000 CNY)|
+|project_past_rate|Project default rate (%)|
+|amount_past_rate|Amount default rate (%)|
+|project_past_number|Number of defaulted projects|
+|average_financialer_amount|Average cumulative financing per person (10,000 CNY)|
+|average_invest_amount|Average cumulative investment per person (10,000 CNY)|
+|average_finacing_amount|Average financing amount per transaction (10,000 CNY)|
+|top1_finacing_rate|Largest single-financier financing balance proportion (%)|
+|top10_finacing_rate|Largest 10-financier financing balance proportion (%)|
+|top1_invest_rate|Largest single-investor investment balance proportion (%)|
+|top10_invest_rate|Largest 10-investor investment balance proportion (%)|
+|project_past90_rate|Tiered project default rate (90 days) (%)|
+|project_past180_rate|Tiered project default rate (91-180 days) (%)|
+|project_past181_rate|Tiered project default rate (181+ days) (%)|
+|amount_past90_rate|Tiered amount default rate (90 days) (%)|
+|amount_past180_rate|Tiered amount default rate (91-180 days) (%)|
+|amount_past181_rate|Tiered amount default rate (181+ days) (%)|
+|history_project_past_amount|Historical project default amount (10,000 CNY)|
+|history_project_past_rate|Historical project default rate (%)|
+|total_past_amount|Total cumulative default-compensation amount (10,000 CNY)|
+|total_past_number|Total cumulative default-compensation count (transactions)|
+|bussinessInfoId|Unique transaction information identifier ID|
 
-<div align="center">互联网金融协会披露经营数据表定义</div>
+<div align="center">Disclosed Business Data Table Definition of the Internet Finance Association</div>
 
 <p/>
 
-|列名|含义|
+|Column Name|Meaning|
 |:---:|:---:|
-|wdzjInfo|网贷之家公布经营数据|
-|wdzjInfoId|交易信息唯一表示ID|
-|platform_name|平台名称|
-|amount|成交量(万元)|
-|incomeRate|平均参考收益率(%)|
-|loanPeriod|平均借款期限(月)|
-|regCapital|注册资本|
-|fullloanTime|满标用时(分)|
-|stayStillOfTotal|待还余额(万元)|
-|netInflowOfThirty|资金净流入(万元)|
-|timeOperation|运营时间|
-|bidderNum|投资人数|
-|borrowerNum|借款人数|
-|totalLoanNum|借款标数|
-|top10DueInProportion|前十大土豪待收金额占比|
-|avgBidMoney|人均投资金额|
-|top10StayStillProportion|前十大借款人待还金额占比|
-|avgBorrowMoney|人均借款金额|
-|developZhishu|发展指数排名|
-|currentLeverageAmount|杠杆金额|
-|startDate|开始日期|
-|endDate|截止日期|
-|weightedAmount|权重金额|
-|background|背景|
-|newbackground|新背景|
+|wdzjInfo|Published business data from Wangdaizhijia|
+|wdzjInfoId|Unique transaction information identifier ID|
+|platform_name|Platform name|
+|amount|Transaction volume (10,000 CNY)|
+|incomeRate|Average reference yield (%)|
+|loanPeriod|Average loan term (months)|
+|regCapital|Registered capital|
+|fullloanTime|Time to fully fund (minutes)|
+|stayStillOfTotal|Outstanding balance (10,000 CNY)|
+|netInflowOfThirty|Net capital inflow (10,000 CNY)|
+|timeOperation|Operating time|
+|bidderNum|Number of investors|
+|borrowerNum|Number of borrowers|
+|totalLoanNum|Number of loan listings|
+|top10DueInProportion|Top 10 big investors' outstanding balance proportion|
+|avgBidMoney|Per capita investment amount|
+|top10StayStillProportion|Top 10 borrowers' outstanding balance proportion|
+|avgBorrowMoney|Per capita borrowing amount|
+|developZhishu|Development index ranking|
+|currentLeverageAmount|Leveraged amount|
+|startDate|Start date|
+|endDate|End date|
+|weightedAmount|Weighted amount|
+|background|Background|
+|newbackground|New background|
 
-<div align="center">网贷之家公布经营数据表定义</div>
+<div align="center">Published Business Data Table Definition from Wangdaizhijia</div>
 
-## 企业提供的数据处理
+## Processing Enterprise-Provided Data
 
-合作企业从司法、税务、工商、舆情、违规和招聘共6个维度提供了相关数据，具体的数据提供形式是excel表格的文件形式，所以需要将其转化为csv文件格式便于后续的处理。csv文件是以逗号的分隔的文本，这里使用python读取csv文件，将每一行文本按照逗号分割后导入MySQL数据库中。
+The cooperating enterprises provided data across 6 dimensions: judicial, tax, industry and commerce, public opinion, violations, and recruitment. The specific data delivery format is Excel spreadsheet files, so conversion to CSV file format is required for subsequent processing. CSV files are comma-separated text. Here, Python is used to read CSV files, split each line of text by commas, and import it into the MySQL database.
 
-### 数据库表结构
+### Database Table Structure
 
 ![image](/posts/risk/images/database.png)
 
-<div align="center">表结构及其关联关系图</div>
+<div align="center">Table Structure and Their Relationships Diagram</div>
 
-1. **platform表**中存储了P2P网贷平台的基本名称和城市信息，该表中的平台名时其他所有表的关联外键。company表中存储了每个平台下的子公司具体的工商信息,其中包括公司名,注册资金,注册人,地址等公司的基本信息。
-2. **司法维度**:通过documentJudgment表和documentExecute表分别存储了对应平台的司法信息中的裁判文书信息和执行公告信息。
-3. **工商信息维度**:通过company表,freezeInfo表,liquidation表,administrationPenalty表,shareholderInfo表,managerInfo表,legalPersonInvestInfo表,legalPersonPositionInfo表,changeInfo表,businessInvestInfo表,branchInfo表和equityPledged表分别存储了对应平台的工商信息中的企业基本照面信息,股权冻结历史信息,清算信息,行政处罚历史信息,股东及出资人信息,主要管理人员信息,法人代表在其他企业任职信息,变更信息,企业对外投资,分支机构信息和股权出质历史信息。
-4. **税务信息维度**:通过taxInfo表,taxPenalty表,abnormalTaxInfo表和taxCreditInfo表分别存储了对应平台的税务信息中的欠税信息,税务处罚信息,税务非正常用户信息和企业纳税信用信息。
-5. **舆情信息维度**:通过news表存储了每个平台的新闻舆情信息,其中包含了新闻的类型,重要标签,新闻标题和舆情详细内容等信息。
-6. **招聘信息维度**:通过employInfo表存储了每个平台的每个时期的招聘信息,其中包含了职位需求,薪水,福利,地址等基本招聘信息。
-7. **经营信息维度**:通过表businessInfo和表wdzjInfo分别存储了对应平台的经营信息,其中包含了交易额,人均投资数量,投资总额等基本信息。
-8. **违规信息维度**:通过ICP表和bankDepository表分别存储了对应平台企业的ICP违规信息和银行存管信息。
+1. The **platform table** stores the basic names and city information of P2P lending platforms. The platform name in this table is the foreign key linking all other tables. The company table stores specific industry and commerce information of subsidiaries under each platform, including the company name, registered capital, registrant, address, and other basic company information.
+2. **Judicial dimension**: The documentJudgment table and documentExecute table store court judgment information and execution announcement information in the judicial information of the corresponding platform, respectively.
+3. **Industry and commerce information dimension**: The company table, freezeInfo table, liquidation table, administrationPenalty table, shareholderInfo table, managerInfo table, legalPersonInvestInfo table, legalPersonPositionInfo table, changeInfo table, businessInvestInfo table, branchInfo table, and equityPledged table store the basic enterprise profile information, equity freezing history information, liquidation information, administrative penalty history information, shareholder and contributor information, key management personnel information, legal representative positions in other enterprises, change information, enterprise outbound investments, branch information, and equity pledge history information in the industry and commerce information of the corresponding platform, respectively.
+4. **Tax information dimension**: The taxInfo table, taxPenalty table, abnormalTaxInfo table, and taxCreditInfo table store tax arrears information, tax penalty information, abnormal tax taxpayer information, and enterprise tax credit information in the tax information of the corresponding platform, respectively.
+5. **Public opinion information dimension**: The news table stores news and public opinion information for each platform, including the type of news, important tags, news titles, and detailed public opinion content.
+6. **Recruitment information dimension**: The employInfo table stores recruitment information for each platform over each period, including position requirements, salary, benefits, location, and other basic recruitment information.
+7. **Business information dimension**: The businessInfo table and wdzjInfo table store the business information of the corresponding platform, including basic information such as transaction volume, per capita investment amount, and total investment.
+8. **Violation information dimension**: The ICP table and bankDepository table store ICP violation information and bank custody information for the corresponding platform enterprises, respectively.
 
-# 模型选择及建模
+# Model Selection and Modeling
 
-参考相关研究和历史文献，以往学者计算行业风险时采取的建模方法包括多变量因子分析法，熵权法，Logistic回归法，BP神经网络等等。通过分析P2P行业的特点，发现P2P企业大多存在数据形式多样、结构不一致和缺失值较多等特点，加上风险值作为一个主观估值，很难判断其估计是否准确，因此对数据分别进行了机器学习建模与人工建模，并将两者的结果进行比较，相互验证。
+Referring to related research and historical literature, modeling methods previously adopted by scholars when calculating industry risk include multivariate factor analysis, entropy weight method, Logistic regression, BP neural networks, etc. Through analyzing the characteristics of the P2P industry, it was found that P2P enterprises mostly have characteristics such as diverse data formats, inconsistent structures, and a large number of missing values. Moreover, since risk values are subjective estimates, it is difficult to judge whether their estimates are accurate. Therefore, machine learning modeling and manual modeling were conducted separately on the data, and the results of the two were compared to mutually validate each other.
 
-## 机器学习建模
+## Machine Learning Modeling
 
-### 数据来源与变量选取
+### Data Source and Variable Selection
 
-数据选自800余家P2P平台自2015年1月1日至今的全部数据，对于平台的基本信息，根据数据可获得性共选取营业天数（截止日期-开始日期）、成交量、平均利率、投资人数、平均借款期限、借款人数、累计待还金额、借款标数共计8个指标，本次研究计算了上述各平台在数据期内每个指标的均值和变异系数（标准差/均值），共计16个变量，以表示该平台的交易特征。均值表示了每个指标的水平值，变异系数表示了波动性大小。
+The data was selected from all data of more than 800 P2P platforms from January 1, 2015, to the present. For the basic information of the platforms, a total of 8 indicators were selected based on data availability: operating days (cutoff date minus start date), transaction volume, average interest rate, number of investors, average loan term, number of borrowers, cumulative outstanding amount, and number of loan listings. For this study, the mean and coefficient of variation (standard deviation divided by mean) of each indicator for each platform during the data period were calculated, totaling 16 variables to represent the transaction characteristics of the platform. The mean represents the level value of each indicator, and the coefficient of variation represents the magnitude of volatility.
 
 ![image](/posts/risk/images/manage_data.jpg)
 
-<div align="center">经营数据指标示例图</div>
+<div align="center">Example Diagram of Business Data Indicators</div>
 
-将网贷之家爬取到的问题平台（提现困难、跑路、停业）标记为1，正常平台标记为0，进行预测。
+Problematic platforms (withdrawal difficulties, running away, or business suspension) crawled from Wangdaizhijia were labeled as 1, and normal platforms were labeled as 0 for prediction.
 
 ![image](/posts/risk/images/bad_company.jpg)
 
-<div align="center">网贷之家问题平台示例图</div>
+<div align="center">Example Diagram of Problematic Platforms from Wangdaizhijia</div>
 
-### 机器学习模型
+### Machine Learning Models
 
-将数据按照正常平台和问题平台二分类，从而奖惩问题转化为一个二分类问题。经过筛选，总共有352家企业数据符合要求，其中问题企业有58家。正常企业数据和问题企业数据个数存在严重的不匹配问题。针对这个问题，采用SMOTE方法，对少数类样本进行过采样，以使两类数据达到平衡。
-本次研究选取三个统计模型（随机森林、决策树、SVM）来开展研究。通过比较不同模型的结果以判断风险识别与预测的稳定性与可靠性，并确定合适的预测模型; 综合考虑各个模型所提供的信息以分析P2P 平台的风险特征。对3个机器学习模型进行五折交叉验证。
+The data was classified into two categories: normal platforms and problematic platforms, thereby transforming the risk-reward problem into a binary classification problem. After filtering, a total of 352 enterprise datasets met the requirements, of which 58 were problematic enterprises. There is a serious mismatch between the number of normal enterprise datasets and problematic enterprise datasets. To address this issue, the SMOTE method was adopted to over-sample the minority class to achieve balance between the two types of data.
 
-### 结果分析
+This study selected three statistical models (random forest, decision tree, and SVM) to conduct the research. By comparing the results of different models, the stability and reliability of risk identification and prediction were evaluated, and a suitable prediction model was determined. The information provided by each model was comprehensively considered to analyze the risk characteristics of P2P platforms. Five-fold cross-validation was performed on the 3 machine learning models.
 
-|模型|AUC|
+### Result Analysis
+
+|Model|AUC|
 |:---:|:---:|
-|随机森林|0.9333|
-|决策树|0.8484|
+|Random Forest|0.9333|
+|Decision Tree|0.8484|
 |SVM|0.9393|
 
-SVM方法的测试集准确率最高，达到了94%的准确率。随机森林的准确率次之，也达到了93%的测试集准确率。相比随机森林和SVM两个模型，决策时的准确率不够理想，只有85%。
-在后期进一步分析中，尝试在经营维度的基础上增加司法、税务、工商等维度信息，但是准确率不太高。分析有如下几点原因：
+The SVM method achieved the highest test set accuracy, reaching 94% accuracy. The random forest accuracy was next, also reaching 93% test set accuracy. Compared with the random forest and SVM models, the decision tree's accuracy was less ideal, at only 85%.
 
-1. 数据为文本型和离散性数据，数据分析难度大；
-2. 数据随时间分布不均；
-3. 各平台数据分布不均，尤其部分平台数据缺失情况严重。
+In further later analysis, attempts were made to add judicial, tax, industry and commerce, and other dimensional information on top of the business dimension, but the accuracy was not very high. The analysis yielded the following reasons:
 
-虽然经营数据做预测准确率较高，但是由于经营数据大部分由网贷之家公布，非官方平台披露的数据，其数据公信力远不如司法、税务等平台披露的数据。因此为了解决这一问题，进行了人工模型的构建。
+1. The data is text-based and discrete in nature, making data analysis difficult;
+2. The data is unevenly distributed over time;
+3. The data distribution across platforms is uneven, especially for some platforms where data is severely missing.
 
-## 人工建模
+Although business data predictions achieved high accuracy, most business data is published by Wangdaizhijia rather than official platforms, so its data credibility is far lower than data disclosed by official platforms such as judicial and tax authorities. To address this issue, manual model construction was carried out.
 
-层次分析法略。
+## Manual Modeling
 
-## 2种建模方法比较
+Analytic Hierarchy Process — omitted.
 
-通过分析P2P行业的特点，发现P2P企业大多存在数据形式多样、结构不一致和缺失值较多等特点，加上风险值作为一个主观估值，很难判断其估计是否准确，因此需要采用人工建模法，即人工比较各指标对风险影响的大小，使用层次分析法确定各指标权重，生成企业风险值。同时，由于人工建模法的权重定义存在主观因素，机器学习建模可以解决这一问题，因此才采用两种方法建模，并对两种方法的优劣进行比较。
+## Comparison of the Two Modeling Methods
 
-1. 机器学习模型在处理0,1二分类问题效果较好，能够有效的判别企业是否有风险，但不能得到企业的具体风险值，也不能比较企业之间的相对风险。
-2. 人工模型能够确定各维度的重要性，识别具体风险带你，有效地对P2P企业进行更为详细的风险评估, 生成风险值。但由于人工建模的变量权重是人为比较权衡的，因此存在一定的主观因素，其准确性会下降。
+Through analyzing the characteristics of the P2P industry, it was found that P2P enterprises mostly have characteristics such as diverse data formats, inconsistent structures, and a large number of missing values. Moreover, since risk values are subjective estimates, it is difficult to judge whether their estimates are accurate. Therefore, a manual modeling approach is needed, i.e., manually comparing the magnitude of the impact of various indicators on risk, using the Analytic Hierarchy Process to determine the weight of each indicator, and generating enterprise risk values. At the same time, since the weight definition in manual modeling involves subjective factors, machine learning modeling can address this issue. Thus, both methods are used for modeling, and the advantages and disadvantages of the two approaches are compared.
 
-# 可视化展示
+1. Machine learning models perform well in handling binary (0,1) classification problems and can effectively determine whether an enterprise has risk, but they cannot obtain the specific risk value of the enterprise or compare relative risks between enterprises.
+2. Manual models can determine the importance of each dimension, identify specific risk points, and effectively conduct more detailed risk assessments of P2P enterprises, generating risk values. However, since the variable weights in manual modeling are subjectively compared and weighed, there is a certain degree of subjectivity, and their accuracy will be reduced.
 
-## 网站架构
+# Visualization Display
+
+## Website Architecture
 
 ![image](/posts/risk/images/django.png)
 
-为了方便查询典型p2p平台风险状况，我们系统实现了一个可视化展示网站，通过D3可视化技术直观地展现出p2p企业存在的风险。
+To facilitate querying the risk status of typical P2P platforms, our system implements a visualization display website that intuitively presents the risks existing in P2P enterprises through D3 visualization technology.
 
-后台django服务器接受前端发来的post/ajax请求，解析该请求后，通过分发控制器将请求分配到对应的业务处理模块进行业务处理，model层通过Django向数据库发出数据请求，Django根据请求自动生成对应的sql语句，向对应的一个或多个数据DB申请对应所需处理的数据，最后将数据返回给model层进行处理；对应的model获取相应的数据后，讲述据带入对应的模型进行计算处理，得出用户想要的结果，将结果以json的形式返回给前端客户端，前端通过D3.js解析所得到json数据，将这些数据以可视化的形式展现出来。
+The backend Django server receives POST/AJAX requests sent by the frontend. After parsing the request, it distributes the request to the corresponding business processing module through a dispatch controller. The model layer sends data requests to the database through Django. Django automatically generates corresponding SQL statements based on the requests, applies to the corresponding one or more data databases for the required processing data, and finally returns the data to the model layer for processing. After the corresponding model obtains the relevant data, it brings the data into the corresponding model for calculation and processing, obtains the desired results, and returns the results in JSON format to the frontend client. The frontend parses the obtained JSON data through D3.js and presents the data in a visualized form.
 
-## 网页展示
+## Web Page Display
 
-### 网站首页
+### Website Homepage
 
 ![image](/posts/risk/images/front_page.jpg)
 
-默认显示风险值最高的前3个P2P企业，可以通过搜索找到目标企业。
+By default, it displays the top 3 P2P enterprises with the highest risk values, and the target enterprises can be found through search.
 
-### P2P企业区域分布热点图
+### P2P Enterprise Regional Distribution Heatmap
 
 ![image](/posts/risk/images/p2p_area.png)
 
-可以直观的发现P2P企业主要集中出现在北上广江浙一带。
+It can be intuitively observed that P2P enterprises are mainly concentrated in the Beijing, Shanghai, Guangdong, Jiangsu, and Zhejiang regions.
 
-### 某企业风险整体分析
+### Overall Risk Analysis for an Enterprise
 
 ![image](/posts/risk/images/radar.png)
 
 ![image](/posts/risk/images/sector.png)
 
-通过雷达图和扇形图的结合，直观的展现某一企业7个维度的风险值大小，以及不同维度对整体风险值的影响比例。
-代码主要实现思路：通过div标签得到visibility 属性控制雷达图和比例值之间的显示切换。数据通过前端ajax请求，后台以json的形式返回。
+Through a combination of radar charts and sector charts, the risk values across 7 dimensions of an enterprise and the proportion of each dimension's influence on the overall risk value are intuitively displayed.
 
-### 某企业工商维度风险概览
+The main implementation idea of the code: the `visibility` property obtained through the `div` tag controls the display switching between the radar chart and the proportion values. Data is requested from the frontend via AJAX requests, and the backend returns it in JSON format.
+
+### Industry & Commerce Dimension Risk Overview for an Enterprise
 
 ![image](/posts/risk/images/business.png)
 
 ![image](/posts/risk/images/law.png)
 
-7个不同的风险维度都会有一个自已的风险值，分别表示该领域的风险大小，通过前端的get请求从后端获取得到。风险值的圆圈通过D3的Path绘制出来，并通过transform的translate绘制动画效果。
+Each of the 7 different risk dimensions has its own risk value, representing the risk level in that domain, obtained from the backend via frontend GET requests. The circles representing the risk values are drawn using D3's Path, and animation effects are rendered using the `transform` `translate`.
 
-### 某公司司法维度案件关系网络
+### Judicial Dimension Case Relationship Network for an Enterprise
 
 ![image](/posts/risk/images/network.png)
 
-司法维度案件关系网络通过D3的force layout，表示该企业以及它的子公司在司法方面所有的官司数量与关联关系。数据通过前端ajax请求，后台以json的形式返回。
+The judicial dimension case relationship network uses D3's force layout to represent the number and relationships of all legal cases involving the company and its subsidiaries in the judicial domain. Data is requested from the frontend via AJAX requests, and the backend returns it in JSON format.
 
-### 某公司成交量和利率变动图
+### Transaction Volume and Interest Rate Change Charts for an Enterprise
 
 ![image](/posts/risk/images/transaction.png)
 
-通过bootstrap的flot-chart绘制出该企业近期的成交量走势图和该企业的平均利率随时间的动态变化图。通过走势图我们能直观的发现，该企业在近期的成交量由明显的下降，甚至趋近于0说明该企业近期有一个很大的风险点。
+Bootstrap's flot-chart is used to plot the recent transaction volume trend chart of the enterprise and the dynamic change chart of the enterprise's average interest rate over time. Through the trend charts, we can intuitively observe that the enterprise's recent transaction volume has shown a significant decline, even approaching 0, indicating that there is a significant risk point for the enterprise in the recent period.
 
-通过这两张图可以比较直观的分析出该企业近期的一个经营情况。数据通过前端ajax请求，后台以json的形式返回。
+Through these two charts, the enterprise's recent business operations can be analyzed relatively intuitively. Data is requested from the frontend via AJAX requests, and the backend returns it in JSON format.
 
-### 某公司舆情维度中的词云展示
+### Word Cloud Display in the Public Opinion Dimension for an Enterprise
 
 ![image](/posts/risk/images/word_cloud.png)
 
-通过从网络中爬取有关该企业所有额舆情信息（数据来源于各大新闻媒体），对这些舆情信息做一个简单的分词处理，便可得到一个根据舆情的关键词词频绘制而出的词云。该词云的绘制借助了D3的某个开源项目——d3.layout.cloud.js，数据通过前端ajax请求，后台以json的形式返回。
+By crawling all public opinion information related to the enterprise from the web (data sourced from major news media), performing a simple word segmentation process on this public opinion information, a word cloud drawn based on public opinion keyword frequency can be obtained. The drawing of this word cloud is assisted by an open-source project of D3 — d3.layout.cloud.js. Data is requested from the frontend via AJAX requests, and the backend returns it in JSON format.
 
-### 某公司招聘维度下招聘人数比例图
+### Recruitment Number Proportion Chart under the Recruitment Dimension for an Enterprise
 
 ![image](/posts/risk/images/salary.png)
 
-是一个扇形图的变形版本，能够比较直观的显示出某次招聘中每类招聘所占比例。该图的最大特点在于能够比较方面的展示每一次招聘中每个维度的分布情况。（这是一个动图: 设置时间间隔，每隔一段时间选取新的数据绘制该图）。数据通过前端ajax请求，后台以json的形式返回。
+This is a modified version of a sector chart that can intuitively display the proportion of each type of recruitment in a particular recruitment event. The main feature of this chart is that it can conveniently show the distribution of each dimension in every recruitment event (this is an animated chart: new data is selected at set time intervals to redraw the chart). Data is requested from the frontend via AJAX requests, and the backend returns it in JSON format.
 
-### 某公司招聘维度下招聘人数走势图和招聘学历分布图
+### Recruitment Number Trend Chart and Recruitment Education Distribution Chart under the Recruitment Dimension for an Enterprise
 
 ![image](/posts/risk/images/hire.png)
 
-能展示出企业的一个招聘情况。通过上图我们可以分析出，在2017年年中，该企业突然进行了大规模的招聘活动，而且根据招聘学历分布图，该企业在这段时间内大量的招聘了没有学历的人，这是一个很强的风险点。
-该图的绘制借助了bootstrap的morris-area-chart和morris-donut-chart。数据通过前端ajax请求，后台以json的形式返回。
+It can display the enterprise's recruitment situation. From the chart above, we can analyze that around mid-2017, the enterprise suddenly conducted large-scale recruitment activities, and according to the recruitment education distribution chart, the enterprise recruited a large number of people without educational qualifications during this period, which is a strong risk point.
+The drawing of this chart is assisted by Bootstrap's morris-area-chart and morris-donut-chart. Data is requested from the frontend via AJAX requests, and the backend returns it in JSON format.

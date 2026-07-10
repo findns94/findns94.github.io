@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { compileMarkdown } from '@/lib/markdown'
-import { formatDateZh } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 
 interface Props {
   params: {
@@ -38,7 +38,7 @@ export default async function PostPage({ params }: Props) {
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">{postMatter.title}</h1>
         <time className="block mt-2 text-gray-500">
-          {formatDateZh(postMatter.date)}
+          {formatDate(postMatter.date)}
         </time>
         {postMatter.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">

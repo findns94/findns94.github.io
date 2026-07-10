@@ -1,33 +1,33 @@
 ---
-title: 隐马尔可夫语言模型
+title: Hidden Markov Language Model
 date: 2019-03-19 20:13:07
-tags: [HMM, 语言模型]
-categories: [课程]
+tags: [HMM, Language Model]
+categories: [Course]
 math: true
 ---
 
 
-本文是2018年秋季计算语言学课程第5次作业的总结，任务为利用`隐马尔科夫模型`计算句子概率。
+This post is a summary of the 5th assignment for the Fall 2018 Computational Linguistics course, with the task of using a `Hidden Markov Model` to calculate sentence probabilities.
 
 <!-- more -->
 
-# 实验设置
+# Experimental Setup
 
-1. 按行分句。
-2. 计算状态转移矩阵和观测概率矩阵时考虑训练集中的单词词性。
-3. 忽略中括号及词组词性，去重后得到43个不重复的词性，作为隐藏状态。
-4. 忽略词性以及中括号，统计训练集、验证集和测试集的词语，得到55416个不重复的词语。
-5. 计算精度为小数点后1000位。
+1. Split sentences by line.
+2. When computing the state transition matrix and the observation probability matrix, consider the part-of-speech tags of words in the training set.
+3. Ignore square brackets and phrase-level part-of-speech tags; after deduplication, 43 distinct part-of-speech tags are obtained as the hidden states.
+4. Ignore part-of-speech tags and square brackets, and count the words in the training, validation, and test sets, yielding 55,416 distinct words.
+5. Computation precision is set to 1000 decimal places.
 
-# 隐马尔科夫模型计算句子概率过程
+# Process of Computing Sentence Probability with a Hidden Markov Model
 
-以`迈向/v  充满/v  希望/n  的/u  新/a  世纪/n`为例，进行以下处理：
+Using the example `迈向/v  充满/v  希望/n  的/u  新/a  世纪/n`, the following processing is performed:
 
-1. 在句子首尾加上`<bos>`和`<eos>`得到新的句子`<bos>/<bos> 迈向/v  充满/v  希望/n  的/u  新/a  世纪/n <eos>/<eos>`
-2. 状态集合$Q={\langle bos \rangle ,v,u,n,a,\langle eos \rangle}$
-3. 观测集合$V={\langle bos \rangle,迈向,充满,希望,的,新,世纪,\langle eos \rangle}$
+1. Add `<bos>` and `<eos>` to the beginning and end of the sentence, yielding the new sentence `<bos>/<bos> 迈向/v  充满/v  希望/n  的/u  新/a  世纪/n <eos>/<eos>`
+2. State set $Q={\langle bos \rangle ,v,u,n,a,\langle eos \rangle}$
+3. Observation set $V={\langle bos \rangle,迈向,充满,希望,的,新,世纪,\langle eos \rangle}$
 
-根据新的句子可得状态转移矩阵$A$如下：
+From the new sentence, the state transition matrix $A$ is obtained as follows:
 
 ||$\langle bos \rangle$|$v$|$u$|$n$|$a$|$\langle eos \rangle$|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -38,7 +38,7 @@ math: true
 |$a$|0|0|0|1.0|0|0|
 |$\langle eos \rangle$|0.166|0.166|0.166|0.166|0.166|0.166|
 
-同样可得观测概率矩阵$B$如下：
+Similarly, the observation probability matrix $B$ is obtained as follows:
 
 ||$\langle bos \rangle$|$迈向$|$充满$|$希望$|$的$|$新$|$世纪$|$\langle eos \rangle$|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -49,70 +49,70 @@ math: true
 |$a$|0|0|0|0|0|1|0|0|
 |$\langle eos \rangle$|0|0|0|0|0|0|0|1|
 
-由于句子的开头总是$\langle bos \rangle$，因此初始状态分布$\pi = [1,0,0,0,0,0]$
-这样就得到了一个`隐马尔科夫模型`$\lambda = (A,B,\pi)$
+Since the beginning of a sentence is always $\langle bos \rangle$, the initial state distribution $\pi = [1,0,0,0,0,0]$.
+This yields a `Hidden Markov Model` $\lambda = (A,B,\pi)$
 
-假设剔除词性后的观测序列(可以视为验证集和测试集中的句子)为`<bos> 迈向 充满 希望 的 新 世纪 <eos>`，则可以转化为向量$O=[0,1,2,3,4,5,6,7]$
+Suppose the observation sequence after removing part-of-speech tags (which can be regarded as sentences in the validation and test sets) is `<bos> 迈向 充满 希望 的 新 世纪 <eos>`, which can be converted to the vector $O=[0,1,2,3,4,5,6,7]$
 
-## 前向算法
+## Forward Algorithm
 
-根据前向算法可以得到观测序列的概率$P(O|\lambda)$
-定义到时刻$t$部分观测序列为$o_1,o_2,…,o_t$且状态为$q_i$的概率为前向概率，记作
+The forward algorithm can yield the probability of the observation sequence $P(O|\lambda)$.
+Define the probability that at time $t$ the partial observation sequence is $o_1,o_2,…,o_t$ and the state is $q_i$ as the forward probability, denoted
 
 $$\alpha_t (i)=P(o_1,o_2,…,o_t,i_t=q_i |\lambda)$$
 
-计算过程如下
-(1)初值
+The computation process is as follows:
+(1) Initialization
 $$\alpha_1 (i)={\pi}_i {b}_{i} ({o}_{1} ),    i=1,2,…,N$$
 
-(2)递推，对$t=1,2,…,T-1$
+(2) Recursion, for $t=1,2,…,T-1$
 $$\alpha_{t+1} (i)=[\sum_{j=1}^{N}\alpha_{t} (j) {a}_{ji} ] b_{i} (o_{t+1} ),    i=1,2,…,N$$
 
-(3)终止
+(3) Termination
 $$P(O│\lambda)=\sum_{i=1}^{N}[{\alpha}_{T} (i) ]$$
 
-经过计算可以得到该序列$O$的前向概率为$0.00390625$
+After computation, the forward probability of the sequence $O$ is obtained as $0.00390625$
 
-## 后向算法
+## Backward Algorithm
 
-同样根据后向算法也可以得到观测序列的概率$P(O|\lambda)$，不同之处在于一开始不需要初始状态分布$\pi$参与计算，而是在终止时才加入初始状态分布$\pi$
+Similarly, the backward algorithm can also yield the probability of the observation sequence $P(O|\lambda)$. The difference is that the initial state distribution $\pi$ is not needed at the beginning of the computation, but is instead introduced at the termination step.
 
-定义在时刻$t$状态为$q_i$的条件下，到$t+1$到$T$的部分观测序列为$o_{t+1},o_{t+2},…,o_{T}$概率为后向概率，记作
+Define the probability that, given the state is $q_i$ at time $t$, the partial observation sequence from $t+1$ to $T$ is $o_{t+1},o_{t+2},…,o_{T}$ as the backward probability, denoted
 
 $$\beta_{t} (i)=P(o_{t+1},o_{t+2},…,o_{T} |i_{t}=q_{i},\lambda)$$
 
-(1)初值
+(1) Initialization
 
 $${\alpha}_{1} (i)={\pi}_{i} {b}_{i} ({o}_{1} ),    i=1,2,…,N$$
 
-(2)递推, 对$t=T-1,T-2,…,1$
+(2) Recursion, for $t=T-1,T-2,…,1$
 
 $${\beta}_{t} (i)=\sum_{j=1}^{N}[{a}_{ij} {b}_{j} ({o}_{t+1}) ] {\beta}_{t+1} (j),    i=1,2,…,N$$
 
-(3)终止
+(3) Termination
 
 $$P(O│\lambda)=\sum_{i=1}^{N} {\pi}_{i} {b}_{i} ({o}_{1}) {\beta}_{1} (i)$$
 
-经过计算可以得到该序列$O$的后向概率为$0.00390625$，与前向概率一致，验证了两个概率相等的结论。
+After computation, the backward probability of the sequence $O$ is obtained as $0.00390625$, which matches the forward probability, verifying that the two probabilities are equal.
 
-根据上面计算的例子，可以统计所有训练集语料中词性的状态转移矩阵$A_(43 \times 43)$，训练集、（剔除了词性的）验证集和测试集语料中词性到词语的观测概率矩阵$B_{43 \times 55416}$（训练集中词性到词语的频数正常累加，而验证集和测试集中的新出现的词语的频数为0），从而使用前向算法和后向算法进行句子概率的计算。
+Based on the example computed above, one can construct the state transition matrix $A_(43 \times 43)$ of part-of-speech tags from all training corpus, as well as the observation probability matrix $B_{43 \times 55416}$ from part-of-speech tags to words in the training, (stripped of part-of-speech tags) validation, and test sets (word frequencies in the training set are accumulated normally, while frequencies of newly appeared words in the validation and test sets are 0). The forward algorithm and the backward algorithm are then used to compute sentence probabilities.
 
-# N-gram语言模型结果对比及分析
+# Comparison and Analysis of N-gram Language Model Results
 
-## 隐马尔科夫模型结果
+## Hidden Markov Model Results
 
-本次实验实现并测试了前向算法和后向算法，由于这2种方法得到的结果是相同的，因此最终提交了一份1.txt。可以从提交的1.txt中初步得到以下的观察结果：
+In this experiment, the forward algorithm and the backward algorithm were implemented and tested. Since the results produced by these two methods are identical, a single 1.txt was submitted. The following observations can be drawn from the submitted 1.txt:
 
-1. 总体按行分句的句子概率较小，平均句子概率在${10}^{-9}$到${10}^{-8}$数量级，有时会出现极小的概率，例如出现${10}^{-281}$数量级的情况。
-2. 有2456句句子出现概率为0的情况，考虑到计算精度已经很高（小数点后保留1000位），原因可能在于隐马尔可夫的观测概率矩阵和状态转移矩阵过于稀疏，大部分的元素都是0，对于在验证集和测试集语料中出现却未在训练集中出现的状态转移的处理能力较差，因此最终计算的概率为0的情况大概占了结果的一半左右。
+1. Overall, the sentence probabilities split by line are quite small, with average sentence probabilities on the order of ${10}^{-9}$ to ${10}^{-8}$. Extremely small probabilities sometimes occur, for example on the order of ${10}^{-281}$.
+2. There are 2456 sentences with a probability of 0. Considering the computation precision is already very high (1000 decimal places places retained), the reason may lie in the fact that the observation probability matrix and the state transition matrix of the Hidden Markov Model are excessively sparse, with most elements being 0. The model has poor capability to handle state transitions that appear in the validation and test sets but not in the training set. Therefore, the cases where the final computed probability is 0 account for roughly half of the results.
 
-而`n-gram`语言模型实验由于使用了各种平滑方法，对验证集和测试集的新词和低频词处理较好，没有出现句子概率为0的情况。
+In contrast, the `n-gram` language model experiment, which employed various smoothing methods, handles new words and low-frequency words in the validation and test sets well, and no sentence with a probability of 0 occurred.
 
-## 隐马尔科夫模型结果与N-gram语言模型结果对比
+## Comparison of Hidden Markov Model Results and N-gram Language Model Results
 
-### 平均句子概率
+### Average Sentence Probability
 
-|方法|语料|平均句子概率|句子概率大小排序|
+|Method|Corpus|Average Sentence Probability|Sentence Probability Ranking|
 |:---:|:---:|:---:|:---:|:---:|
 |add_one_bigram|valid|4.23E-11|5|
 |add_one_unigram|valid|2.79E-07|3|
@@ -121,7 +121,7 @@ $$P(O│\lambda)=\sum_{i=1}^{N} {\pi}_{i} {b}_{i} ({o}_{1}) {\beta}_{1} (i)$$
 |good_turing_bigram|valid|1.53E-13|6|
 |good_turing_unigram|valid|3.89E-07|2|
 
-|方法|语料|平均句子概率|句子概率大小排序|
+|Method|Corpus|Average Sentence Probability|Sentence Probability Ranking|
 |:---:|:---:|:---:|:---:|:---:|
 |add_one_bigram|test|1.03E-10|6|
 |add_one_unigram|test|8.36E-07|4|
@@ -130,15 +130,15 @@ $$P(O│\lambda)=\sum_{i=1}^{N} {\pi}_{i} {b}_{i} ({o}_{1}) {\beta}_{1} (i)$$
 |good_turing_bigram|test|7.07E-03|1|
 |good_turing_unigram|test|1.36E-06|3|
 
-如果一句句子中大部分的词语都有一个较高的概率，那么通过$P(w_1,w_2,…,w_n )=\subseteq_{i=2}^{N} P({w_i} | w_{i-(n-1) }…w_{i-1})$得到的句子概率（`n-gram`方法）也会较高，不同句子之间进行概率比较的差距也会更明显。
+If most words in a sentence have a relatively high probability, then the sentence probability obtained via $P(w_1,w_2,…,w_n )=\subseteq_{i=2}^{N} P({w_i} | w_{i-(n-1) }…w_{i-1})$ (the `n-gram` approach) will also be high, and the differences in probability between different sentences will be more pronounced.
 
-因此从上表中可以看出，`隐马尔科夫模型`计算出的平均句子概率处于中等偏低的水平，分别排在第4（valid语料）和第5（test语料）的位置，侧面反映出`隐马尔科夫模型`对验证集和测试集语料的适应性一般，或者说通过训练集语料构建的`隐马尔科夫模型`对于预测未出现在训练集中的验证集和测试集语料时，对于所预测的句子的置信度不高。
+Therefore, from the table above, it can be seen that the average sentence probability computed by the `Hidden Markov Model` is at a medium-to-low level, ranking 4th (validation corpus) and 5th (test corpus) respectively. This reflects, from a side perspective, that the `Hidden Markov Model` has average adaptability to the validation and test corpus, or in other words, the `Hidden Markov Model` built from the training corpus does not have high confidence when predicting sentences in the validation and test corpus that did not appear in the training set.
 
-### 概率差异平均排序
+### Average Rank of Probability Difference
 
-集合中的每句句子$S_j$，5种`n-gram`模型分别会计算出概率$p_0,p_1,p_2,p_3,p_4$，分别与`隐马尔科夫模型`的概率$p_{hmm}$进行相减后取绝对值（$|p_{hmm}-p_i |$），再进行排序得到顺序$r_0,r_1,r_2,r_3,r_4$，然后对于每种`n-gram`模型的所有句子得到的顺序$\frac{\sum_{j=1}^{n}{r}_{ij}}{n}$进行平均，从而得到该方法与`隐马尔科夫模型`的概率差异平均排序结果，如下面2张表格所示：
+For each sentence $S_j$ in the set, 5 `n-gram` model approaches compute probabilities $p_0,p_1,p_2,p_3,p_4$ respectively. Each is subtracted from the `Hidden Markov Model` probability $p_{hmm}$ and the absolute value is taken ($|p_{hmm}-p_i |$). These differences are then ranked to obtain the ranks $r_0,r_1,r_2,r_3,r_4$. The ranks for all sentences are then averaged for each `n-gram` model as $\frac{\sum_{j=1}^{n}{r}_{ij}}{n}$ to obtain the average rank of probability difference compared to the `Hidden Markov Model`, as shown in the two tables below:
 
-|方法|语料|概率差异排序平均值|
+|Method|Corpus|Average Rank of Probability Difference|
 |:---:|:---:|:---:|
 |add_one_bigram|valid|1.722009569|
 |add_one_unigram|valid|1.340669856|
@@ -146,7 +146,7 @@ $$P(O│\lambda)=\sum_{i=1}^{N} {\pi}_{i} {b}_{i} ({o}_{1}) {\beta}_{1} (i)$$
 |good_turing_bigram|valid|2.864114833|
 |good_turing_unigram|valid|2.314354067|
 
-|方法|语料|概率差异排序平均值|
+|Method|Corpus|Average Rank of Probability Difference|
 |:---:|:---:|:---:|
 |add_one_bigram|test|1.667934783|
 |add_one_unigram|test|1.43423913|
@@ -154,8 +154,8 @@ $$P(O│\lambda)=\sum_{i=1}^{N} {\pi}_{i} {b}_{i} ({o}_{1}) {\beta}_{1} (i)$$
 |good_turing_bigram|test|2.773369565|
 |good_turing_unigram|test|2.281521739|
 
-所以总体来看，`add_one_unigram`方法得到的概率与`隐马尔科夫模型`得到的概率最接近，其次时`add_one_bigram`方法，然后是`back_off_trigram`方法，之后是`good_turing_unigram`方法，而`good_turing_bigram`得到的概率与`隐马尔科夫模型`得到的概率相差最远。
+In summary, the probabilities obtained by the `add_one_unigram` method are closest to those obtained by the `Hidden Markov Model`, followed by the `add_one_bigram` method, then the `back_off_trigram` method, then the `good_turing_unigram` method, while the probabilities obtained by `good_turing_bigram` are the most distant from those obtained by the `Hidden Markov Model`.
 
-# 参考资料
+# References
 
-[1] 李航 (2012) 统计学习方法. 清华大学出版社, 北京.
+[1] Li Hang (2012). Statistical Learning Methods. Tsinghua University Press, Beijing.

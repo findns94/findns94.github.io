@@ -1,172 +1,172 @@
 ---
-title: 智能合约的形式化验证
+title: Formal Verification of Smart Contracts
 date: 2019-04-22 22:41:57
 tags: [Formal Validation, Smart Contract]
-categories: [课程]
+categories: [Course]
 math: true
 ---
 
 
-智能合约是一种代码合约和算法合同，将成为未来数字社会的基础技术，它利用协议和用户接口，完成合约过程的所有步骤。本文总结了智能合约主要技术特点和现存的可信，安全等问题，提出将形式化方法应用于智能合约的建模，模型检测和模型验证过程，以支持规模化智能合约的生成。
+A smart contract is a code contract and algorithmic contract that will become a foundational technology of the future digital society. It utilizes protocols and user interfaces to complete all steps of the contractual process. This article summarizes the main technical characteristics of smart contracts as well as existing trustworthiness and security issues, and proposes applying formal methods to the modeling, model checking, and formal verification of smart contracts to support the generation of large-scale smart contracts.
 
 <!-- more -->
 
-以太坊（英语：Ethereum）是一个开源的有智能合约功能的公共区块链平台[1][2]。通过其专用加密货币以太币（Ether，又称“以太币”）提供去中心化的虚拟机（称为“以太虚拟机” Ethereum Virtual Machine）来处理点对点合约。
+Ethereum is an open-source public blockchain platform with smart contract functionality [1][2]. Through its dedicated cryptocurrency, Ether, it provides a decentralized virtual machine (called the "Ethereum Virtual Machine") to process peer-to-peer contracts.
 
-以太坊最重要的技术贡献就是智能合约。智能合约是存储在区块键上的程序，可以协助和验证合约的谈判和运行。以太坊的智能合约可以数种用图灵完备的编程语言写成[3]。以太坊平台是一台由众多用户构成的网络来运转的公用电脑，并用以太币来分配和支付这台电脑的使用权[4]。智能合约可以让众多组织的数据库得以用低廉的成本交互，并且让用户写下精密的合约，功能之一是产生去中心化自治组织，也就是一间只是由以太坊合约构成的虚拟公司[5]。
+Ethereum's most important technical contribution is the smart contract. A smart contract is a program stored on the blockchain that can assist with and verify the negotiation and execution of contracts. Ethereum's smart contracts can be written in several Turing-complete programming languages [3]. The Ethereum platform is a public computer operated by a network of many users, and uses Ether to allocate and pay for the right to use this computer [4]. Smart contracts enable databases of numerous organizations to interact at low cost, and allow users to write sophisticated contracts. One of their functions is to create Decentralized Autonomous Organizations (DAOs), which are virtual companies constituted solely by Ethereum contracts [5].
 
-因为合约内容公开，合约可以证明其宣称的功能是真实的，例如虚拟赌场可以证明它是公平的[6]。另一方面，合约的公开性也表示如果合约中有漏洞，任何人都可以立刻看到，而修正程序可能会需要一些时间[7]。The DAO就是一个例子，无法即时阻止[8]。
+Because contract contents are public, contracts can prove that their claimed features are genuine — for example, a virtual casino can prove it is fair [6]. On the other hand, the public nature of contracts also means that if a vulnerability exists in the contract, anyone can immediately see it, while fixing the code may take some time [7]. The DAO is an example of an incident that could not have been stopped in real time [8].
 
-The DAO：DAO是Decentralized Autonomous Organization（分布式自治组织）的简称，the DAO是一个基于以太坊区块链平台的迄今为止世界上最大的众筹项目。其目的是让持有the DAO代币的参与者通过投票的方式共同决定被投资项目， 整个社区完全自制， 并且通过代码编写的智能合来实现。The DAO筹集到了1170万以太币（价值约2.45亿美元），并创造了众筹历史之最。
+The DAO: DAO stands for Decentralized Autonomous Organization. The DAO was, at the time, the world's largest crowdfunding project built on the Ethereum blockchain platform. Its purpose was to allow holders of The DAO tokens to collectively decide on investment projects through voting. The entire community was fully self-governing, implemented through smart contracts written in code. The DAO raised 11.7 million Ether (worth approximately $245 million), setting a record in crowdfunding history.
 
-然而在2016年6月17日，运行在以太坊共有链上的The DAO智能合约遭遇攻击，该合约筹集的公众款项不断被一个函数的递归调用转向他的子合约，涉及总额300多万亿台币。智能合约的许多细节仍在研究中，包括如何验证合约的功能，如何大规模分析各个已发布的合约，发现找出合约中的漏洞。
+However, on June 17, 2016, The DAO's smart contract running on the Ethereum public chain was attacked. Funds raised by the contract were continuously redirected to the attacker's sub-contract through a recursive call to a single function, involving an amount equivalent to over 3 trillion New Taiwan Dollars. Many details of smart contracts are still under study, including how to verify the functionality of contracts, how to perform large-scale analysis on published contracts, and how to discover and identify vulnerabilities within contracts.
 
-由于The Dao是运行在以太坊的一个开源的项目，其代码在以太坊平台公布出来了，我们针对TheDao智能合约交易场景下的安全漏洞，通过NuSMV建模语言对该过程进行了抽象建模处理，然后通过NuSMV对该模型进行了验证，成功的找出了该智能合约在交易场景下的安全漏洞。随后，我们针对这一漏洞，在模型层面上对该智能合约进行了修复，然后再用NuSMV对模型进行验证，最后发现该漏洞已准确被修复。
+Since The DAO is an open-source project running on Ethereum, its code was published on the Ethereum platform. Focusing on the security vulnerabilities in The DAO smart contract's transaction scenario, we used the NuSMV modeling language to abstract and model the process. We then verified the model using NuSMV, successfully identifying the security vulnerability in the smart contract's transaction scenario. Subsequently, we fixed the smart contract at the model level for this vulnerability, then used NuSMV to verify the model again, and ultimately found that the vulnerability had been accurately repaired.
 
-# 问题描述
+# Problem Description
 
-## The Dao交易流程解析
+## Analysis of The DAO Transaction Flow
 
 ![image](/posts/dao-validation/images/dao_process.PNG)
 
-上图是攻击者攻击TheDao的主要流程图：
+The figure above shows the main flowchart of the attack on The DAO:
 
-1. 首先，攻击者在TheDao中创建一个新的合同，
-2. 然后利用这个合同，向splitDao发起split请求：
-根据白皮书的设计，splitDAO的本意是要保护投票中处于弱势地位的少数派防止他们被多数派通过投票的方式合法剥削。通过分裂出一个小规模的DAO，给予他们一个用脚投票的机制，同时仍然确保他们可以获取分裂前进行的对外资助产生的可能收益。
-3. 一旦splitDAO通过了split请求，它就会创建childDAO(如果不存在的话），并将分裂者拥有的Ether转入childDAO中（这是目前唯一可行的提取Ether的机制）
-4. 最后，会将child token返回给原合同，这样提出split请求的人就有权限访问这个新分裂出来的childDao了。
+1. First, the attacker creates a new contract within The DAO.
+2. Then, using this contract, the attacker initiates a split request to splitDAO:
+By design according to the white paper, the original intent of splitDAO was to protect the minority who are at a disadvantage during voting, preventing them from being exploited by the majority through legitimate voting. By splitting out a small-scale DAO, they are given the mechanism of "voting with their feet," while still ensuring they can receive any potential returns from external funding made before the split.
+3. Once splitDAO approves the split request, it creates a childDAO (if one does not already exist) and transfers the Ether owned by the splitter into the childDAO (this is currently the only viable mechanism for withdrawing Ether).
+4. Finally, the child token is returned to the original contract, so that the person who proposed the split request gains access to the newly split childDAO.
 
-到目前为止，这四个步骤中看上去没有任何异常发生，然而真正的危机，在第三步Ether转入childDao开始，已经悄然发生。下面我们来看第三个步骤中splitDao具体是如何转移Ether的。
+Up to this point, the four steps above seem to proceed without any abnormalities. However, the real crisis begins the moment Ether is transferred into the childDAO in step 3. Below, we look at how splitDAO specifically transfers Ether in the third step.
 
 ![image](/posts/dao-validation/images/dao_process_2.PNG)
 
-3.1 splitDao首先会检查提议者的Id是否正常，提议者是否投出赞成票（通过第1，2步的正常流程，攻击者的这些验证信息能够很轻易的通过），检查通过后，splitDao就会发起withdraw请求，调用withdraw函数。
-3.2 随后，withdraw函数通过一系列的计算，计算出需要转移的Ether数量，接着就调用payout函数。
-3.3 根据TheDao的设计，payout函数会先调用用户原合同内自定义的callback函数(类似于通知用户split请求完成了，让用户可以做一些自定义的操作)。然后进行3.4操作，**调用真正的Payout函数（真正执行转账功能，是内部函数，不提供外部接口，是一个原子操作）**。
+3.1 splitDAO first checks whether the proposer's ID is valid and whether the proposer has voted in favor (through the normal process of steps 1 and 2, the attacker's verification information can easily pass). After the check is passed, splitDAO initiates a withdraw request and calls the withdraw function.
+3.2 Subsequently, the withdraw function calculates the amount of Ether to be transferred through a series of computations, and then calls the payout function.
+3.3 According to The DAO's design, the payout function first calls the user-defined callback function in the original contract (similar to notifying the user that the split request is complete and allowing them to perform some custom operations). Then it proceeds to execute step 3.4: **calling the actual Payout function (which performs the real transfer functionality; it is an internal function with no external interface and is an atomic operation)**.
 
-正常流程本应该像上述流程一样，按顺序执行完3.1，3.2，3.3，3.4后，转账成功，一切正常。
-然而，问题恰恰出现在用户自定义的回调函数上面：攻击者在自定义的回调函数上，又再次的调用splitDao，发起withdraw操作。这样，正常的流程就变成3.1，3.2，3.3，3.5(3.4压入栈中)3.1，3.2，3.3，3.5… 这样无限递归下去了，直到callback停止3.5过程，停止调用splitDao，接着被压入栈中的许多步3.4Payout转账操作将会被重复执行多次，攻击者的账户也就凭空的多出了很多Ether。
+Under normal flow, execution should follow the sequence of 3.1, 3.2, 3.3, and 3.4 in order as described above, after which the transfer succeeds and everything proceeds normally.
+However, the problem arises precisely at the user-defined callback function: in the custom callback function, the attacker calls splitDAO again and initiates a withdraw operation. This causes the normal flow to become 3.1, 3.2, 3.3, 3.5 (with 3.4 pushed onto the stack), 3.1, 3.2, 3.3, 3.5... repeating endlessly until the callback stops the 3.5 process and ceases calling splitDAO. Then, the multiple instances of the 3.4 Payout transfer operations that were pushed onto the stack will be executed repeatedly, and the attacker's account acquires a large amount of Ether out of thin air.
 
-# The Dao交易流程状态机
+# State Machine of The DAO Transaction Flow
 
-为了使用NuSMV对上述流程进行建模验证，我们首先需要对上述交易流程进行抽象建模，考虑到状态机模型与NuSMV模型的匹配度比较高，我们首先将该流程抽象建模成3个不同模块的状态机：user模块，contract模块以及splitDao模块。
+To use NuSMV to model and verify the process described above, we first need to abstract and model the transaction flow mentioned above. Considering that state machine models have a high degree of compatibility with NuSMV models, we first abstract the flow into state machines of three different modules: the user module, the contract module, and the splitDAO module.
 
-## User模块主要状态机
+## Main State Machine of the User Module
 
 ![image](/posts/dao-validation/images/user_state.PNG)
 
-对于User模块来说，主要包含4个重要状态：初始化状态，用户account为0，创建的合同为和splitDao均处于初始状态。随后，当处于初始状态的user发起split 请求后，splitRequest置为true，contract状态变为split_contract，spltDao接收到请求后分裂为childDao状态，同时contract状态更新为child_contract状态。最后，当splitDao完成了所有的Payout操作后，返回child_Dao的控制权child_token（将其设为true），同时将用户的account变更为12以太币，new_contract和splitDao的状态均更新为end.
+For the User module, it primarily contains 4 important states: an initialization state where the user account is 0, and both the created contract and splitDAO are in their initial states. Subsequently, when a user in the initialization state initiates a split request, splitRequest is set to true, the contract state becomes split_contract, and after splitDAO receives the request, it splits into the childDAO state while the contract state is updated to child_contract. Finally, after splitDAO completes all Payout operations, it returns the control token child_token of childDAO (setting it to true) and simultaneously changes the user's account to 12 Ether, while the states of new_contract and splitDAO are both updated to end.
 
-## Contract模块主要状态机
+## Main State Machine of the Contract Module
 
 ![image](/posts/dao-validation/images/contract.PNG)
 
-对于contract模块来说，同样也包含4个最主要的状态：初始状态以太币设为10，合同状态为new_contract状态。当合同发起splt_proposal请求时，splitRequest状态置为true，合同状态置为split_contract状态。当splitDao创建完新的child_Dao后，将child_token置为true，同时合同的状态置为child_contract。最后合同发起withdraw请求，将以太币加上收入，更新为12，随后合同的状态置为end。
+For the contract module, it similarly contains 4 most significant states: the initial state where Ether is set to 10 and the contract state is new_contract. When the contract initiates a split_proposal request, the splitRequest state is set to true and the contract state is set to split_contract. After splitDAO creates the new childDAO, the child_token is set to true while the contract state is set to child_contract. Finally, the contract initiates a withdraw request, adds revenue to the Ether to update it to 12, and then sets the contract state to end.
 
-## splitDao模块主要状态机
+## Main State Machine of the splitDAO Module
 
-由于Nusmv不支持函数调用，所以为了模拟出函数调用栈的行为，我们又创建出了建议的stack栈模块，它的主要状态机如下图所示：
+Since NuSMV does not support function calls, to simulate the behavior of a function call stack, we created a custom stack module. Its main state machine is shown in the figure below:
 
-### Stack模块状态机图
+### Stack Module State Machine Diagram
 
 ![image](/posts/dao-validation/images/stack.PNG)
 
-当发来的operation操作为push操作时，该栈会把当前状态存入function_stack数组中，并且对应的指针counts+1；当operation为pop时，会将function_stack数组中指针当前指向的状态返回，同时指针counts-1；当operation为relax时，状态不变。
+When the received operation is a push operation, the stack stores the current state into the function_stack array and increments the corresponding pointer counts by 1. When the operation is pop, it returns the state pointed to by the pointer in the function_stack array and decrements the pointer counts by 1. When the operation is relax, the state remains unchanged.
 
-### splitDao模块状态机核心状态图
+### splitDAO Core State Diagram
 
 ![image](/posts/dao-validation/images/splitDao_core.png)
 
-splitDao初始状态投票数votingNum的值为0，当有合同发起split请求后，投票数目就会相应的增加1，当投票的数目达到某一个阈值（我们这里假设为20）后，splitDao开始进行split操作，当splitDao发起分裂请求后，时间now就会一直累加1，根据TheDao的设计，需要等待7天后，split操作才会完全生效，之后将会创建一个新的child_Dao，并将访问控制权child_token设置为true并返回给所有的split请求者。
+The initial state of splitDAO has a voting count votingNum of 0. When a contract initiates a split request, the voting count increases by 1 accordingly. When the number of votes reaches a certain threshold (we assume 20 here), splitDAO begins the split operation. After splitDAO initiates the split request, the time now increments continuously by 1. According to The DAO's design, one must wait 7 days before the split operation takes full effect. After that, a new childDAO is created and the access control token child_token is set to true and returned to all split requesters.
 
-之后，splitDao需要将原合同的Ether转到新的child_Dao中，并且计算全合同的reward值，一并转入到child_Dao。因此splitDao会发起withdraw请求，并将状态设为withdraw_reward_for状态。在这里，它会先检查paidout是否小于reward（这一步很重要，之后会详细的介绍），如果满足条件，它就会调用payout方法。
+After that, splitDAO needs to transfer the Ether from the original contract to the new childDAO and calculate the reward value of the entire contract, transferring it together to the childDAO. Therefore, splitDAO initiates a withdraw request and sets its state to withdraw_reward_for. Here, it first checks whether paidout is less than reward (this step is very important and will be discussed in detail later). If the condition is satisfied, it calls the payout method.
 
-而在payout方法中，它首先会去调用用户原合同中自定义的callbackFunction，然后紧接着就会调用真实的转账函数Payout，若callback函数中递归调用spiltDao，那么每次payout调用真实转账函数Payout都会暂时将其压入栈中，直到递归结束，栈中实际转账任务依次执行。这里我们通过我们自己定义的简单栈模拟这一过程：每次调用callback之前将operation置为push，将PayOut操作push进入栈。当callback不在调用splitDao时，将operation置为pop，此时栈中的PayOut操作将会依次被pop出来执行。
+In the payout method, it first calls the userFunction defined in the user's original contract (the callback function), and then immediately calls the actual transfer function Payout. If the callback function recursively calls splitDAO, then each invocation of Payout by payout pushes it onto the stack. When the recursion ends, the actual transfer tasks in the stack are executed sequentially. Here, we simulate this process using our custom simple stack: before each callback invocation, the operation is set to push, pushing the PayOut operation onto the stack. When the callback no longer calls splitDAO, the operation is set to pop, and the PayOut operations in the stack are then popped out and executed sequentially.
 
-最后，当所有的PayOut操作都执行完毕后，account的值将会被累加很多次，并且splitDao会将paidOut值置为paidOut+reward的值。
+Finally, after all PayOut operations have been executed, the value of account is accumulated many times over, and splitDAO sets the paidOut value to paidOut + reward.
 
-此外，值得注意的是TheDao引入了一个gas的概念：
+Additionally, it is worth noting that The DAO introduced the concept of gas:
 
-合约执行会在所有节点中被多次重复，这个事实得使得合约执行的消耗变得昂贵，所以这也促使大家将能在链下进行的运算都不放到区块链上进行。对于每个被执行的命令都会有一个特定的消耗，用单位gas计数。每个合约可以利用的命令都会有一个相应的gas值。
+Contract execution is repeated across all nodes, which makes the cost of contract execution expensive and encourages keeping computations off the blockchain whenever possible. Each executed command has a specific cost, counted in units of gas. Each command available to a contract has a corresponding gas value.
 
-每笔交易都被要求包括一个gas limit。如果该交易由于计算，包括原始消息和一些触发的其他消息，需要使用的gas数量小于或等于所设置的gas limit，那么这个交易会被处理。如果gas总消耗超过gas limit，那么所有的操作都会被复原，但交易是成立的并且交易费任会被矿工收取。区块链会显示这笔交易完成尝试，但因为没有提供足够的gas导致所有的合约命令都被复原。所以交易里没有被使用的超量gas都会以以太币的形式打回给交易发起者。
+Every transaction is required to include a gas limit. If the transaction, due to computation — including the original message and any triggered additional messages — requires a gas amount less than or equal to the set gas limit, the transaction will be processed. If the total gas consumption exceeds the gas limit, all operations are reverted, but the transaction is considered valid and the transaction fee is still collected by the miner. The blockchain will show that the transaction completed its attempt, but since insufficient gas was provided, all contract commands were reverted. Any excess gas that was not used in the transaction is returned to the transaction initiator in the form of Ether.
 
-因此，这里攻击者为了避免gas被用完的情况，它在自定义的callback函数中，将会通过对gas进行一定数量上的限制(这里我们假设为gas=10)来递归的调用splitDao函数
+Therefore, to avoid running out of gas, the attacker, in the custom callback function, recursively calls the splitDAO function within a certain limit on gas (we assume gas = 10 here).
 
-# 漏洞修复
+# Vulnerability Fix
 
-通过splitDao关键状态机的流程分析，我们可以很容易的发现问题所在：
+By analyzing the flow of the splitDAO critical state machine, we can easily identify the problem:
 
-首先，在withdraw函数中，在调用payout之前，系统为了不重复调用payout，是会对reward的值和paidOut的值进行比较的，而且当真实的PayOut函数执行完毕后，确实是会将reward的值加到paidOut上。
+First, in the withdraw function, before calling payout, the system compares the value of reward with the value of paidOut to avoid calling payout more than once. And after the actual PayOut function is executed, the value of reward is indeed added to paidOut.
 
-然而攻击者巧妙的地方在于利用调用栈的机制，递归的调用splitDao的withdraw函数，由于前一次应该执行的PayOut函数还在栈中没有被执行，因此paidOut的值也没有变化，理所当然能通过withdraw函数的检查机制，最后造成多次递归转账的行为。
+However, the attacker's cleverness lies in exploiting the call stack mechanism by recursively calling splitDAO's withdraw function. Because the previously executed PayOut function is still in the stack and has not been executed, the paidOut value has not changed, allowing the check in the withdraw function to pass naturally. This ultimately results in multiple recursive transfers.
 
-当了解了这一机制后，要想修复掉这个问题也变得十分的简单：
-只需要将paidOut值改变的地方放在payOut函数调用之前，而不是之后。
-只需要做这一个小小的改动，之后就算callback函数递归调用splitDao的withdraw函数，该函数的检查机制会发现先paidOut的值已经发生改变，不再小于reward，说明payout已经被调用过，就不会再去递归调用了，这一漏洞也顺利的解决了。
+Once this mechanism is understood, fixing this issue becomes very simple:
+The only change needed is to update the paidOut value before calling the payOut function, rather than after it.
+With just this small change, even if the callback function recursively calls splitDAO's withdraw function, the function's check mechanism will detect that the paidOut value has already changed and is no longer less than reward, indicating that payout has already been called. Thus, it will not recurse again, and this vulnerability is resolved.
 
-# NuSMV建模过程
+# NuSMV Modeling Process
 
-## 属性介绍
+## Attribute Overview
 
-|main模块|类型|含义|
+| main module | Type | Meaning |
 |:---:|:---:|:---:|
-|gas|integer|能量，为0时交易停止|
-|user|user|用户，拥有合约，传入参数为能量|
+| gas | integer; | Energy; transaction stops when it reaches 0 |
+| user | user | User, owns a contract, receives energy as a parameter |
 
-|User模块|类型|含义|
+| User Module | Type | Meaning |
 |:---:|:---:|:---:|
-|account|integer|用户账户的余额|
-|splitRequest|boolean|分裂合约的请求|
-|child_token|boolean|标志可以取钱的许可|
-|new_contract|contract|合约|
-|split_dao|splitDao|分裂出子DAO的过程|
+| account | integer | Balance of the user's account |
+| splitRequest | boolean | Request to split the contract |
+| child_token | boolean | Flag indicating permission to withdraw funds |
+| new_contract | contract | Contract |
+| split_dao | splitDAO | The process of splitting out a child DAO |
 
-|contract模块|类型|含义|
+| contract module | Type | Meaning |
 |:---:|:---:|:---:|
-|ETH|integer|以太币，以太坊平台上的货币|
-|states|enumeration|合约的状态，可以取的状态有新建合约、分裂合约、子合约、终止状态|
-|directions|enumeration|合约转移的方向，可取的值有提出分裂请求、取钱、保持当前状态|
+| ETH | integer | Ether, the currency on the Ethereum platform |
+| states | enumeration | State of the contract; available states are new_contract, split_contract, child_contract, and end |
+| directions | enumeration | Direction of contract transition; available values are initiating a split request, withdrawing funds, and staying in the current state |
 
-|stack模块|类型|含义|
+| stack module | Type | Meaning |
 |:---:|:---:|:---:|
-|counts|integer|记录当前栈的深度|
-|function_stack|array|使用数组构造栈，取值有callback_function、PayOut，代表回调函数和付款|
+| counts | integer | Records the current depth of the stack |
+| function_stack | array | Stack constructed using an array; values include callback_function and PayOut, representing the callback function and payment respectively |
 
-|splitDao模块|类型|含义|
+| splitDao module | Type | Meaning |
 |:---:|:---:|:---:|
-|votingNum|integer|投票数目|
-|votingFloor|integer|投票通过最低阈值|
-|votingDeadline|integer|投票截止日期|
-|now|integer|当前日期|
-|operation|enumeration|栈的操作，取值为stackpush、stackpop、relax，分别表示压入元素、弹出元素和无操作|
-|pushStates|enumeration|压入栈的元素，取值有callback_function、PayOut，代表回调函数和付款|
-|popStates|enumeration|弹出栈的元素，取值有callback_function、PayOut，代表回调函数和付款|
-|states|enumeration|状态|
-|paidout|integer|累计收益|
-|reward|integer|通过分裂合约得到的收益|
-|functionStack|stack|栈结构|
-|accumulatedInput|integer|计算收益reward的变量|
-|totalSupply|integer|计算收益reward的变量|
-|balanceOf|integer|计算收益reward的变量|
+| votingNum | integer | Number of votes |
+| votingFloor | integer | Minimum threshold for vote passing |
+| votingDeadline | integer | Voting deadline |
+| now | integer | Current date |
+| operation | enumeration | Stack operation; values are stackpush, stackpop, and relax, representing push, pop, and no-op respectively |
+| pushStates | enumeration | Elements pushed onto the stack; values include callback_function and PayOut, representing the callback function and payment respectively |
+| popStates | enumeration | Elements popped from the stack; values include callback_function and PayOut, representing the callback function and payment respectively |
+| states | enumeration | State |
+| paidout | integer | Accumulated earnings |
+| reward | integer | Revenue obtained through contract splitting |
+| functionStack | stack | Stack structure |
+| accumulatedInput | integer | Variable for calculating the reward |
+| totalSupply | integer | Variable for calculating the reward |
+| balanceOf | integer | Variable for calculating the reward |
 
-## 流程说明
+## Process Description
 
-根据第二节中介绍的三个模块的状态机模型，我们将其翻译成了NuSMV模型，具体实现细节详见代码。之后，我们通过设置NuSMV的断言：**SPEC AG !(user.new_contract.ETH > 12)**;
-来判断攻击者是否成功利用漏洞获取了额外的Ether。
-按照正常流程，用户进行split操作应该会获得本金10Ether+原合同收益2Ether共12Ehter。因此，若中间某个流程使得用户的以太币变得大于12Ehter，说明该智能合约存在漏洞。
-随后通过NuSMV验证指令对该模型进行验证。
+Based on the state machine models of the three modules introduced in the second section, we translated them into NuSMV models; see the code for specific implementation details. We then set the NuSMV assertion: **SPEC AG !(user.new_contract.ETH > 12)**;
+to determine whether the attacker has successfully exploited the vulnerability to obtain extra Ether.
+Following the standard procedure, a user performing a split operation should receive the principal of 10 Ether plus the original contract revenue of 2 Ether, totaling 12 Ether. Therefore, if at any point in the process the user's Ether becomes greater than 12 Ether, it indicates that the smart contract has a vulnerability.
+We then use the NuSMV verification command to verify the model.
 
-## 验证结果
+## Verification Results
 
-通过上述流程，NuSMV的模型验证结果如下所示：
+Through the process described above, the model verification results from NuSMV are as follows:
 
 ```bash
 -- specification AG !(user.new_contract.ETH > 12)  is false
 -- as demonstrated by the following execution sequence
-Trace Description: CTL Counterexample 
-Trace Type: Counterexample 
+Trace Description: CTL Counterexample
+Trace Type: Counterexample
   -> State: 1.1 <-
     gas = 15
     user.account = 0
@@ -201,11 +201,11 @@ user.split_dao.operation = relax
     user.split_dao.functionStack.counts = 3
 ```
 
-结果说明该模型中确实存在漏洞，会使得用户获得额外的以太币。
+The results indicate that a vulnerability indeed exists in the model, causing the user to obtain extra Ether.
 
-## 修复过程与再次验证
+## Fix Procedure and Re-verification
 
-根据第二节漏洞修复小节介绍分析的修复方案，我们将paidout值由：
+Based on the fix solution analyzed in the second section regarding the vulnerability fix, we changed the paidout value from:
 
 ```bash
 next (paidout):=
@@ -215,7 +215,7 @@ next (paidout):=
             esac;
 ```
 
-转变为：
+to:
 
 ```bash
 next (paidout):=
@@ -225,20 +225,20 @@ next (paidout):=
             esac;
 ```
 
-为了验证我们修改后，不仅能够修复掉之前的漏洞，还能够使得该智能合同能够按照原来的设计正常的程序走下去。也就是意味着，即使攻击者写了异常攻击代码，我们也会按照正常的业务逻辑给予其正常数目的以太币。
+To verify that our modification not only fixes the previous vulnerability but also allows the smart contract to continue proceeding according to its original design — meaning that even if an attacker writes anomalous attack code, the normal business logic will still provide them with the normal amount of Ether.
 
-因此我们又加了一条NuSMV断言：**SPEC AG !(user.new_contract.ETH = 12)**
+Therefore, we added another NuSMV assertion: **SPEC AG !(user.new_contract.ETH = 12)**
 
-判断经过最后整体流程之后，用户合同中的账目是不是12以太币.
+to determine whether, after the overall flow is completed, the user's contract balance is 12 Ether.
 
-修改后的模型验证结果如下所示：
+The modified model verification results are shown below:
 
 ```bash
 -- specification AG !(user.new_contract.ETH > 12)  is true
 -- specification AG !(user.new_contract.ETH = 12)  is false
 -- as demonstrated by the following execution sequence
-Trace Description: CTL Counterexample 
-Trace Type: Counterexample 
+Trace Description: CTL Counterexample
+Trace Type: Counterexample
   -> State: 1.1 <-
     gas = 15
     user.account = 0
@@ -259,26 +259,26 @@ user.new_contract.ETH = 10
     user.split_dao.states = end
 ```
 
-结果说明:
+The results indicate:
 
-1. 原TheDao交易流程中存在的漏洞已经被我们修复成功。
-2. 修复后的模型能够按照正常预期的流程运行。
+1. The vulnerability existing in the original The DAO transaction flow has been successfully fixed.
+2. The fixed model can operate according to the expected normal flow.
 
-# 总结
+# Summary
 
-本次实验我们通过阅读以太坊上TheDao的开源代码，理解带有漏洞的交易流程，然后针对该流程将其转换为与NuSMV相似性较高的状态机模型。最后通过NuSMV的模型验证功能成功的复现了TheDao智能合约中的安全漏洞问题。
+In this experiment, by reading the open-source code of The DAO on Ethereum, we understood the transaction flow containing the vulnerability. We then converted this flow into a state machine model with a high degree of similarity to NuSMV. Finally, through NuSMV's model checking functionality, we successfully reproduced the security vulnerability issue in The DAO's smart contract.
 
-最后，针对TheDao中的漏洞，进行了模型层面的修复，然后使用NuSMV对修复后的模型进行再次检验，最后验证结果证明：我们成功地修复了原来的安全漏洞并且没有破环原来的正常逻辑流程。
+Lastly, we performed a fix at the model level for the vulnerability in The DAO, then used NuSMV to test the fixed model again. The final verification results demonstrate that: we successfully fixed the original security vulnerability without breaking the normal logical flow.
 
-通过TheDao这个验证实例我们可以看出，智能合约中确实存在着一些可信与安全问题，而形式化验证的方法能够比较好的用于智能合约的生命周期验证，一个好的模型检测工具有助于检查和验证智能合约中的各项属性，从而保证智能合约的安全性。
+Through The DAO verification example, we can see that there indeed exist trustworthiness and security issues in smart contracts, and that formal methods can be well applied to the full lifecycle verification of smart contracts. A good model checking tool helps inspect and verify various properties of smart contracts, thereby ensuring their security.
 
-# 参考文献
+# References
 
 [1]	Gray, Jeff. Bitcoin believers: Why digital currency backers are keeping the faith. The Globe and Mail (Phillip Crawley). 7 April 2014 [17 February 2016].
 [2]	Vigna, Paul. BitBeat: Microsoft to Offer Ethereum-Based Services on Azure. The Wall Street Journal (Blog). News Corp. 28 October 2015 [17 February 2016].
 [3]	Jon, Evans. Vapor No More: Ethereum Has Launched. techcrunch.com. [25 February 2016].
-[4]	Nathaniel Popper for the New York Times. March 27, 2016 Ethereum, a Virtual Currency, Enables Transactions That Rival Bitcoin’s.
+[4]	Nathaniel Popper for the New York Times. March 27, 2016 Ethereum, a Virtual Currency, Enables Transactions That Rival Bitcoin's.
 [5]	The great chain of being sure about things. The Economist. 31 October 2015 [4 May 2016].
 [6]	Piasecki, Piotr J. Gaming Self-Contained Provably Fair Smart Contract Casinos. Ledger. 2016, 1: 99–110. doi:10.5195/ledger.2016.29.
-[7]	Peck, M. Ethereum’s 150-Million Blockchain-Powered Fund Opens Just as Researchers Call For a Halt. IEEE Spectrum. Institute of Electrical and Electronics Engineers. 28 May 2016.
+[7]	Peck, M. Ethereum's 150-Million Blockchain-Powered Fund Opens Just as Researchers Call For a Halt. IEEE Spectrum. Institute of Electrical and Electronics Engineers. 28 May 2016.
 [8]	Popper, Nathaniel. Hacker May Have Taken 50 Million From Cybercurrency Project. The New York Times. 17 June 2016.

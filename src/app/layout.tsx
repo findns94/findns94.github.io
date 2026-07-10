@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     default: 'Silver Bullet',
     template: '%s | Silver Bullet',
   },
-  description: 'Martin Zhao 的个人博客 — 技术、科研与生活',
+  description: 'Martin Zhao\'s Blog — Tech, Research, and Life',
   alternates: {
     types: {
       'application/rss+xml': '/feed.xml',
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <head>
         <link
           rel="stylesheet"
@@ -36,8 +36,8 @@ export default function RootLayout({
               Silver Bullet
             </a>
             <nav className="mt-3 flex gap-6 text-sm text-gray-600">
-              <a href="/" className="hover:text-blue-600 transition-colors">首页</a>
-              <a href="/tags" className="hover:text-blue-600 transition-colors">标签</a>
+              <a href="/" className="hover:text-blue-600 transition-colors">Home</a>
+              <a href="/tags" className="hover:text-blue-600 transition-colors">Tags</a>
               <a href="/feed.xml" className="hover:text-blue-600 transition-colors">RSS</a>
             </nav>
           </header>

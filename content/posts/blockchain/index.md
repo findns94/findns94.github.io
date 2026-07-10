@@ -1,355 +1,355 @@
 ---
-title: 区块链网络仿真
+title: Blockchain Network Simulation
 date: 2019-03-19 21:14:51
-tags: [区块链, 比特币]
-categories: [课程]
+tags: [Blockchain, Bitcoin]
+categories: [Course]
 math: true
 ---
 
+The simulation is divided into 3 parts:
 
-仿真内容分为3个部分
-
-- **P2P网络仿真**
-  - 使⽤Mininet搭建不同拓扑的网络（如星型、环形、树形、网状）限制不用链路的带宽
-  - 每个结点可以生成某种类型的数据，结点间进行通信，在本地建立数据库，记录不同节点的地址，以及各个结点的数据类型
-  - 在不同的节点间传输数据（不同大小，多个数量）
-
----
-
-- **区块链仿真**
-  - 实现区块链网络的仿真
-  - 模拟p2p网络的交易（区块）及其传播逻辑
-  - 实现PoW算法模拟挖矿
-  - 限制链路带宽，测试在不同区块大小及区块产生间隔的情况下的网络时延状况、分叉状况
-  - 使⽤PBFT协议进行共识
+- **P2P Network Simulation**
+  - Use Mininet to build networks with different topologies (such as star, ring, tree, and mesh), and limit the bandwidth of different links.
+  - Each node can generate certain types of data, communicate with other nodes, and build a local database that records the addresses of different nodes and the data types of each node.
+  - Transmit data (of different sizes and in varying quantities) between different nodes.
 
 ---
 
-- **攻击仿真**
-  - 在仿真的比特币网络基础上进行实验
-  - 进行仿真实验，记录不同的算力攻击下，攻击成功（可以产生更长的链使现有的某些区块无效）的概率
-  - BGP劫持、Eclipse攻击
+- **Blockchain Simulation**
+  - Implement a simulation of the blockchain network.
+  - Simulate transactions (blocks) of the P2P network and the propagation logic.
+  - Implement the PoW algorithm to simulate mining.
+  - Limit link bandwidth and test the network latency and forking conditions under different block sizes and block generation intervals.
+  - Use the PBFT protocol for consensus.
 
-项目地址为https://github.com/131250106/bitcoin
+---
+
+- **Attack Simulation**
+  - Conduct experiments on the basis of the simulated Bitcoin network.
+  - Run simulation experiments and record the probability of a successful attack (being able to produce a longer chain that invalidates certain existing blocks) under different hashing power levels.
+  - BGP hijacking and Eclipse attacks.
+
+The project repository is located at https://github.com/131250106/bitcoin
 
 <!-- more -->
 
-# 系统设计
+# System Design
 
-## 系统架构
+## System Architecture
 
-本项目的系统架构图如下图所示：
+The system architecture diagram of this project is shown in the figure below:
 
 ![image](/posts/blockchain/images/design.png)
 
-本项目主要分为5层，下面详细介绍
+This project is mainly divided into 5 layers, described in detail below.
 
-### mininet层
+### Mininet Layer
 
-Mininet 作为一个轻量级软件定义网络研发和测试平台，其主要特性包括:
+Mininet, as a lightweight software-defined networking research and testing platform, has the following main features:
 
-- 支持 Openflow、OpenvSwitch 等软定义网络部件
-- 方便多人协同开发
-- 支持系统级的还原测试支持复杂拓扑、自定义拓扑
-- 提供 Python API
-- 很好的硬件移植性（Linux 兼容），结果有更好的说服力
-- 高扩展性，支持超过 4096 台主机的网络结构
+- Supports Openflow, OpenvSwitch, and other software-defined networking components.
+- Facilitates collaborative development among multiple developers.
+- Supports system-level replay testing, complex topologies, and custom topologies.
+- Provides a Python API.
+- Good hardware portability (Linux compatible), making results more convincing.
+- High scalability, supporting network structures with over 4096 hosts.
 
-在本实验中，我们使用mininet来搭建星型、环形、树形、⽹状等不同拓扑形状的网络，并且通过限制不同链路的带宽和延迟来模拟网络的不同状况来进行实验。
+In this experiment, we use Mininet to build networks with different topologies, such as star, ring, tree, and mesh, and simulate various network conditions by limiting the bandwidth and delay of different links for experimentation.
 
-mininet层主要提供了虚拟化的IP和端口，并建立代表不同节点的host实体，为Async IO层进行网络通信提供基础。
+The Mininet layer mainly provides virtualized IPs and ports, and creates host entities representing different nodes, laying the foundation for network communication at the Async IO layer.
 
-### Async IO层
+### Async IO Layer
 
-由于P2P网络需要模拟分布式的环境以及各种远程方法调用，一般的单线程/单进程编程模型难以满足模拟分布式系统的需求，因此我们引入了Python 3.x中支持的Asynic IO异步方法库，其主要支持的特性如下：
+Since P2P networks need to simulate distributed environments and various remote method calls, conventional single-threaded/single-process programming models struggle to meet the requirements of simulating distributed systems. Therefore, we introduced the Async IO asynchronous method library supported in Python 3.x. Its main features include:
 
-- 异步网络操作
-- 并发
-- 协程
+- Asynchronous network operations
+- Concurrency
+- Coroutines
 
-我们主要用到的Asynic IO中的一些关键字如下：
+Some of the key keywords in Async IO that we primarily use are:
 
-- event_loop 事件循环：程序开启一个无限循环，把一些函数注册到事件循环上，当满足事件发生的时候，调用相应的协程函数
-- coroutine 协程：协程对象，指一个使用async关键字定义的函数，它的调用不会立即执行函数，而是会返回一个协程对象。协程对象需要注册到事件循环，由事件循环调用。
-- task 任务：一个协程对象就是一个原生可以挂起的函数，任务则是对协程进一步封装，其中包含了任务的各种状态
-- future：代表将来执行或没有执行的任务的结果。它和task上没有本质上的区别
-- async/await 关键字：python3.5用于定义协程的关键字，async定义一个协程，await用于挂起阻塞的异步调用接口
+- **event_loop (Event Loop)**: The program starts an infinite loop and registers certain functions onto the event loop. When an event occurs, the corresponding coroutine function is called.
+- **coroutine (Coroutine)**: A coroutine object refers to a function defined using the `async` keyword. Calling it does not execute the function immediately but instead returns a coroutine object. The coroutine object needs to be registered with the event loop to be invoked by it.
+- **task (Task)**: A coroutine object is essentially a function that can be suspended natively. A task is a further encapsulation of a coroutine, containing various states of the task.
+- **future**: Represents the result of a task that will be executed or has not been executed. There is no fundamental difference between it and a task.
+- **async/await keywords**: Keywords introduced in Python 3.5 for defining coroutines. `async` defines a coroutine, and `await` is used to suspend blocking asynchronous call interfaces.
 
-在具体的实验过程中，我们基于mininet提供的IP和端口，模拟出各个网络中的节点host，使用Async IO封装底层socket通信的接口进行数据通信和消息发送，从而搭建出最基础的网络架构。在此基础之上，我们还引入了路由表，以及基于Kademila协议实现了DHT分布式哈希表。
+During the specific experimentation process, based on the IPs and ports provided by Mininet, we simulate the individual network node hosts and use Async IO to encapsulate the underlying socket communication interfaces for data messaging and transmission, thereby building the most fundamental network architecture. On top of this, we also introduced a routing table and implemented a DHT (Distributed Hash Table) based on the Kademlia protocol.
 
-### Channel层
+### Channel Layer
 
-本层主要实现的功能是支持外部IO输入指定的命令操作网络执行相应的功能，例如：
+This layer primarily implements support for external IO input of specified commands to operate the network and execute corresponding functions, such as:
 
-- 新建节点
-- 删除节点
-- 创建交易Transaction
+- Creating new nodes
+- Deleting nodes
+- Creating Transactions
 - ......
 
-主要提供了2种方式输入命令，分别是：
+Two main methods are provided for inputting commands:
 
-- 文件读取命令：通过异步调用监控输入命令文件的变化，随时执行写入命令文件的指令
-- Xterm读取命令：通过在命令窗口Xterm输入相应的命令执行操作
+- **File command reading**: Asynchronously monitors changes in the input command file and executes instructions written to the command file at any time.
+- **Xterm command reading**: Executes operations by entering corresponding commands in the Xterm command window.
 
-### Django层
+### Django Layer
 
-Django是一个开源的Web应用框架，由Python语言编写，其主要使用了模型(model)-视图(view)-控制器(controller)模型，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。主要结构如下：
+Django is an open-source web application framework written in Python. It primarily uses the Model-View-Controller (MVC) pattern, organizing code in a way that separates business logic, data, and interface presentation. It aggregates business logic into a single component, so that improving and customizing the interface and user interaction does not require rewriting the business logic. The main structure is as follows:
 
-- 模型(model)：定义数据库相关的内容，一般位于models.py文件中。
-- 视图(view)：定义HTML等静态网页文件相关，包含HTML、CSS、JavaScript等前端内容。
-- 控制器(controller)：定义业务逻辑相关的主要代码。
+- **Model**: Defines database-related content, generally located in the `models.py` file.
+- **View**: Defines static web file-related content, including front-end content such as HTML, CSS, and JavaScript.
+- **Controller**: Defines the primary code related to business logic.
 
-本实验使用Django框架解析前端页面发来的请求，通过相应控制器中的方法调用异步命令对P2P网络进行操作，同时将区块链、当前Transaction、当前节点地址等信息保存在本地Seqlite中，实现存储的持久化。
+This experiment uses the Django framework to parse requests sent from the front-end pages, calls asynchronous commands through methods in the corresponding controllers to operate the P2P network, and simultaneously saves information such as the blockchain, current Transactions, and current node addresses in local SQLite to achieve persistent storage.
 
-### Web层
+### Web Layer
 
-本层主要实现了可视化和页面交互的功能，通过引入D3.js可视化框架形象地展示当前网络拓扑结构，此外引入JQuery封装向后台发送的请求地址，最终实现了包含展示区块链信息，交易信息，节点动态增加和删除等功能的前端页面，提供了用户友好的区块链系统仿真交互界面。
+This layer primarily implements visualization and page interaction functions. By introducing the D3.js visualization framework, it visually displays the current network topology. Additionally, jQuery is introduced to encapsulate the request addresses sent to the backend. Ultimately, a front-end page with functions such as displaying blockchain information, transaction information, and dynamically adding and removing nodes is implemented, providing a user-friendly blockchain system simulation interface.
 
-最终页面展示效果如下图所示：
+The final page display effect is shown in the figure below:
 
 ![image](/posts/blockchain/images/demo.PNG)
 
-在[演示形式](#jump)章节会有详细介绍。
+Detailed introduction will be provided in the [Demonstration](#jump) section.
 
-## 系统模块设计
+## System Module Design
 
-本项目的系统模块图如下图所示：
+The system module diagram of this project is shown in the figure below:
 
 ![image](/posts/blockchain/images/module.png)
 
-本系统以`Node`模块为核心，搭建了区块链仿真系统，其功能主要包括：
+This system is built around the `Node` module as the core to construct the blockchain simulation system. Its main functions include:
 
-- 启动星型、环形、树形、⽹状等不同拓扑形状的网络
-- 通过命令控制系统执行某些操作
-- 使用异步消息传递和远程方法调用实现节点间的通信
-- 日志记录、DHT、实现简化版区块链和钱包
-- 相关数据的序列化
+- Starting networks with different topologies, such as star, ring, tree, and mesh.
+- Controlling the system to perform certain operations through commands.
+- Using asynchronous messaging and remote method calls to implement communication between nodes.
+- Logging, DHT, implementing a simplified blockchain and wallet.
+- Serialization of relevant data.
 
-下面分模块详细介绍：
+Detailed descriptions of each module are provided below:
 
-### 系统启动模块
+### System Startup Module
 
-本项目从`main`函数入口启动，依次执行网络拓扑生成、启动mininet网络、注册Node节点等操作，确保各个节点能在网络中正常通信。同时会启动监控命令行输入的循环，用于接受命令行输入执行相应的指令。
+This project starts from the `main` function entry point and sequentially executes operations such as network topology generation, starting the Mininet network, and registering Node nodes to ensure that all nodes can communicate normally in the network. At the same time, a loop monitoring command-line input is started to accept command-line inputs and execute corresponding instructions.
 
-### `Node`模块
+### `Node` Module
 
-Node模块是本系统的核心模块，其主要功能有：
+The Node module is the core module of this system. Its main functions include:
 
-- 生成节点ID、路由表、本地IP、本地区块链等初始化数据结构
-- 提供ping、更新路由表、下载邻居节点的区块链、挖矿等异步方法
-- 保存日志、序列化区块链和钱包
-- 处理广播、请求和回复等消息
-- 监听文件命令行输入和Xterm命令行输入
+- Generating node IDs, routing tables, local IPs, local blockchains, and other initialized data structures.
+- Providing asynchronous methods such as ping, updating the routing table, downloading neighbors' blockchains, and mining.
+- Saving logs, and serializing the blockchain and wallet.
+- Handling messages such as broadcasts, requests, and replies.
+- Listening to file command-line inputs and Xterm command-line inputs.
 
-### `RPC`模块
+### `RPC` Module
 
-`RPC`模块是基于Async IO异步方法封装的简易协议，支持功能如下：
+The `RPC` module is a simple protocol encapsulated based on Async IO asynchronous methods. It supports the following functions:
 
-- 发送消息，分为3类
-  - 发送请求
-  - 发送回复
-  - 发送广播
-- 处理消息，分为4类
-  - 处理广播消息
-  - 处理普通请求
-  - 处理回复消息
-  - 处理超时消息
+- **Sending messages**, divided into 3 categories:
+  - Sending requests
+  - Sending replies
+  - Sending broadcasts
 
-### `Node`子模块
+- **Processing messages**, divided into 4 categories:
+  - Processing broadcast messages
+  - Processing regular requests
+  - Processing reply messages
+  - Processing timeout messages
 
-包含Node中调用的重要模块，简介如下：
+### `Node` Sub-modules
 
-- 日志模块：负责保存运行时操作日志，以及序列化一些重要信息到文件系统
-- DHT模块：基于Kademila协议实现分布式哈希表
-- 区块链模块：基本实现了生成区块、proof验证、PoW工作量证明等方法
-- 钱包模块：用于计算当前节点剩余的财产
+This includes important modules called within the Node, briefly introduced as follows:
 
-## 创世节点启动流程
+- **Logging module**: Responsible for saving runtime operation logs and serializing important information to the file system.
+- **DHT module**: Implements a distributed hash table based on the Kademlia protocol.
+- **Blockchain module**: Basically implements methods such as generating blocks, proof verification, and PoW (Proof of Work).
+- **Wallet module**: Used to calculate the remaining balance of the current node.
 
-本项目的创世节点启动流程如下图所示：
+## Genesis Node Startup Flow
+
+The genesis node startup flow diagram of this project is shown in the figure below:
 
 ![image](/posts/blockchain/images/initialnode.png)
 
-过程如下：
+The process is as follows:
 
-- 当一个节点在启动加入网络后ping过预先定义的节点后发现路由表为空
-- 该节点新建区块链，新建新的空钱包
-- 该节点创造一个新的交易，从地址为0的特殊节点获取若干比特币
-- 该节点开始挖矿，加交易打包进创世区块
-- 创世节点启动完毕，开始监听各种消息，根据命令输入发出相应消息
+- When a node starts up and joins the network, it pings the predefined nodes and finds that its routing table is empty.
+- The node creates a new blockchain and a new empty wallet.
+- The node creates a new transaction, obtaining a certain amount of Bitcoin from a special node with address 0.
+- The node starts mining and packages the transaction into the genesis block.
+- The genesis node startup is complete, and it begins listening for various messages and sending corresponding messages based on command inputs.
 
-## 其它节点启动时序
+## Other Nodes Startup Sequence
 
-本项目的其它节点启动时序图如下图所示：
+The sequence diagram for other nodes in this project is shown in the figure below:
 
 ![image](/posts/blockchain/images/time.png)
 
-其他节点的启动时进行的操作如下：
+The operations performed when other nodes start up are as follows:
 
-- 向初始节点发动ping请求，得到相应回复
-- 发送请求更新DHT，得到路由表信息
-- 向邻居节点发送拉取区块链的消息，对收到的区块链进行长度的比较，保留最长的链，并序列化到本地
-- 收到相应命令时经过验证新建交易，并广播该交易给邻居节点
-- 启动命令监控循环
-- 新开线程，执行挖矿逻辑
-- 启动事件的监听和响应操作
+- Send a ping request to the initial node and receive a corresponding reply.
+- Send a request to update the DHT and receive routing table information.
+- Send a pull blockchain message to neighbor nodes, compare the lengths of received blockchains, keep the longest chain, and serialize it locally.
+- Upon receiving a corresponding command, create a new transaction after verification and broadcast the transaction to neighbor nodes.
+- Start the command monitoring loop.
+- Open a new thread to execute the mining logic.
+- Start the event monitoring and response operations.
 
-# 核心算法设计与实现
+# Core Algorithm Design and Implementation
 
-## PoW共识算法设计与实现
+## PoW Consensus Algorithm Design and Implementation
 
-本实验对PoW共识算法进行了简易模拟，主要流程如下：
+This experiment provides a simplified simulation of the PoW consensus algorithm. The main flow is as follows:
 
-1. 所有节点启动完毕后，新开一个线程，执行挖矿逻辑
-2. 某个节点一旦挖到某个block后，从transaction池中拉取TX，验证并放入新的block中
-3. 该节点将new block 广播出去后，继续挖下一个区块
-4. 某一节点一旦收到某个new block，立即发送一个信号量，停止当前挖矿行为
-5. 验证该收到的new block
-   - 5.1 如果验证通过，则将该new block添加到自己的链上
-   - 5.2 验证不通过：
-     - 5.2.1 从自己的routing table中的所有邻居节点拉取区块链
-     - 5.2.2 逐个与自身区块链进行对比
-       - 5.2.2.1 若区块链比自己的长，则用该区块链覆盖掉自己的链
-       - 5.2.2.2 若区块链与自己的一样长，寻找fork分支点，进行fork操作
-6. 继续挖下一个区块
+1. After all nodes have started, open a new thread to execute the mining logic.
+2. Once a node mines a block, pull TXs from the transaction pool, verify them, and place them into the new block.
+3. After the node broadcasts the new block, it continues mining the next block.
+4. Once a node receives a new block, it immediately sends a semaphore to stop the current mining behavior.
+5. Verify the received new block.
+   - 5.1 If the verification passes, add the new block to its own chain.
+   - 5.2 If the verification fails:
+     - 5.2.1 Pull the blockchain from all neighbor nodes in its routing table.
+     - 5.2.2 Compare with its own blockchain one by one.
+       - 5.2.2.1 If the other blockchain is longer, overwrite its own chain with that blockchain.
+       - 5.2.2.2 If the other blockchain is the same length, find the fork branch point and perform a fork operation.
+6. Continue mining the next block.
 
-PoW共识算法通过进行一定的运算和消耗一定的时间来计算一个合适的工作量值提供给各节点快速验证，以防止区块链系统被算力攻击导致的数据资源滥用，确保区块链上交易的公平和安全。
+The PoW consensus algorithm performs a certain amount of computation and consumes a certain amount of time to calculate an appropriate proof-of-work value that can be quickly verified by all nodes. This prevents data resource abuse in the blockchain system caused by hashing power attacks and ensures the fairness and security of transactions on the blockchain.
 
-### PoW算法实现验证 —— 模拟双花操作：
+### PoW Algorithm Implementation Verification — Simulating Double-Spending:
 
-为了验证PoW算法的有效性，我们设计了相应的场景以模拟算法是否正确的发挥作用。
+To verify the effectiveness of the PoW algorithm, we designed corresponding scenarios to simulate whether the algorithm functions correctly.
 
-我们随机选择某一节点将某笔钱分别不同节点发送两次，经过实验模拟，发现同一时刻，只有一个交易会被确认，双花发生概率为0.
+We randomly selected a certain node to send the same amount of money to two different nodes. Through experimental simulation, it was found that at the same moment, only one transaction would be confirmed, and the probability of double-spending is 0.
 
-PS：另一笔交易会在将来某个时候该节点中钱包的余额大于交易额时，被其他人或自己所确认，最终花费出去，钱包余额再次减少。
+PS: The other transaction will eventually be confirmed by someone else or by the node itself when its wallet balance exceeds the transaction amount in the future, the money will be spent, and the wallet balance will decrease again.
 
-## POS共识算法设计与实现
+## PoS Consensus Algorithm Design and Implementation
 
-PoS(Proof of stake)直观来看就是拥有更多财产的节点，有更大的概率获得记账权，然后获得奖励。具体模拟的过程如下：
+PoS (Proof of Stake), intuitively, means that nodes with greater holdings have a higher probability of obtaining the right to record (forge the next block) and then receiving rewards. The specific simulation process is as follows:
 
-1. 每个节点根据当前钱包中的比特币数量num从[0,num]随机生成一个值，代表其权益大小，并且向所有节点广播。
-2. 当所有节点都收到来自其他节点的权益广播后，将记账权赋予当前具有最大权益值的节点。
-3. 具有记账权的节点将该节点上的交易验证后打包进区块，计算hash之后广播该区块。
-4. 其余节点收到广播的区块，经过验证后将其加到区块链的尾部，完成区块链的增长。
+1. Each node randomly generates a value from [0, num] based on the number of Bitcoins in its current wallet (num), representing the size of its stake, and broadcasts it to all nodes.
+2. After all nodes have received stake broadcasts from other nodes, the right to record is granted to the node with the largest stake value.
+3. The node with the recording right verifies the transactions on that node, packages them into a block, calculates the hash, and then broadcasts the block.
+4. The remaining nodes receive the broadcast block, verify it, and add it to the end of the blockchain, completing the growth of the blockchain.
 
-## PBFT共识算法设计与实现
+## PBFT Consensus Algorithm Design and Implementation
 
-- 发起节点i,创建block，调用1号节点，pre-prepare(self.id, block）
-- 1号节点发送广播（除发起节点i外），调用其它结点的prepare方法
-- 所有节点的prepare方法里广播调用其它结点的prepare方法，计数自己被调用次数，若结果大于一半的N，则广播调用commit方法
-- commit方法里计数被调了多少次，若大于一半的N，则记录这个block, 同时调用交易节点的reply方法
-- 交易结点的reply方法里计数，若大于一半的N，记录这个block,钱包扣钱， 调用大家的计数清零函数
+- Initiating node i creates a block and calls node 1's `pre-prepare(self.id, block)` method.
+- Node 1 sends a broadcast (excluding the initiating node i), calling the `prepare` method of other nodes.
+- Within the `prepare` method of all nodes, the `prepare` method of other nodes is broadcast-called, and the number of times it has been called is counted. If the result is greater than half of N, it broadcasts a call to the `commit` method.
+- Within the `commit` method, the number of times it has been called is counted. If it is greater than half of N, the block is recorded, and simultaneously the `reply` method of the transaction node is called.
+- Within the `reply` method of the transaction node, the count is tracked. If it is greater than half of N, the block is recorded, the wallet balance is deducted, and everyone's reset-count method is called.
 
 ![image](/posts/blockchain/images/pbft.png)
 
-# 攻击仿真实验
+# Attack Simulation Experiments
 
-## 不同算力攻击成功概率
+## Probability of Successful Attack Under Different Hashing Power Levels
 
-为了统计不同算力占比的条件下攻击成功额概率，这里使用双花攻击的场景进行模拟，流程如下：
+To calculate the probability of a successful attack under different proportions of hashing power, we use a double-spending attack scenario for simulation. The flow is as follows:
 
-1. 攻击节点一旦挖到新的区块时，除了从transaction池中拉取TX外，立即新建一个TX，花费自己所有的钱，给-1号地址（模拟取现过程），并创建两个new block，block1 包含该TX，block2不包含这个TX
-2. 攻击节点给正常节点发送block1，给攻击节点发送block2
-3. 正常节点收到该block时，会校验block1的合法性，发现正常，确认该TX，此时取现过程被确认，攻击者取到第一笔现金
-4. 攻击节点收到该block时，会校验block2的合法性，正常，接收该block
-   - 4.1 若攻击节点再次挖到新的区块，除了从transaction池中拉取TX外，立即新建一个TX，再次花费自己所有的钱，给-1号地址（模拟取现过程），重复1步骤
-     - 4.1.1 攻击节点收到块，验证，不冲突，加入区块链
-     - 4.1.2 正常节点收到块，验证，冲突，拉取其它节点的区块链，若链比自己长，则覆盖（最终上次的取现交易被覆盖掉，成功双花）
-   - 4.2 若正常节点再次挖到新的区块，则进行正常逻辑，区块链正常运行
-5. 一段时间后，观察攻击节点给-1号地址的TX的所有金额，即全部取现金额，若金额大于本身比特币金额，则表示攻击成功。
-6. 记录不同算力下攻击成功概率
+1. Once an attacking node mines a new block, in addition to pulling TXs from the transaction pool, it immediately creates a new TX, spending all of its own money and sending it to address -1 (simulating a cash withdrawal process), and creates two new blocks: block1 containing this TX and block2 without this TX.
+2. The attacking node sends block1 to normal nodes and block2 to itself (the attacking node).
+3. When a normal node receives the block, it validates the legality of block1, finds it valid, and confirms the TX. At this point, the withdrawal process is confirmed, and the attacker obtains the first cash.
+4. When the attacking node receives the block, it validates the legality of block2, finds it valid, and accepts the block.
+   - 4.1 If the attacking node mines a new block again, in addition to pulling TXs from the transaction pool, it immediately creates a new TX, spending all of its own money again and sending it to address -1 (simulating a cash withdrawal process), and repeats step 1.
+     - 4.1.1 The attacking node receives the block, validates it, finds no conflict, and adds it to the blockchain.
+     - 4.1.2 The normal node receives the block, validates it, finds a conflict, and pulls the blockchain from other nodes. If the chain is longer than its own, it overwrites its chain (ultimately, the previous withdrawal transaction is overwritten, and double-spending succeeds).
+   - 4.2 If the normal node mines a new block again, normal logic proceeds, and the blockchain operates normally.
+5. After a period of time, observe the total amount of all TXs from the attacking node to address -1, which represents the total withdrawal amount. If the amount is greater than the original Bitcoin holdings, the attack is considered successful.
+6. Record the probability of successful attacks under different hashing power levels.
 
-### 模拟实验结果：
+### Simulation Experiment Results:
 
-| 攻击者算力占比 | 20% | 40% | 60% | 80% |
-|----------------|-----|-----|-----|-----|
-| 攻击成功概率   |  2/38   |  7/48   |  9/35   |  22/65   |
+| Attacker Hashing Power Ratio | 20% | 40% | 60% | 80% |
+|------------------------------|-----|-----|-----|-----|
+| Attack Success Probability   |  2/38   |  7/48   |  9/35   |  22/65   |
 
-注：A/B A表示攻击者提现次数，B表示挖矿的总轮数
+Note: A/B — A represents the number of times the attacker cashed out, B represents the total number of mining rounds.
 
-## 不同带宽下分叉概率
+## Forking Probability Under Different Bandwidths
 
-通过设置mininet中不同link的bw(带宽)和delay(延迟)，记录区块链发生分叉的概率
+By setting the bw (bandwidth) and delay of different links in Mininet, record the probability of blockchain forking.
 
-| 带宽(MB)/延迟(ms) | 1000MB/0ms | 100MB/1ms | 10MB/0ms | 10MB/100ms | 10MB/1000ms | 1MB/1000ms |
+| Bandwidth(MB)/Delay(ms) | 1000MB/0ms | 100MB/1ms | 10MB/0ms | 10MB/100ms | 10MB/1000ms | 1MB/1000ms |
 |----------------|-----|-----|-----|-----|-----|-----|
-| 分叉概率   |  0/(20*5)   |   0/(20*5)   |   0/(20*5)   |   0/(20*5)   |  4/(20*5)    |  12/(20*5)    |
+| Forking Probability   |  0/(20*5)   |   0/(20*5)   |   0/(20*5)   |   0/(20*5)   |  4/(20*5)    |  12/(20*5)    |
 
-注：A/(B*N) A表示分叉出现的次数，B表示挖矿的总轮数,N表示节点数
+Note: A/(B*N) — A represents the number of forking occurrences, B represents the total number of mining rounds, N represents the number of nodes.
 
-## BGP劫持攻击模拟
+## BGP Hijacking Attack Simulation
 
-### BGP劫持攻击
+### BGP Hijacking Attack
 
-根据相关资料，我们模拟的BGP劫持攻击的流程如下：
+Based on relevant materials, the flow of the BGP hijacking attack we simulate is as follows:
 
-1. 攻击者发动BGP劫持，将网络分割为**两部分**（先前2个网络正常连通并挖矿），一个大网络、一个小网络。用mininet可以限制2个网络之间的延迟，延迟设为无穷大则视为ping不通，即2个网络发生分割。
-2. 在小网络中，攻击者发布交易卖出自己全部的加密货币，并兑换为法币。页面展示为攻击者生成transaction，钱包余额转移到某个特殊地址（例如“1”）。
-3. 经过小网络的“全网确认”生成新block，这笔交易生效，攻击者获得等值的法币，攻击者节点钱包余额为0。
-4. 攻击者释放BGP劫持，大网络与小网络互通，小网络上的一切交易被大网络否定（大网络区块链长于小网络），攻击者的加密货币全部回归到账户，而交易得来的法币，依然还在攻击者手中，完成获利。即攻击者节点区块链被大网络覆盖，钱包余额恢复至小网络区块链分叉前状态。
+1. The attacker launches a BGP hijacking, splitting the network into **two parts** (previously the two networks were normally connected and mining) — a large network and a small network. Using Mininet, the delay between the two networks can be limited; setting the delay to infinity is considered as ping failure, meaning the two networks have been split.
+2. In the small network, the attacker issues a transaction to sell all of its cryptocurrency and exchanges it for fiat currency. The page displays this as the attacker generating a transaction, and the wallet balance being transferred to a special address (for example, "1").
+3. After the "full network confirmation" of the small network, a new block is generated, the transaction takes effect, the attacker receives the equivalent fiat currency, and the attacker node's wallet balance becomes 0.
+4. The attacker releases the BGP hijacking, and the large and small networks become interconnected. All transactions on the small network are negated by the large network (the large network's blockchain is longer than the small network's). The attacker's cryptocurrency is fully restored to the account, while the fiat currency obtained from the transaction remains in the attacker's hands, completing the profit. That is, the attacker node's blockchain is overwritten by the large network, and the wallet balance is restored to the state before the small network's blockchain forked.
 
-# <span id="jump">演示形式<span>
+# <span id="jump">Demonstration<span>
 
-## 可视化页面内容展示
+## Visualization Page Content Display
 
-### 网络结构
+### Network Structure
 
 ![image](/posts/blockchain/images/network.PNG)
 
-可以展示的网络拓扑结构有星型、环形、树形等，上图为星形拓扑，有5个节点，s1为交换机。
+The network topologies that can be displayed include star, ring, tree, etc. The figure above shows a star topology with 5 nodes, where s1 is the switch.
 
-### 节点信息
+### Node Information
 
 ![image](/posts/blockchain/images/nodeinfo.PNG)
 
-主要展示节点ID、节点地址、钱包余额信息。
+Mainly displays node ID, node address, and wallet balance information.
 
-### 交易信息
+### Transaction Information
 
 ![image](/posts/blockchain/images/transaction.PNG)
 
-主要展示节点中未确认的交易信息。
+Mainly displays unconfirmed transaction information in the node.
 
-### 区块链信息
+### Blockchain Information
 
 ![image](/posts/blockchain/images/blockchain.PNG)
 
-主要展示节点中的区块链信息。
+Mainly displays the blockchain information in the node.
 
-### 创建交易功能展示
+### Create Transaction Function Display
 
 ![image](/posts/blockchain/images/createtx.PNG)
 
-主要展示通过提供IP和比特币数量创建交易功能。
+Mainly displays the function of creating a transaction by providing the IP address and Bitcoin amount.
 
-## BGP攻击过程展示
+## BGP Attack Process Display
 
-### 网络结构
+### Network Structure
 
 ![image](/posts/blockchain/images/BGPnetwork.PNG)
 
-上图为星形拓扑，有5个节点，s1为交换机。h5s1为攻击者节点，其余节点为受害者节点。
+The figure above shows a star topology with 5 nodes, where s1 is the switch. h5s1 is the attacker node, and the remaining nodes are victim nodes.
 
-### 受害者节点信息
+### Victim Node Information
 
 ![image](/posts/blockchain/images/beforeBGPvictim.PNG)
 
-可以看出受害者节点区块链长度为2。
+It can be seen that the victim node's blockchain length is 2.
 
-### 攻击者节点信息
+### Attacker Node Information
 
 ![image](/posts/blockchain/images/attack.PNG)
 
-可以看出攻击者节点区块链长度为5。
+It can be seen that the attacker node's blockchain length is 5.
 
-### BGP攻击后网络结构
+### Network Structure After BGP Attack
 
 ![image](/posts/blockchain/images/afterBGPnetwork.PNG)
 
-可以看出攻击者释放BGP劫持后2个网络互通。
+It can be seen that after the attacker releases the BGP hijacking, the two networks become interconnected.
 
-### BGP攻击后受害者节点信息
+### Victim Node Information After BGP Attack
 
 ![image](/posts/blockchain/images/afterBGPvictim.PNG)
 
-可以看出BGP劫持后受害者节点的区块链被攻击者所覆盖。
+It can be seen that after the BGP hijacking, the victim node's blockchain has been overwritten by the attacker.

@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
-import { formatDateZh } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 
 export default function HomePage() {
   const posts = getAllPosts()
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">文章</h1>
+      <h1 className="text-3xl font-bold mb-8">Posts</h1>
 
       {posts.length === 0 ? (
-        <p className="text-gray-500">暂无文章</p>
+        <p className="text-gray-500">No posts yet.</p>
       ) : (
         <ul className="space-y-6">
           {posts.map((post) => (
@@ -21,7 +21,7 @@ export default function HomePage() {
                     {post.title}
                   </h2>
                   <time className="text-sm text-gray-500 mt-1 block">
-                    {formatDateZh(post.date)}
+                    {formatDate(post.date)}
                   </time>
                   {post.tags.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-2">

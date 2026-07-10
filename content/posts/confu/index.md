@@ -1,72 +1,71 @@
 ---
-title: JVM应用程序的多线程并发缺陷检测
+title: Multithreaded Concurrency Defect Detection for JVM Applications
 date: 2019-02-28 23:27:41
-tags: [合作项目, JVM]
-categories: [科研]
+tags: [Joint Project, JVM]
+categories: [Research]
 ---
 
 
-当前,随着计算机多核硬件的飞速发展，多线程并发程序越来越受到欢迎并被广泛使用。但是由于对共享内存空间访问的隐蔽性以及并发线程执行调度的随机性，导致多线程程序中很容易存在并发缺陷，而这些并发缺陷往往难以被发现或复现。现有的并发缺陷检测方法都有其局限性，例如基于系统测试和符号执行的检测方法无法适用于大规模的并发程序，因为存在状态空间爆炸的情况；基于概率调度的检测方法的命中缺陷率非常低。
+Currently, with the rapid development of multi-core computer hardware, multithreaded concurrent programs are gaining increasing popularity and widespread adoption. However, due to the hidden nature of shared memory space access and the randomness of concurrent thread scheduling, multithreaded programs are highly susceptible to concurrency defects, which are often difficult to detect and reproduce. Existing concurrency defect detection methods all have their limitations; for example, methods based on system testing and symbolic execution cannot scale to large concurrent programs due to state space explosion, while methods based on probabilistic scheduling have a very low defect hit rate.
 
-为了解决当前并发程序测试面临的巨大挑战，DATE团队开发了基于程序动态测试技术的针对JVM应用的多线程并发缺陷检测工具DATE-Confu。该工具以待测JVM可执行程序（.class文件或.jar文件）为输入，输出为在待测程序中检测到的并发缺陷集合。目前，该工具可检测包括数据竞争、死锁、空指针引用等在内的六类严重并发缺陷，用户可根据需求选择检测哪些类型的并发缺陷。
+To address the enormous challenges faced in concurrent program testing today, the DATE team developed DATE-Confu, a multithreaded concurrency defect detection tool for JVM applications based on dynamic program testing techniques. The tool takes JVM executable programs under test (.class files or .jar files) as input and outputs the set of concurrency defects detected in the program. Currently, the tool can detect six categories of serious concurrency defects, including data races, deadlocks, and null pointer dereferences. Users can select which types of concurrency defects to detect based on their needs.
 
-DATE-Confu工具的创新点是其有效地结合了有目标的程序调度模糊测试技术（guided schedule fuzzing techniques）与基于符号执行的轨迹分析技术（symbolictrace analysis techniques）。下图为DATE-Confu工具的框架示意图。该工具使用模糊测试技术能够高效遍历多线程程序巨大的状态空间，并且基于符号执行的轨迹分析技术快速发现被测程序中尚未探索到的控制分支，从而为迭代模糊测试提供有效信息，使得DATE-Confu能更快达到更高的覆盖率。目前DATE-Confu已在多个工业级别的项目上进行测试，通过目前已经进行的实验发现，DATE-Confu的测试效率高且能挖掘到隐藏更深的并发缺陷。
+The key innovation of DATE-Confu lies in its effective combination of guided schedule fuzzing techniques and symbolic trace analysis techniques. The figure below shows the architecture diagram of DATE-Confu. The tool uses fuzzing techniques to efficiently traverse the enormous state space of multithreaded programs, while the symbolic trace analysis techniques rapidly discover unexplored control branches in the program under test, thereby providing effective information for iterative fuzzing and enabling DATE-Confu to reach higher coverage faster. DATE-Confu has so far been tested on multiple industrial-level projects. The experiments conducted to date have demonstrated that DATE-Confu achieves high testing efficiency and is capable of uncovering deeper-hidden concurrency defects.
 
 <!-- more -->
 
 ![confu_architecture](/posts/confu/images/confu_architecture.jpg)
-<div align="center">DATE-Confu框架示意图</div>
+<div align="center">DATE-Confu Architecture Diagram</div>
 
-该工具在2017年全国软件及应用学术会议（NASAC 2017）软件原型竞赛（命题型）单元上获得了二等奖。NASAC从2008年开始组织原型系统交流。从2013年开始，软件工程专委与系统软件专委正式联合举办“软件研究成果原型竞赛”，NASAC 2017原型竞赛是第一次由大赛自主命题，选手准备工具，并在比赛现场进行测试和报告的竞赛。共有8个软件工具通过初审进入复赛，由来自企业界和学术届的评审委员会评出一、二、三等奖。
+This tool won second place in the Software Prototype Competition (Topic-based Category) at the 2017 National Conference on Software and Applications (NASAC 2017). NASAC has been organizing prototype system exchanges since 2008. Starting from 2013, the Software Engineering Committee and the Systems Software Committee officially co-organized the "Software Research Prototype Competition." The NASAC 2017 prototype competition was the first to feature self-proposed topics by the contest, where contestants prepared their tools and conducted testing and reporting live at the competition site. A total of 8 software tools passed the initial review and advanced to the final round, and the judging committee, composed of experts from both industry and academia, selected the first, second, and third prize winners.
 
-# 插桩
+# Instrumentation
 
-DATE-ConFu工具使用ASM字节码插桩框架实现插桩功能。ASM是一个可以操作Java字节码文件的框架，一般来说，对一个普通的java文件字节码操作流程有3步：
+The DATE-Confu tool uses the ASM bytecode instrumentation framework to implement its instrumentation functionality. ASM is a framework for operating on Java bytecode files. Generally, the bytecode manipulation process for an ordinary Java file involves 3 steps:
 
-- 编译Java源代码得到Java字节码；
-- 使用ASM框架的ClassReader读取字节码，使用访问者模式对字节码进行修改，然后使用ClassWriter生成新的字节码；
-- 将新的字节码加载到JVM虚拟机运行。
+- Compile Java source code to obtain Java bytecode;
+- Use ASM's ClassReader to read the bytecode, use the visitor pattern to modify the bytecode, and then use ClassWriter to generate new bytecode;
+- Load the new bytecode into the JVM for execution.
 
-总体插桩过程分为2个部分，第一个部分是DATE-ConFu工具利用Java Agent模式对检测算法所在的Java字节码进行插桩，第二个部分是检测到需要将被测模块的字节码加载到JVM运行时，再次调用Agent中的Trasform方法对被测模块的字节码进行拦截，对字节码插桩完毕后，最后将插桩后的字节码加载到JVM运行，此时在JVM上运行的字节码会调用DATE-ConFu中的检测算法进行缺陷检测。
+The overall instrumentation process is divided into two parts. The first part is where the DATE-Confu tool uses the Java Agent pattern to instrument the Java bytecode of the detection algorithms. The second part is when, upon detecting that the bytecode of the module under test needs to be loaded into the JVM at runtime, the Transform method in the Agent is invoked again to intercept the bytecode of the module under test. After instrumentation is complete, the instrumented bytecode is loaded into the JVM for execution. At that point, the bytecode running on the JVM invokes the detection algorithms in DATE-Confu to perform defect detection.
 
 ![ASM](/posts/confu/images/ASM.jpg)
-<div align="center">字节码插桩流程</div>
+<div align="center">Bytecode Instrumentation Flow</div>
 
-在插桩过程中，需要选择特定的字节码进行处理，避免对Java中通用的模块进行插桩带来不必要的输出，例如JDK中包含的模块会在Agent的Transform方法中被排除，通常被插桩的对象是被测字节码以及被测字节码引入的其他包内的字节码，所以需要确保被测字节码紧密相关的包内的字节码可以在运行时路径中被找到，或者使用排除指定类的命令行参数避免对指定类进行插桩。
+During the instrumentation process, specific bytecode instructions need to be selected for processing to avoid instrumenting common Java modules, which would produce unnecessary output. For example, modules included in the JDK are excluded within the Agent's Transform method. Typically, the targets for instrumentation are the bytecode under test and the bytecode introduced by other packages that the bytecode under test depends on. Therefore, it is necessary to ensure that the bytecode in packages closely related to the bytecode under test can be found on the runtime classpath, or to use the command-line parameter for excluding specified classes to avoid instrumenting designated classes.
 
-# 线程调度
+# Thread Scheduling
 
-对多线程程序进行模糊测试的本质是在线程调度中引入随机性。目前一般的做法是在底层操作系统之前构造一个高层次调度器，这个调度器会通过强制执行上下文切换来控制调度。通常来说，实现上下文切换的做法是通过引入睡眠、优先级转换等操作。
+The essence of fuzz testing multithreaded programs is to introduce randomness into thread scheduling. The current general approach is to construct a high-level scheduler below the underlying operating system; this scheduler controls scheduling by forcibly performing context switches. Typically, context switches are implemented by introducing operations such as sleep and priority changes.
 
-在DATE-ConFu工具中，我们使用优先级转换操作来实现低开销的上下文切换并且可以避免引入死锁。为了生成多样的线程调度，现有的技术大多是实现在事件级别（event-level）的模糊测试。事件级别的模糊测试是指在一个特定事件之前或之后随机插入调度操作来实现上下文切换，例如在某个多线程程序中的每一个内存写操作之前都插入睡眠指令，能够使得不同的线程在执行内存写操作时交错开来。但是，由于实际应用程序中存在大量事件，在事件级别的模糊测试会导致命中缺陷的概率相对较低。
+In the DATE-Confu tool, we use priority change operations to achieve low-overhead context switches while avoiding the introduction of deadlocks. To generate diverse thread schedulings, most existing techniques implement fuzz testing at the event level. Event-level fuzz testing means randomly inserting scheduling operations before or after a specific event to achieve context switchover—for example, inserting a sleep instruction before every memory write operation in a multithreaded program can cause different threads to interleave when executing memory writes. However, due to the large number of events in real-world applications, event-level fuzz testing results in a relatively low probability of hitting defects.
 
-为了解决事件级别的模糊测试命中缺陷的概率较低的问题，在开发DATE-ConFu工具时我们提出了使用内存访问组技术（Memory Access Group, MAG）来优化调度中的模糊测试。内存访问组技术的核心是将一连串的内存访问各自分组并在每个组中执行调度模糊测试，这样能够有效缩小调度的状态空间，增加命中缺陷的概率。但是仅仅使用内存访问组技术进行优化还不足以使我们更有效地生成触发缺陷的轨迹，为了让线程调度模块更有效地找到程序中的并发缺陷，我们提出了一种基于内存访问组技术的随机模糊测试技术。该技术把模糊测试的过程建模成为一个搜索问题并引入蒙特卡罗马尔可夫链方法（Monte Carlo Markov Chain, MCMC）优化搜索从而得到最优的搜索解。
+To address the low defect-hit probability of event-level fuzz testing, we proposed using Memory Access Group (MAG) technology to optimize fuzz testing during scheduling when developing the DATE-Confu tool. The core idea of Memory Access Group technology is to group consecutive memory accesses and perform fuzzy testing on the scheduling within each group, which can effectively narrow the scheduling state space and increase the probability of hitting defects. However, optimization using only Memory Access Group technology is not sufficient for us to more effectively generate defect-triggering traces. To enable the thread scheduling module to more efficiently locate concurrency defects in programs, we propose a randomized fuzz testing technique based on Memory Access Group technology. This technique models the fuzzing process as a search problem and introduces the Monte Carlo Markov Chain (MCMC) method to optimize the search in order to obtain optimal search solutions.
 
-# FastTrack算法
+# FastTrack Algorithm
 
-数据竞争最基本的检测算法为happen-before与Lockset检测算法。随着研究的进一步发展，人们在这两个经典算法的基础之上进行不断的优化和改进，衍生出目前常用的算法。DATE-ConFu工具使用的FastTrack算法就是对happen-before算法进行优化从而高效地检测数据竞争并发缺陷。happen-before算法最基本的思想是记录每一次共享内存的访问，然后检测是否和前一次访问具有happen-before关系，如果不存在happen-before关系，就报告数据竞争，FastTrack算法的基本思想也是如此。但FastTrack算法进行了许多改进，使得算法的时间复杂度和空间负责度都得到了有效提升。
+The most fundamental detection algorithms for data races are the Happens-Before and Lockset detection algorithms. With further research, researchers have continuously optimized and improved upon these two classic algorithms, giving rise to the commonly used algorithms today. The FastTrack algorithm used by the DATE-Confu tool is an optimized version of the Happens-Before algorithm for efficiently detecting data race concurrency defects. The basic idea of the Happens-Before algorithm is to record every shared memory access and then check whether it has a Happens-Before relationship with the previous access; if no such relationship exists, a data race is reported. The basic idea of FastTrack is similar. However, FastTrack incorporates many improvements that effectively enhance both the time complexity and space complexity of the algorithm.
 
-通过观察大量的程序可以获知，数据竞争检测中线程同步的操作相对读写操作来说，占较少的比例，而读写操作的占比高达96%，FastTrack算法成立的关键在于99%的读写操作的监视不需要采用完整的向量时钟，取而代之的使用一种更加轻量级的数据结构。FastTrack分别从数据竞争的三种情况进行讨论，分别是写写竞争，写读竞争，读写竞争。
+Through observing a large number of programs, we can see that among data race detection operations, thread synchronization operations account for a small proportion compared to read/write operations, with read/write operations comprising as much as 96%. The key to FastTrack's effectiveness lies in the fact that 99% of read/write operation monitoring does not require full vector clocks; instead, it uses a more lightweight data structure. FastTrack discusses the three cases of data races separately: write-write races, write-read races, and read-write races.
 
-# NPD检测算法
+# NPD Detection Algorithm
 
-DATE-ConFu工具中用于检测空指针引用的算法。空指针应用缺陷可以参考CWE 476标准中的具体介绍说明。NPD检测算法依赖于：（1）并发偏序关系识别；（2）内存采样。算法流程总结如下：
+The algorithm used in DATE-Confu to detect null pointer dereferences. Null pointer dereference defects can be referenced against the detailed description in CWE 476. The NPD detection algorithm relies on: (1) concurrency partial-order relation identification; and (2) memory sampling. The algorithm flow is summarized as follows:
 
-1. 动态加载被测程序字节码
-2. 字节码插桩，根据不同JVM字节码指令，插入内存采样接口。如针对PUTFIELD指令，栈顶元素为{value, objectref}，分别为写入内存的值，已经对象引用，此时内存采样接口捕获value值，在算法中进行维护。
-3. 运行被测程序，产生运行时轨迹
-4. 动态识别happen-before关系，判定不同线程中的特定操作（如内存访问、加解锁等）是否存在严格的并发偏序关系，即happen-before关系
-5. 动态截获不满足happen-before关系的内存访问操作对($x_1$, $x_2$)，并保证$x_1$、$x_2$中为一次写操作和一次读操作
-6. 在截获的($x_1$, $x_2$)内存操作对中，检查相应的内存访问值是否为null。如果为null，则说明在并发运行环境中，由于并发不确定性，可能导致对空对象的引用情况，造成程序崩溃
+1. Dynamically load the bytecode of the program under test
+2. Instrument the bytecode, inserting memory sampling interfaces based on different JVM bytecode instructions. For example, for the PUTFIELD instruction, the stack top elements are {value, objectref}, representing the value written to memory and the object reference, respectively. At this point, the memory sampling interface captures the value and maintains it in the algorithm.
+3. Execute the program under test to generate runtime traces
+4. Dynamically identify Happens-Before relations to determine whether specific operations in different threads (such as memory accesses, lock/unlock operations, etc.) have strict concurrency partial-order relations, i.e., Happens-Before relations
+5. Dynamically intercept memory access operation pairs ($x_1$, $x_2$) that do not satisfy Happens-Before relations, ensuring that $x_1$ and $x_2$ consist of one write operation and one read operation
+6. In the intercepted memory operation pairs ($x_1$, $x_2$), check whether the corresponding memory access values are null. If a value is null, it indicates that in the concurrent runtime environment, due to concurrency non-determinism, a null object reference may occur, causing the program to crash
 
-NPD算法可以看做是对FastTrack算法的一个扩展、精化，用于自动化定位并发操作中可能引发的空指针引用问题。如图所示，当该程序在多线程访问时，NPD检测算法能够自动捕获`(executor!=null, executor=null)`和`(executor.start(), executor=null)`两个并发内存访问对，并通过检查内存采样，确定`(executor.start(), executor=null)`可能引发的空指针引用问题。
+The NPD algorithm can be seen as an extension and refinement of the FastTrack algorithm, used for automatically locating null pointer dereference problems that may be triggered during concurrent operations. As shown in the figure, when the program is accessed by multiple threads, the NPD detection algorithm can automatically capture two concurrent memory access pairs: `(executor!=null, executor=null)` and `(executor.start(), executor=null)`, and through memory sampling, determine that `(executor.start(), executor=null)` may trigger a null pointer dereference problem.
 
 ![ASM](/posts/confu/images/npd.png)
-<div align="center">空指针解引用问题</div>
+<div align="center">Null Pointer Dereference Problem</div>
 
-# GoodLock检测算法
+# GoodLock Detection Algorithm
 
-多线程程序中，一个线程集合中的每一个线程都在各自等待另一个线程占据的互斥性资源，由此导致的循环等待即为死锁．在所有并发缺陷中，死锁是其中比较常见和的一种，而且若是死锁一旦发生，将可能导致多线程程序响应时间增长、吞吐量下降甚至宕机崩溃，严重威胁并发程序的可用性与可靠性．与其他并发缺陷一样，死锁具有难以暴露、重演和调试的特点。
+In multithreaded programs, when every thread in a thread collection is waiting for an exclusive resource held by another thread, the resulting circular wait is called a deadlock. Among all concurrency defects, deadlocks are relatively common. Once a deadlock occurs, it may lead to increased response time, decreased throughput, or even crash and downtime of the multithreaded program, seriously threatening the availability and reliability of concurrent programs. Like other concurrency defects, deadlocks have the characteristics of being difficult to expose, reproduce, and debug.
 
-DATE-ConFu工具检测死锁并发缺陷主要是通过实现GoodLock算法。GoodLock算法能够在运行时检测被测并发程序是否有可能发生死锁。该算法主要是通过构建加锁树的方式来进行判断，目前的GoodLock算法能够用来解决任意数量线程之间的死锁问题。该算法主要是将各个线程的加锁树连接起来形成一个加锁图，通过遍历所有可能的路径来寻找有效环路，从而判断程序是否有可能发生死锁。除此之外，GoodLock算法将运行时检测与静态分析相结合，在原先的基础上实现了新的类型系统，不仅可以检测Java程序中的死锁问题，并且可以提供更强的原子性保证。
-
+The DATE-Confu tool detects deadlock concurrency defects primarily by implementing the GoodLock algorithm. The GoodLock algorithm can detect whether a concurrent program under test is likely to experience deadlock at runtime. The algorithm mainly makes its determination by constructing lock trees. The current GoodLock algorithm can handle deadlock problems among any number of threads. The algorithm connects the lock trees of individual threads to form a lock graph and traverses all possible paths to find valid cycles, thereby determining whether the program is likely to deadlock. In addition, the GoodLock algorithm combines runtime detection with static analysis, implementing a new type system on the foundation of previous work. It can not only detect deadlock problems in Java programs but also provide stronger atomicity guarantees.

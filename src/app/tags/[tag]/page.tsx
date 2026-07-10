@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getAllTags, getPostsByTag } from '@/lib/posts'
-import { formatDateZh } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 
 interface Props {
   params: {
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
-    title: `标签: ${params.tag}`,
+    title: `Tag: ${params.tag}`,
   }
 }
 
@@ -27,9 +27,9 @@ export default function TagPage({ params }: Props) {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-2">
-        <span className="text-gray-500 font-normal">标签:</span> {tag}
+        <span className="text-gray-500 font-normal">Tag:</span> {tag}
       </h1>
-      <p className="text-gray-500 mb-8">{posts.length} 篇文章</p>
+      <p className="text-gray-500 mb-8">{posts.length} post{posts.length !== 1 ? 's' : ''}</p>
 
       <ul className="space-y-5">
         {posts.map((post) => (
@@ -40,7 +40,7 @@ export default function TagPage({ params }: Props) {
                   {post.title}
                 </h2>
                 <time className="text-sm text-gray-500">
-                  {formatDateZh(post.date)}
+                  {formatDate(post.date)}
                 </time>
                 {post.excerpt && (
                   <p className="mt-1 text-sm text-gray-600 line-clamp-2">{post.excerpt}</p>
