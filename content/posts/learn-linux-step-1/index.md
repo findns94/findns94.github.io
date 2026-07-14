@@ -32,7 +32,81 @@ Looking at the full landscape of the Linux kernel, one can feel overwhelmed and 
 
 # Other Subsystems
 
-TODO
+- Schedule
+    - CFS (Completely Fair Scheduler)
+        - The default "fair" scheduler class; models an "ideal multi-tasking processor" where every runnable task gets an equal share of CPU.
+        - Each task accumulates a **virtual runtime** (`vruntime` in `struct sched_entity`); the task with the smallest `vruntime` is picked next.
+        - Tasks are kept in a **red-black tree** keyed by `vruntime`, so picking the next task and re-inserting after a timeslice are both `O(log n)`.
+        - `SCHED_NORMAL` / `SCHED_BATCH` / `SCHED_IDLE` tasks are all served by CFS.
+    - EEVDF (Earliest Eligible Virtual Deadline First)
+        - Introduced in kernel 6.6 as a new scheduling algorithm intended to eventually replace CFS.
+        - Each task carries a **virtual deadline**; the scheduler always runs the task whose deadline is earliest, giving stronger latency guarantees than pure fairness.
+        - A task that has used less of its time slice gets an earlier deadline, so interactive and latency-sensitive work is favored without a separate "interactive" heuristic.
+    - Real-time schedulers
+        - `SCHED_FIFO` and `SCHED_RR` are fixed-priority real-time classes that always preempt CFS; `SCHED_DEADLINE` uses EDF with a runtime budget for hard real-time workloads.
+    - Runqueues and load balancing
+        - Per-CPU runqueue (`struct rq`); periodic **load balancing** and **idle balancing** migrate tasks across runqueues to keep all cores busy.
+        - **Scheduling classes** form a priority chain (stop → deadline → rt → fair → idle); each class decides whether to run its own tasks before deferring to lower classes.
+    - Context switch and tick
+        - `context_switch()` swaps page tables (`switch_mm`) and CPU register state (`switch_to`); the scheduler tick (`scheduler_tick`) updates `vruntime` and may set `TIF_NEED_RESCHED`.
+        - `NO_HZ_IDLE` / `NO_HZ_FULL` stop the periodic tick on idle or quiet CPUs to save power and reduce jitter.
+- Memory
+    - Physical memory
+        - Memory is organized into **NUMA nodes** (`struct pglist_data`), each node into **zones** (DMA, DMA32, Normal, HighMem) reflecting hardware addressing limits.
+        - The smallest unit is the **page** (usually 4 KiB), tracked by `struct page` (one per physical page, held in `mem_map`).
+        - The **buddy allocator** hands out contiguous power-of-two page groups and coalesces freed buddies to fight external fragmentation.
+        - The **slab allocator** (`slub`/`slab`/`slob`) caches frequently allocated kernel objects (`task_struct`, `inode`, `dentry`, …) to avoid buddy-level fragmentation and repeated init.
+    - Virtual memory
+        - Each process has its own address space described by `struct mm_struct`; contiguous logical regions are **VMAs** (`struct vm_area_struct`) with their own flags and file backing.
+        - A multi-level **page table** (PGD → PUD → PMD → PTE) translates virtual to physical addresses; x86-64 and AArch64 typically use 4 levels, with 5-level support for larger address spaces.
+        - **Demand paging**: a first access triggers a page fault (`do_page_fault` / `handle_mm_fault`), which maps a zero page, reads from swap, or maps a file.
+        - `kmalloc` returns physically contiguous memory (good for DMA); `vmalloc` returns virtually contiguous memory that may be physically scattered.
+        - **Huge pages** (2 MiB / 1 MiB) and **Transparent Huge Pages** (THP) reduce TLB pressure and page-table walk cost for large mappings.
+    - Reclaim and OOM
+        - When free memory shrinks, **kswapd** reclaims page cache and anonymous pages; **zswap** / **zram** compress pages in RAM to cut swap I/O.
+        - If reclaim cannot free enough memory, the **OOM killer** selects a victim process (by a badness score) and kills it to keep the system alive.
+- IO
+    - VFS (Virtual File System)
+        - The VFS layer gives userspace a single `open` / `read` / `write` / `close` interface regardless of the underlying filesystem.
+        - Core objects: `struct superblock` (a mounted FS), `struct inode` (a file's metadata), `struct dentry` (a directory-entry cache that speeds path lookup), and `struct file` (an open file instance with its own offset and `file_operations`).
+        - The `file_operations` table (`open`, `read`, `write`, `ioctl`, `mmap`, `release`, …) is how a filesystem or device driver plugs its own behavior into the VFS.
+    - Block layer
+        - File I/O and filesystem requests become **bio** structures (`struct bio`), each describing one or more contiguous memory-buffer segments to read or write.
+        - BIOs are merged and queued into a **request queue**; the **blk-mq** (multi-queue) framework maps submissions to per-CPU or hardware queues for modern fast storage.
+        - I/O schedulers / algorithms — `mq-deadline`, `kyber`, `bfq`, `none` — reorder and merge requests to trade off throughput, latency, and fairness.
+        - The **page cache** holds recently read file pages; dirty pages are written back to disk by periodic **flush** threads (`writeback`).
+    - Memory-mapped and direct I/O
+        - `mmap` maps a file directly into a process address space so reads/writes become memory accesses (demand-paged through the page cache).
+        - **Direct I/O** (`O_DIRECT`) bypasses the page cache and DMA-s straight from user buffers to the device, used by databases and `qemu`.
+- Network
+    - `sk_buff` (socket buffer)
+        - `struct sk_buff` is the central packet descriptor: it carries the protocol headers, a scatter-gather list of data fragments, and metadata (timestamp, priority, ingress device).
+        - SKBs are allocated from a slab cache and reference-counted; the same `sk_buff` is cloned and handed down the stack layers without copying payload.
+    - NAPI and device polling
+        - **NAPI** (New API) starts with interrupt-driven packet receipt, then switches to a **polling** loop (`poll()`) inside a single hard-IRQ to amortize interrupt overhead under high traffic.
+        - `netif_napi_add` registers a driver's poll function; `napi_schedule` raises `NET_RX_SOFTIRQ` to run it.
+    - Protocol stack and netfilter
+        - Ingress: L2 (`netif_receive_skb`) → L3 (`ip_rcv` → `ip_route_input`) → L4 (`tcp_v4_rcv` / `udp_rcv`) → socket buffer → userspace.
+        - **Netfilter** hooks (`NF_INET_PRE_ROUTING`, `LOCAL_IN`, `FORWARD`, `LOCAL_OUT`, `POST_ROUTING`) are where `iptables` / `nftables` filter, NAT, and mangle packets.
+        - Egress: `dev_queue_xmit` hands a packet to the device; **qdisc** (queuing disciplines like `fq_codel`, `htb`) shape and pace outbound traffic.
+    - eBPF / XDP
+        - **XDP** (eXpress Data Path) runs an eBPF program at the earliest point in the driver, before an `sk_buff` is even allocated — used for DDoS mitigation, load balancing, and fast forwarding.
+        - **TC eBPF** attaches to the traffic-control layer for richer in-stack processing.
+- Driver
+    - Character devices
+        - A **character device** (`struct cdev`) is accessed as a stream of bytes; the driver registers a major/minor number pair and an `file_operations` table.
+        - `register_chrdev_region` reserves a static major/minor range; `alloc_chdev_region` requests a dynamic one. `cdev_add` makes the device live.
+        - `class_create` + `device_create` populate **sysfs** (`/dev`, `/sys/class/…`) so `udev` can create device nodes automatically.
+    - Device model and buses
+        - The kernel device model is a **bus → device → driver** tree: a driver (`struct device_driver`) registers on a bus (`struct bus_type`); when a matching device is found, `probe()` is called.
+        - **Platform devices** represent devices baked into a SoC (no discoverable bus); **device tree** (`*.dts`) or ACPI describe their resources (MMIO ranges, IRQs).
+        - **PCI** and **USB** are discoverable buses with their own core drivers that enumerate devices and match them to function drivers.
+    - Interrupts and bottom halves in drivers
+        - A driver requests an IRQ with `request_irq` (or the threaded variant `request_threaded_irq`); the **top half** does the minimal ack + notify work, the rest is deferred.
+        - **Bottom-half** mechanisms: `tasklet` (runs in softirq context on the same CPU), `workqueue` (runs in process context, can sleep), and `threaded IRQ` (a dedicated kernel thread per IRQ).
+    - DMA and IOMMU
+        - **DMA** lets a device read/write RAM without CPU copies; `dma_alloc_coherent` gives a device-accessible, cache-coherent buffer.
+        - The **IOMMU** (VT-d, SMMU) remaps device-visible "IO virtual addresses" to physical pages, so a device can address scattered memory and is isolated from accessing unrelated RAM.
 
 # References
 
