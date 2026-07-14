@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Shanghai second-hand home price index, 2015=100, quarterly from Q1 2018 through Q1 2026">
+<title>Shanghai Second-Hand Home Price Index, Q1 2018 – Q1 2026 (2015 = 100)</title>
+<desc>Shanghai's second-hand home price index, with the 2015 quarterly average set to 100. The series rises from roughly 108 in early 2018 to a peak near 140 in mid-2022, then declines to about 131 by early 2026, after a brief volume-led stabilisation.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis     { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="60" y1="60"  x2="620" y2="60"/>
+  <line class="line-grid" x1="60" y1="120" x2="620" y2="120"/>
+  <line class="line-grid" x1="60" y1="180" x2="620" y2="180"/>
+  <line class="line-grid" x1="60" y1="240" x2="620" y2="240"/>
+  <line class="line-grid" x1="60" y1="300" x2="620" y2="300"/>
+</g>
+<line class="axis" x1="60" y1="340" x2="620" y2="340"/>
+<line class="axis" x1="60" y1="40"  x2="60"  y2="340"/>
+<text class="tick" x="54" y="64"  text-anchor="end" font-size="10">145</text>
+<text class="tick" x="54" y="124" text-anchor="end" font-size="10">135</text>
+<text class="tick" x="54" y="184" text-anchor="end" font-size="10">125</text>
+<text class="tick" x="54" y="244" text-anchor="end" font-size="10">115</text>
+<text class="tick" x="54" y="304" text-anchor="end" font-size="10">105</text>
+<text class="op35" x="60"  y="360" text-anchor="middle" font-size="9">Q1'18</text>
+<text class="op35" x="180" y="360" text-anchor="middle" font-size="9">Q1'20</text>
+<text class="op35" x="320" y="360" text-anchor="middle" font-size="9">Q1'22</text>
+<text class="op35" x="460" y="360" text-anchor="middle" font-size="9">Q1'24</text>
+<text class="op35" x="600" y="360" text-anchor="middle" font-size="9">Q1'26</text>
+<polyline fill="none" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="60,300 100,290 140,280 180,265 220,245 250,220 280,190 300,165 320,150 345,142 365,138 390,136 420,138 460,143 500,148 540,155 580,158 620,158"/>
+<circle cx="390" cy="136" r="5" fill="#f97316" stroke="white" stroke-width="2"/>
+<text class="lbl" x="390" y="126" text-anchor="middle" font-size="9" font-weight="700">Peak ~140</text>
+<circle cx="620" cy="158" r="5" fill="#22c55e" stroke="white" stroke-width="2"/>
+<text class="lbl" x="620" y="172" text-anchor="middle" font-size="9" font-weight="700">~131</text>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: National Bureau of Statistics (NBS), Shanghai Second-Hand Price Index (2015=100), quarterly, 2026</text>
+</svg>

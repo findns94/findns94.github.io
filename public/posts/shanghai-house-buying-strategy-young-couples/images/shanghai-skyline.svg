@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700" role="img" aria-label="Shanghai Pudong skyline at dusk">
+  <title>Shanghai Pudong skyline at dusk</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#16243a"/>
+      <stop offset="1" stop-color="#2a3a55"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1a2b"/>
+      <stop offset="1" stop-color="#060c16"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1400" height="700" fill="url(#sky)"/>
+  <!-- stars / lights in sky -->
+  <g fill="#ffd56b" opacity="0.7">
+    <circle cx="120" cy="80" r="1.5"/><circle cx="260" cy="60" r="1"/>
+    <circle cx="430" cy="100" r="1.5"/><circle cx="600" cy="50" r="1"/>
+    <circle cx="780" cy="90" r="1.5"/><circle cx="940" cy="60" r="1"/>
+    <circle cx="1100" cy="110" r="1"/><circle cx="1260" cy="70" r="1.5"/>
+  </g>
+
+  <!-- distant skyline silhouette -->
+  <g fill="#0a1018">
+    <rect x="0"   y="430" width="60"  height="120"/>
+    <rect x="70"  y="400" width="50"  height="150"/>
+    <rect x="130" y="420" width="70"  height="130"/>
+    <rect x="210" y="360" width="45"  height="190"/>
+    <rect x="265" y="400" width="80"  height="150"/>
+    <rect x="355" y="380" width="55"  height="170"/>
+    <rect x="425" y="410" width="65"  height="140"/>
+  </g>
+
+  <!-- Oriental Pearl / Lujiazui core -->
+  <g>
+    <!-- Pearl tower -->
+    <rect x="618" y="240" width="14" height="280" fill="#16243a" stroke="#2a3a55" stroke-width="0.5"/>
+    <rect x="610" y="300" width="30" height="8"  fill="#1a2a44"/>
+    <rect x="604" y="380" width="42" height="10" fill="#1a2a44"/>
+    <circle cx="625" cy="250" r="22" fill="#1c2e4a"/>
+    <circle cx="625" cy="250" r="14" fill="#ff7a3c" opacity="0.85"/>
+    <circle cx="625" cy="250" r="6"  fill="#ffd56b"/>
+    <!-- Shanghai Tower (twist) -->
+    <polygon points="700,520 695,180 712,180 730,520" fill="#14213a" stroke="#2a3a55" stroke-width="0.5"/>
+    <polygon points="698,260 720,260 722,272 696,272" fill="#1c2e4a"/>
+    <polygon points="696,340 724,340 726,354 694,354" fill="#1c2e4a"/>
+    <polygon points="696,420 724,420 726,434 692,434" fill="#1c2e4a"/>
+    <!-- Jin Mao -->
+    <polygon points="760,520 755,200 770,200 785,520" fill="#1a2a44" stroke="#2a3a55" stroke-width="0.5"/>
+    <rect x="752" y="300" width="36" height="6"  fill="#14213a"/>
+    <rect x="752" y="380" width="36" height="6"  fill="#14213a"/>
+  </g>
+
+  <!-- mid-rise block -->
+  <g fill="#111b30" opacity="0.95">
+    <rect x="820" y="360" width="45"  height="190"/>
+    <rect x="875" y="330" width="55"  height="220"/>
+    <rect x="940" y="380" width="40"  height="170"/>
+    <rect x="990" y="350" width="60"  height="200"/>
+    <rect x="1060" y="390" width="45" height="160"/>
+    <rect x="1115" y="360" width="50" height="190"/>
+    <rect x="1175" y="400" width="40" height="150"/>
+    <rect x="1225" y="340" width="55" height="210"/>
+    <rect x="1290" y="380" width="45" height="170"/>
+    <rect x="1345" y="410" width="45" height="140"/>
+  </g>
+
+  <!-- building window lights -->
+  <g fill="#ffd56b" opacity="0.55">
+    <rect x="605" y="430" width="2" height="2"/><rect x="610" y="440" width="2" height="2"/>
+    <rect x="615" y="450" width="2" height="2"/><rect x="620" y="435" width="2" height="2"/>
+    <rect x="630" y="445" width="2" height="2"/><rect x="635" y="455" width="2" height="2"/>
+    <rect x="762" y="260" width="2" height="2"/><rect x="770" y="280" width="2" height="2"/>
+    <rect x="778" y="300" width="2" height="2"/><rect x="768" y="320" width="2" height="2"/>
+    <rect x="885" y="365" width="2" height="2"/><rect x="895" y="385" width="2" height="2"/>
+    <rect x="905" y="405" width="2" height="2"/><rect x="950" y="410" width="2" height="2"/>
+    <rect x="1000" y="385" width="2" height="2"/><rect x="1015" y="405" width="2" height="2"/>
+    <rect x="1030" y="425" width="2" height="2"/><rect x="1070" y="420" width="2" height="2"/>
+    <rect x="1130" y="395" width="2" height="2"/><rect x="1140" y="415" width="2" height="2"/>
+    <rect x="1240" y="375" width="2" height="2"/><rect x="1255" y="400" width="2" height="2"/>
+    <rect x="1300" y="410" width="2" height="2"/><rect x="1315" y="430" width="2" height="2"/>
+  </g>
+
+  <!-- water -->
+  <rect x="0" y="548" width="1400" height="152" fill="url(#water)"/>
+  <!-- reflection shimmer -->
+  <g stroke="#2a3a55" stroke-width="0.6" opacity="0.5">
+    <line x1="580" y1="560" x2="820" y2="560"/>
+    <line x1="560" y1="590" x2="860" y2="590"/>
+    <line x1="580" y1="620" x2="840" y2="620"/>
+    <line x1="560" y1="655" x2="860" y2="655"/>
+  </g>
+</svg>

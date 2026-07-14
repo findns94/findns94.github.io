@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Projected 30-year value of maxing pension (24K/yr, 5% return, reaching ~1.65M) versus keeping in bank deposits (1.5% return, reaching ~900K)">
+<title>Pension Account vs Bank Deposits: 30-Year Growth Projection</title>
+<desc>Two investment scenarios for a Shanghai couple contributing 24,000 yuan/year for 30 years. Pension account at 5% real return reaches ~1.65M. Bank deposits at 1.5% reach ~900K. Gap of 750,000. Source: author calculations based on MOHRSS pension rules, 2024.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="50" y1="340" x2="540" y2="340"/>
+</g>
+<line class="axis" x1="50" y1="340" x2="540" y2="340"/>
+<text x="280" y="30" text-anchor="middle" font-size="15" font-weight="700">Pension Account vs Bank Deposits: 30-Year Growth</text>
+<text class="tick" x="280" y="50" text-anchor="middle" font-size="11">¥24,000 annual contribution, 30 years, in millions RMB</text>
+<rect x="70" y="80" width="60" height="260" rx="6" fill="#f97316"/>
+<rect x="150" y="80" width="60" height="260" rx="6" fill="#38bdf8"/>
+<rect x="280" y="132" width="60" height="208" rx="6" fill="#f97316"/>
+<rect x="360" y="132" width="60" height="208" rx="6" fill="#38bdf8"/>
+<rect x="470" y="249" width="60" height="91" rx="6" fill="#38bdf8"/>
+<text x="100" y="72" text-anchor="middle" font-size="12" font-weight="600">¥0.90M</text>
+<text x="180" y="72" text-anchor="middle" font-size="12" font-weight="600">¥0.90M</text>
+<text x="310" y="124" text-anchor="middle" font-size="12" font-weight="600">¥1.65M</text>
+<text x="390" y="124" text-anchor="middle" font-size="12" font-weight="600">¥1.65M</text>
+<text x="500" y="241" text-anchor="middle" font-size="12" font-weight="600">¥0.90M</text>
+<text x="280" y="105" text-anchor="middle" font-size="10" fill="white" font-weight="800">Bank</text>
+<text x="280" y="123" text-anchor="middle" font-size="10" fill="white" font-weight="800">1.5%</text>
+<text x="310" y="165" text-anchor="middle" font-size="10" fill="white" font-weight="800">Pension</text>
+<text x="310" y="183" text-anchor="middle" font-size="10" fill="white" font-weight="800">5.0%</text>
+<text class="op70" x="130" y="360" text-anchor="middle" font-size="10">Bank deposits</text>
+<text class="op70" x="320" y="360" text-anchor="middle" font-size="10">Pension account (5% real)</text>
+<rect x="260" y="354" width="10" height="10" rx="2" fill="#38bdf8"/>
+<rect x="100" y="354" width="10" height="10" rx="2" fill="#f97316"/>
+<text class="op35" x="280" y="372" text-anchor="middle" font-size="10">Source: Author projections based on MOHRSS pension rules (2024)</text>
+</svg>

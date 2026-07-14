@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 420" width="460" height="420" role="img" aria-label="Shanghai talent-housing support by Five New Town district as proportion of the combined subsidy envelope">
+<title>Approximate Talent-Housing Subsidy by Shanghai New-Town District, 2025</title>
+<desc>Donut chart. Share of total approximate subsidy pool by district. Songjiang ~¥300k, Qingpu ~¥200k, Fengxian ~¥150k, Jinshan ~¥120k, Baoshan-outer ~¥100k. Combined envelope ~¥870k.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis     { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g transform="translate(220,200)">
+  <circle r="110" stroke="var(--grid)" stroke-width="36" fill="none"/>
+  <!-- total actual = 870k. C = 2*pi*110 = 691.15. Normalized so segments fill the full circle (no rounding gap):
+       Songjiang 300/870 = 124.1deg -> arc 238.4
+       Qingpu    200/870 =  82.8deg -> arc 158.9 -> rot -90-124.1 = -214.1
+       Fengxian  150/870 =  62.1deg -> arc 119.2 -> rot -90-206.9 = -296.9
+       Jinshan   120/870 =  49.7deg -> arc  95.3 -> rot -90-269.0 = -359.0
+       Baoshan   100/870 =  41.4deg -> arc  79.4 -> rot -90-318.6 = -408.6 -->
+  <circle r="110" stroke="#f97316" stroke-width="36" fill="none" stroke-dasharray="238.4 452.8" transform="rotate(-90)"/>
+  <circle r="110" stroke="#fb923c" stroke-width="36" fill="none" stroke-dasharray="158.9 532.3" transform="rotate(-214.1)"/>
+  <circle r="110" stroke="#38bdf8" stroke-width="36" fill="none" stroke-dasharray="119.2 572.0" transform="rotate(-296.9)"/>
+  <circle r="110" stroke="#a78bfa" stroke-width="36" fill="none" stroke-dasharray="95.3 595.9" transform="rotate(-359)"/>
+  <circle r="110" stroke="#22c55e" stroke-width="36" fill="none" stroke-dasharray="79.4 611.7" transform="rotate(-408.6)"/>
+  <text class="lbl" y="-6"  text-anchor="middle" font-size="14" font-weight="800">~870k</text>
+  <text class="op35" y="14" text-anchor="middle" font-size="10">combined envelope</text>
+</g>
+<g font-family="Inter, system-ui, sans-serif" font-size="10" class="fg">
+  <rect x="30"  y="358" width="10" height="10" fill="#f97316" rx="2"/>
+  <text class="lbl" x="44"  y="368">Songjiang (¥300k)</text>
+  <rect x="170" y="358" width="10" height="10" fill="#fb923c" rx="2"/>
+  <text class="lbl" x="184" y="368">Qingpu (¥200k)</text>
+  <rect x="310" y="358" width="10" height="10" fill="#38bdf8" rx="2"/>
+  <text class="lbl" x="324" y="368">Fengxian (¥150k)</text>
+  <rect x="30"  y="384" width="10" height="10" fill="#a78bfa" rx="2"/>
+  <text class="lbl" x="44"  y="394">Jinshan (¥120k)</text>
+  <rect x="170" y="384" width="10" height="10" fill="#22c55e" rx="2"/>
+  <text class="lbl" x="184" y="394">Baoshan outer (¥100k)</text>
+</g>
+<text class="op35" x="230" y="412" text-anchor="middle" font-size="9">Source: Shanghai municipal talent-housing programmes, 2025 (approximate, eligibility-dependent)</text>
+</svg>

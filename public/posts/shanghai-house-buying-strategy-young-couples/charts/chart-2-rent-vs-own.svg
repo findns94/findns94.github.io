@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Annual cost of renting vs owning a typical 80m2 apartment by Shanghai district ring, 2026">
+<title>Annual Rent vs Annual Ownership Cost by Shanghai Ring, 2026 (¥)</title>
+<desc>Grouped bar chart comparing annual rent and annual ownership cost (mortgage principal+interest+fees) for a typical apartment in each of Shanghai's district rings: Inner, Middle, Outer, and New Towns.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis     { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g class="line-grid" data-marker="grid">
+  <line class="line-grid" x1="60"  y1="60"  x2="620" y2="60"/>
+  <line class="line-grid" x1="60"  y1="120" x2="620" y2="120"/>
+  <line class="line-grid" x1="60"  y1="180" x2="620" y2="180"/>
+  <line class="line-grid" x1="60"  y1="240" x2="620" y2="240"/>
+  <line class="line-grid" x1="60"  y1="300" x2="620" y2="300"/>
+</g>
+<line class="axis" x1="60" y1="340" x2="620" y2="340"/>
+<line class="axis" x1="60" y1="40"  x2="60"  y2="340"/>
+<text class="tick" x="54" y="64"  text-anchor="end" font-size="10">220k</text>
+<text class="tick" x="54" y="124" text-anchor="end" font-size="10">180k</text>
+<text class="tick" x="54" y="184" text-anchor="end" font-size="10">140k</text>
+<text class="tick" x="54" y="244" text-anchor="end" font-size="10">100k</text>
+<text class="tick" x="54" y="304" text-anchor="end" font-size="10">60k</text>
+<!-- y mapping: val k → y = 340 - (val/220)*280 ; height = (val/220)*280 -->
+<g>
+  <rect x="80"  y="209" width="42" height="131" rx="4" fill="#38bdf8"/>
+  <rect x="128" y="100" width="42" height="240" rx="4" fill="#f97316"/>
+  <rect x="200" y="244" width="42" height="96"  rx="4" fill="#38bdf8"/>
+  <rect x="248" y="131" width="42" height="209" rx="4" fill="#f97316"/>
+  <rect x="320" y="269" width="42" height="71"  rx="4" fill="#38bdf8"/>
+  <rect x="368" y="174" width="42" height="166" rx="4" fill="#f97316"/>
+  <rect x="440" y="288" width="42" height="52"  rx="4" fill="#38bdf8"/>
+  <rect x="488" y="206" width="42" height="134" rx="4" fill="#f97316"/>
+</g>
+<text class="op35" x="130" y="360" text-anchor="middle" font-size="9">Inner Ring</text>
+<text class="op35" x="248" y="360" text-anchor="middle" font-size="9">Middle Ring</text>
+<text class="op35" x="368" y="360" text-anchor="middle" font-size="9">Outer Ring</text>
+<text class="op35" x="488" y="360" text-anchor="middle" font-size="9">New Towns</text>
+<g transform="translate(420,58)">
+  <rect width="12" height="12" rx="2" fill="#38bdf8"/>
+</g>
+<text class="lbl" x="436" y="69" font-size="10">Annual rent</text>
+<g transform="translate(520,58)">
+  <rect width="12" height="12" rx="2" fill="#f97316"/>
+</g>
+<text class="lbl" x="536" y="69" font-size="10">Annual ownership (P+I+fees)</text>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: Beike Research, JLL, CBRE estimates, Q1 2026</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart of developer count per kernel release from 6.12 to 7.1">
+  <rect width="560" height="360" fill="#0d1117" rx="12"/>
+  <text x="280" y="32" fill="#c9d1d9" font-family="system-ui,sans-serif" font-size="15" font-weight="600" text-anchor="middle">Developers Per Kernel Release</text>
+  <text x="280" y="50" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Non-merge changeset authors, 6.12 → 7.1 (LWN.net, 2026)</text>
+  <line x1="70" y1="80" x2="520" y2="80" stroke="#21262d" stroke-width="1"/>
+  <line x1="70" y1="140" x2="520" y2="140" stroke="#21262d" stroke-width="1"/>
+  <line x1="70" y1="200" x2="520" y2="200" stroke="#21262d" stroke-width="1"/>
+  <line x1="70" y1="260" x2="520" y2="260" stroke="#21262d" stroke-width="1"/>
+  <line x1="70" y1="320" x2="520" y2="320" stroke="#30363d" stroke-width="1"/>
+  <text x="62" y="84" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">2,500</text>
+  <text x="62" y="144" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">2,000</text>
+  <text x="62" y="204" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">1,500</text>
+  <text x="62" y="264" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">1,000</text>
+  <text x="62" y="324" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">0</text>
+  <polyline points="130,260 290,258 500,78" fill="none" stroke="#58a6ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="130,260 290,258 500,78 500,320 130,320" fill="rgba(88,166,255,0.08)"/>
+  <circle cx="130" cy="260" r="6" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+  <circle cx="290" cy="258" r="6" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+  <circle cx="500" cy="78" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
+  <text x="130" y="248" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="11" font-weight="600" text-anchor="middle">~1,330</text>
+  <text x="290" y="246" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="11" font-weight="600" text-anchor="middle">1,362</text>
+  <text x="500" y="66" fill="#3fb950" font-family="system-ui,sans-serif" font-size="12" font-weight="700" text-anchor="middle">2,479</text>
+  <text x="130" y="342" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">6.12</text>
+  <text x="210" y="342" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">6.13</text>
+  <text x="290" y="342" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">6.15</text>
+  <text x="370" y="342" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">6.18</text>
+  <text x="440" y="342" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">7.0</text>
+  <text x="500" y="342" fill="#3fb950" font-family="system-ui,sans-serif" font-size="11" font-weight="700" text-anchor="middle">7.1</text>
+  <line x1="430" y1="120" x2="490" y2="90" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="370" y="112" fill="#3fb950" font-family="system-ui,sans-serif" font-size="10" font-weight="600">+85%</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Shanghai median second-hand price per square metre by district tier, Q1 2026">
+<title>Median Shanghai Second-Hand Price (¥/m²) by District Tier, Q1 2026</title>
+<desc>Lollipop chart. Inner ring ¥125k/m², middle ring ¥78k/m², outer ring ¥48k/m², new towns ¥29k/m².</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis     { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="140" y1="60"  x2="600" y2="60"/>
+  <line class="line-grid" x1="140" y1="140" x2="600" y2="140"/>
+  <line class="line-grid" x1="140" y1="220" x2="600" y2="220"/>
+  <line class="line-grid" x1="140" y1="300" x2="600" y2="300"/>
+  <line class="line-grid" x1="140" y1="380" x2="600" y2="380"/>
+</g>
+<line class="axis" x1="140" y1="50" x2="140" y2="390"/>
+<text class="tick" x="130" y="64"  text-anchor="end" font-size="10">140,000</text>
+<text class="tick" x="130" y="144" text-anchor="end" font-size="10">105,000</text>
+<text class="tick" x="130" y="224" text-anchor="end" font-size="10">70,000</text>
+<text class="tick" x="130" y="304" text-anchor="end" font-size="10">35,000</text>
+<text class="tick" x="130" y="384" text-anchor="end" font-size="10">0</text>
+<line x1="220" y1="60"  x2="220" y2="350" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="220" cy="60"  r="9" fill="#38bdf8" stroke="white" stroke-width="2"/>
+<text class="lbl" x="220" y="50" text-anchor="middle" font-size="10" font-weight="700">¥125k</text>
+<line x1="340" y1="178" x2="340" y2="350" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="340" cy="178" r="9" fill="#38bdf8" stroke="white" stroke-width="2"/>
+<text class="lbl" x="340" y="168" text-anchor="middle" font-size="10" font-weight="700">¥78k</text>
+<line x1="460" y1="234" x2="460" y2="350" stroke="#a78bfa" stroke-width="2"/>
+<circle cx="460" cy="234" r="9" fill="#a78bfa" stroke="white" stroke-width="2"/>
+<text class="lbl" x="460" y="224" text-anchor="middle" font-size="10" font-weight="700">¥48k</text>
+<line x1="570" y1="320" x2="570" y2="350" stroke="#22c55e" stroke-width="2"/>
+<circle cx="570" cy="320" r="9" fill="#22c55e" stroke="white" stroke-width="2"/>
+<text class="lbl" x="570" y="310" text-anchor="middle" font-size="10" font-weight="700">¥29k</text>
+<text class="op35" x="220" y="375" text-anchor="middle" font-size="9">Inner Ring</text>
+<text class="op35" x="340" y="375" text-anchor="middle" font-size="9">Middle Ring</text>
+<text class="op35" x="460" y="375" text-anchor="middle" font-size="9">Outer Ring</text>
+<text class="op35" x="570" y="375" text-anchor="middle" font-size="9">New Towns</text>
+<text class="op35" x="380" y="402" text-anchor="middle" font-size="10">Source: Beike Research, transaction data, Q1 2026</text>
+</svg>
