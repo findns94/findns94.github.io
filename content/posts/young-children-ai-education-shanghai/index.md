@@ -154,11 +154,7 @@ Shanghai sits at the top of China's AI-education participation chart. While the 
 
 **2. Private Chinese schools.** Rapidly adopting AI curriculum in response to MOE mandates and parent demand. Expect a blend of exam-prep culture and newer AI modules. Tuition CNY50,000–150,000/year.
 
-[INTERNAL-LINK: Shanghai school admissions comparison → local guide on navigating public vs private vs international school applications in Shanghai]
-
 **3. International schools.** Dulwich College Shanghai, Shanghai American School (SAS), Wellington College International Shanghai, and WISS (Western International School of Shanghai) all integrate computational thinking from early years and AI modules in primary, with fewer regulatory constraints on inquiry-based pedagogy. Tuition CNY200,000–350,000/year.
-
-[INTERNAL-LINK: Shanghai international school AI curriculum → detailed comparison of STEM and AI programs at Shanghai's top international schools]
 
 **4. The Double Reduction effect.** China's 2021 Double Reduction policy, which bans for-profit core-subject tutoring, has pushed demand toward STEM and AI courses instead. The Ministry of Education's 2024 curriculum update explicitly classifies AI/information technology as a priority enrichment area ([MOE](http://www.moe.gov.cn), 2024). That tailwind is structural, not cyclical.
 
@@ -206,8 +202,6 @@ China's December 2024 NHC guidelines are stricter on a per-session basis. For ag
 
 Dulwich College Shanghai, Shanghai American School, Wellington College International Shanghai, and WISS all integrate computational thinking from early years. Tuition runs CNY200,000–350,000/year. Public schools are closing the gap via the national Smart Education Platform and AI-into-Campus programs, though quality varies by district ([Ministry of Education](http://www.moe.gov.cn), 2024).
 
-[INTERNAL-LINK: Shanghai international school STEM comparison → detailed side-by-side of AI and coding programs at top Shanghai international schools]
-
 ### Does China's Double Reduction policy affect AI education for young children?
 
 Indirectly, yes. Double Reduction bans for-profit core-subject tutoring but classifies AI and information technology as a priority enrichment area ([MOE](http://www.moe.gov.cn), 2024). Demand has shifted strongly toward STEM and AI courses — a structural tailwind, not a temporary fad. The 35–45% YoY market growth in 2024 reflects that shift ([iResearch](https://www.iresearch.com.cn), 2024).
@@ -217,7 +211,5 @@ Indirectly, yes. Double Reduction bans for-profit core-subject tutoring but clas
 ## Conclusion
 
 Educating young children in the AI era is not about racing toddlers through machine-learning courses. Shanghai parents should set screen boundaries first (Step 1), introduce screen-free tangible AI play for the youngest group (Step 2), layer in guided AI apps with an adult present (Step 3), then move to structured coding (Step 4) and explicit AI literacy (Step 5) — all while navigating a school system in which tier-1 city participation already runs 40–60% (Step 6). The families who do this well will not be the ones who introduced AI earliest. They will be the ones who introduced it within boundaries, with presence, and with a framework.
-
-[INTERNAL-LINK: AI education topic cluster → our ongoing coverage of parenting, technology, and education policy in China]
 
 Start with Step 1: write this week's screen budget tonight.
