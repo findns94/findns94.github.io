@@ -15,17 +15,15 @@
 </style>
 <g transform="translate(220,200)">
   <circle r="110" stroke="var(--grid)" stroke-width="36" fill="none"/>
-  <!-- total actual = 870k. C = 2*pi*110 = 691.15. Normalized so segments fill the full circle (no rounding gap):
-       Songjiang 300/870 = 124.1deg -> arc 238.4
-       Qingpu    200/870 =  82.8deg -> arc 158.9 -> rot -90-124.1 = -214.1
-       Fengxian  150/870 =  62.1deg -> arc 119.2 -> rot -90-206.9 = -296.9
-       Jinshan   120/870 =  49.7deg -> arc  95.3 -> rot -90-269.0 = -359.0
-       Baoshan   100/870 =  41.4deg -> arc  79.4 -> rot -90-318.6 = -408.6 -->
-  <circle r="110" stroke="#f97316" stroke-width="36" fill="none" stroke-dasharray="238.4 452.8" transform="rotate(-90)"/>
-  <circle r="110" stroke="#fb923c" stroke-width="36" fill="none" stroke-dasharray="158.9 532.3" transform="rotate(-214.1)"/>
-  <circle r="110" stroke="#38bdf8" stroke-width="36" fill="none" stroke-dasharray="119.2 572.0" transform="rotate(-296.9)"/>
-  <circle r="110" stroke="#a78bfa" stroke-width="36" fill="none" stroke-dasharray="95.3 595.9" transform="rotate(-359)"/>
-  <circle r="110" stroke="#22c55e" stroke-width="36" fill="none" stroke-dasharray="79.4 611.7" transform="rotate(-408.6)"/>
+  <!-- Full-precision layout. r=110 so C = 2*pi*110 = 691.1504. Data out of 870k (Songjiang 300, Qingpu 200, Fengxian 150, Jinshan 120, Baoshan 100).
+       Segment n occupies the clockwise arc [R_n - S_n, R_n]; successive R values decrease by the previous segment's degree span
+       so slices abut exactly. Degree spans: 124.1379, 82.7586, 62.0690, 49.6552, 41.3793 (sum = 360 exactly).
+       Rotations: R1=-90, R2=-214.1379, R3=-296.8966, R4=-358.9655, R5=-408.6207. Closure: R5 - 41.3793 = -450 = R1 - 360. -->
+  <circle r="110" stroke="#f97316" stroke-width="36" fill="none" stroke-dasharray="238.3276 452.8228" transform="rotate(-90)"/>
+  <circle r="110" stroke="#fb923c" stroke-width="36" fill="none" stroke-dasharray="158.8851 532.2653" transform="rotate(-214.1379)"/>
+  <circle r="110" stroke="#38bdf8" stroke-width="36" fill="none" stroke-dasharray="119.1638 571.9866" transform="rotate(-296.8966)"/>
+  <circle r="110" stroke="#a78bfa" stroke-width="36" fill="none" stroke-dasharray="95.3311 595.8193" transform="rotate(-358.9655)"/>
+  <circle r="110" stroke="#22c55e" stroke-width="36" fill="none" stroke-dasharray="79.4425 611.7079" transform="rotate(-408.6207)"/>
   <text class="lbl" y="-6"  text-anchor="middle" font-size="14" font-weight="800">~870k</text>
   <text class="op35" y="14" text-anchor="middle" font-size="10">combined envelope</text>
 </g>
