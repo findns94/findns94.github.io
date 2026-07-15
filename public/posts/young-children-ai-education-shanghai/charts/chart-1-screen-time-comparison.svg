@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Screen time guidelines comparison by age group: China NHC 2024, WHO, and AAP recommendations in minutes">
+<title>Screen Time Guidelines Comparison by Age Group (minutes)</title>
+<desc>Grouped bar chart comparing maximum recommended screen time across three authoritative sources. For ages under 1: China NHC says no screen time, WHO says none, AAP says none. Ages 1-2: China NHC under 10 min/session, WHO under 1 hour/day, AAP emphasizes video-chat only. Ages 3-6: China NHC under 20 min/session, WHO under 1 hour/day, AAP 1 hour/day high quality. Ages 7-12: China NHC under 30 min/session, WHO no strict limit, AAP consistent limits. Ages 13-18: China NHC under 40 min/session.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis     { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g class="line-grid">
+  <line class="line-grid" x1="120" y1="60"  x2="600" y2="60"/>
+  <line class="line-grid" x1="120" y1="120" x2="600" y2="120"/>
+  <line class="line-grid" x1="120" y1="180" x2="600" y2="180"/>
+  <line class="line-grid" x1="120" y1="240" x2="600" y2="240"/>
+  <line class="line-grid" x1="120" y1="300" x2="600" y2="300"/>
+</g>
+<line class="axis" x1="120" y1="340" x2="600" y2="340"/>
+<line class="axis" x1="120" y1="40"  x2="120"  y2="340"/>
+<!-- Y axis labels: 0, 10, 20, 30, 40, 50, 60 min -->
+<text class="tick" x="114" y="344" text-anchor="end" font-size="10">0</text>
+<text class="tick" x="114" y="294" text-anchor="end" font-size="10">10</text>
+<text class="tick" x="114" y="244" text-anchor="end" font-size="10">20</text>
+<text class="tick" x="114" y="194" text-anchor="end" font-size="10">30</text>
+<text class="tick" x="114" y="144" text-anchor="end" font-size="10">40</text>
+<text class="tick" x="114" y="94"  text-anchor="end" font-size="10">60</text>
+<text class="op35" x="114" y="44"  text-anchor="end" font-size="9">∞</text>
+<!-- y mapping: value min → y = 340 - (val/60)*280 ; val=∞ → y=60 -->
+
+<g>
+  <!-- Row 1: Under 1 (all zero/none) -->
+  <rect x="140"  y="332" width="30" height="8"  rx="3" fill="#f97316"/>
+  <rect x="176"  y="332" width="30" height="8"  rx="3" fill="#38bdf8"/>
+  <rect x="212"  y="332" width="30" height="8"  rx="3" fill="#a78bfa"/>
+  <text class="op35" x="157" y="358" text-anchor="middle" font-size="9">None</text>
+
+  <!-- Row 2: Ages 1-2 (NHC 10min, WHO 60min, AAP ~0/vid only) -->
+  <rect x="280"  y="290" width="30" height="50"  rx="3" fill="#f97316"/>
+  <rect x="316"  y="40"  width="30" height="300" rx="3" fill="#38bdf8"/>
+  <rect x="352"  y="332" width="30" height="8"  rx="3" fill="#a78bfa"/>
+  <text class="lbl" x="295" y="284" text-anchor="middle" font-size="8" font-weight="700">10</text>
+  <text class="lbl" x="331" y="34"  text-anchor="middle" font-size="8" font-weight="700">60</text>
+
+  <!-- Row 3: Ages 3-6 (NHC 20min, WHO 60min, AAP 60min) -->
+  <rect x="400"  y="240" width="30" height="100" rx="3" fill="#f97316"/>
+  <rect x="436"  y="40"  width="30" height="300" rx="3" fill="#38bdf8"/>
+  <rect x="472"  y="40"  width="30" height="300" rx="3" fill="#a78bfa"/>
+  <text class="lbl" x="415" y="234" text-anchor="middle" font-size="8" font-weight="700">20</text>
+  <text class="lbl" x="451" y="34"  text-anchor="middle" font-size="8" font-weight="700">60</text>
+  <text class="lbl" x="487" y="34"  text-anchor="middle" font-size="8" font-weight="700">60</text>
+
+  <!-- Row 4: Ages 7-12 (NHC 30min) -->
+  <rect x="520"  y="190" width="30" height="150" rx="3" fill="#f97316"/>
+  <text class="lbl" x="535" y="184" text-anchor="middle" font-size="8" font-weight="700">30</text>
+</g>
+
+<!-- X axis labels -->
+<text class="op35" x="178" y="380" text-anchor="middle" font-size="10">Under 1 yr</text>
+<text class="op35" x="318" y="380" text-anchor="middle" font-size="10">Ages 1–2</text>
+<text class="op35" x="438" y="380" text-anchor="middle" font-size="10">Ages 3–6</text>
+<text class="op35" x="538" y="380" text-anchor="middle" font-size="10">Ages 7–12</text>
+
+<!-- Legend -->
+<g transform="translate(140, 396)">
+  <rect x="0"   y="0" width="12" height="12" rx="2" fill="#f97316"/>
+  <text class="lbl" x="16" y="10" font-size="9">China NHC 2024</text>
+  <rect x="120" y="0" width="12" height="12" rx="2" fill="#38bdf8"/>
+  <text class="lbl" x="136" y="10" font-size="9">WHO</text>
+  <rect x="190" y="0" width="12" height="12" rx="2" fill="#a78bfa"/>
+  <text class="lbl" x="206" y="10" font-size="9">AAP</text>
+</g>
+</svg>

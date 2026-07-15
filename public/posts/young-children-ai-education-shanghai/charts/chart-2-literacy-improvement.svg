@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" width="640" height="340" role="img" aria-label="Literacy improvement comparison. Guided AI co-engagement shows 25% improvement in literacy benchmarks. Traditional instruction is baseline at 0%. Unsupervised AI use shows 3% improvement.">
+<title>Early Literacy Improvement by Instruction Method (Ages 4–8, one school year)</title>
+<desc>Horizontal bar chart comparing literacy benchmark improvement over one school year. Guided AI co-engagement with a parent or teacher present shows approximately 25% improvement (range 15-30% per OECD synthesis 2024). Traditional teacher-led instruction is the baseline at 0% differential. Unsupervised AI use on a tablet alone shows approximately 3% improvement — statistically marginal. The data shows that AI tools are effective supplements but only under guided, co-engaged conditions.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl  { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis     { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g class="line-grid">
+  <line class="line-grid" x1="180" y1="60"  x2="600" y2="60"/>
+  <line class="line-grid" x1="180" y1="120" x2="600" y2="120"/>
+  <line class="line-grid" x1="180" y1="180" x2="600" y2="180"/>
+  <line class="line-grid" x1="180" y1="240" x2="600" y2="240"/>
+</g>
+<line class="axis" x1="180" y1="280" x2="180" y2="40"/>
+<!-- Y labels (improvement %) -->
+<text class="tick" x="174" y="64"  text-anchor="end" font-size="10">60%</text>
+<text class="tick" x="174" y="124" text-anchor="end" font-size="10">45%</text>
+<text class="tick" x="174" y="184" text-anchor="end" font-size="10">30%</text>
+<text class="tick" x="174" y="244" text-anchor="end" font-size="10">15%</text>
+<text class="tick" x="174" y="284" text-anchor="end" font-size="10">0%</text>
+<!-- y mapping: val% → y = 280 - (val/60)*240 -->
+
+<g>
+  <!-- Row 1: Guided AI co-engagement → 25% → y = 280 - (25/60)*240 = 180; bar height from 280 to 180 = 100 -->
+  <rect x="180" y="160" width="340" height="40" rx="6" fill="#22c55e"/>
+  <text x="530" y="184" font-size="13" font-weight="800" fill="white">25%</text>
+  <text class="lbl" x="180" y="148" text-anchor="start" font-size="11" font-weight="700">Guided AI + co-engagement</text>
+
+  <!-- Row 2: Traditional instruction → baseline 0% -->
+  <rect x="180" y="216" width="6"   height="40" rx="3" fill="#38bdf8"/>
+  <text class="lbl" x="192" y="240" font-size="11" font-weight="700">Traditional instruction (baseline)</text>
+
+  <!-- Row 3: Unsupervised AI → 3% → y = 280 - (3/60)*240 = 268; height = 12 -->
+  <rect x="180" y="264" width="20"  height="40" rx="3" fill="#f97316"/>
+  <text class="lbl" x="206" y="288" font-size="11" font-weight="700">Unsupervised AI only — 3%</text>
+</g>
+
+<text class="op35" x="360" y="320" text-anchor="middle" font-size="10">Source: OECD Digital Education Outlook 2024, MIT Media Lab 2024, American Educator Winter 2024/25 — synthesis of adaptive reading program RCTs</text>
+</svg>
