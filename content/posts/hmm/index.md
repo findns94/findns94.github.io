@@ -1,7 +1,7 @@
 ---
 title: Hidden Markov Language Model
 date: 2019-03-19 20:13:07
-tags: [HMM, Language Model]
+tags: [NLP, Machine Learning]
 categories: [Course]
 math: true
 ---

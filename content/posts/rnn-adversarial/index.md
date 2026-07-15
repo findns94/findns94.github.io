@@ -1,7 +1,7 @@
 ---
 title: Generating Adversarial Input Sequences Based on RNN
 date: 2019-03-09 23:14:03
-tags: [Adversarial Examples, RNN]
+tags: [Deep Learning, NLP, Security]
 categories: [Research]
 math: true
 ---

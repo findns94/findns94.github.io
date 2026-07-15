@@ -1,7 +1,7 @@
 ---
 title: "How to Submit Your First Linux Kernel Patch: A 2026 Step-by-Step Guide"
 date: 2026-07-14 09:00:00
-tags: [Linux, Kernel, Open Source, Development, Tutorial]
+tags: [Linux, Kernel, Open Source]
 categories: [Engineering]
 ---
 

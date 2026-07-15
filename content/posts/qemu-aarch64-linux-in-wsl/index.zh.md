@@ -1,13 +1,12 @@
 ---
-title: Booting a QEMU Linux System Using a Cross-Compiled aarch64 Kernel and BusyBox
+title: 使用交叉编译的aarch64内核与BusyBox在QEMU中启动Linux
 date: 2021-09-12 22:15:59
 tags: [Linux, Emulation, Arm]
 ---
 
+## 编译BusyBox生成_install
 
-## Compile BusyBox to Generate _install
-
-### Install Build Dependencies bison/flex
+### 安装编译依赖bison/flex
 
 ```shell
 sudo apt-get install bison -y
@@ -16,7 +15,7 @@ sudo apt-get install flex -y
 
 <!-- more -->
 
-### Compile BusyBox
+### 编译BusyBox
 
 ```shell
 tar jxvf busybox-1.32.0.tar.bz2
@@ -24,17 +23,17 @@ cd busybox-1.32.0
 mkdir build
 make O=build ARCH=arm64 defconfig
 make O=build ARCH=arm64 menuconfig
-# Modify the following configurations
+# 修改以下配置
 # [*] Don't use /usr
 # [*] Build static binary (no shared libs)
 # (aarch64-linux-gnu-) Cross compiler prefix
 make O=build
 make O=build install
 cd build/_install
-# Create empty directories
+# 创建空目录
 mkdir -pv {etc,proc,sys,usr/{bin,sbin}}
 vim init
-# Set the init file as follows
+# 设置init文件内容如下
 # #!/bin/sh
 
 # mount -t proc none /proc
@@ -44,18 +43,18 @@ vim init
 
 # exec /bin/sh
 chmod +x init
-# Package the cpio filesystem to generate busybox ramdisk filesystem
+# 打包cpio文件系统，生成busybox ramdisk文件系统
 find . -print0 | cpio --null -ov --format=newc | gzip > ../initramfs.cpio.gz
 ```
 
-## Compile the Linux Kernel
+## 编译Linux内核
 
 ```shell
 cd /xxx/linux-4.19.157
 mkdir build
 make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- allnoconfig
 make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
-# Modify the following configurations
+# 修改以下配置
 # -> General setup
 # [*] Initial RAM filesystem and RAM disk (initramfs/initrd) support
 
@@ -91,7 +90,7 @@ make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j8
 ```
 
-## Boot Linux Using QEMU
+## 使用QEMU启动Linux
 
 ```
 qemu-system-aarch64 \

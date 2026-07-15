@@ -1,7 +1,7 @@
 ---
 title: Personalized Resume Recommendation
 date: 2019-02-23 20:59:16
-tags: [Innovation Practice, Recommendation]
+tags: [Data Mining, Recommendation]
 categories: [Research]
 ---
 

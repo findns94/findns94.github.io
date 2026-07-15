@@ -1,7 +1,7 @@
 ---
 title: Data Mining and Knowledge Discovery on KKBOX Music Data
 date: 2019-06-21 21:23:16
-tags: [Data Mining, Clustering, LightGBM]
+tags: [Data Mining, Recommendation]
 categories: [Course]
 math: true
 ---

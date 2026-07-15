@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { compileMarkdown } from '@/lib/markdown'
-import { formatDate } from '@/lib/utils'
+import { PostDetail } from '@/components/PostDetail'
 
 interface Props {
   params: {
@@ -30,35 +30,18 @@ export default async function PostPage({ params }: Props) {
 
   if (!result) return notFound()
 
-  const { meta: postMatter, content } = result
-  const html = await compileMarkdown(content)
+  const { meta, contentEn, contentZh } = result
+  const htmlEn = await compileMarkdown(contentEn)
+  const htmlZh = contentZh ? await compileMarkdown(contentZh) : null
 
   return (
-    <article>
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">{postMatter.title}</h1>
-        <time className="block mt-2 text-gray-500">
-          {formatDate(postMatter.date)}
-        </time>
-        {postMatter.tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
-            {postMatter.tags.map((tag) => (
-              <a
-                key={tag}
-                href={`/tags/${encodeURIComponent(tag)}/`}
-                className="text-xs px-2 py-0.5 bg-gray-100 text-gray-600 rounded hover:bg-blue-100 hover:text-blue-700 no-underline transition-colors"
-              >
-                {tag}
-              </a>
-            ))}
-          </div>
-        )}
-      </header>
-
-      <div
-        className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    </article>
+    <PostDetail
+      title={meta.title}
+      titleZh={meta.titleZh}
+      date={meta.date}
+      tags={meta.tags}
+      htmlEn={htmlEn}
+      htmlZh={htmlZh}
+    />
   )
 }

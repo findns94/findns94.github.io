@@ -1,7 +1,7 @@
 ---
 title: Linux Kernel Learning — Part 1
 date: 2021-12-05 20:22:30
-tags: 
+tags: [Linux, Kernel, OS]
 ---
 
 

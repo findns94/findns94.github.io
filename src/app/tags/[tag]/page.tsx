@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getAllTags, getPostsByTag } from '@/lib/posts'
-import { formatDate } from '@/lib/utils'
+import { PostList } from '@/components/PostList'
 
 interface Props {
   params: {
@@ -31,25 +31,7 @@ export default function TagPage({ params }: Props) {
       </h1>
       <p className="text-gray-500 mb-8">{posts.length} post{posts.length !== 1 ? 's' : ''}</p>
 
-      <ul className="space-y-5">
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/posts/${post.slug}/`} className="block no-underline group">
-              <article>
-                <h2 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  {post.title}
-                </h2>
-                <time className="text-sm text-gray-500">
-                  {formatDate(post.date)}
-                </time>
-                {post.excerpt && (
-                  <p className="mt-1 text-sm text-gray-600 line-clamp-2">{post.excerpt}</p>
-                )}
-              </article>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <PostList posts={posts} />
     </div>
   )
 }

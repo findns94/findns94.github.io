@@ -1,7 +1,7 @@
 ---
 title: Detecting Improper Sitting Posture with a Laterally Positioned Motion-sensing Camera
 date: 2019-02-22 20:00:00
-tags: [Sitting Posture, Innovation Practice, Paper]
+tags: [Deep Learning, Computer Vision, Health]
 categories: [Research]
 ---
 

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import { Header } from '@/components/Header'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -6,7 +8,7 @@ export const metadata: Metadata = {
     default: 'Silver Bullet',
     template: '%s | Silver Bullet',
   },
-  description: 'Martin Zhao\'s Blog — Tech, Research, and Life',
+  description: "Martin Zhao's Blog — Tech, Research, and Life",
   alternates: {
     types: {
       'application/rss+xml': '/feed.xml',
@@ -30,25 +32,18 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <header className="py-8 border-b border-gray-200 mb-8">
-            <a href="/" className="text-2xl font-bold text-gray-900 no-underline hover:text-blue-600 transition-colors">
-              Silver Bullet
-            </a>
-            <nav className="mt-3 flex gap-6 text-sm text-gray-600">
-              <a href="/" className="hover:text-blue-600 transition-colors">Home</a>
-              <a href="/tags" className="hover:text-blue-600 transition-colors">Tags</a>
-              <a href="/feed.xml" className="hover:text-blue-600 transition-colors">RSS</a>
-            </nav>
-          </header>
-          <main className="pb-16">
-            {children}
-          </main>
-          <footer className="py-8 border-t border-gray-200 text-center text-sm text-gray-500">
-            <p>Martin Zhao &copy; {new Date().getFullYear()}</p>
-            <p className="mt-1">Built with Next.js</p>
-          </footer>
-        </div>
+        <LanguageProvider>
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <Header />
+            <main className="pb-16">
+              {children}
+            </main>
+            <footer className="py-8 border-t border-gray-200 text-center text-sm text-gray-500">
+              <p>Martin Zhao &copy; {new Date().getFullYear()}</p>
+              <p className="mt-1">Built with Next.js</p>
+            </footer>
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   )

@@ -1,17 +1,17 @@
 ---
-title: Using ftrace to Selectively Trace Parent Functions
+title: 使用ftrace过滤选择性跟踪父函数
 date: 2023-05-07 20:40:54
 tags: [Linux, Debugging, Kernel]
 ---
 
 
-# Using ftrace to Selectively Trace Parent Functions
+# 使用ftrace过滤选择性跟踪父函数
 
-## Background
+## 背景
 
-Taking the code in the memory cgroup subsystem as an example, the `__memory_events_show` function has two call sites, namely `memory_events_show` and `memory_events_local_show`.
+以memory cgroup子系统里的代码为例, `__memory_events_show`函数有2处调用, 分别是`memory_events_show`和`memory_events_local_show`.
 
-The code is as follows:
+代码如下:
 
 <!-- more -->
 
@@ -33,15 +33,15 @@ static int memory_events_local_show(struct seq_file *m, void *v)
 }
 ```
 
-If you want to use `ftrace` to achieve the following requirements:
+如果要利用`ftrace`实现以下需求:
 
-- Replace the `__memory_events_show` call in `memory_events_show` with your own implementation, while
-- Keeping the `__memory_events_show` call in `memory_events_local_show` as the original call
-- This can be accomplished by leveraging the property that kernel code segments are monotonically increasing
+- 将`memory_events_show`中的`__memory_events_show`替换成自己实现的同时
+- 让`memory_events_local_show`中的`__memory_events_show`保持原始的调用
+- 可以借助内核代码段自增的特点加以实现
 
-## Approach Overview
+## 思路简介
 
-Using `/proc/kallsyms`, you can see the starting addresses of kernel functions and roughly determine their ranges, as shown below:
+使用`/proc/kallsyms`可以看到内核函数的开始地址并初步判断其区间, 如下:
 
 ```
 # cat /proc/kallsyms | grep memory_events_show -C 1
@@ -54,24 +54,24 @@ ffffffff811d89e0 t memory_events_show
 ffffffff811d8a10 t swap_events_show
 ```
 
-As can be seen, the code segment range of `memory_events_local_show` is `[0xffffffff811d89b0, 0xffffffff811d89e0]`,
-while the code segment range of `memory_events_show` is `[0xffffffff811d89e0, 0xffffffff811d8a10]`.
+可以看到`memory_events_local_show`的代码段范围是`[0xffffffff811d89b0, 0xffffffff811d89e0]`,
+而`memory_events_show`的代码段范围是`[0xffffffff811d89e0, 0xffffffff811d8a10]`.
 
-Therefore, by examining the call site address of the `ftrace`-traced function `__memory_events_show` — that is, the range of the IP register on the x86_64 architecture —
-you can determine whether the current call site of `__memory_events_show` falls within the code segment range of `memory_events_local_show` or `memory_events_show`.
+因此可以通过判断`ftrace`跟踪函数`__memory_events_show`的调用点地址, 即在x86_64体系结构里的IP寄存器的范围,
+确定当前`__memory_events_show`的调用点是处于`memory_events_local_show`还是`memory_events_show`的代码段范围内
 
-Coincidentally, the `ftrace_func_t` callback function pointer type registered on the ftrace handler provides the `parent_ip` parameter, which makes it convenient to check the IP range.
+恰好`ftrace_func_t`这个`ftrace`注册在handler上的回调函数指针类型提供了`parent_ip`这个参数可以方便的判断IP的范围
 
-## Implementation
+## 实现
 
-This implementation references the kernel's `kernel/livepatch/patch.c` source code from the kpatch module, with some simplifications applied.
+该实现参考了内核`kernel/livepatch/patch.c`这个kpatch模块的源码, 进行了一定的简化.
 
-Before compiling and loading the kernel module, ensure the following kernel Kconfig options are enabled:
+编译和加载内核模块前确保内核Kconfig开启以下特性
 
 - CONFIG_FUNCTION_TRACER
 - MEMCG
 
-The code is as follows:
+代码如下:
 
 ```C
 #include <linux/ftrace.h>
@@ -202,7 +202,7 @@ module_exit(test_hook_exit);
 MODULE_LICENSE("GPL");
 ```
 
-## Execution Results
+## 运行结果
 
 ```
 # cat /sys/fs/cgroup/task/memory.events

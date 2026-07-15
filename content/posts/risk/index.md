@@ -1,7 +1,7 @@
 ---
 title: P2P Lending Industry Risk Analysis Platform
 date: 2019-03-28 21:36:21
-tags: [Machine Learning, Big Data Fundamentals]
+tags: [Machine Learning, Finance]
 categories: [Course]
 math: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Learning Arm-v8 Assembly — Environment Setup
 date: 2021-05-16 20:25:50
-tags: [Arm, Assembly]
+tags: [Arm, Assembly, Debugging]
 categories: [Engineering]
 ---
 

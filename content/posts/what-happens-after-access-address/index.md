@@ -1,7 +1,7 @@
 ---
 title: The Page Fault Process After Address Access in Arm-Linux
 date: 2021-02-21 19:34:02
-tags: [Operating System, Linux, Memory]
+tags: [OS, Memory, Linux]
 categories: [Engineering]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Multithreaded Concurrency Defect Detection for JVM Applications
 date: 2019-02-28 23:27:41
-tags: [Joint Project, JVM]
+tags: [Concurrency, JVM, Testing]
 categories: [Research]
 ---
 

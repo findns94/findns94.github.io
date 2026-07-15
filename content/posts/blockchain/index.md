@@ -1,7 +1,7 @@
 ---
 title: Blockchain Network Simulation
 date: 2019-03-19 21:14:51
-tags: [Blockchain, Bitcoin]
+tags: [Blockchain, Security]
 categories: [Course]
 math: true
 ---

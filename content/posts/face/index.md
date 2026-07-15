@@ -1,7 +1,7 @@
 ---
 title: Transfer Learning for Face Recognition
 date: 2019-04-03 22:49:31
-tags: [Large-scale Multimedia, Deep Learning, Face Recognition]
+tags: [Deep Learning, Computer Vision]
 categories: [Course]
 math: true
 ---

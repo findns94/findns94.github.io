@@ -1,7 +1,7 @@
 ---
 title: Formal Verification of Smart Contracts
 date: 2019-04-22 22:41:57
-tags: [Formal Validation, Smart Contract]
+tags: [Blockchain, Security, Formal Verification]
 categories: [Course]
 math: true
 ---
