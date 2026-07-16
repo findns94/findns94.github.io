@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Shanghai School District Housing Premium Rate by District, 2020-2026">
+  <title>Shanghai School District Housing Premium Rate by District, 2020-2026</title>
+  <desc>Line chart showing school district housing premium rate trend for four Shanghai districts (Huangpu, Xuhui, Jing'an, Pudong) from 2020 to 2026. All districts show a declining trend from 2021 peaks.</desc>
+  <style>
+    :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+    @media (prefers-color-scheme: dark) {
+      :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+    }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="24" text-anchor="middle" font-size="15" font-weight="600" fill="var(--fg)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">Shanghai School District Housing Premium Rate by District, 2020-2026</text>
+
+  <!-- Grid lines -->
+  <line x1="64" y1="60" x2="630" y2="60" stroke="var(--grid)" stroke-width="1"/>
+  <line x1="64" y1="120" x2="630" y2="120" stroke="var(--grid)" stroke-width="1"/>
+  <line x1="64" y1="180" x2="630" y2="180" stroke="var(--grid)" stroke-width="1"/>
+  <line x1="64" y1="240" x2="630" y2="240" stroke="var(--grid)" stroke-width="1"/>
+  <line x1="64" y1="300" x2="630" y2="300" stroke="var(--grid)" stroke-width="1"/>
+
+  <!-- Y-axis labels -->
+  <text x="54" y="344" text-anchor="end" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">0%</text>
+  <text x="54" y="289" text-anchor="end" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">10%</text>
+  <text x="54" y="238" text-anchor="end" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">20%</text>
+  <text x="54" y="187" text-anchor="end" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">30%</text>
+  <text x="54" y="136" text-anchor="end" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">40%</text>
+  <text x="54" y="85" text-anchor="end" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">50%</text>
+
+  <!-- Axes -->
+  <line x1="64" y1="60" x2="64" y2="340" stroke="var(--axis)" stroke-width="1"/>
+  <line x1="64" y1="340" x2="630" y2="340" stroke="var(--axis)" stroke-width="1"/>
+
+  <!-- X-axis labels -->
+  <text x="64" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2020</text>
+  <text x="158.33" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2021</text>
+  <text x="252.67" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2022</text>
+  <text x="347" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2023</text>
+  <text x="441.33" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2024</text>
+  <text x="535.67" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2025</text>
+  <text x="630" y="360" text-anchor="middle" font-size="11" fill="var(--fg-min)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">2026</text>
+
+  <!-- Huangpu (red) 45,50,42,35,30,27,25 -->
+  <polyline points="64,110.91 158.33,85.45 252.67,126.18 347,161.82 441.33,187.27 535.67,202.55 630,212.73" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="64" cy="110.91" r="3.5" fill="#ef4444"/>
+  <circle cx="158.33" cy="85.45" r="3.5" fill="#ef4444"/>
+  <circle cx="252.67" cy="126.18" r="3.5" fill="#ef4444"/>
+  <circle cx="347" cy="161.82" r="3.5" fill="#ef4444"/>
+  <circle cx="441.33" cy="187.27" r="3.5" fill="#ef4444"/>
+  <circle cx="535.67" cy="202.55" r="3.5" fill="#ef4444"/>
+  <circle cx="630" cy="212.73" r="3.5" fill="#ef4444"/>
+
+  <!-- Xuhui (amber) 40,48,40,32,27,23,20 -->
+  <polyline points="64,136.36 158.33,95.64 252.67,136.36 347,177.09 441.33,202.55 535.67,222.91 630,238.18" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="64" cy="136.36" r="3.5" fill="#f59e0b"/>
+  <circle cx="158.33" cy="95.64" r="3.5" fill="#f59e0b"/>
+  <circle cx="252.67" cy="136.36" r="3.5" fill="#f59e0b"/>
+  <circle cx="347" cy="177.09" r="3.5" fill="#f59e0b"/>
+  <circle cx="441.33" cy="202.55" r="3.5" fill="#f59e0b"/>
+  <circle cx="535.67" cy="222.91" r="3.5" fill="#f59e0b"/>
+  <circle cx="630" cy="238.18" r="3.5" fill="#f59e0b"/>
+
+  <!-- Jing'an (blue) 32,38,32,24,21,18,15 -->
+  <polyline points="64,177.09 158.33,146.55 252.67,177.09 347,217.82 441.33,233.09 535.67,248.36 630,263.64" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="64" cy="177.09" r="3.5" fill="#3b82f6"/>
+  <circle cx="158.33" cy="146.55" r="3.5" fill="#3b82f6"/>
+  <circle cx="252.67" cy="177.09" r="3.5" fill="#3b82f6"/>
+  <circle cx="347" cy="217.82" r="3.5" fill="#3b82f6"/>
+  <circle cx="441.33" cy="233.09" r="3.5" fill="#3b82f6"/>
+  <circle cx="535.67" cy="248.36" r="3.5" fill="#3b82f6"/>
+  <circle cx="630" cy="263.64" r="3.5" fill="#3b82f6"/>
+
+  <!-- Pudong (green) 25,30,24,19,15,12,10 -->
+  <polyline points="64,212.73 158.33,187.27 252.67,217.82 347,243.27 441.33,263.64 535.67,278.91 630,289.09" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="64" cy="212.73" r="3.5" fill="#10b981"/>
+  <circle cx="158.33" cy="187.27" r="3.5" fill="#10b981"/>
+  <circle cx="252.67" cy="217.82" r="3.5" fill="#10b981"/>
+  <circle cx="347" cy="243.27" r="3.5" fill="#10b981"/>
+  <circle cx="441.33" cy="263.64" r="3.5" fill="#10b981"/>
+  <circle cx="535.67" cy="278.91" r="3.5" fill="#10b981"/>
+  <circle cx="630" cy="289.09" r="3.5" fill="#10b981"/>
+
+  <!-- Legend -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11">
+    <circle cx="205" cy="43" r="4.5" fill="#ef4444"/>
+    <text x="214" y="47" fill="var(--fg)">Huangpu</text>
+    <circle cx="295" cy="43" r="4.5" fill="#f59e0b"/>
+    <text x="304" y="47" fill="var(--fg)">Xuhui</text>
+    <circle cx="385" cy="43" r="4.5" fill="#3b82f6"/>
+    <text x="394" y="47" fill="var(--fg)">Jing'an</text>
+    <circle cx="475" cy="43" r="4.5" fill="#10b981"/>
+    <text x="484" y="47" fill="var(--fg)">Pudong</text>
+  </g>
+</svg>

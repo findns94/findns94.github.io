@@ -1,7 +1,7 @@
 ---
 title: "如何为上海年轻夫妇选择购房策略（2026–2036）"
 date: 2026-07-14
-tags: [Finance, Housing, Shanghai]
+tags: [Housing, Finance, Shanghai]
 categories: [Personal Finance]
 coverImage: "/posts/shanghai-house-buying-strategy-young-couples/images/shanghai-skyline.svg"
 coverImageAlt: "上海浦东天际线和住宅高楼在黄昏时分的宽阔鸟瞰图"
