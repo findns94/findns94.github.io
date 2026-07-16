@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="RPG lifetime sales comparison: Skyrim 60M, The Witcher 3 50M+, Cyberpunk 2077 25M, Baldur's Gate 3 15M">
+<title>RPG Lifetime Sales Comparison (millions of copies)</title>
+<desc>Vertical bar chart comparing lifetime sales of major 21st-century RPGs: Skyrim (60M), The Witcher 3 (50M+), Cyberpunk 2077 (25M), and Baldur's Gate 3 (15M).</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .val { font-weight: 700; }
+  .op5 { fill: var(--fg-min); opacity: 0.5; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+  .accent { fill: #f59e0b; }
+  .muted { fill: #64748b; }
+</style>
+<text x="320" y="28" font-size="15" font-weight="700" text-anchor="middle">Lifetime Sales (million copies)</text>
+<text x="320" y="44" font-size="10" text-anchor="middle" class="op5">Source: CD Projekt investor reports, Larian, Bethesda · 2026</text>
+<g>
+  <line class="line-grid" x1="60"  y1="60"  x2="600" y2="60"/>
+  <line class="line-grid" x1="60"  y1="120" x2="600" y2="120"/>
+  <line class="line-grid" x1="60"  y1="180" x2="600" y2="180"/>
+  <line class="line-grid" x1="60"  y1="240" x2="600" y2="240"/>
+  <line class="line-grid" x1="60"  y1="300" x2="600" y2="300"/>
+</g>
+<line class="axis" x1="60" y1="330" x2="600" y2="330"/>
+<line class="axis" x1="60" y1="40"  x2="60"  y2="330"/>
+<text class="tick" x="54" y="64"  text-anchor="end" font-size="10">60</text>
+<text class="tick" x="54" y="124" text-anchor="end" font-size="10">48</text>
+<text class="tick" x="54" y="184" text-anchor="end" font-size="10">36</text>
+<text class="tick" x="54" y="244" text-anchor="end" font-size="10">24</text>
+<text class="tick" x="54" y="304" text-anchor="end" font-size="10">12</text>
+<!-- y mapping: val -> y = 330 - (val/60)*270 ; height = (val/60)*270 -->
+<g font-family="'Segoe UI', system-ui, sans-serif" font-size="12">
+  <!-- Skyrim 60 -> y=60, h=270, x=90 -->
+  <rect class="muted" x="90"  y="60"  width="80" height="270" rx="4"/>
+  <text class="val" x="130" y="52" text-anchor="middle" fill="#f59e0b">60M</text>
+  <text class="op5" x="130" y="348" text-anchor="middle" font-size="10">Skyrim</text>
+  <!-- Witcher 3 50 -> y=330-(50/60)*270=105, h=225, x=210 -->
+  <rect class="accent" x="210" y="105" width="80" height="225" rx="4"/>
+  <text class="val" x="250" y="97" text-anchor="middle" fill="#f59e0b">50M+</text>
+  <text class="op5" x="250" y="348" text-anchor="middle" font-size="10">Witcher 3</text>
+  <!-- Cyberpunk 25 -> y=330-(25/60)*270=217.5, h=112.5, x=330 -->
+  <rect class="muted" x="330" y="218" width="80" height="112" rx="4"/>
+  <text class="val" x="370" y="210" text-anchor="middle" fill="#f59e0b">25M</text>
+  <text class="op5" x="370" y="348" text-anchor="middle" font-size="10">Cyberpunk</text>
+  <!-- BG3 15 -> y=330-(15/60)*270=195, h=67.5, x=450 -->
+  <rect class="muted" x="450" y="195" width="80" height="68" rx="4"/>
+  <text class="val" x="490" y="187" text-anchor="middle" fill="#f59e0b">15M</text>
+  <text class="op5" x="490" y="348" text-anchor="middle" font-size="10">BG3</text>
+</g>
+<text class="op5" x="320" y="372" text-anchor="middle" font-size="10">Note: Witcher 3 figure is CDPR's last official milestone (2023); sales continue to grow.</text>
+</svg>

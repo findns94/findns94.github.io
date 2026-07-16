@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="The Witcher 3 completion time breakdown: Main Story 51 hours, Main + Extras 102 hours, Completionist 172 hours">
+<title>The Witcher 3 Completion Time Breakdown</title>
+<desc>Grouped horizontal bar chart showing HowLongToBeat community data for The Witcher 3 completion times: Main Story (~51 hours), Main + Extras (~102 hours), and Completionist (~172 hours).</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.9; }
+  .val { font-weight: 700; }
+  .val-d { fill: var(--fg); }
+  .val-l { fill: #ffffff; }
+  .op5 { fill: var(--fg-min); opacity: 0.5; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .accent { fill: #f59e0b; }
+  .mid { fill: #64748b; }
+  .soft { fill: #94a3b8; }
+</style>
+<text x="320" y="28" font-size="15" font-weight="700" text-anchor="middle">How Long Does The Witcher 3 Take?</text>
+<text x="320" y="44" font-size="10" text-anchor="middle" class="op5">Community playtime data · Source: HowLongToBeat, 2026</text>
+<g>
+  <line class="line-grid" x1="180" y1="60"  x2="600" y2="60"/>
+  <line class="line-grid" x1="180" y1="130" x2="600" y2="130"/>
+  <line class="line-grid" x1="180" y1="200" x2="600" y2="200"/>
+  <line class="line-grid" x1="180" y1="270" x2="600" y2="270"/>
+  <line class="line-grid" x1="180" y1="330" x2="600" y2="330"/>
+</g>
+<text class="tick" x="174" y="64"  text-anchor="end" font-size="10">0h</text>
+<text class="tick" x="174" y="134" text-anchor="end" font-size="10">50h</text>
+<text class="tick" x="174" y="204" text-anchor="end" font-size="10">100h</text>
+<text class="tick" x="174" y="274" text-anchor="end" font-size="10">150h</text>
+<text class="tick" x="174" y="334" text-anchor="end" font-size="10">200h</text>
+<text class="tick" x="180" y="356" text-anchor="middle" font-size="10">0</text>
+<text class="tick" x="310" y="356" text-anchor="middle" font-size="10">50</text>
+<text class="tick" x="440" y="356" text-anchor="middle" font-size="10">100</text>
+<text class="tick" x="570" y="356" text-anchor="middle" font-size="10">150</text>
+<!-- mapping: h -> x = 180 + (h/200)*420 -->
+<g font-family="'Segoe UI', system-ui, sans-serif" font-size="12">
+  <!-- Main Story 51h -> x180, w=(51/200)*420=107 -->
+  <text class="lbl" x="170" y="96" text-anchor="end">Main Story</text>
+  <rect class="soft" x="180" y="84" width="107" height="24" rx="4"/>
+  <text class="val val-d" x="293" y="100" text-anchor="start">~51h</text>
+  <!-- Main + Extras 102h -> w=(102/200)*420=214 -->
+  <text class="lbl" x="170" y="166" text-anchor="end">Main + Extras</text>
+  <rect class="mid" x="180" y="154" width="214" height="24" rx="4"/>
+  <text class="val val-l" x="186" y="170">~102h</text>
+  <!-- Completionist 172h -> w=(172/200)*420=361 -->
+  <text class="lbl" x="170" y="236" text-anchor="end">Completionist</text>
+  <rect class="accent" x="180" y="224" width="361" height="24" rx="4"/>
+  <text class="val val-l" x="186" y="240">~172h</text>
+</g>
+<text class="op5" x="320" y="372" text-anchor="middle" font-size="10">Includes base game + Hearts of Stone + Blood and Wine expansions · Source: HowLongToBeat.com</text>
+</svg>

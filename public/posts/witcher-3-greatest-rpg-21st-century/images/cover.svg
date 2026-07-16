@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Is The Witcher 3 the Greatest RPG of the 21st Century — 50M+ sold, 260+ Game of the Year awards, Metacritic 93">
+<title>Is The Witcher 3 the Greatest RPG of the 21st Century</title>
+<desc>A dark fantasy banner for an article evaluating whether The Witcher 3: Wild Hunt is the greatest RPG of the 21st century, with headline statistics: 50+ million copies sold, 260+ Game of the Year awards, Metacritic 93/100.</desc>
+<style>
+  :root { --fg: #f3f4f6; --fg-min: #9ca3af; --accent: #f59e0b; }
+  .title { fill: var(--fg); font-weight: 800; }
+  .subtitle { fill: var(--fg-min); font-weight: 500; }
+  .stat-num { fill: var(--accent); font-weight: 800; }
+  .stat-lbl { fill: var(--fg-min); font-weight: 500; }
+  .rule { stroke: var(--accent); stroke-width: 2; opacity: 0.6; }
+  .tag { fill: #1f2937; font-weight: 700; }
+</style>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0b1120"/>
+    <stop offset="50%" stop-color="#1a1330"/>
+    <stop offset="100%" stop-color="#1c2412"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="0.7" cy="0.35" r="0.6">
+    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.03"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#grid)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+<path d="M820 0 L1200 0 L1200 420 Z" fill="#f59e0b" fill-opacity="0.05"/>
+<circle cx="960" cy="220" r="320" fill="none" stroke="#f59e0b" stroke-opacity="0.08" stroke-width="1"/>
+<circle cx="960" cy="220" r="220" fill="none" stroke="#f59e0b" stroke-opacity="0.06" stroke-width="1"/>
+<g font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <text class="tag" x="60" y="80" font-size="15" letter-spacing="3" opacity="0.85">‹ <tspan fill="#f59e0b">RPG</tspan><tspan fill="#9ca3af"> INVESTIGATION — 2026</tspan></text>
+  <line class="rule" x1="60" y1="96" x2="360" y2="96"/>
+  <text class="title" x="60" y="190" font-size="64" letter-spacing="-1">Is<tspan fill="#f59e0b"> The Witcher 3</tspan></text>
+  <text class="title" x="60" y="268" font-size="64" letter-spacing="-1">the Greatest RPG</text>
+  <text class="title" x="60" y="346" font-size="64" letter-spacing="-1">of the 21st<tspan fill="#f59e0b"> Century?</tspan></text>
+  <text class="subtitle" x="62" y="400" font-size="22" opacity="0.95">Sales · acclaim · design · legacy — the data-backed verdict.</text>
+  <line class="rule" x1="60" y1="430" x2="560" y2="430"/>
+  <g transform="translate(60, 470)">
+    <text class="stat-num" x="0" y="0" font-size="52">50M+</text>
+    <text class="stat-lbl" x="130" y="-2" font-size="20">copies sold, 2026</text>
+    <text class="stat-num" x="0" y="52" font-size="52">260+</text>
+    <text class="stat-lbl" x="130" y="50" font-size="20">Game of the Year awards</text>
+    <text class="stat-num" x="0" y="104" font-size="52">93</text>
+    <text class="stat-lbl" x="100" y="102" font-size="20">/100 Metacritic · 95% OpenCritic</text>
+  </g>
+  <text fill="#9ca3af" font-size="13" x="60" y="610" opacity="0.8">Sources: Wikipedia · Metacritic · OpenCritic · CD Projekt</text>
+</g>
+</svg>

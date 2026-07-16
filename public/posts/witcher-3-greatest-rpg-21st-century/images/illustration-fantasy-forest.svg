@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Dark fantasy forest illustration — towering pines under a misty twilight sky, evoking The Witcher 3's monster-hunting atmosphere">
+<title>Dark Fantasy Forest — The Witcher 3 Atmosphere</title>
+<desc>An original illustration of a dark, misty fantasy forest with towering pine trees under a twilight sky, evoking the monster-hunting atmosphere of The Witcher 3: Wild Hunt.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1a1330"/>
+    <stop offset="60%" stop-color="#241a3a"/>
+    <stop offset="100%" stop-color="#2c2410"/>
+  </linearGradient>
+  <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#94a3b8" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#94a3b8" stop-opacity="0.25"/>
+  </linearGradient>
+  <radialGradient id="moon" cx="0.75" cy="0.25" r="0.12">
+    <stop offset="0%" stop-color="#fde68a" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="800" height="420" fill="url(#sky)"/>
+<circle cx="600" cy="105" r="40" fill="#fde68a" fill-opacity="0.85"/>
+<rect width="800" height="420" fill="url(#moon)"/>
+<!-- distant mountains -->
+<path d="M0 300 L120 210 L220 260 L340 190 L460 250 L580 200 L700 240 L800 210 L800 420 L0 420 Z" fill="#1f2438" fill-opacity="0.7"/>
+<!-- fog band -->
+<rect y="250" width="800" height="170" fill="url(#fog)"/>
+<!-- tree silhouettes back -->
+<g fill="#0f1320">
+  <path d="M80 420 L80 200 L60 200 L90 140 L70 140 L100 90 L130 140 L110 140 L140 200 L120 200 L120 420 Z"/>
+  <path d="M250 420 L250 230 L235 230 L260 175 L240 175 L270 120 L300 175 L280 175 L305 230 L290 230 L290 420 Z"/>
+  <path d="M560 420 L560 210 L540 210 L570 150 L550 150 L585 95 L620 150 L600 150 L630 210 L610 210 L610 420 Z"/>
+  <path d="M720 420 L720 240 L705 240 L730 185 L710 185 L740 130 L770 185 L750 185 L775 240 L760 240 L760 420 Z"/>
+</g>
+<!-- tree silhouettes front -->
+<g fill="#070a12">
+  <path d="M-10 420 L-10 260 L-30 260 L10 170 L-10 170 L30 100 L70 170 L50 170 L90 260 L70 260 L70 420 Z"/>
+  <path d="M350 420 L350 240 L325 240 L370 150 L350 150 L395 80 L440 150 L420 150 L465 240 L440 240 L440 420 Z"/>
+  <path d="M640 420 L640 270 L620 270 L660 185 L640 185 L680 115 L720 185 L700 185 L740 270 L720 270 L720 420 Z"/>
+</g>
+<!-- ground -->
+<path d="M0 380 Q200 360 400 375 Q600 390 800 370 L800 420 L0 420 Z" fill="#0a0d16"/>
+<!-- fireflies -->
+<circle cx="200" cy="320" r="2.5" fill="#fde68a" fill-opacity="0.8"/>
+<circle cx="480" cy="300" r="2" fill="#fde68a" fill-opacity="0.7"/>
+<circle cx="350" cy="340" r="2.5" fill="#fde68a" fill-opacity="0.9"/>
+<circle cx="600" cy="335" r="2" fill="#fde68a" fill-opacity="0.6"/>
+<text x="400" y="408" text-anchor="middle" font-size="10" fill="#9ca3af" opacity="0.7" font-family="'Segoe UI', system-ui, sans-serif">Original illustration — dark fantasy forest, evoking The Witcher 3</text>
+</svg>

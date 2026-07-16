@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Sun-drenched vineyard and pastel castle landscape inspired by The Witcher 3 Blood and Wine expansion region of Toussaint">
+<title>Toussaint-Inspired Vineyard Landscape — Blood and Wine</title>
+<desc>An original illustration of a sun-drenched fantasy vineyard with pastel-colored chateau on a hill, inspired by the Blood and Wine expansion region of Toussaint from The Witcher 3.</desc>
+<defs>
+  <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#38bdf8"/>
+    <stop offset="55%" stop-color="#7dd3fc"/>
+    <stop offset="100%" stop-color="#bae6fd"/>
+  </linearGradient>
+  <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#65a30d"/>
+    <stop offset="100%" stop-color="#3f6212"/>
+  </linearGradient>
+  <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#84cc16"/>
+    <stop offset="100%" stop-color="#4d7c0f"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="420" fill="url(#sky2)"/>
+<!-- sun -->
+<circle cx="620" cy="110" r="55" fill="#fde68a" fill-opacity="0.9"/>
+<circle cx="620" cy="110" r="75" fill="#fde68a" fill-opacity="0.15"/>
+<!-- clouds -->
+<g fill="#ffffff" fill-opacity="0.7">
+  <ellipse cx="150" cy="90"  rx="60" ry="18"/>
+  <ellipse cx="190" cy="80"  rx="40" ry="14"/>
+  <ellipse cx="430" cy="60"  rx="50" ry="15"/>
+  <ellipse cx="470" cy="50" rx="35" ry="12"/>
+</g>
+<!-- distant hills -->
+<path d="M0 260 Q150 200 300 250 Q450 290 600 240 Q720 210 800 250 L800 420 L0 420 Z" fill="url(#hill2)"/>
+<!-- vineyard rows -->
+<g stroke="#365314" stroke-width="1.5" fill="none">
+  <path d="M0 300 Q200 295 400 300 Q600 305 800 298"/>
+  <path d="M0 315 Q200 310 400 315 Q600 320 800 313"/>
+  <path d="M0 330 Q200 325 400 330 Q600 335 800 328"/>
+  <path d="M0 345 Q200 340 400 345 Q600 350 800 343"/>
+  <path d="M0 360 Q200 355 400 360 Q600 365 800 358"/>
+</g>
+<!-- vineyard leaf dots -->
+<g fill="#4d7c0f">
+  <circle cx="60" cy="300" r="6"/><circle cx="120" cy="298" r="6"/><circle cx="180" cy="301" r="6"/>
+  <circle cx="240" cy="299" r="6"/><circle cx="300" cy="300" r="6"/><circle cx="360" cy="302" r="6"/>
+  <circle cx="420" cy="299" r="6"/><circle cx="480" cy="301" r="6"/><circle cx="540" cy="300" r="6"/>
+  <circle cx="600" cy="302" r="6"/><circle cx="660" cy="299" r="6"/><circle cx="720" cy="300" r="6"/>
+  <circle cx="90" cy="315" r="6"/><circle cx="150" cy="313" r="6"/><circle cx="210" cy="316" r="6"/>
+  <circle cx="270" cy="314" r="6"/><circle cx="330" cy="315" r="6"/><circle cx="390" cy="317" r="6"/>
+  <circle cx="450" cy="314" r="6"/><circle cx="510" cy="316" r="6"/><circle cx="570" cy="315" r="6"/>
+  <circle cx="630" cy="317" r="6"/><circle cx="690" cy="314" r="6"/><circle cx="750" cy="315" r="6"/>
+</g>
+<!-- chateau -->
+<g>
+  <rect x="370" y="195" width="80" height="55" fill="#f5e6c8" stroke="#7c2d12" stroke-width="1.5"/>
+  <rect x="360" y="185" width="100" height="15" fill="#7c2d12"/>
+  <polygon points="370,185 410,160 450,185" fill="#b91c1c"/>
+  <rect x="395" y="220" width="14" height="30" fill="#7c2d12"/>
+  <rect x="378" y="205" width="12" height="14" fill="#7dd3fc" stroke="#1e3a5f"/>
+  <rect x="410" y="205" width="12" height="14" fill="#7dd3fc" stroke="#1e3a5f"/>
+  <!-- towers -->
+  <rect x="355" y="175" width="18" height="70" fill="#f5e6c8" stroke="#7c2d12" stroke-width="1.5"/>
+  <polygon points="355,175 364,155 373,175" fill="#b91c1c"/>
+  <rect x="427" y="175" width="18" height="70" fill="#f5e6c8" stroke="#7c2d12" stroke-width="1.5"/>
+  <polygon points="427,175 436,155 445,175" fill="#b91c1c"/>
+</g>
+<!-- foreground hill -->
+<path d="M0 380 Q200 350 400 370 Q600 385 800 365 L800 420 L0 420 Z" fill="url(#hill)"/>
+<!-- grape clusters -->
+<g fill="#7c2d12">
+  <circle cx="170" cy="332" r="4"/><circle cx="176" cy="336" r="4"/><circle cx="165" cy="337" r="4"/>
+  <circle cx="520" cy="335" r="4"/><circle cx="526" cy="339" r="4"/><circle cx="515" cy="340" r="4"/>
+</g>
+<!-- flowers -->
+<g>
+  <circle cx="100" cy="375" r="3" fill="#f472b6"/><circle cx="250" cy="378" r="3" fill="#f472b6"/>
+  <circle cx="500" cy="380" r="3" fill="#f472b6"/><circle cx="680" cy="376" r="3" fill="#f472b6"/>
+  <circle cx="160" cy="380" r="3" fill="#fbbf24"/><circle cx="580" cy="382" r="3" fill="#fbbf24"/>
+</g>
+<text x="400" y="410" text-anchor="middle" font-size="10" fill="#1e3a5f" opacity="0.7" font-family="'Segoe UI', system-ui, sans-serif">Original illustration — Toussaint-inspired vineyard, Blood and Wine</text>
+</svg>

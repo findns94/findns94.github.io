@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Moody medieval castle on a cliff above a misty valley, evoking The Witcher 3 open world">
+<title>Moody Medieval Castle — The Witcher 3 Open World</title>
+<desc>An original illustration of a medieval fortress on a cliff above a misty river valley under a brooding sky, evoking the open-world atmosphere of The Witcher 3: Wild Hunt.</desc>
+<defs>
+  <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#374151"/>
+    <stop offset="40%" stop-color="#4b5563"/>
+    <stop offset="100%" stop-color="#9ca3af"/>
+  </linearGradient>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#475569"/>
+    <stop offset="100%" stop-color="#1e293b"/>
+  </linearGradient>
+  <linearGradient id="cliff" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#57534e"/>
+    <stop offset="100%" stop-color="#292524"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="420" fill="url(#sky3)"/>
+<!-- storm clouds -->
+<g fill="#1f2937" fill-opacity="0.5">
+  <ellipse cx="200" cy="80"  rx="120" ry="30"/>
+  <ellipse cx="350" cy="60"  rx="100" ry="25"/>
+  <ellipse cx="600" cy="90"  rx="140" ry="32"/>
+  <ellipse cx="750" cy="70"  rx="90"  ry="22"/>
+</g>
+<!-- sun break -->
+<ellipse cx="450" cy="70" rx="200" ry="60" fill="#fbbf24" fill-opacity="0.08"/>
+<!-- distant mountains -->
+<path d="M0 250 L80 180 L160 230 L250 160 L340 210 L430 170 L540 220 L640 180 L740 210 L800 190 L800 420 L0 420 Z" fill="#3f3f46" fill-opacity="0.8"/>
+<path d="M0 280 L100 230 L200 260 L320 220 L420 250 L530 230 L640 260 L750 240 L800 255 L800 420 L0 420 Z" fill="#27272a" fill-opacity="0.9"/>
+<!-- river valley water -->
+<path d="M0 330 Q100 310 200 325 Q320 345 420 320 Q520 295 640 315 Q740 330 800 320 L800 360 Q700 370 600 355 Q480 340 380 365 Q260 385 140 360 Q60 348 0 355 Z" fill="url(#water)"/>
+<ellipse cx="450" cy="330" rx="180" ry="8" fill="#fbbf24" fill-opacity="0.12"/>
+<!-- cliff -->
+<path d="M300 420 L300 260 L500 240 L520 420 Z" fill="url(#cliff)"/>
+<!-- castle -->
+<g>
+  <!-- main keep -->
+  <rect x="370" y="170" width="80" height="90" fill="#78716c" stroke="#1c1917" stroke-width="1.5"/>
+  <polygon points="370,170 410,130 450,170" fill="#1c1917"/>
+  <!-- crenellations -->
+  <rect x="368" y="160" width="12" height="14" fill="#78716c" stroke="#1c1917"/>
+  <rect x="388" y="160" width="12" height="14" fill="#78716c" stroke="#1c1917"/>
+  <rect x="408" y="160" width="12" height="14" fill="#78716c" stroke="#1c1917"/>
+  <rect x="428" y="160" width="12" height="14" fill="#78716c" stroke="#1c1917"/>
+  <!-- towers -->
+  <rect x="350" y="150" width="22" height="110" fill="#a8a29e" stroke="#1c1917" stroke-width="1.5"/>
+  <polygon points="350,150 361,120 372,150" fill="#dc2626"/>
+  <rect x="448" y="145" width="24" height="115" fill="#a8a29e" stroke="#1c1917" stroke-width="1.5"/>
+  <polygon points="448,145 460,112 472,145" fill="#dc2626"/>
+  <!-- windows with warm light -->
+  <rect x="378" y="200" width="8" height="12" fill="#fbbf24" fill-opacity="0.9"/>
+  <rect x="396" y="200" width="8" height="12" fill="#fbbf24" fill-opacity="0.9"/>
+  <rect x="414" y="200" width="8" height="12" fill="#fbbf24" fill-opacity="0.9"/>
+  <rect x="432" y="200" width="8" height="12" fill="#fbbf24" fill-opacity="0.9"/>
+  <rect x="356" y="190" width="6" height="10" fill="#fbbf24" fill-opacity="0.85"/>
+  <rect x="456" y="185" width="6" height="10" fill="#fbbf24" fill-opacity="0.85"/>
+  <!-- gate -->
+  <path d="M398 260 L398 238 Q410 228 422 238 L422 260 Z" fill="#1c1917"/>
+</g>
+<!-- path to castle -->
+<path d="M410 260 Q380 300 360 340 Q340 380 330 420" stroke="#57534e" stroke-width="6" fill="none" opacity="0.7"/>
+<!-- foreground rocks -->
+<path d="M0 400 Q60 380 120 395 Q180 410 240 398 L240 420 L0 420 Z" fill="#1c1917"/>
+<path d="M600 405 Q660 385 720 400 Q780 412 800 402 L800 420 L600 420 Z" fill="#1c1917"/>
+<text x="400" y="410" text-anchor="middle" font-size="10" fill="#d6d3d1" opacity="0.75" font-family="'Segoe UI', system-ui, sans-serif">Original illustration — medieval fortress, The Witcher 3 open-world mood</text>
+</svg>
