@@ -4,8 +4,8 @@ description: "截至2026年，《巫师3》全球销量突破5000万份，斩获
 coverImage: "/posts/witcher-3-greatest-rpg-21st-century/images/cover.svg"
 coverImageAlt: "The Witcher 3 — 5000万份销量，260多个年度游戏大奖，Metacritic 93分，21世纪最伟大的角色扮演游戏"
 ogImage: "/posts/witcher-3-greatest-rpg-21st-century/images/cover.svg"
-date: 2026-07-16
-lastUpdated: 2026-07-16
+date: 2026-07-16 22:20:06
+lastUpdated: 2026-07-16 22:20:06
 author: "FindNS94"
 tags: ["RPG", "Gaming", "The Witcher 3"]
 categories: ["Gaming"]

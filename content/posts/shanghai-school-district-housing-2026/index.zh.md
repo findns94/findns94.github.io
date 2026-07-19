@@ -4,8 +4,8 @@ description: "上海出生人口从2016年21.8万腰斩至2024年约11.2万，�
 coverImage: "/posts/shanghai-school-district-housing-2026/images/cover.svg"
 coverImageAlt: "上海城市天际线与学校建筑剪影，代表学区房与教育政策的交汇"
 ogImage: "/posts/shanghai-school-district-housing-2026/images/cover.svg"
-date: 2026-07-16
-lastUpdated: 2026-07-16
+date: 2026-07-16 20:09:03
+lastUpdated: 2026-07-16 20:09:03
 author: "FindNS94"
 tags: [Housing, Education, Shanghai]
 categories: [房产, 教育]

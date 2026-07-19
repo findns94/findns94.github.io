@@ -4,8 +4,8 @@ description: "中国家庭正在将资产从70%的房地产向金融资产转移
 coverImage: "/posts/how-to-choose-investment-strategy-in-china-for-young-couples-shanghai/images/shanghai-pudong-skyline.jpg"
 coverImageAlt: "上海浦东天际线的璀璨夜景，标志性的东方明珠塔倒映在黄浦江上，代表着中国的金融中心"
 ogImage: "/posts/how-to-choose-investment-strategy-in-china-for-young-couples-shanghai/images/shanghai-pudong-skyline.jpg"
-date: "2026-07-14"
-lastUpdated: "2026-07-14"
+date: "2026-07-14 22:32:23"
+lastUpdated: "2026-07-14 22:32:23"
 author: "FindNS94"
 tags: [Finance, Investment, Shanghai]
 ---

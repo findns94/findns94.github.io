@@ -4,8 +4,8 @@ description: "上海家长：一线城市40-60%的孩子已在学习AI课程，�
 coverImage: "/posts/young-children-ai-education-shanghai/images/cover.jpg"
 coverImageAlt: "一个年幼的亚洲女孩将手放在白色人形机器人上，代表上海幼儿与AI的互动"
 ogImage: "/posts/young-children-ai-education-shanghai/images/cover.jpg"
-date: "2026-07-15"
-lastUpdated: "2026-07-15"
+date: "2026-07-15 22:47:02"
+lastUpdated: "2026-07-15 22:47:02"
 author: "FindNS94"
 tags: [AI, Education, Shanghai]
 ---

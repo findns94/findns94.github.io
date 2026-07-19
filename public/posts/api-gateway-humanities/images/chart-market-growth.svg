@@ -1,0 +1,47 @@
+<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Area chart showing API gateway market growth from 2.8 billion dollars in 2024 to a projected 6.8 billion dollars by 2030, a CAGR of 17.9 percent">
+  <rect width="560" height="380" fill="#0d1117" rx="12"/>
+  <text x="280" y="32" fill="#c9d1d9" font-family="system-ui,sans-serif" font-size="15" font-weight="600" text-anchor="middle">API Gateway Market Growth, 2024–2030</text>
+  <text x="280" y="50" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">USD billions (Grand View Research, 2025; MarketsandMarkets, 2024)</text>
+
+  <!-- axes -->
+  <line x1="70" y1="80" x2="70" y2="300" stroke="#30363d" stroke-width="1"/>
+  <line x1="70" y1="300" x2="520" y2="300" stroke="#30363d" stroke-width="1"/>
+
+  <!-- y axis labels -->
+  <text x="60" y="304" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">0</text>
+  <text x="60" y="244" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">2</text>
+  <text x="60" y="184" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">4</text>
+  <text x="60" y="124" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">6</text>
+
+  <!-- horizontal grid lines -->
+  <line x1="70" y1="244" x2="520" y2="244" stroke="#30363d" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="70" y1="184" x2="520" y2="184" stroke="#30363d" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="70" y1="124" x2="520" y2="124" stroke="#30363d" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+
+  <!-- data: 2024=2.8, 2025=3.4, 2026=4.1, 2027=4.8, 2028=5.6, 2029=6.2, 2030=6.8 -->
+  <!-- x: 70 + year*75 ; y: 300 - value*31 -->
+  <!-- area fill -->
+  <path d="M70,213 L145,194 L220,172 L295,150 L370,125 L445,106 L520,83 L520,300 L70,300 Z" fill="#58a6ff" opacity="0.15"/>
+  <!-- line -->
+  <path d="M70,213 C100,203 120,198 145,194 C170,189 195,182 220,172 C245,162 270,155 295,150 C320,144 345,136 370,125 C395,114 420,108 445,106 C475,102 495,90 520,83" fill="none" stroke="#58a6ff" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- data points -->
+  <circle cx="70" cy="213" r="5" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+  <circle cx="520" cy="83" r="5" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+
+  <!-- value labels -->
+  <text x="70" y="203" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="12" font-weight="700" text-anchor="middle">$2.8B</text>
+  <text x="520" y="73" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="12" font-weight="700" text-anchor="middle">$6.8B</text>
+
+  <!-- x axis years -->
+  <text x="70" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2024</text>
+  <text x="145" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2025</text>
+  <text x="220" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2026</text>
+  <text x="295" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2027</text>
+  <text x="370" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2028</text>
+  <text x="445" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2029</text>
+  <text x="520" y="318" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">2030</text>
+
+  <!-- note -->
+  <text x="280" y="355" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">CAGR 17.9% · scale has always demanded gatekeepers</text>
+</svg>

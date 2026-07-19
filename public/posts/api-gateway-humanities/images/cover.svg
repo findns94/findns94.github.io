@@ -1,0 +1,71 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What Is an API Gateway — A Liberal Arts Student's Perspective. The gatekeeper of the internet: 82% of organizations adopted an API-first approach in 2025. 98% faced API security problems.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="gate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#1f6feb"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="30%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- grid lines suggesting traffic/requests converging on a gate -->
+  <g stroke="#30363d" stroke-width="1" opacity="0.5">
+    <line x1="120" y1="315" x2="540" y2="315"/>
+    <line x1="180" y1="250" x2="540" y2="290"/>
+    <line x1="180" y1="380" x2="540" y2="340"/>
+    <line x1="240" y1="190" x2="540" y2="265"/>
+    <line x1="240" y1="440" x2="540" y2="365"/>
+    <line x1="300" y1="150" x2="540" y2="240"/>
+    <line x1="300" y1="480" x2="540" y2="390"/>
+  </g>
+
+  <!-- gateway arch -->
+  <g>
+    <rect x="540" y="200" width="120" height="230" rx="60" fill="none" stroke="url(#gate)" stroke-width="4"/>
+    <rect x="555" y="215" width="90" height="200" rx="45" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5" opacity="0.9"/>
+    <!-- gate light -->
+    <circle cx="600" cy="315" r="28" fill="#58a6ff" opacity="0.18"/>
+    <circle cx="600" cy="315" r="14" fill="#58a6ff" opacity="0.55"/>
+    <!-- converging dots = requests -->
+    <circle cx="120" cy="315" r="5" fill="#3fb950"/>
+    <circle cx="180" cy="250" r="5" fill="#3fb950"/>
+    <circle cx="180" cy="380" r="5" fill="#3fb950"/>
+    <circle cx="240" cy="190" r="5" fill="#d2a8ff"/>
+    <circle cx="240" cy="440" r="5" fill="#d2a8ff"/>
+    <circle cx="300" cy="150" r="5" fill="#f0883e"/>
+    <circle cx="300" cy="480" r="5" fill="#f0883e"/>
+  </g>
+
+  <!-- title block -->
+  <text x="660" y="210" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="44" font-weight="800">What Is an API Gateway?</text>
+  <text x="660" y="260" fill="#8b949e" font-family="system-ui,sans-serif" font-size="22" font-weight="500">A Liberal Arts Student’s Perspective</text>
+  <line x1="660" y1="290" x2="1100" y2="290" stroke="#30363d" stroke-width="2"/>
+
+  <!-- key stats -->
+  <g font-family="system-ui,sans-serif">
+    <text x="660" y="340" fill="#58a6ff" font-size="40" font-weight="800">82%</text>
+    <text x="750" y="340" fill="#c9d1d9" font-size="16" font-weight="500">of organizations adopted an</text>
+    <text x="750" y="362" fill="#c9d1d9" font-size="16" font-weight="500">API-first approach (Postman, 2025)</text>
+
+    <text x="660" y="410" fill="#f0883e" font-size="40" font-weight="800">98%</text>
+    <text x="750" y="410" fill="#c9d1d9" font-size="16" font-weight="500">of organizations faced API security</text>
+    <text x="750" y="432" fill="#c9d1d9" font-size="16" font-weight="500">problems (Salt Security, 2024)</text>
+
+    <text x="660" y="480" fill="#3fb950" font-size="40" font-weight="800">$6.8B</text>
+    <text x="780" y="480" fill="#c9d1d9" font-size="16" font-weight="500">projected gateway market by 2030</text>
+    <text x="780" y="502" fill="#c9d1d9" font-size="16" font-weight="500">(Grand View Research, 2025)</text>
+  </g>
+
+  <!-- anchor: gatekeeping -->
+  <text x="600" y="600" fill="#8b949e" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle">“Gatekeeping” — Kurt Lewin, 1947 — is how complex systems stay legible, fair, and safe.</text>
+  <text x="1170" y="605" fill="#484f58" font-family="system-ui,sans-serif" font-size="11" text-anchor="end">findns94.github.io</text>
+</svg>
