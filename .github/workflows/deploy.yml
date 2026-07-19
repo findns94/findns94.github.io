@@ -24,7 +24,9 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8
+          # Match a pnpm that reads lockfileVersion 9.0 (CI previously pinned v8, which
+          # only reads 6.0 and would ignore this lockfile with ERR_PNPM_NO_LOCKFILE).
+          version: 10
 
       - name: Setup Node
         uses: actions/setup-node@v4
