@@ -1,2 +1,13 @@
+# Single-package repo: declare the root as the (only) workspace member.
+# The `packages` field is required for this file to be valid.
+packages:
+  - "."
+
 allowBuilds:
-  unrs-resolver: true
+  unrs-resolver: set this to true or false
+
+# unrs-resolver ships a prebuilt native (N-API) binding that is selected and
+# installed via its postinstall script. pnpm >= 10 ignores dependency build
+# scripts unless they are explicitly listed here, so approve it.
+onlyBuiltDependencies:
+  - unrs-resolver
