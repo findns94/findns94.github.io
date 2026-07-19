@@ -4,8 +4,8 @@ description: "Chinese households are rotating from 70% real estate toward financ
 coverImage: "/posts/how-to-choose-investment-strategy-in-china-for-young-couples-shanghai/images/shanghai-pudong-skyline.jpg"
 coverImageAlt: "Dazzling night view of Shanghai's Pudong skyline with the iconic Oriental Pearl Tower reflecting on the Huangpu River, representing China's financial capital"
 ogImage: "/posts/how-to-choose-investment-strategy-in-china-for-young-couples-shanghai/images/shanghai-pudong-skyline.jpg"
-date: "2026-07-14"
-lastUpdated: "2026-07-14"
+date: "2026-07-14 22:32:23"
+lastUpdated: "2026-07-14 22:32:23"
 author: "FindNS94"
 tags: [Finance, Investment, Shanghai]
 ---

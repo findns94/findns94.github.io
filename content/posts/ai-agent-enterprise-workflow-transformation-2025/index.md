@@ -4,8 +4,8 @@ description: 'In 2025, 81% of enterprise leaders expect AI agents integrated int
 coverImage: "/posts/ai-agent-enterprise-workflow-transformation-2025/images/cover.svg"
 coverImageAlt: "No AI Without API - How AI Agents Transform Enterprise Workflow and Improve Production Efficiency, with enterprise AI agent adoption and ROI statistics for 2025"
 ogImage: "/posts/ai-agent-enterprise-workflow-transformation-2025/images/cover.svg"
-date: 2026-07-16
-lastUpdated: 2026-07-16
+date: 2026-07-16 21:31:42
+lastUpdated: 2026-07-16 21:31:42
 author: "FindNS94"
 tags: ["AI", "Machine Learning", "Automation"]
 categories: ["AI/ML", "Enterprise Technology"]

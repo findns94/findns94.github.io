@@ -4,8 +4,8 @@ description: "Shanghai parents: 40-60% of tier-1 children already take AI course
 coverImage: "/posts/young-children-ai-education-shanghai/images/cover.jpg"
 coverImageAlt: "A young Asian girl placing her hand on a white humanoid robot, representing early-childhood AI interaction in Shanghai"
 ogImage: "/posts/young-children-ai-education-shanghai/images/cover.jpg"
-date: "2026-07-15"
-lastUpdated: "2026-07-15"
+date: "2026-07-15 22:47:02"
+lastUpdated: "2026-07-15 22:47:02"
 author: "FindNS94"
 tags: [AI, Education, Shanghai]
 ---

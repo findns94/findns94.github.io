@@ -4,8 +4,8 @@ description: "As of 2026, The Witcher 3 has sold over 50 million copies and won 
 coverImage: "/posts/witcher-3-greatest-rpg-21st-century/images/cover.svg"
 coverImageAlt: "The Witcher 3 — 50+ million copies sold, 260+ Game of the Year awards, Metacritic 93, the greatest RPG of the 21st century"
 ogImage: "/posts/witcher-3-greatest-rpg-21st-century/images/cover.svg"
-date: 2026-07-16
-lastUpdated: 2026-07-16
+date: 2026-07-16 22:20:06
+lastUpdated: 2026-07-16 22:20:06
 author: "FindNS94"
 tags: ["RPG", "Gaming", "The Witcher 3"]
 categories: ["Gaming"]

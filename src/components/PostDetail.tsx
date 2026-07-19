@@ -1,7 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import { formatDate, formatDateZh } from '@/lib/utils'
+import { formatDate, formatDateZh, slugifyTag } from '@/lib/utils'
 
 interface Props {
   title: string
@@ -32,7 +32,7 @@ export function PostDetail({ title, titleZh, date, tags, htmlEn, htmlZh }: Props
             {tags.map((tag) => (
               <a
                 key={tag}
-                href={`/tags/${encodeURIComponent(tag)}/`}
+                href={`/tags/${slugifyTag(tag)}/`}
                 className="text-xs px-2 py-0.5 bg-gray-100 text-gray-600 rounded hover:bg-blue-100 hover:text-blue-700 no-underline transition-colors"
               >
                 {tag}

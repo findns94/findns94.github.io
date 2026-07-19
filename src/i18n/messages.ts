@@ -13,6 +13,7 @@ export interface Messages {
   }
   posts: {
     noPosts: string
+    more: string
   }
   tags: {
     title: string
@@ -35,6 +36,7 @@ const en: Messages = {
   },
   posts: {
     noPosts: 'No posts yet',
+    more: 'More posts',
   },
   tags: {
     title: 'Tags',
@@ -57,6 +59,7 @@ const zh: Messages = {
   },
   posts: {
     noPosts: '暂无文章',
+    more: '更多文章',
   },
   tags: {
     title: '标签',

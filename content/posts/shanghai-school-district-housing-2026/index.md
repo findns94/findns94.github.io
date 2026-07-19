@@ -4,8 +4,8 @@ description: "Shanghai's births halved from 218,000 in 2016 to roughly 112,000 i
 coverImage: "/posts/shanghai-school-district-housing-2026/images/cover.svg"
 coverImageAlt: "Shanghai city skyline with school building silhouettes, representing the intersection of school district housing and education policy"
 ogImage: "/posts/shanghai-school-district-housing-2026/images/cover.svg"
-date: 2026-07-16
-lastUpdated: 2026-07-16
+date: 2026-07-16 20:09:03
+lastUpdated: 2026-07-16 20:09:03
 author: "FindNS94"
 tags: [Housing, Education, Shanghai]
 categories: [real estate, education]

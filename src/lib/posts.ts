@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { slugifyTag } from '@/lib/utils'
 
 const POSTS_DIR = path.join(process.cwd(), 'content/posts')
 
@@ -10,12 +11,15 @@ export interface PostMeta {
   titleZh: string
   date: string
   tags: string[]
+  tagSlugs: string[]
   categories: string[]
   math?: boolean
   excerpt: string
   excerptZh: string
   hasZh: boolean
 }
+
+export { slugifyTag }
 
 // Extract excerpt from <!-- more --> separator
 function extractExcerpt(content: string): string {
@@ -56,12 +60,15 @@ function readPost(slug: string): { meta: PostMeta; contentEn: string; contentZh:
   const excerpt = extractExcerpt(contentEn)
   const excerptZh = contentZh ? extractExcerpt(contentZh) : excerpt
 
+  const tags: string[] = Array.isArray(data.tags) ? data.tags as string[] : []
+
   const meta: PostMeta = {
     slug,
     title: data.title as string || slug,
     titleZh,
     date: data.date ? new Date(data.date as string).toISOString() : new Date().toISOString(),
-    tags: Array.isArray(data.tags) ? data.tags as string[] : [],
+    tags,
+    tagSlugs: tags.map((t) => slugifyTag(t)),
     categories: Array.isArray(data.categories) ? data.categories as string[] : [],
     math: data.math === true || data.mathjax === true,
     excerpt,
@@ -105,8 +112,9 @@ export function getPostContentBySlug(slug: string, lang: 'en' | 'zh'): string | 
   return fs.readFileSync(filePath, 'utf-8')
 }
 
-// Get all unique tags with post counts
-export function getAllTags(): { tag: string; count: number }[] {
+// Get all unique tags with post counts, including their URL slug.
+// De-duplicated by tag name (a tag always maps to one slug).
+export function getAllTags(): { tag: string; slug: string; count: number }[] {
   const allPosts = getAllPosts()
   const tagMap = new Map<string, number>()
 
@@ -117,11 +125,11 @@ export function getAllTags(): { tag: string; count: number }[] {
   }
 
   return Array.from(tagMap.entries())
-    .map(([tag, count]) => ({ tag, count }))
+    .map(([tag, count]) => ({ tag, slug: slugifyTag(tag), count }))
     .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag))
 }
 
-// Get all posts for a specific tag
-export function getPostsByTag(tag: string): PostMeta[] {
-  return getAllPosts().filter((post) => post.tags.includes(tag))
+// Get all posts for a specific tag slug
+export function getPostsByTag(slug: string): PostMeta[] {
+  return getAllPosts().filter((post) => post.tagSlugs.includes(slug))
 }
