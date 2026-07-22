@@ -9,6 +9,7 @@
 
 # production
 /build
+problem/
 
 # misc
 .DS_Store

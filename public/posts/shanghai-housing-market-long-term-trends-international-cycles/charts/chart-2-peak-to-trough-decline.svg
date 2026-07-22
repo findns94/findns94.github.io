@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Grouped bar chart comparing peak-to-trough nominal house price decline across four countries. Japan residential land fell 70% (1991-2013). Spain fell 37% (2008-2014). US Case-Shiller national fell 27% (2006-2012), with the 10/20-City composite down 35%. UK fell 20% (2007-2009).">
+  <title>Peak-to-Trough Nominal House Price Decline — International Comparison</title>
+  <desc>Comparison of maximum nominal residential price decline in four developed-market housing cycles. Japan six-city residential land: 70% (1991-2013). Spain: 37% (2008-2014). US Case-Shiller National: 27% and US 10/20-City Composite: 35% (2006-2012). UK: 20% (2007-2009). Sources: JREI, S&amp;P Case-Shiller, Nationwide, Banco de Espana.</desc>
+
+  <!-- Y axis -->
+  <line x1="70" y1="40" x2="70" y2="320" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="70" y1="320" x2="530" y2="320" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Y axis labels -->
+  <text x="62" y="44" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">0%</text>
+  <text x="62" y="102" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">20%</text>
+  <text x="62" y="160" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">40%</text>
+  <text x="62" y="218" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">60%</text>
+  <text x="62" y="276" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">80%</text>
+
+  <!-- Y gridlines -->
+  <line x1="70" y1="40" x2="530" y2="40" stroke="currentColor" opacity="0.08"/>
+  <line x1="70" y1="102" x2="530" y2="102" stroke="currentColor" opacity="0.08"/>
+  <line x1="70" y1="160" x2="530" y2="160" stroke="currentColor" opacity="0.08"/>
+  <line x1="70" y1="218" x2="530" y2="218" stroke="currentColor" opacity="0.08"/>
+  <line x1="70" y1="276" x2="530" y2="276" stroke="currentColor" opacity="0.08"/>
+
+  <!-- Bars -->
+  <!-- Japan: 70% -> bar top at 320 - (280*0.70) = 124 -->
+  <rect x="105" y="124" width="60" height="196" rx="4" fill="#f97316" opacity="0.9"/>
+  <text x="135" y="116" text-anchor="middle" font-size="12" fill="#f97316" fontWeight="800">70%</text>
+
+  <!-- Spain: 37% -> bar top at 320 - (280*0.37) = 216 -->
+  <rect x="210" y="216" width="60" height="104" rx="4" fill="#38bdf8" opacity="0.9"/>
+  <text x="240" y="208" text-anchor="middle" font-size="12" fill="#38bdf8" fontWeight="800">37%</text>
+
+  <!-- US (10/20 City): 35% -> bar top at 320 - (280*0.35) = 222 -->
+  <rect x="315" y="222" width="60" height="98" rx="4" fill="#a78bfa" opacity="0.9"/>
+  <text x="345" y="214" text-anchor="middle" font-size="12" fill="#a78bfa" fontWeight="800">35%</text>
+
+  <!-- UK: 20% -> bar top at 320 - (280*0.20) = 264 -->
+  <rect x="420" y="264" width="60" height="56" rx="4" fill="#22c55e" opacity="0.9"/>
+  <text x="450" y="256" text-anchor="middle" font-size="12" fill="#22c55e" fontWeight="800">20%</text>
+
+  <!-- X axis labels -->
+  <text x="135" y="340" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">Japan</text>
+  <text x="135" y="354" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">1991-2013</text>
+
+  <text x="240" y="340" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">Spain</text>
+  <text x="240" y="354" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">2008-2014</text>
+
+  <text x="345" y="340" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">US (City)</text>
+  <text x="345" y="354" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">2006-2012</text>
+
+  <text x="450" y="340" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">UK</text>
+  <text x="450" y="354" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">2007-2009</text>
+
+  <!-- Source -->
+  <text x="295" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Sources: JREI; S&amp;P CoreLogic Case-Shiller; Nationwide; Banco de Espana</text>
+</svg>

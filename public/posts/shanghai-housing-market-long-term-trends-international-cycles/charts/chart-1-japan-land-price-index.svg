@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Line chart: Japan six-city residential land price index normalized to 1990=100. Peaks at 100 in 1991, falls steeply to 18 by 2005, flat-liners near 15-20 through 2015, then gradual recovery to 28 by 2024. Even after 33 years the index is only 28% of its bubble peak.">
+  <title>Japan Six-City Residential Land Price Index (1990-2024), Normalized to 1990=100</title>
+  <desc>Japan Real Estate Institute urban land price index for six major cities, residential use, normalized so the 1990 bubble peak equals 100. The index fell to roughly 18 by 2005 and only began recovering meaningfully after 2013, reaching approximately 28 by 2024 — just over one-quarter of its peak even 33 years later. Source: Japan Real Estate Institute (JREI).</desc>
+
+  <!-- Y axis -->
+  <line x1="60" y1="40" x2="60" y2="330" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="60" y1="330" x2="530" y2="330" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Y axis labels -->
+  <text x="52" y="44" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">100</text>
+  <text x="52" y="117" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">75</text>
+  <text x="52" y="190" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">50</text>
+  <text x="52" y="263" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">25</text>
+  <text x="52" y="334" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">0</text>
+
+  <!-- Y gridlines -->
+  <line x1="60" y1="40" x2="530" y2="40" stroke="currentColor" opacity="0.08"/>
+  <line x1="60" y1="117" x2="530" y2="117" stroke="currentColor" opacity="0.08"/>
+  <line x1="60" y1="190" x2="530" y2="190" stroke="currentColor" opacity="0.08"/>
+  <line x1="60" y1="263" x2="530" y2="263" stroke="currentColor" opacity="0.08"/>
+
+  <!-- X axis labels -->
+  <text x="60" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">1990</text>
+  <text x="154" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">1995</text>
+  <text x="248" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2000</text>
+  <text x="342" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2005</text>
+  <text x="436" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2020</text>
+  <text x="530" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2024</text>
+
+  <!-- Area fill under curve -->
+  <path d="M60,40 L117,52 L174,105 L231,175 L288,250 L342,278 L396,292 L436,302 L483,306 L530,310 L530,330 L60,330 Z" fill="#38bdf8" opacity="0.12"/>
+
+  <!-- Main line: Japan residential land price index 1990-2024 -->
+  <!-- Data points (year, index): 1990=100, 1992=70, 1995=45, 1998=30, 2001=22, 2005=18, 2010=16, 2013=15, 2018=18, 2020=20, 2023=25, 2024=28 -->
+  <polyline points="60,40 88,93 117,158 146,217 174,256 231,278 288,292 316,297 373,288 401,283 458,265 530,310" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Key data point markers -->
+  <circle cx="60" cy="40" r="4" fill="#f97316" stroke="white" stroke-width="1.5"/>
+  <circle cx="288" cy="292" r="4" fill="#a78bfa" stroke="white" stroke-width="1.5"/>
+  <circle cx="530" cy="310" r="4" fill="#22c55e" stroke="white" stroke-width="1.5"/>
+
+  <!-- Peak annotation -->
+  <text x="68" y="32" font-size="10" fill="#f97316" fontWeight="700">Peak 1990 = 100</text>
+  <!-- Trough annotation -->
+  <text x="250" y="310" font-size="10" fill="#a78bfa" fontWeight="700">Trough ~15 (2013)</text>
+  <!-- 2024 annotation -->
+  <text x="440" y="326" font-size="10" fill="#22c55e" fontWeight="700">2024 ≈ 28</text>
+
+  <!-- "Lost decades" shaded band -->
+  <rect x="174" y="40" width="222" height="290" fill="#a78bfa" opacity="0.06"/>
+  <text x="285" y="55" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">"Lost Decades" — prices flat near trough for ~20 years</text>
+
+  <!-- Axis title -->
+  <text x="295" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Source: Japan Real Estate Institute (JREI), Urban Land Price Index</text>
+</svg>

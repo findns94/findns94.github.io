@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Horizontal lollipop chart showing five structural headwinds facing Shanghai housing, scored by severity. Land revenue collapse 44% (9/10). Population decline and aging (8/10). High home ownership 90% limits new demand (7/10). Inventory overhang 12-18 months (6/10). Already-high urbanization 67% slows inflow (6/10).">
+  <title>Shanghai Housing: Structural Headwind Severity</title>
+  <desc>Five structural headwinds facing Shanghai residential demand over the next 10-20 years, scored qualitatively by severity (10 = most severe). Land-sale revenue collapse (44% since 2021 peak) and demographic decline (population falling since 2022, TFR among worlds lowest) rank as the most severe. Sources: China MOF, NBS, JLL, CRIC.</desc>
+
+  <!-- Y axis (categories) and X axis (severity 0-10) -->
+  <line x1="170" y1="50" x2="170" y2="320" stroke="currentColor" opacity="0.15"/>
+  <line x1="170" y1="320" x2="520" y2="320" stroke="currentColor" opacity="0.3"/>
+
+  <!-- X axis severity labels -->
+  <text x="170" y="340" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">0</text>
+  <text x="260" y="340" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">2.5</text>
+  <text x="340" y="340" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">5</text>
+  <text x="430" y="340" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">7.5</text>
+  <text x="520" y="340" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">10</text>
+  <text x="345" y="355" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">Severity</text>
+
+  <!-- Vertical gridlines -->
+  <line x1="260" y1="50" x2="260" y2="320" stroke="currentColor" opacity="0.06"/>
+  <line x1="340" y1="50" x2="340" y2="320" stroke="currentColor" opacity="0.06"/>
+  <line x1="430" y1="50" x2="430" y2="320" stroke="currentColor" opacity="0.06"/>
+
+  <!-- Row positions (y centers): 85, 140, 195, 250, 305 -->
+
+  <!-- 1. Land revenue collapse: 9/10 -> x = 170 + (350*0.9) = 485 -->
+  <line x1="170" y1="85" x2="485" y2="85" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="485" cy="85" r="7" fill="#f97316" stroke="white" stroke-width="2"/>
+  <text x="165" y="80" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Land revenue -44%</text>
+  <text x="165" y="94" text-anchor="end" font-size="9" fill="currentColor" opacity="0.45">MOF 2021-2024</text>
+  <text x="495" y="89" font-size="11" fill="#f97316" fontWeight="800">9</text>
+
+  <!-- 2. Population decline: 8/10 -> x = 170 + (350*0.8) = 450 -->
+  <line x1="170" y1="140" x2="450" y2="140" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="450" cy="140" r="7" fill="#f97316" stroke="white" stroke-width="2"/>
+  <text x="165" y="135" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Population decline</text>
+  <text x="165" y="149" text-anchor="end" font-size="9" fill="currentColor" opacity="0.45">NBS 2022-2024</text>
+  <text x="460" y="144" font-size="11" fill="#f97316" fontWeight="800">8</text>
+
+  <!-- 3. High home ownership: 7/10 -> x = 170 + (350*0.7) = 415 -->
+  <line x1="170" y1="195" x2="415" y2="195" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="415" cy="195" r="7" fill="#38bdf8" stroke="white" stroke-width="2"/>
+  <text x="165" y="190" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">90% home ownership</text>
+  <text x="165" y="204" text-anchor="end" font-size="9" fill="currentColor" opacity="0.45">PBOC survey</text>
+  <text x="425" y="199" font-size="11" fill="#38bdf8" fontWeight="800">7</text>
+
+  <!-- 4. Inventory overhang: 6/10 -> x = 170 + (350*0.6) = 380 -->
+  <line x1="170" y1="250" x2="380" y2="250" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="380" cy="250" r="7" fill="#a78bfa" stroke="white" stroke-width="2"/>
+  <text x="165" y="245" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Inventory 12-18 mo</text>
+  <text x="165" y="259" text-anchor="end" font-size="9" fill="currentColor" opacity="0.45">CRIC / JLL</text>
+  <text x="390" y="254" font-size="11" fill="#a78bfa" fontWeight="800">6</text>
+
+  <!-- 5. High urbanization: 6/10 -> x = 170 + (350*0.6) = 380 -->
+  <line x1="170" y1="305" x2="380" y2="305" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="380" cy="305" r="7" fill="#a78bfa" stroke="white" stroke-width="2"/>
+  <text x="165" y="300" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Urbanization 67%</text>
+  <text x="165" y="314" text-anchor="end" font-size="9" fill="currentColor" opacity="0.45">NBS 2024</text>
+  <text x="390" y="309" font-size="11" fill="#a78bfa" fontWeight="800">6</text>
+
+  <!-- Source -->
+  <text x="345" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Sources: China Ministry of Finance; NBS; PBOC; CRIC; JLL China Residential</text>
+</svg>
