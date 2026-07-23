@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Grouped bar chart showing the communication paradox: frequent contact but shallow emotional depth in Chinese families">
+  <title>The Communication Paradox: Frequent Contact, Shallow Depth</title>
+
+  <!-- Background -->
+  <rect width="640" height="420" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="320" y="36" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#e0e0e0">The Communication Paradox: Frequent Contact, Shallow Depth</text>
+
+  <!-- Y-axis -->
+  <line x1="80" y1="70" x2="80" y2="320" stroke="#555" stroke-width="1.5"/>
+
+  <!-- Y-axis labels -->
+  <text x="72" y="74" text-anchor="end" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#aaa">0%</text>
+  <text x="72" y="149" text-anchor="end" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#aaa">25%</text>
+  <text x="72" y="224" text-anchor="end" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#aaa">50%</text>
+  <text x="72" y="299" text-anchor="end" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#aaa">75%</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="145" x2="580" y2="145" stroke="#333" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="80" y1="220" x2="580" y2="220" stroke="#333" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="80" y1="295" x2="580" y2="295" stroke="#333" stroke-width="0.8" stroke-dasharray="4,4"/>
+
+  <!-- Bar 1: Weekly contact (74.6%) - height maps to 74.6% of 250px range -->
+  <rect x="130" y="83.5" width="100" height="236.5" rx="6" fill="#0d9488"/>
+  <text x="180" y="76" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#0d9488">74.6%</text>
+  <text x="180" y="350" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#ccc">Weekly</text>
+  <text x="180" y="367" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#ccc">Contact</text>
+
+  <!-- Bar 2: Daily contact (38.2%) -->
+  <rect x="270" y="224.5" width="100" height="95.5" rx="6" fill="#0891b2"/>
+  <text x="320" y="217" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#0891b2">38.2%</text>
+  <text x="320" y="350" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#ccc">Daily</text>
+  <text x="320" y="367" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#ccc">Contact</text>
+
+  <!-- Bar 3: Deep emotional conversation (12.3%) -->
+  <rect x="410" y="289.25" width="100" height="30.75" rx="6" fill="#ef4444"/>
+  <text x="460" y="281" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#ef4444">12.3%</text>
+  <text x="460" y="350" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#ccc">Deep Talk</text>
+  <text x="460" y="367" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#ccc">(Monthly)</text>
+
+  <!-- Legend -->
+  <rect x="160" y="390" width="14" height="14" rx="3" fill="#0d9488"/>
+  <text x="180" y="402" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#aaa">Contact Frequency</text>
+  <rect x="310" y="390" width="14" height="14" rx="3" fill="#ef4444"/>
+  <text x="330" y="402" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#aaa">Emotional Depth</text>
+
+  <!-- Source -->
+  <text x="580" y="410" text-anchor="end" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#777">Source: China Youth Daily, 2024 China Family Relationship Survey</text>
+</svg>

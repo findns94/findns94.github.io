@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460" role="img" aria-label="Horizontal bar chart showing top sources of parent-child conflict in Chinese only-child families, ranked from highest to lowest">
+  <title>Top Sources of Parent-Child Conflict in Chinese Only-Child Families</title>
+
+  <!-- Background -->
+  <rect width="640" height="460" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="320" y="36" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#e0e0e0">Top Sources of Parent-Child Conflict in Chinese Only-Child Families</text>
+
+  <!-- Subtitle -->
+  <text x="320" y="58" text-anchor="middle" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#999">Academic pressure dominates, but generational divides span multiple life domains</text>
+
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a21caf"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#be123c"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bar 1: Academic pressure (50%) - ranked top -->
+  <text x="80" y="105" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#ccc">1. Academic pressure</text>
+  <rect x="80" y="115" width="275" height="32" rx="6" fill="url(#grad1)"/>
+  <text x="365" y="137" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#f59e0b">50%</text>
+
+  <!-- Bar 2: Screen time / internet (40%) -->
+  <text x="80" y="175" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#ccc">2. Screen time / internet use</text>
+  <rect x="80" y="185" width="220" height="32" rx="6" fill="url(#grad2)"/>
+  <text x="310" y="207" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fb923c">40%</text>
+
+  <!-- Bar 3: Career / major choices (25%) -->
+  <text x="80" y="245" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#ccc">3. Career / major choices</text>
+  <rect x="80" y="255" width="137.5" height="32" rx="6" fill="url(#grad3)"/>
+  <text x="227" y="277" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#d946ef">25%</text>
+
+  <!-- Bar 4: Marriage / dating views (20%) -->
+  <text x="80" y="315" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#ccc">4. Marriage / dating views</text>
+  <rect x="80" y="325" width="110" height="32" rx="6" fill="url(#grad4)"/>
+  <text x="200" y="347" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#fb7185">20%</text>
+
+  <!-- Bar 5: Spending habits (15%) -->
+  <text x="80" y="385" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#ccc">5. Spending habits</text>
+  <rect x="80" y="395" width="82.5" height="32" rx="6" fill="url(#grad5)"/>
+  <text x="172" y="417" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2dd4bf">15%</text>
+
+  <!-- Source -->
+  <text x="580" y="448" text-anchor="end" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#777">Source: China Youth Research Center, CASS, 2020-2024</text>
+</svg>
