@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="How to Create a Great Travel Vlog — a beginner's guide to aesthetic travel video, with key stats: 70% of travelers watch travel video, 44% watch within a week of searching">
+<title>How to Create a Great Travel Vlog — Beginner's Guide to Aesthetic Travel Video</title>
+<desc>A cinematic banner for a tutorial on creating beautiful travel vlogs, featuring a camera, film strip, and mountain landscape motif with headline statistics about travel video consumption.</desc>
+<style>
+  :root { --fg: #f3f4f6; --fg-min: #9ca3af; --accent: #f59e0b; }
+  .title { fill: var(--fg); font-weight: 800; }
+  .subtitle { fill: var(--fg-min); font-weight: 500; }
+  .stat-num { fill: var(--accent); font-weight: 800; }
+  .stat-lbl { fill: var(--fg-min); font-weight: 500; }
+  .rule { stroke: var(--accent); stroke-width: 2; opacity: 0.6; }
+  .tag { fill: #1f2937; font-weight: 700; }
+  .camera-body { fill: #1f2937; stroke: var(--accent); stroke-width: 2; }
+  .lens { fill: #0f172a; stroke: var(--accent); stroke-width: 1.5; }
+  .mountain { fill-opacity: 0.12; }
+</style>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0b1120"/>
+    <stop offset="40%" stop-color="#1a1330"/>
+    <stop offset="100%" stop-color="#0f172a"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="0.75" cy="0.3" r="0.55">
+    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+    <stop offset="100%" stop-color="#ef4444" stop-opacity="0.05"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.03"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#grid)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<!-- Decorative mountain landscape silhouette -->
+<g fill="#f59e0b">
+  <polygon class="mountain" points="700,420 880,240 1060,420"/>
+  <polygon class="mountain" points="820,420 1000,200 1180,420" fill-opacity="0.08"/>
+  <polygon class="mountain" points="600,420 750,300 900,420" fill-opacity="0.06"/>
+</g>
+
+<!-- Sunset band -->
+<rect x="680" y="200" width="520" height="220" fill="url(#sunset)" rx="8"/>
+
+<!-- Film strip decoration on right -->
+<g opacity="0.12" fill="none" stroke="#f59e0b" stroke-width="1">
+  <rect x="1040" y="40" width="120" height="550" rx="6"/>
+  <line x1="1040" y1="80" x2="1160" y2="80"/>
+  <line x1="1040" y1="120" x2="1160" y2="120"/>
+  <line x1="1040" y1="510" x2="1160" y2="510"/>
+  <line x1="1040" y1="550" x2="1160" y2="550"/>
+  <rect x="1030" y="90" width="14" height="20" rx="2"/>
+  <rect x="1030" y="140" width="14" height="20" rx="2"/>
+  <rect x="1030" y="450" width="14" height="20" rx="2"/>
+  <rect x="1030" y="490" width="14" height="20" rx="2"/>
+  <rect x="1156" y="90" width="14" height="20" rx="2"/>
+  <rect x="1156" y="140" width="14" height="20" rx="2"/>
+  <rect x="1156" y="450" width="14" height="20" rx="2"/>
+  <rect x="1156" y="490" width="14" height="20" rx="2"/>
+</g>
+
+<!-- Camera icon -->
+<g transform="translate(920, 270)">
+  <rect class="camera-body" x="0" y="20" width="120" height="80" rx="10"/>
+  <rect x="30" y="8" width="60" height="18" rx="4" fill="#1f2937" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle class="lens" cx="60" cy="60" r="28"/>
+  <circle cx="60" cy="60" r="18" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+  <circle cx="60" cy="60" r="6" fill="#f59e0b" opacity="0.4"/>
+  <rect x="95" y="28" width="16" height="10" rx="2" fill="#f59e0b" opacity="0.3"/>
+</g>
+
+<!-- Left content -->
+<g font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <text class="tag" x="60" y="80" font-size="15" letter-spacing="3" opacity="0.85">‹ <tspan fill="#f59e0b">TRAVEL VIDEO</tspan><tspan fill="#9ca3af"> TUTORIAL — 2026</tspan></text>
+  <line class="rule" x1="60" y1="96" x2="400" y2="96"/>
+  <text class="title" x="60" y="190" font-size="58" letter-spacing="-1">How to Create a</text>
+  <text class="title" x="60" y="262" font-size="58" letter-spacing="-1">Great<tspan fill="#f59e0b"> Travel Vlog</tspan></text>
+  <text class="subtitle" x="62" y="316" font-size="22" opacity="0.95">A beginner's guide to shooting and editing aesthetic travel video.</text>
+  <line class="rule" x1="60" y1="350" x2="500" y2="350"/>
+  <g transform="translate(60, 390)">
+    <text class="stat-num" x="0" y="0" font-size="48">70%</text>
+    <text class="stat-lbl" x="120" y="-2" font-size="19">of travelers watch travel video</text>
+    <text class="stat-num" x="0" y="50" font-size="48">44%</text>
+    <text class="stat-lbl" x="120" y="48" font-size="19">watch within a week of searching</text>
+    <text class="stat-num" x="0" y="100" font-size="48">280M+</text>
+    <text class="stat-lbl" x="150" y="98" font-size="19">monthly travel content viewers</text>
+  </g>
+  <text fill="#9ca3af" font-size="13" x="60" y="610" opacity="0.8">Sources: Google/ThinkGoogle Travel Insights · Statista · YouTube Culture &amp; Trends</text>
+</g>
+</svg>

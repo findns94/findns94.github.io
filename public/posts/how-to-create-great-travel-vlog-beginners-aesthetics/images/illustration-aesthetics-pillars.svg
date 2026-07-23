@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320" role="img" aria-label="The four pillars of aesthetic travel video: Composition, Color grading, Movement, and Pacing">
+<title>The Four Pillars of Aesthetic Travel Video</title>
+<desc>An illustrated diagram showing four pillars of travel vlog aesthetics: Composition (rule of thirds, leading lines), Color grading (consistent palette, mood), Movement (gimbal, parallax), and Pacing (rhythm, music sync).</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; }
+  }
+  text { fill: var(--fg); }
+  .op5 { fill: var(--fg-min); opacity: 0.5; }
+  .card-title { font-weight: 700; }
+  .card-desc { fill: var(--fg-min); opacity: 0.85; }
+  .accent { fill: #f59e0b; }
+  .card-bg { fill: #f59e0b; fill-opacity: 0.07; }
+  @media (prefers-color-scheme: dark) {
+    .card-bg { fill: #1e293b; fill-opacity: 0.5; }
+  }
+  .icon { fill: #f59e0b; }
+</style>
+<text x="320" y="28" font-size="16" font-weight="700" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif">The Four Pillars of Aesthetic Travel Video</text>
+
+<!-- Pillar 1: Composition -->
+<g transform="translate(20, 55)">
+  <rect width="285" height="115" rx="10" class="card-bg" stroke="#f59e0b" stroke-opacity="0.25" stroke-width="1"/>
+  <!-- Grid icon for rule of thirds -->
+  <g transform="translate(16, 18)" class="icon">
+    <rect x="0" y="0" width="50" height="50" rx="6" fill-opacity="0.15"/>
+    <line x1="17" y1="0" x2="17" y2="50" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+    <line x1="33" y1="0" x2="33" y2="50" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+    <line x1="0" y1="17" x2="50" y2="17" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+    <line x1="0" y1="33" x2="50" y2="33" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+    <circle cx="33" cy="17" r="3" fill="#f59e0b"/>
+  </g>
+  <g font-family="'Segoe UI', system-ui, sans-serif">
+    <text class="card-title" x="82" y="36" font-size="14">1. Composition</text>
+    <text class="card-desc" x="82" y="56" font-size="11">Rule of thirds, leading lines,</text>
+    <text class="card-desc" x="82" y="72" font-size="11">negative space. Frame before</text>
+    <text class="card-desc" x="82" y="88" font-size="11">you press record.</text>
+  </g>
+</g>
+
+<!-- Pillar 2: Color -->
+<g transform="translate(335, 55)">
+  <rect width="285" height="115" rx="10" class="card-bg" stroke="#f59e0b" stroke-opacity="0.25" stroke-width="1"/>
+  <!-- Color palette icon -->
+  <g transform="translate(16, 18)">
+    <circle cx="12" cy="12" r="12" fill="#ef4444" opacity="0.7"/>
+    <circle cx="30" cy="12" r="12" fill="#f59e0b" opacity="0.7"/>
+    <circle cx="21" cy="28" r="12" fill="#10b981" opacity="0.7"/>
+    <circle cx="38" cy="30" r="10" fill="#6366f1" opacity="0.7"/>
+  </g>
+  <g font-family="'Segoe UI', system-ui, sans-serif">
+    <text class="card-title" x="82" y="36" font-size="14">2. Color Grading</text>
+    <text class="card-desc" x="82" y="56" font-size="11">Consistent palette, mood-driven</text>
+    <text class="card-desc" x="82" y="72" font-size="11">LUTs. Warmth for golden hour,</text>
+    <text class="card-desc" x="82" y="88" font-size="11">cool tones for moody scenes.</text>
+  </g>
+</g>
+
+<!-- Pillar 3: Movement -->
+<g transform="translate(20, 185)">
+  <rect width="285" height="115" rx="10" class="card-bg" stroke="#f59e0b" stroke-opacity="0.25" stroke-width="1"/>
+  <!-- Movement arrows icon -->
+  <g transform="translate(16, 18)" class="icon">
+    <rect x="0" y="0" width="50" height="50" rx="6" fill-opacity="0.12"/>
+    <path d="M8 25 L42 25 M30 17 L42 25 L30 33" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 40 L20 40 M14 36 L20 40 L14 44" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  </g>
+  <g font-family="'Segoe UI', system-ui, sans-serif">
+    <text class="card-title" x="82" y="36" font-size="14">3. Movement</text>
+    <text class="card-desc" x="82" y="56" font-size="11">Gimbal walks, parallax slider</text>
+    <text class="card-desc" x="82" y="72" font-size="11">shots, drone reveals. Every</text>
+    <text class="card-desc" x="82" y="88" font-size="11">motion needs intention.</text>
+  </g>
+</g>
+
+<!-- Pillar 4: Pacing -->
+<g transform="translate(335, 185)">
+  <rect width="285" height="115" rx="10" class="card-bg" stroke="#f59e0b" stroke-opacity="0.25" stroke-width="1"/>
+  <!-- Waveform icon -->
+  <g transform="translate(16, 18)" class="icon">
+    <rect x="0" y="0" width="50" height="50" rx="6" fill-opacity="0.12"/>
+    <path d="M5 25 L12 25 L15 12 L18 38 L21 18 L24 32 L27 22 L30 28 L33 15 L36 35 L39 20 L42 25 L45 25" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="'Segoe UI', system-ui, sans-serif">
+    <text class="card-title" x="82" y="36" font-size="14">4. Pacing</text>
+    <text class="card-desc" x="82" y="56" font-size="11">Rhythm, beat-sync, hold on</text>
+    <text class="card-desc" x="82" y="72" font-size="11">beauty shots. Let the music</text>
+    <text class="card-desc" x="82" y="88" font-size="11">breathe between cuts.</text>
+  </g>
+</g>
+</svg>
