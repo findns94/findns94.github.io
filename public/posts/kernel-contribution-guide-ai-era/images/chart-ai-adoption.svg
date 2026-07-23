@@ -1,0 +1,36 @@
+<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif" role="img" aria-label="Horizontal bar chart showing AI coding assistant adoption among developers in 2026">
+  <title>AI Coding Assistant Adoption Among Developers (2025)</title>
+  <desc>Bar chart showing: Use or plan to use 84%, Daily use 51%, Open source contributors 60%, Don't trust AI code 46%</desc>
+
+  <!-- Grid lines -->
+  <line x1="200" y1="50" x2="200" y2="320" stroke="currentColor" opacity="0.08" />
+  <line x1="280" y1="50" x2="280" y2="320" stroke="currentColor" opacity="0.08" />
+  <line x1="360" y1="50" x2="360" y2="320" stroke="currentColor" opacity="0.08" />
+  <line x1="440" y1="50" x2="440" y2="320" stroke="currentColor" opacity="0.08" />
+  <line x1="520" y1="50" x2="520" y2="320" stroke="currentColor" opacity="0.08" />
+
+  <!-- X axis line -->
+  <line x1="130" y1="320" x2="550" y2="320" stroke="currentColor" opacity="0.3" />
+
+  <!-- Bar 1: Use or plan to use 84% -->
+  <rect x="130" y="70" width="357" height="40" rx="4" fill="#22c55e" />
+  <text x="125" y="95" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Use or plan to use</text>
+  <text x="502" y="95" font-size="12" font-weight="800" fill="white">84%</text>
+
+  <!-- Bar 2: Daily use 51% -->
+  <rect x="130" y="130" width="214" height="40" rx="4" fill="#38bdf8" />
+  <text x="125" y="155" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Daily use</text>
+  <text x="359" y="155" font-size="12" font-weight="800" fill="white">51%</text>
+
+  <!-- Bar 3: Open source 60% -->
+  <rect x="130" y="190" width="254" height="40" rx="4" fill="#a78bfa" />
+  <text x="125" y="215" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Open source contributors</text>
+  <text x="399" y="215" font-size="12" font-weight="800" fill="white">60%</text>
+
+  <!-- Bar 4: Don't trust AI 46% -->
+  <rect x="130" y="250" width="193" height="40" rx="4" fill="#f97316" />
+  <text x="125" y="275" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Don't trust AI code</text>
+  <text x="338" y="275" font-size="12" font-weight="800" fill="white">46%</text>
+
+  <text x="280" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Source: Stack Overflow Developer Survey 2025; GitHub Octoverse 2025</text>
+</svg>

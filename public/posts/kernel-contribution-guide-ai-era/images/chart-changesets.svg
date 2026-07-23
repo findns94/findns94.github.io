@@ -1,0 +1,46 @@
+<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif" role="img" aria-label="Bar chart showing non-merge changesets per kernel release from 6.12 to 7.1">
+  <title>Non-Merge Changesets Per Kernel Release (6.12 — 7.1)</title>
+  <desc>Bar chart showing: 6.12 at 16,847, 6.13 at 19,314, 6.14 at 17,892, 7.0 at 16,203, 7.1 at 15,849</desc>
+
+  <!-- Grid lines -->
+  <line x1="100" y1="70" x2="100" y2="300" stroke="currentColor" opacity="0.08" />
+  <line x1="100" y1="120" x2="500" y2="120" stroke="currentColor" opacity="0.06" />
+  <line x1="100" y1="170" x2="500" y2="170" stroke="currentColor" opacity="0.06" />
+  <line x1="100" y1="220" x2="500" y2="220" stroke="currentColor" opacity="0.06" />
+  <line x1="100" y1="270" x2="500" y2="270" stroke="currentColor" opacity="0.06" />
+
+  <!-- Y axis labels -->
+  <text x="95" y="75" text-anchor="end" font-size="9" fill="currentColor" opacity="0.5">20k</text>
+  <text x="95" y="125" text-anchor="end" font-size="9" fill="currentColor" opacity="0.5">18k</text>
+  <text x="95" y="175" text-anchor="end" font-size="9" fill="currentColor" opacity="0.5">16k</text>
+  <text x="95" y="225" text-anchor="end" font-size="9" fill="currentColor" opacity="0.5">14k</text>
+  <text x="95" y="275" text-anchor="end" font-size="9" fill="currentColor" opacity="0.5">12k</text>
+
+  <!-- Bar 1: 6.12 — 16,847 -->
+  <rect x="120" y="163" width="60" height="137" rx="4" fill="#38bdf8" />
+  <text x="150" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor" opacity="0.8">16,847</text>
+  <text x="150" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">6.12</text>
+
+  <!-- Bar 2: 6.13 — 19,314 (record) -->
+  <rect x="210" y="108" width="60" height="192" rx="4" fill="#22c55e" />
+  <text x="240" y="100" text-anchor="middle" font-size="9" font-weight="700" fill="#22c55e">19,314</text>
+  <text x="240" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">6.13</text>
+
+  <!-- Bar 3: 6.14 — 17,892 -->
+  <rect x="300" y="140" width="60" height="160" rx="4" fill="#a78bfa" />
+  <text x="330" y="132" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor" opacity="0.8">17,892</text>
+  <text x="330" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">6.14</text>
+
+  <!-- Bar 4: 7.0 — 16,203 -->
+  <rect x="390" y="177" width="60" height="123" rx="4" fill="#f97316" />
+  <text x="420" y="169" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor" opacity="0.8">16,203</text>
+  <text x="420" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">7.0</text>
+
+  <!-- Bar 5: 7.1 — 15,849 -->
+  <rect x="480" y="185" width="60" height="115" rx="4" fill="#ef4444" />
+  <text x="510" y="177" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor" opacity="0.8">15,849</text>
+  <text x="510" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">7.1</text>
+
+  <text x="280" y="355" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.5">Non-merge changesets per release (higher = more activity)</text>
+  <text x="280" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Source: LWN.net kernel development statistics (2026)</text>
+</svg>

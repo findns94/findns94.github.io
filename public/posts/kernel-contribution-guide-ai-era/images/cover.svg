@@ -1,0 +1,85 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, -apple-system, sans-serif" role="img" aria-label="Cover image: Kernel Community Contribution Guide for Amateur Engineers in the AI Era">
+  <title>Kernel Community Contribution Guide in the AI Era</title>
+  <desc>Blog post cover with dark terminal-style background, title, subtitle, and key statistics about Linux kernel contribution and AI-assisted development</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c0c" />
+      <stop offset="50%" stop-color="#1a1a2e" />
+      <stop offset="100%" stop-color="#16213e" />
+    </linearGradient>
+    <linearGradient id="terminal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a2e" />
+      <stop offset="100%" stop-color="#0d1f15" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#4ade80" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Terminal window -->
+  <rect x="60" y="120" width="1080" height="400" rx="12" fill="url(#terminal)" stroke="#2d4a3a" stroke-width="1.5" opacity="0.85" />
+  <rect x="60" y="120" width="1080" height="36" rx="12" fill="#1a2e22" />
+  <rect x="60" y="144" width="1080" height="12" fill="#1a2e22" />
+  <!-- Window buttons -->
+  <circle cx="82" cy="138" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="102" cy="138" r="6" fill="#eab308" opacity="0.8" />
+  <circle cx="122" cy="138" r="6" fill="#22c55e" opacity="0.8" />
+  <text x="600" y="144" text-anchor="middle" font-size="11" fill="#4ade80" opacity="0.6" font-family="monospace">~/linux-kernel $</text>
+
+  <!-- Terminal content -->
+  <text x="85" y="185" font-size="13" fill="#22c55e" font-family="monospace" opacity="0.9">~/linux-kernel $ git log --oneline -5</text>
+  <text x="85" y="210" font-size="12" fill="#94a3b8" font-family="monospace">a3f2b1c staging: rt8188eu: fix null-pointer check</text>
+  <text x="85" y="230" font-size="12" fill="#94a3b8" font-family="monospace">7e4d9a2 docs: update kernel-parameters.txt for 7.1</text>
+  <text x="85" y="250" font-size="12" fill="#94a3b8" font-family="monospace">c8b3f01 net: tls: add async optimization for SW path</text>
+  <text x="85" y="270" font-size="12" fill="#94a3b8" font-family="monospace">2d7e6f5 mm: memcg: refine reclaim heuristic</text>
+  <text x="85" y="290" font-size="12" fill="#94a3b8" font-family="monospace">9a1c4d3 sched: introduce latency-nice interface</text>
+
+  <text x="85" y="325" font-size="13" fill="#22c55e" font-family="monospace" opacity="0.9">~/linux-kernel $ scripts/checkpatch.pl --file drivers/staging/rt8188eu/*.c</text>
+  <text x="85" y="350" font-size="12" fill="#4ade80" font-family="monospace">total: 0 errors, 0 warnings, 18 lines checked</text>
+
+  <text x="85" y="385" font-size="13" fill="#22c55e" font-family="monospace" opacity="0.9">~/linux-kernel $ git send-email --to=gregkh@linuxfoundation.org v2.patch</text>
+  <text x="85" y="410" font-size="12" fill="#4ade80" font-family="monospace">Patch sent successfully. Message-ID: &lt;20260723000123.abc@example.com&gt;</text>
+
+  <text x="85" y="450" font-size="13" fill="#22c55e" font-family="monospace" opacity="0.9">~/linux-kernel $</text>
+  <rect x="85" y="455" width="10" height="16" fill="#22c55e" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="1s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Top label -->
+  <rect x="60" y="50" width="6" height="32" rx="3" fill="url(#accent)" />
+  <text x="80" y="73" font-size="14" font-weight="700" fill="#22c55e" letter-spacing="2">LINUX KERNEL 2026</text>
+
+  <!-- Main title -->
+  <text x="60" y="570" font-size="28" font-weight="900" fill="white" letter-spacing="-1">
+    Kernel Contribution Guide
+  </text>
+  <text x="60" y="598" font-size="16" fill="#64748b" font-weight="400">
+    for Amateur Engineers in the AI Era
+  </text>
+
+  <!-- Right side stats -->
+  <g transform="translate(820, 440)">
+    <rect x="0" y="0" width="320" height="160" rx="10" fill="#0d1f15" stroke="#2d4a3a" stroke-width="1" />
+    <text x="20" y="30" font-size="11" fill="#4ade80" font-weight="700" letter-spacing="1">BY THE NUMBERS</text>
+
+    <text x="20" y="60" font-size="20" font-weight="800" fill="white">2,479</text>
+    <text x="100" y="60" font-size="10" fill="#94a3b8">devs in 7.1 release</text>
+
+    <text x="20" y="90" font-size="20" font-weight="800" fill="white">530</text>
+    <text x="100" y="90" font-size="10" fill="#94a3b8">first-timers in 7.1</text>
+
+    <text x="20" y="120" font-size="20" font-weight="800" fill="white">70%</text>
+    <text x="100" y="120" font-size="10" fill="#94a3b8">of devs use AI assistants</text>
+
+    <text x="20" y="150" font-size="20" font-weight="800" fill="white">33M+</text>
+    <text x="100" y="150" font-size="10" fill="#94a3b8">lines of kernel code</text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="60" y="620" font-size="11" fill="#475569" font-weight="500">SILVER BULLET — A Practical Guide to Open Source Kernel Development</text>
+</svg>

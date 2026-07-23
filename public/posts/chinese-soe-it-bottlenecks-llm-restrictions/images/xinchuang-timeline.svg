@@ -1,0 +1,56 @@
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif" role="img" aria-label="Timeline of China IT Application Innovation policy milestones and SOE compliance deadlines from 2023 to 2028">
+  <title>China 信创 Policy Timeline and SOE Compliance Deadlines</title>
+  <desc>Timeline showing: 2023 Gen AI Measures, 2024 信创 expansion to AI, 2025 SOE digital mandate, 2026 Government full替换, 2027 Central SOE deadline, 2028 Hardware parity target</desc>
+
+  <!-- Main timeline line -->
+  <line x1="60" y1="160" x2="520" y2="160" stroke="#334155" stroke-width="2" />
+
+  <!-- 2023 -->
+  <circle cx="80" cy="160" r="8" fill="#38bdf8" stroke="#0c4a6e" stroke-width="2" />
+  <text x="80" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">2023</text>
+  <text x="80" y="195" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.7">Gen AI</text>
+  <text x="80" y="208" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.7">Interim Measures</text>
+  <text x="80" y="221" text-anchor="middle" font-size="7" fill="currentColor" opacity="0.4">(生成式AI暂行办法)</text>
+
+  <!-- 2024 -->
+  <circle cx="170" cy="160" r="8" fill="#38bdf8" stroke="#0c4a6e" stroke-width="2" />
+  <text x="170" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">2024</text>
+  <text x="170" y="195" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.7">信创 expands</text>
+  <text x="170" y="208" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.7">to AI stack</text>
+  <text x="170" y="221" text-anchor="middle" font-size="7" fill="currentColor" opacity="0.4">信创覆盖AI基础设施</text>
+
+  <!-- 2025 -->
+  <circle cx="260" cy="160" r="10" fill="#f97316" stroke="#9a3412" stroke-width="2" />
+  <text x="260" y="130" text-anchor="middle" font-size="10" font-weight="800" fill="#f97316">2025</text>
+  <text x="260" y="195" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.8">SASAC digital</text>
+  <text x="260" y="208" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.8">mandate: 98% SOEs</text>
+  <text x="260" y="221" text-anchor="middle" font-size="7" fill="currentColor" opacity="0.4">国资委数字化转型要求</text>
+
+  <!-- 2026 -->
+  <circle cx="340" cy="160" r="10" fill="#f97316" stroke="#9a3412" stroke-width="2" />
+  <text x="340" y="130" text-anchor="middle" font-size="10" font-weight="800" fill="#f97316">2026</text>
+  <text x="340" y="195" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.8">Government full</text>
+  <text x="340" y="208" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.8">domestic替换</text>
+  <text x="340" y="221" text-anchor="middle" font-size="7" fill="currentColor" opacity="0.4">政府机关全面国产化</text>
+
+  <!-- 2027 -->
+  <circle cx="430" cy="160" r="12" fill="#ef4444" stroke="#7f1d1d" stroke-width="2" />
+  <text x="430" y="130" text-anchor="middle" font-size="11" font-weight="900" fill="#ef4444">2027</text>
+  <text x="430" y="195" text-anchor="middle" font-size="9" font-weight="700" fill="#ef4444" opacity="0.9">CENTRAL SOE</text>
+  <text x="430" y="210" text-anchor="middle" font-size="9" font-weight="700" fill="#ef4444" opacity="0.9">DEADLINE</text>
+  <text x="430" y="225" text-anchor="middle" font-size="7" fill="currentColor" opacity="0.4">央企信创合规截止</text>
+
+  <!-- 2028 -->
+  <circle cx="500" cy="160" r="8" fill="#22c55e" stroke="#14532d" stroke-width="2" />
+  <text x="500" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">2028</text>
+  <text x="500" y="195" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.7">Hardware parity</text>
+  <text x="500" y="208" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.7">target (Ascend)</text>
+  <text x="500" y="221" text-anchor="middle" font-size="7" fill="currentColor" opacity="0.4">算力自主可控目标</text>
+
+  <!-- Deadline arrow -->
+  <line x1="430" y1="240" x2="430" y2="270" stroke="#ef4444" stroke-width="2" />
+  <polygon points="425,268 430,278 435,268" fill="#ef4444" />
+  <text x="430" y="295" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">$50B 信创 market</text>
+
+  <text x="280" y="315" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.35">Source: State Council; SASAC; CCID Consulting (2024-2025)</text>
+</svg>
