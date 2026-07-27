@@ -1,0 +1,24 @@
+<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">AI Coding Tool Productivity Gains by Task Type (2024)</title>
+  <desc id="chart-desc">Horizontal bar chart showing how much faster developers complete tasks with AI assistance: SQL injection fix 12x faster, XSS vulnerability fix 7x faster, PR-time alert fix 3x faster, General coding tasks 1.55x faster. Source: GitHub Octoverse 2024.</desc>
+  <text x="280" y="29" text-anchor="middle" font-size="16" font-weight="800" fill="currentColor">AI Coding Tool Productivity Gains by Task Type (2024)</text>
+  <text x="280" y="48" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.6">How much faster developers complete tasks with AI assistance</text>
+  <line x1="145" y1="298" x2="510" y2="298" stroke="currentColor" opacity="0.08" />
+  <line x1="145" y1="243" x2="510" y2="243" stroke="currentColor" opacity="0.08" />
+  <line x1="145" y1="188" x2="510" y2="188" stroke="currentColor" opacity="0.08" />
+  <line x1="145" y1="133" x2="510" y2="133" stroke="currentColor" opacity="0.08" />
+  <line x1="145" y1="78" x2="510" y2="78" stroke="currentColor" opacity="0.08" />
+  <text x="136" y="106" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136" dy="0">SQL injection</tspan><tspan x="136" dy="12">fix</tspan></text>
+  <rect x="145" y="78" width="365" height="49" rx="4" fill="#f97316" />
+  <text x="518" y="109" font-size="11" font-weight="700" fill="currentColor">12x</text>
+  <text x="136" y="163" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136" dy="0">XSS</tspan><tspan x="136" dy="12">vulnerability</tspan><tspan x="136" dy="12">fix</tspan></text>
+  <rect x="145" y="135" width="212.9" height="49" rx="4" fill="#38bdf8" />
+  <text x="365.9" y="166" font-size="11" font-weight="700" fill="currentColor">7x</text>
+  <text x="136" y="220" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136" dy="0">PR-time alert</tspan><tspan x="136" dy="12">fix</tspan></text>
+  <rect x="145" y="192" width="91.2" height="49" rx="4" fill="#a78bfa" />
+  <text x="244.2" y="223" font-size="11" font-weight="700" fill="currentColor">3x</text>
+  <text x="136" y="277" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136" dy="0">General coding</tspan><tspan x="136" dy="12">tasks</tspan></text>
+  <rect x="145" y="249" width="47.1" height="49" rx="4" fill="#22c55e" />
+  <text x="200.1" y="280" font-size="11" font-weight="700" fill="currentColor">1.55x</text>
+  <text x="280" y="366" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.45">Source: GitHub Octoverse 2024</text>
+</svg>

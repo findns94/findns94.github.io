@@ -1,0 +1,13 @@
+{
+  "type": "horizontal_bar",
+  "title": "AI Coding Tool Productivity Gains by Task Type (2024)",
+  "subtitle": "How much faster developers complete tasks with AI assistance",
+  "data": [
+    {"label": "SQL injection fix", "value": 12, "suffix": "x faster"},
+    {"label": "XSS vulnerability fix", "value": 7, "suffix": "x faster"},
+    {"label": "PR-time alert fix", "value": 3, "suffix": "x faster"},
+    {"label": "General coding tasks", "value": 1.55, "suffix": "x faster"}
+  ],
+  "source": "GitHub Octoverse 2024",
+  "source_url": "https://github.blog/news-insights/octoverse/octoverse-2024/"
+}

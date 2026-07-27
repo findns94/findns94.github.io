@@ -1,0 +1,21 @@
+<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Developer Side Project Monthly Income Distribution</title>
+  <desc id="chart-desc">Donut chart showing percentage of side project builders by revenue bracket: $0-$100/month at 40%, $100-$1,000/month at 30%, $1,000-$5,000/month at 20%, $5,000+/month at 10%. Source: Indie Hackers Annual Survey 2024.</desc>
+  <text x="280" y="29" text-anchor="middle" font-size="16" font-weight="800" fill="currentColor">Developer Side Project Monthly Income Distribution</text>
+  <text x="280" y="48" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.6">Percentage of side project builders by revenue bracket</text>
+  <path d="M 238.00 93.00 A 92 92 0 0 1 292.08 259.43 L 268.56 227.07 A 52 52 0 0 0 238.00 133.00 Z" fill="#f97316" />
+  <path d="M 292.08 259.43 A 92 92 0 0 1 150.50 213.43 L 188.55 201.07 A 52 52 0 0 0 268.56 227.07 Z" fill="#38bdf8" />
+  <path d="M 150.50 213.43 A 92 92 0 0 1 183.92 110.57 L 207.44 142.93 A 52 52 0 0 0 188.55 201.07 Z" fill="#a78bfa" />
+  <path d="M 183.92 110.57 A 92 92 0 0 1 238.00 93.00 L 238.00 133.00 A 52 52 0 0 0 207.44 142.93 Z" fill="#22c55e" />
+  <text x="238" y="182" text-anchor="middle" font-size="22" font-weight="800" fill="currentColor">100%</text>
+  <text x="238" y="201" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.6">of builders</text>
+  <rect x="360" y="96" width="11" height="11" fill="#f97316" />
+  <text x="378" y="105" font-size="11" fill="currentColor">$0-$100/month (40%)</text>
+  <rect x="360" y="124" width="11" height="11" fill="#38bdf8" />
+  <text x="378" y="133" font-size="11" fill="currentColor">$100-$1,000/month (30%)</text>
+  <rect x="360" y="152" width="11" height="11" fill="#a78bfa" />
+  <text x="378" y="161" font-size="11" fill="currentColor">$1,000-$5,000/month (20%)</text>
+  <rect x="360" y="180" width="11" height="11" fill="#22c55e" />
+  <text x="378" y="189" font-size="11" fill="currentColor">$5,000+/month (10%)</text>
+  <text x="280" y="366" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.45">Source: Indie Hackers Annual Survey 2024</text>
+</svg>

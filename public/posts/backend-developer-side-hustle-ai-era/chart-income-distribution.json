@@ -1,0 +1,13 @@
+{
+  "type": "donut",
+  "title": "Developer Side Project Monthly Income Distribution",
+  "subtitle": "Percentage of side project builders by revenue bracket",
+  "data": [
+    {"label": "$0–$100/month", "value": 40},
+    {"label": "$100–$1,000/month", "value": 30},
+    {"label": "$1,000–$5,000/month", "value": 20},
+    {"label": "$5,000+/month", "value": 10}
+  ],
+  "source": "Indie Hackers Annual Survey 2024",
+  "source_url": "https://www.indiehackers.com"
+}
