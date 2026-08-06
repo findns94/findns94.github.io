@@ -19,6 +19,8 @@ export function Header() {
       </div>
       <nav className="mt-3 flex gap-6 text-sm text-gray-600">
         <a href="/" className="hover:text-blue-600 transition-colors">{t.nav.home}</a>
+        <a href="/about" className="hover:text-blue-600 transition-colors">{t.nav.about}</a>
+        <a href="/contact" className="hover:text-blue-600 transition-colors">{t.nav.contact}</a>
         <a href="/tags" className="hover:text-blue-600 transition-colors">{t.nav.tags}</a>
         <a href="/feed.xml" className="hover:text-blue-600 transition-colors">{t.nav.rss}</a>
       </nav>

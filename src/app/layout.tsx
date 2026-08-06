@@ -1,18 +1,28 @@
 import type { Metadata } from 'next'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://findns94.github.io'),
   title: {
     default: 'Silver Bullet',
     template: '%s | Silver Bullet',
   },
-  description: "Martin Zhao's Blog — Tech, Research, and Life",
+  description: "Martin Zhao's Blog — Linux, Kernel, Tech, Research, and Life",
+  keywords: ['Linux', 'Kernel', 'Technology', 'Programming', 'Open Source'],
+  authors: [{ name: 'Martin Zhao' }],
   alternates: {
     types: {
       'application/rss+xml': '/feed.xml',
     },
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Silver Bullet',
+    description: "Martin Zhao's Blog — Linux, Kernel, Tech, Research, and Life",
+    siteName: 'Silver Bullet',
   },
 }
 
@@ -38,10 +48,7 @@ export default function RootLayout({
             <main className="pb-16">
               {children}
             </main>
-            <footer className="py-8 border-t border-gray-200 text-center text-sm text-gray-500">
-              <p>Martin Zhao &copy; {new Date().getFullYear()}</p>
-              <p className="mt-1">Built with Next.js</p>
-            </footer>
+            <Footer />
           </div>
         </LanguageProvider>
       </body>

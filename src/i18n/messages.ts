@@ -5,11 +5,16 @@ export interface Messages {
   siteDescription: string
   nav: {
     home: string
+    about: string
+    contact: string
     tags: string
     rss: string
   }
   footer: {
     builtWith: string
+    privacy: string
+    terms: string
+    disclaimer: string
   }
   posts: {
     noPosts: string
@@ -28,11 +33,16 @@ const en: Messages = {
   siteDescription: "Martin Zhao's Blog — Tech, Research, and Life",
   nav: {
     home: 'Home',
+    about: 'About',
+    contact: 'Contact',
     tags: 'Tags',
     rss: 'RSS',
   },
   footer: {
     builtWith: 'Built with Next.js',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Use',
+    disclaimer: 'Disclaimer',
   },
   posts: {
     noPosts: 'No posts yet',
@@ -51,11 +61,16 @@ const zh: Messages = {
   siteDescription: 'Martin Zhao 的博客 — 技术、科研与生活',
   nav: {
     home: '首页',
+    about: '关于',
+    contact: '联系',
     tags: '标签',
     rss: 'RSS',
   },
   footer: {
     builtWith: '使用 Next.js 构建',
+    privacy: '隐私政策',
+    terms: '使用条款',
+    disclaimer: '免责声明',
   },
   posts: {
     noPosts: '暂无文章',
