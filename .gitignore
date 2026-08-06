@@ -10,6 +10,7 @@
 # production
 /build
 problem/
+doc/
 
 # misc
 .DS_Store

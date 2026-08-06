@@ -230,6 +230,9 @@ FaceNet 使用 MTCNN 提取输入图片中的人脸区域，然后使用作者�
 # 参考文献
 
 [1] https://github.com/opencv/opencv/tree/master/data/haarcascades
+
 [2] https://github.com/aleju/imgaug
+
 [3] https://github.com/rcmalli/keras-vggface
+
 [4] https://github.com/davidsandberg/facenet

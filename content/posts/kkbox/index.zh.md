@@ -163,6 +163,9 @@ LightGBM是基于决策树算法的分布式梯度提升框架。LightGBM利用�
 # 参考文献
 
 [1]	Huang ZX, Michael KN. A fuzzy k-modes algorithm for clustering categorical data. IEEE Trans. on Fuzzy System, 1999, 7(4): 446–452
+
 [2]	Hinton G E, Roweis S T. 2002. Stochastic neighbor embedding / /Advances in Neural Information Processing Systems [M] Cambridge, MA, USA: The MIT Press
+
 [3]	Van der Maaten L, Hinton G. 2008. Visualizing Data using t-SNE [J]. Journal of Machine Learning Research, 9 : 2579-2605
+
 [4]	Ke, Guolin, Qi Meng, Taifeng Wang, Wei Chen, Weidong Ma, and Tie-Yan Liu. "A Highly Efficient Gradient Boosting Decision Tree." In Advances in Neural Information Processing Systems, pp. 3148-3156. 2017

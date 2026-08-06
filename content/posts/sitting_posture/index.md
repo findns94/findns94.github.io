@@ -141,22 +141,41 @@ This paper presented a system aimed at detecting improper sitting posture using 
 # References
 
 [1] Mebarki, B. (2009). Effect of school furniture design and traditional sitting habits on sitting postures of middle school pupils in the Touet region, Algeria. PROCEEDINGS OF 17TH WORLD CONGRESS ON ERGONOMICS.
+
 [2] Putz-Anderson, V., Bernard, B. P., Burt, S. E., Cole, L. L., Fairfield-Estill, C., Fine, L. J., ... & Tanaka, S. (1997). Musculoskeletal disorders and workplace factors. National Institute for Occupational Safety and Health (NIOSH).
+
 [3] Lis, A. M., Black, K. M., Korn, H., & Nordin, M. (2007). Association between sitting and occupational LBP. European Spine Journal, 16(2), 283-298.
+
 [4] Priel, V. Z. (1974). A numerical definition of posture. Human Factors: The Journal of the Human Factors and Ergonomics Society, 16(6), 576-584.
+
 [5] Karhu, O., Kansi, P., & Kuorinka, I. (1977). Correcting working postures in industry: a practical method for analysis. Applied Ergonomics, 8(4), 199-201.
+
 [6] Corlett, E. N., MADELEY†, S., & MANENICA‡, I. (1979). Posture targeting: a technique for recording working postures. Ergonomics, 22(3), 357-366.Gil, H. C., & Tunes, E. (1989). Posture recording: a model for sitting posture. Applied Ergonomics, 20(1), 53-57.
+
 [7] Gil, H. C., & Tunes, E. (1989). Posture recording: a model for sitting posture. Applied Ergonomics, 20(1), 53-57.
+
 [8] McAtamney, L., & Corlett, E. N. (1993). RULA: a survey method for the investigation of work-related upper limb disorders. Applied Ergonomics, 24(2), 91-99.
+
 [9] Hignett, S., & McAtamney, L. (2000). Rapid Entire Body Assessment (REBA). Applied Ergonomics, 31(2), 201-205.
+
 [10] Christmansson, M. (1994). Repetitive and manual jobs—content and effects in terms of physical stress and work‐related musculoskeletal disorders. International Journal of Human Factors in Manufacturing, 4(3), 281-292.
+
 [11] Li, G., & Buckle, P. (1999). Evaluating change in exposure to risk for musculoskeletal disorders: A practical tool. HSE Books.
+
 [12] Finley, M. A., & Lee, R. Y. (2003). Effect of sitting posture on 3-dimensional scapular kinematics measured by skin-mounted electromagnetic tracking sensors. Archives of Physical Medicine and Rehabilitation, 84(4), 563-568.
+
 [13] Wong, W. Y., & Wong, M. S. (2008). Detecting spinal posture change in sitting positions with tri-axial accelerometers. Gait & Posture, 27(1), 168-171.
+
 [14] Microsoft, "PrimeSense Supplies 3-D-Sensing Technology to 'Project Natal' for Xbox 360" [Online], Available: https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/, [February 1, 2016].
+
 [15] PrimeSense, Ltd., "What is OpenNI?", [Online], Available: http://www.openni.ru/index.html, [February 1, 2016].
+
 [16] PrimeSense, Ltd., "NiTE 2.2.0.11", [Online], Available: http://www.openni.ru/files/nite/index.html, [February 1, 2016].
+
 [17] NiTE, JointType, [Online], Available: http://img.my.csdn.net/uploads/201111/8/0_13207656556UXJ.gif, [February 1, 2016].
+
 [18] Fransson-Hall, C., Gloria, R., Kilbom, Å., Winkel, J., Karlqvist, L., Wiktorin, C., & Group123, S. (1995). A portable ergonomic observation method (PEO) for computerized on-line recording of postures and manual handling. Applied Ergonomics, 26(2), 93-100.
+
 [19] O'Sullivan, K., O'Dea, P., Dankaerts, W., O'Sullivan, P., Clifford, A., & O'Sullivan, L. (2010). Neutral lumbar spine sitting posture in pain-free subjects. Manual Therapy, 15(6), 557-561
+
 [20] PrimeSense, Ltd., "openni::CoordinateConverter Class Reference", [Online], Available: http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html, [February 1, 2016]

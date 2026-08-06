@@ -231,6 +231,9 @@ Given time and resource constraints, potential points for improvement are as fol
 # References
 
 [1] https://github.com/opencv/opencv/tree/master/data/haarcascades
+
 [2] https://github.com/aleju/imgaug
+
 [3] https://github.com/rcmalli/keras-vggface
+
 [4] https://github.com/davidsandberg/facenet
