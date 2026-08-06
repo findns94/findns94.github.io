@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, -apple-system, sans-serif" role="img" aria-label="Cover image: How to Fix Linux Kernel Regression Issues Using xfstests - A 2026 Tutorial">
+  <title>How to Fix Linux Kernel Regression Issues Using xfstests</title>
+  <desc>Blog post cover with dark terminal-style background, filesystem testing commands, and key statistics about xfstests and kernel regressions</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c0c" />
+      <stop offset="50%" stop-color="#1a1a2e" />
+      <stop offset="100%" stop-color="#16213e" />
+    </linearGradient>
+    <linearGradient id="terminal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a2e" />
+      <stop offset="100%" stop-color="#0d1f15" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Terminal window -->
+  <rect x="60" y="120" width="1080" height="400" rx="12" fill="url(#terminal)" stroke="#2d4a3a" stroke-width="1.5" opacity="0.85" />
+  <rect x="60" y="120" width="1080" height="36" rx="12" fill="#1a2e22" />
+  <rect x="60" y="144" width="1080" height="12" fill="#1a2e22" />
+  <!-- Window buttons -->
+  <circle cx="82" cy="138" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="102" cy="138" r="6" fill="#eab308" opacity="0.8" />
+  <circle cx="122" cy="138" r="6" fill="#22c55e" opacity="0.8" />
+  <text x="600" y="144" text-anchor="middle" font-size="11" fill="#58a6ff" opacity="0.6" font-family="monospace">~/xfstests $</text>
+
+  <!-- Terminal content: regression hunt workflow -->
+  <text x="85" y="185" font-size="13" fill="#58a6ff" font-family="monospace" opacity="0.9">~/xfstests $ ./check -g auto ext4/001 2&gt;&amp;1 | tail -3</text>
+  <text x="85" y="210" font-size="12" fill="#f85149" font-family="monospace">ext4/001 ext4/002 ... Failed</text>
+  <text x="85" y="230" font-size="12" fill="#94a3b8" font-family="monospace">Ran: ext4/001..ext4/049</text>
+  <text x="85" y="250" font-size="12" fill="#f85149" font-family="monospace">Not ok: ext4/023 ext4/024</text>
+
+  <text x="85" y="285" font-size="13" fill="#58a6ff" font-family="monospace" opacity="0.9">~/linux $ git bisect start HEAD v6.14</text>
+  <text x="85" y="310" font-size="13" fill="#58a6ff" font-family="monospace" opacity="0.9">~/linux $ git bisect run ../xfstests/bisect-xfs.sh</text>
+  <text x="85" y="335" font-size="12" fill="#94a3b8" font-family="monospace">Bisecting: 1,247 revisions left to test</text>
+  <text x="85" y="355" font-size="12" fill="#3fb950" font-family="monospace">abc1234 is the first bad commit</text>
+
+  <text x="85" y="390" font-size="13" fill="#58a6ff" font-family="monospace" opacity="0.9">~/linux $ git show --stat abc1234</text>
+  <text x="85" y="415" font-size="12" fill="#94a3b8" font-family="monospace">xfs: refactor btree block setup in directory code</text>
+  <text x="85" y="435" font-size="12" fill="#94a3b8" font-family="monospace">4 files changed, 187 insertions(+), 214 deletions(-)</text>
+
+  <text x="85" y="475" font-size="13" fill="#58a6ff" font-family="monospace" opacity="0.9">~/xfstests $ ./check xfs/001</text>
+  <text x="85" y="500" font-size="12" fill="#3fb950" font-family="monospace">Ran: xfs/001..xfs/001 -- all passed</text>
+
+  <!-- Top label -->
+  <rect x="60" y="50" width="6" height="32" rx="3" fill="url(#accent)" />
+  <text x="80" y="73" font-size="14" font-weight="700" fill="#58a6ff" letter-spacing="2">LINUX KERNEL 2026</text>
+
+  <!-- Main title -->
+  <text x="60" y="570" font-size="28" font-weight="900" fill="white" letter-spacing="-1">
+    Fix Kernel Regressions
+  </text>
+  <text x="60" y="598" font-size="16" fill="#58a6ff" font-weight="400">
+    Using xfstests as Your Oracle
+  </text>
+
+  <!-- Right side stats -->
+  <g transform="translate(820, 440)">
+    <rect x="0" y="0" width="320" height="160" rx="10" fill="#0d1f15" stroke="#2d4a3a" stroke-width="1" />
+    <text x="20" y="30" font-size="11" fill="#58a6ff" font-weight="700" letter-spacing="1">BY THE NUMBERS</text>
+
+    <text x="20" y="60" font-size="20" font-weight="800" fill="white">4,369</text>
+    <text x="100" y="60" font-size="10" fill="#94a3b8">tests in xfstests suite</text>
+
+    <text x="20" y="90" font-size="20" font-weight="800" fill="white">15,849</text>
+    <text x="100" y="90" font-size="10" fill="#94a3b8">changesets in kernel 7.1</text>
+
+    <text x="20" y="120" font-size="20" font-weight="800" fill="white">12+</text>
+    <text x="100" y="120" font-size="10" fill="#94a3b8">filesystems tested</text>
+
+    <text x="20" y="150" font-size="20" font-weight="800" fill="white">~log2(n)</text>
+    <text x="100" y="150" font-size="10" fill="#94a3b8">steps to bisect any regression</text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="60" y="620" font-size="11" fill="#475569" font-weight="500">A Practical Tutorial: Reproduce, Bisect, Verify, Report</text>
+</svg>
