@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Horizontal bar chart: GitHub stars of Python China-quant libraries. Tushare 16000, AKShare 21900, FinGPT 21100, Baostock 7000, Backtrader 14500">
+  <rect width="560" height="380" fill="#0f172a" rx="12"/>
+  <text x="280" y="36" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="16" font-weight="600">GitHub Stars: China-Quant Python Libraries</text>
+  <text x="280" y="56" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Open-source adoption as of 2025</text>
+  <!-- axis -->
+  <line x1="150" y1="80" x2="150" y2="310" stroke="#334155" stroke-width="1"/>
+  <line x1="150" y1="310" x2="520" y2="310" stroke="#334155" stroke-width="1"/>
+  <!-- gridlines -->
+  <g stroke="#1e293b" stroke-width="1">
+    <line x1="150" y1="80" x2="520" y2="80"/>
+    <line x1="150" y1="137.5" x2="520" y2="137.5"/>
+    <line x1="150" y1="195" x2="520" y2="195"/>
+    <line x1="150" y1="252.5" x2="520" y2="252.5"/>
+  </g>
+  <!-- bars: max 22000 mapped to width 370 -->
+  <g font-family="system-ui,sans-serif">
+    <!-- AKShare 21900 -->
+    <text x="142" y="103" text-anchor="end" fill="#e2e8f0" font-size="12">AKShare</text>
+    <rect x="150" y="90" width="368" height="22" rx="4" fill="#3b82f6"/>
+    <text x="524" y="106" fill="#e2e8f0" font-size="12" font-weight="600">21,900</text>
+    <!-- FinGPT 21100 -->
+    <text x="142" y="160.5" text-anchor="end" fill="#e2e8f0" font-size="12">FinGPT</text>
+    <rect x="150" y="147.5" width="354" height="22" rx="4" fill="#8b5cf6"/>
+    <text x="508" y="163.5" fill="#e2e8f0" font-size="12" font-weight="600">21,100</text>
+    <!-- Tushare 16000 -->
+    <text x="142" y="218" text-anchor="end" fill="#e2e8f0" font-size="12">Tushare</text>
+    <rect x="150" y="205" width="269" height="22" rx="4" fill="#22c55e"/>
+    <text x="423" y="221" fill="#e2e8f0" font-size="12" font-weight="600">16,000</text>
+    <!-- Baostock 7000 -->
+    <text x="142" y="275.5" text-anchor="end" fill="#e2e8f0" font-size="12">Baostock</text>
+    <rect x="150" y="262.5" width="120" height="22" rx="4" fill="#f59e0b"/>
+    <text x="274" y="278.5" fill="#e2e8f0" font-size="12" font-weight="600">7,000</text>
+  </g>
+  <text x="280" y="358" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Source: GitHub repository stars, 2025</text>
+</svg>
