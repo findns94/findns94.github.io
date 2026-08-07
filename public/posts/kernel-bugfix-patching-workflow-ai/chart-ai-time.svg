@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <rect width="760" height="420" fill="#0d1117" rx="8"/>
+  <text x="380" y="36" font-family="monospace, sans-serif" font-size="17" fill="#c9d1d9" text-anchor="middle" font-weight="bold">Where AI Saves Time in the Kernel Testing Workflow</text>
+  <text x="380" y="58" font-family="monospace, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">Estimated time distribution across workflow stages (August 2026)</text>
+  <!-- Donut center -->
+  <circle cx="300" cy="230" r="110" fill="#0d1117"/>
+  <circle cx="300" cy="230" r="70" fill="#161b22"/>
+  <text x="300" y="226" font-family="monospace, sans-serif" font-size="13" fill="#8b949e" text-anchor="middle">Time</text>
+  <text x="300" y="248" font-family="monospace, sans-serif" font-size="13" fill="#8b949e" text-anchor="middle">saved</text>
+  <!-- Donut segments (approximated as stroked arcs) -->
+  <!-- Report drafting: 40% = 144deg -->
+  <circle cx="300" cy="230" r="110" fill="none" stroke="#58a6ff" stroke-width="40"
+    stroke-dasharray="276.5 691.2" stroke-dashoffset="0" transform="rotate(-90 300 230)"/>
+  <!-- Log parsing: 30% = 108deg -->
+  <circle cx="300" cy="230" r="110" fill="none" stroke="#3fb950" stroke-width="40"
+    stroke-dasharray="207.4 691.2" stroke-dashoffset="-276.5" transform="rotate(-90 300 230)"/>
+  <!-- Config generation: 20% = 72deg -->
+  <circle cx="300" cy="230" r="110" fill="none" stroke="#d2a8ff" stroke-width="40"
+    stroke-dasharray="138.2 691.2" stroke-dashoffset="-483.9" transform="rotate(-90 300 230)"/>
+  <!-- Initramfs glue: 10% = 36deg -->
+  <circle cx="300" cy="230" r="110" fill="none" stroke="#f0883e" stroke-width="40"
+    stroke-dasharray="69.1 691.2" stroke-dashoffset="-622.1" transform="rotate(-90 300 230)"/>
+  <!-- Legend -->
+  <rect x="480" y="120" width="16" height="16" rx="3" fill="#58a6ff"/>
+  <text x="506" y="134" font-family="monospace, sans-serif" font-size="14" fill="#c9d1d9">Report drafting — 40%</text>
+  <rect x="480" y="155" width="16" height="16" rx="3" fill="#3fb950"/>
+  <text x="506" y="169" font-family="monospace, sans-serif" font-size="14" fill="#c9d1d9">Log parsing — 30%</text>
+  <rect x="480" y="190" width="16" height="16" rx="3" fill="#d2a8ff"/>
+  <text x="506" y="204" font-family="monospace, sans-serif" font-size="14" fill="#c9d1d9">Config generation — 20%</text>
+  <rect x="480" y="225" width="16" height="16" rx="3" fill="#f0883e"/>
+  <text x="506" y="239" font-family="monospace, sans-serif" font-size="14" fill="#c9d1d9">Initramfs glue — 10%</text>
+  <!-- Subtitle -->
+  <text x="380" y="380" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">Donut chart — share of time saved per workflow stage with AI assistance</text>
+</svg>

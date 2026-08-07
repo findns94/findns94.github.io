@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Terminal window -->
+  <rect x="120" y="120" width="960" height="420" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect x="120" y="120" width="960" height="36" rx="12" fill="#161b22"/>
+  <rect x="120" y="144" width="960" height="12" fill="#161b22"/>
+  <circle cx="148" cy="138" r="7" fill="#ff5f57"/>
+  <circle cx="172" cy="138" r="7" fill="#febc2e"/>
+  <circle cx="196" cy="138" r="7" fill="#28c840"/>
+  <text x="600" y="144" font-family="monospace" font-size="14" fill="#8b949e" text-anchor="middle">kernel-ci.sh — QEMU + kselftest</text>
+  <!-- Terminal content -->
+  <text x="148" y="192" font-family="monospace" font-size="15" fill="#3fb950">$</text>
+  <text x="168" y="192" font-family="monospace" font-size="15" fill="#c9d1d9">./kernel-ci.sh linux/ kselftest</text>
+  <text x="148" y="220" font-family="monospace" font-size="14" fill="#8b949e">[  123s] Building kernel... bzImage OK</text>
+  <text x="148" y="246" font-family="monospace" font-size="14" fill="#8b949e">[  128s] Booting in QEMU (KVM)...</text>
+  <text x="148" y="272" font-family="monospace" font-size="14" fill="#8b949e">[  130s] Running kselftest: syscalls...</text>
+  <text x="148" y="298" font-family="monospace" font-size="14" fill="#58a6ff">[  180s] Ran: 412 tests</text>
+  <text x="148" y="324" font-family="monospace" font-size="16" fill="#3fb950" font-weight="bold">PASS — kselftest completed (412/412)</text>
+  <!-- Suite badges -->
+  <rect x="148" y="370" width="120" height="36" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="208" y="394" font-family="monospace" font-size="13" fill="#58a6ff" text-anchor="middle">kselftest</text>
+  <rect x="284" y="370" width="80" height="36" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="324" y="394" font-family="monospace" font-size="13" fill="#3fb950" text-anchor="middle">LTP</text>
+  <rect x="380" y="370" width="80" height="36" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="420" y="394" font-family="monospace" font-size="13" fill="#d2a8ff" text-anchor="middle">KUnit</text>
+  <rect x="476" y="370" width="100" height="36" rx="6" fill="#21262d" stroke="#30363d"/>
+  <text x="526" y="394" font-family="monospace" font-size="13" fill="#f0883e" text-anchor="middle">xfstests</text>
+  <!-- Title -->
+  <text x="600" y="470" font-family="monospace" font-size="22" fill="#c9d1d9" text-anchor="middle" font-weight="bold">Automated Kernel Bugfix Patching Workflow</text>
+  <text x="600" y="498" font-family="monospace" font-size="15" fill="#8b949e" text-anchor="middle">QEMU + Open-Source Testing Suites + AI Assistance</text>
+  <!-- Bottom accent line -->
+  <rect x="120" y="556" width="960" height="3" fill="url(#accent)"/>
+</svg>

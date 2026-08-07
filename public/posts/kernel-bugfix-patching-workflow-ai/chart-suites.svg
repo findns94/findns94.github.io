@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <rect width="760" height="420" fill="#0d1117" rx="8"/>
+  <text x="380" y="36" font-family="monospace, sans-serif" font-size="17" fill="#c9d1d9" text-anchor="middle" font-weight="bold">Open-Source Kernel Test Suites by Test Count</text>
+  <text x="380" y="58" font-family="monospace, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">Source: linux-test-project/ltp, kdave/xfstests, kernel.org (August 2026)</text>
+  <!-- Y axis -->
+  <line x1="130" y1="80" x2="130" y2="360" stroke="#30363d" stroke-width="1"/>
+  <!-- Gridlines -->
+  <line x1="130" y1="152" x2="720" y2="152" stroke="#21262d" stroke-width="1"/>
+  <line x1="130" y1="224" x2="720" y2="224" stroke="#21262d" stroke-width="1"/>
+  <line x1="130" y1="296" x2="720" y2="296" stroke="#21262d" stroke-width="1"/>
+  <!-- x-axis labels -->
+  <text x="130" y="380" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">0</text>
+  <text x="290" y="380" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">1000</text>
+  <text x="450" y="380" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">2000</text>
+  <text x="610" y="380" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">3000</text>
+  <text x="720" y="380" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">4000+</text>
+  <!-- Bar 1: xfstests -->
+  <rect x="130" y="100" width="540" height="34" rx="4" fill="#f0883e"/>
+  <text x="140" y="123" font-family="monospace, sans-serif" font-size="13" fill="#0d1117" font-weight="bold">xfstests</text>
+  <text x="680" y="123" font-family="monospace, sans-serif" font-size="13" fill="#f0883e" text-anchor="end" font-weight="bold">4,369</text>
+  <!-- Bar 2: LTP -->
+  <rect x="130" y="150" width="490" height="34" rx="4" fill="#3fb950"/>
+  <text x="140" y="173" font-family="monospace, sans-serif" font-size="13" fill="#0d1117" font-weight="bold">LTP</text>
+  <text x="630" y="173" font-family="monospace, sans-serif" font-size="13" fill="#3fb950" text-anchor="end" font-weight="bold">3,000+</text>
+  <!-- Bar 3: KUnit -->
+  <rect x="130" y="200" width="280" height="34" rx="4" fill="#d2a8ff"/>
+  <text x="140" y="223" font-family="monospace, sans-serif" font-size="13" fill="#0d1117" font-weight="bold">KUnit</text>
+  <text x="420" y="223" font-family="monospace, sans-serif" font-size="13" fill="#d2a8ff" text-anchor="end" font-weight="bold">1,000+</text>
+  <!-- Bar 4: kselftest -->
+  <rect x="130" y="250" width="110" height="34" rx="4" fill="#58a6ff"/>
+  <text x="140" y="273" font-family="monospace, sans-serif" font-size="13" fill="#0d1117" font-weight="bold">kselftest</text>
+  <text x="250" y="273" font-family="monospace, sans-serif" font-size="13" fill="#58a6ff" text-anchor="end" font-weight="bold">400+ files</text>
+  <!-- Subtitle -->
+  <text x="380" y="350" font-family="monospace, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">Horizontal bar chart — test counts across the four main open-source kernel test suites</text>
+</svg>
