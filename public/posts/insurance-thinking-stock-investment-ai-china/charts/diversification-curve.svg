@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Line chart showing portfolio risk (standard deviation) declining from 45% with 1 stock to 20% with 30 stocks, with the curve flattening after 20 stocks">
+<title>Portfolio Risk Declines With Diversification — But Plateaus</title>
+<desc>Portfolio standard deviation decreases as number of stocks increases: 1 stock = 45%, 5 stocks = 30%, 10 stocks = 24%, 15 stocks = 22%, 20 stocks = 21%, 30 stocks = 20%, 50 stocks = 19.5%. Most benefit comes from the first 15-20 stocks. Source: Elton and Gruber, Journal of Business, 1977; Statman, JFQA, 1987.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">Portfolio Risk Declines With Diversification — But Plateaus</text>
+<text class="tick" x="280" y="46" text-anchor="middle" font-size="11">Portfolio standard deviation (%) vs. number of stocks held</text>
+<g>
+  <line class="line-grid" x1="60" y1="80" x2="540" y2="80"/>
+  <line class="line-grid" x1="60" y1="130" x2="540" y2="130"/>
+  <line class="line-grid" x1="60" y1="180" x2="540" y2="180"/>
+  <line class="line-grid" x1="60" y1="230" x2="540" y2="230"/>
+  <line class="line-grid" x1="60" y1="280" x2="540" y2="280"/>
+  <line class="line-grid" x1="60" y1="330" x2="540" y2="330"/>
+</g>
+<line class="axis" x1="60" y1="330" x2="540" y2="330"/>
+<line class="axis" x1="60" y1="80" x2="60" y2="330"/>
+<text class="tick" x="52" y="84" text-anchor="end" font-size="10">45%</text>
+<text class="tick" x="52" y="134" text-anchor="end" font-size="10">35%</text>
+<text class="tick" x="52" y="184" text-anchor="end" font-size="10">25%</text>
+<text class="tick" x="52" y="234" text-anchor="end" font-size="10">15%</text>
+<text class="tick" x="52" y="284" text-anchor="end" font-size="10">5%</text>
+<text class="tick" x="52" y="334" text-anchor="end" font-size="10">0%</text>
+<text class="lbl" x="80" y="350" text-anchor="middle" font-size="10">1</text>
+<text class="lbl" x="148" y="350" text-anchor="middle" font-size="10">5</text>
+<text class="lbl" x="220" y="350" text-anchor="middle" font-size="10">10</text>
+<text class="lbl" x="292" y="350" text-anchor="middle" font-size="10">15</text>
+<text class="lbl" x="364" y="350" text-anchor="middle" font-size="10">20</text>
+<text class="lbl" x="436" y="350" text-anchor="middle" font-size="10">30</text>
+<text class="lbl" x="508" y="350" text-anchor="middle" font-size="10">50</text>
+<text class="lbl" x="280" y="368" text-anchor="middle" font-size="10">Number of stocks in portfolio</text>
+<polyline points="80,80 148,190 220,238 292,258 364,268 436,278 508,282" fill="none" stroke="#f97316" stroke-width="2.5"/>
+<circle cx="80" cy="80" r="5" fill="#f97316"/>
+<circle cx="148" cy="190" r="4" fill="#f97316"/>
+<circle cx="220" cy="238" r="4" fill="#f97316"/>
+<circle cx="292" cy="258" r="4" fill="#f97316"/>
+<circle cx="364" cy="268" r="4" fill="#f97316"/>
+<circle cx="436" cy="278" r="4" fill="#f97316"/>
+<circle cx="508" cy="282" r="4" fill="#f97316"/>
+<text class="tick" x="80" y="72" text-anchor="middle" font-size="9">45%</text>
+<text class="tick" x="148" y="182" text-anchor="middle" font-size="9">30%</text>
+<text class="tick" x="220" y="230" text-anchor="middle" font-size="9">24%</text>
+<text class="tick" x="292" y="250" text-anchor="middle" font-size="9">22%</text>
+<text class="tick" x="364" y="260" text-anchor="middle" font-size="9">21%</text>
+<text class="tick" x="436" y="270" text-anchor="middle" font-size="9">20%</text>
+<text class="tick" x="508" y="274" text-anchor="middle" font-size="9">19.5%</text>
+<line x1="364" y1="268" x2="364" y2="310" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3"/>
+<rect x="310" y="296" width="175" height="28" rx="4" fill="#38bdf8" opacity="0.12"/>
+<text class="lbl" x="397" y="308" text-anchor="middle" font-size="9" opacity="0.85">Most benefit from first</text>
+<text class="lbl" x="397" y="320" text-anchor="middle" font-size="9" opacity="0.85">15-20 stocks (Elton &amp; Gruber, 1977)</text>
+<text class="op35" x="280" y="376" text-anchor="middle" font-size="9">Source: Elton &amp; Gruber, Journal of Business (1977); Statman, JFQA (1987)</text>
+</svg>

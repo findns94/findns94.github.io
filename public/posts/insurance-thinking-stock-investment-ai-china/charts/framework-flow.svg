@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Flowchart of the 5-step insurance framework: Reserve Capital leads to Screen Rigorously, which leads to Price the Risk, which leads to Size the Position, which leads to Monitor and Rebalance, with a feedback loop from Monitor back to Screen labeled Re-underwrite quarterly">
+<title>The 5-Step Insurance Framework for Stock Investing</title>
+<desc>A five-step vertical flowchart applying insurance principles to stock selection. Step 1: Reserve Capital (set aside cash reserve 10-20%). Step 2: Screen Rigorously (reject 90%+ via governance checklist). Step 3: Price the Risk (compute expected value across 3 scenarios). Step 4: Size the Position (cap 5-8% per position). Step 5: Monitor and Rebalance (pre-defined exit triggers). A feedback arrow from Step 5 loops back to Step 2 labeled Re-underwrite quarterly. Source: author framework.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .box { stroke-width: 1.5; }
+  .arrow { stroke: var(--fg-min); stroke-width: 1.5; fill: none; opacity: 0.6; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">The 5-Step Insurance Framework for Stock Investing</text>
+<text class="tick" x="280" y="44" text-anchor="middle" font-size="11">A repeatable underwriting pipeline — from capital reserve to ongoing monitoring</text>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#9ca3af" opacity="0.7"/>
+  </marker>
+  <marker id="arrowhead-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#38bdf8"/>
+  </marker>
+</defs>
+<rect x="170" y="55" width="220" height="48" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" class="box"/>
+<text x="280" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#f97316">1. Reserve Capital</text>
+<text class="lbl" x="280" y="92" text-anchor="middle" font-size="9">Set aside cash reserve (10-20%)</text>
+<line class="arrow" x1="280" y1="103" x2="280" y2="118" marker-end="url(#arrowhead)"/>
+<rect x="170" y="118" width="220" height="48" rx="8" fill="#38bdf8" opacity="0.15" stroke="#38bdf8" class="box"/>
+<text x="280" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="#38bdf8">2. Screen Rigorously</text>
+<text class="lbl" x="280" y="155" text-anchor="middle" font-size="9">Reject 90%+ via governance checklist</text>
+<line class="arrow" x1="280" y1="166" x2="280" y2="181" marker-end="url(#arrowhead)"/>
+<rect x="170" y="181" width="220" height="48" rx="8" fill="#a78bfa" opacity="0.15" stroke="#a78bfa" class="box"/>
+<text x="280" y="201" text-anchor="middle" font-size="12" font-weight="700" fill="#a78bfa">3. Price the Risk</text>
+<text class="lbl" x="280" y="218" text-anchor="middle" font-size="9">Compute expected value (3 scenarios)</text>
+<line class="arrow" x1="280" y1="229" x2="280" y2="244" marker-end="url(#arrowhead)"/>
+<rect x="170" y="244" width="220" height="48" rx="8" fill="#22c55e" opacity="0.15" stroke="#22c55e" class="box"/>
+<text x="280" y="264" text-anchor="middle" font-size="12" font-weight="700" fill="#22c55e">4. Size the Position</text>
+<text class="lbl" x="280" y="281" text-anchor="middle" font-size="9">Cap 5-8% per position</text>
+<line class="arrow" x1="280" y1="292" x2="280" y2="307" marker-end="url(#arrowhead)"/>
+<rect x="170" y="307" width="220" height="48" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" class="box"/>
+<text x="280" y="327" text-anchor="middle" font-size="12" font-weight="700" fill="#f97316">5. Monitor &amp; Rebalance</text>
+<text class="lbl" x="280" y="344" text-anchor="middle" font-size="9">Pre-defined exit triggers</text>
+<path d="M 390 331 L 470 331 L 470 142 L 400 142" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead-blue)"/>
+<text class="lbl" x="482" y="232" text-anchor="start" font-size="9" fill="#38bdf8">Re-underwrite</text>
+<text class="lbl" x="482" y="245" text-anchor="start" font-size="9" fill="#38bdf8">quarterly</text>
+<text class="op35" x="280" y="372" text-anchor="middle" font-size="9">Source: Author framework</text>
+</svg>

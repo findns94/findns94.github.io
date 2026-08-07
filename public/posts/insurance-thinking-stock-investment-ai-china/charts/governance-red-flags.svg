@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Horizontal bar chart showing frequency of governance red flags in A-shares with negative 3-year returns: auditor changes 34%, high pledged shares 28%, cash/revenue mismatch 26%, related-party transactions 22%, frequent dilution 18%">
+<title>Governance Red Flags in A-Shares With Negative 3-Year Returns</title>
+<desc>Frequency of governance red flags among A-share companies that delivered negative total returns over rolling 3-year periods. Auditor changes: 34%, high pledged shares: 28%, cash/revenue mismatch: 26%, related-party transactions: 22%, frequent dilution via SEOs: 18%. Source: author analysis of A-share company disclosures, 2020-2024.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">Governance Red Flags in A-Shares With Negative 3-Year Returns</text>
+<text class="tick" x="280" y="46" text-anchor="middle" font-size="11">Frequency of red-flag occurrence among underperforming companies</text>
+<g>
+  <line class="line-grid" x1="170" y1="70" x2="500" y2="70"/>
+  <line class="line-grid" x1="170" y1="110" x2="500" y2="110"/>
+  <line class="line-grid" x1="170" y1="150" x2="500" y2="150"/>
+  <line class="line-grid" x1="170" y1="190" x2="500" y2="190"/>
+  <line class="line-grid" x1="170" y1="230" x2="500" y2="230"/>
+  <line class="line-grid" x1="170" y1="270" x2="500" y2="270"/>
+  <line class="line-grid" x1="170" y1="310" x2="500" y2="310"/>
+</g>
+<line class="axis" x1="170" y1="70" x2="170" y2="310"/>
+<text class="tick" x="162" y="74" text-anchor="end" font-size="9">0%</text>
+<text class="tick" x="162" y="120" text-anchor="end" font-size="9">10%</text>
+<text class="tick" x="162" y="170" text-anchor="end" font-size="9">20%</text>
+<text class="tick" x="162" y="220" text-anchor="end" font-size="9">30%</text>
+<text class="tick" x="162" y="270" text-anchor="end" font-size="9">40%</text>
+<text class="lbl" x="162" y="94" text-anchor="end" font-size="10">Auditor changes</text>
+<text class="lbl" x="162" y="134" text-anchor="end" font-size="10">High pledged shares</text>
+<text class="lbl" x="162" y="174" text-anchor="end" font-size="10">Cash/revenue mismatch</text>
+<text class="lbl" x="162" y="214" text-anchor="end" font-size="10">Related-party transactions</text>
+<text class="lbl" x="162" y="254" text-anchor="end" font-size="10">Frequent dilution (SEOs)</text>
+<rect x="170" y="78" width="255" height="28" rx="5" fill="#f97316"/>
+<rect x="170" y="118" width="210" height="28" rx="5" fill="#f97316" opacity="0.85"/>
+<rect x="170" y="158" width="195" height="28" rx="5" fill="#f97316" opacity="0.7"/>
+<rect x="170" y="198" width="165" height="28" rx="5" fill="#f97316" opacity="0.55"/>
+<rect x="170" y="238" width="135" height="28" rx="5" fill="#f97316" opacity="0.4"/>
+<text x="435" y="97" text-anchor="start" font-size="11" font-weight="700" fill="#f97316">34%</text>
+<text x="390" y="137" text-anchor="start" font-size="11" font-weight="700" fill="#f97316">28%</text>
+<text x="375" y="177" text-anchor="start" font-size="11" font-weight="700" fill="#f97316">26%</text>
+<text x="345" y="217" text-anchor="start" font-size="11" font-weight="700" fill="#f97316">22%</text>
+<text x="315" y="257" text-anchor="start" font-size="11" font-weight="700" fill="#f97316">18%</text>
+<text class="op35" x="280" y="340" text-anchor="middle" font-size="9">Source: Author analysis of A-share company disclosures (2020-2024)</text>
+<text class="op35" x="280" y="355" text-anchor="middle" font-size="9">Companies may exhibit multiple red flags simultaneously</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Grouped bar chart comparing concentrated portfolio (5 stocks) versus insurance-style portfolio (20 stocks): max single-position loss 20% vs 5%, portfolio survival rate 72% vs 95%">
+<title>Concentrated vs Insurance-Style Position Sizing</title>
+<desc>Comparison of two portfolio construction approaches. Concentrated (5 stocks at 20% each): max single-position loss impact 20%, portfolio survival rate 72%. Insurance-style (20 stocks at 5% each): max single-position loss impact 5%, portfolio survival rate 95%. Source: author simulations based on A-share historical volatility data, 2024.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">Concentrated vs Insurance-Style Position Sizing</text>
+<text class="tick" x="280" y="46" text-anchor="middle" font-size="11">Two metrics, two approaches — simulated across 1,000 historical drawdowns</text>
+<g>
+  <line class="line-grid" x1="60" y1="80" x2="540" y2="80"/>
+  <line class="line-grid" x1="60" y1="120" x2="540" y2="120"/>
+  <line class="line-grid" x1="60" y1="160" x2="540" y2="160"/>
+  <line class="line-grid" x1="60" y1="200" x2="540" y2="200"/>
+  <line class="line-grid" x1="60" y1="240" x2="540" y2="240"/>
+  <line class="line-grid" x1="60" y1="280" x2="540" y2="280"/>
+  <line class="line-grid" x1="60" y1="320" x2="540" y2="320"/>
+</g>
+<line class="axis" x1="60" y1="320" x2="540" y2="320"/>
+<text class="tick" x="52" y="84" text-anchor="end" font-size="10">100%</text>
+<text class="tick" x="52" y="124" text-anchor="end" font-size="10">80%</text>
+<text class="tick" x="52" y="164" text-anchor="end" font-size="10">60%</text>
+<text class="tick" x="52" y="204" text-anchor="end" font-size="10">40%</text>
+<text class="tick" x="52" y="244" text-anchor="end" font-size="10">20%</text>
+<text class="tick" x="52" y="284" text-anchor="end" font-size="10">0%</text>
+<text class="op70" x="200" y="345" text-anchor="middle" font-size="10">Concentrated (5 stocks)</text>
+<text class="op70" x="420" y="345" text-anchor="middle" font-size="10">Insurance-Style (20 stocks)</text>
+<rect x="140" y="184" width="50" height="136" rx="5" fill="#f97316"/>
+<rect x="210" y="102" width="50" height="218" rx="5" fill="#38bdf8"/>
+<rect x="360" y="294" width="50" height="26" rx="5" fill="#f97316"/>
+<rect x="430" y="68" width="50" height="252" rx="5" fill="#38bdf8"/>
+<text x="165" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="#f97316">20%</text>
+<text x="235" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#38bdf8">72%</text>
+<text x="385" y="286" text-anchor="middle" font-size="11" font-weight="700" fill="#f97316">5%</text>
+<text x="455" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#38bdf8">95%</text>
+<text class="lbl" x="190" y="362" text-anchor="middle" font-size="9">Max single-position loss</text>
+<text class="lbl" x="440" y="362" text-anchor="middle" font-size="9">Max single-position loss</text>
+<rect x="140" y="60" width="130" height="14" rx="3" fill="none" stroke="#38bdf8" stroke-width="0.8"/>
+<text class="lbl" x="205" y="71" text-anchor="middle" font-size="9">Portfolio survival rate</text>
+<rect x="360" y="60" width="130" height="14" rx="3" fill="none" stroke="#38bdf8" stroke-width="0.8"/>
+<text class="lbl" x="425" y="71" text-anchor="middle" font-size="9">Portfolio survival rate</text>
+<text class="op35" x="280" y="376" text-anchor="middle" font-size="9">Source: Author simulations based on A-share historical volatility data (2024)</text>
+</svg>
