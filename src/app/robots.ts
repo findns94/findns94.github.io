@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const siteUrl = 'https://findns94.github.io'
+const siteUrl = 'https://findns.cc'
 
 export default function robots(): MetadataRoute.Robots {
   return {

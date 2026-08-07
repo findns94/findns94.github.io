@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://findns94.github.io'),
+  metadataBase: new URL('https://findns.cc'),
   title: {
     default: 'Silver Bullet',
     template: '%s | Silver Bullet',

@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/posts'
 
 export async function GET() {
   const posts = getAllPosts()
-  const siteUrl = 'https://findns94.github.io'
+  const siteUrl = 'https://findns.cc'
 
   const feed = new Feed({
     title: 'Silver Bullet',
