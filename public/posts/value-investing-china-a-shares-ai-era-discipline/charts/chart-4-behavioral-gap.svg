@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Grouped bar chart showing the annual behavior-driven return gap. The US behavior gap is 1.2 to 1.8 percentage points per year, China fund investor gap is 3 to 6 points, and Chinese fund switchers underperform buy-and-hold by 2 to 4 points. Chinese retail investors exhibit a wider gap than US investors due to higher trading frequency and performance chasing.">
+  <title>The Behavior Gap — Investor Returns vs. Fund Returns</title>
+  <desc>Comparison of the annual return gap between fund-level returns and actual investor returns. US behavior gap (Dalbar): 1.2-1.8 percentage points per year. China mutual fund investor gap (Morningstar, Bosera): 3-6 points per year. China fund switcher underperformance (AMAC): 2-4 points per year versus buy-and-hold. The gap is driven by poor timing and performance chasing. Sources: Dalbar QAIB, Morningstar, AMAC, 2024.</desc>
+
+  <!-- Y axis -->
+  <line x1="75" y1="30" x2="75" y2="300" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="75" y1="300" x2="530" y2="300" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Y axis labels -->
+  <text x="67" y="304" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">0pp</text>
+  <text x="67" y="244" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">2pp</text>
+  <text x="67" y="184" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">4pp</text>
+  <text x="67" y="124" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">6pp</text>
+
+  <!-- Y gridlines -->
+  <line x1="75" y1="300" x2="530" y2="300" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="240" x2="530" y2="240" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="180" x2="530" y2="180" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="120" x2="530" y2="120" stroke="currentColor" opacity="0.08"/>
+
+  <!-- Scale: 1pp = 60px. Bar top = 300 - (pp*60) -->
+  <!-- Group 1: US behavior gap (1.2-1.8pp) -> show range 1.5pp avg -->
+  <rect x="110" y="210" width="50" height="90" rx="4" fill="#38bdf8" opacity="0.85"/>
+  <rect x="110" y="174" width="50" height="36" rx="0" fill="#38bdf8" opacity="0.4"/>
+  <text x="135" y="166" text-anchor="middle" font-size="11" fill="#38bdf8" font-weight="700">1.2-1.8pp</text>
+  <text x="135" y="322" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">US Behavior Gap</text>
+  <text x="135" y="336" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.5">(Dalbar)</text>
+
+  <!-- Group 2: China fund investor gap (3-6pp) -> show range 4.5pp -->
+  <rect x="250" y="30" width="50" height="270" rx="4" fill="#f97316" opacity="0.85"/>
+  <rect x="250" y="120" width="50" height="180" rx="0" fill="#f97316" opacity="0.4"/>
+  <text x="275" y="22" text-anchor="middle" font-size="11" fill="#f97316" font-weight="700">3-6pp</text>
+  <text x="275" y="322" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">China Fund</text>
+  <text x="275" y="336" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">Investor Gap</text>
+
+  <!-- Group 3: China fund switchers (2-4pp) -> show range 3pp -->
+  <rect x="390" y="120" width="50" height="180" rx="4" fill="#ef4444" opacity="0.8"/>
+  <rect x="390" y="180" width="50" height="120" rx="0" fill="#ef4444" opacity="0.35"/>
+  <text x="415" y="112" text-anchor="middle" font-size="11" fill="#ef4444" font-weight="700">2-4pp</text>
+  <text x="415" y="322" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">China Fund</text>
+  <text x="415" y="336" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">Switchers</text>
+
+  <!-- Annotation -->
+  <text x="275" y="362" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">Chinese retail investors exhibit a wider gap than US investors</text>
+
+  <!-- Source -->
+  <text x="75" y="375" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Dalbar QAIB, Morningstar, AMAC, Bosera Funds. 2024.</text>
+</svg>

@@ -1,26 +1,217 @@
-This is a Next.js MDX blog with posts in content/posts/<slug>/index.md.
+# New Post Guide
 
-The new posts should create in the `content/posts` folder
+This document is the onboarding reference for writing a new blog post on this
+site. Follow it so the post matches the repo's conventions and renders correctly.
 
-The new image and SVGs should create in the `public/posts` folder
+## 1. Repository Overview
 
-The SVGs should be separate, it does not allow inline SVG in the post markdown files
+This is a **bilingual Hexo blog** (theme: [NexT](https://theme-next.js.org/)).
+Each post has an English version and a Chinese version. The site is deployed to
+`findns.cc` (previously `findns94.github.io`).
 
-All images and SVG should use English
+Key facts:
+- Posts live in `content/posts/<slug>/`
+- Images and charts are served from `public/posts/<slug>/`
+- The author name is `FindNS94`
+- Site title: **Silver Bullet**
 
-You need to download all the images if there are some `href` from other website.
+## 2. Directory & File Layout
 
-文章的date/lastUpdated需要精确到YYYY-MM-DD HH:MM:SS
+For a post with slug `my-post-title`, create:
 
-新的文章需要同时写2种语言的版本,英文和中文,先生成英文的,再改写成中文,改写的时候要信达雅
+```
+content/posts/my-post-title/
+  index.md          # English version
+  index.zh.md       # Chinese version
+public/posts/my-post-title/
+  images/           # downloaded cover + inline images
+    cover.jpg
+    <name>.jpg
+  charts/           # separate SVG chart files (no inline SVG allowed)
+    chart-1-<name>.svg
+    chart-2-<name>.svg
+```
 
-新文章英文版 和 新文章中文版 的tag需要统一成英文, 并且tag的数量不要超过3个. 同时检查下以前所有文章的tag, 尽量让新文章的tag和以前的tag聚合在一起, 也可以修改以前文章的tag
+**Rules:**
+- Slug is lowercase kebab-case, descriptive of the topic.
+- **Two language files are mandatory.** Generate English first, then rewrite
+  into Chinese (see §7).
+- **No inline SVG** in markdown — always use a separate `.svg` file referenced
+  via `<figure><img src="..." loading="lazy"></figure>`.
+- All image/chart filenames are in **English**.
 
-最后需要删除新文章里所有包含 INTERNAL-LINK 的行
+## 3. Frontmatter
 
-- Posts in content/posts/<slug>/index.md, images in public/posts/<slug>/images/
-- SVGs must be separate files (no inline SVG in markdown)
-- Tags: max 3, in English, aggregated with existing kernel posts
-- Both English + Chinese versions; English first
-- date/lastUpdated precise to YYYY-MM-DD HH:MM:SS
-- Delete all INTERNAL-LINK lines
+Both `index.md` and `index.zh.md` use this YAML frontmatter block:
+
+```yaml
+title: "Question-format title with primary keyword"
+description: "Fact-dense, 150-160 chars, includes 1 statistic and source"
+coverImage: "/posts/<slug>/images/cover.jpg"
+coverImageAlt: "A descriptive sentence about the cover image"
+ogImage: "/posts/<slug>/images/cover.jpg"
+date: "YYYY-MM-DD HH:MM:SS"
+lastUpdated: "YYYY-MM-DD HH:MM:SS"
+author: "FindNS94"
+tags: [TagOne, TagTwo, TagThree]
+```
+
+**Rules:**
+- `date` / `lastUpdated` must be precise to the second: `"2026-08-08 22:30:00"`.
+- `description` is 150–160 characters and should contain one specific statistic.
+- `coverImage` and `ogImage` point to the same cover image.
+- The Chinese version translates `title`, `description`, and `coverImageAlt` into
+  Chinese but keeps `coverImage`, `ogImage`, `date`, `lastUpdated`, `author`, and
+  `tags` identical to the English version.
+
+## 4. Images
+
+### Sourcing
+- Prefer **[Pixabay](https://pixabay.com)** (free, no attribution required).
+- Alternatives: **[Unsplash](https://unsplash.com)**, then **[Pexels](https://pexels.com)**.
+- Target cover size: 1200×630 (OG-compatible) or 1920×1080.
+
+### Download, do not hotlink
+Every image must be **downloaded** into `public/posts/<slug>/images/`. Never
+reference another site's URL directly in the markdown.
+
+Verify each download is a valid image (not an HTML error page):
+```bash
+curl -sI "<url>" | head -1        # expect HTTP 200
+file <downloaded-file>             # expect "JPEG image data"
+```
+
+### Referencing
+Use standard markdown inside the post body:
+```markdown
+![Descriptive alt text — topic keywords naturally](/posts/<slug>/images/<file>.jpg)
+```
+
+The cover image is repeated as the first content image, right after the frontmatter:
+```markdown
+![<coverImageAlt>](/posts/<slug>/images/cover.jpg)
+```
+
+### Alt text
+Alt text is a full descriptive sentence — not a fragment. It should read naturally
+and include relevant topic keywords.
+
+## 5. Charts / SVGs
+
+Charts are generated as **separate SVG files** in `public/posts/<slug>/charts/`,
+embedded via:
+```html
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/<slug>/charts/chart-1-<name>.svg"
+       alt="Detailed description of the chart: what it shows, the data, and the key takeaway"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
+```
+
+### Critical: SVG must be valid XML
+SVGs are embedded via `<img>`, so the browser parses them as standalone XML.
+**One syntax error → broken image icon.** The single most common failure is a
+bare `&` in an attribute (e.g. `S&P 500`) — it must be `S&amp;P 500`.
+
+See [`svg_format.md`](./svg_format.md) for the full diagnosis/fixing guide and a
+validation checklist (run `xmllint --noout <file>.svg` before committing).
+
+### Chart style
+Match the existing dark-mode-compatible style:
+- `viewBox`, `role="img"`, `aria-label`, `<title>`, `<desc>`.
+- `currentColor` for axis/text (adapts to theme), explicit hex fills for bars.
+- Font: `'Inter', system-ui, sans-serif`.
+- Source attribution line at the bottom of the chart.
+- Diverse chart types across a post (grouped bar, horizontal bar, lollipop, line…).
+
+## 6. Tags
+
+- **Maximum 3 tags** per post.
+- Tags are always in **English**, even on the Chinese version.
+- **Aggregate with existing tags.** Check all posts' tags first:
+  ```bash
+  grep -rh "^tags:" content/posts/*/index.md | sed 's/tags: //' | sort | uniq -c | sort -rn
+  ```
+  Prefer reusing an existing tag set when it fits. The current tag inventory
+  includes clusters like `[Finance, Investment, AI]`, `["Linux", "Kernel", "Testing"]`,
+  `[Deep Learning, Computer Vision]`, `[Blockchain, Security]`, etc.
+- It is acceptable to update an older post's tags to keep the taxonomy coherent.
+
+## 7. Bilingual Workflow
+
+1. **Write `index.md` (English) first** — full article.
+2. **Rewrite `index.zh.md` (Chinese) second** — this is a **信达雅** rewrite
+   (faithful, expressive, elegant), **not** a sentence-by-sentence translation.
+   - Preserve all facts, statistics, and source URLs.
+   - Translate source names where a Chinese name exists (e.g. "华泰证券",
+     "国家统计局"), but keep the URL and any English proper nouns.
+   - Keep `tags` identical to the English version.
+   - Translate the "Key Takeaways" box (中文版 uses "核心要点").
+
+## 8. Required Content Elements
+
+Every post should include these structural elements (in order):
+
+1. **Cover image** — repeated right after frontmatter.
+2. **Introduction** — hook with a surprising statistic, problem statement, what the
+   reader will learn.
+3. **Key Takeaways box** (中文版: 核心要点) — 3–5 bullets, 40–60 words combined,
+   self-contained, with at least one statistic + source name.
+4. **H2 sections** — 60–70% as questions. Each opens with an **answer-first**
+   paragraph (40–60 words) containing a statistic + source.
+5. **Information gain markers** — at least 2–3, as HTML comments before the
+   relevant paragraph:
+   - `<!-- [PERSONAL EXPERIENCE] ... -->`
+   - `<!-- [UNIQUE INSIGHT] ... -->`
+   - `<!-- [ORIGINAL DATA] ... -->`
+6. **Citation capsules** — in each major H2, a 40–60 word self-contained, quotable
+   passage with one claim + one data point + source.
+7. **Visuals** — alternate `[IMAGE]`, `[CHART]` every 300–500 words; never cluster
+   the same type.
+8. **FAQ section** — 3–5 questions, 40–60 word answers, each with a statistic.
+9. **Conclusion** — key takeaways + call to action.
+10. **Sources block** — full source list at the bottom:
+    ```
+    ## Sources
+    - Publisher, Title, retrieved YYYY-MM-DD, https://url
+    ```
+
+## 9. Citation Format
+
+In prose, always attribute:
+```markdown
+Investors earned 3–6% less than funds annually ([Morningstar](https://www.morningstar.com), 2024).
+```
+
+The source block at the bottom gives full provenance:
+```markdown
+- Morningstar, "Mind the Gap" annual report, 2024, https://www.morningstar.com
+```
+
+## 10. INTERNAL-LINK Placeholders
+
+During drafting, internal linking opportunities may be marked with:
+```markdown
+[INTERNAL-LINK: anchor text → target description]
+```
+
+**Delete every `INTERNAL-LINK` line** from the final markdown before finishing.
+These are drafting aids, not publishable content.
+
+## 11. Final Pre-Commit Checklist
+
+- [ ] Both `index.md` and `index.zh.md` exist.
+- [ ] Frontmatter complete: title, description (150–160 chars + stat), coverImage,
+      coverImageAlt, ogImage, date/lastUpdated (YYYY-MM-DD HH:MM:SS), author, tags.
+- [ ] Tags: max 3, English, aggregated with existing inventory.
+- [ ] All images downloaded to `public/posts/<slug>/images/` (not hotlinked).
+- [ ] All SVGs are separate files in `public/posts/<slug>/charts/` (no inline SVG).
+- [ ] All SVGs pass `xmllint --noout` (valid XML, no bare `&`).
+- [ ] Cover image repeated as first content image.
+- [ ] Key Takeaways box present (EN: "Key Takeaways", ZH: "核心要点").
+- [ ] ≥2 information gain markers (`[PERSONAL EXPERIENCE]` / `[UNIQUE INSIGHT]` /
+      `[ORIGINAL DATA]`).
+- [ ] FAQ section with 3–5 items.
+- [ ] Sources block at the bottom.
+- [ ] All `INTERNAL-LINK` lines removed.

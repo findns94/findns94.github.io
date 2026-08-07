@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Grouped bar chart comparing price-to-book ratios across markets in 2025. CSI 300 trades at about 1.35x, MSCI China at 1.3x, MSCI Emerging Markets at 1.7x, Euro Stoxx 600 at 1.9x, and the S&amp;P 500 at 4.75x. China trades at a 50-70% P/B discount to US equities.">
+  <title>Price-to-Book Ratio Across Markets — 2025</title>
+  <desc>Comparison of price-to-book ratios for five equity indices. CSI 300 (China A-shares): 1.35x. MSCI China: 1.3x. MSCI Emerging Markets: 1.7x. Euro Stoxx 600: 1.9x. S&amp;P 500: 4.75x. China trades at a 50-70% discount to US equities on a P/B basis. Sources: Wind, FactSet, MSCI, 2025.</desc>
+
+  <!-- Y axis -->
+  <line x1="75" y1="30" x2="75" y2="330" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="75" y1="330" x2="530" y2="330" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Y axis labels: 1x = 60px, 0x at y=330 (x-axis), 5x at y=30 (top) -->
+  <text x="67" y="334" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">0x</text>
+  <text x="67" y="274" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">1x</text>
+  <text x="67" y="214" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">2x</text>
+  <text x="67" y="154" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">3x</text>
+  <text x="67" y="94" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">4x</text>
+  <text x="67" y="34" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">5x</text>
+
+  <!-- Y gridlines (match label positions) -->
+  <line x1="75" y1="330" x2="530" y2="330" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="270" x2="530" y2="270" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="210" x2="530" y2="210" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="150" x2="530" y2="150" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="90" x2="530" y2="90" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="30" x2="530" y2="30" stroke="currentColor" opacity="0.08"/>
+
+  <!-- Bars: bar top = 330 - (value*60), height = value*60 -->
+  <!-- CSI 300: 1.35x -> top at 330-81=249, height 81 -->
+  <rect x="105" y="249" width="56" height="81" rx="4" fill="#f97316" opacity="0.9"/>
+  <text x="133" y="241" text-anchor="middle" font-size="12" fill="#f97316" font-weight="800">1.35x</text>
+
+  <!-- MSCI China: 1.3x -> top at 330-78=252, height 78 -->
+  <rect x="190" y="252" width="56" height="78" rx="4" fill="#fb923c" opacity="0.85"/>
+  <text x="218" y="244" text-anchor="middle" font-size="12" fill="#fb923c" font-weight="800">1.3x</text>
+
+  <!-- MSCI EM: 1.7x -> top at 330-102=228, height 102 -->
+  <rect x="275" y="228" width="56" height="102" rx="4" fill="#38bdf8" opacity="0.85"/>
+  <text x="303" y="220" text-anchor="middle" font-size="12" fill="#38bdf8" font-weight="800">1.7x</text>
+
+  <!-- Euro Stoxx 600: 1.9x -> top at 330-114=216, height 114 -->
+  <rect x="360" y="216" width="56" height="114" rx="4" fill="#38bdf8" opacity="0.7"/>
+  <text x="388" y="208" text-anchor="middle" font-size="12" fill="#38bdf8" font-weight="800">1.9x</text>
+
+  <!-- S&P 500: 4.75x -> top at 330-285=45, height 285 -->
+  <rect x="445" y="45" width="56" height="285" rx="4" fill="#a78bfa" opacity="0.9"/>
+  <text x="473" y="37" text-anchor="middle" font-size="12" fill="#a78bfa" font-weight="800">4.75x</text>
+
+  <!-- X axis labels -->
+  <text x="133" y="350" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">CSI 300</text>
+  <text x="133" y="364" text-anchor="middle" font-size="8.5" fill="currentColor" opacity="0.55">China A</text>
+  <text x="218" y="350" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">MSCI China</text>
+  <text x="303" y="350" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">MSCI EM</text>
+  <text x="388" y="350" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">Euro Stoxx</text>
+  <text x="473" y="350" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.85">S&amp;P 500</text>
+
+  <!-- Annotation arrow showing discount -->
+  <line x1="133" y1="130" x2="473" y2="130" stroke="#f97316" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <text x="303" y="122" text-anchor="middle" font-size="9.5" fill="#f97316" opacity="0.9">~70% discount</text>
+
+  <!-- Source -->
+  <text x="75" y="390" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Wind, FactSet, MSCI. 2025.</text>
+</svg>

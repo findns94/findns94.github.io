@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Bar chart comparing price-to-earnings ratios in 2024 to 2025. Cambricon trades at 150 to 300 times earnings, iFlytek at 80 to 120 times, SenseTime has negative earnings, while Alibaba trades at 15 to 20 times, Tencent at 18 to 25 times, the CSI 300 at 12 to 13 times, and the S&amp;P 500 at 22 to 24 times. Speculative AI names trade at an extreme premium to the broad market.">
+  <title>AI Hype vs. Market Valuations — P/E Ratios 2024-2025</title>
+  <desc>Comparison of price-to-earnings ratios on a linear scale capped at 60x. Cambricon (AI chips): 150-300x (extends beyond chart). iFlytek (AI speech): 80-120x (extends beyond chart). SenseTime: negative earnings (loss-making). Alibaba: 15-20x. Tencent: 18-25x. CSI 300: 12-13x. S&amp;P 500: 22-24x. Speculative AI pure-plays trade at extreme premiums to the broad market. Sources: Bloomberg, Wind, FactSet, 2024-2025.</desc>
+
+  <!-- Y axis -->
+  <line x1="100" y1="40" x2="100" y2="360" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="100" y1="360" x2="530" y2="360" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Y axis labels: 0 at y=360, 60x at y=40. Scale: 320px/60x = 5.33px per x -->
+  <text x="92" y="364" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">0</text>
+  <text x="92" y="300" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">10x</text>
+  <text x="92" y="236" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">20x</text>
+  <text x="92" y="172" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">30x</text>
+  <text x="92" y="108" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">50x</text>
+  <text x="92" y="44" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">60x</text>
+
+  <!-- Y gridlines -->
+  <line x1="100" y1="360" x2="530" y2="360" stroke="currentColor" opacity="0.06"/>
+  <line x1="100" y1="296" x2="530" y2="296" stroke="currentColor" opacity="0.06"/>
+  <line x1="100" y1="232" x2="530" y2="232" stroke="currentColor" opacity="0.06"/>
+  <line x1="100" y1="168" x2="530" y2="168" stroke="currentColor" opacity="0.06"/>
+  <line x1="100" y1="104" x2="530" y2="104" stroke="currentColor" opacity="0.06"/>
+  <line x1="100" y1="40" x2="530" y2="40" stroke="currentColor" opacity="0.06"/>
+
+  <!-- Bar geometry: top = 360 - (pe * 320/60) = 360 - pe*5.33, height = pe*5.33 -->
+  <!-- Cambricon: 150-300x, capped at top. Bar from y=40 to y=360 -->
+  <rect x="115" y="40" width="44" height="320" rx="4" fill="#ef4444" opacity="0.85"/>
+  <!-- Cap indicator: zigzag to show it extends beyond -->
+  <polyline points="115,55 126,48 137,62 148,48 159,55" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.9"/>
+  <text x="137" y="80" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">150-300x</text>
+  <text x="137" y="380" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.8">Cambricon</text>
+
+  <!-- iFlytek: 80-120x, capped at top. Bar from y=40 to y=360 -->
+  <rect x="185" y="40" width="44" height="320" rx="4" fill="#f97316" opacity="0.85"/>
+  <polyline points="185,55 196,48 207,62 218,48 229,55" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.9"/>
+  <text x="207" y="95" text-anchor="middle" font-size="9" fill="#f97316" font-weight="700">80-120x</text>
+  <text x="207" y="380" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.8">iFlytek</text>
+
+  <!-- SenseTime: negative earnings, draw as small marker -->
+  <rect x="255" y="340" width="44" height="20" rx="4" fill="#6b7280" opacity="0.6"/>
+  <text x="277" y="332" text-anchor="middle" font-size="8.5" fill="#6b7280" font-weight="700">Neg. EPS</text>
+  <text x="277" y="380" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.8">SenseTime</text>
+
+  <!-- Alibaba: 17x avg -> top at 360-90.7=269, height 90.7 -->
+  <rect x="330" y="269" width="44" height="91" rx="4" fill="#38bdf8" opacity="0.8"/>
+  <text x="352" y="261" text-anchor="middle" font-size="9" fill="#38bdf8" font-weight="700">15-20x</text>
+  <text x="352" y="380" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.8">Alibaba</text>
+
+  <!-- Tencent: 21x avg -> top at 360-112=248, height 112 -->
+  <rect x="400" y="248" width="44" height="112" rx="4" fill="#38bdf8" opacity="0.65"/>
+  <text x="422" y="240" text-anchor="middle" font-size="9" fill="#38bdf8" font-weight="700">18-25x</text>
+  <text x="422" y="380" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.8">Tencent</text>
+
+  <!-- CSI 300: 12.5x avg -> top at 360-66.7=293, height 66.7 -->
+  <rect x="462" y="293" width="34" height="67" rx="4" fill="#a78bfa" opacity="0.7"/>
+  <text x="479" y="285" text-anchor="middle" font-size="8.5" fill="#a78bfa" font-weight="700">12-13x</text>
+  <text x="479" y="380" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.8">CSI 300</text>
+
+  <!-- Divider between AI pure-plays and the rest -->
+  <line x1="315" y1="40" x2="315" y2="360" stroke="currentColor" opacity="0.15" stroke-dasharray="3,3"/>
+  <text x="197" y="405" text-anchor="middle" font-size="8.5" fill="#ef4444" opacity="0.7">AI pure-plays (capped)</text>
+  <text x="415" y="405" text-anchor="middle" font-size="8.5" fill="#38bdf8" opacity="0.7">Broader market</text>
+
+  <!-- Source -->
+  <text x="100" y="430" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Bloomberg, Wind, FactSet. 2024-2025. AI pure-play bars exceed chart scale.</text>
+</svg>
