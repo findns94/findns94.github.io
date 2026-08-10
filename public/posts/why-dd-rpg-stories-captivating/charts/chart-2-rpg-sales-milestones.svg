@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Lollipop chart showing sales milestones for featured RPGs. Baldur's Gate 3 leads at 20 million copies sold by 2025, followed by Pathfinder: Wrath of the Righteous at 1 million, Pillars of Eternity at 700,000, and Baldur's Gate 3 Steam concurrent player peak at 875,343.">
+  <title>RPG Sales Milestones and Player Records</title>
+  <desc>Lollipop chart comparing sales milestones across featured RPGs: Baldur's Gate 3 at 20 million copies (2025), Pathfinder: Wrath of the Righteous at 1 million (2023), Pillars of Eternity at 700,000 (2016), and Baldur's Gate 3's Steam concurrent player peak of 875,343 (2023).</desc>
+  <defs>
+    <style>
+      text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+      .title { font-size: 16px; font-weight: 700; }
+      .subtitle { font-size: 11px; fill: #9ca3af; }
+      .bar-label { font-size: 12px; font-weight: 500; }
+      .value-label { font-size: 12px; font-weight: 600; }
+      .gridline { stroke: currentColor; opacity: 0.08; }
+      .stem { stroke: currentColor; opacity: 0.25; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="320" y="28" text-anchor="middle" class="title">Sales Milestones &amp; Player Records</text>
+  <text x="320" y="44" text-anchor="middle" class="subtitle">Copies sold and peak concurrent players, 2016–2025</text>
+
+  <!-- Chart area: x 160-610, baseline y=340, top y=70 -->
+  <!-- Scale: 0 to 22M over 270px. px_per_million = (340-70)/22 = 12.36 -->
+
+  <!-- Gridlines -->
+  <line x1="160" y1="340" x2="610" y2="340" class="gridline"/>
+  <line x1="160" y1="272" x2="610" y2="272" class="gridline"/>
+  <line x1="160" y1="205" x2="610" y2="205" class="gridline"/>
+  <line x1="160" y1="137" x2="610" y2="137" class="gridline"/>
+  <line x1="160" y1="70" x2="610" y2="70" class="gridline"/>
+
+  <!-- Y-axis labels (millions) -->
+  <text x="155" y="344" text-anchor="end" class="axis-label">0</text>
+  <text x="155" y="276" text-anchor="end" class="axis-label">5M</text>
+  <text x="155" y="209" text-anchor="end" class="axis-label">10M</text>
+  <text x="155" y="141" text-anchor="end" class="axis-label">15M</text>
+  <text x="155" y="74" text-anchor="end" class="axis-label">20M</text>
+
+  <!-- Item 1: Pillars of Eternity — 700K = 0.7M -->
+  <!-- x_center = 230, top_y = 340 - (0.7*12.36) = 340 - 8.65 = 331.35 -->
+  <line x1="230" y1="340" x2="230" y2="331.35" class="stem"/>
+  <circle cx="230" cy="331.35" r="9" fill="#10b981"/>
+  <text x="230" y="364" text-anchor="middle" class="bar-label">Pillars of Eternity</text>
+  <text x="230" y="378" text-anchor="middle" class="subtitle">700K copies (2016)</text>
+  <text x="230" y="327" text-anchor="middle" class="value-label" fill="#10b981">700K</text>
+
+  <!-- Item 2: Pathfinder WotR — 1M -->
+  <!-- x_center = 330, top_y = 340 - (1*12.36) = 327.64 -->
+  <line x1="330" y1="340" x2="330" y2="327.64" class="stem"/>
+  <circle cx="330" cy="327.64" r="10" fill="#6366f1"/>
+  <text x="330" y="364" text-anchor="middle" class="bar-label">Pathfinder: WotR</text>
+  <text x="330" y="378" text-anchor="middle" class="subtitle">1M copies (2023)</text>
+  <text x="330" y="323" text-anchor="middle" class="value-label" fill="#6366f1">1M</text>
+
+  <!-- Item 3: BG3 Steam peak — 875,343 = 0.875M -->
+  <!-- x_center = 430, top_y = 340 - (0.875*12.36) = 340 - 10.8 = 329.2 -->
+  <line x1="430" y1="340" x2="430" y2="329.2" class="stem"/>
+  <circle cx="430" cy="329.2" r="10" fill="#f59e0b"/>
+  <text x="430" y="364" text-anchor="middle" class="bar-label">BG3 Steam Peak</text>
+  <text x="430" y="378" text-anchor="middle" class="subtitle">875K concurrent (2023)</text>
+  <text x="430" y="325" text-anchor="middle" class="value-label" fill="#f59e0b">875K</text>
+
+  <!-- Item 4: BG3 sales — 20M -->
+  <!-- x_center = 540, top_y = 340 - (20*12.36) = 340 - 247.2 = 92.8 -->
+  <line x1="540" y1="340" x2="540" y2="92.8" class="stem"/>
+  <circle cx="540" cy="92.8" r="13" fill="#ef4444"/>
+  <text x="540" y="364" text-anchor="middle" class="bar-label">Baldur's Gate 3</text>
+  <text x="540" y="378" text-anchor="middle" class="subtitle">20M copies (2025)</text>
+  <text x="540" y="88" text-anchor="middle" class="value-label" fill="#ef4444">20M</text>
+
+  <!-- Source -->
+  <text x="320" y="396" text-anchor="middle" class="subtitle">Source: Larian Studios, Owlcat Games, GameSpot, SteamCharts (2016–2025)</text>
+</svg>
