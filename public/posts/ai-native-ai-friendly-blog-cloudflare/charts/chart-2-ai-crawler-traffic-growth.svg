@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: Year-over-year AI crawler traffic growth reported by Cloudflare Radar in 2025. PerplexityBot grew 157,490%, GPTBot grew 305%, and overall AI crawling volume grew 32%.">
+  <title>AI Crawler Traffic Growth Year-over-Year</title>
+  <desc>Horizontal bar chart of YoY growth rates for AI crawlers based on Cloudflare Radar 2025 data.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .lb { font-size: 12px; }
+    .vl { font-size: 12px; font-weight: 700; }
+    .ax { font-size: 9px; opacity: 0.5; }
+    .src { font-size: 9px; opacity: 0.5; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">AI Crawler Traffic Growth, Year-over-Year</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Cloudflare Radar, 2025</text>
+  <text x="90" y="96" text-anchor="end" class="lb">PerplexityBot</text>
+  <rect x="100" y="82" width="380" height="24" rx="4" fill="#7c3aed"/>
+  <text x="486" y="98" class="vl" fill="#7c3aed">+157,490%</text>
+  <text x="90" y="146" text-anchor="end" class="lb">GPTBot</text>
+  <rect x="100" y="132" width="120" height="24" rx="4" fill="#2563eb"/>
+  <text x="226" y="148" class="vl" fill="#2563eb">+305%</text>
+  <text x="90" y="196" text-anchor="end" class="lb">Overall AI Crawling</text>
+  <rect x="100" y="182" width="46" height="24" rx="4" fill="#0891b2"/>
+  <text x="152" y="198" class="vl" fill="#0891b2">+32%</text>
+  <line x1="100" y1="60" x2="100" y2="230" stroke="currentColor" stroke-opacity="0.15"/>
+  <line x1="200" y1="60" x2="200" y2="230" stroke="currentColor" stroke-opacity="0.15"/>
+  <line x1="300" y1="60" x2="300" y2="230" stroke="currentColor" stroke-opacity="0.15"/>
+  <line x1="400" y1="60" x2="400" y2="230" stroke="currentColor" stroke-opacity="0.15"/>
+  <line x1="480" y1="60" x2="480" y2="230" stroke="currentColor" stroke-opacity="0.15"/>
+  <text x="100" y="245" text-anchor="middle" class="ax">0</text>
+  <text x="200" y="245" text-anchor="middle" class="ax">50%</text>
+  <text x="300" y="245" text-anchor="middle" class="ax">100%</text>
+  <text x="400" y="245" text-anchor="middle" class="ax">150%</text>
+  <text x="480" y="245" text-anchor="middle" class="ax">max</text>
+  <text x="280" y="278" text-anchor="middle" font-size="10" opacity="0.7">Note: PerplexityBot growth reflects low base effect; GPTBot from an established base.</text>
+  <rect x="60" y="294" width="440" height="52" rx="8" fill="none" stroke="currentColor" stroke-opacity="0.15"/>
+  <text x="76" y="314" font-size="12" font-weight="700">Why this matters</text>
+  <text x="76" y="332" font-size="10" opacity="0.75">Sites that block or fail to serve these crawlers are losing compounding visibility. GPTBot alone grew 3x in one year.</text>
+  <text x="280" y="370" text-anchor="middle" class="src">Source: Cloudflare Radar, AI crawler traffic growth, 2025</text>
+</svg>
