@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Horizontal bar chart showing classic cocktails mapped to the 2:1:1 sour formula" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif">
+  <title>Classic Cocktails Mapped to the 2:1:1 Sour Formula</title>
+  <desc>Horizontal bar chart showing six classic cocktails and how each one maps to the 2:1:1 ratio of spirit to citrus to sweetener. All six cocktails share the same structural skeleton with different base spirits and citrus fruits.</desc>
+
+  <!-- Background -->
+  <rect width="640" height="420" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="320" y="32" text-anchor="middle" fill="currentColor" font-size="16" font-weight="600">Classic Cocktails Built on the 2:1:1 Sour Formula</text>
+  <text x="320" y="52" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.6">Each drink uses the same ratio — 2 parts spirit, 1 part citrus, 1 part sweet</text>
+
+  <!-- Legend -->
+  <rect x="180" y="64" width="14" height="14" rx="2" fill="#60a5fa"/>
+  <text x="198" y="76" fill="currentColor" font-size="11">Spirit (2 parts)</text>
+  <rect x="310" y="64" width="14" height="14" rx="2" fill="#f59e0b"/>
+  <text x="328" y="76" fill="currentColor" font-size="11">Citrus (1 part)</text>
+  <rect x="440" y="64" width="14" height="14" rx="2" fill="#34d399"/>
+  <text x="458" y="76" fill="currentColor" font-size="11">Sweet (1 part)</text>
+
+  <!-- Chart area -->
+  <!-- Row height: 40px, start at y=95 -->
+  <!-- Each row: cocktail name (left) + 3 stacked bars (right) -->
+  <!-- Total width for bars: 360px (representing the 4 parts total) -->
+  <!-- Spirit = 180px (2/4), Citrus = 90px (1/4), Sweet = 90px (1/4) -->
+
+  <!-- Daiquiri -->
+  <text x="110" y="120" text-anchor="end" fill="currentColor" font-size="13" font-weight="500">Daiquiri</text>
+  <rect x="120" y="107" width="180" height="20" rx="3" fill="#60a5fa" opacity="0.85"/>
+  <text x="210" y="121" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Rum</text>
+  <rect x="300" y="107" width="90" height="20" rx="3" fill="#f59e0b" opacity="0.85"/>
+  <text x="345" y="121" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Lime</text>
+  <rect x="390" y="107" width="90" height="20" rx="3" fill="#34d399" opacity="0.85"/>
+  <text x="435" y="121" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Sugar</text>
+
+  <!-- Whiskey Sour -->
+  <text x="110" y="160" text-anchor="end" fill="currentColor" font-size="13" font-weight="500">Whiskey Sour</text>
+  <rect x="120" y="147" width="180" height="20" rx="3" fill="#60a5fa" opacity="0.85"/>
+  <text x="210" y="161" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Whiskey</text>
+  <rect x="300" y="147" width="90" height="20" rx="3" fill="#f59e0b" opacity="0.85"/>
+  <text x="345" y="161" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Lemon</text>
+  <rect x="390" y="147" width="90" height="20" rx="3" fill="#34d399" opacity="0.85"/>
+  <text x="435" y="161" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Sugar</text>
+
+  <!-- Margarita -->
+  <text x="110" y="200" text-anchor="end" fill="currentColor" font-size="13" font-weight="500">Margarita</text>
+  <rect x="120" y="187" width="180" height="20" rx="3" fill="#60a5fa" opacity="0.85"/>
+  <text x="210" y="201" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Tequila</text>
+  <rect x="300" y="187" width="90" height="20" rx="3" fill="#f59e0b" opacity="0.85"/>
+  <text x="345" y="201" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Lime</text>
+  <rect x="390" y="187" width="90" height="20" rx="3" fill="#34d399" opacity="0.85"/>
+  <text x="435" y="201" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Triple Sec</text>
+
+  <!-- Gimlet -->
+  <text x="110" y="240" text-anchor="end" fill="currentColor" font-size="13" font-weight="500">Gimlet</text>
+  <rect x="120" y="227" width="180" height="20" rx="3" fill="#60a5fa" opacity="0.85"/>
+  <text x="210" y="241" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Gin</text>
+  <rect x="300" y="227" width="90" height="20" rx="3" fill="#f59e0b" opacity="0.85"/>
+  <text x="345" y="241" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Lime</text>
+  <rect x="390" y="227" width="90" height="20" rx="3" fill="#34d399" opacity="0.85"/>
+  <text x="435" y="241" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Sugar</text>
+
+  <!-- Sidecar -->
+  <text x="110" y="280" text-anchor="end" fill="currentColor" font-size="13" font-weight="500">Sidecar</text>
+  <rect x="120" y="267" width="180" height="20" rx="3" fill="#60a5fa" opacity="0.85"/>
+  <text x="210" y="281" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Cognac</text>
+  <rect x="300" y="267" width="90" height="20" rx="3" fill="#f59e0b" opacity="0.85"/>
+  <text x="345" y="281" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Lemon</text>
+  <rect x="390" y="267" width="90" height="20" rx="3" fill="#34d399" opacity="0.85"/>
+  <text x="435" y="281" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Triple Sec</text>
+
+  <!-- Cosmopolitan -->
+  <text x="110" y="320" text-anchor="end" fill="currentColor" font-size="13" font-weight="500">Cosmopolitan</text>
+  <rect x="120" y="307" width="180" height="20" rx="3" fill="#60a5fa" opacity="0.85"/>
+  <text x="210" y="321" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Vodka</text>
+  <rect x="300" y="307" width="90" height="20" rx="3" fill="#f59e0b" opacity="0.85"/>
+  <text x="345" y="321" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Lime</text>
+  <rect x="390" y="307" width="90" height="20" rx="3" fill="#34d399" opacity="0.85"/>
+  <text x="435" y="321" text-anchor="middle" fill="#fff" font-size="10" font-weight="500">Triple Sec</text>
+
+  <!-- Footer -->
+  <line x1="120" y1="350" x2="480" y2="350" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+  <text x="320" y="370" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.5">Source: TheCocktailDB &amp; Difford's Guide, 2025 — 60%+ of classic cocktails derive from this single formula</text>
+  <text x="320" y="390" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.5">Ratio: 2 parts spirit : 1 part citrus : 1 part sweetener</text>
+</svg>

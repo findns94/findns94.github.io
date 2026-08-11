@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Grouped bar chart comparing cost per drink in USD: home-made averages $2.30 per cocktail while bar prices average $14.50, showing 84% savings" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif">
+  <title>Cost Per Drink: Home-Made vs. Bar Prices (USD)</title>
+  <desc>Grouped bar chart comparing the cost per cocktail when made at home versus purchased at a bar. Five cocktails are compared: Daiquiri, Mojito, Whiskey Sour, Paloma, and Spritz. Home-made costs range from $1.80 to $2.50 while bar prices range from $13 to $16, representing approximately 84% savings per drink.</desc>
+
+  <!-- Background -->
+  <rect width="640" height="400" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="320" y="32" text-anchor="middle" fill="currentColor" font-size="16" font-weight="600">Cost Per Drink: Home-Made vs. Bar</text>
+  <text x="320" y="52" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.6">Home mixing saves an average of 84% per cocktail</text>
+
+  <!-- Legend -->
+  <rect x="210" y="64" width="14" height="14" rx="2" fill="#60a5fa"/>
+  <text x="228" y="76" fill="currentColor" font-size="11">Home-made cost (USD)</text>
+  <rect x="380" y="64" width="14" height="14" rx="2" fill="#f97316"/>
+  <text x="398" y="76" fill="currentColor" font-size="11">Bar price (USD)</text>
+
+  <!-- Y-axis -->
+  <line x1="100" y1="90" x2="100" y2="320" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <!-- Y-axis labels -->
+  <text x="95" y="94" text-anchor="end" fill="currentColor" font-size="10" opacity="0.6">$16</text>
+  <text x="95" y="140" text-anchor="end" fill="currentColor" font-size="10" opacity="0.6">$12</text>
+  <text x="95" y="187" text-anchor="end" fill="currentColor" font-size="10" opacity="0.6">$8</text>
+  <text x="95" y="234" text-anchor="end" fill="currentColor" font-size="10" opacity="0.6">$4</text>
+  <text x="95" y="324" text-anchor="end" fill="currentColor" font-size="10" opacity="0.6">$0</text>
+
+  <!-- Grid lines -->
+  <line x1="100" y1="137" x2="560" y2="137" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+  <line x1="100" y1="184" x2="560" y2="184" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+  <line x1="100" y1="231" x2="560" y2="231" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+  <line x1="100" y1="278" x2="560" y2="278" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Chart area: x from 100 to 560, y from 90 to 320 (230px height, $0-16) -->
+  <!-- Scale: 230px / 16 = 14.375 px per dollar -->
+  <!-- Group width: ~80px per cocktail, 5 groups -->
+
+  <!-- Daiquiri: home $1.80, bar $14 -->
+  <!-- Home bar: height = 1.80 * 14.375 = 25.9, y = 320 - 25.9 = 294.1 -->
+  <!-- Bar bar: height = 14 * 14.375 = 201.25, y = 320 - 201.25 = 118.75 -->
+  <rect x="120" y="294" width="28" height="26" rx="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="134" y="312" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">1.80</text>
+  <rect x="152" y="119" width="28" height="201" rx="3" fill="#f97316" opacity="0.9"/>
+  <text x="166" y="135" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">14</text>
+  <text x="153" y="340" text-anchor="middle" fill="currentColor" font-size="11" font-weight="500">Daiquiri</text>
+
+  <!-- Mojito: home $2.10, bar $15 -->
+  <!-- Home: 2.10 * 14.375 = 30.2, y = 289.8 -->
+  <!-- Bar: 15 * 14.375 = 215.6, y = 104.4 -->
+  <rect x="210" y="290" width="28" height="30" rx="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="224" y="308" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">2.10</text>
+  <rect x="242" y="104" width="28" height="216" rx="3" fill="#f97316" opacity="0.9"/>
+  <text x="256" y="120" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">15</text>
+  <text x="243" y="340" text-anchor="middle" fill="currentColor" font-size="11" font-weight="500">Mojito</text>
+
+  <!-- Whiskey Sour: home $2.50, bar $16 -->
+  <!-- Home: 2.50 * 14.375 = 35.9, y = 284.1 -->
+  <!-- Bar: 16 * 14.375 = 230, y = 90 -->
+  <rect x="300" y="284" width="28" height="36" rx="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="314" y="302" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">2.50</text>
+  <rect x="332" y="90" width="28" height="230" rx="3" fill="#f97316" opacity="0.9"/>
+  <text x="346" y="106" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">16</text>
+  <text x="333" y="340" text-anchor="middle" fill="currentColor" font-size="11" font-weight="500">Whiskey Sour</text>
+
+  <!-- Paloma: home $2.00, bar $13 -->
+  <!-- Home: 2.00 * 14.375 = 28.75, y = 291.25 -->
+  <!-- Bar: 13 * 14.375 = 186.9, y = 133.1 -->
+  <rect x="390" y="291" width="28" height="29" rx="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="404" y="309" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">2.00</text>
+  <rect x="422" y="133" width="28" height="187" rx="3" fill="#f97316" opacity="0.9"/>
+  <text x="436" y="149" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">13</text>
+  <text x="423" y="340" text-anchor="middle" fill="currentColor" font-size="11" font-weight="500">Paloma</text>
+
+  <!-- Spritz: home $2.20, bar $14 -->
+  <!-- Home: 2.20 * 14.375 = 31.6, y = 288.4 -->
+  <!-- Bar: 14 * 14.375 = 201.25, y = 118.75 -->
+  <rect x="480" y="288" width="28" height="32" rx="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="494" y="306" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">2.20</text>
+  <rect x="512" y="119" width="28" height="201" rx="3" fill="#f97316" opacity="0.9"/>
+  <text x="526" y="135" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">14</text>
+  <text x="513" y="340" text-anchor="middle" fill="currentColor" font-size="11" font-weight="500">Spritz</text>
+
+  <!-- Average savings callout -->
+  <rect x="300" y="352" width="200" height="24" rx="12" fill="#34d399" opacity="0.15"/>
+  <text x="400" y="368" text-anchor="middle" fill="#34d399" font-size="11" font-weight="600">Average savings: 84% per drink</text>
+
+  <!-- Footer -->
+  <text x="320" y="392" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.5">Source: Industry cost analysis based on average US bar prices and retail ingredient costs, 2025</text>
+</svg>
