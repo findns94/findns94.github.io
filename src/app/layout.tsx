@@ -2,7 +2,23 @@ import type { Metadata } from 'next'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { StructuredData } from '@/components/StructuredData'
 import './globals.css'
+
+const siteUrl = 'https://findns.cc'
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Silver Bullet',
+  url: siteUrl,
+  description: "Martin Zhao's Blog — Linux, Kernel, Tech, Research, and Life",
+  publisher: {
+    '@type': 'Person',
+    name: 'FindNS94',
+    url: `${siteUrl}/about`,
+  },
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://findns.cc'),
@@ -42,6 +58,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
+        <StructuredData data={websiteSchema} />
         <LanguageProvider>
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <Header />

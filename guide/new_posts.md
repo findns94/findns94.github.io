@@ -5,15 +5,19 @@ site. Follow it so the post matches the repo's conventions and renders correctly
 
 ## 1. Repository Overview
 
-This is a **bilingual Hexo blog** (theme: [NexT](https://theme-next.js.org/)).
-Each post has an English version and a Chinese version. The site is deployed to
-`findns.cc` (previously `findns94.github.io`).
+This is a **bilingual blog** built with **Next.js 14 (App Router, static export)**
+and styled with **Tailwind CSS**. Markdown content is compiled to HTML at build
+time via `unified`/`remark`/`rehype` (GFM, KaTeX math, syntax-highlighted code).
+The site is deployed to `findns.cc` (previously `findns94.github.io`) as a static
+export to GitHub Pages.
 
 Key facts:
 - Posts live in `content/posts/<slug>/`
 - Images and charts are served from `public/posts/<slug>/`
 - The author name is `FindNS94`
 - Site title: **Silver Bullet**
+- The Next.js source lives in `src/` (`src/app/` for routes, `src/components/`
+  for UI, `src/lib/` for markdown compilation and post loading)
 
 ## 2. Directory & File Layout
 
@@ -59,7 +63,9 @@ tags: [TagOne, TagTwo, TagThree]
 **Rules:**
 - `date` / `lastUpdated` must be precise to the second: `"2026-08-08 22:30:00"`.
 - `description` is 150–160 characters and should contain one specific statistic.
-- `coverImage` and `ogImage` point to the same cover image.
+- `coverImage` and `ogImage` point to the same cover image. `ogImage` is used for
+  the post's `og:image` meta tag and JSON-LD schema — it must be an absolute-path
+  image (1200×630 recommended) so AI crawlers and social previews can render it.
 - The Chinese version translates `title`, `description`, and `coverImageAlt` into
   Chinese but keeps `coverImage`, `ogImage`, `date`, `lastUpdated`, `author`, and
   `tags` identical to the English version.
@@ -199,7 +205,42 @@ During drafting, internal linking opportunities may be marked with:
 **Delete every `INTERNAL-LINK` line** from the final markdown before finishing.
 These are drafting aids, not publishable content.
 
-## 11. Final Pre-Commit Checklist
+## 11. AI-Native & AI-Friendly Technical Requirements
+
+This site is optimized so AI systems (ChatGPT, Claude, Perplexity, Google AI
+Overviews) can crawl, parse, and **cite** its content. The infrastructure is
+already in place — your job is to feed it correctly. See the post
+[How Do You Make Your Blog AI-Native and AI-Friendly?](/posts/ai-native-ai-friendly-blog-cloudflare/)
+for the full rationale.
+
+**What's automatic (already wired up — don't break it):**
+- **JSON-LD `BlogPosting` schema** is generated per-post from the frontmatter
+  (`title`, `description`, `ogImage`, `author`, `date`, `lastUpdated`, `tags`).
+  Keep those frontmatter fields complete and accurate.
+- **`WebSite` + `Person` schema** is injected site-wide from the root layout.
+- **Per-post Open Graph + Twitter metadata** (`og:image`, `og:type: article`,
+  `article:published_time`, `twitter:card: summary_large_image`) is generated
+  from the frontmatter. A correct `ogImage` is required for rich previews.
+- **`robots.txt`** explicitly allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot,
+  OAI-SearchBot, Claude-SearchBot, Google-Extended, CCBot, Applebot-Extended).
+- **`llms.txt`** is auto-generated from the post index at build time.
+- **Static HTML export** — content ships in raw HTML, visible to crawlers that
+  don't execute JavaScript (GPTBot, ClaudeBot, PerplexityBot). Never move content
+  behind client-side rendering.
+
+**What you must do in each post:**
+- Write a fact-dense **`description`** (150–160 chars + statistic) — it becomes the
+  schema description and OG description.
+- Set a correct **`ogImage`** (the cover image path) — it becomes `og:image` and
+  the schema `image`.
+- Use **answer-first paragraphs** and **citation capsules** (see §8) — these are
+  the quotable units AI systems lift into responses.
+- Include a **FAQ section** with question-format headings — AI systems favor Q&A
+  structure for extraction.
+- Keep the **heading hierarchy clean**: one H1, H2s as questions, H3s only as
+  children of an H2. The build adds slug IDs to every heading via `rehype-slug`.
+
+## 12. Final Pre-Commit Checklist
 
 - [ ] Both `index.md` and `index.zh.md` exist.
 - [ ] Frontmatter complete: title, description (150–160 chars + stat), coverImage,

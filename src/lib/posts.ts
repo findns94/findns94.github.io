@@ -17,6 +17,13 @@ export interface PostMeta {
   excerpt: string
   excerptZh: string
   hasZh: boolean
+  // Full frontmatter fields consumed by schema + OG metadata
+  description: string
+  coverImage: string
+  coverImageAlt: string
+  ogImage: string
+  author: string
+  lastUpdated: string
 }
 
 export { slugifyTag }
@@ -62,11 +69,18 @@ function readPost(slug: string): { meta: PostMeta; contentEn: string; contentZh:
 
   const tags: string[] = Array.isArray(data.tags) ? data.tags as string[] : []
 
+  const date = data.date ? new Date(data.date as string).toISOString() : new Date().toISOString()
+  const lastUpdated = data.lastUpdated
+    ? new Date(data.lastUpdated as string).toISOString()
+    : date
+  const coverImage = (data.coverImage as string) || ''
+  const ogImage = (data.ogImage as string) || coverImage
+
   const meta: PostMeta = {
     slug,
     title: data.title as string || slug,
     titleZh,
-    date: data.date ? new Date(data.date as string).toISOString() : new Date().toISOString(),
+    date,
     tags,
     tagSlugs: tags.map((t) => slugifyTag(t)),
     categories: Array.isArray(data.categories) ? data.categories as string[] : [],
@@ -74,6 +88,12 @@ function readPost(slug: string): { meta: PostMeta; contentEn: string; contentZh:
     excerpt,
     excerptZh,
     hasZh,
+    description: (data.description as string) || excerpt.slice(0, 160),
+    coverImage,
+    coverImageAlt: (data.coverImageAlt as string) || (data.title as string) || slug,
+    ogImage,
+    author: (data.author as string) || 'FindNS94',
+    lastUpdated,
   }
 
   return { meta, contentEn, contentZh }

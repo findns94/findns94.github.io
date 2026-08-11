@@ -24,7 +24,7 @@ export function PostDetail({ title, titleZh, date, tags, htmlEn, htmlZh }: Props
     <article>
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">{displayTitle}</h1>
-        <time className="block mt-2 text-gray-500">
+        <time dateTime={date} className="block mt-2 text-gray-500">
           {displayDate}
         </time>
         {tags.length > 0 && (
