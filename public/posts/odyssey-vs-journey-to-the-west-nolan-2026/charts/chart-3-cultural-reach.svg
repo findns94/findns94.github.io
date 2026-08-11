@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Grouped bar chart comparing cultural reach metrics of Homer's Odyssey and Journey to the West: age in centuries, translations or adaptations count, and estimated total audience">
+<title>Cultural Reach: Homer's Odyssey vs Journey to the West</title>
+<desc>Grouped bar chart comparing three cultural-reach metrics for the two epic works. Age: Odyssey ~28 centuries, Journey to the West ~5 centuries. Translations/adaptations: Odyssey 70+ languages and 200+ English translations, Journey to the West 50-100+ film and TV adaptations. Estimated cumulative audience: Odyssey difficult to quantify (centuries of readers), Journey to the West 6 billion views for the 1986 TV series alone. Source: UNESCO, Wikipedia, CCTV estimates (2026).</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">Cultural Reach: The Odyssey vs Journey to the West</text>
+<text class="tick" x="280" y="46" text-anchor="middle" font-size="11">Three metrics of global cultural penetration (log scale)</text>
+<g>
+  <line class="line-grid" x1="60" y1="80" x2="540" y2="80"/>
+  <line class="line-grid" x1="60" y1="120" x2="540" y2="120"/>
+  <line class="line-grid" x1="60" y1="160" x2="540" y2="160"/>
+  <line class="line-grid" x1="60" y1="200" x2="540" y2="200"/>
+  <line class="line-grid" x1="60" y1="240" x2="540" y2="240"/>
+  <line class="line-grid" x1="60" y1="280" x2="540" y2="280"/>
+  <line class="line-grid" x1="60" y1="330" x2="540" y2="330"/>
+</g>
+<line class="axis" x1="60" y1="330" x2="540" y2="330"/>
+<line class="axis" x1="60" y1="80" x2="60" y2="330"/>
+<text class="tick" x="52" y="84" text-anchor="end" font-size="10">1B</text>
+<text class="tick" x="52" y="144" text-anchor="end" font-size="10">100M</text>
+<text class="tick" x="52" y="204" text-anchor="end" font-size="10">10M</text>
+<text class="tick" x="52" y="264" text-anchor="end" font-size="10">1M</text>
+<text class="tick" x="52" y="334" text-anchor="end" font-size="10">0</text>
+<text class="lbl" x="150" y="352" text-anchor="middle" font-size="10">Age (centuries)</text>
+<text class="lbl" x="280" y="352" text-anchor="middle" font-size="10">Translations / Adaptations</text>
+<text class="lbl" x="410" y="352" text-anchor="middle" font-size="10">Est. Audience (views)</text>
+<rect x="110" y="196" width="50" height="134" rx="3" fill="#38bdf8" opacity="0.85"/>
+<text class="op70" x="135" y="188" text-anchor="middle" font-size="10">28</text>
+<rect x="180" y="249" width="50" height="81" rx="3" fill="#f97316" opacity="0.85"/>
+<text class="op70" x="205" y="241" text-anchor="middle" font-size="10">5</text>
+<rect x="240" y="161" width="50" height="169" rx="3" fill="#38bdf8" opacity="0.85"/>
+<text class="op70" x="265" y="153" text-anchor="middle" font-size="10">200+</text>
+<rect x="310" y="213" width="50" height="117" rx="3" fill="#f97316" opacity="0.85"/>
+<text class="op70" x="335" y="205" text-anchor="middle" font-size="10">100+</text>
+<rect x="370" y="300" width="50" height="30" rx="3" fill="#38bdf8" opacity="0.85"/>
+<text class="op70" x="395" y="292" text-anchor="middle" font-size="9">~10M</text>
+<rect x="440" y="82" width="50" height="248" rx="3" fill="#f97316" opacity="0.85"/>
+<text x="465" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#f97316">6B</text>
+<rect x="380" y="360" width="12" height="12" rx="2" fill="#38bdf8" opacity="0.85"/>
+<text class="lbl" x="398" y="371" text-anchor="start" font-size="9">Homer's Odyssey</text>
+<rect x="480" y="360" width="12" height="12" rx="2" fill="#f97316" opacity="0.85"/>
+<text class="lbl" x="498" y="371" text-anchor="start" font-size="9">Journey to the West</text>
+<text class="op35" x="280" y="376" text-anchor="middle" font-size="9">Source: UNESCO Index Translationum, Wikipedia, CCTV (1986 series estimate). Log scale.</text>
+</svg>

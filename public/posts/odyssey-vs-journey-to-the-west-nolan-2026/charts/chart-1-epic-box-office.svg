@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Horizontal bar chart comparing worldwide box office gross of epic mythology films: Nolan's Odyssey leads at 1.119 billion dollars, followed by Troy at 497 million, Clash of the Titans at 493 million, and 300 at 456 million">
+<title>Mythology Epic Films by Worldwide Box Office (2026 USD)</title>
+<desc>Horizontal bar chart of worldwide box office gross for epic mythology adaptations. The Odyssey (2026): $1.119B. Troy (2004): $497M. Clash of the Titans (2010): $493M. 300 (2007): $456M. The Odyssey nearly doubles the previous genre leader. Source: Box Office Mojo / The Numbers, 2026.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">Mythology Epic Films by Worldwide Box Office</text>
+<text class="tick" x="280" y="46" text-anchor="middle" font-size="11">Gross revenue in millions USD (2026 dollars adjusted)</text>
+<g>
+  <line class="line-grid" x1="170" y1="80" x2="530" y2="80"/>
+  <line class="line-grid" x1="170" y1="120" x2="530" y2="120"/>
+  <line class="line-grid" x1="170" y1="160" x2="530" y2="160"/>
+  <line class="line-grid" x1="170" y1="200" x2="530" y2="200"/>
+  <line class="line-grid" x1="170" y1="240" x2="530" y2="240"/>
+  <line class="line-grid" x1="170" y1="280" x2="530" y2="280"/>
+  <line class="line-grid" x1="170" y1="320" x2="530" y2="320"/>
+</g>
+<line class="axis" x1="170" y1="80" x2="170" y2="320"/>
+<text class="tick" x="162" y="84" text-anchor="end" font-size="10">$0</text>
+<text class="tick" x="162" y="124" text-anchor="end" font-size="10">$250M</text>
+<text class="tick" x="162" y="164" text-anchor="end" font-size="10">$500M</text>
+<text class="tick" x="162" y="204" text-anchor="end" font-size="10">$750M</text>
+<text class="tick" x="162" y="244" text-anchor="end" font-size="10">$1,000M</text>
+<text class="tick" x="162" y="284" text-anchor="end" font-size="10">$1,250M</text>
+<text class="tick" x="162" y="324" text-anchor="end" font-size="10">$1,500M</text>
+<text class="lbl" x="120" y="104" text-anchor="middle" font-size="11">300 (2007)</text>
+<text class="lbl" x="120" y="164" text-anchor="middle" font-size="11">Clash of the Titans</text>
+<text class="lbl" x="120" y="178" text-anchor="middle" font-size="9">(2010)</text>
+<text class="lbl" x="120" y="224" text-anchor="middle" font-size="11">Troy (2004)</text>
+<text class="lbl" x="120" y="294" text-anchor="middle" font-size="11" font-weight="700">The Odyssey (2026)</text>
+<rect x="170" y="92" width="194" height="16" rx="3" fill="#6b7280" opacity="0.7"/>
+<rect x="170" y="152" width="214" height="16" rx="3" fill="#6b7280" opacity="0.7"/>
+<rect x="170" y="212" width="216" height="16" rx="3" fill="#6b7280" opacity="0.7"/>
+<rect x="170" y="282" width="348" height="16" rx="3" fill="#f97316"/>
+<text class="op70" x="368" y="104" text-anchor="start" font-size="10">$456M</text>
+<text class="op70" x="388" y="164" text-anchor="start" font-size="10">$493M</text>
+<text class="op70" x="390" y="224" text-anchor="start" font-size="10">$497M</text>
+<text x="522" y="294" text-anchor="end" font-size="11" font-weight="700" fill="#f97316">$1,119M</text>
+<text class="op35" x="280" y="350" text-anchor="middle" font-size="9">Source: Box Office Mojo / The Numbers (2026). 300 figure adjusted to 2026 USD.</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Lollipop chart showing Christopher Nolan's box office progression across five films: Dunkirk 527 million, Interstellar 731 million, Inception 836 million, Oppenheimer 983 million, and The Odyssey 1.119 billion dollars worldwide">
+<title>Nolan's Box Office Ascent: Five Films, Five Records</title>
+<desc>Lollipop chart of worldwide box office gross for Christopher Nolan's five most recent directorial films. Dunkirk (2017): $527M. Interstellar (2014): $731M. Inception (2010): $836M. Oppenheimer (2023): $983M. The Odyssey (2026): $1.119B. Each film has outgrossed its predecessor. Source: Box Office Mojo / The Numbers, 2026.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .op70 { fill: var(--fg); opacity: 0.7; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="280" y="28" text-anchor="middle" font-size="15" font-weight="700">Nolan's Box Office Ascent: Five Films</text>
+<text class="tick" x="280" y="46" text-anchor="middle" font-size="11">Worldwide gross in millions USD, chronological left to right</text>
+<g>
+  <line class="line-grid" x1="60" y1="80" x2="540" y2="80"/>
+  <line class="line-grid" x1="60" y1="130" x2="540" y2="130"/>
+  <line class="line-grid" x1="60" y1="180" x2="540" y2="180"/>
+  <line class="line-grid" x1="60" y1="230" x2="540" y2="230"/>
+  <line class="line-grid" x1="60" y1="280" x2="540" y2="280"/>
+  <line class="line-grid" x1="60" y1="330" x2="540" y2="330"/>
+</g>
+<line class="axis" x1="60" y1="330" x2="540" y2="330"/>
+<line class="axis" x1="60" y1="80" x2="60" y2="330"/>
+<text class="tick" x="52" y="84" text-anchor="end" font-size="10">$1,200M</text>
+<text class="tick" x="52" y="134" text-anchor="end" font-size="10">$1,000M</text>
+<text class="tick" x="52" y="184" text-anchor="end" font-size="10">$800M</text>
+<text class="tick" x="52" y="234" text-anchor="end" font-size="10">$600M</text>
+<text class="tick" x="52" y="284" text-anchor="end" font-size="10">$400M</text>
+<text class="tick" x="52" y="334" text-anchor="end" font-size="10">$0M</text>
+<line x1="110" y1="330" x2="110" y2="261" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="110" cy="261" r="7" fill="#38bdf8"/>
+<text class="op70" x="110" y="250" text-anchor="middle" font-size="9">$527M</text>
+<line x1="197" y1="330" x2="197" y2="220" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="197" cy="220" r="7" fill="#38bdf8"/>
+<text class="op70" x="197" y="209" text-anchor="middle" font-size="9">$731M</text>
+<line x1="284" y1="330" x2="284" y2="194" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="284" cy="194" r="7" fill="#38bdf8"/>
+<text class="op70" x="284" y="183" text-anchor="middle" font-size="9">$836M</text>
+<line x1="371" y1="330" x2="371" y2="138" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="371" cy="138" r="7" fill="#38bdf8"/>
+<text class="op70" x="371" y="127" text-anchor="middle" font-size="9">$983M</text>
+<line x1="458" y1="330" x2="458" y2="96" stroke="#f97316" stroke-width="2.5"/>
+<circle cx="458" cy="96" r="9" fill="#f97316"/>
+<text x="458" y="84" text-anchor="middle" font-size="10" font-weight="700" fill="#f97316">$1,119M</text>
+<text class="lbl" x="110" y="350" text-anchor="middle" font-size="10">Dunkirk</text>
+<text class="tick" x="110" y="362" text-anchor="middle" font-size="9">2017</text>
+<text class="lbl" x="197" y="350" text-anchor="middle" font-size="10">Interstellar</text>
+<text class="tick" x="197" y="362" text-anchor="middle" font-size="9">2014</text>
+<text class="lbl" x="284" y="350" text-anchor="middle" font-size="10">Inception</text>
+<text class="tick" x="284" y="362" text-anchor="middle" font-size="9">2010</text>
+<text class="lbl" x="371" y="350" text-anchor="middle" font-size="10">Oppenheimer</text>
+<text class="tick" x="371" y="362" text-anchor="middle" font-size="9">2023</text>
+<text class="lbl" x="458" y="350" text-anchor="middle" font-size="10" font-weight="700">The Odyssey</text>
+<text class="tick" x="458" y="362" text-anchor="middle" font-size="9">2026</text>
+<text class="op35" x="280" y="376" text-anchor="middle" font-size="9">Source: Box Office Mojo / The Numbers (2026). Figures not inflation-adjusted.</text>
+</svg>
