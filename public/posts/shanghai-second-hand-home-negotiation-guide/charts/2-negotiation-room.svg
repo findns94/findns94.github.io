@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Horizontal bar chart showing average negotiation room by Shanghai district tier, ranging from 4% in the inner ring to 17.5% in the far suburbs">
+  <title>Average Negotiation Room by Shanghai District Tier (2025-2026)</title>
+  <desc>A horizontal bar chart comparing the average negotiation room (议价空间) across four Shanghai district tiers. The inner ring (Huangpu, Jing'an, Xuhui, Changning) has the lowest negotiation room at 4%, while the far suburbs (Qingpu, Fengxian, Jinshan, Chongming) have the highest at 17.5%. The middle ring averages 7.5% and the outer ring 11.5%.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .bar-label { font-size: 10px; fill: currentColor; opacity: 0.85; }
+    .bar-value { font-size: 10px; fill: #ffffff; font-weight: 500; }
+    .axis-label { font-size: 9px; fill: currentColor; opacity: 0.6; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+  </style>
+
+  <defs>
+    <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Average Negotiation Room by Shanghai District Tier (2025-2026)</text>
+
+  <!-- Chart area -->
+  <g transform="translate(170, 45)">
+    <!-- Gridlines -->
+    <line x1="0" y1="0" x2="0" y2="300" class="axis-line"/>
+    <line x1="0" y1="300" x2="430" y2="300" class="axis-line"/>
+    <line x1="0" y1="0" x2="430" y2="0" class="gridline"/>
+    <line x1="100" y1="0" x2="100" y2="300" class="gridline"/>
+    <line x1="200" y1="0" x2="200" y2="300" class="gridline"/>
+    <line x1="300" y1="0" x2="300" y2="300" class="gridline"/>
+    <line x1="400" y1="0" x2="400" y2="300" class="gridline"/>
+
+    <!-- X-axis labels -->
+    <text x="0" y="318" text-anchor="middle" class="axis-label">0%</text>
+    <text x="100" y="318" text-anchor="middle" class="axis-label">5%</text>
+    <text x="200" y="318" text-anchor="middle" class="axis-label">10%</text>
+    <text x="300" y="318" text-anchor="middle" class="axis-label">15%</text>
+    <text x="400" y="318" text-anchor="middle" class="axis-label">20%</text>
+
+    <!-- Row 1: Inner Ring -->
+    <text x="-10" y="30" text-anchor="end" class="bar-label">Inner Ring</text>
+    <text x="-10" y="44" text-anchor="end" class="axis-label" style="font-size:8px;opacity:0.5;">(黄浦/静安/徐汇/长宁)</text>
+    <rect x="0" y="18" width="40" height="24" rx="3" fill="url(#barGradient)"/>
+    <text x="46" y="34" class="bar-value" style="fill:currentColor;opacity:0.8;">4%</text>
+
+    <!-- Row 2: Middle Ring -->
+    <text x="-10" y="93" text-anchor="end" class="bar-label">Middle Ring</text>
+    <text x="-10" y="107" text-anchor="end" class="axis-label" style="font-size:8px;opacity:0.5;">(普陀/杨浦/虹口/浦东内)</text>
+    <rect x="0" y="81" width="75" height="24" rx="3" fill="url(#barGradient)"/>
+    <text x="81" y="97" class="bar-value">7.5%</text>
+
+    <!-- Row 3: Outer Ring -->
+    <text x="-10" y="156" text-anchor="end" class="bar-label">Outer Ring</text>
+    <text x="-10" y="170" text-anchor="end" class="axis-label" style="font-size:8px;opacity:0.5;">(宝山/闵行/嘉定/松江)</text>
+    <rect x="0" y="144" width="115" height="24" rx="3" fill="url(#barGradient)"/>
+    <text x="121" y="160" class="bar-value">11.5%</text>
+
+    <!-- Row 4: Far Suburbs -->
+    <text x="-10" y="219" text-anchor="end" class="bar-label">Far Suburbs</text>
+    <text x="-10" y="233" text-anchor="end" class="axis-label" style="font-size:8px;opacity:0.5;">(青浦/奉贤/金山/崇明)</text>
+    <rect x="0" y="207" width="175" height="24" rx="3" fill="url(#barGradient)"/>
+    <text x="181" y="223" class="bar-value">17.5%</text>
+  </g>
+
+  <!-- Source attribution -->
+  <text x="320" y="392" text-anchor="middle" class="source">Source: Beike Research Institute district breakdown, CRIC 2025-2026</text>
+</svg>

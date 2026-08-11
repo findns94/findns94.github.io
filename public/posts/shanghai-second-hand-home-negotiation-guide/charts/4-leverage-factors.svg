@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Horizontal bar chart showing buyer negotiation leverage by factor on a 1-10 scale, with chain transactions at 9.5 and school district premium at 2.0">
+  <title>Buyer Negotiation Leverage by Factor (Expert Assessment, 2026)</title>
+  <desc>A horizontal bar chart ranking buyer negotiation leverage factors on a relative power score scale of 1 to 10. The highest leverage factor is seller in a chain transaction (连环单) at 9.5, followed by days on market over 180 at 9.0. Other factors include outer ring location (7.5), property age over 20 years (7.0), full cash payment (7.0), fast closing under 30 days (5.5), off-season timing (5.0), declining mortgage rates (3.5), and school district premium which reduces leverage at 2.0.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .bar-label { font-size: 9.5px; fill: currentColor; opacity: 0.85; }
+    .bar-value { font-size: 9px; fill: #ffffff; font-weight: 500; }
+    .axis-label { font-size: 9px; fill: currentColor; opacity: 0.6; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+    .bar-fill { fill: #16a34a; }
+    .bar-fill-low { fill: #6b7280; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Buyer Negotiation Leverage by Factor (Expert Assessment, 2026)</text>
+
+  <!-- Chart area -->
+  <g transform="translate(210, 40)">
+    <!-- Axes -->
+    <line x1="0" y1="0" x2="0" y2="320" class="axis-line"/>
+    <line x1="0" y1="320" x2="400" y2="320" class="axis-line"/>
+
+    <!-- Gridlines -->
+    <line x1="0" y1="0" x2="400" y2="0" class="gridline"/>
+    <line x1="100" y1="0" x2="100" y2="320" class="gridline"/>
+    <line x1="200" y1="0" x2="200" y2="320" class="gridline"/>
+    <line x1="300" y1="0" x2="300" y2="320" class="gridline"/>
+    <line x1="400" y1="0" x2="400" y2="320" class="gridline"/>
+
+    <!-- X-axis labels -->
+    <text x="0" y="338" text-anchor="middle" class="axis-label">0</text>
+    <text x="100" y="338" text-anchor="middle" class="axis-label">2.5</text>
+    <text x="200" y="338" text-anchor="middle" class="axis-label">5</text>
+    <text x="300" y="338" text-anchor="middle" class="axis-label">7.5</text>
+    <text x="400" y="338" text-anchor="middle" class="axis-label">10</text>
+
+    <!-- Row height = 32px, bar height = 22px -->
+    <!-- Row 1: Seller in chain transaction - 9.5 -->
+    <text x="-10" y="22" text-anchor="end" class="bar-label">Seller in chain transaction</text>
+    <rect x="0" y="8" width="380" height="22" rx="3" class="bar-fill"/>
+    <text x="386" y="22" class="bar-value">9.5</text>
+
+    <!-- Row 2: Days on market >180 - 9.0 -->
+    <text x="-10" y="54" text-anchor="end" class="bar-label">Days on market &gt;180</text>
+    <rect x="0" y="40" width="360" height="22" rx="3" class="bar-fill"/>
+    <text x="366" y="54" class="bar-value">9.0</text>
+
+    <!-- Row 3: Outer ring location - 7.5 -->
+    <text x="-10" y="86" text-anchor="end" class="bar-label">Outer ring location</text>
+    <rect x="0" y="72" width="300" height="22" rx="3" class="bar-fill"/>
+    <text x="306" y="86" class="bar-value">7.5</text>
+
+    <!-- Row 4: Property age >20 years - 7.0 -->
+    <text x="-10" y="118" text-anchor="end" class="bar-label">Property age &gt;20 years</text>
+    <rect x="0" y="104" width="280" height="22" rx="3" class="bar-fill"/>
+    <text x="286" y="118" class="bar-value">7.0</text>
+
+    <!-- Row 5: Full cash payment - 7.0 -->
+    <text x="-10" y="150" text-anchor="end" class="bar-label">Full cash payment</text>
+    <rect x="0" y="136" width="280" height="22" rx="3" class="bar-fill"/>
+    <text x="286" y="150" class="bar-value">7.0</text>
+
+    <!-- Row 6: Fast closing (<30 days) - 5.5 -->
+    <text x="-10" y="182" text-anchor="end" class="bar-label">Fast closing (&lt;30 days)</text>
+    <rect x="0" y="168" width="220" height="22" rx="3" class="bar-fill"/>
+    <text x="226" y="182" class="bar-value">5.5</text>
+
+    <!-- Row 7: Off-season timing - 5.0 -->
+    <text x="-10" y="214" text-anchor="end" class="bar-label">Off-season timing</text>
+    <rect x="0" y="200" width="200" height="22" rx="3" class="bar-fill"/>
+    <text x="206" y="214" class="bar-value">5.0</text>
+
+    <!-- Row 8: Declining mortgage rates - 3.5 -->
+    <text x="-10" y="246" text-anchor="end" class="bar-label">Declining mortgage rates</text>
+    <rect x="0" y="232" width="140" height="22" rx="3" class="bar-fill" style="fill:#6b7280;"/>
+    <text x="146" y="246" class="bar-value" style="fill:#ffffff;">3.5</text>
+
+    <!-- Row 9: School district premium - 2.0 -->
+    <text x="-10" y="278" text-anchor="end" class="bar-label">School district premium</text>
+    <text x="-10" y="291" text-anchor="end" class="axis-label" style="font-size:7.5px;opacity:0.5;">(reduces leverage)</text>
+    <rect x="0" y="264" width="80" height="22" rx="3" class="bar-fill-low"/>
+    <text x="86" y="278" class="bar-value">2.0</text>
+  </g>
+
+  <!-- Source attribution -->
+  <text x="320" y="392" text-anchor="middle" class="source">Source: Compiled from Beike Research, CRIC, brokerage industry reports 2025-2026</text>
+</svg>

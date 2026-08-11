@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Vertical lollipop bar chart showing average days on market by price segment in 2025, ranging from 75 days for under 3M RMB to 280 days for over 15M RMB">
+  <title>Average Days on Market by Price Segment (2025)</title>
+  <desc>A vertical lollipop chart showing the average days on market for Shanghai second-hand homes across five price segments in 2025. Properties under 3M RMB sell fastest at 75 days on average, while properties over 15M RMB take the longest at 280 days. The 3M-5M segment averages 105 days, 5M-8M averages 135 days, and 8M-15M averages 180 days.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .bar-label { font-size: 9px; fill: currentColor; opacity: 0.8; }
+    .bar-value { font-size: 9px; fill: currentColor; opacity: 0.9; font-weight: 500; }
+    .axis-label { font-size: 9px; fill: currentColor; opacity: 0.6; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+    .lollipop-stem { stroke: #2563eb; stroke-width: 2; stroke-opacity: 0.6; }
+    .lollipop-dot { fill: #2563eb; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Average Days on Market by Price Segment (2025)</text>
+
+  <!-- Chart area -->
+  <g transform="translate(60, 40)">
+    <!-- Y-axis gridlines -->
+    <line x1="0" y1="0" x2="520" y2="0" class="gridline"/>
+    <line x1="0" y1="60" x2="520" y2="60" class="gridline"/>
+    <line x1="0" y1="120" x2="520" y2="120" class="gridline"/>
+    <line x1="0" y1="180" x2="520" y2="180" class="gridline"/>
+    <line x1="0" y1="240" x2="520" y2="240" class="gridline"/>
+    <line x1="0" y1="300" x2="520" y2="300" class="gridline"/>
+
+    <!-- Y-axis labels -->
+    <text x="-8" y="4" text-anchor="end" class="axis-label">0</text>
+    <text x="-8" y="64" text-anchor="end" class="axis-label">50</text>
+    <text x="-8" y="124" text-anchor="end" class="axis-label">100</text>
+    <text x="-8" y="184" text-anchor="end" class="axis-label">150</text>
+    <text x="-8" y="244" text-anchor="end" class="axis-label">200</text>
+    <text x="-8" y="304" text-anchor="end" class="axis-label">250</text>
+
+    <!-- Axes -->
+    <line x1="0" y1="0" x2="0" y2="300" class="axis-line"/>
+    <line x1="0" y1="300" x2="520" y2="300" class="axis-line"/>
+
+    <!-- Y-axis title -->
+    <text x="-42" y="150" text-anchor="middle" transform="rotate(-90, -42, 150)" class="axis-label">Days</text>
+
+    <!-- Column positions: 65, 164, 263, 362, 461 -->
+
+    <!-- Bar 1: Under 3M - 75 days -> y = 300 - 75 = 225 -->
+    <line x1="65" y1="300" x2="65" y2="225" class="lollipop-stem"/>
+    <circle cx="65" cy="225" r="6" class="lollipop-dot"/>
+    <text x="65" y="216" text-anchor="middle" class="bar-value">75</text>
+    <text x="65" y="318" text-anchor="middle" class="bar-label">Under</text>
+    <text x="65" y="330" text-anchor="middle" class="bar-label">3M RMB</text>
+
+    <!-- Bar 2: 3M-5M - 105 days -> y = 300 - 105 = 195 -->
+    <line x1="164" y1="300" x2="164" y2="195" class="lollipop-stem"/>
+    <circle cx="164" cy="195" r="6" class="lollipop-dot"/>
+    <text x="164" y="186" text-anchor="middle" class="bar-value">105</text>
+    <text x="164" y="318" text-anchor="middle" class="bar-label">3M-5M</text>
+    <text x="164" y="330" text-anchor="middle" class="bar-label">RMB</text>
+
+    <!-- Bar 3: 5M-8M - 135 days -> y = 300 - 135 = 165 -->
+    <line x1="263" y1="300" x2="263" y2="165" class="lollipop-stem"/>
+    <circle cx="263" cy="165" r="6" class="lollipop-dot"/>
+    <text x="263" y="156" text-anchor="middle" class="bar-value">135</text>
+    <text x="263" y="318" text-anchor="middle" class="bar-label">5M-8M</text>
+    <text x="263" y="330" text-anchor="middle" class="bar-label">RMB</text>
+
+    <!-- Bar 4: 8M-15M - 180 days -> y = 300 - 180 = 120 -->
+    <line x1="362" y1="300" x2="362" y2="120" class="lollipop-stem"/>
+    <circle cx="362" cy="120" r="6" class="lollipop-dot"/>
+    <text x="362" y="111" text-anchor="middle" class="bar-value">180</text>
+    <text x="362" y="318" text-anchor="middle" class="bar-label">8M-15M</text>
+    <text x="362" y="330" text-anchor="middle" class="bar-label">RMB</text>
+
+    <!-- Bar 5: Over 15M - 280 days -> y = 300 - 280 = 20 -->
+    <line x1="461" y1="300" x2="461" y2="20" class="lollipop-stem"/>
+    <circle cx="461" cy="20" r="6" class="lollipop-dot"/>
+    <text x="461" y="11" text-anchor="middle" class="bar-value">280</text>
+    <text x="461" y="318" text-anchor="middle" class="bar-label">Over</text>
+    <text x="461" y="330" text-anchor="middle" class="bar-label">15M RMB</text>
+  </g>
+
+  <!-- Source attribution -->
+  <text x="320" y="392" text-anchor="middle" class="source">Source: Beike Research Institute, Centaline transaction data 2025</text>
+</svg>

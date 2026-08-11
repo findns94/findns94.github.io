@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Line chart showing Shanghai second-hand price index trend from Q1 2021 to Q1 2026, declining from 100 to approximately 82">
+  <title>Shanghai Second-Hand Price Index (Q1 2021 = 100)</title>
+  <desc>A line chart tracking the Shanghai second-hand home price index from Q1 2021 (base 100) through Q1 2026. The index declines approximately 20% from its peak, entering a buyer's market zone below 90 in Q4 2022 and stabilizing around 80-82 from Q4 2024 onward.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .axis-label { font-size: 10px; fill: currentColor; opacity: 0.7; }
+    .axis-title { font-size: 10px; fill: currentColor; opacity: 0.6; }
+    .annotation { font-size: 9px; fill: currentColor; opacity: 0.8; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Shanghai Second-Hand Price Index (Q1 2021 = 100)</text>
+
+  <!-- Chart area -->
+  <g transform="translate(60, 35)">
+    <!-- Y-axis gridlines -->
+    <line x1="0" y1="0" x2="540" y2="0" class="gridline"/>
+    <line x1="0" y1="54" x2="540" y2="54" class="gridline"/>
+    <line x1="0" y1="108" x2="540" y2="108" class="gridline"/>
+    <line x1="0" y1="162" x2="540" y2="162" class="gridline"/>
+    <line x1="0" y1="216" x2="540" y2="216" class="gridline"/>
+    <line x1="0" y1="270" x2="540" y2="270" class="gridline"/>
+
+    <!-- Y-axis labels -->
+    <text x="-8" y="4" text-anchor="end" class="axis-label">105</text>
+    <text x="-8" y="58" text-anchor="end" class="axis-label">100</text>
+    <text x="-8" y="112" text-anchor="end" class="axis-label">95</text>
+    <text x="-8" y="166" text-anchor="end" class="axis-label">90</text>
+    <text x="-8" y="220" text-anchor="end" class="axis-label">85</text>
+    <text x="-8" y="274" text-anchor="end" class="axis-label">80</text>
+
+    <!-- Axes -->
+    <line x1="0" y1="0" x2="0" y2="270" class="axis-line"/>
+    <line x1="0" y1="270" x2="540" y2="270" class="axis-line"/>
+
+    <!-- Buyer's market zone (below 90, i.e. y &gt; 162) -->
+    <rect x="0" y="162" width="540" height="108" fill="#dc2626" fill-opacity="0.06"/>
+    <line x1="0" y1="162" x2="540" y2="162" stroke="#dc2626" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="535" y="176" text-anchor="end" class="annotation" style="fill:#dc2626; opacity:0.7;">Buyer's market zone</text>
+
+    <!-- Data line -->
+    <polyline
+      points="0,54 49,75.6 98,118.8 147,162 196,199.8 245,216 294,237.6 343,248.4 392,248.4 441,237.6 490,226.8"
+      fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Data points -->
+    <circle cx="0" cy="54" r="3.5" fill="#2563eb"/>
+    <circle cx="49" cy="75.6" r="3" fill="#2563eb"/>
+    <circle cx="98" cy="118.8" r="3" fill="#2563eb"/>
+    <circle cx="147" cy="162" r="3" fill="#2563eb"/>
+    <circle cx="196" cy="199.8" r="3" fill="#2563eb"/>
+    <circle cx="245" cy="216" r="3" fill="#2563eb"/>
+    <circle cx="294" cy="237.6" r="3" fill="#2563eb"/>
+    <circle cx="343" cy="248.4" r="3" fill="#2563eb"/>
+    <circle cx="392" cy="248.4" r="3" fill="#2563eb"/>
+    <circle cx="441" cy="237.6" r="3" fill="#2563eb"/>
+    <circle cx="490" cy="226.8" r="3.5" fill="#2563eb"/>
+
+    <!-- Peak label -->
+    <text x="0" y="44" text-anchor="middle" class="axis-label" style="fill:#2563eb;">100</text>
+
+    <!-- ~20% decline annotation -->
+    <g transform="translate(245, 30)">
+      <text x="0" y="0" text-anchor="middle" class="annotation" style="fill:#dc2626;">~20% decline</text>
+      <line x1="-30" y1="6" x2="30" y2="6" stroke="#dc2626" stroke-opacity="0.6" stroke-width="1"/>
+      <line x1="0" y1="6" x2="0" y2="14" stroke="#dc2626" stroke-opacity="0.6" stroke-width="1"/>
+    </g>
+
+    <!-- X-axis labels -->
+    <text x="0" y="286" text-anchor="middle" class="axis-label">Q1'21</text>
+    <text x="49" y="286" text-anchor="middle" class="axis-label">Q4'21</text>
+    <text x="98" y="286" text-anchor="middle" class="axis-label">Q2'22</text>
+    <text x="147" y="286" text-anchor="middle" class="axis-label">Q4'22</text>
+    <text x="196" y="286" text-anchor="middle" class="axis-label">Q2'23</text>
+    <text x="245" y="286" text-anchor="middle" class="axis-label">Q4'23</text>
+    <text x="294" y="286" text-anchor="middle" class="axis-label">Q2'24</text>
+    <text x="343" y="286" text-anchor="middle" class="axis-label">Q4'24</text>
+    <text x="392" y="286" text-anchor="middle" class="axis-label">Q1'25</text>
+    <text x="441" y="286" text-anchor="middle" class="axis-label">Q4'25</text>
+    <text x="490" y="286" text-anchor="middle" class="axis-label">Q1'26</text>
+
+    <!-- Y-axis title -->
+    <text x="-42" y="135" text-anchor="middle" transform="rotate(-90, -42, 135)" class="axis-title">Index (Q1 2021 = 100)</text>
+  </g>
+
+  <!-- Source attribution -->
+  <text x="320" y="392" text-anchor="middle" class="source">Source: Beike Research Institute, CRIC, National Bureau of Statistics, 2025-2026</text>
+</svg>
