@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Grouped bar chart comparing price-to-income ratios across cities. Shanghai 29.6, Beijing 27, Tokyo 12, Hong Kong 42, New York 8, London 15, Singapore 15. Shanghai's ratio is among the highest globally.">
+  <title>Price-to-Income Ratio: Shanghai vs Global Cities</title>
+  <desc>Grouped bar chart comparing the price-to-income ratio (years of median household income needed to buy a median home) across major global cities. Shanghai: 29.6 years. Beijing: 27 years. Tokyo: 12 years. Hong Kong: 42 years. New York: 8 years. London: 15 years. Singapore: 15 years. A ratio above 5x is considered severely unaffordable by Demographia standards. Shanghai's 29.6x is roughly 6x the historical norm of 3-5x. Sources: Numbeo (2026), Demographia International Housing Affordability Report.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .subtitle { font-size: 10px; fill: currentColor; opacity: 0.45; }
+    .axis-label { font-size: 10px; fill: currentColor; opacity: 0.7; }
+    .city-label { font-size: 9px; fill: currentColor; opacity: 0.8; }
+    .value-label { font-size: 10px; font-weight: 700; }
+    .note { font-size: 9px; fill: currentColor; opacity: 0.45; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+    .threshold-line { stroke: #f97316; stroke-opacity: 0.5; stroke-width: 0.75; stroke-dasharray: 4 4; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Price-to-Income Ratio: Shanghai vs Global Cities</text>
+  <text x="320" y="38" text-anchor="middle" class="subtitle">Years of median household income to buy a median home</text>
+
+  <!-- Chart area -->
+  <g transform="translate(60, 55)">
+    <!-- Y-axis gridlines: max 50, chart height 270px, 1 unit = 5.4px, baseline at y=270 -->
+    <line x1="0" y1="0" x2="540" y2="0" class="gridline"/>
+    <line x1="0" y1="54" x2="540" y2="54" class="gridline"/>
+    <line x1="0" y1="108" x2="540" y2="108" class="gridline"/>
+    <line x1="0" y1="162" x2="540" y2="162" class="gridline"/>
+    <line x1="0" y1="216" x2="540" y2="216" class="gridline"/>
+
+    <!-- Y-axis labels -->
+    <text x="-8" y="4" text-anchor="end" class="axis-label">50</text>
+    <text x="-8" y="58" text-anchor="end" class="axis-label">40</text>
+    <text x="-8" y="112" text-anchor="end" class="axis-label">30</text>
+    <text x="-8" y="166" text-anchor="end" class="axis-label">20</text>
+    <text x="-8" y="220" text-anchor="end" class="axis-label">10</text>
+
+    <!-- Threshold line at 5x -->
+    <line x1="0" y1="243" x2="540" y2="243" class="threshold-line"/>
+    <text x="544" y="247" font-size="8" fill="#f97316" opacity="0.7">5x</text>
+
+    <!-- Bars: width=34, gap between bars=10, group spacing=15 -->
+    <!-- Shanghai: 29.6 → height = 29.6*5.4 = 159.8, y = 270-159.8 = 110.2 -->
+    <rect x="20" y="110.2" width="34" height="159.8" fill="#f97316" rx="3"/>
+    <text x="37" y="105" text-anchor="middle" class="value-label" fill="#f97316">29.6</text>
+    <text x="37" y="290" text-anchor="middle" class="city-label">Shanghai</text>
+
+    <!-- Beijing: 27 → height = 145.8, y = 270-145.8 = 124.2 -->
+    <rect x="84" y="124.2" width="34" height="145.8" fill="#38bdf8" rx="3"/>
+    <text x="101" y="119" text-anchor="middle" class="value-label" fill="#38bdf8">27</text>
+    <text x="101" y="290" text-anchor="middle" class="city-label">Beijing</text>
+
+    <!-- Tokyo: 12 → height = 64.8, y = 270-64.8 = 205.2 -->
+    <rect x="148" y="205.2" width="34" height="64.8" fill="#a78bfa" rx="3"/>
+    <text x="165" y="200" text-anchor="middle" class="value-label" fill="#a78bfa">12</text>
+    <text x="165" y="290" text-anchor="middle" class="city-label">Tokyo</text>
+
+    <!-- Hong Kong: 42 → height = 226.8, y = 270-226.8 = 43.2 -->
+    <rect x="212" y="43.2" width="34" height="226.8" fill="#f97316" opacity="0.7" rx="3"/>
+    <text x="229" y="38" text-anchor="middle" class="value-label" fill="#f97316">42</text>
+    <text x="229" y="290" text-anchor="middle" class="city-label">Hong Kong</text>
+
+    <!-- New York: 8 → height = 43.2, y = 270-43.2 = 226.8 -->
+    <rect x="296" y="226.8" width="34" height="43.2" fill="#a78bfa" rx="3"/>
+    <text x="313" y="222" text-anchor="middle" class="value-label" fill="#a78bfa">8</text>
+    <text x="313" y="290" text-anchor="middle" class="city-label">New York</text>
+
+    <!-- London: 15 → height = 81, y = 270-81 = 189 -->
+    <rect x="360" y="189" width="34" height="81" fill="#a78bfa" rx="3"/>
+    <text x="377" y="184" text-anchor="middle" class="value-label" fill="#a78bfa">15</text>
+    <text x="377" y="290" text-anchor="middle" class="city-label">London</text>
+
+    <!-- Singapore: 15 → height = 81, y = 270-81 = 189 -->
+    <rect x="424" y="189" width="34" height="81" fill="#a78bfa" rx="3"/>
+    <text x="441" y="184" text-anchor="middle" class="value-label" fill="#a78bfa">15</text>
+    <text x="441" y="290" text-anchor="middle" class="city-label">Singapore</text>
+
+    <!-- Axes -->
+    <line x1="0" y1="0" x2="0" y2="270" class="axis-line"/>
+    <line x1="0" y1="270" x2="540" y2="270" class="axis-line"/>
+
+    <!-- Legend -->
+    <rect x="20" y="305" width="10" height="10" fill="#f97316"/>
+    <text x="34" y="314" font-size="9" fill="currentColor" opacity="0.7">Chinese cities</text>
+    <rect x="120" y="305" width="10" height="10" fill="#a78bfa"/>
+    <text x="134" y="314" font-size="9" fill="currentColor" opacity="0.7">International</text>
+  </g>
+
+  <!-- Source -->
+  <text x="320" y="385" text-anchor="middle" class="source">Source: Numbeo (2026); Demographia International Housing Affordability Report</text>
+</svg>

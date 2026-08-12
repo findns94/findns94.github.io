@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Horizontal bar chart comparing Shanghai 2026 bubble indicators against classic bubble thresholds. Price-to-income: Shanghai 29.6x vs threshold 5x. Price-to-rent: Shanghai 57x vs threshold 25x. Rental yield: Shanghai 1.74% vs threshold 5%. Mortgage burden: Shanghai 202% vs threshold 100%">
+  <title>Bubble Indicators: Shanghai 2026 vs Classic Thresholds</title>
+  <desc>Horizontal bar chart comparing four housing bubble indicators for Shanghai 2026 against established bubble thresholds. Price-to-income ratio: Shanghai 29.55 years vs threshold of 5 years. Price-to-rent ratio: Shanghai 57.4 (city centre) vs threshold of 25. Gross rental yield: Shanghai 1.74% (city centre) vs threshold of 5%. Mortgage as percentage of income: Shanghai 202% vs threshold of 100%. Sources: Numbeo (2026), Demographia, IMF, BIS.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .subtitle { font-size: 10px; fill: currentColor; opacity: 0.45; }
+    .bar-label { font-size: 10px; fill: currentColor; opacity: 0.8; }
+    .bar-value { font-size: 10px; font-weight: 700; }
+    .threshold-value { font-size: 9px; fill: #f97316; opacity: 0.9; }
+    .note { font-size: 9px; fill: currentColor; opacity: 0.45; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Shanghai 2026 vs Bubble Thresholds</text>
+  <text x="320" y="38" text-anchor="middle" class="subtitle">How far each indicator has stretched beyond warning levels</text>
+
+  <!-- Legend -->
+  <rect x="200" y="48" width="12" height="12" fill="#38bdf8"/>
+  <text x="216" y="58" font-size="10" fill="currentColor" opacity="0.8">Shanghai 2026</text>
+  <rect x="320" y="48" width="12" height="12" fill="#f97316" opacity="0.5"/>
+  <text x="336" y="58" font-size="10" fill="currentColor" opacity="0.8">Bubble threshold</text>
+
+  <!-- Chart area -->
+  <g transform="translate(150, 75)">
+    <!-- Row 1: Price-to-Income (max 35x, bar area width 360px) -->
+    <text x="-10" y="14" text-anchor="end" class="bar-label">Price-to-Income</text>
+    <!-- Threshold bar: 5x → width = 5/35 * 360 = 51.4 -->
+    <rect x="0" y="4" width="51.4" height="16" fill="#f97316" opacity="0.5" rx="2"/>
+    <text x="55" y="16" class="threshold-value">5x</text>
+    <!-- Shanghai bar: 29.55x → width = 29.55/35 * 360 = 303.7 -->
+    <rect x="0" y="4" width="303.7" height="16" fill="#38bdf8" rx="2"/>
+    <text x="308" y="16" class="bar-value" fill="#38bdf8">29.6x</text>
+
+    <!-- Row 2: Price-to-Rent -->
+    <text x="-10" y="54" text-anchor="end" class="bar-label">Price-to-Rent</text>
+    <!-- Threshold bar: 25x → width = 25/60 * 360 = 150 -->
+    <rect x="0" y="44" width="150" height="16" fill="#f97316" opacity="0.5" rx="2"/>
+    <text x="154" y="56" class="threshold-value">25x</text>
+    <!-- Shanghai bar: 57.4x → width = 57.4/60 * 360 = 344.4 -->
+    <rect x="0" y="44" width="344.4" height="16" fill="#38bdf8" rx="2"/>
+    <text x="349" y="56" class="bar-value" fill="#38bdf8">57.4x</text>
+
+    <!-- Row 3: Rental Yield (inverted: lower yield = worse, max inverted value 60) -->
+    <text x="-10" y="94" text-anchor="end" class="bar-label">Rental Yield (inv.)</text>
+    <!-- Threshold bar: 5% yield → inverted = 20 → width = 20/60 * 360 = 120 -->
+    <rect x="0" y="84" width="120" height="16" fill="#f97316" opacity="0.5" rx="2"/>
+    <text x="124" y="96" class="threshold-value">5%</text>
+    <!-- Shanghai bar: 1.74% yield → inverted = 57.5 → width = 57.5/60 * 360 = 345 -->
+    <rect x="0" y="84" width="345" height="16" fill="#38bdf8" rx="2"/>
+    <text x="350" y="96" class="bar-value" fill="#38bdf8">1.74%</text>
+
+    <!-- Row 4: Mortgage Burden -->
+    <text x="-10" y="134" text-anchor="end" class="bar-label">Mortgage / Income</text>
+    <!-- Threshold bar: 100% → width = 100/250 * 360 = 144 -->
+    <rect x="0" y="124" width="144" height="16" fill="#f97316" opacity="0.5" rx="2"/>
+    <text x="148" y="136" class="threshold-value">100%</text>
+    <!-- Shanghai bar: 202% → width = 202/250 * 360 = 290.9 -->
+    <rect x="0" y="124" width="290.9" height="16" fill="#38bdf8" rx="2"/>
+    <text x="295" y="136" class="bar-value" fill="#38bdf8">202%</text>
+
+    <!-- Divider -->
+    <line x1="0" y1="155" x2="280" y2="155" stroke="currentColor" opacity="0.1"/>
+
+    <!-- Interpretation note -->
+    <text x="180" y="175" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.6">Bars extending past the orange threshold = bubble territory</text>
+    <text x="180" y="195" text-anchor="middle" class="note">Price-to-income &gt;5x and price-to-rent &gt;25x are classic IMF/BIS overvaluation signals.</text>
+    <text x="180" y="210" text-anchor="middle" class="note">Rental yield below 3% implies buyers ignore income fundamentals — a speculative marker.</text>
+    <text x="180" y="225" text-anchor="middle" class="note">Shanghai exceeds every threshold by 3-6x, a magnitude consistent with past bubbles.</text>
+  </g>
+
+  <!-- Source -->
+  <text x="320" y="385" text-anchor="middle" class="source">Source: Numbeo (2026); thresholds from Demographia, IMF, BIS</text>
+</svg>

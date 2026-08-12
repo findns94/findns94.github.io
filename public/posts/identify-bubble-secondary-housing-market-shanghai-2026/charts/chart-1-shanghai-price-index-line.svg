@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Line chart of Shanghai second-hand price index from Q1 2021 (100) to Q1 2026 (82), showing a 20 percent decline from peak with stabilization around 80-82 since late 2024">
+  <title>Shanghai Second-Hand Price Index (Q1 2021 = 100)</title>
+  <desc>A line chart tracking the Shanghai second-hand home price index from Q1 2021 (base 100) through Q1 2026. The index declines roughly 20 percent from its peak, falling through 2021-2023 then stabilizing around 80-82 from Q4 2024 onward. Source: Beike Research Institute, CRIC, National Bureau of Statistics (2025-2026).</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .axis-label { font-size: 10px; fill: currentColor; opacity: 0.7; }
+    .annotation { font-size: 10px; fill: currentColor; opacity: 0.8; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+    .peak-line { stroke: #f97316; stroke-opacity: 0.4; stroke-width: 0.75; stroke-dasharray: 4 4; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Shanghai Second-Hand Price Index (Q1 2021 = 100)</text>
+
+  <!-- Chart area -->
+  <g transform="translate(70, 40)">
+    <!-- Y-axis gridlines: scale 0-105, 1 unit = 2.5px, baseline at y=262.5 -->
+    <line x1="0" y1="0" x2="520" y2="0" class="gridline"/>
+    <line x1="0" y1="62.5" x2="520" y2="62.5" class="gridline"/>
+    <line x1="0" y1="125" x2="520" y2="125" class="gridline"/>
+    <line x1="0" y1="187.5" x2="520" y2="187.5" class="gridline"/>
+    <line x1="0" y1="250" x2="520" y2="250" class="gridline"/>
+
+    <!-- Y-axis labels -->
+    <text x="-10" y="4" text-anchor="end" class="axis-label">105</text>
+    <text x="-10" y="66.5" text-anchor="end" class="axis-label">100</text>
+    <text x="-10" y="129" text-anchor="end" class="axis-label">95</text>
+    <text x="-10" y="191.5" text-anchor="end" class="axis-label">90</text>
+    <text x="-10" y="254" text-anchor="end" class="axis-label">85</text>
+
+    <!-- Peak reference line -->
+    <line x1="0" y1="62.5" x2="520" y2="62.5" class="peak-line"/>
+    <text x="524" y="66.5" font-size="8" fill="#f97316" opacity="0.7">Peak</text>
+
+    <!-- X-axis labels -->
+    <text x="0" y="286" text-anchor="middle" class="axis-label">Q1'21</text>
+    <text x="74" y="286" text-anchor="middle" class="axis-label">Q3'21</text>
+    <text x="148" y="286" text-anchor="middle" class="axis-label">Q1'22</text>
+    <text x="222" y="286" text-anchor="middle" class="axis-label">Q3'22</text>
+    <text x="296" y="286" text-anchor="middle" class="axis-label">Q1'23</text>
+    <text x="370" y="286" text-anchor="middle" class="axis-label">Q3'23</text>
+    <text x="420" y="286" text-anchor="middle" class="axis-label">Q1'24</text>
+    <text x="480" y="286" text-anchor="middle" class="axis-label">Q3'24</text>
+    <text x="520" y="286" text-anchor="middle" class="axis-label">Q1'26</text>
+
+    <!-- Axes -->
+    <line x1="0" y1="0" x2="0" y2="262.5" class="axis-line"/>
+    <line x1="0" y1="262.5" x2="520" y2="262.5" class="axis-line"/>
+
+    <!-- Area fill below line -->
+    <path d="M0,62.5 L37,68.75 L74,81.25 L111,93.75 L148,103.75 L185,112.5 L222,117.5 L259,120 L296,120 L333,123.75 L370,126.25 L400,126.25 L420,126.25 L450,126.25 L480,122.5 L510,120 L520,120 L520,262.5 L0,262.5 Z" fill="#38bdf8" opacity="0.08"/>
+
+    <!-- Line -->
+    <polyline
+      points="0,62.5 37,68.75 74,81.25 111,93.75 148,103.75 185,112.5 222,117.5 259,120 296,120 333,123.75 370,126.25 400,126.25 420,126.25 450,126.25 480,122.5 510,120 520,120"
+      fill="none"
+      stroke="#38bdf8"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Data points -->
+    <circle cx="0" cy="62.5" r="4" fill="#38bdf8"/>
+    <circle cx="74" cy="81.25" r="3" fill="#38bdf8"/>
+    <circle cx="148" cy="103.75" r="3" fill="#38bdf8"/>
+    <circle cx="222" cy="117.5" r="3" fill="#38bdf8"/>
+    <circle cx="296" cy="120" r="3" fill="#38bdf8"/>
+    <circle cx="370" cy="126.25" r="3" fill="#38bdf8"/>
+    <circle cx="450" cy="126.25" r="3" fill="#38bdf8"/>
+    <circle cx="520" cy="120" r="4" fill="#38bdf8"/>
+
+    <!-- Annotation: ~20% below peak -->
+    <text x="260" y="82" text-anchor="middle" font-size="11" fill="#f97316" font-weight="700" opacity="0.9">~20% below peak</text>
+
+    <!-- Stabilization annotation -->
+    <text x="485" y="138" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">Stabilized</text>
+    <text x="485" y="148" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">80-82</text>
+  </g>
+
+  <!-- Source -->
+  <text x="320" y="385" text-anchor="middle" class="source">Source: Beike Research Institute, CRIC, National Bureau of Statistics (2025-2026)</text>
+</svg>
