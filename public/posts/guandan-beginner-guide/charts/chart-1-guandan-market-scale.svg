@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 370" role="img" aria-label="Horizontal bar chart: Guandan Online Reach vs Competitive Base 2024. All platforms peak concurrent 8 million, top mini-program peak DAU 3 million, JJ Guandan DAU 2 million, registered competitive players 150 thousand." font-family="'Inter', system-ui, sans-serif" fill="currentColor">
+  <title>Guandan Online Reach vs. Competitive Base (2024)</title>
+  <desc>Horizontal bar chart comparing Guandan online reach metrics against registered competitive player count in 2024. All platforms peak concurrent 8M, top mini-program peak DAU 3M, JJ Guandan DAU 2M, registered competitive players 150K.</desc>
+  <text x="20" y="30" font-size="16" font-weight="700" fill="currentColor">Guandan Online Reach vs. Competitive Base (2024)</text>
+  <text x="20" y="50" font-size="11" opacity="0.6" fill="currentColor">Millions of casual players vs. registered competitors</text>
+  <text x="165" y="94" font-size="12" text-anchor="end" fill="currentColor">All platforms peak concurrent</text>
+  <rect x="175" y="70" width="365" height="36" rx="4" fill="#6366f1"/>
+  <text x="546" y="94" font-size="12" font-weight="600" fill="currentColor">8M</text>
+  <text x="165" y="148" font-size="12" text-anchor="end" fill="currentColor">Top mini-program peak DAU</text>
+  <rect x="175" y="124" width="136.9" height="36" rx="4" fill="#818cf8"/>
+  <text x="318" y="148" font-size="12" font-weight="600" fill="currentColor">3M</text>
+  <text x="165" y="202" font-size="12" text-anchor="end" fill="currentColor">JJ Guandan DAU</text>
+  <rect x="175" y="178" width="91.3" height="36" rx="4" fill="#a5b4fc"/>
+  <text x="272" y="202" font-size="12" font-weight="600" fill="currentColor">2M</text>
+  <text x="165" y="256" font-size="12" text-anchor="end" fill="currentColor">Registered competitive players</text>
+  <rect x="175" y="232" width="7" height="36" rx="4" fill="#c7d2fe"/>
+  <text x="188" y="256" font-size="12" font-weight="600" fill="currentColor">150K</text>
+  <text x="20" y="358" font-size="10" opacity="0.5" fill="currentColor">Source: Baidu Baike, platform reports, China Guandan League (2024)</text>
+</svg>
