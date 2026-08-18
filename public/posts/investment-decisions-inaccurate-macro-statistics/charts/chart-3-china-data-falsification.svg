@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="560" height="380" role="img" aria-label="Grouped bar chart showing the scale of GDP and economic data falsification admitted by three Chinese regions. Inner Mongolia industrial output was inflated by 40%. Liaoning Fuxin City GDP was inflated by 25%. Tianjin Binhai New Area GDP was inflated by 33%.">
+  <title>China Regional Data Falsification Cases (Admitted Inflation)</title>
+  <desc>Grouped bar chart showing the scale of economic data falsification admitted by three Chinese regions following national audits. Inner Mongolia inflated industrial output data by approximately 40% for 2016. Liaoning province (Fuxin City) inflated GDP by 20-25% during 2010-2014. Tianjin Binhai New Area inflated GDP by roughly one-third (33%) in 2016. Sources: NBS China, Reuters, Caixin, 2017-2018.</desc>
+  <style>
+    :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+    @media (prefers-color-scheme: dark) {
+      :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+    }
+    text { fill: var(--fg); }
+    .tick { fill: var(--fg-min); opacity: 0.55; }
+    .lbl { fill: var(--fg-min); opacity: 0.8; }
+    .op35 { fill: var(--fg-min); opacity: 0.35; }
+    .op70 { fill: var(--fg); opacity: 0.7; }
+    .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+    .axis { stroke: var(--axis); stroke-width: 1; }
+  </style>
+
+  <!-- Y axis line -->
+  <line class="axis" x1="140" y1="40" x2="140" y2="300"/>
+
+  <!-- X axis line -->
+  <line class="axis" x1="140" y1="300" x2="520" y2="300"/>
+
+  <!-- Y axis gridlines (0% to 50%) -->
+  <!-- Scale: 0% at y=300, 50% at y=40. px_per_unit = (300-40)/50 = 5.2 -->
+  <line class="line-grid" x1="140" y1="300" x2="520" y2="300"/>
+  <line class="line-grid" x1="140" y1="235" x2="520" y2="235"/>
+  <line class="line-grid" x1="140" y1="170" x2="520" y2="170"/>
+  <line class="line-grid" x1="140" y1="105" x2="520" y2="105"/>
+  <line class="line-grid" x1="140" y1="40" x2="520" y2="40"/>
+
+  <!-- Y axis labels -->
+  <text class="tick" x="130" y="304" text-anchor="end" font-size="10">0%</text>
+  <text class="tick" x="130" y="239" text-anchor="end" font-size="10">10%</text>
+  <text class="tick" x="130" y="174" text-anchor="end" font-size="10">20%</text>
+  <text class="tick" x="130" y="109" text-anchor="end" font-size="10">30%</text>
+  <text class="tick" x="130" y="44" text-anchor="end" font-size="10">40%</text>
+
+  <!-- Bar 1: Inner Mongolia (40%) -->
+  <!-- y = 300 - (40 * 5.2) = 92, height = 40 * 5.2 = 208 -->
+  <rect x="170" y="92" width="70" height="208" rx="4" fill="#f97316"/>
+  <text x="205" y="82" text-anchor="middle" font-size="11" font-weight="800" fill="#f97316">40%</text>
+  <text class="lbl" x="205" y="320" text-anchor="middle" font-size="10">Inner Mongolia</text>
+  <text class="tick" x="205" y="335" text-anchor="middle" font-size="9">(Industrial Output)</text>
+
+  <!-- Bar 2: Tianjin Binhai (33%) -->
+  <!-- y = 300 - (33 * 5.2) = 128.4, height = 33 * 5.2 = 171.6 -->
+  <rect x="290" y="128" width="70" height="172" rx="4" fill="#38bdf8"/>
+  <text x="325" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#38bdf8">33%</text>
+  <text class="lbl" x="325" y="320" text-anchor="middle" font-size="10">Tianjin Binhai</text>
+  <text class="tick" x="325" y="335" text-anchor="middle" font-size="9">(GDP)</text>
+
+  <!-- Bar 3: Liaoning Fuxin (25%) -->
+  <!-- y = 300 - (25 * 5.2) = 170, height = 25 * 5.2 = 130 -->
+  <rect x="410" y="170" width="70" height="130" rx="4" fill="#a78bfa"/>
+  <text x="445" y="160" text-anchor="middle" font-size="11" font-weight="800" fill="#a78bfa">25%</text>
+  <text class="lbl" x="445" y="320" text-anchor="middle" font-size="10">Liaoning (Fuxin)</text>
+  <text class="tick" x="445" y="335" text-anchor="middle" font-size="9">(GDP)</text>
+
+  <!-- Source attribution -->
+  <text class="op35" x="280" y="372" text-anchor="middle" font-size="9">Source: NBS China, Reuters, Caixin, 2017-2018</text>
+</svg>
