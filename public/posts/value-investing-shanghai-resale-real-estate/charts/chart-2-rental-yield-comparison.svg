@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 560 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-label="Horizontal bar chart comparing rental yields. Shanghai city centre 1.77%, Shanghai outside centre 2.07%, required investor benchmark 3.5%."
+>
+  <title>Gross Rental Yield — Shanghai vs. Required Benchmark</title>
+  <desc>Shanghai city-centre gross rental yield is 1.77% and outside-centre is 2.07% (Numbeo, 2026). A value investor requires at least 3.5% yield to compensate for illiquidity and risk. Shanghai yields are roughly half the required threshold.</desc>
+  <text x="280" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Gross Rental Yield — Shanghai vs. Required Benchmark</text>
+  <text x="280" y="46" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.45">Annual gross rental yield (%)</text>
+  <rect x="195" y="70.0" width="139.4" height="66.7" rx="4" fill="#f97316" />
+  <text x="342.4" y="107.3" font-size="12" font-weight="700" fill="currentColor">1.77%</text>
+  <text x="187.0" y="107.3" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Shanghai city centre</text>
+  <rect x="195" y="156.7" width="163.0" height="66.7" rx="4" fill="#38bdf8" />
+  <text x="366.0" y="194.0" font-size="12" font-weight="700" fill="currentColor">2.07%</text>
+  <text x="187.0" y="194.0" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Shanghai outside centre</text>
+  <rect x="195" y="243.3" width="275.6" height="66.7" rx="4" fill="#22c55e" />
+  <text x="478.6" y="280.7" font-size="12" font-weight="700" fill="currentColor">3.50%</text>
+  <text x="187.0" y="280.7" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Required yield (investor)</text>
+  <text x="280" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Numbeo Shanghai Property Investment, 2026</text>
+</svg>

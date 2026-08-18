@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 560 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-label="Grouped bar chart comparing price-to-rent ratios. Shanghai city centre 56.65x, Shanghai outside centre 48.20x, healthy threshold 25x."
+>
+  <title>Price-to-Rent Ratio — Shanghai vs. Healthy Threshold</title>
+  <desc>Shanghai city-centre price-to-rent ratio is 56.65x and outside-centre is 48.20x (Numbeo, 2026). A ratio above 25x is generally considered overvalued. Shanghai ratios are roughly double the healthy threshold.</desc>
+  <text x="280" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Price-to-Rent Ratio — Shanghai vs. Healthy Threshold</text>
+  <text x="280" y="46" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.45">Years of rent to recoup purchase price</text>
+  <line x1="130" y1="272.3" x2="505" y2="272.3" stroke="currentColor" opacity="0.08" />
+  <text x="122.0" y="276.3" text-anchor="end" font-size="10" fill="currentColor" opacity="0.55">10x</text>
+  <line x1="130" y1="234.6" x2="505" y2="234.6" stroke="currentColor" opacity="0.08" />
+  <text x="122.0" y="238.6" text-anchor="end" font-size="10" fill="currentColor" opacity="0.55">20x</text>
+  <line x1="130" y1="196.9" x2="505" y2="196.9" stroke="currentColor" opacity="0.08" />
+  <text x="122.0" y="200.9" text-anchor="end" font-size="10" fill="currentColor" opacity="0.55">30x</text>
+  <line x1="130" y1="159.2" x2="505" y2="159.2" stroke="currentColor" opacity="0.08" />
+  <text x="122.0" y="163.2" text-anchor="end" font-size="10" fill="currentColor" opacity="0.55">40x</text>
+  <line x1="130" y1="121.5" x2="505" y2="121.5" stroke="currentColor" opacity="0.08" />
+  <text x="122.0" y="125.5" text-anchor="end" font-size="10" fill="currentColor" opacity="0.55">50x</text>
+  <line x1="130" y1="83.8" x2="505" y2="83.8" stroke="currentColor" opacity="0.08" />
+  <text x="122.0" y="87.8" text-anchor="end" font-size="10" fill="currentColor" opacity="0.55">60x</text>
+  <line x1="130" y1="310" x2="505" y2="310" stroke="currentColor" opacity="0.3" />
+  <rect x="130.0" y="96.5" width="101.7" height="213.5" rx="4" fill="#f97316" />
+  <text x="180.8" y="88.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">56.6x</text>
+  <text x="180.8" y="326.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.7">Shanghai</text>
+  <text x="180.8" y="340.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.7">city centre</text>
+  <rect x="266.7" y="128.3" width="101.7" height="181.7" rx="4" fill="#38bdf8" />
+  <text x="317.5" y="120.3" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">48.2x</text>
+  <text x="317.5" y="326.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.7">Shanghai</text>
+  <text x="317.5" y="340.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.7">outside centre</text>
+  <rect x="403.3" y="215.8" width="101.7" height="94.2" rx="4" fill="#22c55e" />
+  <text x="454.2" y="207.8" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">25.0x</text>
+  <text x="454.2" y="326.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.7">Healthy</text>
+  <text x="454.2" y="340.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.7">threshold</text>
+  <text x="280" y="372" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Numbeo Shanghai Property Investment, 2026</text>
+</svg>
