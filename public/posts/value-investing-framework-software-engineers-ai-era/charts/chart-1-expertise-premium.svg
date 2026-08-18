@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Horizontal bar chart showing annual returns versus market average for different investor types. Top 10 percent most concentrated portfolios outperform by plus 3.0 percent. High Active Share funds outperform by plus 2.0 percent. Average active fund underperforms by minus 1.8 percent. Average equity fund investor underperforms by minus 3.4 percent.">
+  <title>The Expertise Premium: Annual Returns vs. Market Average</title>
+  <desc>Comparison of annualized returns relative to market average for four investor categories. Concentrated portfolios: +3.0%. High Active Share funds: +2.0%. Average active fund: -1.8%. Average equity fund investor: -3.4%. Sources: Brandes Institute, Vanguard, Morningstar, Dalbar QAIB, 2024-2025.</desc>
+
+  <!-- Y axis -->
+  <line x1="150" y1="30" x2="150" y2="300" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="150" y1="300" x2="530" y2="300" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Zero baseline at x=340 -->
+  <line x1="340" y1="30" x2="340" y2="300" stroke="currentColor" opacity="0.5" stroke-width="1.5"/>
+
+  <!-- X axis labels: scale 1% = 47.5px. Range -4% to +4%. -->
+  <text x="150" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">-4%</text>
+  <text x="245" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">-2%</text>
+  <text x="340" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">0%</text>
+  <text x="435" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">+2%</text>
+  <text x="530" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">+4%</text>
+
+  <!-- X gridlines -->
+  <line x1="150" y1="30" x2="150" y2="300" stroke="currentColor" opacity="0.06"/>
+  <line x1="245" y1="30" x2="245" y2="300" stroke="currentColor" opacity="0.06"/>
+  <line x1="340" y1="30" x2="340" y2="300" stroke="currentColor" opacity="0.06"/>
+  <line x1="435" y1="30" x2="435" y2="300" stroke="currentColor" opacity="0.06"/>
+  <line x1="530" y1="30" x2="530" y2="300" stroke="currentColor" opacity="0.06"/>
+
+  <!-- Row 1 (y top 40): Top 10% concentrated +3.0% -> bar from 340 to 340+(3.0*47.5)=482.5, width=142.5 -->
+  <text x="142" y="58" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Top 10% Concentrated</text>
+  <rect x="340" y="40" width="142.5" height="28" rx="4" fill="#22c55e" opacity="0.9"/>
+  <text x="488" y="58" text-anchor="start" font-size="11" fill="#22c55e" font-weight="700">+3.0%</text>
+
+  <!-- Row 2 (y top 100): High Active Share +2.0% -> bar from 340 to 340+95=435, width=95 -->
+  <text x="142" y="118" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">High Active Share Funds</text>
+  <rect x="340" y="100" width="95" height="28" rx="4" fill="#4ade80" opacity="0.8"/>
+  <text x="441" y="118" text-anchor="start" font-size="11" fill="#4ade80" font-weight="700">+2.0%</text>
+
+  <!-- Row 3 (y top 160): Average active fund -1.8% -> bar from 340-(1.8*47.5)=254.5 to 340, width=85.5 -->
+  <text x="142" y="178" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Average Active Fund</text>
+  <rect x="254.5" y="160" width="85.5" height="28" rx="4" fill="#f97316" opacity="0.7"/>
+  <text x="248" y="178" text-anchor="end" font-size="11" fill="#f97316" font-weight="700">-1.8%</text>
+
+  <!-- Row 4 (y top 220): Avg equity investor -3.4% -> bar from 340-(3.4*47.5)=178.5 to 340, width=161.5 -->
+  <text x="142" y="238" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Average Equity Investor</text>
+  <rect x="178.5" y="220" width="161.5" height="28" rx="4" fill="#ef4444" opacity="0.8"/>
+  <text x="172" y="238" text-anchor="end" font-size="11" fill="#ef4444" font-weight="700">-3.4%</text>
+
+  <!-- Source -->
+  <text x="150" y="355" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Brandes Institute, Vanguard Active Share research, Morningstar Active/Passive Barometer, Dalbar QAIB. 2024-2025.</text>
+</svg>

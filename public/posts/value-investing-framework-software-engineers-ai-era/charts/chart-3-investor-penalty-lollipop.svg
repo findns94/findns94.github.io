@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Lollipop chart showing the annual return penalty from different investor behaviors. Poor market timing costs minus 12.19 percentage points in a single year. Long-term behavior gap costs minus 3.4 points annually. Active discretionary management costs minus 1.8 points. Closet indexing costs minus 0.7 points. Systematic index approach is the baseline at zero.">
+  <title>The Annual Investor Penalty: Cost of Behavior and Structure</title>
+  <desc>Lollipop chart showing annual return penalties relative to a systematic index baseline. Poor market timing (1-yr peak): -12.19pp. Long-term behavior gap: -3.4pp. Active discretionary management: -1.8pp. Closet indexing: -0.7pp. Systematic index: 0pp baseline. Sources: Dalbar QAIB, Morningstar, Vanguard, 2024-2025.</desc>
+
+  <!-- Y axis -->
+  <line x1="180" y1="30" x2="180" y2="330" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis (zero baseline) -->
+  <line x1="180" y1="330" x2="530" y2="330" stroke="currentColor" opacity="0.3"/>
+
+  <!-- X axis labels: range -14% to 0%. Scale: 1% = (530-180)/14 = 25px -->
+  <text x="530" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">0%</text>
+ <text x="405" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">-5%</text>
+  <text x="280" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">-10%</text>
+  <text x="180" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">-14%</text>
+
+  <!-- X gridlines -->
+  <line x1="180" y1="30" x2="180" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="280" y1="30" x2="280" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="405" y1="30" x2="405" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="530" y1="30" x2="530" y2="330" stroke="currentColor" opacity="0.06"/>
+
+  <!-- Row 1 (y center 60): Poor market timing -12.19% -> x = 530-(12.19*25)=530-304.75=225.25 -->
+  <text x="172" y="64" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Poor Market Timing (1-yr)</text>
+  <line x1="530" y1="60" x2="225.25" y2="60" stroke="#ef4444" stroke-width="2" opacity="0.9"/>
+  <circle cx="225.25" cy="60" r="6" fill="#ef4444" opacity="0.9"/>
+  <text x="219" y="50" text-anchor="end" font-size="11" fill="#ef4444" font-weight="700">-12.2pp</text>
+
+  <!-- Row 2 (y center 120): Long-term behavior gap -3.4% -> x = 530-(3.4*25)=530-85=445 -->
+  <text x="172" y="124" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Long-term Behavior Gap</text>
+  <line x1="530" y1="120" x2="445" y2="120" stroke="#f97316" stroke-width="2" opacity="0.9"/>
+  <circle cx="445" cy="120" r="6" fill="#f97316" opacity="0.9"/>
+  <text x="441" y="110" text-anchor="end" font-size="11" fill="#f97316" font-weight="700">-3.4pp</text>
+
+  <!-- Row 3 (y center 180): Active discretionary -1.8% -> x = 530-(1.8*25)=530-45=485 -->
+  <text x="172" y="184" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Active Discretionary Mgmt</text>
+  <line x1="530" y1="180" x2="485" y2="180" stroke="#eab308" stroke-width="2" opacity="0.9"/>
+  <circle cx="485" cy="180" r="6" fill="#eab308" opacity="0.9"/>
+  <text x="481" y="170" text-anchor="end" font-size="11" fill="#eab308" font-weight="700">-1.8pp</text>
+
+  <!-- Row 4 (y center 240): Closet indexing -0.7% -> x = 530-(0.7*25)=530-17.5=512.5 -->
+  <text x="172" y="244" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Closet Indexing</text>
+  <line x1="530" y1="240" x2="512.5" y2="240" stroke="#38bdf8" stroke-width="2" opacity="0.9"/>
+  <circle cx="512.5" cy="240" r="6" fill="#38bdf8" opacity="0.9"/>
+  <text x="509" y="230" text-anchor="end" font-size="11" fill="#38bdf8" font-weight="700">-0.7pp</text>
+
+  <!-- Row 5 (y center 300): Systematic index 0% -> baseline dot at x=530 -->
+  <text x="172" y="304" text-anchor="end" font-size="10" fill="currentColor" opacity="0.85">Systematic Index (baseline)</text>
+  <circle cx="530" cy="300" r="6" fill="#22c55e" opacity="0.9"/>
+  <text x="530" y="290" text-anchor="middle" font-size="11" fill="#22c55e" font-weight="700">0pp</text>
+
+  <!-- Source -->
+  <text x="180" y="370" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Dalbar QAIB 2025, Morningstar Active/Passive Barometer 2024, Vanguard Active Share research. 2024-2025.</text>
+</svg>

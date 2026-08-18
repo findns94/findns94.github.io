@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Grouped bar chart showing value factor (HML) annual returns from 2020 to 2026. 2020 was minus 17 percent, 2021 was minus 8 percent, 2022 was plus 12 percent, 2023 was minus 5 percent, 2024 was minus 2 percent, and 2025 to 2026 was plus 20.33 percent. Value factor struggled during tech and growth dominance but recovered strongly in 2025-2026.">
+  <title>Value Factor (HML) Annual Returns: 2020-2026</title>
+  <desc>Annual value factor performance showing the struggle during tech/growth dominance (2020-2024) and strong recovery (2025-2026). 2020: -17%. 2021: -8%. 2022: +12%. 2023: -5%. 2024: -2%. 2025-2026: +20.33%. Sources: Kenneth French Data Library, AQR, 2020-2026.</desc>
+
+  <!-- Y axis -->
+  <line x1="60" y1="30" x2="60" y2="300" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis (zero baseline) -->
+  <line x1="60" y1="195" x2="530" y2="195" stroke="currentColor" opacity="0.5" stroke-width="1.5"/>
+
+  <!-- Y axis labels: range -20% to +25%. Scale: 1% = (195-30)/20 = 8.25px for negative, (300-195)/25 = 4.2px for positive -->
+  <!-- Simplified: zero at y=195, top y=30 (-20%), bottom y=300 (+20%) -->
+  <text x="52" y="34" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">+20%</text>
+  <text x="52" y="118" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">+10%</text>
+  <text x="52" y="198" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">0%</text>
+  <text x="52" y="278" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">-10%</text>
+  <text x="52" y="304" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">-20%</text>
+
+  <!-- Y gridlines -->
+  <line x1="60" y1="30" x2="530" y2="30" stroke="currentColor" opacity="0.06"/>
+  <line x1="60" y1="112" x2="530" y2="112" stroke="currentColor" opacity="0.06"/>
+  <line x1="60" y1="195" x2="530" y2="195" stroke="currentColor" opacity="0.06"/>
+  <line x1="60" y1="278" x2="530" y2="278" stroke="currentColor" opacity="0.06"/>
+
+  <!-- Scale: positive 1% = (195-30)/20 = 8.25px. negative 1% = (278-195)/10 = 8.3px -->
+  <!-- Bar width = 40px, gap between groups = 20px. 6 groups. -->
+  <!-- Group centers: x = 100, 175, 250, 325, 400, 475 -->
+
+  <!-- 2020: -17% -> bar from y=195 down to y=195+(17*8.3)=195+141.1=336.1 (clamp to 300), height=141.1 -->
+  <rect x="80" y="218.9" width="40" height="81.1" rx="4" fill="#ef4444" opacity="0.85"/>
+  <text x="100" y="212" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">-17%</text>
+  <text x="100" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">2020</text>
+
+  <!-- 2021: -8% -> bar from y=195 down to y=195+(8*8.3)=195+66.4=261.4, height=66.4 -->
+  <rect x="155" y="228.6" width="40" height="66.4" rx="4" fill="#ef4444" opacity="0.7"/>
+  <text x="175" y="222" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">-8%</text>
+  <text x="175" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">2021</text>
+
+  <!-- 2022: +12% -> bar from y=195-(12*8.25)=195-99=96 down to y=195, height=99 -->
+  <rect x="230" y="96" width="40" height="99" rx="4" fill="#22c55e" opacity="0.85"/>
+  <text x="250" y="88" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="700">+12%</text>
+  <text x="250" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">2022</text>
+
+  <!-- 2023: -5% -> bar from y=195 down to y=195+(5*8.3)=195+41.5=236.5, height=41.5 -->
+  <rect x="305" y="236.5" width="40" height="41.5" rx="4" fill="#ef4444" opacity="0.6"/>
+  <text x="325" y="229" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">-5%</text>
+  <text x="325" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">2023</text>
+
+  <!-- 2024: -2% -> bar from y=195 down to y=195+(2*8.3)=195+16.6=211.6, height=16.6 -->
+  <rect x="380" y="211.6" width="40" height="16.6" rx="4" fill="#ef4444" opacity="0.5"/>
+  <text x="400" y="205" text-anchor="middle" font-size="9" fill="#ef4444" font-weight="700">-2%</text>
+  <text x="400" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">2024</text>
+
+  <!-- 2025-2026: +20.33% -> bar from y=195-(20*8.25)=195-165=30 (clamp) down to y=195, height=165 -->
+  <rect x="455" y="30" width="40" height="165" rx="4" fill="#22c55e" opacity="0.9"/>
+  <text x="475" y="22" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="700">+20.3%</text>
+  <text x="475" y="320" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">2025-26</text>
+
+  <!-- Period annotation -->
+  <text x="175" y="345" text-anchor="middle" font-size="8.5" fill="#ef4444" opacity="0.6">Tech/Growth Dominance</text>
+  <text x="475" y="345" text-anchor="middle" font-size="8.5" fill="#22c55e" opacity="0.6">Value Recovery</text>
+
+  <!-- Source -->
+  <text x="60" y="365" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Kenneth French Data Library, AQR factor commentary. 2020-2026.</text>
+</svg>
