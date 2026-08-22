@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Grouped horizontal bar chart comparing employment rates by age group between China and Japan. Ages 55-59: China 55%, Japan 82%. Ages 60-64: China 27%, Japan 73%. Ages 65-69: China 15%, Japan 53%. Ages 70+: China 10%, Japan 13%. Japan's elderly employment rate far exceeds China's across all age groups under 70.">
+  <title>Employment Rates by Age Group: China vs Japan</title>
+  <desc>Grouped horizontal bar chart comparing employment rates by age group. For ages 55-59: China 55%, Japan 82%. For ages 60-64: China 27%, Japan 73%. For ages 65-69: China 15%, Japan 53%. For ages 70+: China 10%, Japan 13%. Japan's elderly employment rate far exceeds China's across all age groups under 70. Sources: CHARLS/CASS (China), Japan Statistics Bureau Labour Force Survey 2024.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .subtitle { font-size: 10px; fill: currentColor; opacity: 0.45; }
+    .axis-label { font-size: 10px; fill: currentColor; opacity: 0.7; }
+    .category-label { font-size: 10px; fill: currentColor; opacity: 0.8; }
+    .value-label { font-size: 10px; font-weight: 700; }
+    .legend-text { font-size: 10px; fill: currentColor; opacity: 0.8; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Employment Rates by Age Group: China vs Japan</text>
+  <text x="320" y="38" text-anchor="middle" class="subtitle">China's elderly employment lags far behind Japan's</text>
+
+  <!-- Legend -->
+  <rect x="200" y="50" width="12" height="12" rx="2" fill="#f97316" />
+  <text x="216" y="60" class="legend-text">China (2024 est.)</text>
+  <rect x="340" y="50" width="12" height="12" rx="2" fill="#38bdf8" />
+  <text x="356" y="60" class="legend-text">Japan (2024)</text>
+
+  <!-- Chart area -->
+  <g transform="translate(80, 75)">
+    <!-- Y axis line -->
+    <line x1="0" y1="0" x2="0" y2="270" class="axis-line" />
+    <!-- X axis line (baseline) -->
+    <line x1="0" y1="270" x2="520" y2="270" class="axis-line" />
+
+    <!-- X axis gridlines: max 100%, 520px wide, 1% = 5.2px -->
+    <line x1="0" y1="0" x2="520" y2="0" class="gridline" />
+    <line x1="104" y1="0" x2="104" y2="270" class="gridline" />
+    <line x1="208" y1="0" x2="208" y2="270" class="gridline" />
+    <line x1="312" y1="0" x2="312" y2="270" class="gridline" />
+    <line x1="416" y1="0" x2="416" y2="270" class="gridline" />
+    <line x1="520" y1="0" x2="520" y2="270" class="gridline" />
+
+    <!-- X axis labels -->
+    <text x="0" y="290" text-anchor="middle" class="axis-label">0%</text>
+    <text x="104" y="290" text-anchor="middle" class="axis-label">20%</text>
+    <text x="208" y="290" text-anchor="middle" class="axis-label">40%</text>
+    <text x="312" y="290" text-anchor="middle" class="axis-label">60%</text>
+    <text x="416" y="290" text-anchor="middle" class="axis-label">80%</text>
+    <text x="520" y="290" text-anchor="middle" class="axis-label">100%</text>
+
+    <!-- Category: 55-59 (group y=0) -->
+    <text x="-8" y="32" text-anchor="end" class="category-label">55-59</text>
+    <!-- China: 55% → width = 55*5.2 = 286 -->
+    <rect x="0" y="10" width="286" height="14" rx="3" fill="#f97316" />
+    <text x="292" y="22" class="value-label" fill="#111827">55%</text>
+    <!-- Japan: 82% → width = 82*5.2 = 426.4 -->
+    <rect x="0" y="28" width="426.4" height="14" rx="3" fill="#38bdf8" />
+    <text x="432" y="40" class="value-label" fill="#111827">82%</text>
+
+    <!-- Category: 60-64 (group y=70) -->
+    <text x="-8" y="102" text-anchor="end" class="category-label">60-64</text>
+    <!-- China: 27% → width = 27*5.2 = 140.4 -->
+    <rect x="0" y="80" width="140.4" height="14" rx="3" fill="#f97316" />
+    <text x="146" y="92" class="value-label" fill="#111827">27%</text>
+    <!-- Japan: 73% → width = 73*5.2 = 379.6 -->
+    <rect x="0" y="98" width="379.6" height="14" rx="3" fill="#38bdf8" />
+    <text x="385" y="110" class="value-label" fill="#111827">73%</text>
+
+    <!-- Category: 65-69 (group y=140) -->
+    <text x="-8" y="172" text-anchor="end" class="category-label">65-69</text>
+    <!-- China: 15% → width = 15*5.2 = 78 -->
+    <rect x="0" y="150" width="78" height="14" rx="3" fill="#f97316" />
+    <text x="84" y="162" class="value-label" fill="#111827">15%</text>
+    <!-- Japan: 53% → width = 53*5.2 = 275.6 -->
+    <rect x="0" y="168" width="275.6" height="14" rx="3" fill="#38bdf8" />
+    <text x="281" y="180" class="value-label" fill="#111827">53%</text>
+
+    <!-- Category: 70+ (group y=210) -->
+    <text x="-8" y="242" text-anchor="end" class="category-label">70+</text>
+    <!-- China: 10% → width = 10*5.2 = 52 -->
+    <rect x="0" y="220" width="52" height="14" rx="3" fill="#f97316" />
+    <text x="58" y="232" class="value-label" fill="#111827">10%</text>
+    <!-- Japan: 13% → width = 13*5.2 = 67.6 -->
+    <rect x="0" y="238" width="67.6" height="14" rx="3" fill="#38bdf8" />
+    <text x="73" y="250" class="value-label" fill="#111827">13%</text>
+  </g>
+
+  <!-- Source -->
+  <text x="320" y="390" text-anchor="middle" class="source">Sources: CHARLS/CASS (China), Japan Statistics Bureau Labour Force Survey 2024</text>
+</svg>

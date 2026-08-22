@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Donut chart showing the distribution of post-retirement occupations for former teachers in China. Private tutoring accounts for 30%, community education 20%, Silver Age Teaching Program for rural schools 15%, volunteering and NGO education 15%, curriculum consulting and textbook writing 10%, and other roles such as museum guiding and cultural education 10%.">
+  <title>Post-Retirement Occupations for Former Teachers</title>
+  <desc>Donut chart showing the distribution of post-retirement occupations for former teachers in China. Private tutoring: 30%. Community education: 20%. Silver Age Teaching Program (rural schools): 15%. Volunteering and NGO education: 15%. Curriculum consulting and textbook writing: 10%. Other roles (museum guiding, cultural education): 10%. Sources: Ministry of Education Silver Age Lecture Program, China Education News.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .subtitle { font-size: 10px; fill: currentColor; opacity: 0.45; }
+    .pct-label { font-size: 10px; font-weight: 700; fill: #111827; }
+    .legend-text { font-size: 10px; fill: currentColor; opacity: 0.8; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Post-Retirement Occupations for Former Teachers</text>
+  <text x="320" y="38" text-anchor="middle" class="subtitle">Private tutoring dominates, but diverse paths exist</text>
+
+  <!-- Donut: center cx=175, cy=200, outer R=120, inner r=72 -->
+  <!-- Segments clockwise from top, each segment = percentage * 3.6 degrees -->
+
+  <!-- Private tutoring: 30% = 108 degrees (0 to 108) -->
+  <path d="M 175 80 A 120 120 0 0 1 283.93 154.9 L 247.93 173.3 A 72 72 0 0 1 175 128 Z" fill="#f97316" />
+  <text x="268" y="122" class="pct-label">30%</text>
+
+  <!-- Community education: 20% = 72 degrees (108 to 180) -->
+  <path d="M 283.93 154.9 A 120 120 0 0 1 295 200 L 247 200 A 72 72 0 0 1 247.93 173.3 Z" fill="#38bdf8" />
+
+  <!-- Silver Age Teaching: 15% = 54 degrees (180 to 234) -->
+  <path d="M 295 200 A 120 120 0 0 1 260.27 280.5 L 226.27 246.5 A 72 72 0 0 1 247 200 Z" fill="#a78bfa" />
+  <text x="285" y="248" class="pct-label">15%</text>
+
+  <!-- Volunteering/NGO: 15% = 54 degrees (234 to 288) -->
+  <path d="M 260.27 280.5 A 120 120 0 0 1 175 320 L 175 272 A 72 72 0 0 1 226.27 246.5 Z" fill="#22c55e" />
+  <text x="218" y="308" class="pct-label">15%</text>
+
+  <!-- Curriculum consulting: 10% = 36 degrees (288 to 324) -->
+  <path d="M 175 320 A 120 120 0 0 1 114.73 302.8 L 137.73 262.8 A 72 72 0 0 1 175 272 Z" fill="#f59e0b" />
+  <text x="130" y="298" class="pct-label">10%</text>
+
+  <!-- Other: 10% = 36 degrees (324 to 360) -->
+  <path d="M 114.73 302.8 A 120 120 0 0 1 55 200 L 103 200 A 72 72 0 0 1 137.73 262.8 Z" fill="#ec4899" />
+  <text x="78" y="236" class="pct-label">10%</text>
+
+  <!-- Community education label (small segment, label outside) -->
+
+  <!-- Legend (right side) -->
+  <rect x="370" y="85" width="12" height="12" rx="2" fill="#f97316" />
+  <text x="387" y="95" class="legend-text">Private tutoring (30%)</text>
+
+  <rect x="370" y="107" width="12" height="12" rx="2" fill="#38bdf8" />
+  <text x="387" y="117" class="legend-text">Community education (20%)</text>
+
+  <rect x="370" y="129" width="12" height="12" rx="2" fill="#a78bfa" />
+  <text x="387" y="139" class="legend-text">Silver Age Teaching Program (15%)</text>
+
+  <rect x="370" y="151" width="12" height="12" rx="2" fill="#22c55e" />
+  <text x="387" y="161" class="legend-text">Volunteering / NGO (15%)</text>
+
+  <rect x="370" y="173" width="12" height="12" rx="2" fill="#f59e0b" />
+  <text x="387" y="183" class="legend-text">Curriculum consulting (10%)</text>
+
+  <rect x="370" y="195" width="12" height="12" rx="2" fill="#ec4899" />
+  <text x="387" y="205" class="legend-text">Other (museum, culture) (10%)</text>
+
+  <!-- Source -->
+  <text x="320" y="390" text-anchor="middle" class="source">Sources: Ministry of Education Silver Age Lecture Program, China Education News</text>
+</svg>

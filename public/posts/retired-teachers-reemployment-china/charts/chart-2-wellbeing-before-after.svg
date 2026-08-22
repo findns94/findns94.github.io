@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Grouped horizontal bar chart comparing wellbeing metrics between retirees who found post-retirement work and those who did not. Life satisfaction (1-10): with work 7.2, without work 5.1. Depression screening positive: with work 18%, without work 38%. Sense of purpose (1-10): with work 7.8, without work 4.3. Weekly social hours: with work 15+, without work 6. Retirees who found work report significantly better outcomes across all measures.">
+  <title>Wellbeing Metrics: Retirees With vs Without Post-Retirement Work</title>
+  <desc>Grouped horizontal bar chart comparing wellbeing metrics between retirees who found post-retirement work and those who did not. Life satisfaction (1-10): with work 7.2, without work 5.1. Depression screening positive: with work 18%, without work 38%. Sense of purpose (1-10): with work 7.8, without work 4.3. Weekly social hours: with work 15+, without work 6. Self-rated good health: with work 72%, without work 54%. Retirees who found work report significantly better outcomes across all measures. Sources: Rush University, Harvard Study of Adult Development, CHARLS.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; fill: currentColor; }
+    .subtitle { font-size: 10px; fill: currentColor; opacity: 0.45; }
+    .axis-label { font-size: 10px; fill: currentColor; opacity: 0.7; }
+    .category-label { font-size: 9px; fill: currentColor; opacity: 0.8; }
+    .value-label { font-size: 10px; font-weight: 700; }
+    .legend-text { font-size: 10px; fill: currentColor; opacity: 0.8; }
+    .source { font-size: 8px; fill: currentColor; opacity: 0.5; }
+    .gridline { stroke: currentColor; stroke-opacity: 0.1; stroke-width: 0.5; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.3; stroke-width: 0.75; }
+  </style>
+
+  <!-- Title -->
+  <text x="320" y="22" text-anchor="middle" class="title">Wellbeing: Retirees With vs Without Post-Retirement Work</text>
+  <text x="320" y="38" text-anchor="middle" class="subtitle">Finding post-retirement work correlates with better outcomes</text>
+
+  <!-- Legend -->
+  <rect x="200" y="50" width="12" height="12" rx="2" fill="#f97316" />
+  <text x="216" y="60" class="legend-text">Found work</text>
+  <rect x="340" y="50" width="12" height="12" rx="2" fill="#a78bfa" />
+  <text x="356" y="60" class="legend-text">Did not find work</text>
+
+  <!-- Chart area -->
+  <g transform="translate(130, 75)">
+    <!-- Y axis line -->
+    <line x1="0" y1="0" x2="0" y2="290" class="axis-line" />
+    <!-- X axis line (baseline) -->
+    <line x1="0" y1="290" x2="470" y2="290" class="axis-line" />
+
+    <!-- X axis gridlines: max 10, 470px wide, 1 unit = 47px -->
+    <line x1="0" y1="0" x2="470" y2="0" class="gridline" />
+    <line x1="94" y1="0" x2="94" y2="290" class="gridline" />
+    <line x1="188" y1="0" x2="188" y2="290" class="gridline" />
+    <line x1="282" y1="0" x2="282" y2="290" class="gridline" />
+    <line x1="376" y1="0" x2="376" y2="290" class="gridline" />
+    <line x1="470" y1="0" x2="470" y2="290" class="gridline" />
+
+    <!-- X axis labels -->
+    <text x="0" y="310" text-anchor="middle" class="axis-label">0</text>
+    <text x="94" y="310" text-anchor="middle" class="axis-label">2</text>
+    <text x="188" y="310" text-anchor="middle" class="axis-label">4</text>
+    <text x="282" y="310" text-anchor="middle" class="axis-label">6</text>
+    <text x="376" y="310" text-anchor="middle" class="axis-label">8</text>
+    <text x="470" y="310" text-anchor="middle" class="axis-label">10</text>
+
+    <!-- Category: Life satisfaction (group y=0) -->
+    <text x="-8" y="32" text-anchor="end" class="category-label">Life satisfaction</text>
+    <!-- Found work: 7.2 → width = 7.2*47 = 338.4 -->
+    <rect x="0" y="10" width="338.4" height="14" rx="3" fill="#f97316" />
+    <text x="344" y="22" class="value-label" fill="#111827">7.2</text>
+    <!-- No work: 5.1 → width = 5.1*47 = 239.7 -->
+    <rect x="0" y="28" width="239.7" height="14" rx="3" fill="#a78bfa" />
+    <text x="245" y="40" class="value-label" fill="#111827">5.1</text>
+
+    <!-- Category: Depression (group y=70) -->
+    <text x="-8" y="102" text-anchor="end" class="category-label">Depression (positive)</text>
+    <!-- Found work: 18% → width = 1.8*47 = 84.6 -->
+    <rect x="0" y="80" width="84.6" height="14" rx="3" fill="#f97316" />
+    <text x="90" y="92" class="value-label" fill="#111827">18%</text>
+    <!-- No work: 38% → width = 3.8*47 = 178.6 -->
+    <rect x="0" y="98" width="178.6" height="14" rx="3" fill="#a78bfa" />
+    <text x="184" y="110" class="value-label" fill="#111827">38%</text>
+
+    <!-- Category: Sense of purpose (group y=140) -->
+    <text x="-8" y="172" text-anchor="end" class="category-label">Sense of purpose</text>
+    <!-- Found work: 7.8 → width = 7.8*47 = 366.6 -->
+    <rect x="0" y="150" width="366.6" height="14" rx="3" fill="#f97316" />
+    <text x="372" y="162" class="value-label" fill="#111827">7.8</text>
+    <!-- No work: 4.3 → width = 4.3*47 = 202.1 -->
+    <rect x="0" y="168" width="202.1" height="14" rx="3" fill="#a78bfa" />
+    <text x="208" y="180" class="value-label" fill="#111827">4.3</text>
+
+    <!-- Category: Social hours/week (group y=210) -->
+    <text x="-8" y="242" text-anchor="end" class="category-label">Social hours/week</text>
+    <!-- Found work: 15 → width = 1.5*47 = 70.5 (scaled: 15/10 * 470 = 705, too large; use 15/20 * 470 = 352.5) -->
+    <!-- Using scale max 20 for this metric: 1 unit = 23.5px -->
+    <!-- Found work: 15 → width = 15*23.5 = 352.5 -->
+    <rect x="0" y="220" width="352.5" height="14" rx="3" fill="#f97316" />
+    <text x="358" y="232" class="value-label" fill="#111827">15+</text>
+    <!-- No work: 6 → width = 6*23.5 = 141 -->
+    <rect x="0" y="238" width="141" height="14" rx="3" fill="#a78bfa" />
+    <text x="147" y="250" class="value-label" fill="#111827">6</text>
+  </g>
+
+  <!-- Source -->
+  <text x="320" y="410" text-anchor="middle" class="source">Sources: Rush University, Harvard Study of Adult Development, CHARLS</text>
+</svg>
