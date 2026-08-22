@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="ndb-it-skill-requirements-breakdown-title ndb-it-skill-requirements-breakdown-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="ndb-it-skill-requirements-breakdown-title">NDB IT Skill Requirements Breakdown</title>
+  <desc id="ndb-it-skill-requirements-breakdown-desc">NDB IT Skill Requirements Breakdown. donut data: Technical Skills (programming, cloud, security, database) 35; Domain Knowledge (HRIS, compliance, procurement, workflow) 25; Soft Skills (communication, multicultural, leadership) 20; Certifications (ITIL, PMP, SDLC, DevOps) 15; Education (Master&#x27;s degree) 5.Source: NDB Job Posting Requisition 1926, 2026 .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">NDB IT Skill Requirements Breakdown</text>
+  
+  <path d="M 238.00 93.00 A 92 92 0 0 1 312.43 239.08 L 280.07 215.56 A 52 52 0 0 0 238.00 133.00 Z" fill="#f97316" />
+<path d="M 312.43 239.08 A 92 92 0 0 1 183.92 259.43 L 207.44 227.07 A 52 52 0 0 0 280.07 215.56 Z" fill="#38bdf8" />
+<path d="M 183.92 259.43 A 92 92 0 0 1 150.50 156.57 L 188.55 168.93 A 52 52 0 0 0 207.44 227.07 Z" fill="#a78bfa" />
+<path d="M 150.50 156.57 A 92 92 0 0 1 209.57 97.50 L 221.93 135.55 A 52 52 0 0 0 188.55 168.93 Z" fill="#22c55e" />
+<path d="M 209.57 97.50 A 92 92 0 0 1 238.00 93.00 L 238.00 133.00 A 52 52 0 0 0 221.93 135.55 Z" fill="#facc15" />
+<text x="238" y="182" text-anchor="middle" font-size="22" font-weight="800" fill="currentColor">100</text>
+<text x="238" y="201" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">total</text>
+<rect x="360" y="96" width="11" height="11" fill="#f97316" />
+<text x="378" y="105" font-size="11" fill="currentColor">Technical Skills (programming, cloud, security, database) 35</text>
+<rect x="360" y="124" width="11" height="11" fill="#38bdf8" />
+<text x="378" y="133" font-size="11" fill="currentColor">Domain Knowledge (HRIS, compliance, procurement, workflow) 25</text>
+<rect x="360" y="152" width="11" height="11" fill="#a78bfa" />
+<text x="378" y="161" font-size="11" fill="currentColor">Soft Skills (communication, multicultural, leadership) 20</text>
+<rect x="360" y="180" width="11" height="11" fill="#22c55e" />
+<text x="378" y="189" font-size="11" fill="currentColor">Certifications (ITIL, PMP, SDLC, DevOps) 15</text>
+<rect x="360" y="208" width="11" height="11" fill="#facc15" />
+<text x="378" y="217" font-size="11" fill="currentColor">Education (Master&#x27;s degree) 5</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: NDB Job Posting Requisition 1926, 2026</text>
+</svg>

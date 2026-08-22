@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="career-comparison-compensation-vs-work-life-balance-title career-comparison-compensation-vs-work-life-balance-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="career-comparison-compensation-vs-work-life-balance-title">Career Comparison: Compensation vs Work-Life Balance</title>
+  <desc id="career-comparison-compensation-vs-work-life-balance-desc">Career Comparison: Compensation vs Work-Life Balance. horizontal bar data: FAANG Senior Engineer 350; Commercial Bank VP 220; NDB P3/P4 Specialist 130; ADB Level 7-8 110; World Bank GG Grade 120.Source: World Bank Salary Scale 2024; Glassdoor; Levels.fyi; NDB AR 2025 .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Career Comparison: Compensation vs Work-Life Balance</text>
+  
+  <line x1="145" y1="298.0" x2="510" y2="298.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="243.0" x2="510" y2="243.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="188.0" x2="510" y2="188.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="133.0" x2="510" y2="133.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="78.0" x2="510" y2="78.0" stroke="currentColor" opacity="0.08" />
+<text x="136.0" y="102.4" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">FAANG Senior</tspan><tspan x="136.0" dy="12">Engineer</tspan></text>
+<rect x="145" y="78.0" width="365.0" height="37.6" rx="4" fill="#f97316" />
+<text x="518.0" y="102.4" font-size="11" fill="currentColor">350</text>
+<text x="136.0" y="148.0" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">Commercial Bank</tspan><tspan x="136.0" dy="12">VP</tspan></text>
+<rect x="145" y="123.6" width="229.4" height="37.6" rx="4" fill="#38bdf8" />
+<text x="382.4" y="148.0" font-size="11" fill="currentColor">220</text>
+<text x="136.0" y="193.6" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">NDB P3/P4</tspan><tspan x="136.0" dy="12">Specialist</tspan></text>
+<rect x="145" y="169.2" width="135.6" height="37.6" rx="4" fill="#a78bfa" />
+<text x="288.6" y="193.6" font-size="11" fill="currentColor">130</text>
+<text x="136.0" y="239.2" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">ADB Level 7-8</tspan></text>
+<rect x="145" y="214.8" width="114.7" height="37.6" rx="4" fill="#22c55e" />
+<text x="267.7" y="239.2" font-size="11" fill="currentColor">110</text>
+<text x="136.0" y="284.8" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">World Bank GG</tspan><tspan x="136.0" dy="12">Grade</tspan></text>
+<rect x="145" y="260.4" width="125.1" height="37.6" rx="4" fill="#facc15" />
+<text x="278.1" y="284.8" font-size="11" fill="currentColor">120</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: World Bank Salary Scale 2024; Glassdoor; Levels.fyi; NDB AR 2025</text>
+</svg>
