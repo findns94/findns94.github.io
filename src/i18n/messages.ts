@@ -19,6 +19,7 @@ export interface Messages {
   posts: {
     noPosts: string
     more: string
+    allPostsTitle: (count: number) => string
   }
   tags: {
     title: string
@@ -47,6 +48,7 @@ const en: Messages = {
   posts: {
     noPosts: 'No posts yet',
     more: 'More posts',
+    allPostsTitle: (count: number) => `All Posts (${count} posts)`,
   },
   tags: {
     title: 'Tags',
@@ -75,6 +77,7 @@ const zh: Messages = {
   posts: {
     noPosts: '暂无文章',
     more: '更多文章',
+    allPostsTitle: (count: number) => `所有文章（共 ${count} 篇）`,
   },
   tags: {
     title: '标签',

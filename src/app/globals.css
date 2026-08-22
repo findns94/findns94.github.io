@@ -12,6 +12,12 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Bilingual show/hide based on <html lang> */
+.en-only { display: inline; }
+.zh-only { display: none; }
+[lang="zh"] .en-only { display: none; }
+[lang="zh"] .zh-only { display: inline; }
+
 /* KaTeX rendering improvements */
 .katex-display {
   overflow-x: auto;
