@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="net-income-comparison-title net-income-comparison-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="net-income-comparison-title">Net Income Comparison (USD Millions)</title>
+  <desc id="net-income-comparison-desc">Net Income Comparison (USD Millions). horizontal bar data: ADB (2024) 2400; EBRD (2023) 1700; IBRD (FY2024) 1080; AIIB (2024) 600; NDB (2025) 551; IDB (2024) 550.Source: NDB Annual Report 2025; ADB, AIIB, EBRD, IBRD Annual Reports 2024 .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Net Income Comparison (USD Millions)</text>
+  
+  <line x1="145" y1="298.0" x2="510" y2="298.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="243.0" x2="510" y2="243.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="188.0" x2="510" y2="188.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="133.0" x2="510" y2="133.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="78.0" x2="510" y2="78.0" stroke="currentColor" opacity="0.08" />
+<text x="136.0" y="97.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">ADB (2024)</tspan></text>
+<rect x="145" y="78.0" width="365.0" height="30.0" rx="4" fill="#f97316" />
+<text x="518.0" y="97.5" font-size="11" fill="currentColor">2400</text>
+<text x="136.0" y="135.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">EBRD (2023)</tspan></text>
+<rect x="145" y="116.0" width="258.5" height="30.0" rx="4" fill="#38bdf8" />
+<text x="411.5" y="135.5" font-size="11" fill="currentColor">1700</text>
+<text x="136.0" y="173.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">IBRD (FY2024)</tspan></text>
+<rect x="145" y="154.0" width="164.2" height="30.0" rx="4" fill="#a78bfa" />
+<text x="317.2" y="173.5" font-size="11" fill="currentColor">1080</text>
+<text x="136.0" y="211.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">AIIB (2024)</tspan></text>
+<rect x="145" y="192.0" width="91.2" height="30.0" rx="4" fill="#22c55e" />
+<text x="244.2" y="211.5" font-size="11" fill="currentColor">600</text>
+<text x="136.0" y="249.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">NDB (2025)</tspan></text>
+<rect x="145" y="230.0" width="83.8" height="30.0" rx="4" fill="#facc15" />
+<text x="236.8" y="249.5" font-size="11" fill="currentColor">551</text>
+<text x="136.0" y="287.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">IDB (2024)</tspan></text>
+<rect x="145" y="268.0" width="83.6" height="30.0" rx="4" fill="#fb7185" />
+<text x="236.6" y="287.5" font-size="11" fill="currentColor">550</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: NDB Annual Report 2025; ADB, AIIB, EBRD, IBRD Annual Reports 2024</text>
+</svg>

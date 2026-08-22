@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="climate-finance-share-of-portfolio-title climate-finance-share-of-portfolio-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="climate-finance-share-of-portfolio-title">Climate Finance Share (% of Portfolio)</title>
+  <desc id="climate-finance-share-of-portfolio-desc">Climate Finance Share (% of Portfolio). lollipop data: AIIB 56; EBRD 50; IDB 45; ADB 40; IBRD 40; NDB 25.5.Source: Annual reports from AIIB, EBRD, NDB, ADB, IBRD, 2024-2025 .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Climate Finance Share (% of Portfolio)</text>
+  
+  <line x1="145" y1="298.0" x2="510" y2="298.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="243.0" x2="510" y2="243.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="188.0" x2="510" y2="188.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="133.0" x2="510" y2="133.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="78.0" x2="510" y2="78.0" stroke="currentColor" opacity="0.08" />
+<text x="136.0" y="100.3" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">AIIB</tspan></text>
+<line x1="145" y1="96.3" x2="510.0" y2="96.3" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="510.0" cy="96.3" r="6" fill="#f97316" />
+<text x="522.0" y="100.3" font-size="11" fill="currentColor">56</text>
+<text x="136.0" y="137.0" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">EBRD</tspan></text>
+<line x1="145" y1="133.0" x2="470.9" y2="133.0" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="470.9" cy="133.0" r="6" fill="#38bdf8" />
+<text x="482.9" y="137.0" font-size="11" fill="currentColor">50</text>
+<text x="136.0" y="173.7" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">IDB</tspan></text>
+<line x1="145" y1="169.7" x2="438.3" y2="169.7" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="438.3" cy="169.7" r="6" fill="#a78bfa" />
+<text x="450.3" y="173.7" font-size="11" fill="currentColor">45</text>
+<text x="136.0" y="210.3" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">ADB</tspan></text>
+<line x1="145" y1="206.3" x2="405.7" y2="206.3" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="405.7" cy="206.3" r="6" fill="#22c55e" />
+<text x="417.7" y="210.3" font-size="11" fill="currentColor">40</text>
+<text x="136.0" y="247.0" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">IBRD</tspan></text>
+<line x1="145" y1="243.0" x2="405.7" y2="243.0" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="405.7" cy="243.0" r="6" fill="#facc15" />
+<text x="417.7" y="247.0" font-size="11" fill="currentColor">40</text>
+<text x="136.0" y="283.7" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">NDB</tspan></text>
+<line x1="145" y1="279.7" x2="311.2" y2="279.7" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="311.2" cy="279.7" r="6" fill="#fb7185" />
+<text x="323.2" y="283.7" font-size="11" fill="currentColor">25.5</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: Annual reports from AIIB, EBRD, NDB, ADB, IBRD, 2024-2025</text>
+</svg>

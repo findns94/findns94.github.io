@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="ndb-portfolio-by-country-2025-title ndb-portfolio-by-country-2025-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="ndb-portfolio-by-country-2025-title">NDB Portfolio by Country (2025)</title>
+  <desc id="ndb-portfolio-by-country-2025-desc">NDB Portfolio by Country (2025). donut data: China 26.4; India 24.9; Brazil 18.8; South Africa 18; Russia 10.6; Bangladesh 1.3.Source: NDB Annual Report 2025 .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">NDB Portfolio by Country (2025)</text>
+  
+  <path d="M 238.00 93.00 A 92 92 0 0 1 329.64 193.08 L 289.80 189.57 A 52 52 0 0 0 238.00 133.00 Z" fill="#f97316" />
+<path d="M 329.64 193.08 A 92 92 0 0 1 230.49 276.69 L 233.76 236.83 A 52 52 0 0 0 289.80 189.57 Z" fill="#38bdf8" />
+<path d="M 230.49 276.69 A 92 92 0 0 1 150.33 212.88 L 188.45 200.76 A 52 52 0 0 0 233.76 236.83 Z" fill="#a78bfa" />
+<path d="M 150.33 212.88 A 92 92 0 0 1 175.44 117.54 L 202.64 146.87 A 52 52 0 0 0 188.45 200.76 Z" fill="#22c55e" />
+<path d="M 175.44 117.54 A 92 92 0 0 1 230.49 93.31 L 233.76 133.17 A 52 52 0 0 0 202.64 146.87 Z" fill="#facc15" />
+<path d="M 230.49 93.31 A 92 92 0 0 1 238.00 93.00 L 238.00 133.00 A 52 52 0 0 0 233.76 133.17 Z" fill="#fb7185" />
+<text x="238" y="182" text-anchor="middle" font-size="22" font-weight="800" fill="currentColor">100</text>
+<text x="238" y="201" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">total</text>
+<rect x="360" y="96" width="11" height="11" fill="#f97316" />
+<text x="378" y="105" font-size="11" fill="currentColor">China 26.4</text>
+<rect x="360" y="124" width="11" height="11" fill="#38bdf8" />
+<text x="378" y="133" font-size="11" fill="currentColor">India 24.9</text>
+<rect x="360" y="152" width="11" height="11" fill="#a78bfa" />
+<text x="378" y="161" font-size="11" fill="currentColor">Brazil 18.8</text>
+<rect x="360" y="180" width="11" height="11" fill="#22c55e" />
+<text x="378" y="189" font-size="11" fill="currentColor">South Africa 18</text>
+<rect x="360" y="208" width="11" height="11" fill="#facc15" />
+<text x="378" y="217" font-size="11" fill="currentColor">Russia 10.6</text>
+<rect x="360" y="236" width="11" height="11" fill="#fb7185" />
+<text x="378" y="245" font-size="11" fill="currentColor">Bangladesh 1.3</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: NDB Annual Report 2025</text>
+</svg>

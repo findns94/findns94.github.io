@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="total-assets-growth-usd-billions-title total-assets-growth-usd-billions-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="total-assets-growth-usd-billions-title">Total Assets Growth (USD Billions)</title>
+  <desc id="total-assets-growth-usd-billions-desc">Total Assets Growth (USD Billions). grouped bar data: 2020: NDB 100, ADB 205, AIIB 25, IBRD 280; 2021: NDB 155, ADB 215, AIIB 30, IBRD 290; 2022: NDB 210, ADB 225, AIIB 35, IBRD 300; 2023: NDB 315, ADB 235, AIIB 40, IBRD 305; 2024: NDB 356, ADB 245, AIIB 50, IBRD 310.Source: Annual reports from NDB, ADB, AIIB, EBRD, IBRD, 2020-2025 .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Total Assets Growth (USD Billions)</text>
+  <text x="280.0" y="48.0" text-anchor="middle" font-size="12" fill="var(--chart-muted, currentColor)"><tspan x="280.0" dy="0">NDB vs Peer MDBs, 2020-2025</tspan></text>
+  <line x1="72" y1="277.0" x2="492" y2="277.0" stroke="currentColor" opacity="0.08" />
+<line x1="72" y1="230.8" x2="492" y2="230.8" stroke="currentColor" opacity="0.08" />
+<line x1="72" y1="184.5" x2="492" y2="184.5" stroke="currentColor" opacity="0.08" />
+<line x1="72" y1="138.2" x2="492" y2="138.2" stroke="currentColor" opacity="0.08" />
+<line x1="72" y1="92.0" x2="492" y2="92.0" stroke="currentColor" opacity="0.08" />
+<rect x="72" y="62" width="10" height="10" fill="#f97316" />
+<text x="87" y="71" font-size="11" fill="currentColor">NDB</text>
+<rect x="177" y="62" width="10" height="10" fill="#38bdf8" />
+<text x="192" y="71" font-size="11" fill="currentColor">ADB</text>
+<rect x="282" y="62" width="10" height="10" fill="#a78bfa" />
+<text x="297" y="71" font-size="11" fill="currentColor">AIIB</text>
+<rect x="387" y="62" width="10" height="10" fill="#22c55e" />
+<text x="402" y="71" font-size="11" fill="currentColor">IBRD</text>
+<rect x="79.0" y="225.0" width="15.5" height="52.0" fill="#f97316" />
+<rect x="96.5" y="170.5" width="15.5" height="106.5" fill="#38bdf8" />
+<rect x="114.0" y="264.0" width="15.5" height="13.0" fill="#a78bfa" />
+<rect x="131.5" y="131.5" width="15.5" height="145.5" fill="#22c55e" />
+<text x="114.0" y="295.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="114.0" dy="0">2020</tspan></text>
+<rect x="163.0" y="196.5" width="15.5" height="80.5" fill="#f97316" />
+<rect x="180.5" y="165.3" width="15.5" height="111.7" fill="#38bdf8" />
+<rect x="198.0" y="261.4" width="15.5" height="15.6" fill="#a78bfa" />
+<rect x="215.5" y="126.3" width="15.5" height="150.7" fill="#22c55e" />
+<text x="198.0" y="295.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="198.0" dy="0">2021</tspan></text>
+<rect x="247.0" y="167.9" width="15.5" height="109.1" fill="#f97316" />
+<rect x="264.5" y="160.1" width="15.5" height="116.9" fill="#38bdf8" />
+<rect x="282.0" y="258.8" width="15.5" height="18.2" fill="#a78bfa" />
+<rect x="299.5" y="121.1" width="15.5" height="155.9" fill="#22c55e" />
+<text x="282.0" y="295.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="282.0" dy="0">2022</tspan></text>
+<rect x="331.0" y="113.3" width="15.5" height="163.7" fill="#f97316" />
+<rect x="348.5" y="154.9" width="15.5" height="122.1" fill="#38bdf8" />
+<rect x="366.0" y="256.2" width="15.5" height="20.8" fill="#a78bfa" />
+<rect x="383.5" y="118.5" width="15.5" height="158.5" fill="#22c55e" />
+<text x="366.0" y="295.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="366.0" dy="0">2023</tspan></text>
+<rect x="415.0" y="92.0" width="15.5" height="185.0" fill="#f97316" />
+<rect x="432.5" y="149.7" width="15.5" height="127.3" fill="#38bdf8" />
+<rect x="450.0" y="251.0" width="15.5" height="26.0" fill="#a78bfa" />
+<rect x="467.5" y="115.9" width="15.5" height="161.1" fill="#22c55e" />
+<text x="450.0" y="295.0" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="450.0" dy="0">2024</tspan></text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: Annual reports from NDB, ADB, AIIB, EBRD, IBRD, 2020-2025</text>
+</svg>
