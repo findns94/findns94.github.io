@@ -1,0 +1,70 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 560 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Duration of Major Deflation Episodes by Country</title>
+  <desc id="chart-desc">Horizontal bar chart showing the duration in years of major deflation episodes across countries. 19th Century Great Deflation (UK, US, Germany, France 1873-1896): 23 years. Japan Lost Decades (1990-2014): 20 years. Gold Bloc France (1929-1936): 7 years. US Great Depression (1929-1933): 4 years. UK Post-WWI (1920-1923): 3 years. US 1920-21 Recession: 2 years. US GFC (2008-2009): 0.5 years. Eurozone GFC (2009): 0.4 years. Episodes with decisive policy responses (US 1933, US 2009) ended faster than those with delayed responses (Gold Bloc, Japan). Source: Bordo, Lane and Redish (2004), Reinhart and Rogoff (2009), Atkeson and Weber (2023).</desc>
+
+  <!-- Data rows: category, duration, color -->
+  <!-- Layout: label at x=10, bar from x=150, length proportional to value -->
+  <!-- Max value = 23 years, chart width for bars = 370 -->
+  <!-- px_per_year = 370/23 = 16.09 -->
+
+  <!-- Row 1: 19th Century Great Deflation - 23 years -->
+  <text x="145" y="54" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">19th C. Great Deflation</text>
+  <rect x="150" y="44" width="370" height="16" rx="3" fill="#a78bfa"/>
+  <text x="525" y="56" font-size="10" font-weight="800" fill="#a78bfa">23 yr</text>
+
+  <!-- Row 2: Japan Lost Decades - 20 years -->
+  <text x="145" y="80" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">Japan Lost Decades</text>
+  <rect x="150" y="70" width="326" height="16" rx="3" fill="#f97316"/>
+  <text x="481" y="82" font-size="10" font-weight="800" fill="#f97316">20 yr</text>
+
+  <!-- Row 3: Gold Bloc (France) - 7 years -->
+  <text x="145" y="106" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">Gold Bloc (France)</text>
+  <rect x="150" y="96" width="113" height="16" rx="3" fill="#38bdf8"/>
+  <text x="268" y="108" font-size="10" font-weight="800" fill="#38bdf8">7 yr</text>
+
+  <!-- Row 4: US Great Depression - 4 years -->
+  <text x="145" y="132" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">US Great Depression</text>
+  <rect x="150" y="122" width="65" height="16" rx="3" fill="#22c55e"/>
+  <text x="220" y="134" font-size="10" font-weight="800" fill="#22c55e">4 yr</text>
+
+  <!-- Row 5: UK Post-WWI - 3 years -->
+  <text x="145" y="158" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">UK Post-WWI</text>
+  <rect x="150" y="148" width="48" height="16" rx="3" fill="#22c55e"/>
+  <text x="203" y="160" font-size="10" font-weight="800" fill="#22c55e">3 yr</text>
+
+  <!-- Row 6: US 1920-21 Recession - 2 years -->
+  <text x="145" y="184" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">US 1920-21 Recession</text>
+  <rect x="150" y="174" width="32" height="16" rx="3" fill="#22c55e"/>
+  <text x="187" y="186" font-size="10" font-weight="800" fill="#22c55e">2 yr</text>
+
+  <!-- Row 7: US GFC - 0.5 years -->
+  <text x="145" y="210" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">US GFC (2009)</text>
+  <rect x="150" y="200" width="8" height="16" rx="3" fill="#22c55e"/>
+  <text x="163" y="212" font-size="10" font-weight="800" fill="#22c55e">0.5 yr</text>
+
+  <!-- Row 8: Eurozone GFC - 0.4 years -->
+  <text x="145" y="236" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">Eurozone GFC (2009)</text>
+  <rect x="150" y="226" width="6" height="16" rx="3" fill="#22c55e"/>
+  <text x="161" y="238" font-size="10" font-weight="800" fill="#22c55e">0.4 yr</text>
+
+  <!-- Divider: Acute vs Chronic threshold -->
+  <line x1="150" y1="260" x2="520" y2="260" stroke="currentColor" opacity="0.2" stroke-dasharray="4,4"/>
+  <text x="335" y="274" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">Chronic deflation (&gt;7 yr) |---| Acute deflation (&lt;7 yr)</text>
+
+  <!-- Annotation -->
+  <text x="150" y="298" font-size="9" fill="currentColor" opacity="0.6">Key insight: Deflations with decisive policy exits (US 1933, US 2009)</text>
+  <text x="150" y="312" font-size="9" fill="currentColor" opacity="0.6">ended in months-to-years. Delayed exits (Gold Bloc, Japan) lasted decades.</text>
+
+  <!-- China reference line -->
+  <text x="145" y="338" text-anchor="end" font-size="10" fill="#f97316" opacity="0.9">China (2024-?)</text>
+  <rect x="150" y="328" width="16" height="16" rx="3" fill="#f97316" opacity="0.5"/>
+  <text x="171" y="340" font-size="10" font-weight="800" fill="#f97316">2+ yr (ongoing)</text>
+
+  <!-- Source -->
+  <text x="280" y="374" text-anchor="middle" font-size="9" fill="var(--chart-muted, currentColor)">Source: Bordo, Lane &amp; Redish (2004), Reinhart &amp; Rogoff (2009), Atkeson &amp; Weber (2023)</text>
+</svg>

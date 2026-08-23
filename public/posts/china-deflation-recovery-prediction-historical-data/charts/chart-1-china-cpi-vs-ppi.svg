@@ -1,0 +1,86 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 560 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">China CPI vs PPI (2022-2026)</title>
+  <desc id="chart-desc">Grouped bar chart comparing China's Consumer Price Index (CPI) and Producer Price Index (PPI) year-over-year percent change from 2022 to 2026. CPI values: 2022: 2.0%, 2023: 0.2%, 2024: 0.2%, 2025: 0.5%, 2026: 0.7%. PPI values: 2022: 4.1%, 2023: -3.0%, 2024: -2.2%, 2025: -1.5%, 2026: 3.5%. PPI was negative for three consecutive years (2023-2025), indicating sustained industrial deflation. Source: National Bureau of Statistics of China, Trading Economics.</desc>
+
+  <!-- Legend -->
+  <rect x="180" y="12" width="12" height="12" rx="2" fill="#f97316"/>
+  <text x="198" y="22" font-size="11" fill="currentColor" opacity="0.8">CPI (%)</text>
+  <rect x="280" y="12" width="12" height="12" rx="2" fill="#38bdf8"/>
+  <text x="298" y="22" font-size="11" fill="currentColor" opacity="0.8">PPI (%)</text>
+
+  <!-- Y-axis grid lines and labels -->
+  <line x1="60" y1="50" x2="520" y2="50" stroke="currentColor" opacity="0.08"/>
+  <text x="54" y="54" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">5</text>
+  <line x1="60" y1="100" x2="520" y2="100" stroke="currentColor" opacity="0.08"/>
+  <text x="54" y="104" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">4</text>
+  <line x1="60" y1="150" x2="520" y2="150" stroke="currentColor" opacity="0.08"/>
+  <text x="54" y="154" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">2</text>
+  <!-- Zero baseline -->
+  <line x1="60" y1="200" x2="520" y2="200" stroke="currentColor" opacity="0.4" stroke-width="1.5"/>
+  <text x="54" y="204" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">0</text>
+  <line x1="60" y1="250" x2="520" y2="250" stroke="currentColor" opacity="0.08"/>
+  <text x="54" y="254" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">-2</text>
+  <line x1="60" y1="300" x2="520" y2="300" stroke="currentColor" opacity="0.08"/>
+  <text x="54" y="304" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">-4</text>
+  <line x1="60" y1="320" x2="520" y2="320" stroke="currentColor" opacity="0.08"/>
+  <text x="54" y="324" text-anchor="end" font-size="9" fill="currentColor" opacity="0.7">-5</text>
+
+  <!-- Y-axis label -->
+  <text x="20" y="185" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6" transform="rotate(-90, 20, 185)">YoY % Change</text>
+
+  <!-- 2022 group -->
+  <!-- CPI: 2.0% -> bar from y=200 up to y=200-(2.0*30)=140, height=60 -->
+  <rect x="82" y="140" width="28" height="60" rx="3" fill="#f97316"/>
+  <text x="96" y="135" text-anchor="middle" font-size="9" font-weight="800" fill="#f97316">2.0</text>
+  <!-- PPI: 4.1% -> bar from y=200 up to y=200-(4.1*30)=77, height=123 -->
+  <rect x="116" y="77" width="28" height="123" rx="3" fill="#38bdf8"/>
+  <text x="130" y="72" text-anchor="middle" font-size="9" font-weight="800" fill="#38bdf8">4.1</text>
+  <text x="117" y="345" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2022</text>
+
+  <!-- 2023 group -->
+  <!-- CPI: 0.2% -> bar from y=200 up to y=200-(0.2*30)=194, height=6 -->
+  <rect x="174" y="194" width="28" height="6" rx="2" fill="#f97316"/>
+  <text x="188" y="190" text-anchor="middle" font-size="9" font-weight="800" fill="#f97316">0.2</text>
+  <!-- PPI: -3.0% -> bar from y=200 down to y=200+(3.0*30)=290, height=90 -->
+  <rect x="208" y="200" width="28" height="90" rx="3" fill="#38bdf8"/>
+  <text x="222" y="300" text-anchor="middle" font-size="9" font-weight="800" fill="#38bdf8">-3.0</text>
+  <text x="209" y="345" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2023</text>
+
+  <!-- 2024 group -->
+  <!-- CPI: 0.2% -->
+  <rect x="266" y="194" width="28" height="6" rx="2" fill="#f97316"/>
+  <text x="280" y="190" text-anchor="middle" font-size="9" font-weight="800" fill="#f97316">0.2</text>
+  <!-- PPI: -2.2% -> bar from y=200 down to y=200+(2.2*30)=266, height=66 -->
+  <rect x="300" y="200" width="28" height="66" rx="3" fill="#38bdf8"/>
+  <text x="314" y="276" text-anchor="middle" font-size="9" font-weight="800" fill="#38bdf8">-2.2</text>
+  <text x="301" y="345" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2024</text>
+
+  <!-- 2025 group -->
+  <!-- CPI: 0.5% -> bar from y=200 up to y=200-(0.5*30)=185, height=15 -->
+  <rect x="358" y="185" width="28" height="15" rx="2" fill="#f97316"/>
+  <text x="372" y="180" text-anchor="middle" font-size="9" font-weight="800" fill="#f97316">0.5</text>
+  <!-- PPI: -1.5% -> bar from y=200 down to y=200+(1.5*30)=245, height=45 -->
+  <rect x="392" y="200" width="28" height="45" rx="3" fill="#38bdf8"/>
+  <text x="406" y="255" text-anchor="middle" font-size="9" font-weight="800" fill="#38bdf8">-1.5</text>
+  <text x="393" y="345" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2025*</text>
+
+  <!-- 2026 group -->
+  <!-- CPI: 0.7% -> bar from y=200 up to y=200-(0.7*30)=179, height=21 -->
+  <rect x="450" y="179" width="28" height="21" rx="2" fill="#f97316"/>
+  <text x="464" y="174" text-anchor="middle" font-size="9" font-weight="800" fill="#f97316">0.7</text>
+  <!-- PPI: 3.5% -> bar from y=200 up to y=200-(3.5*30)=95, height=105 -->
+  <rect x="484" y="95" width="28" height="105" rx="3" fill="#38bdf8"/>
+  <text x="498" y="90" text-anchor="middle" font-size="9" font-weight="800" fill="#38bdf8">3.5</text>
+  <text x="485" y="345" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">2026*</text>
+
+  <!-- Note about estimates -->
+  <text x="280" y="362" text-anchor="middle" font-size="9" fill="var(--chart-muted, currentColor)">* 2025 and 2026 are estimates / partial-year data</text>
+
+  <!-- Source -->
+  <text x="280" y="374" text-anchor="middle" font-size="9" fill="var(--chart-muted, currentColor)">Source: National Bureau of Statistics of China, Trading Economics</text>
+</svg>

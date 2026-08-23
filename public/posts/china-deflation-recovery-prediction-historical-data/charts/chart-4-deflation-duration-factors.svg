@@ -1,0 +1,67 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 560 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Key Factors Determining Deflation Duration</title>
+  <desc id="chart-desc">Lollipop chart ranking factors that determine how long deflations last, based on analysis of historical episodes. Policy decisiveness (impact score 95): the single most important factor, as shown by US 1933 and Gold Bloc comparison. Financial system health (85): intact banking systems enable faster recovery (US 2009 vs Japan 1990). Fiscal stimulus scale (80): large-scale demand support accelerates exit (US 2009 ARRA). Exchange rate flexibility (75): ability to devalue accelerates exit (US 1933, UK 1923). Demographic structure (60): aging populations suppress long-term demand (Japan). External demand environment (55): global growth supports export-led recovery. Property market recovery (50): real estate stabilization restores household wealth and confidence (most relevant for China). Source: synthesised from Bordo, Lane and Redish (2004), Reinhart and Rogoff (2009), Atkeson and Weber (2023), IMF World Economic Outlook (2025).</desc>
+
+  <!-- Data: factor, score, color -->
+  <!-- Layout: label at x=130 (right-aligned), line from x=140 to x=140+(score*3.5), circle at end -->
+  <!-- Max score = 95, max bar = 95*3.5 = 332.5, end at x=472.5 -->
+
+  <!-- Row 1: Policy decisiveness - 95 (orange) -->
+  <text x="130" y="54" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">Policy decisiveness</text>
+  <line x1="140" y1="50" x2="472" y2="50" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="472" cy="50" r="7" fill="#f97316"/>
+  <text x="472" y="54" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">95</text>
+
+  <!-- Row 2: Financial system health - 85 (sky blue) -->
+  <text x="130" y="90" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">Financial system health</text>
+  <line x1="140" y1="86" x2="437" y2="86" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="437" cy="86" r="7" fill="#38bdf8"/>
+  <text x="437" y="90" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">85</text>
+
+  <!-- Row 3: Fiscal stimulus scale - 80 (purple) -->
+  <text x="130" y="126" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">Fiscal stimulus scale</text>
+  <line x1="140" y1="122" x2="420" y2="122" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="420" cy="122" r="7" fill="#a78bfa"/>
+  <text x="420" y="126" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">80</text>
+
+  <!-- Row 4: Exchange rate flexibility - 75 (green) -->
+  <text x="130" y="162" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">Exchange rate flexibility</text>
+  <line x1="140" y1="158" x2="402" y2="158" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="402" cy="158" r="7" fill="#22c55e"/>
+  <text x="402" y="162" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">75</text>
+
+  <!-- Row 5: Demographic structure - 60 (green, lighter) -->
+  <text x="130" y="198" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">Demographic structure</text>
+  <line x1="140" y1="194" x2="350" y2="194" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="350" cy="194" r="7" fill="#22c55e" opacity="0.7"/>
+  <text x="350" y="198" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">60</text>
+
+  <!-- Row 6: External demand environment - 55 (green, lighter) -->
+  <text x="130" y="234" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">External demand</text>
+  <line x1="140" y1="230" x2="332" y2="230" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="332" cy="230" r="7" fill="#22c55e" opacity="0.6"/>
+  <text x="332" y="234" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">55</text>
+
+  <!-- Row 7: Property market recovery - 50 (green, lightest) -->
+  <text x="130" y="270" text-anchor="end" font-size="10" fill="currentColor" opacity="0.9">Property market recovery</text>
+  <line x1="140" y1="266" x2="315" y2="266" stroke="currentColor" opacity="0.15" stroke-width="1.5"/>
+  <circle cx="315" cy="266" r="7" fill="#22c55e" opacity="0.5"/>
+  <text x="315" y="270" text-anchor="middle" font-size="8" fill="#111827" font-weight="800">50</text>
+
+  <!-- Annotation -->
+  <text x="140" y="302" font-size="9" fill="currentColor" opacity="0.6">Impact score: relative influence on how quickly deflation ends, based on</text>
+  <text x="140" y="316" font-size="9" fill="currentColor" opacity="0.6">cross-case analysis of 5 historical episodes (scale 0-100).</text>
+
+  <!-- China-specific callout -->
+  <rect x="140" y="330" width="390" height="22" rx="4" fill="#f97316" opacity="0.1"/>
+  <text x="150" y="345" font-size="9" fill="#f97316" font-weight="700">China's #1 lever: Policy decisiveness. Beijing has the tools (fiscal, monetary,</text>
+  <text x="150" y="357" font-size="9" fill="#f97316" font-weight="700">structural) but has so far chosen incremental over decisive action.</text>
+
+  <!-- Source -->
+  <text x="280" y="374" text-anchor="middle" font-size="8" fill="var(--chart-muted, currentColor)">Source: Synthesis of Bordo, Lane &amp; Redish (2004), Reinhart &amp; Rogoff (2009), IMF WEO (2025)</text>
+</svg>
