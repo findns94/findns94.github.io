@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-labelledby="chart-title chart-desc" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif">
+  <title id="chart-title">Detection Accuracy: 188 of 200 Improper Postures Detected</title>
+  <desc id="chart-desc">Horizontal bar chart showing the result of the main detection test. Out of 200 improper sitting postures tested, 188 were correctly detected (94% accuracy) and 12 were undetected (6%).</desc>
+  <style>
+    :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+    @media (prefers-color-scheme: dark) {
+      :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+    }
+    text { fill: var(--fg); }
+    .tick { fill: var(--fg-min); opacity: 0.55; }
+    .lbl { fill: var(--fg-min); opacity: 0.8; }
+    .op35 { fill: var(--fg-min); opacity: 0.35; }
+    .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+    .axis { stroke: var(--axis); stroke-width: 1; }
+  </style>
+  <!-- Y axis gridlines -->
+  <line class="line-grid" x1="160" y1="80" x2="560" y2="80"/>
+  <line class="line-grid" x1="160" y1="140" x2="560" y2="140"/>
+  <line class="line-grid" x1="160" y1="200" x2="560" y2="200"/>
+  <line class="line-grid" x1="160" y1="260" x2="560" y2="260"/>
+  <line class="line-grid" x1="160" y1="320" x2="560" y2="320"/>
+  <!-- Axes -->
+  <line class="axis" x1="160" y1="320" x2="560" y2="320"/>
+  <line class="axis" x1="160" y1="80" x2="160" y2="320"/>
+  <!-- Y axis tick labels (0-200) -->
+  <text class="tick" x="154" y="84" text-anchor="end" font-size="10">200</text>
+  <text class="tick" x="154" y="144" text-anchor="end" font-size="10">150</text>
+  <text class="tick" x="154" y="204" text-anchor="end" font-size="10">100</text>
+  <text class="tick" x="154" y="264" text-anchor="end" font-size="10">50</text>
+  <text class="tick" x="154" y="324" text-anchor="end" font-size="10">0</text>
+  <!-- Bar 1: Detected (188) -->
+  <rect x="160" y="100" width="376" height="44" fill="#22c55e" rx="3"/>
+  <text x="542" y="128" text-anchor="start" font-size="13" fill="#111827" font-weight="800">188 detected</text>
+  <text x="150" y="128" text-anchor="end" font-size="11" fill="#1f2937" font-weight="600">Detected</text>
+  <!-- Bar 2: Undetected (12) -->
+  <rect x="160" y="200" width="24" height="44" fill="#f97316" rx="3"/>
+  <text x="190" y="228" text-anchor="start" font-size="13" fill="#111827" font-weight="800">12 undetected</text>
+  <text x="150" y="228" text-anchor="end" font-size="11" fill="#1f2937" font-weight="600">Undetected</text>
+  <!-- Accuracy callout -->
+  <text x="420" y="175" text-anchor="middle" font-size="28" fill="#22c55e" font-weight="800">94%</text>
+  <text x="420" y="192" text-anchor="middle" font-size="10" fill="#374151">accuracy</text>
+  <!-- Source -->
+  <text class="op35" x="320" y="368" text-anchor="middle" font-size="10">Source: Original experiment, Table 1. 200 improper-posture trials across 5 volunteers.</text>
+</svg>

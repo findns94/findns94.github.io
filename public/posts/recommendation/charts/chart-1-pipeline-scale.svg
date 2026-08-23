@@ -1,0 +1,28 @@
+<svg viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="resume-recommendation-pipeline-scale-title resume-recommendation-pipeline-scale-desc" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="resume-recommendation-pipeline-scale-title">Resume Recommendation Pipeline Scale</title>
+  <desc id="resume-recommendation-pipeline-scale-desc">Resume Recommendation Pipeline Scale. lollipop data: Recommended candidates per query 100; Manually labeled for training/testing 1300; Total resumes in database 1.06e+06.Source: Original project data .</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Resume Recommendation Pipeline Scale</text>
+  
+  <line x1="145" y1="298.0" x2="510" y2="298.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="243.0" x2="510" y2="243.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="188.0" x2="510" y2="188.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="133.0" x2="510" y2="133.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="78.0" x2="510" y2="78.0" stroke="currentColor" opacity="0.08" />
+<text x="136.0" y="118.7" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">Recommended</tspan><tspan x="136.0" dy="12">candidates per</tspan><tspan x="136.0" dy="12">query</tspan></text>
+<line x1="145" y1="114.7" x2="145.0" y2="114.7" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="145.0" cy="114.7" r="6" fill="#f97316" />
+<text x="157.0" y="118.7" font-size="11" fill="currentColor">100</text>
+<text x="136.0" y="192.0" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">Manually labeled</tspan><tspan x="136.0" dy="12">for</tspan><tspan x="136.0" dy="12">training/testing</tspan></text>
+<line x1="145" y1="188.0" x2="145.4" y2="188.0" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="145.4" cy="188.0" r="6" fill="#38bdf8" />
+<text x="157.4" y="192.0" font-size="11" fill="currentColor">1300</text>
+<text x="136.0" y="265.3" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">Total resumes in</tspan><tspan x="136.0" dy="12">database</tspan></text>
+<line x1="145" y1="261.3" x2="510.0" y2="261.3" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="510.0" cy="261.3" r="6" fill="#a78bfa" />
+<text x="522.0" y="265.3" font-size="11" fill="currentColor">1.06e+06</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: Original project data</text>
+</svg>

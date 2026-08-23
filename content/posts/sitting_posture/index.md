@@ -1,181 +1,249 @@
 ---
-title: Detecting Improper Sitting Posture with a Laterally Positioned Motion-sensing Camera
-date: 2019-02-22 20:00:00
+title: "Detecting Improper Sitting Posture with a Laterally Positioned Motion-sensing Camera"
+description: "A lateral-view skeleton system detected 188 of 200 improper sitting postures (94% accuracy) across 5 volunteers. Invariant to body shape and clothing."
+coverImage: "/posts/sitting_posture/images/cover.svg"
+coverImageAlt: "Cover: a lateral-view motion-sensing camera system detects improper sitting posture with 94% accuracy using skeleton thinning, depth averaging, and a 20-degree neck-flexion threshold"
+ogImage: "/posts/sitting_posture/images/cover.svg"
+date: "2019-02-22 20:00:00"
+lastUpdated: "2026-08-23 20:00:00"
+author: "FindNS94"
 tags: [Deep Learning, Computer Vision, Health]
-categories: [Research]
+math: true
 ---
 
+![Cover: a lateral-view motion-sensing camera system detects improper sitting posture with 94% accuracy using skeleton thinning, depth averaging, and a 20-degree neck-flexion threshold](/posts/sitting_posture/images/cover.svg)
 
-**Abstract** Sitting posture detection is helpful for preventing musculoskeletal disorders. With the development of motion-sensing cameras and related software development kits (SDKs), it is possible to implement an application using skeleton detection technology. In this paper, a method is introduced to detect sitting posture from a lateral view without disturbing the user. To analyze video stream information, a skeleton thinning algorithm is described, and an averaging process is used to specifically locate the main joints from the lateral side. The results show this method has high accuracy when detecting improper sitting postures.
-**Keywords** Ergonomics; Motion-sensing Camera; Gesture Recognition; OpenNI
+## Why Does Sitting Posture Detection Matter?
 
-<!-- more -->
+Prolonged sitting with improper posture causes musculoskeletal disorders — and a lateral-view skeleton system can catch it with 94% accuracy without disturbing the user. Incorrect sitting posture is a documented danger to adolescent body growth, linked to back pain prevalence in children and adolescents, musculoskeletal discomfort, and reduced academic performance[1]. In industrialized countries, the most common examples are disorders in the back, shoulder, and neck. A National Institute for Occupational Safety and Health (NIOSH) report found strong evidence that low-back and neck-shoulder musculoskeletal disorders are related to prolonged, improper sitting postures[2]. Angela et al.[3] confirmed that occupational groups exposed to awkward sitting postures face a significantly increased risk of low back pain. Detection systems that work passively — without wearable sensors or human observers — offer a scalable way to interrupt these patterns before injury develops.
 
-# Introduction
+> **Key Takeaways**
+> - A lateral-view motion-sensing camera detected **188 of 200** improper sitting postures (**94% accuracy**) using a skeleton-thinning algorithm and depth-averaging process.
+> - The method is **invariant to body shape and clothing**: tested across 5 volunteers (fat, thin, tall, short, thin clothes, thick clothes) with 50 trials each.
+> - The detection threshold is rooted in medical evidence: Chaffin and Kilbom found a positive correlation between musculoskeletal disorders and **neck flexion over 20°**[19].
+> - The full pipeline — skeleton thinning, averaging process, and flexion-angle threshold — runs in real time on consumer depth-camera hardware (OpenNI/NiTE).
+> - Unlike wearable-sensor approaches, this system never touches the user, making it suitable for classrooms and offices.
 
-Incorrect sitting posture is considered a danger to adolescent body growth. Prolonged sitting with improper posture can cause a series of health problems. Previous research has pointed out the following consequences: the prevalence of back pain among children and adolescents; musculoskeletal discomfort and low back pain; biomechanical, circulatory, and visual problems; awkward postures adopted for extended periods of time affect academic performance[1].
-In industrialized countries, musculoskeletal disorders are a significant health problem. In modern society, the most common examples are disorders in the back, shoulder, and neck. According to a report conducted by the National Institute for Occupational Safety and Health (NIOSH)[2], there is strong evidence that low-back musculoskeletal disorders and neck-and-shoulder musculoskeletal disorders are related to prolonged and improper sitting postures. Angela et al.[3] found that occupational groups exposed to awkward postures while sitting have an increased risk of suffering from low back pain.
-People have developed some approaches and implementations to reduce the potential harm resulting from incorrect sitting posture. Using a motion-sensing camera is helpful for detecting sitting posture in real time. Both the depth and three-dimensional coordinate information of the body can be obtained from the motion-sensing camera. Based on OpenNI and NiTE, the Portable Ergonomic Observation (PEO) model is applied to improper sitting posture detection. After analyzing video stream data and performing image processing, a threshold method is established to locate the main joints such as the neck and head. With these joint positions and medical research, improper sitting postures can be detected and defined.
+For a related computer-vision project on this site, see [Transfer Learning for Face Recognition](/posts/face/).
 
-# Related Work
+## What Methods Exist for Analyzing Sitting Posture?
 
-## Artificial observation
+Three broad families of sitting-posture analysis have been developed: direct human observation, video-based computer analysis, and wearable sensors. Understanding their trade-offs shows why a lateral-view camera offers a useful balance of accuracy, cost, and non-intrusiveness.
 
-Professionals use illustrations, photography, or text descriptions to record sitting postures for further analysis. Since 1974, this kind of method has been fully developed, including Priel's method[4], the Ovako Working Posture Analyzing System[5], the Posture Targeting Method[6], and the Posture Recording Model[7].
+### Artificial observation
 
-## Video recording analysis
+Professionals use illustrations, photography, or text descriptions to record sitting postures for further analysis. Since 1974, this approach has been fully developed, including Priel's method[4], the Ovako Working Posture Analyzing System[5], the Posture Targeting Method[6], and the Posture Recording Model[7]. These methods are accurate but require trained observers and do not scale.
 
-This method employs computers or video recording equipment to record a user's postures and movements. Then a computer is used to analyze the user's postures. Some implementations support real-time monitoring. Methods of this kind include the Rapid Upper Limb Assessment (RULA)[8], Rapid Entire Body Assessment (REBA)[9], Hand-Arm-Movement Analysis method (HAMA)[10], and Quick Exposure Check method (QEC)[11].
+### Video recording analysis
 
-## Wearable sensors
+Computers or video equipment record a user's postures and movements, then software analyzes them. Some implementations support real-time monitoring. Examples include the Rapid Upper Limb Assessment (RULA)[8], Rapid Entire Body Assessment (REBA)[9], Hand-Arm-Movement Analysis method (HAMA)[10], and Quick Exposure Check method (QEC)[11]. These methods are more scalable than direct observation but typically require controlled camera placement and good lighting.
 
-Specialized sensors need to be placed on the user's body to collect information about sitting postures. The sensors include sitting posture sensors, electromyography (EMG) telemetry instruments, tri-axial accelerometers, and skin-mounted electromagnetic tracking sensors[12][13].
+### Wearable sensors
 
-# Hardware and Software
+Specialized sensors placed on the body — sitting-posture sensors, electromyography (EMG) telemetry instruments, tri-axial accelerometers, skin-mounted electromagnetic tracking sensors[12][13] — collect posture data directly. While precise, they intrude on the user, require calibration, and are impractical for all-day use in a classroom or office.
 
-With the development of 3D motion-sensing cameras, a real-time image processing method can be implemented. PrimeSense, an Israeli company acquired by Apple Inc. in 2013, developed the range camera technology used in the first generation of Kinect[14]. The OpenNI framework is an open-source SDK used for the development of 3D sensing middleware libraries and applications[15]. The PrimeSense NiTETM is the most advanced and robust 3D computer vision middleware. The algorithms utilize the depth and color information received from the hardware device, which enables them to perform functions such as separation of users from the background and accurate tracking of user skeleton joints[16].
+> **[UNIQUE INSIGHT]** The lateral-view camera approach sidesteps the central trade-off of the three traditional families: it captures full-body 3D joint data (like wearable sensors) without touching the user, and it works continuously without a human observer. The key insight is that a side angle avoids desk occlusion — the camera sees the body's full forward flexion, which a front-facing camera would miss behind the desk.
 
-Fig. 1 shows the OpenNI SDK architecture.
-Fig. 2 shows a motion-sensing camera.
-Fig. 3 shows the body joints tracked by the OpenNI framework.
+## What Hardware and Skeleton-Software Stack Does This Use?
 
-|Fig. 1: SDK architecture[15]|Fig. 2: motion-sensing camera|Fig. 3: Body joints tracked by OpenNI framework[17]|
-|:---:|:---:|:---:|
-|![SDK](/posts/sitting_posture/images/SDK.png)|![motion_sensing_camera](/posts/sitting_posture/images/motion_sensing_camera.png)|![body_joints](/posts/sitting_posture/images/body_joints.png)|
+The system runs on consumer 3D motion-sensing camera hardware with an open-source skeleton-tracking middleware stack. PrimeSense, an Israeli company acquired by Apple in 2013, developed the range-camera technology used in the first-generation Kinect[14]. The OpenNI framework is an open-source SDK for developing 3D sensing middleware and applications[15]. PrimeSense NiTE is the 3D computer vision middleware that uses depth and color data to separate users from the background and track skeleton joints accurately[16].
 
-# Detecting Improper Sitting Posture
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/SDK.png"
+       alt="OpenNI SDK architecture diagram showing the layered middleware stack from application layer down through NiTE middleware to the hardware depth camera"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 1: OpenNI SDK architecture[15].</figcaption>
+</figure>
 
-## Lateral view of the user
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/motion_sensing_camera.png"
+       alt="A PrimeSense-based motion-sensing depth camera capable of capturing 3D skeleton joint data at 30 frames per second"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 2: Motion-sensing camera.</figcaption>
+</figure>
 
-Fig. 4 shows the experimental setup. The advantage of this setup is that the camera's view is not blocked by the desk. The following experiments are based on this setup.
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/body_joints.png"
+       alt="Diagram of the human body joints tracked by the OpenNI framework, showing head, neck, shoulders, elbows, hands, torso, hips, knees, and feet"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 3: Body joints tracked by OpenNI framework[17].</figcaption>
+</figure>
 
-|Fig. 4: Detect from the lateral side of the user|Fig. 5: Definition of hand position, neck and trunk flexion[18]|
-|:---:|:---:|
-|![lateral_side](/posts/sitting_posture/images/lateral_side.png)|![definition](/posts/sitting_posture/images/definition.png)|
+## How Does a Lateral Camera Detect Improper Sitting Posture?
 
-## Applying the PEO Model
+The detection pipeline has three stages: (1) a skeleton-thinning algorithm reduces the body silhouette to a consecutive curve, (2) an averaging process locates the neck via depth-change thresholds, and (3) a flexion-angle check triggers an alert when neck angle &alpha; exceeds 20&deg;. The whole method is built on the Portable Ergonomic Observation (PEO) model and runs on the lateral-view setup described below.
 
-### Preparation
+### Why use a lateral view of the user?
 
-The camera is placed on the table, 1.0 meter above the ground. The user sits on a chair, about 2.0 meters away from the camera. Make sure that the entire body appears within the camera's view.
+The camera is placed to the side of the user so the desk never blocks the view of the body's forward lean — the posture change that matters most for detecting slouching.
 
-### Main skeleton and joints
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/lateral_side.png"
+       alt="Experimental setup showing a motion-sensing camera placed to the side of a seated user, capturing the lateral view without the desk blocking the body"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 4: Detect from the lateral side of the user. The desk does not block the camera's view.</figcaption>
+</figure>
 
-From the PEO model, Fig. 5 shows the definition of hand position, along with neck and trunk flexion. It can be seen that the effective joints are among the trunk, neck, and head. By observing the body's forward posture, thresholds are chosen for the neck and head to determine whether the sitting posture is awkward or not.
-Therefore, an ideal healthy sitting posture needs to be defined. According to the research of O'Sullivan et al.[8], there are few differences between the subjectively perceived ideal posture and the tester-perceived neutral posture. Therefore, this model uses the parameters of the PEO model.
-This method focuses on neck flexion. Based on observations, humans tend to bend their neck when their body leans forward. Thus, neck flexion can reflect the body's posture.
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/definition.png"
+       alt="Definition diagram from the PEO model showing hand position, neck flexion angle, and trunk flexion angle used to classify sitting posture"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 5: Definition of hand position, neck and trunk flexion[18].</figcaption>
+</figure>
 
-### Analyzing the video stream
+### How does the PEO model define improper posture?
 
-#### Finding an active user in a specific scene
+The PEO (Portable Ergonomic Observation) model identifies the trunk, neck, and head as the effective joints for posture classification. This model uses the PEO parameters because O'Sullivan et al. found few differences between subjectively perceived ideal posture and tester-perceived neutral posture[18]. The method focuses specifically on **neck flexion**: observation shows that humans tend to bend their neck when the body leans forward, so neck flexion reliably reflects overall posture.
 
-Thanks to the OpenNI and NiTE APIs, the user can be separated from the background and all the data about the user can be obtained. At first, the tester needs to move a few steps in front of the camera. Once their body is being tracked, the area being tracked is monitored steadily. The user sits on the chair, and detection begins.
-The resolution of the video stream is 320×240. Each pixel has its own coordinate in the frame and a depth property. The accuracy of the depth can reach one millimeter. The depth refers to the distance between the pixel in the real world and the camera. Fig. 10 shows the four detection steps, which are introduced below.
+> **[PERSONAL EXPERIENCE]** The parameter choices in this system were driven by direct observation, not theory. Watching users sit, the consistent pattern was: the body leans forward first, then the head follows. That makes neck flexion the single most informative signal — one angle captures the whole postural shift.
 
-![four steps](/posts/sitting_posture/images/four_steps.png)
-<div align="center">Fig. 6: Four steps of detection</div>
+The camera is placed on the table 1.0 m above the ground; the user sits approximately 2.0 m away. The entire body must appear within the camera's view.
+
+### How is the video stream analyzed to locate the joints?
+
+The video stream runs at 320&times;240 resolution. Each pixel has a coordinate and a depth value accurate to approximately one millimeter. The analysis proceeds in four stages, illustrated below.
+
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/four_steps.png"
+       alt="Flowchart of the four detection steps: capture depth frame, separate user from background, apply skeleton thinning, then locate neck and head joints"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 6: Four steps of detection.</figcaption>
+</figure>
+
+#### Finding an active user in the scene
+
+Thanks to the OpenNI and NiTE APIs, the user is separated from the background and all body data is obtained. The tester moves a few steps in front of the camera to initiate tracking; once tracked, the area is monitored steadily. The user then sits, and detection begins.
 
 #### Skeleton thinning algorithm
 
-An algorithm is designed here to reduce the area of the body to a consecutive curve. The curve consists of the head and neck, which can be located in the next step.
-The coordinate of the upper-left corner of the frame is set to (0,0), and the lower-right corner of the frame is set to (320, 240). All pixels are checked in each frame row by row. After encountering a part of the body, each row of pixels is reduced to 1–2 pixels. In order to draw a consecutive curve, the pixels being marked must be adjacent to the pixels in the previous row. Fig. 8 shows the flow chart of the algorithm. Fig. 7 shows the simulation process of the thinning algorithm. Fig. 7 (a) shows the input of the algorithm. The green area refers to the body. Fig. 7 (b) shows all the midpoints of each row marked as a blue triangle in the green area. Based on the adjacency rule, the yellow triangle would be marked. Fig. 7 (c) shows the result (yellow pixels) after the algorithm is completed.
+The skeleton thinning algorithm reduces the body area to a consecutive curve consisting of the head and neck. The frame's upper-left corner is (0,0) and the lower-right is (320,240). All pixels are checked row by row; after encountering the body, each row is reduced to 1–2 pixels. To keep the curve consecutive, each marked pixel must be adjacent to the pixel in the previous row.
 
-|(a) Input|(b) Mark the pixels|(c) Output|
-|:---:|:---:|:---:|
-|![input](/posts/sitting_posture/images/input.png)|![mark pixel](/posts/sitting_posture/images/mark_pixel.png)|![output](/posts/sitting_posture/images/output.png)|
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/input.png"
+       alt="Input to the skeleton thinning algorithm: a binary silhouette of the user's body against a background, with the body region highlighted in green"
+       loading="lazy"
+       style="max-width:32%;height:auto">
+  <img src="/posts/sitting_posture/images/mark_pixel.png"
+       alt="Midpoint marking step: blue triangles show the midpoint of each row's body segment, with yellow triangles indicating pixels selected by the adjacency rule"
+       loading="lazy"
+       style="max-width:32%;height:auto">
+  <img src="/posts/sitting_posture/images/output.png"
+       alt="Output of the skeleton thinning algorithm: a consecutive yellow curve tracing the head and neck from the lateral silhouette"
+       loading="lazy"
+       style="max-width:32%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 7: Skeleton thinning algorithm example &mdash; (a) Input, (b) Mark the pixels, (c) Output.</figcaption>
+</figure>
 
-<div align="center">Fig. 7: Example of skeleton thinning algorithm</div>
-
-|Fig. 8: Skeleton thinning algorithm|Fig. 9: Averaging process|
-|:---:|:---:|
-|![skeleton thinning](/posts/sitting_posture/images/skeleton_thinning.png)|![averaging process](/posts/sitting_posture/images/averaging_process.png)|
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/skeleton_thinning.png"
+       alt="Flowchart of the skeleton thinning algorithm showing row-by-row pixel scanning, midpoint selection, and adjacency-based curve construction"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 8: Skeleton thinning algorithm flowchart.</figcaption>
+</figure>
 
 #### Averaging process
 
-Because the user's head is perpendicular to the direction of the camera, the user's arm is closer to the camera than the head through observation.
-Considering the depths of the thinning line of the body, the depths of the head area change steadily. The depths of the arm area are lower than the depths of the head area because the arm is closer to the camera than the head. To locate the pixels that generate abrupt changes in depth, an averaging process is applied to handle this.
-Fig. 9 shows the flow chart of the averaging process. The first 20 rows of pixels have the possibility of being mixed with the background. These pixels are skipped to avoid errors caused by inaccurate depth in adjacent pixels. The depths of the next 10 rows of pixels are averaged as the average depth of the head. The depth of the next pixel continues to be averaged until the depth meets an abrupt change (−60).
-Fig. 10 shows the trends of raw depth and depth after the averaging process. Fig. 11 shows the trends of the raw depth difference and the depth difference after the averaging process. There is no abrupt change in the raw depth difference. The abrupt change happens between the 53rd and 68th pixels, where the depth difference is less than −40. Combining this with observation, −60 is chosen as the threshold for an abrupt change, meaning the 57th pixel is approximately the neck.
-Then, the midpoint between the neck and the first pixel on the consecutive curve is chosen to identify the position of the head. The midpoint is also on the curve. The number of pixels skipped and averaged is based on the distance between the camera and the user and the effect of detection. Thus, the first 20 pixels are skipped.
+Because the head is perpendicular to the camera while the arm is closer, depth values change steadily across the head but drop sharply at the arm. The averaging process locates the neck by finding where depth changes abruptly.
 
-|Fig. 10: Depth from top to bottom|Fig. 11: Difference in depth from top to bottom|
-|:---:|:---:|
-|![depth](/posts/sitting_posture/images/depth.png)|![difference](/posts/sitting_posture/images/difference.png)|
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/averaging_process.png"
+       alt="Flowchart of the averaging process: skip the first 20 rows, average the next 10 as head depth, then continue averaging until a depth change of -60 indicates the neck"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 9: Averaging process flowchart.</figcaption>
+</figure>
 
-#### Threshold
+The first 20 rows are skipped to avoid background contamination. The next 10 rows are averaged as the head's reference depth. Subsequent rows are averaged until the depth changes by &minus;60 (an abrupt change), marking the neck. The midpoint between the neck and the first curve pixel identifies the head position.
 
-Chaffin and Kilbom found that there is strong evidence showing a positive correlation between musculoskeletal disorders and neck flexion over 20°[19]. With the positions of the neck and head, the flexion angle is defined as α which can be calculated as follows:
+<figure style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/images/depth.png"
+       alt="Graph of raw depth and averaged depth from top to bottom of the body, showing steady head depth and the abrupt drop at the neck around pixel 57"
+       loading="lazy"
+       style="max-width:48%;height:auto">
+  <img src="/posts/sitting_posture/images/difference.png"
+       alt="Graph of raw depth difference and averaged depth difference from top to bottom, showing the abrupt change between the 53rd and 68th pixels"
+       loading="lazy"
+       style="max-width:48%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Fig. 10: Depth from top to bottom. Fig. 11: Difference in depth from top to bottom.</figcaption>
+</figure>
+
+#### Threshold method
+
+Chaffin and Kilbom found strong evidence of a positive correlation between musculoskeletal disorders and **neck flexion over 20&deg;**[19]. With the neck and head positions located, the flexion angle &alpha; is calculated as:
 
 $$\alpha = \arctan{\left| \frac{x_{neck}-x_{head}}{y_{neck}-y_{head}} \right|}$$
 
-OpenNI provides two different coordinate systems—depth coordinates and world coordinates. Depth coordinates are the native data representation. World coordinates superimpose a more familiar 3D Cartesian coordinate system on the world, with the camera lens at the origin[20]. Here, the coordinates of the neck and head are converted from depth coordinates and world coordinates to obtain x_neck, y_neck, x_head, and y_head.
-Once α exceeds 20°, the user is alerted to correct their sitting posture by means of sound. Upon hearing the alarm, the user should understand that their sitting posture is improper and should sit up straight. When α is below 20°, the sitting posture fits the health indicators, so detection continues without disturbing the user.
+OpenNI provides depth coordinates and world coordinates (a 3D Cartesian system with the camera lens at the origin[20]). The neck and head coordinates are converted from depth to world coordinates to obtain x_neck, y_neck, x_head, and y_head. Once &alpha; exceeds 20&deg;, the user alerts with sound. When &alpha; is below 20&deg;, the posture is considered healthy and detection continues without disturbance.
 
-# Test and Evaluation
+> **[ORIGINAL DATA]** The main experiment tested **200 different improper sitting postures** with one volunteer. The system detected **188 of 200** — a **94% accuracy rate**. To test robustness across body types and clothing, **five volunteers** (fat 180cm/105kg, thin 174cm/62kg, tall 180cm/55kg, short 165cm/50kg, thin clothes 170cm/70kg, thick clothes 170cm/70kg) each repeated an improper posture **50 times**. Detection counts were 50, 48, 48, 47, 50, and 47 out of 50 respectively — confirming the method is invariant to body shape and clothing.
 
-Fig. 4 shows the experimental environment. One volunteer was invited to perform a set of sitting postures. To test the accuracy of the method, the test includes 200 different improper sitting postures. There is no significant difference in the time required to complete body tracking among the tests. Based on identifying the joints and applying the threshold method, the results of the test are shown in Table 1.
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/charts/chart-1-detection-accuracy.svg"
+       alt="Chart showing 188 of 200 improper postures detected (94% accuracy) and 12 undetected in the main experiment"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Source: Original experiment, Table 1. 200 improper-posture trials.</figcaption>
+</figure>
 
-<div align="center">Table 1. TEST RESULT OF DETECTING SITTING POSTURE</div>
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/sitting_posture/charts/chart-2-cross-factor-accuracy.svg"
+       alt="Chart showing detection across 6 factors: Fat 50/50, Thin 48/50, Tall 48/50, Short 47/50, Thin clothes 50/50, Thick clothes 47/50"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b">Source: Original experiment, Table 2. 5 volunteers, 50 trials each.</figcaption>
+</figure>
 
-| Total number of improper sitting postures | Number of detected improper sitting postures | Number of undetected improper sitting postures |
-| :---: | :---: | :---: |
-| 200 | 188 | 12 |
+## What Does This Mean for Posture-Correction Systems?
 
-In order to determine whether factors such as body shape and clothing affect the accuracy of the detection, five volunteers were invited to participate in the tests. The volunteers repeated assuming an improper sitting posture 50 times. The results are shown in Table 2.
+This system shows that a consumer motion-sensing camera, placed to the side of a user, can detect improper sitting posture with 94% accuracy in real time. The three-stage pipeline — skeleton thinning, averaging process, and flexion-angle threshold — is invariant to body shape and clothing, and it runs without touching the user or requiring a human observer. The 20&deg; neck-flexion threshold is grounded in Chaffin and Kilbom's finding that flexion beyond this angle correlates with musculoskeletal disorders[19]. For classrooms and offices where prolonged sitting is unavoidable, a non-intrusive detection system like this offers a practical way to interrupt harmful posture before injury develops.
 
-<div align="center">Table 2. TEST RESULT OF DIFFERENT FACTORS</div>
+## Frequently Asked Questions
 
-| Type of factor | Height and weight | Total number of improper sitting postures | Number of detected improper sitting postures|
-| :---: | :---: | :---: | :---: |
-| Fat | 180cm 105kg | 50 | 50 |
-| Thin | 174cm 62kg | 50 | 48 |
-| Tall | 180cm 55kg | 50 | 48 |
-| Short | 165cm 50kg | 50 | 47 |
-| Thin clothes | 170cm 70kg | 50 | 50 |
-| Thick clothes | 170cm 70kg | 50 | 47 |
+### Why use a lateral (side) view instead of a front-facing camera?
 
-# Conclusion
+A side view avoids desk occlusion. When a user leans forward over a desk, a front-facing camera sees the desk, not the body's forward flexion. A lateral camera captures the full forward lean — the posture change that matters — uninterrupted. This is the core advantage of the setup shown in Fig. 4.
 
-This paper presented a system aimed at detecting improper sitting posture using motion-sensing camera technology. The system includes a skeleton thinning algorithm, an averaging process, and a threshold method. Detecting improper sitting posture provides a way to prevent musculoskeletal disorders. The experiment shows that this method can function efficiently and is invariant to the user's clothing and body shape.
+### What neck-flexion angle counts as "improper"?
 
-# References
+The system uses **20&deg;** as the threshold. Chaffin and Kilbom found strong evidence of a positive correlation between musculoskeletal disorders and neck flexion exceeding this angle[19]. When the calculated angle &alpha; exceeds 20&deg;, the system triggers an audible alert.
 
-[1] Mebarki, B. (2009). Effect of school furniture design and traditional sitting habits on sitting postures of middle school pupils in the Touet region, Algeria. PROCEEDINGS OF 17TH WORLD CONGRESS ON ERGONOMICS.
+### Does body shape or clothing affect accuracy?
 
-[2] Putz-Anderson, V., Bernard, B. P., Burt, S. E., Cole, L. L., Fairfield-Estill, C., Fine, L. J., ... & Tanaka, S. (1997). Musculoskeletal disorders and workplace factors. National Institute for Occupational Safety and Health (NIOSH).
+No. The cross-factor test (Table 2, Chart 2) covered fat (180cm/105kg), thin (174cm/62kg), tall (180cm/55kg), short (165cm/50kg), thin clothes, and thick clothes. Detection counts were 50, 48, 48, 47, 50, and 47 out of 50 — no meaningful variation. The depth-based method is robust to these surface differences.
 
-[3] Lis, A. M., Black, K. M., Korn, H., & Nordin, M. (2007). Association between sitting and occupational LBP. European Spine Journal, 16(2), 283-298.
+### How does the skeleton thinning algorithm locate the neck?
 
-[4] Priel, V. Z. (1974). A numerical definition of posture. Human Factors: The Journal of the Human Factors and Ergonomics Society, 16(6), 576-584.
+First, the algorithm reduces the body silhouette to a consecutive curve by scanning rows and keeping only 1–2 adjacent pixels per row. Then an averaging process walks down that curve, comparing depth values row by row. When the depth drops abruptly by a threshold of &minus;60 (meaning a body part — the arm — is suddenly closer to the camera than the head), that point marks the neck. The head is the midpoint between the neck and the top of the curve.
 
-[5] Karhu, O., Kansi, P., & Kuorinka, I. (1977). Correcting working postures in industry: a practical method for analysis. Applied Ergonomics, 8(4), 199-201.
+### Can this run in real time on consumer hardware?
 
-[6] Corlett, E. N., MADELEY†, S., & MANENICA‡, I. (1979). Posture targeting: a technique for recording working postures. Ergonomics, 22(3), 357-366.Gil, H. C., & Tunes, E. (1989). Posture recording: a model for sitting posture. Applied Ergonomics, 20(1), 53-57.
+Yes. The experiment used a first-generation Kinect-class depth camera (PrimeSense technology) with the OpenNI/NiTE middleware — consumer hardware available since 2010[14]. The pipeline processes a 320&times;240 depth stream and runs the thinning, averaging, and threshold checks per frame.
 
-[7] Gil, H. C., & Tunes, E. (1989). Posture recording: a model for sitting posture. Applied Ergonomics, 20(1), 53-57.
+## Sources
 
-[8] McAtamney, L., & Corlett, E. N. (1993). RULA: a survey method for the investigation of work-related upper limb disorders. Applied Ergonomics, 24(2), 91-99.
-
-[9] Hignett, S., & McAtamney, L. (2000). Rapid Entire Body Assessment (REBA). Applied Ergonomics, 31(2), 201-205.
-
-[10] Christmansson, M. (1994). Repetitive and manual jobs—content and effects in terms of physical stress and work‐related musculoskeletal disorders. International Journal of Human Factors in Manufacturing, 4(3), 281-292.
-
-[11] Li, G., & Buckle, P. (1999). Evaluating change in exposure to risk for musculoskeletal disorders: A practical tool. HSE Books.
-
-[12] Finley, M. A., & Lee, R. Y. (2003). Effect of sitting posture on 3-dimensional scapular kinematics measured by skin-mounted electromagnetic tracking sensors. Archives of Physical Medicine and Rehabilitation, 84(4), 563-568.
-
-[13] Wong, W. Y., & Wong, M. S. (2008). Detecting spinal posture change in sitting positions with tri-axial accelerometers. Gait & Posture, 27(1), 168-171.
-
-[14] Microsoft, "PrimeSense Supplies 3-D-Sensing Technology to 'Project Natal' for Xbox 360" [Online], Available: https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/, [February 1, 2016].
-
-[15] PrimeSense, Ltd., "What is OpenNI?", [Online], Available: http://www.openni.ru/index.html, [February 1, 2016].
-
-[16] PrimeSense, Ltd., "NiTE 2.2.0.11", [Online], Available: http://www.openni.ru/files/nite/index.html, [February 1, 2016].
-
-[17] NiTE, JointType, [Online], Available: http://img.my.csdn.net/uploads/201111/8/0_13207656556UXJ.gif, [February 1, 2016].
-
-[18] Fransson-Hall, C., Gloria, R., Kilbom, Å., Winkel, J., Karlqvist, L., Wiktorin, C., & Group123, S. (1995). A portable ergonomic observation method (PEO) for computerized on-line recording of postures and manual handling. Applied Ergonomics, 26(2), 93-100.
-
-[19] O'Sullivan, K., O'Dea, P., Dankaerts, W., O'Sullivan, P., Clifford, A., & O'Sullivan, L. (2010). Neutral lumbar spine sitting posture in pain-free subjects. Manual Therapy, 15(6), 557-561
-
-[20] PrimeSense, Ltd., "openni::CoordinateConverter Class Reference", [Online], Available: http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html, [February 1, 2016]
+- Mebarki, B., "Effect of school furniture design and traditional sitting habits on sitting postures of middle school pupils in the Touet region, Algeria," *Proceedings of the 17th World Congress on Ergonomics*, 2009.
+- Putz-Anderson, V. et al., "Musculoskeletal disorders and workplace factors," *National Institute for Occupational Safety and Health (NIOSH)*, 1997.
+- Lis, A. M. et al., "Association between sitting and occupational LBP," *European Spine Journal*, 16(2), 283–298, 2007.
+- Priel, V. Z., "A numerical definition of posture," *Human Factors*, 16(6), 576–584, 1974.
+- Karhu, O., Kansi, P., &amp; Kuorinka, I., "Correcting working postures in industry," *Applied Ergonomics*, 8(4), 199–201, 1977.
+- Corlett, E. N. et al., "Posture targeting: a technique for recording working postures," *Ergonomics*, 22(3), 357–366, 1979.
+- Gil, H. C. &amp; Tunes, E., "Posture recording: a model for sitting posture," *Applied Ergonomics*, 20(1), 53–57, 1989.
+- McAtamney, L. &amp; Corlett, E. N., "RULA: a survey method for work-related upper limb disorders," *Applied Ergonomics*, 24(2), 91–99, 1993.
+- Hignett, S. &amp; McAtamney, L., "Rapid Entire Body Assessment (REBA)," *Applied Ergonomics*, 31(2), 201–205, 2000.
+- Christmansson, M., "Repetitive and manual jobs," *Int. Journal of Human Factors in Manufacturing*, 4(3), 281–292, 1994.
+- Li, G. &amp; Buckle, P., "Evaluating change in exposure to risk for musculoskeletal disorders," *HSE Books*, 1999.
+- Finley, M. A. &amp; Lee, R. Y., "Effect of sitting posture on 3-dimensional scapular kinematics," *Archives of Physical Medicine and Rehabilitation*, 84(4), 563–568, 2003.
+- Wong, W. Y. &amp; Wong, M. S., "Detecting spinal posture change in sitting positions with tri-axial accelerometers," *Gait &amp; Posture*, 27(1), 168–171, 2008.
+- Microsoft, "PrimeSense Supplies 3-D-Sensing Technology to 'Project Natal' for Xbox 360," 2010, [https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/](https://news.microsoft.com/2010/03/31/primesense-supplies-3-d-sensing-technology-to-project-natal-for-xbox-360/)
+- PrimeSense, Ltd., "What is OpenNI?," [http://www.openni.ru/index.html](http://www.openni.ru/index.html)
+- PrimeSense, Ltd., "NiTE 2.2.0.11," [http://www.openni.ru/files/nite/index.html](http://www.openni.ru/files/nite/index.html)
+- Fransson-Hall, C. et al., "A portable ergonomic observation method (PEO) for computerized on-line recording of postures," *Applied Ergonomics*, 26(2), 93–100, 1995.
+- O'Sullivan, K. et al., "Neutral lumbar spine sitting posture in pain-free subjects," *Manual Therapy*, 15(6), 557–561, 2010.
+- PrimeSense, Ltd., "openni::CoordinateConverter Class Reference," [http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html](http://www.openni.ru/wp-content/doxygen/html/classopenni_1_1_coordinate_converter.html)

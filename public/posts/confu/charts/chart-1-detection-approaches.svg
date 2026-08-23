@@ -1,0 +1,37 @@
+<svg viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="chart-title chart-desc" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+  </style>
+  <title id="chart-title">Concurrency Defect Detection Approaches Compared</title>
+  <desc id="chart-desc">Grouped bar chart comparing four concurrency defect detection approaches on two dimensions (scale 1-10). System Testing: Scalability 3, Defect Hit Rate 4. Symbolic Execution: Scalability 2, Defect Hit Rate 5. Probabilistic Scheduling: Scalability 6, Defect Hit Rate 3. Guided Fuzzing (DATE-Confu): Scalability 8, Defect Hit Rate 8.</desc>
+  <text x="280" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Concurrency Defect Detection Approaches Compared</text>
+
+  <line x1="72" y1="277" x2="492" y2="277" stroke="currentColor" opacity="0.08" />
+  <line x1="72" y1="230.8" x2="492" y2="230.8" stroke="currentColor" opacity="0.08" />
+  <line x1="72" y1="184.5" x2="492" y2="184.5" stroke="currentColor" opacity="0.08" />
+  <line x1="72" y1="138.2" x2="492" y2="138.2" stroke="currentColor" opacity="0.08" />
+  <line x1="72" y1="92" x2="492" y2="92" stroke="currentColor" opacity="0.08" />
+
+  <rect x="72" y="62" width="10" height="10" fill="#f97316" />
+  <text x="87" y="71" font-size="11" fill="currentColor">Scalability</text>
+  <rect x="177" y="62" width="10" height="10" fill="#38bdf8" />
+  <text x="192" y="71" font-size="11" fill="currentColor">Defect Hit Rate</text>
+
+  <rect x="106.5" y="207.6" width="16" height="69.4" fill="#f97316" />
+  <rect x="124.5" y="184.5" width="16" height="92.5" fill="#38bdf8" />
+  <text x="124.5" y="295" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="124.5" dy="0">System</tspan><tspan x="124.5" dy="11">Testing</tspan></text>
+
+  <rect x="211.5" y="230.8" width="16" height="46.2" fill="#f97316" />
+  <rect x="229.5" y="161.4" width="16" height="115.6" fill="#38bdf8" />
+  <text x="229.5" y="295" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="229.5" dy="0">Symbolic</tspan><tspan x="229.5" dy="11">Execution</tspan></text>
+
+  <rect x="316.5" y="138.2" width="16" height="138.8" fill="#f97316" />
+  <rect x="334.5" y="207.6" width="16" height="69.4" fill="#38bdf8" />
+  <text x="334.5" y="295" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="334.5" dy="0">Probabilistic</tspan><tspan x="334.5" dy="11">Scheduling</tspan></text>
+
+  <rect x="421.5" y="92" width="16" height="185" fill="#f97316" />
+  <rect x="439.5" y="92" width="16" height="185" fill="#38bdf8" />
+  <text x="439.5" y="295" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8"><tspan x="439.5" dy="0">Guided</tspan><tspan x="439.5" dy="11">Fuzzing</tspan><tspan x="439.5" dy="11">(DATE-Confu)</tspan></text>
+
+  <text x="280" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: Flanagan &amp; Freund (2009); DATE-Confu project data (qualitative)</text>
+</svg>

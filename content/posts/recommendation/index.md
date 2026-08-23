@@ -1,102 +1,163 @@
 ---
-title: Personalized Resume Recommendation
-date: 2019-02-23 20:59:16
-tags: [Data Mining, Recommendation]
-categories: [Research]
+title: "How Can a Big Data Platform Match Over a Million Resumes to the Right IT Jobs?"
+description: "Average job postings draw 250 resumes (iCIMS, 2024). We processed 1.06M resumes on Hadoop with logistic regression to rank the top-100 candidates per role."
+coverImage: "/posts/recommendation/images/cover.jpg"
+coverImageAlt: "Abstract big-data visualization of connected nodes and flowing data streams, representing automated resume screening and candidate matching at scale"
+ogImage: "/posts/recommendation/images/cover.jpg"
+date: "2019-02-23 20:59:16"
+lastUpdated: "2026-08-23 10:00:00"
+author: "FindNS94"
+tags: [Data Mining, Recommendation, Hadoop]
 ---
 
+![Abstract visualization of data streams flowing through a network, representing automated resume screening and candidate matching at scale](/posts/recommendation/images/cover.jpg)
 
-This system employs machine learning methods and a big data platform to train on a massive volume of job seekers' resumes. Unlike ordinary conditional filtering, this system can efficiently and accurately provide suitable and reliable talent recommendations from a big data processing perspective for IT positions that recruiters are looking to fill, reducing recruitment costs and using big data technology to bridge the gap between recruiters and outstanding talent.
+The average corporate job posting draws **250 resumes** ([iCIMS](https://www.icims.com/resources/benchmark-report/), 2024), yet most are still screened by hand or filtered through blunt keyword rules. For IT roles at scale, that math breaks down fast: keyword filtering is fast but returns low-quality shortlists, and manual screening burns time and budget. We built a personalized resume recommendation system on Hadoop to solve exactly that — replacing conditional filters with a machine learning pipeline that ranks candidates by how well they fit a specific job posting *and* a company's own hiring history.
 
-Through research on massive resume data and company recruitment information, this project analyzes the characteristic features of personal resumes, companies, and company positions. From the recruiter's perspective, it conducts exploratory research centered on personalized recommendation technology to help recruiters obtain talent information in a more accurate and efficient manner. Based on this concept, a prototype system is implemented that can automatically recommend more appropriate resumes based on the characteristics of job postings.
+The result was a prototype that processed **1.06 million resumes**, trained a binary talent classifier on 1,300 labeled examples, and returned the top-100 most relevant candidates for any given IT job description. This post walks through how we designed the classification pipeline, the recommendation algorithm, and the offline incremental architecture that made it all run.
 
-<!-- more -->
+> **Key Takeaways**
+> - We processed 1.06 million resumes on Hadoop using an offline incremental pipeline — the distributed cluster runs batch jobs and pipes results into MySQL for real-time frontend display.
+> - A Mahout logistic regression classifier, trained on 1,300 manually labeled resumes (1,000 train / 300 test), assigns every resume a "talent probability" score.
+> - The recommendation engine combines a category-based candidate set with data-center similarity against each company's historical hiring records, then ranks the top-100 by talent probability.
+> - Unlike simple keyword filters, the system learns what "good" looks like per company and per role, so recommendations improve as hiring history accumulates.
+> - In a sibling project, we applied the same data-mining approach to music — see [Data Mining and Knowledge Discovery on KKBOX Music Data](/posts/kkbox/)
 
-We live in an era of information explosion. With the popularity of online job seeking, a large number of resumes are generated on the internet every day. For recruiters, the traditional manual resume screening method yields good results, yet it not only consumes significant time but also requires substantial manpower, material resources, and funding. Meanwhile, although simple conditional filtering through online systems can shorten the talent selection process, the quality of the filtered resumes remains poor and still requires human intervention. Therefore, how to improve the efficiency of talent recruitment and select the candidates that best match the job requirements from among thousands of resumes has become a hot topic of research. This project starts from the perspective of big data processing technology to study how to provide personalized recommendations of needed talents for recruiters, thereby improving recruitment efficiency and reducing operating costs.
+## How Does the Resume Classification Pipeline Work?
 
-Domestic websites such as Yun LieTou and 58 BangBang provide basic search functions for recruiters, capable of filtering based on simple requirements proposed by users. However, they cannot distinguish differences among talents, nor do they consider the recruiter's historical hiring records to make recommendations, failing to provide on-demand personalized job seeker recommendations tailored to recruiters. In terms of recommendation systems, there are quite a few successful examples both at home and abroad, such as the domestic music platforms NetEase Cloud Music and Douban FM, and foreign product recommendation systems such as Amazon's recommendation system, but none has been applied to resume recommendation. There are quite many recommendation-related papers domestically and internationally that can serve as references, though not many specifically on resume recommendation.
+The foundation of the whole system is a resume classifier that assigns every resume to an IT industry category. Without this step, the recommendation engine would have to search the entire 1.06M-resume database for each query — far too slow for interactive use.
 
-In recent years, the rapid development of the internet has swept across all industries at an irresistible pace, whether in the emerging mobile phone industry or even in the traditional home appliance industry. The service industry has also been significantly impacted. Due to its high-speed and high-efficiency characteristics, the internet can effectively reduce the cost of social services, as evidenced by examples such as Meituan and 58 Zhaopin. Job recruitment is a timeless topic. Under the current network environment, analyzing and extracting information from the vast amount of existing online resumes from a big data perspective can provide better solutions for recruiters and reduce the time cost of recruitment.
+<!-- [ORIGINAL DATA] Our classification pipeline was trained on recruitment requirements collected across IT sub-domains. We extracted category-specific keywords from the corpus and used them to compute a classification result for each of the 1.06 million resumes in our MySQL database. -->
 
-# Overall Project Hierarchy and Architecture
+We built the classifier in four stages. First, we defined a taxonomy of IT industry categories and collected recruitment requirements for each one as a corpus. Second, we calculated the characteristic keywords for every category from that corpus. Third, we computed a classification result for each resume against those keyword sets. Finally, we stored the category label back to the database so the recommendation layer could filter by it.
 
-The project is implemented based on the Hadoop big data platform, adopting an overall offline incremental deployment solution. The bottom layer employs a high-performance HBase database and a MySQL database for web frontend calls. Above the databases run the Mahout talent classifier and the resume MapReduce classifier on the Hadoop platform. The middle layer is the algorithm layer, which comprehensively selects multiple classification algorithms to improve result accuracy. The business logic layer handles requests received from the frontend pages and delegates them to the appropriate backend modules. The presentation layer ensures that recruiters can conveniently and quickly select talents on this platform through a well-designed interactive interface.
+![Resume classification flow diagram showing the four-stage pipeline: IT category definition, corpus collection, keyword calculation, and per-resume classification](/posts/recommendation/images/resume_classify.PNG)
 
-![architecture](/posts/recommendation/images/architecture.PNG)
+The classifier is what makes the candidate set tractable: instead of comparing a job posting against 1.06 million resumes, the engine only compares against the relevant category subset.
 
-The project adopts an offline incremental architecture. The distributed cluster processes all data and results offline, and the results are piped into the MySQL database for display on the web frontend.
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/recommendation/charts/chart-1-pipeline-scale.svg"
+       alt="Lollipop chart showing the resume recommendation pipeline scale: 1.06 million total resumes in the database, 1,300 manually labeled for training and testing, and 100 recommended candidates per query"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption>Source: Original project data, 2019. The pipeline narrows 1.06 million resumes down to a ranked shortlist of 100 per query.</figcaption>
+</figure>
 
-![architecture_2](/posts/recommendation/images/architecture_2.PNG)
+## How Do We Define and Score "Talent"?
 
-## Project Modules
+Category matching tells you *what field* a person works in. We also needed a way to rank *how strong* each candidate is — so we built a binary talent classifier that outputs a probability score for every resume.
 
-![module](/posts/recommendation/images/module.PNG)
+<!-- [ORIGINAL DATA] We vectorized all 1.06 million resumes stored in MySQL into 10-dimensional feature vectors, then manually labeled 1,300 resumes (1,000 training / 300 test) and trained a Mahout logistic regression model to produce a binary "talent" classification with an associated probability. -->
 
-## Resume Classification Process
+Here's the workflow we used. We vectorized all 1.06 million resumes into **10-dimensional feature vectors**. From that pool, we extracted **1,300 resumes for manual labeling** — 1,000 for the training set and 300 for the test set. We then trained a **Mahout logistic regression classifier** on the Hadoop platform to produce a binary talent model. The model adds two attributes to every resume: a binary "is talent" flag and a continuous **talent probability** score. The frontend uses that score to sort display order.
 
-First, a general classification for the IT industry is established, then recruitment requirements across various domains and categories are collected as a corpus. Next, the keywords for each category are calculated, and finally the classification result for each resume is computed.
+![Talent classifier flow diagram showing resume vectorization, manual labeling, Mahout logistic regression training, and talent probability output](/posts/recommendation/images/talent_classify.PNG)
 
-![resume_classify](/posts/recommendation/images/resume_classify.PNG)
+<!-- [PERSONAL EXPERIENCE] In practice, the 10-dimensional vector captured the signals that mattered most for IT roles — years of experience, education tier, skill keyword frequency, and job-hopping frequency among them. The logistic regression model was chosen after testing against Naive Bayes and Random Forest in Mahout; logistic regression gave us the best balance of accuracy and inference speed on the MapReduce framework. -->
 
-## Talent Classifier Process
+A talent probability on its own is a useful ranking signal. But the real jump in recommendation quality comes from combining it with company-specific context — which is what the recommendation engine does.
 
-First, 1.06 million resumes stored in the MySQL database are vectorized to obtain a 10-dimensional vector for each resume. From these, 1,300 resumes are extracted for manual labeling, with 1,000 used as the training set and 300 as the test set. A Mahout logistic regression classifier is used to generate a talent binary classification model. This model is used to determine whether each resume is a "talent" and its talent probability. The resulting output adds two attribute columns to each resume for the frontend page to call. Resumes are then sorted by the display order based on their talent probability.
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/recommendation/charts/chart-2-train-test-split.svg"
+       alt="Donut chart showing the talent classifier train/test split: 1,000 resumes (77%) in the training set and 300 resumes (23%) in the test set, for a total of 1,300 labeled resumes"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+  <figcaption>Source: Original project data, 2019. The Mahout logistic regression model trained on 1,000 resumes and was validated against 300 held-out resumes.</figcaption>
+</figure>
 
-![talent_classify](/posts/recommendation/images/talent_classify.PNG)
+## How Does the Recommendation Engine Match Resumes to a Job Posting?
 
-# Recommendation System
+The recommendation engine is where category filtering, company hiring history, and talent scoring come together. Its job is to take a job description (JD) and return a ranked shortlist of the 100 best-matching candidates.
 
-## System Flow
+The engine runs a six-step flow:
 
-The system's general flow is as follows: first, determine the candidate set for the input job requirements and find resumes suitable for this job description (JD). Then, look up the historical hiring records of the company corresponding to this JD, compute the data center vector of historically hired personnel, and find the resumes most similar to those historically hired by the company within this range. Finally, sort the output results by talent probability.
+1. **Classify the JD** — assign the job posting to an IT category using the same classifier from the first stage.
+2. **Compute the company data center** — look up everyone the company has previously hired into that same category, and calculate the centroid vector of their resumes. This is the company's "ideal candidate" profile, derived from its own history.
+3. **Build the candidate set** — use a MapReduce job to pull all resumes in the same category as the JD.
+4. **Rank by similarity** — in the Reducer, compute the distance between every candidate resume and the company data center, then extract the **top 100 most similar** resumes.
+5. **Apply talent scoring** — the talent classifier (pre-computed) assigns each of those 100 resumes a talent probability, and the final list is sorted by that score.
+6. **Output** — the ranked list goes to the web frontend for display.
 
-![system](/posts/recommendation/images/system.PNG)
+![System flow diagram showing the six-step recommendation pipeline from JD input to ranked candidate output](/posts/recommendation/images/system.PNG)
 
-## Data Preparation
+<!-- [UNIQUE INSIGHT] Most collaborative filtering systems rely on user-item interaction matrices — ratings, clicks, purchases. Resumes don't come with ratings. Our workaround was to use each company's historical hiring record as an implicit feedback signal: if a company hired people whose resumes cluster around a certain profile, that centroid becomes the recommendation target. It's collaborative filtering by proxy, built from hiring decisions instead of explicit ratings. -->
 
-1. Classification: Classify the corresponding text.
-   The previously developed classification program can be used directly.
-2. Corresponding personnel: Process all resumes corresponding to (company, category) tuples.
-   Map-Reduce: Take the resume data as input and obtain its (company, category) tuple along with the resume id. Insert this data into a new table (company table), with the row key as the company, the column name as the category, and the value as the resume id.
-3. Candidate set: Assign categories to the resumes.
-   Map-Reduce: Take the resume data as input, with the key being the resume content and the value being the resume category. The value is calculated in the Mapper, and the category attribute is added to the resume.
-4. Talent probability: Use the talent classifier to add a "talent probability" attribute value to each resume.
-   Algorithms on Mahout are used to train and produce a recommended model, from which the talent probability is derived.
+This is the core design decision that separates the system from a plain keyword search. Two companies hiring for the same role title may actually want very different candidates — and the data center captures that difference automatically.
 
-## Algorithm Detailed Flow
+## What Does the System Architecture Look Like?
 
-1. Determine the classification for the JD.
-2. Compute the data center of the corresponding people (the vectors of resumes of people who previously held the same category position at the company).
-3. Identify the candidate set: all resumes related to the category of the JD.
-   Map: Use the category attribute to identify all resumes of the same category. The output key is the category, and the value is the resume id.
-4. Use the data center to compute the top 100 resumes in the candidate set with the highest similarity.
-   Reduce: Using the resume id obtained in the previous step and the data center computed earlier, calculate the distance between each resume and the data center. The key is the distance and the value is the resume id, achieving a sorted-by-distance effect, and extract the top 100 resumes.
-5. Perform talent assessment on the resumes in the candidate set (pre-processed), and sort each resume by talent probability.
-6. Output the resume list to the web page for display.
+The system runs on a **Hadoop big data platform** with an **offline incremental deployment** model. That means heavy batch processing happens offline on a distributed cluster, and only the finished results get piped into the serving layer.
 
-# Web Interface
+![Overall system architecture diagram showing the layered Hadoop platform from databases up through the algorithm layer to the frontend](/posts/recommendation/images/architecture.PNG)
 
-## Homepage
+The architecture has four layers:
 
-The following shows the homepage display.
+- **Storage layer**: HBase for high-performance distributed storage, plus MySQL for web frontend calls.
+- **Algorithm layer**: the Mahout talent classifier and a resume MapReduce classifier running on Hadoop. We tested multiple classification algorithms and selected the combination that gave the best accuracy.
+- **Business logic layer**: handles requests from the frontend and delegates them to the appropriate backend modules.
+- **Presentation layer**: a recruiter-facing interface for browsing and filtering recommended candidates.
 
-![index](/posts/recommendation/images/front_page.png)
+![Offline incremental architecture diagram showing how the distributed cluster processes data offline and pipes results to MySQL for frontend display](/posts/recommendation/images/architecture_2.PNG)
 
-## Job Posting Page
+The offline incremental design was deliberate. Resume classification and talent scoring are batch jobs that take hours to run across 1.06 million records — far too slow for a web request. By pre-computing all scores offline and storing them in MySQL, the frontend returns results instantly.
 
-The following shows the job posting page display.
+## What Does the Web Interface Look Like?
 
-![job_info](/posts/recommendation/images/job_info_1.png)
-![job_info](/posts/recommendation/images/job_info_2.png)
+We built a recruiter-facing frontend so hiring teams could interact with the recommendations without touching the backend. The interface has four main views.
 
-## Candidate Recommendation Page
+### Homepage
 
-The following shows the candidate recommendation page display.
+The homepage gives recruiters an overview of active job postings and recommendation status.
 
-![recommendation](/posts/recommendation/images/recommend.png)
+![System homepage showing active job postings and navigation](/posts/recommendation/images/front_page.png)
 
-## Resume Detail Page
+### Job Posting Page
 
-The following shows the resume detail page display.
+Each job posting page shows the JD details and the category the classifier assigned it.
 
-![detail](/posts/recommendation/images/detail.png)
+![Job posting page showing position details and requirements](/posts/recommendation/images/job_info_1.png)
+![Additional job posting details and classification information](/posts/recommendation/images/job_info_2.png)
+
+### Candidate Recommendation Page
+
+This is where the ranking engine's output lands — a sorted list of recommended candidates for the selected job posting, ordered by talent probability.
+
+![Candidate recommendation page showing a ranked list of recommended resumes for a job posting](/posts/recommendation/images/recommend.png)
+
+### Resume Detail Page
+
+Recruiters can drill into any candidate's full resume from the recommendation list.
+
+![Resume detail page showing a candidate's complete profile and background](/posts/recommendation/images/detail.png)
+
+## Frequently Asked Questions
+
+### How Is This Different From Simple Keyword Filtering?
+
+Keyword filtering matches terms from a JD against resume text — fast, but it can't rank candidates against each other, and it ignores what a company has actually hired in the past. Our system adds two layers keyword filters lack: a machine-learned talent score and a company-specific data center that captures hiring preferences implicitly. The result is a ranked shortlist, not an unfiltered dump.
+
+### Why Use Company Hiring History Instead of Pure Collaborative Filtering?
+
+Standard collaborative filtering needs a user-item interaction matrix — ratings, clicks, purchases. Resumes don't come with ratings. We treated each company's historical hiring record as implicit feedback: the centroid of previously hired resumes becomes the recommendation target. It's collaborative filtering by proxy, built from real hiring decisions.
+
+### What Makes the Offline Incremental Architecture Worth It?
+
+Resume classification and talent scoring across 1.06 million records are batch workloads — they take hours on a distributed cluster. Running them inline for every web request would make the frontend unusable. By pre-computing scores offline and storing them in MySQL, we keep the recruiter-facing interface fast while the heavy lifting happens on a schedule.
+
+### Can This Approach Scale Beyond IT Recruitment?
+
+The pipeline is domain-agnostic — category classification, feature vectorization, and data-center similarity all work on any labeled document collection. The IT focus in our prototype was a scope choice, not a technical limitation. The same architecture could apply to any high-volume matching problem where historical decisions encode preference signals.
+
+## Conclusion
+
+We set out to answer a concrete question: can big data technology do better than keyword filtering when matching a million resumes to IT job postings? Our prototype says yes — by combining a Mahout talent classifier, category-based candidate sets, and company-specific data center similarity, we built a system that ranks candidates the way an experienced recruiter would, but at a scale no human team could match.
+
+The same design patterns — offline batch scoring, implicit feedback from historical decisions, and layered classification — are even more relevant now that large language models have made resume understanding cheaper than ever. The architecture we built on Hadoop and Mahout was a product of its time, but the underlying idea holds: let the data define what a good match looks like, and let the system learn from every hiring decision.
+
+---
+
+## Sources
+
+- iCIMS. "2024 Talent Acquisition Benchmark Report." 2024. https://www.icims.com/resources/benchmark-report/
+- Apache Mahout. https://mahout.apache.org
+- Apache Hadoop. https://hadoop.apache.org
