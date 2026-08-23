@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" role="img" aria-label="Transport comparison chart: journey time in hours for each route segment and mode">
+  <title>Transport Time Comparison: Kunming to Pu'er to Xishuangbanna</title>
+  <desc>Grouped horizontal bar chart comparing journey time (hours) across transport modes for two route segments. Kunming to Pu'er: high-speed rail 3h, flight 1h, self-drive 6h, bus 7h. Pu'er to Xishuangbanna: self-drive 2h, bus 2.5h.</desc>
+
+  <!-- Background -->
+  <rect width="560" height="420" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="280" y="30" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="600">Journey Time by Transport Mode (hours)</text>
+  <text x="280" y="48" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.6">Kunming → Pu'er → Xishuangbanna route segments</text>
+
+  <!-- Y-axis label -->
+  <text x="14" y="220" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.6" transform="rotate(-90, 14, 220)">Route &amp; Mode</text>
+
+  <!-- Chart area -->
+  <!-- Segment header: Kunming → Pu'er -->
+  <text x="60" y="78" fill="#f97316" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">Kunming → Pu'er</text>
+
+  <!-- Rail: 3h -->
+  <rect x="140" y="90" width="150" height="22" rx="3" fill="#f97316"/>
+  <text x="60" y="105" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">High-speed Rail</text>
+  <text x="296" y="105" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">3h</text>
+
+  <!-- Flight: 1h -->
+  <rect x="140" y="118" width="50" height="22" rx="3" fill="#38bdf8"/>
+  <text x="60" y="133" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Flight</text>
+  <text x="196" y="133" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">1h</text>
+
+  <!-- Self-drive: 6h -->
+  <rect x="140" y="146" width="300" height="22" rx="3" fill="#a78bfa"/>
+  <text x="60" y="161" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Self-drive</text>
+  <text x="446" y="161" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">6h</text>
+
+  <!-- Bus: 7h -->
+  <rect x="140" y="174" width="350" height="22" rx="3" fill="#22c55e"/>
+  <text x="60" y="189" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Bus</text>
+  <text x="496" y="189" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">7h</text>
+
+  <!-- Segment header: Pu'er → Xishuangbanna -->
+  <text x="60" y="222" fill="#38bdf8" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">Pu'er → Xishuangbanna</text>
+
+  <!-- Self-drive: 2h -->
+  <rect x="140" y="234" width="100" height="22" rx="3" fill="#a78bfa"/>
+  <text x="60" y="249" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Self-drive</text>
+  <text x="246" y="249" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">2h</text>
+
+  <!-- Bus: 2.5h -->
+  <rect x="140" y="262" width="125" height="22" rx="3" fill="#22c55e"/>
+  <text x="60" y="277" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Bus</text>
+  <text x="271" y="277" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">2.5h</text>
+
+  <!-- No direct rail note -->
+  <text x="140" y="306" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">No direct rail link — road transport only</text>
+
+  <!-- X-axis -->
+  <line x1="140" y1="330" x2="510" y2="330" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="140" y="348" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">0h</text>
+  <text x="240" y="348" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">2h</text>
+  <text x="340" y="348" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">4h</text>
+  <text x="440" y="348" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">6h</text>
+  <text x="500" y="348" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">7h</text>
+
+  <!-- Gridlines -->
+  <line x1="240" y1="82" x2="240" y2="330" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+  <line x1="340" y1="82" x2="340" y2="330" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+  <line x1="440" y1="82" x2="440" y2="330" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Legend -->
+  <rect x="140" y="370" width="12" height="12" rx="2" fill="#f97316"/>
+  <text x="158" y="380" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10">Rail</text>
+  <rect x="210" y="370" width="12" height="12" rx="2" fill="#38bdf8"/>
+  <text x="228" y="380" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10">Flight</text>
+  <rect x="280" y="370" width="12" height="12" rx="2" fill="#a78bfa"/>
+  <text x="298" y="380" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10">Self-drive</text>
+  <rect x="370" y="370" width="12" height="12" rx="2" fill="#22c55e"/>
+  <text x="388" y="380" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10">Bus</text>
+
+  <!-- Source -->
+  <text x="280" y="408" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="9" opacity="0.4">Source: China-Laos Railway data, Ctrip/Qunar travel platforms, 2025</text>
+</svg>

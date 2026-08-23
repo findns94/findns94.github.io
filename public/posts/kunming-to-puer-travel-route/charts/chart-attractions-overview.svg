@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-label="Attractions overview: recommended visit duration and entrance fee for each major sight">
+  <title>Key Attractions: Visit Duration &amp; Entrance Fee Comparison</title>
+  <desc>Horizontal bar chart comparing six major attractions along the Kunming-Pu'er-Xishuangbanna route by recommended visit duration (hours) and entrance fee (yuan). Jingmai Mountain: 8h (full day), 50 yuan. Sun River Forest Park: 4h, 100 yuan. Tropical Botanical Garden: 5h, 80 yuan. Wild Elephant Valley: 4h, 65 yuan. Manting Park: 3h, 40 yuan. Zongfo Temple: 1.5h, free.</desc>
+
+  <!-- Background -->
+  <rect width="560" height="440" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="280" y="30" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="600">Key Attractions: Visit Duration &amp; Entrance Fee</text>
+  <text x="280" y="48" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.6">Jingmai Mountain UNESCO to Xishuangbanna rainforest</text>
+
+  <!-- Column headers -->
+  <text x="170" y="72" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5">Attraction</text>
+  <text x="400" y="72" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5" text-anchor="middle">Duration</text>
+  <text x="500" y="72" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.5" text-anchor="middle">Fee</text>
+
+  <!-- Bar scale: max 8h = 240px wide, so 1h = 30px, bars start at x=170 -->
+
+  <!-- 1. Jingmai Mountain -->
+  <text x="162" y="100" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Jingmai Mountain</text>
+  <rect x="170" y="88" width="240" height="18" rx="3" fill="#f97316"/>
+  <text x="416" y="101" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">8h</text>
+  <text x="500" y="101" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" text-anchor="middle">¥50</text>
+
+  <!-- 2. Tropical Botanical Garden -->
+  <text x="162" y="128" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Botanical Garden</text>
+  <rect x="170" y="116" width="150" height="18" rx="3" fill="#22c55e"/>
+  <text x="326" y="129" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">5h</text>
+  <text x="500" y="129" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" text-anchor="middle">¥80</text>
+
+  <!-- 3. Sun River Forest Park -->
+  <text x="162" y="156" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Sun River Park</text>
+  <rect x="170" y="144" width="120" height="18" rx="3" fill="#38bdf8"/>
+  <text x="296" y="157" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">4h</text>
+  <text x="500" y="157" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" text-anchor="middle">¥100</text>
+
+  <!-- 4. Wild Elephant Valley -->
+  <text x="162" y="184" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Wild Elephant Valley</text>
+  <rect x="170" y="172" width="120" height="18" rx="3" fill="#a78bfa"/>
+  <text x="296" y="185" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">4h</text>
+  <text x="500" y="185" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" text-anchor="middle">¥65</text>
+
+  <!-- 5. Manting Park -->
+  <text x="162" y="212" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Manting Park</text>
+  <rect x="170" y="200" width="90" height="18" rx="3" fill="#f97316" opacity="0.7"/>
+  <text x="266" y="213" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">3h</text>
+  <text x="500" y="213" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" text-anchor="middle">¥40</text>
+
+  <!-- 6. Zongfo Temple -->
+  <text x="162" y="240" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" text-anchor="end">Zongfo Temple</text>
+  <rect x="170" y="228" width="45" height="18" rx="3" fill="#22c55e" opacity="0.6"/>
+  <text x="221" y="241" fill="#ffffff" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">1.5h</text>
+  <text x="500" y="241" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" text-anchor="middle">Free</text>
+
+  <!-- Duration scale -->
+  <line x1="170" y1="270" x2="410" y2="270" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="170" y="286" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="9" opacity="0.4">0h</text>
+  <text x="250" y="286" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="9" opacity="0.4">2.5h</text>
+  <text x="330" y="286" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="9" opacity="0.4">5h</text>
+  <text x="410" y="286" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="9" opacity="0.4">8h</text>
+
+  <!-- Distance info box -->
+  <rect x="40" y="310" width="480" height="90" rx="8" fill="transparent" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  <text x="60" y="332" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">Distance from City Center</text>
+  <text x="60" y="352" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.7">Jingmai Mountain: ~2.5h drive from Pu'er city (remote — plan overnight)</text>
+  <text x="60" y="370" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.7">Sun River Park: 3-5 km from Pu'er center (10 min drive)</text>
+  <text x="60" y="388" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.7">Botanical Garden: ~1h from Jinghong; Wild Elephant Valley: ~30 km north</text>
+
+  <!-- Source -->
+  <text x="280" y="428" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="9" opacity="0.4">Source: Ctrip, Mafengwo, Qunar travel platforms; UNESCO, 2025</text>
+</svg>
