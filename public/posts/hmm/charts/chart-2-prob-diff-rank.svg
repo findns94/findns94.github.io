@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 600 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-labelledby="chart2-title chart2-desc">
+  <title id="chart2-title">Average Rank of Probability Difference vs HMM</title>
+  <desc id="chart2-desc">Lollipop chart showing how closely each n-gram method's sentence probabilities track the HMM's, measured by average rank of absolute probability difference (lower is closer). On both valid and test corpora, add_one_unigram is closest to the HMM (valid 1.341, test 1.434) and good_turing_bigram is furthest (valid 2.864, test 2.773). Source: Original experiment data, 2019.</desc>
+
+  <!-- Title -->
+  <text x="300" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Average Rank of Probability Difference vs HMM</text>
+  <text x="300" y="42" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.5">Lower rank = closer to HMM probabilities. Valid and test corpora shown.</text>
+
+  <!-- X axis: rank 1.0 to 3.0, mapped from x=140 to x=520 -->
+  <!-- Gridlines at 1.0, 1.5, 2.0, 2.5, 3.0 -->
+  <line x1="140" y1="56" x2="140" y2="300" stroke="currentColor" opacity="0.3"/>
+  <line x1="235" y1="56" x2="235" y2="300" stroke="currentColor" opacity="0.08"/>
+  <line x1="330" y1="56" x2="330" y2="300" stroke="currentColor" opacity="0.08"/>
+  <line x1="425" y1="56" x2="425" y2="300" stroke="currentColor" opacity="0.08"/>
+  <line x1="520" y1="56" x2="520" y2="300" stroke="currentColor" opacity="0.08"/>
+
+  <text x="140" y="316" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">1.0</text>
+  <text x="235" y="316" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">1.5</text>
+  <text x="330" y="316" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">2.0</text>
+  <text x="425" y="316" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">2.5</text>
+  <text x="520" y="316" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.45">3.0</text>
+
+  <!-- Legend -->
+  <circle cx="200" cy="346" r="5" fill="#38bdf8"/>
+  <text x="208" y="350" text-anchor="start" font-size="9" fill="currentColor" opacity="0.6">Valid</text>
+  <circle cx="270" cy="346" r="5" fill="#f97316"/>
+  <text x="278" y="350" text-anchor="start" font-size="9" fill="currentColor" opacity="0.6">Test</text>
+
+  <!-- Lollipops (sorted ascending by average rank) -->
+  <!-- add_one_unigram: valid 1.341, test 1.434 -->
+  <text x="132" y="84" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">add_one_unigram</text>
+  <line x1="140" y1="80" x2="204.8" y2="80" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="204.8" cy="80" r="6" fill="#38bdf8"/>
+  <text x="204.8" y="70" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">1.341</text>
+  <line x1="140" y1="80" x2="222.5" y2="80" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="222.5" cy="80" r="6" fill="#f97316"/>
+  <text x="222.5" y="96" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">1.434</text>
+
+  <!-- add_one_bigram: valid 1.722, test 1.668 -->
+  <text x="132" y="134" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">add_one_bigram</text>
+  <line x1="140" y1="130" x2="277.2" y2="130" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="277.2" cy="130" r="6" fill="#38bdf8"/>
+  <text x="277.2" y="120" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">1.722</text>
+  <line x1="140" y1="130" x2="266.9" y2="130" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="266.9" cy="130" r="6" fill="#f97316"/>
+  <text x="266.9" y="146" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">1.668</text>
+
+  <!-- back_off_trigram: valid 1.759, test 1.843 -->
+  <text x="132" y="184" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">back_off_trigram</text>
+  <line x1="140" y1="180" x2="284.2" y2="180" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="284.2" cy="180" r="6" fill="#38bdf8"/>
+  <text x="284.2" y="170" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">1.759</text>
+  <line x1="140" y1="180" x2="300.2" y2="180" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="300.2" cy="180" r="6" fill="#f97316"/>
+  <text x="300.2" y="196" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">1.843</text>
+
+  <!-- good_turing_unigram: valid 2.314, test 2.282 -->
+  <text x="132" y="234" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">good_turing_unigram</text>
+  <line x1="140" y1="230" x2="389.7" y2="230" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="389.7" cy="230" r="6" fill="#38bdf8"/>
+  <text x="389.7" y="220" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">2.314</text>
+  <line x1="140" y1="230" x2="383.6" y2="230" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="383.6" cy="230" r="6" fill="#f97316"/>
+  <text x="383.6" y="246" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">2.282</text>
+
+  <!-- good_turing_bigram: valid 2.864, test 2.773 -->
+  <text x="132" y="284" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">good_turing_bigram</text>
+  <line x1="140" y1="280" x2="494.2" y2="280" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="494.2" cy="280" r="6" fill="#38bdf8"/>
+  <text x="494.2" y="270" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">2.864</text>
+  <line x1="140" y1="280" x2="476.9" y2="280" stroke="currentColor" opacity="0.15" stroke-width="1"/>
+  <circle cx="476.9" cy="280" r="6" fill="#f97316"/>
+  <text x="476.9" y="296" text-anchor="middle" font-size="8" fill="currentColor" opacity="0.6">2.773</text>
+
+  <!-- Source -->
+  <text x="300" y="366" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.35">Source: Original experiment data, 2019. Rank is the per-sentence absolute difference between each method's probability and the HMM's, averaged over all sentences.</text>
+</svg>

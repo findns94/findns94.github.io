@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="chartTitle chartDesc">
+  <title id="chartTitle">AUC comparison of three ML models for P2P risk detection</title>
+  <desc id="chartDesc">Horizontal bar chart comparing the AUC of three machine learning models trained on 325 labeled P2P lending platforms (58 problematic) with SMOTE oversampling and five-fold cross-validation. SVM achieved the highest AUC at 0.9393, followed by Random Forest at 0.9333, and Decision Tree at 0.8484.</desc>
+
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .bar-label { font-size: 13px; font-weight: 600; }
+    .axis-label { font-size: 12px; }
+    .value-label { font-size: 12px; font-weight: 600; }
+    .title { font-size: 15px; font-weight: 700; }
+    .source { font-size: 10px; opacity: 0.7; }
+    .grid-line { stroke: currentColor; stroke-opacity: 0.12; stroke-width: 1; }
+    .axis-line { stroke: currentColor; stroke-opacity: 0.25; stroke-width: 1; }
+  </style>
+
+  <!-- Title -->
+  <text class="title" x="20" y="30">AUC by Model (5-fold CV, SMOTE)</text>
+
+  <!-- Y axis labels and bars -->
+  <!-- SVM: 0.9393 -->
+  <text class="bar-label" x="20" y="80" text-anchor="start">SVM</text>
+  <rect x="80" y="68" width="470" height="22" rx="4" fill="#38bdf8" opacity="0.9"/>
+  <text class="value-label" x="560" y="84" text-anchor="start" fill="#38bdf8">0.9393</text>
+
+  <!-- Random Forest: 0.9333 -->
+  <text class="bar-label" x="20" y="135" text-anchor="start">Random Forest</text>
+  <rect x="80" y="123" width="467" height="22" rx="4" fill="#a78bfa" opacity="0.9"/>
+  <text class="value-label" x="560" y="139" text-anchor="start" fill="#a78bfa">0.9333</text>
+
+  <!-- Decision Tree: 0.8484 -->
+  <text class="bar-label" x="20" y="190" text-anchor="start">Decision Tree</text>
+  <rect x="80" y="178" width="425" height="22" rx="4" fill="#fbbf24" opacity="0.9"/>
+  <text class="value-label" x="516" y="194" text-anchor="start" fill="#fbbf24">0.8484</text>
+
+  <!-- X axis -->
+  <line class="axis-line" x1="80" y1="224" x2="580" y2="224"/>
+
+  <!-- X axis ticks -->
+  <line class="grid-line" x1="80" y1="50" x2="80" y2="224"/>
+  <text class="axis-label" x="80" y="244" text-anchor="middle">0.0</text>
+  <line class="grid-line" x1="205" y1="50" x2="205" y2="224"/>
+  <text class="axis-label" x="205" y="244" text-anchor="middle">0.25</text>
+  <line class="grid-line" x1="330" y1="50" x2="330" y2="224"/>
+  <text class="axis-label" x="330" y="244" text-anchor="middle">0.50</text>
+  <line class="grid-line" x1="455" y1="50" x2="455" y2="224"/>
+  <text class="axis-label" x="455" y="244" text-anchor="middle">0.75</text>
+  <line class="grid-line" x1="580" y1="50" x2="580" y2="224"/>
+  <text class="axis-label" x="580" y="244" text-anchor="middle">1.00</text>
+
+  <!-- Source attribution -->
+  <text class="source" x="20" y="300">Source: P2P risk analysis platform study, 2019 (352 platforms, 58 problematic). AUC evaluated via 5-fold cross-validation with SMOTE oversampling.</text>
+</svg>

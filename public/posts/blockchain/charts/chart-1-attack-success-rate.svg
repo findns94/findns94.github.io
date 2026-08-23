@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif; --chart-muted: #4b5563;" role="img" aria-labelledby="double-spend-attack-success-rate-by-attacker-hashing-power-title double-spend-attack-success-rate-by-attacker-hashing-power-desc">
+  <style>
+    @media (prefers-color-scheme: dark) { svg { --chart-muted: #d1d5db; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+  <title id="double-spend-attack-success-rate-by-attacker-hashing-power-title">Double-Spend Attack Success Rate by Attacker Hashing Power</title>
+  <desc id="double-spend-attack-success-rate-by-attacker-hashing-power-desc">A lollipop chart showing the probability of a successful double-spend attack under different attacker hashing power ratios, based on simulation experiments. At 20% hashing power the success rate is 5.3% (2/38), at 40% it is 14.6% (7/48), at 60% it is 25.7% (9/35), and at 80% it is 33.8% (22/65).</desc>
+  <text x="280.0" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="currentColor">Double-Spend Attack Success Rate by Attacker Hashing Power</text>
+  <text x="280.0" y="48.0" text-anchor="middle" font-size="12" fill="var(--chart-muted, currentColor)"><tspan x="280.0" dy="0">Higher hashing power sharply increases attack success probability</tspan></text>
+  <line x1="145" y1="298.0" x2="510" y2="298.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="243.0" x2="510" y2="243.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="188.0" x2="510" y2="188.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="133.0" x2="510" y2="133.0" stroke="currentColor" opacity="0.08" />
+<line x1="145" y1="78.0" x2="510" y2="78.0" stroke="currentColor" opacity="0.08" />
+<text x="136.0" y="109.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">20%</tspan></text>
+<line x1="145" y1="105.5" x2="202.2" y2="105.5" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="202.2" cy="105.5" r="6" fill="#f97316" />
+<text x="214.2" y="109.5" font-size="11" fill="currentColor">5.3</text>
+<text x="136.0" y="164.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">40%</tspan></text>
+<line x1="145" y1="160.5" x2="302.7" y2="160.5" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="302.7" cy="160.5" r="6" fill="#38bdf8" />
+<text x="314.7" y="164.5" font-size="11" fill="currentColor">14.6</text>
+<text x="136.0" y="219.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">60%</tspan></text>
+<line x1="145" y1="215.5" x2="422.5" y2="215.5" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="422.5" cy="215.5" r="6" fill="#a78bfa" />
+<text x="434.5" y="219.5" font-size="11" fill="currentColor">25.7</text>
+<text x="136.0" y="274.5" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8"><tspan x="136.0" dy="0">80%</tspan></text>
+<line x1="145" y1="270.5" x2="510.0" y2="270.5" stroke="currentColor" opacity="0.15" stroke-width="1" />
+<circle cx="510.0" cy="270.5" r="6" fill="#22c55e" />
+<text x="522.0" y="274.5" font-size="11" fill="currentColor">33.8</text>
+  <text x="280.0" y="366" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: Author&#x27;s simulation experiments (2019)</text>
+</svg>

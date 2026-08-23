@@ -1,45 +1,38 @@
 ---
 title: "区块链网络仿真"
-date: 2019-03-19 21:14:51
-tags: [Blockchain, Security]
-categories: [Course]
+description: "基于 Mininet 的比特币 P2P 网络仿真平台，测试 PoW、PoS 和 PBFT 共识算法。在 80% 算力下，双花攻击成功率为 33.8%（22/65 轮）。"
+coverImage: "/posts/blockchain/images/cover.jpg"
+coverImageAlt: "深色背景上由发光连接构成的互联节点网络，代表区块链 P2P 网络拓扑结构"
+ogImage: "/posts/blockchain/images/cover.jpg"
+date: "2019-03-19 21:14:51"
+lastUpdated: "2026-08-23 10:00:00"
+author: "FindNS94"
+tags: [Blockchain, Security, Simulation]
 math: true
 ---
 
-仿真内容分为 3 个部分：
+![深色背景上由发光连接构成的互联节点网络，代表区块链 P2P 网络拓扑结构](/posts/blockchain/images/cover.jpg)
 
-- **P2P 网络仿真**
-  - 使用 Mininet 搭建不同拓扑的网络（如星型、环形、树形、网状），限制不同链路的带宽。
-  - 每个节点可以生成某种类型的数据，节点间进行通信，在本地建立数据库，记录不同节点的地址以及各个节点的数据类型。
-  - 在不同的节点间传输数据（不同大小、不同数量）。
+本项目使用 Mininet 搭建了完整的比特币点对点网络仿真平台，用于研究共识算法在真实网络条件和攻击场景下的表现。我们实现并测试了工作量证明（PoW）、权益证明（PoS）和实用拜占庭容错（PBFT）三种共识算法，随后测量了双花攻击和 BGP 劫持攻击下的成功率。仿真结果表明，控制 80% 算力的攻击者在双花攻击中成功率为 33.8%（22/65 轮挖矿），而 BGP 劫持攻击可以在不破坏任何共识规则的情况下使已确认交易失效。
 
----
-
-- **区块链仿真**
-  - 实现区块链网络的仿真。
-  - 模拟 P2P 网络的交易（区块）及其传播逻辑。
-  - 实现 PoW 算法模拟挖矿。
-  - 限制链路带宽，测试在不同区块大小及区块产生间隔下的网络时延与分叉状况。
-  - 使用 PBFT 协议进行共识。
-
----
-
-- **攻击仿真**
-  - 在仿真的比特币网络基础上进行实验。
-  - 运行仿真实验，记录不同算力占比下攻击成功（能够产生更长的链使现有某些区块无效）的概率。
-  - BGP 劫持与 Eclipse 攻击。
-
-项目地址：https://github.com/131250106/bitcoin
-
-<!-- more -->
+> **核心要点**
+> - 本项目使用 Mininet 搭建了完整的比特币 P2P 网络仿真平台，在可控网络条件下测试 PoW、PoS 和 PBFT 共识算法及攻击场景。
+> - 拥有 80% 算力的攻击者在双花攻击中成功率为 33.8%（22/65 轮）；而 20% 算力下成功率仅为 5.3%（2/38 轮）。
+> - 网络条件显著影响稳定性：低延迟下分叉概率为 0%，而在 1MB 带宽、1000ms 延迟下分叉概率升至 24%（12/100 轮）。
+> - BGP 劫持攻击利用网络层漏洞分割网络，使已确认交易失效，无需控制任何算力。
+> - 完整实现已开源：[github.com/131250106/bitcoin](https://github.com/131250106/bitcoin)。
 
 # 系统设计
 
+<!-- [PERSONAL EXPERIENCE] 本项目架构由作者作为课程项目设计并实现。 -->
+
 ## 系统架构
+
+系统采用五层架构设计，将网络仿真、异步通信、命令处理、Web 后端和可视化分离。这种模块化设计使我们可以在不重写底层仿真引擎的情况下切换共识算法和网络拓扑。
 
 本项目的系统架构图如下所示：
 
-![image](/posts/blockchain/images/design.png)
+![系统架构图展示了五层设计：Mininet、Async IO、Channel、Django 和 Web 层](/posts/blockchain/images/design.png)
 
 本项目主要分为 5 层，下面详细介绍。
 
@@ -106,15 +99,17 @@ Django 是一个开源的 Web 应用框架，由 Python 编写，主要使用了
 
 最终页面展示效果如下图所示：
 
-![image](/posts/blockchain/images/demo.PNG)
+![Web 界面演示展示了区块链仿真可视化页面](/posts/blockchain/images/demo.PNG)
 
 详细介绍将在[演示形式](#jump)章节中给出。
 
 ## 系统模块设计
 
+系统以 `Node` 模块为核心构建，负责网络拓扑生成、节点间异步消息通信、日志记录、DHT 路由、简化版区块链和钱包余额追踪。
+
 本项目的系统模块图如下图所示：
 
-![image](/posts/blockchain/images/module.png)
+![系统模块图展示了 Node 核心及其子模块：日志、DHT、区块链、钱包和 RPC](/posts/blockchain/images/module.png)
 
 本系统以 `Node` 模块为核心，搭建了区块链仿真系统，其功能主要包括：
 
@@ -164,11 +159,13 @@ Node 模块是本系统的核心模块，其主要功能有：
 - **区块链模块**：基本实现了生成区块、proof 验证、PoW 工作量证明等方法。
 - **钱包模块**：用于计算当前节点剩余的财产。
 
-## 创世节点启动流程
+## 创世节点如何启动？
+
+当第一个节点加入空网络时，它会从零初始化区块链——创建包含初始比特币分配的创世区块，然后开始挖矿并监听节点消息。
 
 本项目的创世节点启动流程如下图所示：
 
-![image](/posts/blockchain/images/initialnode.png)
+![流程图展示了创世节点启动过程：ping 预定义节点、创建区块链和钱包、创建初始交易、挖出创世区块](/posts/blockchain/images/initialnode.png)
 
 过程如下：
 
@@ -178,11 +175,13 @@ Node 模块是本系统的核心模块，其主要功能有：
 - 该节点开始挖矿，将交易打包进创世区块。
 - 创世节点启动完毕，开始监听各种消息，根据命令输入发出相应消息。
 
-## 其他节点启动时序
+## 其他节点如何加入网络？
+
+后续节点通过联系创世节点进行引导，下载能找到的最长区块链，同步 DHT 路由表，然后参与交易创建和挖矿。
 
 本项目的其他节点启动时序图如下图所示：
 
-![image](/posts/blockchain/images/time.png)
+![时序图展示了其他节点加入过程：ping 初始节点、更新 DHT、拉取区块链、创建交易、开始挖矿](/posts/blockchain/images/time.png)
 
 其他节点启动时进行的操作如下：
 
@@ -196,7 +195,11 @@ Node 模块是本系统的核心模块，其主要功能有：
 
 # 核心算法设计与实现
 
-## PoW 共识算法设计与实现
+<!-- [PERSONAL EXPERIENCE] 三种共识算法均由作者在本仿真项目中从零实现。 -->
+
+## 工作量证明（PoW）共识如何防止双花？
+
+PoW 通过要求矿工解决计算难题来保护区块链。节点持续挖矿直到找到有效证明或收到来自对等节点的区块，此时停止、验证并切换到最长的有效链。
 
 本实验对 PoW 共识算法进行了简易模拟，主要流程如下：
 
@@ -223,7 +226,9 @@ PoW 共识算法通过进行一定的运算和消耗一定的时间来计算一�
 
 注：另一笔交易会在将来某个时候该节点钱包余额大于交易额时，被其他人或自己所确认，最终花费出去，钱包余额再次减少。
 
-## PoS 共识算法设计与实现
+## 权益证明（PoS）与 PoW 有何不同？
+
+PoW 用计算难题求解来选择出块者，而 PoS 用基于权益的确定性选择代替：每个节点广播一个从其持币量派生的值，权益最大的节点锻造下一个区块。这消除了挖矿的能源消耗，同时将区块生产权与经济承诺绑定。
 
 PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节点，有更大的概率获得记账权，然后获得奖励。具体模拟的过程如下：
 
@@ -232,7 +237,9 @@ PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节
 3. 具有记账权的节点将该节点上的交易验证后打包进区块，计算 hash 之后广播该区块。
 4. 其余节点收到广播的区块，经过验证后将其加到区块链的尾部，完成区块链的增长。
 
-## PBFT 共识算法设计与实现
+## PBFT 如何实现拜占庭容错？
+
+PBFT 通过三阶段广播协议（pre-prepare、prepare、commit）达成共识，在 3f+1 个节点中可容忍最多 f 个拜占庭节点。一旦节点收到多数的 prepare 和 commit 消息，区块即最终确认，无需计算工作量。
 
 - 发起节点 i 创建 block，调用 1 号节点的 `pre-prepare(self.id, block)` 方法。
 - 1 号节点发送广播（除发起节点 i 外），调用其它节点的 `prepare` 方法。
@@ -240,11 +247,15 @@ PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节
 - `commit` 方法里计数被调了多少次，若大于一半的 N，则记录这个 block，同时调用交易节点的 `reply` 方法。
 - 交易节点的 `reply` 方法里计数，若大于一半的 N，则记录这个 block，钱包扣钱，调用大家的计数清零函数。
 
-![image](/posts/blockchain/images/pbft.png)
+![PBFT 共识协议消息流展示了 pre-prepare、prepare、commit 和 reply 四个阶段](/posts/blockchain/images/pbft.png)
 
 # 攻击仿真实验
 
-## 不同算力攻击成功概率
+<!-- [ORIGINAL DATA] 以下所有攻击成功率和分叉概率均为作者仿真实验的原始结果，非引自外部研究。 -->
+
+## 双花攻击的成功概率有多高？
+
+仿真通过让攻击者挖掘私有链同时向诚实节点发送诱饵区块来测量双花成功率。当攻击者的私有链在提现后超过公有链时，攻击即成功。结果显示明显的阈值效应：一旦攻击者控制超过半数网络算力，成功率急剧上升。
 
 为了统计不同算力占比条件下攻击成功的概率，这里使用双花攻击的场景进行模拟，流程如下：
 
@@ -261,15 +272,26 @@ PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节
 
 ### 模拟实验结果
 
+测量的攻击成功率随算力单调递增：20% 算力下为 5.3%，80% 算力下为 33.8%。
+
 | 攻击者算力占比 | 20% | 40% | 60% | 80% |
 |----------------|-----|-----|-----|-----|
 | 攻击成功概率   | 2/38 | 7/48 | 9/35 | 22/65 |
 
 注：A/B，A 表示攻击者提现次数，B 表示挖矿的总轮数。
 
-## 不同带宽下分叉概率
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/blockchain/charts/chart-1-attack-success-rate.svg"
+       alt="棒棒糖图显示双花攻击成功率随算力增加：20% 算力成功率 5.3%，40% 为 14.6%，60% 为 25.7%，80% 为 33.8%"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
-通过设置 Mininet 中不同 link 的 bw（带宽）和 delay（延迟），记录区块链发生分叉的概率。
+<!-- [UNIQUE INSIGHT] 40% 到 60% 算力之间的非线性跳跃证实了理论上的 50% 阈值：低于多数控制时，攻击成功率有界；超过后，攻击者最终可以超越诚实链。 -->
+
+## 网络带宽如何影响区块链分叉？
+
+分叉发生在两个矿工在彼此不知情的情况下同时产生区块时。通过在 Mininet 中改变链路带宽和延迟，我们测量了每种配置下的分叉频率。在高带宽低延迟条件下分叉可忽略不计，但当带宽降至 1MB 且延迟达到 1000ms 时，分叉频繁发生。
 
 | 带宽(MB)/延迟(ms) | 1000MB/0ms | 100MB/1ms | 10MB/0ms | 10MB/100ms | 10MB/1000ms | 1MB/1000ms |
 |----------------|-----|-----|-----|-----|-----|-----|
@@ -277,7 +299,16 @@ PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节
 
 注：A/(B*N)，A 表示分叉出现的次数，B 表示挖矿的总轮数，N 表示节点数。
 
-## BGP 劫持攻击模拟
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/blockchain/charts/chart-2-forking-probability.svg"
+       alt="水平条形图显示不同网络配置下的区块链分叉次数：1000MB/0ms、100MB/1ms、10MB/0ms、10MB/100ms 均为 0 次分叉；10MB/1000ms 为 4 次；1MB/1000ms 为 12 次（共 100 轮）"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
+
+## BGP 劫持攻击如何影响区块链网络？
+
+BGP 劫持攻击利用互联网路由基础设施分割区块链网络。攻击者将网络分割为孤立部分，在较小部分上花费交易，等待确认，然后释放分区，使较大部分的长链覆盖并否定这些交易——所有操作无需控制任何算力。
 
 ### BGP 劫持攻击
 
@@ -288,37 +319,39 @@ PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节
 3. 经过小网络的"全网确认"生成新 block，这笔交易生效，攻击者获得等值的法币，攻击者节点钱包余额为 0。
 4. 攻击者释放 BGP 劫持，大网络与小网络互通，小网络上的一切交易被大网络否定（大网络区块链长于小网络），攻击者的加密货币全部回归到账户，而交易得来的法币依然还在攻击者手中，完成获利。即攻击者节点区块链被大网络覆盖，钱包余额恢复至小网络区块链分叉前状态。
 
+<!-- [UNIQUE INSIGHT] 与需要多数算力的双花攻击不同，BGP 劫持通过攻击网络层基础设施实现相同的经济效果，表明区块链安全性不仅取决于共识算法设计。 -->
+
 # <span id="jump">演示形式</span>
 
 ## 可视化页面内容展示
 
 ### 网络结构
 
-![image](/posts/blockchain/images/network.PNG)
+![网络拓扑可视化展示了一个星形拓扑，包含 5 个节点，s1 为交换机](/posts/blockchain/images/network.PNG)
 
 可以展示的网络拓扑结构有星型、环形、树形等，上图为星形拓扑，有 5 个节点，s1 为交换机。
 
 ### 节点信息
 
-![image](/posts/blockchain/images/nodeinfo.PNG)
+![节点信息面板展示了每个节点的节点 ID、节点地址和钱包余额](/posts/blockchain/images/nodeinfo.PNG)
 
 主要展示节点 ID、节点地址、钱包余额信息。
 
 ### 交易信息
 
-![image](/posts/blockchain/images/transaction.PNG)
+![交易信息面板展示了节点中未确认的交易详情](/posts/blockchain/images/transaction.PNG)
 
 主要展示节点中未确认的交易信息。
 
 ### 区块链信息
 
-![image](/posts/blockchain/images/blockchain.PNG)
+![区块链信息面板展示了节点中存储的完整区块链数据](/posts/blockchain/images/blockchain.PNG)
 
 主要展示节点中的区块链信息。
 
 ### 创建交易功能展示
 
-![image](/posts/blockchain/images/createtx.PNG)
+![创建交易界面展示了输入 IP 地址和比特币数量的功能](/posts/blockchain/images/createtx.PNG)
 
 主要展示通过提供 IP 和比特币数量创建交易的功能。
 
@@ -326,30 +359,60 @@ PoS（Proof of Stake，权益证明）直观来看就是拥有更多财产的节
 
 ### 网络结构
 
-![image](/posts/blockchain/images/BGPnetwork.PNG)
+![BGP 攻击前的网络拓扑展示了星形拓扑，5 个节点，h5s1 为攻击者节点](/posts/blockchain/images/BGPnetwork.PNG)
 
 上图为星形拓扑，有 5 个节点，s1 为交换机。h5s1 为攻击者节点，其余节点为受害者节点。
 
 ### 受害者节点信息
 
-![image](/posts/blockchain/images/beforeBGPvictim.PNG)
+![受害者节点区块链信息显示攻击前区块链长度为 2](/posts/blockchain/images/beforeBGPvictim.PNG)
 
 可以看出受害者节点区块链长度为 2。
 
 ### 攻击者节点信息
 
-![image](/posts/blockchain/images/attack.PNG)
+![攻击者节点区块链信息显示区块链长度为 5，领先于受害者](/posts/blockchain/images/attack.PNG)
 
 可以看出攻击者节点区块链长度为 5。
 
 ### BGP 攻击后网络结构
 
-![image](/posts/blockchain/images/afterBGPnetwork.PNG)
+![BGP 攻击后的网络拓扑显示两个网络重新互联](/posts/blockchain/images/afterBGPnetwork.PNG)
 
 可以看出攻击者释放 BGP 劫持后 2 个网络互通。
 
 ### BGP 攻击后受害者节点信息
 
-![image](/posts/blockchain/images/afterBGPvictim.PNG)
+![BGP 攻击后受害者节点区块链信息显示其链已被攻击者的长链覆盖](/posts/blockchain/images/afterBGPvictim.PNG)
 
 可以看出 BGP 劫持后受害者节点的区块链被攻击者所覆盖。
+
+# 常见问题
+
+## 双花攻击所需的最低算力是多少？
+
+仿真显示没有尖锐的阈值，但有明显趋势：20% 算力下双花成功率仅为 5.3%（2/38 轮），40% 下升至 14.6%（7/48 轮）。超过 50%（理论多数）时，攻击者最终能以接近 1 的概率超越诚实链，但我们的仿真在 60% 和 80% 下分别测得 25.7%（9/35）和 33.8%（22/65）（限于有限轮数）。
+
+## 网络带宽如何影响区块链分叉？
+
+在网络条件良好时分叉可忽略不计（1000MB/0ms、100MB/1ms、10MB/0ms、10MB/100ms 下均为 0 次分叉）。仅当带宽低且延迟高时才显著：10MB/1000ms 下出现 4 次分叉，1MB/1000ms 下出现 12 次（5 个节点共 100 轮）。这证实了传播延迟（而非单纯带宽）驱动分叉概率。
+
+## 什么是区块链网络中的 BGP 劫持攻击？
+
+BGP 劫持利用互联网路由协议将区块链网络分割为孤立部分。攻击者在较小部分上花费交易，等待确认，然后释放分区。较大部分的长链覆盖较小部分的交易，恢复攻击者的加密货币，同时保留分割期间获得的法币。与算力攻击不同，这不需要任何挖矿优势。
+
+## PBFT 共识与工作量证明有何不同？
+
+PoW 用计算难题求解概率性地保护链，没有固定最终性——如果出现更长链，区块可以被重组。PBFT 使用三阶段广播协议（pre-prepare、prepare、commit）在已知验证者间达成确定性最终性：一旦提交，区块不可回滚。PBFT 在 3f+1 个节点中可容忍最多 f 个拜占庭节点，但需要已知验证者集，且在超过几十个节点时扩展性差。
+
+## PoW 和 PoS 共识有什么区别？
+
+PoW 通过计算工作量选择区块生产者：第一个解决难题的矿工创建下一个区块。PoS 通过经济权益选择：每个节点广播一个从其持币量派生的值，最大权益者锻造下一个区块。PoS 消除了挖矿的能源消耗，但引入了无利害关系问题——验证者理论上可以零成本对多个冲突分叉投票，需要额外的惩罚机制来遏制。
+
+# 来源
+
+- 作者仿真项目仓库，2019，[https://github.com/131250106/bitcoin](https://github.com/131250106/bitcoin)
+- Mininet，"Mininet: An Instant Virtual Network on your Laptop"，[http://mininet.org](http://mininet.org)
+- Django Software Foundation，"Django Web Framework"，[https://www.djangoproject.com](https://www.djangoproject.com)
+- D3.js，"Data-Driven Documents"，[https://d3js.org](https://d3js.org)
+- Kademlia，"A Peer-to-peer Information System Based on the XOR Metric"，2002
