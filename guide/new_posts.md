@@ -256,3 +256,5 @@ for the full rationale.
 - [ ] FAQ section with 3–5 items.
 - [ ] Sources block at the bottom.
 - [ ] All `INTERNAL-LINK` lines removed.
+- [ ] Please Use `pnpm build` to verify if the build is success. For more information, please read `README.md`.
+- [ ] Check if `svg xmlns="http://www.w3.org/2000/svg"` exists in the SVGs.

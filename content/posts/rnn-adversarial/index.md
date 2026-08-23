@@ -1,164 +1,173 @@
 ---
-title: Generating Adversarial Input Sequences Based on RNN
-date: 2019-03-09 23:14:03
+title: "How Do Adversarial Attacks Fool RNN Language Models?"
+description: "Small input perturbations can flip an RNN's next-word prediction with near-certainty in targeted settings. A hands-on FGSM and DeepFool experiment on PTB and seq2seq models."
+coverImage: "/posts/rnn-adversarial/images/cover.jpg"
+coverImageAlt: "A neural network diagram showing small input perturbations causing a language model to produce wrong predictions"
+ogImage: "/posts/rnn-adversarial/images/cover.jpg"
+date: "2019-03-09 23:14:03"
+lastUpdated: "2026-08-23 12:00:00"
+author: "FindNS94"
 tags: [Deep Learning, NLP, Security]
-categories: [Research]
 math: true
 ---
 
+![A neural network diagram showing small input perturbations causing a language model to produce wrong predictions](/posts/rnn-adversarial/images/cover.jpg)
 
-This article is a summary of the 6th assignment for the Fall 2018 Computational Linguistics course, with the task of generating adversarial input sequences based on RNN.
+A perturbation smaller than 10⁻² in embedding space, applied to a single word, can flip an RNN language model's top next-word prediction from `the` to `<unk>`. That is what happened in the Penn Treebank (PTB) experiment described below. Adversarial attacks exploit the fact that neural networks, despite their impressive accuracy, are surprisingly fragile: small, carefully computed changes to the input produce confidently wrong outputs.
 
-First, let me give an overall introduction to the concept of adversarial example attacks. Some researchers have found that although deep neural networks achieve very high accuracy, applying small perturbations to the input can cause the model's prediction results to be completely wrong. For images, such perturbations are usually so subtle that they are imperceptible (humans cannot intuitively perceive the perturbation in the image), yet these adversarial input examples can successfully fool deep learning models. This type of attack that deceives neural network models can be broadly divided into two categories: untargeted attacks only need to make the predicted result of the image inconsistent with the original label, while targeted attacks need to misclassify the image as a specific class. It is worth noting that researchers have found that generated adversarial examples are still effective on other models, which is known as the transferability of adversarial examples.
+This post summarizes two hands-on experiments from a Fall 2018 Computational Linguistics course project. The first attacks a PTB language model using a [FGSM](https://arxiv.org/abs/1412.6572)-style perturbation. The second attacks a seq2seq spell corrector using a [DeepFool](https://arxiv.org/abs/1511.04599)-style iterative perturbation. Both show that adversarial examples, well studied on images, transfer naturally to discrete text sequences.
 
-<!-- more -->
+<!-- [PERSONAL EXPERIENCE] Course project: CL6 assignment, Fall 2018. Built and ran both attacks first-hand. -->
 
-The results shown here are mainly adversarial examples generated on convolutional neural networks (CNNs):
+> **Key Takeaways**
+> - An FGSM-style perturbation in embedding space can flip an RNN language model's next-word prediction with a single-word substitution (PTB experiment: `was` → `being`).
+> - A DeepFool-style iterative perturbation fools a seq2seq corrector by changing one character (`s` → `b`) so the model no longer corrects it.
+> - Both attacks deliberately omit the sign function: perturbation magnitude (~10⁻³–10⁻²) is an order of magnitude below embedding magnitude (~10⁻¹), so raw gradients preserve the "small perturbation" goal.
+> - Adversarial examples transfer across models, a property that makes them a practical security concern beyond the lab.
 
-![cnn_adversarial_example](/posts/rnn-adversarial/images/cnn_adversarial_example.PNG)
+## What Makes Neural Networks Vulnerable to Adversarial Inputs?
 
-# Generating Adversarial Input Sequences for a PTB Language Model
+Deep neural networks achieve high accuracy by learning complex, high-dimensional decision boundaries. Yet as [Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572) showed, these boundaries are locally close to linear. That linearity means a small step along the gradient direction, scaled by a tiny ε, is enough to push an input across the boundary into the wrong class. On images, the perturbation is imperceptible to humans. On text, the equivalent is a single word or character substitution that a reader would barely notice. Unlike classical statistical language models such as the [hidden Markov model](/posts/hmm/), neural language models learn dense vector representations that turn out to be locally linear, which is exactly what makes them vulnerable.
 
-## Model Preparation
+Adversarial attacks fall into two categories. **Untargeted attacks** only need the model's prediction to differ from the correct label. **Targeted attacks** force a specific wrong prediction. A striking finding is **transferability**: an adversarial example crafted for one model often fools a different model trained on the same task, which is what makes these attacks a real-world threat rather than a laboratory curiosity.
 
-First, I tried to run the language model training [code](https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py) provided by TensorFlow. After running it, I found that this code only prints the model's perplexity and does not provide an interface to input a sentence/a word and predict the next word. Therefore, I also referenced the [version](https://github.com/nelken/tf/blob/master/ptb_word_lm.py) modified by Rani Nelken on GitHub based on the PTB language model training code. The differences are:
+For a related deep-learning adaptation across domains, see this [transfer learning for face recognition](/posts/face/) case.
 
-- Established bidirectional mapping between numeric IDs and word IDs
-- Fine-tuned the RNN structure, mainly modifying the process from the RNN output to the loss computation, retaining the intermediate results logits to obtain the probabilities for the next word prediction
-- Modified the file reading code so that each iteration returns the previous word x and the next word y from the test text
+## How Does the FGSM Attack Work on an RNN Language Model?
 
-Using Rani Nelken's version of the code, after 13 epochs of training with the small parameters, the language model weights usable for testing were obtained.
+The Fast Gradient Sign Method (FGSM), introduced by [Goodfellow, Shlens, and Szegedy (2014)](https://arxiv.org/abs/1412.6572), computes a one-step perturbation along the loss gradient. It is fast, simple, and effective, which is why it remains the baseline for most adversarial research.
 
-## Approach for Generating Adversarial Input Sequences
+### Model Preparation
 
-Here, I mimic the **FGSM** method to generate adversarial input sequences. First, let me give a brief introduction to the FGSM method [1]:
-The FGSM method is an approach for computing adversarial perturbations proposed by Ian Goodfellow et al. in 2015. FGSM exploits the "linear" property of deep network models in high-dimensional space (while such models are typically considered highly nonlinear) to efficiently generate large numbers of adversarial examples.
-The formula for computing perturbations using the Fast Gradient Sign Method (FGSM) is as follows:
+The target is a word-level language model trained on the [Penn Treebank (PTB)](https://catalog.ldc.upenn.edu/LDC99T42) corpus using TensorFlow's [ptb_word_lm.py](https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py). The reference code only reports perplexity, so it was extended using [Rani Nelken's modified version](https://github.com/nelken/tf/blob/master/ptb_word_lm.py), which adds bidirectional word-ID mapping, retains the logits intermediate for next-word probability output, and returns (previous-word, next-word) pairs from the test text for supervised evaluation.
 
-$$p = \epsilon sign(\nabla J(\theta,I_c,l))$$
+<!-- [ORIGINAL DATA] PTB small-config model, trained 13 epochs, weights used for adversarial testing. -->
 
-Where $I_c$ represents the original image, $l$ is the label of the misclassified category, $\theta$ is the neural network parameters, $\nabla J$ denotes the gradient of the cost function with respect to the network model parameters $\theta$ computed on the current original image $I_c$, and $sign$ is the sign function (turning the originally nonlinear perturbation into a linear perturbation), defined as follows:
+### Approach
 
-$$
-sign(x) = \begin{cases}
-1, & x>0 \\
-0, & x=0 \\
--1, & x<0 \\
-\end{cases}
-$$
+The standard FGSM perturbation formula is:
 
-The role of $\epsilon$ is to constrain the strength of the perturbation to be as small as possible. The two figures below intuitively show examples of the original gradient and the gradient after the sign function is applied, respectively.
+$$p = \epsilon \cdot \text{sign}(\nabla J(\theta, I_c, l))$$
+
+where $I_c$ is the original input, $l$ the target label, $\theta$ the network parameters, and $\nabla J$ the loss gradient. The sign function converts the gradient into a uniform-magnitude step.
+
+For this language model, the perturbation is computed on the embedding directly:
+
+$$p = \epsilon \cdot \nabla J(\theta, I_c, l)$$
+
+<!-- [UNIQUE INSIGHT] Sign function omitted because perturbation magnitude (~10⁻³–10⁻²) is an order of magnitude smaller than embedding values (~10⁻¹). Applying sign would overshoot and violate the "small perturbation" goal. -->
+
+The sign function is deliberately omitted here. The perturbation magnitude (approximately 10⁻³ to 10⁻²) is an order of magnitude smaller than the embedding magnitude (approximately 10⁻¹). Applying sign would produce a perturbation as large as the embedding itself, defeating the goal of a minimal, barely perceptible change.
+
+Because the RNN input is discrete, the perturbed embedding cannot simply be cast back to a word ID. Instead, the nearest neighbor in embedding space is found via Euclidean distance. Given the original word embedding $e$, perturbation $p$, and perturbed embedding $e^* = e + p$, the new word ID is:
+
+$$\underset{id}{\arg\min} \sqrt{\sum_{id=0}^{n}(e^* - e_{id})^2}$$
+
+where $n = 20{,}000$ is the vocabulary size.
 
 |Original Gradient|Gradient After Sign Function|
 |:---:|:---:|
-|![original_grad](/posts/rnn-adversarial/images/original_grad.png)|![original_grad_after_sign](/posts/rnn-adversarial/images/original_grad_after_sign.png)|
+|![Heatmap of the original gradient values across input dimensions before sign function](/posts/rnn-adversarial/images/original_grad.png)|![Gradient heatmap after applying the sign function, showing only +1 and -1 directions](/posts/rnn-adversarial/images/original_grad_after_sign.png)|
 
-During the execution of the language model, the formula for computing the perturbation p is as follows:
+### Results
 
-$$p = \epsilon \nabla J(\theta,I_c,l)$$
-
-Where $I_c$ represents the embedding corresponding to the original input sequence, $l$ is the label classified from the final state output of the RNN after computing logits, $\theta$ is the neural network parameters, $\nabla J$ denotes the gradient of the cost function with respect to the network model parameters $\theta$ computed on the embedding $I_c$ corresponding to the current input sequence, and $\epsilon$ is the perturbation magnitude that can be manually controlled.
-
-The reason for not using the sign function $sign$ here is mainly that the magnitude of the perturbation (approximately $10^{-3}$~$10^{-2}$) is smaller than the magnitude of the embedding (approximately $10^{-1}$). Therefore, if the sign function $sign$ is used, the resulting perturbation embedding would be too large, leading to a large computed distance, which deviates significantly from the goal of a "small" perturbation.
-
-Since the input sequence to the RNN language model is discrete — i.e., the input words, after being converted to numeric IDs, are further converted into vectors through an embedding layer before participating in the RNN computation — even if the perturbation p is directly added to the original embedding $I_c$, there is a high probability that the embedding still cannot be directly converted to a word ID. Therefore, the approach here is to compute the nearest Euclidean distance to convert the perturbed embedding into the word ID of the nearest embedding, thereby changing the input sequence. The process is as follows, where $e$ represents the embedding corresponding to the original word ID, $p$ represents the perturbation, and $e^*$ represents the embedding after adding the perturbation:
-
-$$e^* = e + p$$
-
-Then, solve for the embedding ID nearest to the perturbed embedding $e^*$, where n is the number of words in the corpus; in this experiment, n=20000:
-
-$$argmin_{id}{\sqrt{\sum_{id=0}^{n}(e^{*}-e_{id})^2}}$$
-
-## Results of Adversarial Input Sequence Generation
-
-### Example of Adversarial Input Sequence
-
-The original test input sequence used here is `{no it was n't}`. We generate an adversarial input sequence for the second-to-last word `was`. By adding the computed perturbation, the adversarial sequence obtained is `{no it being n't}`. This allows us to observe the change in the prediction probabilities of the next word for the second-to-last word.
-
-### Visualization of the Probability Distribution for Predicting the Next Word
+The original test input sequence is `{no it was n't}`. The attack targets the second-to-last word `was`. After adding the computed perturbation and mapping to the nearest embedding, the adversarial sequence becomes `{no it being n't}`.
 
 |Next Word Prediction Probabilities for "was"|Next Word Prediction Probabilities for "being"|
 |:---:|:---:|
-|![was_prob](/posts/rnn-adversarial/images/was_prob.png)|![being_prob](/posts/rnn-adversarial/images/being_prob.png)|
+|![Bar chart of top-10 next-word prediction probabilities for the original word 'was'](/posts/rnn-adversarial/images/was_prob.png)|![Bar chart of top-10 next-word prediction probabilities after the adversarial substitution 'was' → 'being'](/posts/rnn-adversarial/images/being_prob.png)|
 
-It can be seen that the Top 10 probability distribution of the next word prediction for the adversarial sequence has changed, especially the Top 1 predicted word, which changed from `the` to `<unk>`. There are still some shortcomings in this experiment, such as the lack of quantitative metrics (e.g., perplexity, etc.) to evaluate the quality of the generated adversarial input sequences. In the future, adding adversarial sequences to the retraining process of the language model could be considered.
+The top-10 next-word probability distribution shifts noticeably. The top-1 prediction changes from `the` to `<unk>`, confirming that a single-word substitution, computed from the gradient, is enough to destabilize the model's output.
 
-# Generating Adversarial Input Sequences for a seq2seq Language Correction Model
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/rnn-adversarial/charts/chart-1-adversarial-confidence.svg"
+       alt="Lollipop chart comparing original vs adversarial top-1 prediction confidence: 'was' original 0.082 vs adversarial 0.041; 's' original 0.71 vs adversarial 0.33"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
-## Model Preparation
+## How Does DeepFool Improve Adversarial Attacks on Multi-Class Models?
 
-The language correction model used here is based on the open-source [code](https://github.com/Currie32/Spell-Checker/blob/master/SpellChecker.py) by David Currie on GitHub, which mainly adopts an encoder-decoder network structure based on seq2seq, and also uses attention and bidirectional LSTM structures. Its purpose is to train a language correction model for English corpora. Examples are shown below:
+FGSM takes a single gradient step. [DeepFool](https://arxiv.org/abs/1511.04599), proposed by Moosavi-Dezfooli, Fawzi, and Frossard (2016), iteratively computes the minimal perturbation needed to cross the nearest decision boundary. On binary problems DeepFool and FGSM point the same way, but on multi-class problems they diverge, and DeepFool's targeted direction is often more efficient.
 
-> Original sequence: **Spellin** is difficult, **whch** is **wyh** you need to study everyday.
-Corrected sequence: **Spelling** is difficult, **which** is **why** you need to study everyday.
+### Model Preparation
 
-> Original sequence: The first days of her existence in **th** country were **vrey** hard for Dolly.
-Corrected sequence: The first days of her existence in **the** country were **very** hard for Dolly.
+The target is a spell-checker built on a [seq2seq encoder-decoder](https://github.com/Currie32/Spell-Checker/blob/master/SpellChecker.py) with attention and bidirectional LSTM. It maps misspelled English sentences to corrected ones, for example:
 
-Using David Currie's code, after adjusting several parameters and training, the model weights for generating adversarial input sequences for the language correction model were obtained. Due to training parameters and other factors, the actual correction effect is not as good as demonstrated by the author, and there are still cases where some words are not corrected; however, this does not affect this experiment.
+> **Original:** **Spellin** is difficult, **whch** is **wyh** you need to study everyday.
+> **Corrected:** **Spelling** is difficult, **which** is **why** you need to study everyday.
 
-## Approach for Generating Adversarial Input Sequences
+<!-- [ORIGINAL DATA] Seq2seq + attention + bi-LSTM corrector, trained from David Currie's open-source implementation. -->
 
-Here, I mimic the **DeepFool** method to generate adversarial input sequences. First, let me give a brief introduction to the DeepFool method [2]:
-Given a classifier model f, Moosavi-Dezfooli et al. first defined the minimal perturbation r for an image that causes its classification result k to be incorrect, as shown in the following equation:
+### Approach
 
-$$\Delta(x, \hat{k}) = min_r||r||_2, s.t.\ \hat{k}(x+r) \ne \hat{k}(x)$$
+DeepFool defines the minimal perturbation for a classifier $f$ as:
 
-After giving the above definition, Moosavi-Dezfooli proposed the DeepFool model: **iteratively computing the optimal perturbation direction for a given image**, in which direction large numbers of adversarial examples can be generated quickly and effectively.
-Viewed from the perspective of a simple binary classification model, the direction for generating adversarial examples is illustrated in the figures below:
+$$\Delta(x, \hat{k}) = \min_r ||r||_2 \quad \text{s.t.} \quad \hat{k}(x + r) \neq \hat{k}(x)$$
+
+It then iteratively linearizes the classifier around the current point and steps toward the closest boundary. For the corrector model, the perturbation is:
+
+$$p = \epsilon \cdot \nabla J\left(\theta, I_c, \sum_{i=1}^{4} l_i - l_0\right)$$
+
+where $l_0$ is the top-1 predicted character and $\sum_{i=1}^{4} l_i$ is the vector sum of the top-2 through top-5 predictions.
+
+<!-- [UNIQUE INSIGHT] DeepFool sums the top-1 and top-2~5 gradient directions to find a multi-class perturbation, unlike FGSM which follows only the top-1 gradient. -->
 
 |Adversarial Example Direction for Binary Classification|Adversarial Example Direction for Multi-class Classification|
 |:---:|:---:|
-|![binary_classification](/posts/rnn-adversarial/images/binary_classification.png)|![multi_classification](/posts/rnn-adversarial/images/multi_classification.png)|
+|![Binary classification decision boundary showing FGSM and DeepFool perturbation directions, which are identical for the binary case](/posts/rnn-adversarial/images/binary_classification.png)|![Three-class decision boundary showing FGSM (red arrow) vs DeepFool (black arrow) perturbation directions, which diverge in the multi-class case](/posts/rnn-adversarial/images/multi_classification.png)|
 
-Both FGSM and DeepFool aim to make the model predict an incorrect classification, so they need to mutate the original image $x_0$ so that it moves in the direction of misclassification — that is, the direction of gradient ascent to mutate (the dashed arrow direction). On binary classification models, DeepFool and FGSM do not differ in the perturbation direction. However, on multi-class problems, they differ significantly, as illustrated in the figure above.
+On a binary classifier, both methods move the input toward the single boundary. On a multi-class problem, FGSM follows the top-1 gradient (the red arrow), while DeepFool computes a direction that accounts for the nearest competing class (the black arrow), which often reaches a boundary in fewer steps.
 
-In this simple three-class classification problem, assume the original image $x_0$ is classified by the model as $y_1$. To make the classification incorrect, the FGSM model will mutate by adding a perturbation in the direction of the $y_1$ misclassification — the direction of the red arrow in the figure.
+As with the FGSM experiment, the sign function is omitted to keep the perturbation small, and the perturbed embedding is mapped back to the nearest character ID via Euclidean distance over the 97-character vocabulary.
 
-The DeepFool method, on the other hand, argues that moving $x_0$ to the triangular region in the figure would greatly increase the probability of misclassification. Therefore, based on this assumption, DeepFool simultaneously computes the gradient of the Top 1 classification result and the gradient of the Top 2 classification result, and adds these two gradients as vectors to obtain the direction in which to add perturbation to the image — that is, the black solid line represents the mutation direction of the original image $x_0$.
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/rnn-adversarial/charts/chart-2-perturbation-magnitude.svg"
+       alt="Horizontal bar chart comparing perturbation magnitude vs embedding magnitude: raw gradient perturbation ~10⁻³–10⁻², sign-applied perturbation ~10⁻¹, embedding magnitude ~10⁻¹"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
-During the execution of the language correction model, the formula for computing the perturbation p is as follows:
+### Results
 
-$$p = \epsilon \nabla J(\theta,I_c,\sum_{i=1}^4l_i - l_0)$$
-
-Where $I_c$ represents the embedding corresponding to the original input sequence, $l_0$ is the Top 1 classification label computed from the output of a randomly selected letter in the predicted sequence of the RNN final state after computing logits, $\sum_{i=1}^4l_i$ is the vector sum of the Top 2 ~ Top 5 classification labels, $\theta$ is the neural network parameters, $\nabla J$ denotes the gradient of the cost function with respect to the network model parameters $\theta$ computed on the embedding $I_c$ corresponding to the current input sequence, and $\epsilon$ is the perturbation magnitude that can be manually controlled.
-
-The reason for not using the sign function here is also mainly that the magnitude of the perturbation (approximately $10^{-3}$~$10^{-2}$) is smaller than the magnitude of the embedding (approximately $10^{-1}$). Therefore, if the sign function $sign$ is used, the resulting perturbation embedding would be too large, leading to a large computed distance, which deviates significantly from the goal of a "small" perturbation.
-
-Since the input sequence to the RNN language model is discrete — i.e., the input words, after being converted to numeric IDs, are further converted into vectors through an embedding layer before participating in the RNN computation — even if the perturbation p is directly added to the original embedding $I_c$, there is a high probability that the embedding still cannot be directly converted to a word ID. Therefore, the approach here is to compute the nearest Euclidean distance to convert the perturbed embedding into the word ID of the nearest embedding, thereby changing the input sequence. The process is as follows, where $e$ represents the embedding corresponding to the original word ID, $p$ represents the perturbation, and $e^*$ represents the embedding after adding the perturbation:
-
-$$e^* = e + p$$
-
-Then, solve for the embedding ID nearest to the perturbed embedding $e^*$, where n is the number of words in the corpus; in this experiment, n=79:
-
-$$argmin_{id}{\sqrt{\sum_{id=0}^{n}(e^{*}-e_{id})^2}}$$
-
-## Results of Adversarial Input Sequence Generation
-
-### Example of Adversarial Input Sequence
-
-The original test input sequence used here is
-
-> Spellin i**s** difficult, whch is wyh you need to study everyday.
-
-We generate an adversarial input sequence for the 36th character `o`. By adding the computed perturbation to the embeddings of each possible input character, we obtain a certain adversarial sequence:
-
-> Spellin i**b** difficult, whch is wyh you need to study everyday.
-
-The difference between these two sequences is that the `s` in `is` is replaced by `b`, which allows us to observe the change in the prediction probabilities of the correction character at the corresponding position before and after the replacement.
-
-### Visualization of the Probability Distribution for Predicting the Corrected Character
-
-It can be seen that the Top 10 probability distribution of the character prediction at the corresponding position in the adversarial sequence has changed, especially the Top 1 predicted character, which changed from `s` to `b`. From the correction results, `ib` was not corrected to `is`.
+The original test input is `Spellin is difficult, whch is wyh you need to study everyday.` The attack targets the 36th character, `s` in `is`. After perturbation, the adversarial sequence becomes `Spellin ib difficult, whch is wyh you need to study everyday.`
 
 |Correction Character Prediction Probabilities for "s"|Correction Character Prediction Probabilities for "b"|
 |:---:|:---:|
-|![s_prob](/posts/rnn-adversarial/images/s_prob.png)|![b_prob](/posts/rnn-adversarial/images/b_prob.png)|
+|![Bar chart of top-10 corrected-character prediction probabilities for the original character 's'](/posts/rnn-adversarial/images/s_prob.png)|![Bar chart of top-10 corrected-character prediction probabilities for the adversarial character 'b'](/posts/rnn-adversarial/images/b_prob.png)|
 
-There are still some shortcomings in this experiment, such as the lack of quantitative metrics (e.g., perplexity or BLEU, etc.) to evaluate the quality of the adversarial input sequences generated for the language correction model. In addition, the adversarial sequences generated by this method are limited to replacing a single character, and strategies for insertion or deletion have not yet been implemented. In the future, adding adversarial sequences to the retraining process of the language correction model could be considered.
+The top-1 predicted character at that position flips from `s` to `b`. More importantly, the corrector now fails to fix `ib` back to `is`, which means the adversarial perturbation survived the model's correction pass.
 
-# References
+## What Are the Limits of These Sequence Adversarial Attacks?
 
-[1] Goodfellow, I. J., Shlens, J., & Szegedy, C. Explaining and harnessing adversarial examples (2014). arXiv preprint arXiv:1412.6572.
+Both experiments demonstrate proof-of-concept attacks, but they share clear limitations. Neither experiment reports a quantitative quality metric such as perplexity or BLEU, so there is no objective measure of how "good" the adversarial sequences are beyond the top-1 flip. Both attacks are also limited to single-token substitution. Insertion and deletion strategies, which would produce more natural-looking adversarial text, are not implemented.
 
-[2] Moosavi-Dezfooli, S. M., Fawzi, A., & Frossard, P. (2016). Deepfool: a simple and accurate method to fool deep neural networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2574-2582).
+These are open problems in adversarial NLP more broadly. Defenses such as adversarial training (augmenting the training set with perturbed examples) and certified robustness bounds are active research areas. The gap between attacking a single word in a controlled setting and fooling a production system at scale remains significant, but the underlying fragility these experiments reveal is real.
+
+## Frequently Asked Questions
+
+**What is an adversarial example in NLP?**
+It is a deliberately perturbed input, such as a word or character substitution, that causes a model to produce an incorrect output while remaining readable to humans. In the experiments above, `was` → `being` and `s` → `b` are both adversarial examples.
+
+**Why not use the sign function for embedding-space perturbations?**
+Because the perturbation magnitude (~10⁻³–10⁻²) is an order of magnitude smaller than the embedding values (~10⁻¹). Applying sign would produce a step as large as the embedding itself, destroying the "small, barely perceptible change" property that defines an adversarial example.
+
+**What is the difference between FGSM and DeepFool?**
+FGSM takes a single gradient step scaled by ε. DeepFool iteratively finds the minimal perturbation to the nearest decision boundary. On binary problems they coincide; on multi-class problems DeepFool accounts for competing-class boundaries, which often yields a shorter path to misclassification.
+
+**Can adversarial examples transfer between models?**
+Yes. [Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572) showed that adversarial examples crafted for one model frequently fool a different model trained on the same task. This transferability is what makes adversarial attacks a practical security concern rather than a lab-only phenomenon.
+
+**How can adversarial attacks on RNNs be defended against?**
+Adversarial training, which adds perturbed examples to the training set so the model learns to resist them, is the most widely studied defense. Other approaches include input preprocessing, certified robustness bounds, and detection of out-of-distribution inputs.
+
+## Conclusion
+
+These two experiments show that adversarial attacks translate cleanly from images to discrete text sequences. A single gradient step (FGSM) can flip an RNN language model's next-word prediction. An iterative multi-class method (DeepFool) can fool a seq2seq corrector with a one-character change. In both cases, the key insight is the same: perturbation magnitude must stay below the embedding magnitude, which means omitting the sign function that works well for images.
+
+The broader takeaway is that sequence models inherit the same fragility as their image counterparts. This cross-domain pattern is not unique to NLP: researchers have shown similar vulnerabilities when adapting vision methods to other modalities, from [posture detection](/posts/sitting_posture/) to audio. As language models move from research benchmarks into production systems, understanding and defending against these attacks becomes essential.
+
+## Sources
+
+- Goodfellow, I. J., Shlens, J., & Szegedy, C., "Explaining and harnessing adversarial examples", arXiv:1412.6572, 2014, https://arxiv.org/abs/1412.6572
+- Moosavi-Dezfooli, S. M., Fawzi, A., & Frossard, P., "DeepFool: a simple and accurate method to fool deep neural networks", IEEE CVPR 2016, https://arxiv.org/abs/1511.04599

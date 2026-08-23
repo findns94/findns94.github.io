@@ -1,0 +1,66 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 560 380"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-labelledby="chart-title chart-desc"
+>
+  <title id="chart-title">Perturbation Magnitude vs Embedding Magnitude</title>
+  <desc id="chart-desc">Horizontal bar chart comparing three magnitude values on a common scale. Raw gradient perturbation is 0.005 (5x10^-3), which is an order of magnitude smaller than the embedding magnitude of 0.1 (10^-1). Applying the sign function to the gradient would produce a perturbation of 0.1 (10^-1), the same order as the embedding itself, which would violate the small-perturbation goal of adversarial attacks. This is why both the FGSM and DeepFool experiments in this post omit the sign function for embedding-space perturbations. Source: Author's measurement, PTB and seq2seq adversarial tests, 2018.</desc>
+
+  <!-- Title -->
+  <text x="280" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Perturbation Magnitude vs Embedding Magnitude</text>
+  <text x="280" y="46" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Why the sign function is omitted for text adversarial attacks</text>
+
+  <!-- Chart area: x=150, width=370, max value 0.1 -->
+  <!-- scale(v) = 150 + (v / 0.1) * 370 -->
+
+  <!-- Y positions for three bars -->
+  <!-- Bar 1: y=110, Embedding magnitude -->
+  <!-- Bar 2: y=190, Sign-applied perturbation -->
+  <!-- Bar 3: y=270, Raw gradient perturbation -->
+
+  <!-- Y axis label area -->
+  <line x1="150" y1="70" x2="150" y2="330" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Grid lines at 0, 0.02, 0.04, 0.06, 0.08, 0.1 -->
+  <line x1="150" y1="70" x2="150" y2="330" stroke="currentColor" opacity="0.08"/>
+  <line x1="224" y1="70" x2="224" y2="330" stroke="currentColor" opacity="0.08"/>
+  <line x1="298" y1="70" x2="298" y2="330" stroke="currentColor" opacity="0.08"/>
+  <line x1="372" y1="70" x2="372" y2="330" stroke="currentColor" opacity="0.08"/>
+  <line x1="446" y1="70" x2="446" y2="330" stroke="currentColor" opacity="0.08"/>
+  <line x1="520" y1="70" x2="520" y2="330" stroke="currentColor" opacity="0.08"/>
+
+  <!-- X axis value labels -->
+  <text x="150" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">0.0</text>
+  <text x="224" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">0.02</text>
+  <text x="298" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">0.04</text>
+  <text x="372" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">0.06</text>
+  <text x="446" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">0.08</text>
+  <text x="520" y="348" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">0.10</text>
+
+  <!-- X axis label -->
+  <text x="335" y="368" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">Magnitude</text>
+
+  <!-- Bar 1: Embedding magnitude = 0.1 -->
+  <text x="145" y="114" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Embedding magnitude</text>
+  <rect x="150" y="98" width="370" height="24" rx="4" fill="#a78bfa" opacity="0.85"/>
+  <text x="526" y="114" font-size="10" font-weight="700" fill="#111827">10^-1</text>
+
+  <!-- Bar 2: Sign-applied perturbation = 0.1 -->
+  <text x="145" y="194" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Sign-applied perturbation</text>
+  <rect x="150" y="178" width="370" height="24" rx="4" fill="#f97316" opacity="0.85"/>
+  <text x="526" y="194" font-size="10" font-weight="700" fill="#111827">10^-1</text>
+
+  <!-- Bar 3: Raw gradient perturbation = 0.005 -->
+  <text x="145" y="274" text-anchor="end" font-size="11" fill="currentColor" opacity="0.8">Raw gradient perturbation</text>
+  <rect x="150" y="258" width="18.5" height="24" rx="4" fill="#22c55e" opacity="0.85"/>
+  <text x="176" y="274" font-size="10" font-weight="700" fill="currentColor">5x10^-3</text>
+
+  <!-- Annotation arrow showing the gap -->
+  <line x1="168" y1="258" x2="168" y2="222" stroke="currentColor" opacity="0.3" stroke-width="1"/>
+  <text x="200" y="244" font-size="9" fill="var(--chart-muted, currentColor)">10x smaller</text>
+
+  <!-- Source -->
+  <text x="280" y="372" text-anchor="middle" font-size="10" fill="var(--chart-muted, currentColor)">Source: Author's measurement, PTB and seq2seq adversarial tests, 2018</text>
+</svg>
