@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Horizontal bar chart showing ARM processor market share by segment in 2025. Smartphones: 99%. Tablets: 90%. Embedded IoT: 75%. Automotive: 40%. Cloud servers: 25%.">
+  <title>ARM Market Share by Segment — 2025</title>
+  <desc>ARM architecture dominates mobile and is rapidly growing in servers. Smartphones 99%, tablets 90%, embedded IoT 75%, automotive 40%, cloud servers 25%. Source: Counterpoint Research, Liftr Insights, 2025.</desc>
+
+  <!-- Y axis -->
+  <line x1="130" y1="30" x2="130" y2="330" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="130" y1="330" x2="530" y2="330" stroke="currentColor" opacity="0.3"/>
+
+  <!-- X axis labels: 0% at x=130, 100% at x=530, each 10% = 40px -->
+  <text x="130" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">0%</text>
+  <text x="170" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">10%</text>
+  <text x="210" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">20%</text>
+  <text x="250" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">30%</text>
+  <text x="290" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">40%</text>
+  <text x="330" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">50%</text>
+  <text x="370" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">60%</text>
+  <text x="410" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">70%</text>
+  <text x="450" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">80%</text>
+  <text x="490" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.5">90%</text>
+  <text x="530" y="350" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">100%</text>
+
+  <!-- Gridlines -->
+  <line x1="170" y1="30" x2="170" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="210" y1="30" x2="210" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="250" y1="30" x2="250" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="290" y1="30" x2="290" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="330" y1="30" x2="330" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="370" y1="30" x2="370" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="410" y1="30" x2="410" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="450" y1="30" x2="450" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="490" y1="30" x2="490" y2="330" stroke="currentColor" opacity="0.06"/>
+  <line x1="530" y1="30" x2="530" y2="330" stroke="currentColor" opacity="0.06"/>
+
+  <!-- Row labels and bars: bar width = value * 4 (since 100% = 400px) -->
+  <!-- Row positions: y=60, 120, 180, 240, 300; bar height=36, centered on row -->
+
+  <!-- Smartphones: 99% -> width 396 -->
+  <text x="122" y="84" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Smartphones</text>
+  <rect x="130" y="62" width="396" height="36" rx="4" fill="#f97316" opacity="0.9"/>
+  <text x="532" y="84" font-size="11" fill="#f97316" font-weight="700">99%</text>
+
+  <!-- Tablets: 90% -> width 360 -->
+  <text x="122" y="144" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Tablets</text>
+  <rect x="130" y="122" width="360" height="36" rx="4" fill="#fb923c" opacity="0.85"/>
+  <text x="496" y="144" font-size="11" fill="#fb923c" font-weight="700">90%</text>
+
+  <!-- Embedded IoT: 75% -> width 300 -->
+  <text x="122" y="204" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Embedded IoT</text>
+  <rect x="130" y="182" width="300" height="36" rx="4" fill="#38bdf8" opacity="0.85"/>
+  <text x="436" y="204" font-size="11" fill="#38bdf8" font-weight="700">75%</text>
+
+  <!-- Automotive: 40% -> width 160 -->
+  <text x="122" y="264" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Automotive</text>
+  <rect x="130" y="242" width="160" height="36" rx="4" fill="#a78bfa" opacity="0.85"/>
+  <text x="296" y="264" font-size="11" fill="#a78bfa" font-weight="700">40%</text>
+
+  <!-- Cloud Servers: 25% -> width 100 -->
+  <text x="122" y="324" text-anchor="end" font-size="11" fill="currentColor" opacity="0.9">Cloud Servers</text>
+  <rect x="130" y="302" width="100" height="36" rx="4" fill="#22c55e" opacity="0.85"/>
+  <text x="236" y="324" font-size="11" fill="#22c55e" font-weight="700">25%</text>
+
+  <!-- Source -->
+  <text x="130" y="370" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Counterpoint Research, Liftr Insights. 2025.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg
+  viewBox="0 0 1200 630"
+  xmlns="http://www.w3.org/2000/svg"
+  style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
+  role="img"
+  aria-labelledby="cover-title cover-desc">
+  <title id="cover-title">ARM64 Page Fault — How the Linux Kernel Handles a Missing Translation</title>
+  <desc id="cover-desc">Cover image for a blog post about ARM64 page fault handling in the Linux kernel. A dark gradient background with the title "ARM64 Page Fault", the subtitle "How the Linux Kernel Handles a Missing Translation", and a stat line reading "4-level page table walk: PGD to PUD to PMD to PTE".</desc>
+
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+  <text x="600" y="250" text-anchor="middle" font-size="72" font-weight="800" fill="#ffffff">
+    ARM64 Page Fault
+  </text>
+
+  <text x="600" y="320" text-anchor="middle" font-size="32" font-weight="400" fill="#d1d5db">
+    How the Linux Kernel Handles a Missing Translation
+  </text>
+
+  <text x="600" y="560" text-anchor="middle" font-size="20" font-weight="400" fill="#4b5563">
+    4-level page table walk &#183; PGD&#8594;PUD&#8594;PMD&#8594;PTE
+  </text>
+</svg>

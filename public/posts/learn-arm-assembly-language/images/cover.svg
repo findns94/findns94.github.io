@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="How to Set Up an ARM-v8 Assembly Development Environment on WSL. Over 290 billion ARM chips shipped since inception, with ARM in 99% of premium smartphones. A step-by-step guide to cross-compilation and debugging with QEMU and GDB.">
+  <title>How to Set Up an ARM-v8 Assembly Development Environment on WSL</title>
+  <desc>A guide cover showing the post title and key ARM market statistics: 290+ billion ARM chips shipped, 99% smartphone market share, and the toolchain stack (GCC, QEMU, GDB).</desc>
+
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circuit-line pattern -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1.5" fill="none">
+    <path d="M0 500 H200 V400 H350"/>
+    <path d="M1200 130 H1000 V230 H850"/>
+    <path d="M0 300 H150 V200 H300"/>
+    <path d="M1200 450 H1050 V350 H900"/>
+    <circle cx="350" cy="400" r="4" fill="#38bdf8"/>
+    <circle cx="850" cy="230" r="4" fill="#38bdf8"/>
+    <circle cx="300" cy="200" r="4" fill="#38bdf8"/>
+    <circle cx="900" cy="350" r="4" fill="#38bdf8"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="80" y="60" width="120" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Category label -->
+  <text x="80" y="100" font-size="16" fill="#38bdf8" font-weight="600" letter-spacing="2">ARM ASSEMBLY TUTORIAL</text>
+
+  <!-- Main title -->
+  <text x="80" y="200" font-size="52" fill="#f8fafc" font-weight="800">How to Set Up an ARM-v8</text>
+  <text x="80" y="270" font-size="52" fill="#f8fafc" font-weight="800">Assembly Development</text>
+  <text x="80" y="340" font-size="52" fill="url(#accent)" font-weight="800">Environment on WSL</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="400" font-size="22" fill="#94a3b8">Cross-compile, emulate, and debug ARM64 code on x86 with QEMU + GDB</text>
+
+  <!-- Stats row -->
+  <g transform="translate(80, 470)">
+    <!-- Stat 1 -->
+    <rect x="0" y="0" width="220" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="40" font-size="14" fill="#38bdf8" font-weight="600">ARM Chips Shipped</text>
+    <text x="20" y="78" font-size="32" fill="#f97316" font-weight="800">290B+</text>
+
+    <!-- Stat 2 -->
+    <rect x="250" y="0" width="220" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="270" y="40" font-size="14" fill="#38bdf8" font-weight="600">Smartphone Share</text>
+    <text x="270" y="78" font-size="32" fill="#f97316" font-weight="800">99%</text>
+
+    <!-- Stat 3 -->
+    <rect x="500" y="0" width="280" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="520" y="40" font-size="14" fill="#38bdf8" font-weight="600">Server Growth (2025)</text>
+    <text x="520" y="78" font-size="32" fill="#f97316" font-weight="800">70%+ CAGR</text>
+  </g>
+
+  <!-- Bottom author line -->
+  <text x="80" y="610" font-size="14" fill="#64748b">By FindNS94 · Silver Bullet</text>
+</svg>

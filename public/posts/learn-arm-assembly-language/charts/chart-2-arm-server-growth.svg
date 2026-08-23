@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Lollipop chart showing ARM-based cloud server adoption growth from 2021 to 2025. 2021: 5%. 2022: 8%. 2023: 12%. 2024: 18%. 2025: 25%. 2026 projected: 35%.">
+  <title>ARM Cloud Server Adoption Growth — 2021 to 2025</title>
+  <desc>ARM-based server processors have grown from 5% of cloud deployments in 2021 to 25% in 2025, driven by AWS Graviton, Ampere Altra, and custom silicon. Projected to reach 35% by 2026. Sources: Liftr Insights, Canalys, 2025.</desc>
+
+  <!-- Y axis -->
+  <line x1="75" y1="30" x2="75" y2="320" stroke="currentColor" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="75" y1="320" x2="530" y2="320" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Y axis labels: 0% at y=320, 40% at y=30, each 10% = 72.5px -->
+  <text x="67" y="324" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">0%</text>
+  <text x="67" y="251" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">10%</text>
+  <text x="67" y="179" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">20%</text>
+  <text x="67" y="106" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">30%</text>
+  <text x="67" y="34" text-anchor="end" font-size="10" fill="currentColor" opacity="0.8">40%</text>
+
+  <!-- Y gridlines -->
+  <line x1="75" y1="320" x2="530" y2="320" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="247" x2="530" y2="247" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="175" x2="530" y2="175" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="102" x2="530" y2="102" stroke="currentColor" opacity="0.08"/>
+  <line x1="75" y1="30" x2="530" y2="30" stroke="currentColor" opacity="0.08"/>
+
+  <!-- Lollipops: x positions at 125, 200, 275, 350, 425, 500 -->
+  <!-- y = 320 - (value * 7.25). Circle r=8, stem from circle to y=320 -->
+
+  <!-- 2021: 5% -> y = 320 - 36.25 = 283.75 -->
+  <line x1="125" y1="283.75" x2="125" y2="320" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="125" cy="283.75" r="8" fill="#38bdf8" opacity="0.9"/>
+  <text x="125" y="271" text-anchor="middle" font-size="11" fill="#38bdf8" font-weight="700">5%</text>
+  <text x="125" y="342" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.85">2021</text>
+
+  <!-- 2022: 8% -> y = 320 - 58 = 262 -->
+  <line x1="200" y1="262" x2="200" y2="320" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="200" cy="262" r="8" fill="#38bdf8" opacity="0.9"/>
+  <text x="200" y="249" text-anchor="middle" font-size="11" fill="#38bdf8" font-weight="700">8%</text>
+  <text x="200" y="342" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.85">2022</text>
+
+  <!-- 2023: 12% -> y = 320 - 87 = 233 -->
+  <line x1="275" y1="233" x2="275" y2="320" stroke="#f97316" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="275" cy="233" r="8" fill="#f97316" opacity="0.9"/>
+  <text x="275" y="220" text-anchor="middle" font-size="11" fill="#f97316" font-weight="700">12%</text>
+  <text x="275" y="342" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.85">2023</text>
+
+  <!-- 2024: 18% -> y = 320 - 130.5 = 189.5 -->
+  <line x1="350" y1="189.5" x2="350" y2="320" fill="none" stroke="#f97316" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="350" cy="189.5" r="8" fill="#f97316" opacity="0.9"/>
+  <text x="350" y="176" text-anchor="middle" font-size="11" fill="#f97316" font-weight="700">18%</text>
+  <text x="350" y="342" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.85">2024</text>
+
+  <!-- 2025: 25% -> y = 320 - 181.25 = 138.75 -->
+  <line x1="425" y1="138.75" x2="425" y2="320" stroke="#f97316" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="425" cy="138.75" r="8" fill="#f97316" opacity="0.9"/>
+  <text x="425" y="125" text-anchor="middle" font-size="11" fill="#f97316" font-weight="700">25%</text>
+  <text x="425" y="342" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.85">2025</text>
+
+  <!-- 2026: 35% projected -> y = 320 - 253.75 = 66.25 -->
+  <line x1="500" y1="66.25" x2="500" y2="320" stroke="#a78bfa" stroke-width="2.5" opacity="0.5" stroke-dasharray="5,3"/>
+  <circle cx="500" cy="66.25" r="8" fill="#a78bfa" opacity="0.6"/>
+  <text x="500" y="53" text-anchor="middle" font-size="11" fill="#a78bfa" font-weight="700">35%</text>
+  <text x="500" y="342" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.85">2026E</text>
+
+  <!-- Growth annotation -->
+  <line x1="125" y1="360" x2="425" y2="360" stroke="#f97316" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <text x="275" y="376" text-anchor="middle" font-size="9.5" fill="#f97316" opacity="0.9">5x growth in 4 years</text>
+
+  <!-- Source -->
+  <text x="75" y="392" font-size="8.5" fill="currentColor" opacity="0.45">Sources: Liftr Insights, Canalys. 2025. 2026 value is a projection.</text>
+</svg>
