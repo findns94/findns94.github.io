@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Monte Carlo simulation showing retirement ruin probability by strategy">
+<title>Monte Carlo Simulation: Retirement Ruin Probability</title>
+<desc>Horizontal bar chart showing probability of running out of money before death over 30-year retirement. Concentrated individual stocks: 42%. Single sector concentration: 28%. 60/40 portfolio without rebalancing: 15%. Diversified lifecycle portfolio with rebalancing: 7%.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="180" y1="80" x2="560" y2="80"/>
+  <line class="line-grid" x1="180" y1="140" x2="560" y2="140"/>
+  <line class="line-grid" x1="180" y1="200" x2="560" y2="200"/>
+  <line class="line-grid" x1="180" y1="260" x2="560" y2="260"/>
+  <line class="line-grid" x1="180" y1="320" x2="560" y2="320"/>
+</g>
+<line class="axis" x1="180" y1="40" x2="180" y2="340"/>
+<text class="tick" x="174" y="84" text-anchor="end" font-size="10">0%</text>
+<text class="tick" x="174" y="144" text-anchor="end" font-size="10">10%</text>
+<text class="tick" x="174" y="204" text-anchor="end" font-size="10">20%</text>
+<text class="tick" x="174" y="264" text-anchor="end" font-size="10">30%</text>
+<text class="tick" x="174" y="324" text-anchor="end" font-size="10">40%</text>
+<!-- Bars -->
+<rect x="180" y="60" width="336" height="30" fill="#fb7185" rx="2"/>
+<text class="lbl" x="170" y="79" text-anchor="end" font-size="10">Concentrated Stocks</text>
+<text x="522" y="79" font-size="10" fill="#1f2937" font-weight="700">42%</text>
+<rect x="180" y="130" width="224" height="30" fill="#f97316" rx="2"/>
+<text class="lbl" x="170" y="149" text-anchor="end" font-size="10">Single Sector</text>
+<text x="410" y="149" font-size="10" fill="#1f2937" font-weight="700">28%</text>
+<rect x="180" y="200" width="120" height="30" fill="#facc15" rx="2"/>
+<text class="lbl" x="170" y="219" text-anchor="end" font-size="10">60/40 No Rebalance</text>
+<text x="306" y="219" font-size="10" fill="#1f2937" font-weight="700">15%</text>
+<rect x="180" y="270" width="56" height="30" fill="#22c55e" rx="2"/>
+<text class="lbl" x="170" y="289" text-anchor="end" font-size="10">Lifecycle Portfolio</text>
+<text x="242" y="289" font-size="10" fill="#1f2937" font-weight="700">7%</text>
+<!-- Subtitle -->
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: Author calculations based on 10,000 Monte Carlo simulations of historical return distributions</text>
+</svg>

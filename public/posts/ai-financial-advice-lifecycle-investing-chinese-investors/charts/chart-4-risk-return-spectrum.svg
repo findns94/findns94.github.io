@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Risk return spectrum of Chinese investment products from cash to equities">
+<title>Risk-Return Spectrum: Chinese Investment Products</title>
+<desc>Horizontal lollipop chart showing expected annual returns for Chinese investment products. Yu'e Bao: 1.5%. Bank deposits: 2.0%. Treasury bonds: 2.2%. Bank wealth management: 2.8%. Corporate bonds: 3.5%. Gold: 5.5%. CSI 300: 7.5%. Global equities: 8.0%.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="180" y1="60" x2="580" y2="60"/>
+  <line class="line-grid" x1="180" y1="120" x2="580" y2="120"/>
+  <line class="line-grid" x1="180" y1="180" x2="580" y2="180"/>
+  <line class="line-grid" x1="180" y1="240" x2="580" y2="240"/>
+  <line class="line-grid" x1="180" y1="300" x2="580" y2="300"/>
+</g>
+<line class="axis" x1="180" y1="40" x2="180" y2="340"/>
+<text class="tick" x="174" y="64" text-anchor="end" font-size="10">0%</text>
+<text class="tick" x="174" y="124" text-anchor="end" font-size="10">2%</text>
+<text class="tick" x="174" y="184" text-anchor="end" font-size="10">4%</text>
+<text class="tick" x="174" y="244" text-anchor="end" font-size="10">6%</text>
+<text class="tick" x="174" y="304" text-anchor="end" font-size="10">8%</text>
+<!-- Products -->
+<line x1="180" y1="52" x2="252" y2="52" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="252" cy="52" r="6" fill="#22c55e"/>
+<text class="lbl" x="170" y="56" text-anchor="end" font-size="9">Yu'e Bao / Money Market</text>
+<text x="260" y="56" font-size="9" fill="#1f2937" font-weight="700">1.5%</text>
+<line x1="180" y1="102" x2="272" y2="102" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="272" cy="102" r="6" fill="#22c55e"/>
+<text class="lbl" x="170" y="106" text-anchor="end" font-size="9">Bank Deposits (1-3yr)</text>
+<text x="280" y="106" font-size="9" fill="#1f2937" font-weight="700">2.0%</text>
+<line x1="180" y1="152" x2="282" y2="152" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="282" cy="152" r="6" fill="#38bdf8"/>
+<text class="lbl" x="170" y="156" text-anchor="end" font-size="9">Treasury Bonds (10yr)</text>
+<text x="290" y="156" font-size="9" fill="#1f2937" font-weight="700">2.2%</text>
+<line x1="180" y1="202" x2="308" y2="202" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="308" cy="202" r="6" fill="#38bdf8"/>
+<text class="lbl" x="170" y="206" text-anchor="end" font-size="9">Bank Wealth Mgmt</text>
+<text x="316" y="206" font-size="9" fill="#1f2937" font-weight="700">2.8%</text>
+<line x1="180" y1="252" x2="336" y2="252" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="336" cy="252" r="6" fill="#38bdf8"/>
+<text class="lbl" x="170" y="256" text-anchor="end" font-size="9">Corporate Bonds (AAA)</text>
+<text x="344" y="256" font-size="9" fill="#1f2937" font-weight="700">3.5%</text>
+<line x1="180" y1="302" x2="432" y2="302" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="432" cy="302" r="6" fill="#facc15"/>
+<text class="lbl" x="170" y="306" text-anchor="end" font-size="9">Gold (5yr avg)</text>
+<text x="440" y="306" font-size="9" fill="#1f2937" font-weight="700">5.5%</text>
+<line x1="180" y1="335" x2="490" y2="335" stroke="#374151" stroke-width="1.5" opacity="0.3"/>
+<circle cx="490" cy="335" r="6" fill="#f97316"/>
+<text class="lbl" x="170" y="339" text-anchor="end" font-size="9">CSI 300 (20yr annualized)</text>
+<text x="498" y="339" font-size="9" fill="#1f2937" font-weight="700">7.5%</text>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: PBOC, Wind, Tianhong, World Gold Council, 2024-2026. Returns annualized.</text>
+</svg>

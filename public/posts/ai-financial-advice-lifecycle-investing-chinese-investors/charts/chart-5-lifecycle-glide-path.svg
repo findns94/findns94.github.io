@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Lifecycle glide path showing recommended equity allocation declining from 55 percent at age 25 to 15 percent at age 70">
+<title>Lifecycle Glide Path: Chinese Investor Asset Allocation</title>
+<desc>Area chart showing recommended equity allocation by age for Chinese investors. Equity declines from 55% at age 25 to 15% at age 70. Bond allocation increases correspondingly from 10% to 45%.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="80" y1="60" x2="600" y2="60"/>
+  <line class="line-grid" x1="80" y1="120" x2="600" y2="120"/>
+  <line class="line-grid" x1="80" y1="180" x2="600" y2="180"/>
+  <line class="line-grid" x1="80" y1="240" x2="600" y2="240"/>
+  <line class="line-grid" x1="80" y1="300" x2="600" y2="300"/>
+</g>
+<line class="axis" x1="80" y1="320" x2="600" y2="320"/>
+<line class="axis" x1="80" y1="60" x2="80" y2="320"/>
+<text class="tick" x="74" y="64" text-anchor="end" font-size="10">60%</text>
+<text class="tick" x="74" y="124" text-anchor="end" font-size="10">50%</text>
+<text class="tick" x="74" y="184" text-anchor="end" font-size="10">40%</text>
+<text class="tick" x="74" y="244" text-anchor="end" font-size="10">30%</text>
+<text class="tick" x="74" y="304" text-anchor="end" font-size="10">20%</text>
+<!-- X axis labels -->
+<text class="op35" x="80" y="340" text-anchor="middle" font-size="9">25</text>
+<text class="op35" x="160" y="340" text-anchor="middle" font-size="9">30</text>
+<text class="op35" x="240" y="340" text-anchor="middle" font-size="9">35</text>
+<text class="op35" x="320" y="340" text-anchor="middle" font-size="9">40</text>
+<text class="op35" x="400" y="340" text-anchor="middle" font-size="9">45</text>
+<text class="op35" x="480" y="340" text-anchor="middle" font-size="9">50</text>
+<text class="op35" x="540" y="340" text-anchor="middle" font-size="9">60</text>
+<text class="op35" x="600" y="340" text-anchor="middle" font-size="9">70</text>
+<text class="lbl" x="40" y="200" text-anchor="middle" font-size="10" transform="rotate(-90,40,200)">Equity %</text>
+<!-- Equity area -->
+<polygon points="80,116 160,128 240,142 320,158 400,176 480,204 540,236 600,260 600,320 80,320" fill="#38bdf8" opacity="0.15"/>
+<polyline fill="none" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,116 160,128 240,142 320,158 400,176 480,204 540,236 600,260"/>
+<!-- Bond area -->
+<polygon points="80,320 160,320 240,320 320,320 400,320 480,320 540,320 600,320 600,260 540,236 480,204 400,176 320,158 240,142 160,128 80,116 80,140 160,196 240,224 320,248 400,268 480,288 540,304 600,320" fill="#f97316" opacity="0.1"/>
+<!-- Data points -->
+<circle cx="80" cy="116" r="4" fill="#38bdf8"/>
+<circle cx="160" cy="128" r="4" fill="#38bdf8"/>
+<circle cx="240" cy="142" r="4" fill="#38bdf8"/>
+<circle cx="320" cy="158" r="4" fill="#38bdf8"/>
+<circle cx="400" cy="176" r="4" fill="#38bdf8"/>
+<circle cx="480" cy="204" r="4" fill="#38bdf8"/>
+<circle cx="540" cy="236" r="4" fill="#38bdf8"/>
+<circle cx="600" cy="260" r="4" fill="#38bdf8"/>
+<!-- Labels -->
+<text class="lbl" x="120" y="100" text-anchor="middle" font-size="9" font-weight="700">Equity</text>
+<text class="lbl" x="300" y="280" text-anchor="middle" font-size="9" font-weight="700">Bonds + Cash</text>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: Author's recommended glide path adapted for Chinese investors.</text>
+</svg>

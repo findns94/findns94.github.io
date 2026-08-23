@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="China versus United States household asset allocation comparison">
+<title>China vs US: Household Asset Allocation</title>
+<desc>Grouped bar chart comparing household asset allocation between China and United States. China: Real Estate 62%, Financial Assets 38%, Equities 12%, Deposits 22%, Pensions 6%. US: Real Estate 26%, Financial Assets 74%, Equities 37%, Deposits 12%, Pensions 32%.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="80" y1="80" x2="600" y2="80"/>
+  <line class="line-grid" x1="80" y1="140" x2="600" y2="140"/>
+  <line class="line-grid" x1="80" y1="200" x2="600" y2="200"/>
+  <line class="line-grid" x1="80" y1="260" x2="600" y2="260"/>
+  <line class="line-grid" x1="80" y1="320" x2="600" y2="320"/>
+</g>
+<line class="axis" x1="80" y1="320" x2="600" y2="320"/>
+<line class="axis" x1="80" y1="80" x2="80" y2="320"/>
+<text class="tick" x="74" y="84" text-anchor="end" font-size="10">80%</text>
+<text class="tick" x="74" y="144" text-anchor="end" font-size="10">60%</text>
+<text class="tick" x="74" y="204" text-anchor="end" font-size="10">40%</text>
+<text class="tick" x="74" y="264" text-anchor="end" font-size="10">20%</text>
+<text class="tick" x="74" y="324" text-anchor="end" font-size="10">0%</text>
+<!-- Legend -->
+<rect x="80" y="40" width="10" height="10" fill="#f97316"/>
+<text x="95" y="49" font-size="10" fill="#1f2937">China</text>
+<rect x="180" y="40" width="10" height="10" fill="#38bdf8"/>
+<text x="195" y="49" font-size="10" fill="#1f2937">United States</text>
+<!-- Bar Group 1: Real Estate -->
+<rect x="120" y="158.4" width="40" height="161.6" fill="#f97316" rx="2"/>
+<rect x="170" y="236.8" width="40" height="83.2" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="155" y="345" text-anchor="middle" font-size="9">Real Estate</text>
+<!-- Bar Group 2: Financial Assets -->
+<rect x="240" y="196.8" width="40" height="123.2" fill="#f97316" rx="2"/>
+<rect x="290" y="83.2" width="40" height="236.8" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="275" y="345" text-anchor="middle" font-size="9">Financial</text>
+<!-- Bar Group 3: Equities -->
+<rect x="360" y="281.6" width="40" height="38.4" fill="#f97316" rx="2"/>
+<rect x="410" y="194.8" width="40" height="125.2" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="395" y="345" text-anchor="middle" font-size="9">Equities</text>
+<!-- Bar Group 4: Deposits -->
+<rect x="480" y="249.6" width="40" height="70.4" fill="#f97316" rx="2"/>
+<rect x="530" y="281.6" width="40" height="38.4" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="515" y="345" text-anchor="middle" font-size="9">Deposits</text>
+<!-- Bar Group 5: Pensions/Insurance -->
+<rect x="600" y="300.8" width="40" height="19.2" fill="#f97316" rx="2"/>
+<text class="lbl" x="600" y="345" text-anchor="middle" font-size="9">Pensions</text>
+<!-- US pension bar (extends beyond chart, clip it) -->
+<rect x="580" y="217.6" width="40" height="102.4" fill="#38bdf8" rx="2"/>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: PBOC Household Survey 2019, Federal Reserve SCF 2022. Approximate figures.</text>
+</svg>

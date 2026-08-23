@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="Portfolio growth projections for three life stages over 35 years">
+<title>Portfolio Growth Projections: Three Life Stages</title>
+<desc>Line chart showing projected portfolio value in millions RMB. Age 25 starter with 5000 per month savings reaches 8.5M by year 35. Age 35 mid-career with 10000 per month reaches 8M by year 25. Age 50 pre-retiree with 15000 per month reaches 3.8M by year 15.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="80" y1="80" x2="600" y2="80"/>
+  <line class="line-grid" x1="80" y1="140" x2="600" y2="140"/>
+  <line class="line-grid" x1="80" y1="200" x2="600" y2="200"/>
+  <line class="line-grid" x1="80" y1="260" x2="600" y2="260"/>
+  <line class="line-grid" x1="80" y1="320" x2="600" y2="320"/>
+</g>
+<line class="axis" x1="80" y1="320" x2="600" y2="320"/>
+<line class="axis" x1="80" y1="80" x2="80" y2="320"/>
+<text class="tick" x="74" y="84" text-anchor="end" font-size="10">14</text>
+<text class="tick" x="74" y="144" text-anchor="end" font-size="10">11</text>
+<text class="tick" x="74" y="204" text-anchor="end" font-size="10">8</text>
+<text class="tick" x="74" y="264" text-anchor="end" font-size="10">5</text>
+<text class="tick" x="74" y="324" text-anchor="end" font-size="10">2</text>
+<!-- X axis labels -->
+<text class="op35" x="80" y="340" text-anchor="middle" font-size="9">Y0</text>
+<text class="op35" x="184" y="340" text-anchor="middle" font-size="9">Y5</text>
+<text class="op35" x="288" y="340" text-anchor="middle" font-size="9">Y10</text>
+<text class="op35" x="392" y="340" text-anchor="middle" font-size="9">Y15</text>
+<text class="op35" x="496" y="340" text-anchor="middle" font-size="9">Y20</text>
+<text class="op35" x="600" y="340" text-anchor="middle" font-size="9">Y25+</text>
+<!-- Line 1: Age 25 (5k/mo) -->
+<polyline fill="none" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,290 184,260 288,220 392,180 496,140 600,100"/>
+<circle cx="600" cy="100" r="5" fill="#38bdf8" stroke="white" stroke-width="2"/>
+<text class="lbl" x="590" y="90" text-anchor="end" font-size="9" font-weight="700">Age 25: 8.5M</text>
+<!-- Line 2: Age 35 (10k/mo) -->
+<polyline fill="none" stroke="#f97316" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,280 184,240 288,195 392,150 496,110 600,75"/>
+<circle cx="600" cy="75" r="5" fill="#f97316" stroke="white" stroke-width="2"/>
+<text class="lbl" x="590" y="68" text-anchor="end" font-size="9" font-weight="700">Age 35: 8.0M</text>
+<!-- Line 3: Age 50 (15k/mo) -->
+<polyline fill="none" stroke="#22c55e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,270 184,235 288,195 392,155 496,120"/>
+<circle cx="496" cy="120" r="5" fill="#22c55e" stroke="white" stroke-width="2"/>
+<text class="lbl" x="486" y="113" text-anchor="end" font-size="9" font-weight="700">Age 50: 3.8M</text>
+<!-- Legend -->
+<line x1="100" y1="50" x2="130" y2="50" stroke="#38bdf8" stroke-width="3"/>
+<text x="135" y="54" font-size="9" fill="#1f2937">Age 25 (5k/mo)</text>
+<line x1="250" y1="50" x2="280" y2="50" stroke="#f97316" stroke-width="3"/>
+<text x="285" y="54" font-size="9" fill="#1f2937">Age 35 (10k/mo)</text>
+<line x1="400" y1="50" x2="430" y2="50" stroke="#22c55e" stroke-width="3"/>
+<text x="435" y="54" font-size="9" fill="#1f2937">Age 50 (15k/mo)</text>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: Author calculations based on historical CSI 300 returns (7.5% annualized). Past performance does not guarantee future results.</text>
+</svg>

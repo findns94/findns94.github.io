@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" role="img" aria-label="NBER Study: Effect of Following AI Financial Advice, showing stock market participation, equity decline after 45, and savings buffer">
+<title>NBER Study: Effect of Following AI Financial Advice</title>
+<desc>Grouped bar chart comparing observed behavior vs after following AI advice. Stock Market Participation: 67% observed vs 95% after AI advice. Equity Declines After 45: 25% observed vs 78% after. Savings Buffer above $10k by Age 30: 45% observed vs 92% after.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<g>
+  <line class="line-grid" x1="80" y1="80" x2="600" y2="80"/>
+  <line class="line-grid" x1="80" y1="140" x2="600" y2="140"/>
+  <line class="line-grid" x1="80" y1="200" x2="600" y2="200"/>
+  <line class="line-grid" x1="80" y1="260" x2="600" y2="260"/>
+  <line class="line-grid" x1="80" y1="320" x2="600" y2="320"/>
+</g>
+<line class="axis" x1="80" y1="320" x2="600" y2="320"/>
+<line class="axis" x1="80" y1="80" x2="80" y2="320"/>
+<text class="tick" x="74" y="84" text-anchor="end" font-size="10">100</text>
+<text class="tick" x="74" y="144" text-anchor="end" font-size="10">80</text>
+<text class="tick" x="74" y="204" text-anchor="end" font-size="10">60</text>
+<text class="tick" x="74" y="264" text-anchor="end" font-size="10">40</text>
+<text class="tick" x="74" y="324" text-anchor="end" font-size="10">20</text>
+<!-- Legend -->
+<rect x="80" y="40" width="10" height="10" fill="#f97316"/>
+<text x="95" y="49" font-size="11" fill="#1f2937">Observed Behavior</text>
+<rect x="220" y="40" width="10" height="10" fill="#38bdf8"/>
+<text x="235" y="49" font-size="11" fill="#1f2937">After Following AI Advice</text>
+<!-- Bar Group 1: Stock Market Participation -->
+<rect x="140" y="155.6" width="40" height="164.4" fill="#f97316" rx="2"/>
+<rect x="190" y="74" width="40" height="246" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="170" y="340" text-anchor="middle" font-size="10">Stock Market</text>
+<text class="lbl" x="170" y="352" text-anchor="middle" font-size="10">Participation</text>
+<!-- Bar Group 2: Equity Declines After 45 -->
+<rect x="320" y="257.6" width="40" height="62.4" fill="#f97316" rx="2"/>
+<rect x="370" y="118.4" width="40" height="201.6" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="350" y="340" text-anchor="middle" font-size="10">Equity Declines</text>
+<text class="lbl" x="350" y="352" text-anchor="middle" font-size="10">After 45</text>
+<!-- Bar Group 3: Savings Buffer >$10k by 30 -->
+<rect x="500" y="212" width="40" height="108" fill="#f97316" rx="2"/>
+<rect x="550" y="89.6" width="40" height="230.4" fill="#38bdf8" rx="2"/>
+<text class="lbl" x="530" y="340" text-anchor="middle" font-size="10">Savings Buffer</text>
+<text class="lbl" x="530" y="352" text-anchor="middle" font-size="10">&gt;$10k by 30</text>
+<!-- Value labels on bars -->
+<text x="160" y="151" text-anchor="middle" font-size="9" fill="#1f2937" font-weight="700">67%</text>
+<text x="210" y="70" text-anchor="middle" font-size="9" fill="#1f2937" font-weight="700">95%</text>
+<text x="340" y="253" text-anchor="middle" font-size="9" fill="#1f2937" font-weight="700">25%</text>
+<text x="390" y="114" text-anchor="middle" font-size="9" fill="#1f2937" font-weight="700">78%</text>
+<text x="520" y="208" text-anchor="middle" font-size="9" fill="#1f2937" font-weight="700">45%</text>
+<text x="570" y="85" text-anchor="middle" font-size="9" fill="#1f2937" font-weight="700">92%</text>
+<text class="op35" x="320" y="374" text-anchor="middle" font-size="10">Source: NBER Working Paper 35574, 2026</text>
+</svg>
