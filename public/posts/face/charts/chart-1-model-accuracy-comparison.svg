@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 320" role="img" aria-label="Horizontal bar chart comparing face recognition model accuracy on a 2,000-face dataset. VGGFace finetune: Top-1 33.75%, Top-5 48.9%. FaceNet lazy learning: Top-1 44.6%, Top-5 61.15%. Ensemble classifier: Top-1 69.75%, Top-5 82.1%.">
+  <title>Face Recognition Model Accuracy Comparison</title>
+  <desc>Horizontal bar chart comparing Top-1 and Top-5 accuracy of three face recognition approaches tested on a 2,000-face dataset. VGGFace finetune (RESNET50, softmax loss): Top-1 33.75%, Top-5 48.9%. FaceNet lazy learning (Inception ResNet v1, Euclidean distance): Top-1 44.6%, Top-5 61.15%. Ensemble classifier (3-model majority vote): Top-1 69.75%, Top-5 82.1%. Source: author course experiment, 2019.</desc>
+
+  <!-- Title -->
+  <text x="270" y="26" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="700">Face Recognition Model Accuracy (2,000-face dataset)</text>
+
+  <!-- Legend -->
+  <rect x="175" y="38" width="12" height="12" rx="2" fill="#f97316"/>
+  <text x="191" y="48" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.8">Top-1 Accuracy</text>
+  <rect x="310" y="38" width="12" height="12" rx="2" fill="#38bdf8"/>
+  <text x="326" y="48" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.8">Top-5 Accuracy</text>
+
+  <!-- Y-axis line -->
+  <line x1="150" y1="68" x2="150" y2="262" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Zero baseline -->
+  <line x1="150" y1="68" x2="150" y2="262" stroke="currentColor" opacity="0.3"/>
+
+  <!-- Grid lines -->
+  <line x1="150" y1="68" x2="480" y2="68" stroke="currentColor" opacity="0.04"/>
+  <g stroke="currentColor" opacity="0.08">
+    <line x1="233" y1="68" x2="233" y2="262"/>
+    <line x1="315" y1="68" x2="315" y2="262"/>
+    <line x1="398" y1="68" x2="398" y2="262"/>
+    <line x1="480" y1="68" x2="480" y2="262"/>
+  </g>
+
+  <!-- X-axis tick labels -->
+  <text x="150" y="280" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.45">0%</text>
+  <text x="233" y="280" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.45">25%</text>
+  <text x="315" y="280" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.45">50%</text>
+  <text x="398" y="280" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.45">75%</text>
+  <text x="480" y="280" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.45">100%</text>
+
+  <!-- Group 1: VGGFace finetune -->
+  <text x="143" y="92" text-anchor="end" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.85">VGGFace finetune</text>
+  <rect x="150" y="78" width="111" height="18" rx="3" fill="#f97316"/>
+  <text x="165" y="91" fill="white" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="800">33.75%</text>
+  <rect x="150" y="102" width="161" height="18" rx="3" fill="#38bdf8"/>
+  <text x="165" y="115" fill="white" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="800">48.9%</text>
+
+  <!-- Group 2: FaceNet lazy -->
+  <text x="143" y="168" text-anchor="end" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.85">FaceNet lazy</text>
+  <rect x="150" y="154" width="147" height="18" rx="3" fill="#f97316"/>
+  <text x="165" y="167" fill="white" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="800">44.6%</text>
+  <rect x="150" y="178" width="202" height="18" rx="3" fill="#38bdf8"/>
+  <text x="165" y="191" fill="white" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="800">61.15%</text>
+
+  <!-- Group 3: Ensemble -->
+  <text x="143" y="244" text-anchor="end" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.85">Ensemble</text>
+  <rect x="150" y="230" width="230" height="18" rx="3" fill="#f97316"/>
+  <text x="165" y="243" fill="white" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="800">69.75%</text>
+  <rect x="150" y="254" width="271" height="18" rx="3" fill="#38bdf8"/>
+  <text x="165" y="267" fill="white" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="800">82.1%</text>
+
+  <!-- Source -->
+  <text x="270" y="304" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.35">Source: author course experiment (2,000-face dataset), 2019</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="KKBOX Music Data Mining cover: audio waveform visualization with key statistic">
+  <title>KKBOX Music Data Mining — Predicting Repeat Listening Behavior</title>
+  <desc>A dark gradient cover with an abstract audio waveform, the title, and the key result: LightGBM achieved 0.792 AUC on the KKBOX Kaggle dataset.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="50%" stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#24243e"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#3a7bd5"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7971e"/>
+      <stop offset="100%" stop-color="#ffd200"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Abstract waveform bars -->
+  <g opacity="0.25">
+    <rect x="80" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="100" y="220" width="12" height="190" rx="6" fill="url(#wave)"/>
+    <rect x="120" y="200" width="12" height="230" rx="6" fill="url(#wave)"/>
+    <rect x="140" y="180" width="12" height="270" rx="6" fill="url(#wave)"/>
+    <rect x="160" y="210" width="12" height="210" rx="6" fill="url(#wave)"/>
+    <rect x="180" y="240" width="12" height="150" rx="6" fill="url(#wave)"/>
+    <rect x="200" y="190" width="12" height="250" rx="6" fill="url(#wave)"/>
+    <rect x="220" y="230" width="12" height="170" rx="6" fill="url(#wave)"/>
+    <rect x="240" y="200" width="12" height="230" rx="6" fill="url(#wave)"/>
+    <rect x="260" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="280" y="220" width="12" height="190" rx="6" fill="url(#wave)"/>
+    <rect x="300" y="195" width="12" height="240" rx="6" fill="url(#wave)"/>
+    <rect x="320" y="215" width="12" height="200" rx="6" fill="url(#wave)"/>
+    <rect x="340" y="245" width="12" height="140" rx="6" fill="url(#wave)"/>
+    <rect x="360" y="205" width="12" height="220" rx="6" fill="url(#wave)"/>
+    <rect x="380" y="235" width="12" height="160" rx="6" fill="url(#wave)"/>
+    <rect x="400" y="185" width="12" height="260" rx="6" fill="url(#wave)"/>
+    <rect x="420" y="225" width="12" height="180" rx="6" fill="url(#wave)"/>
+    <rect x="440" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="460" y="210" width="12" height="210" rx="6" fill="url(#wave)"/>
+    <rect x="480" y="240" width="12" height="150" rx="6" fill="url(#wave)"/>
+    <rect x="500" y="195" width="12" height="240" rx="6" fill="url(#wave)"/>
+    <rect x="520" y="220" width="12" height="190" rx="6" fill="url(#wave)"/>
+    <rect x="540" y="245" width="12" height="140" rx="6" fill="url(#wave)"/>
+    <rect x="560" y="200" width="12" height="230" rx="6" fill="url(#wave)"/>
+    <rect x="580" y="230" width="12" height="170" rx="6" fill="url(#wave)"/>
+    <rect x="600" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="620" y="215" width="12" height="200" rx="6" fill="url(#wave)"/>
+    <rect x="640" y="240" width="12" height="150" rx="6" fill="url(#wave)"/>
+    <rect x="660" y="190" width="12" height="250" rx="6" fill="url(#wave)"/>
+    <rect x="680" y="225" width="12" height="180" rx="6" fill="url(#wave)"/>
+    <rect x="700" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="720" y="205" width="12" height="220" rx="6" fill="url(#wave)"/>
+    <rect x="740" y="235" width="12" height="160" rx="6" fill="url(#wave)"/>
+    <rect x="760" y="195" width="12" height="240" rx="6" fill="url(#wave)"/>
+    <rect x="780" y="220" width="12" height="190" rx="6" fill="url(#wave)"/>
+    <rect x="800" y="245" width="12" height="140" rx="6" fill="url(#wave)"/>
+    <rect x="820" y="200" width="12" height="230" rx="6" fill="url(#wave)"/>
+    <rect x="840" y="230" width="12" height="170" rx="6" fill="url(#wave)"/>
+    <rect x="860" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="880" y="210" width="12" height="210" rx="6" fill="url(#wave)"/>
+    <rect x="900" y="240" width="12" height="150" rx="6" fill="url(#wave)"/>
+    <rect x="920" y="190" width="12" height="250" rx="6" fill="url(#wave)"/>
+    <rect x="940" y="225" width="12" height="180" rx="6" fill="url(#wave)"/>
+    <rect x="960" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+    <rect x="980" y="205" width="12" height="220" rx="6" fill="url(#wave)"/>
+    <rect x="1000" y="235" width="12" height="160" rx="6" fill="url(#wave)"/>
+    <rect x="1020" y="195" width="12" height="240" rx="6" fill="url(#wave)"/>
+    <rect x="1040" y="220" width="12" height="190" rx="6" fill="url(#wave)"/>
+    <rect x="1060" y="245" width="12" height="140" rx="6" fill="url(#wave)"/>
+    <rect x="1080" y="250" width="12" height="130" rx="6" fill="url(#wave)"/>
+  </g>
+  <!-- Data scatter points -->
+  <g opacity="0.4">
+    <circle cx="200" cy="160" r="4" fill="#00d2ff"/>
+    <circle cx="250" cy="140" r="3" fill="#00d2ff"/>
+    <circle cx="300" cy="170" r="5" fill="#3a7bd5"/>
+    <circle cx="900" cy="480" r="4" fill="#f7971e"/>
+    <circle cx="950" cy="500" r="3" fill="#ffd200"/>
+    <circle cx="1000" cy="470" r="5" fill="#f7971e"/>
+    <circle cx="150" cy="500" r="3" fill="#00d2ff"/>
+    <circle cx="1050" cy="150" r="4" fill="#ffd200"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="120" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="32" font-weight="700" fill="#ffffff" opacity="0.9">KKBOX Music Data Mining</text>
+  <text x="600" y="160" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="18" fill="#a0aec0">Predicting Repeat Listening Behavior</text>
+  <!-- Key stat box -->
+  <rect x="350" y="420" width="500" height="120" rx="12" fill="#1a1a2e" opacity="0.85"/>
+  <text x="600" y="462" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="42" font-weight="800" fill="url(#accent)">0.792 AUC</text>
+  <text x="600" y="492" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="15" fill="#a0aec0">LightGBM · 10-fold cross-validation · K-prototypes clustering</text>
+  <text x="600" y="518" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="13" fill="#718096">KKBOX Kaggle Dataset</text>
+</svg>

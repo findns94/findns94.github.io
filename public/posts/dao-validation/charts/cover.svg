@@ -1,0 +1,62 @@
+<svg
+  viewBox="0 0 1200 630"
+  xmlns="http://www.w3.org/2000/svg"
+  style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif"
+  role="img"
+  aria-label="Can Formal Verification Have Prevented The DAO Hack? — $245M raised, drained via recursive call vulnerability. A NuSMV formal-verification case study."
+>
+  <title>Can Formal Verification Have Prevented The DAO Hack?</title>
+  <desc>A cover image for a formal-verification case study: The DAO raised $245M before a recursive-call vulnerability let an attacker drain funds. A NuSMV model reproduced and fixed the bug.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative grid -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Brand mark -->
+  <text x="80" y="60" font-size="14" font-weight="600" fill="#f97316" letter-spacing="1.5">SILVER BULLET</text>
+
+  <!-- Category tag -->
+  <rect x="80" y="120" width="160" height="28" rx="14" fill="#f97316" opacity="0.15"/>
+  <text x="100" y="140" font-size="12" font-weight="600" fill="#f97316">FORMAL VERIFICATION</text>
+
+  <!-- Main title -->
+  <text x="80" y="240" font-size="52" font-weight="800" fill="#f8fafc">Can Formal Verification</text>
+  <text x="80" y="300" font-size="52" font-weight="800" fill="#f8fafc">Have Prevented</text>
+  <text x="80" y="360" font-size="52" font-weight="800" fill="url(#accent)">The DAO Hack?</text>
+
+  <!-- Key stat -->
+  <rect x="80" y="410" width="480" height="4" rx="2" fill="url(#accent)"/>
+  <text x="80" y="460" font-size="36" font-weight="700" fill="#f97316">$245M</text>
+  <text x="220" y="460" font-size="22" font-weight="500" fill="#94a3b8">raised &amp; drained via recursive call</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="520" font-size="18" fill="#64748b">A NuSMV model checker reproduced the vulnerability</text>
+  <text x="80" y="550" font-size="18" fill="#64748b">and confirmed the fix across 38 verification states.</text>
+
+  <!-- Author -->
+  <text x="80" y="600" font-size="13" fill="#475569">FindNS94 · 2019 course project</text>
+</svg>

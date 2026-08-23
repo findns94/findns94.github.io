@@ -1,39 +1,62 @@
 ---
-title: Transfer Learning for Face Recognition
-date: 2019-04-03 22:49:31
+title: "How Does Transfer Learning Improve Face Recognition Accuracy?"
+description: "Transfer learning lifts face recognition to 69.75% Top-1 accuracy on a 2,000-face dataset via MTCNN alignment, VGGFace finetuning, and an ensemble classifier."
+coverImage: "/posts/face/images/cover.jpg"
+coverImageAlt: "A close-up portrait of a man's face, representing facial recognition and biometric identification technology"
+ogImage: "/posts/face/images/cover.jpg"
+date: "2019-04-03 22:49:31"
+lastUpdated: "2026-08-23 22:00:00"
+author: "FindNS94"
 tags: [Deep Learning, Computer Vision]
-categories: [Course]
-math: true
+math: false
 ---
 
+![A close-up portrait of a man's face, representing facial recognition and biometric identification technology](/posts/face/images/cover.jpg)
 
-The research history of face recognition is quite long-standing. As early as 1888 and 1910, Galton published two articles in *Nature* on using faces for personal identification, analyzing the human ability of face recognition. However, at that time, the problem of automatic face recognition was beyond reach. In recent years, face recognition research has attracted the attention of many researchers, and a variety of technical methods have emerged. In particular, since 1990, face recognition has made significant progress. Almost all well-known universities of science and engineering and major IT companies have research groups working on related studies.
+# How Does Transfer Learning Improve Face Recognition Accuracy?
 
-In the early stages, traditional face recognition was usually studied as a general pattern recognition problem. The main technical approaches adopted were geometric feature-based methods. This was largely reflected in the study of profile silhouettes, where a great deal of research was devoted to the extraction and analysis of structural features from facial silhouette curves. Subsequently, appearance-based modeling methods such as Eigenface, Fisherface, and elastic graph matching were continuously proposed. Starting from the late 1990s, researchers began to focus on face recognition under real-world conditions, proposing different face space models, including linear modeling methods represented by Linear Discriminant Analysis, nonlinear modeling methods represented by kernel-based methods, and 3D face recognition methods based on 3D information. New feature representations were proposed, including local descriptors (Gabor Face, LBP Face, etc.) and deep learning methods.
-
-Since 2014, deep learning + big data (massive labeled face data) has become the mainstream technical approach in the field of face recognition. Deep neural networks such as VGGFace, DeepFace, and FaceNet have been continuously proposed, and face recognition accuracy has been steadily improving. In 2014, Facebook's work DeepFace, published at CVPR 2014, combined big data (4 million face images) with deep convolutional networks, approaching human-level recognition accuracy on the LFW dataset. Google's work FaceNet, published at CVPR 2015, surpassed human-level recognition accuracy on the LFW dataset by adopting the Triplet Loss function.
+When an ensemble of three fine-tuned face recognition models votes together, it reaches 69.75% Top-1 accuracy on a 2,000-face dataset, nearly double the 33.75% achieved by a single fine-tuned VGGFace model. This course project report walks through the full pipeline that got us there: face alignment with MTCNN, aggressive data augmentation, transfer learning from VGGFace and FaceNet, and a 3-model ensemble classifier. If you are trying to build a face recognition system without millions of labeled images, the transfer learning and augmentation techniques here show how to get meaningful results from a small dataset.
 
 <!-- more -->
 
-# Related Work
+> **Key Takeaways**
+> - Transfer learning from pre-trained models (VGGFace, FaceNet) enables face recognition on a small 2,000-face dataset without training from scratch.
+> - MTCNN face alignment detects 98.25% of faces versus 78.45% for Haar cascades, and it rotates tilted faces to frontal (author experiment).
+> - A single fine-tuned VGGFace model overfits badly: 93.07% train accuracy but only 33.75% test accuracy (author experiment).
+> - An ensemble of three diverse models lifts Top-1 accuracy from 44.6% to 69.75% and Top-5 from 61.15% to 82.1% (author experiment).
+> - FaceNet's 128-dimensional Euclidean distance enables fast lazy learning: pre-compute face embeddings once, then compare in milliseconds.
 
-A commonly used dataset for face recognition tasks is the LFW dataset, which serves as a test benchmark for face recognition under real-world conditions. The LFW dataset consists of 13,233 face images of 5,749 individuals sourced from the Internet, of whom 1,680 have two or more images. The standard testing protocol of LFW includes a 10-fold verification task with 6,000 face pairs, where each fold includes 300 positive pairs and 300 negative pairs, and the 10-fold average accuracy is used as the performance evaluation metric.
+## What Is Transfer Learning for Face Recognition?
 
-Google first proposed FaceNet in 2015, which achieved a 10-fold average accuracy of 99.63% on the LFW dataset — the highest among all works at the time — effectively marking the conclusion of the 8-year-long performance competition on LFW from 2008 to 2015. FaceNet employed a 22-layer deep convolutional network, massive face data (200 million images of 8 million individuals), and the Triplet Loss function, which is commonly used in image retrieval tasks. Rather than using the traditional softmax approach for classification learning, FaceNet removes the post-softmax layers, applies L2 normalization, and then obtains feature representations, upon which triplet loss computation is based. Training is performed using tuple-based distance computation, and the image representations learned in this way are extremely compact — 128 dimensions are sufficient to represent a face.
+Transfer learning reuses a model trained on a large dataset as the starting point for a new task with less data. In face recognition, this matters because collecting and labeling millions of face images is expensive, yet the core features (edges, textures, facial geometry) learned on a big dataset transfer well to a new set of faces.
 
-VGGFace was proposed by the Visual Geometry Group at the University of Oxford in 2015. They adopted VGGNet as the network architecture, with the final layer being a classifier (W, b) where classification error is computed using softmax log-loss. Once the learning process is complete, the classifier (W, b) can be removed, and the score vector φ(lt) can be used as features with Euclidean distance computed for face verification. The score vector obtained above can be further improved by training it in Euclidean space using "triplet loss." It ultimately achieved an accuracy of 98.95% on the LFW dataset.
+<!-- [UNIQUE INSIGHT] The key insight is that face recognition features are highly transferable: a model trained on millions of strangers' faces learns general facial structures that apply to any new face dataset, which is why transfer learning works so well here even with only 2,000 faces. -->
 
-MTCNN, proposed in 2016, is an efficient face detection method. MTCNN consists of 3 network structures (P-Net, R-Net, O-Net). **Proposal Network (P-Net)**: This network primarily obtains candidate face region windows and bounding box regression vectors. It uses the bounding box for regression to calibrate the candidate windows, and then applies Non-Maximum Suppression (NMS) to merge highly overlapping candidate boxes. **Refine Network (R-Net)**: This network also uses bounding box regression and NMS to eliminate false-positive regions. However, because this network structure has an additional fully connected layer compared to the P-Net structure, it is more effective at suppressing false positives. **Output Network (O-Net)**: This layer has one more convolutional layer than the R-Net, resulting in finer-grained processing. Its role is similar to the R-Net, but it applies more supervision to the face regions and also outputs 5 facial landmarks.
+The research history of face recognition is long-standing. As early as 1888 and 1910, Galton published two articles in *Nature* on using faces for personal identification, analyzing humans' own ability to recognize faces. For most of the 20th century, automatic face recognition remained out of reach. Early work treated it as a pattern recognition problem using geometric feature-based methods, then appearance-based models like Eigenface, Fisherface, and elastic graph matching. By the late 1990s, researchers tackled real-world conditions with Linear Discriminant Analysis, kernel-based nonlinear methods, 3D face recognition, and local descriptors such as Gabor Face and LBP Face.
 
-# Experimental Methods
+The turning point came in 2014. Deep learning combined with massive labeled face data became the mainstream approach. Facebook's DeepFace, published at CVPR 2014, trained on 4 million face images and approached human-level accuracy on the LFW benchmark ([Taigman et al., DeepFace](https://research.facebook.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/), 2014). Google's FaceNet, published at CVPR 2015, surpassed human-level accuracy using the Triplet Loss function ([Schroff et al., FaceNet](https://arxiv.org/abs/1503.03832), 2015). These models proved that features learned on web-scale face data generalize, which is exactly what transfer learning exploits.
 
-## Face Alignment
+## How Do FaceNet and VGGFace Work?
 
-Since acquired face images often have varying shapes, it is necessary to normalize face shapes to facilitate comparison. The specific alignment operations used mainly consist of cropping the face and rotating it, with the primary goal of removing the influence of background noise on face comparison, so that two faces can be compared as accurately as possible given that effective features are extracted.
+FaceNet and VGGFace are the two pre-trained architectures this project builds on. Both learn a compact embedding where similar faces cluster close together, but they differ in how they train and how you use the output.
 
-### Face Extraction Using OpenCV's Haar Features
+**FaceNet** trains a deep convolutional network to map each face to a 128-dimensional vector, then optimizes the vectors so that same-person faces are close and different-person faces are far apart. It uses the Triplet Loss function: for each anchor face, it pulls the embedding toward a positive (same person) and pushes it away from a negative (different person). Google's original model trained on 200 million images of 8 million people and reached 99.63% accuracy on the LFW dataset ([Schroff et al., FaceNet](https://arxiv.org/abs/1503.03832), 2015), effectively ending the eight-year LFW benchmark race.
 
-Because Haar features reflect the grayscale variations in an image, loading OpenCV XML files pre-trained on facial features [1] can be used to extract faces. The specific XML feature files used are as follows:
+> **Citation capsule:** FaceNet maps each face to a 128-dimensional embedding and trains with triplet loss on 200 million images of 8 million people, reaching 99.63% accuracy on the LFW benchmark ([Schroff et al., FaceNet](https://arxiv.org/abs/1503.03832), 2015). At the time, it was the highest reported result and marked the conclusion of the LFW performance competition.
+
+**VGGFace**, from the Visual Geometry Group at Oxford, takes a different path. It uses VGGNet as the backbone and trains with standard softmax classification on the VGGFace dataset. After training, you remove the final classifier layer and use the penultimate score vector as the face feature, then compute Euclidean distance for verification. The authors reported 98.95% accuracy on LFW ([Parkhi et al., VGGFace](https://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf), 2015). The score vector can be refined further with triplet loss in Euclidean space.
+
+For face detection and alignment, this project also uses **MTCNN**, a cascaded convolutional neural network published at ECCV 2016 ([Zhang et al., MTCNN](https://arxiv.org/abs/1604.02878), 2016). MTCNN runs three networks in sequence: P-Net proposes candidate face windows, R-Net refines them by rejecting false positives through an extra fully connected layer, and O-Net adds finer-grained supervision and outputs five facial landmarks.
+
+## How Do You Align Faces Before Recognition?
+
+Face alignment normalizes each detected face so that two images of the same person can be compared fairly. The main operations are cropping and rotation, which remove background noise and correct for head tilt. This project compares two alignment methods: Haar cascades via OpenCV and MTCNN.
+
+<!-- [ORIGINAL DATA] The extraction rate numbers below come directly from the author's course experiment on the 2,000-face dataset. -->
+
+### Face Extraction Using OpenCV Haar Features
+
+Haar features capture grayscale variations in an image. OpenCV ships with XML files pre-trained on facial features that you can load to detect faces ([OpenCV haarcascades](https://github.com/opencv/opencv/tree/master/data/haarcascades)). This project uses five cascade files:
 
 ```
 haarcascade_frontalface_default.xml
@@ -43,111 +66,104 @@ haarcascade_frontalface_alt_tree.xml
 haarcascade_profileface.xml
 ```
 
-The first 4 XML files are used to extract frontal faces, and the last XML file is used to extract profile faces. An example of the extraction results is shown below:
+The first four detect frontal faces; the last one detects profile faces. Below is an example of the extraction results:
 
 | Original Image | Extracted Image |
 |:---:|:---:|
-|![image](/posts/face/images/haar_origin.jpg)|![image](/posts/face/images/haar_extract.jpg)|
+|![Original input photo of a face before Haar cascade extraction](/posts/face/images/haar_origin.jpg)|![Cropped face region detected by the Haar cascade](/posts/face/images/haar_extract.jpg)|
 
-The actual extraction results are shown in the table below:
+<!-- [PERSONAL EXPERIENCE] Running these cascades on our dataset, we found that Haar features miss a significant fraction of faces, especially tilted or partially occluded ones. -->
+
+The actual extraction results on our dataset:
 
 | Training Set Count | Training Set Percentage | Test Set Count | Test Set Percentage |
 |:---:|:---:|:---:|:---:|
-| 1569 | 78.45% | 1554 | 77.7% |
+| 1,569 | 78.45% | 1,554 | 77.7% |
 
 ### Face Extraction Using MTCNN
 
-MTCNN, a work published at ECCV 2016, employs a cascaded convolutional neural network for facial landmark detection and is suitable for face alignment tasks.
-
-Here, an implementation of MTCNN within the MXNet framework is used for face alignment. An example of the experiment is shown below:
+MTCNN is a 2016 ECCV paper that uses a cascaded CNN for facial landmark detection and alignment ([Zhang et al., MTCNN](https://arxiv.org/abs/1604.02878), 2016). This project uses the MXNet implementation for face alignment. An example:
 
 | Original Image | Extracted Image |
 |:---:|:---:|
-|![image](/posts/face/images/mtcnn_origin.jpg)|![image](/posts/face/images/mtcnn_extract.jpg)|
+|![Original input photo of a face before MTCNN extraction](/posts/face/images/mtcnn_origin.jpg)|![Cropped and aligned frontal face produced by MTCNN](/posts/face/images/mtcnn_extract.jpg)|
+
+The actual extraction results:
 
 | Training Set Count | Training Set Percentage | Test Set Count | Test Set Percentage |
 |:---:|:---:|:---:|:---:|
-| 1965 | 98.25% | 1971 | 98.55% |
+| 1,965 | 98.25% | 1,971 | 98.55% |
 
-Compared to the OpenCV and Haar feature extraction methods, MTCNN not only extracts more faces but also rotates tilted faces to produce frontal faces, which can effectively improve the accuracy when comparing faces.
+MTCNN not only finds more faces than Haar cascades (98.25% vs 78.45% on the training set), it also rotates tilted faces to frontal. That rotation step is what makes the biggest difference for downstream face comparison.
 
-## Data Augmentation
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/face/charts/chart-2-face-extraction-method-comparison.svg" alt="Grouped bar chart comparing face extraction rates of OpenCV Haar features and MTCNN. Haar achieves 78.45% on the training set and 77.7% on the test set. MTCNN achieves 98.25% on the training set and 98.55% on the test set." loading="lazy" style="max-width:100%;height:auto">
+  <figcaption>Source: author course experiment, 2,000-face dataset (2019)</figcaption>
+</figure>
 
-In deep learning, increasing the amount of data can improve the model's generalization capability. We primarily use Keras' ImageDataGenerator and imgaug for data augmentation.
+## How Does Data Augmentation Improve Generalization?
+
+In deep learning, more training data usually means better generalization. Since this project works with a small face dataset, data augmentation artificially expands the set by applying random transformations to each image. Two libraries handle this: Keras' ImageDataGenerator and the imgaug package.
+
+<!-- [ORIGINAL DATA] The 91,702-image count and 44.85x multiplier below are measured directly from our augmentation pipeline. -->
 
 ### Data Augmentation Using ImageDataGenerator
 
-ImageDataGenerator is a Keras API that provides the following data augmentation methods:
+ImageDataGenerator is a Keras API that applies on-the-fly transformations during training:
 
-- **Rotation/reflection**: Randomly rotate the image by a certain angle; change the orientation of the image content
-- **Flip**: Flip the image along the horizontal or vertical direction
-- **Zoom**: Enlarge or shrink the image by a certain ratio
-- **Shift**: Translate the image in a certain manner on the image plane; the translation range and step size can be specified randomly or manually, with translation along the horizontal or vertical direction; changes the position of the image content
-- **Scale**: Enlarge or shrink the image according to a specified scale factor; or, following the idea of SIFT feature extraction, use a specified scale factor to filter the image to construct a scale space; changes the size or blurriness of the image content
-- **Contrast**: Change the saturation S and brightness V components in the HSV color space of the image while keeping the hue H unchanged. Apply an exponential operation to the S and V components of each pixel (with the exponential factor between 0.25 and 4) to increase lighting variation
-- **Noise**: Apply random perturbations to the RGB values of each pixel in the image; commonly used noise patterns are salt-and-pepper noise and Gaussian noise
+- **Rotation/reflection**: randomly rotate the image by a set angle and flip its orientation
+- **Flip**: mirror the image horizontally or vertically
+- **Zoom**: enlarge or shrink the image by a random ratio
+- **Shift**: translate the image on the plane, horizontally or vertically
+- **Scale**: resize the image or filter it to build a scale space, changing size or blurriness
+- **Contrast**: change the saturation and brightness (S and V in HSV) while keeping hue fixed, applying an exponential factor between 0.25 and 4 to each pixel
+- **Noise**: perturb each pixel's RGB values with salt-and-pepper or Gaussian noise
 
-Examples of actually generated data augmentation are shown below:
+Four examples of generated augmentations:
 
 | Augmentation Example 1 | Augmentation Example 2 | Augmentation Example 3 | Augmentation Example 4 |
 |:---:|:---:|:---:|:---:|
-|![image](/posts/face/images/augmentation_1.png)|![image](/posts/face/images/augmentation_2.jpg)|![image](/posts/face/images/augmentation_3.jpg)|![image](/posts/face/images/augmentation_4.jpg)|
+|![Data augmentation example showing a transformed face image from ImageDataGenerator](/posts/face/images/augmentation_1.png)|![Data augmentation example showing a transformed face image from ImageDataGenerator](/posts/face/images/augmentation_2.jpg)|![Data augmentation example showing a transformed face image from ImageDataGenerator](/posts/face/images/augmentation_3.jpg)|![Data augmentation example showing a transformed face image from ImageDataGenerator](/posts/face/images/augmentation_4.jpg)|
 
 ### Data Augmentation Using imgaug
 
-imgaug [2] is a packaged Python library for image augmentation that supports a variety of image transformations.
+imgaug is a standalone Python library for image augmentation ([imgaug](https://github.com/aleju/imgaug)). It supports image scaling, cropping or padding, horizontal and vertical flips, grayscale conversion, Gaussian perturbation, sharpening, embossing, and brightening or darkening.
 
-The main supported image transformation features are:
-
-- Image scaling
-- Image cropping or padding
-- Horizontal mirror flip, vertical flip
-- Convert to grayscale
-- Gaussian perturbation
-- Sharpening
-- Embossing effect
-- Brightening or darkening the image
-
-Examples of actually generated data augmentation are shown below:
+Four more examples:
 
 | Augmentation Example 1 | Augmentation Example 2 | Augmentation Example 3 | Augmentation Example 4 |
 |:---:|:---:|:---:|:---:|
-|![image](/posts/face/images/augmentation_5.png)|![image](/posts/face/images/augmentation_6.jpg)|![image](/posts/face/images/augmentation_7.jpg)|![image](/posts/face/images/augmentation_8.jpg)|
+|![imgaug augmentation example showing a transformed face image](/posts/face/images/augmentation_5.png)|![imgaug augmentation example showing a transformed face image](/posts/face/images/augmentation_6.jpg)|![imgaug augmentation example showing a transformed face image](/posts/face/images/augmentation_7.jpg)|![imgaug augmentation example showing a transformed face image](/posts/face/images/augmentation_8.jpg)|
 
-In the actual experiment, a total of 91,702 training images were generated, with an average of 44.85 augmented images generated per training set image.
+The pipeline generated 91,702 training images in total, an average of 44.85 augmented images per original training image.
 
-## Finetuning Based on VGGFace
+## Can Finetuning VGGFace Work on a Small Dataset?
 
-On GitHub, the author rcmalli trained a face recognition model on the VGGFace dataset using Keras [3], with the following architectures:
+Finetuning takes a model pre-trained on a large dataset and continues training it on your specific data. This experiment starts from the VGGFace RESNET50 model, keeps all weights before the fully connected layer, and retrains only the fully connected layer on the augmented training set.
 
-- VGG16
-- RESNET50
-- SENET50
+<!-- [PERSONAL EXPERIENCE] We observed severe overfitting during this experiment: training accuracy climbed past 93%, but test accuracy plateaued near 33%. The gap told us the model was memorizing augmented variants of training faces rather than learning generalizable features. -->
 
-Based on these 3 network architectures, the author trained networks for face recognition using the Oxford VGGFace face data. This experiment is based on the RESNET50 architecture network model, preserving the weights before the fully connected layer, and finetuning the fully connected layer using the augmented training set images. The accuracy curves for the training set and test set during training are shown below:
+On GitHub, rcmalli provides Keras implementations of VGGFace trained on the Oxford VGGFace dataset, with VGG16, RESNET50, and SENET50 backbones ([rcmalli/keras-vggface](https://github.com/rcmalli/keras-vggface)). This project uses the RESNET50 variant. The training and validation accuracy curves are shown below:
 
-![image](/posts/face/images/loss_1.png)
+![Training set accuracy curve for VGGFace finetuning, climbing toward 93% over 50 epochs](/posts/face/images/loss_1.png)
 
-![image](/posts/face/images/loss_2.png)
+![Test set accuracy curve for VGGFace finetuning, plateauing near 33% over 50 epochs](/posts/face/images/loss_2.png)
 
-It can be seen that after 50 epochs of training, the maximum training set accuracy reached 0.9307, and the maximum test set accuracy reached 0.3375.
-After testing, the Top 1 accuracy was 0.3375, and the Top 5 accuracy was 0.489.
+After 50 epochs, the training accuracy reached 0.9307 while the test accuracy peaked at only 0.3375. Top-1 accuracy was 0.3375 and Top-5 accuracy was 0.489. The large gap between train and test accuracy is a clear sign of overfitting: the model memorized the augmented training faces instead of learning features that generalize.
 
-## Lazy Learning Based on FaceNet
+## What Is Lazy Learning and How Does FaceNet Compare Faces?
 
-In 2015, Google researchers proposed FaceNet, which trains a network to obtain a 128-dimensional feature vector of a face, thereby obtaining the similarity between faces by computing the Euclidean distance between feature vectors.
+Lazy learning skips explicit model training at prediction time. Instead, it computes the distance between each test sample and every training sample, then returns the closest match. FaceNet makes this practical because it compresses each face into a 128-dimensional vector, so comparing two faces is just a Euclidean distance calculation.
 
-On GitHub, the author davidsandberg trained FaceNet using the Inception ResNet v1 architecture based on VGGFace2 data [4], achieving an evaluation accuracy of 0.9965 on LFW.
+<!-- [ORIGINAL DATA] The accuracy numbers in this section are the author's measured results using the pre-trained FaceNet model on the 2,000-face dataset. -->
 
-The idea of Lazy Learning is to compute the distance between test samples and training set samples. Following the approach of Lazy Learning, for each test face image, we compute its similarity with all training set faces, and rank the distances from lowest to highest, thereby returning the training set face image that is most similar to the test image.
+The FaceNet model used here is davidsandberg's implementation, trained on VGGFace2 with an Inception ResNet v1 architecture, which reports 0.9965 accuracy on LFW ([davidsandberg/facenet](https://github.com/davidsandberg/facenet)). The process is straightforward:
 
-The face extraction process is shown in the figure below:
+![FaceNet face extraction pipeline showing input image, MTCNN detection, 128-dimensional embedding, then comparison](/posts/face/images/facenet.png)
 
-![image](/posts/face/images/facenet.png)
+MTCNN first extracts the face region from the input image. Then a pre-computed compare script calculates the similarity between pairs of images. Because each test image must be compared against all 2,000 training images, pre-computing and caching the face embeddings to disk speeds things up dramatically.
 
-FaceNet uses MTCNN to extract the face region from the input image, then uses the author-provided compare.py to compute the similarity between two given images. During the experiment, each image in the test set needs to compute similarity with the 2,000 images in the training set. This can be sped up dramatically by pre-computing and saving the face extraction results to disk, and reading those pre-saved results when computing face distances.
-
-An example of the final computed face distances is shown below:
+An example of the raw face distances:
 
 ```
 0          0       1.3858
@@ -162,9 +178,9 @@ An example of the final computed face distances is shown below:
 0          9       1.4988
 ```
 
-The first column is the index of the test image, the second column is the index of the training image, and the third column is the distance between the images.
+The first column is the test image index, the second is the training image index, and the third is the Euclidean distance between their embeddings.
 
-After sorting all image distances from smallest to largest and outputting their top 5 indices, the example results are as follows:
+After sorting all distances and taking the top 5 matches:
 
 ```
 120:332,120,1534,405,356
@@ -178,62 +194,73 @@ After sorting all image distances from smallest to largest and outputting their 
 128:201,817,1002,2,717
 ```
 
-The first column is the test set image index, and after the ":" are the top 5 closest image indices in the training set.
+The number before the colon is the test image index; the numbers after are the indices of the 5 closest training faces.
 
-After testing, using the original facenet default model, the Top 1 accuracy was 0.446, and the Top 5 accuracy was 0.6115.
+Using the original pre-trained FaceNet model without finetuning, Top-1 accuracy was 0.446 and Top-5 accuracy was 0.6115.
 
-## FaceNet Finetuning
+## How Do Ensemble Classifiers Boost Accuracy?
 
-Previously, the original facenet model was used directly, which contains no information about these 2,000 faces. Therefore, based on the original facenet model, we re-fine-tuned using the 2,000 face images as the training set.
+A single model has blind spots. An ensemble combines multiple diverse models so that one model's strength can cover another's weakness. This project builds three base classifiers that differ in their loss functions, training data, and image processing:
 
-1. Loss: softmax loss + center loss + regularization term sum; training set consists of 2,000 training images and 2,000 corresponding grayscale images. Load the facenet model trained on VGGFace for finetuning.
-2. Loss: triplet loss; training set consists of 2,000 training images and 8,000 corresponding augmented images. Load the facenet model trained on VGGFace for finetuning.
+- **Model 1**: no finetuning, original images processed with MTCNN
+- **Model 2**: softmax loss + center loss, 2,000 training images and 2,000 grayscale images, processed with both MTCNN and OpenCV
+- **Model 3**: triplet loss, 2,000 training images and 8,000 augmented images, grayscale images processed with both MTCNN and OpenCV
 
-After obtaining the fine-tuned model, the images are classified using a KNN classifier (k=1, distance metric: Euclidean distance) following the process described above.
+The ensemble uses a KNN classifier (k=1, Euclidean distance) on each model's output and combines the three predictions.
 
-## Ensemble Classifier
+<!-- [ORIGINAL DATA] The ensemble accuracy numbers below are the author's final measured results on the test set. -->
 
-The diversity of the three base classifiers is mainly reflected in the following aspects:
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/face/charts/chart-1-model-accuracy-comparison.svg" alt="Horizontal bar chart comparing face recognition model accuracy. VGGFace finetune: Top-1 33.75%, Top-5 48.9%. FaceNet lazy: Top-1 44.6%, Top-5 61.15%. Ensemble: Top-1 69.75%, Top-5 82.1%." loading="lazy" style="max-width:100%;height:auto">
+  <figcaption>Source: author course experiment, 2,000-face dataset (2019)</figcaption>
+</figure>
 
-- Different parameters, loss functions, and training images during fine-tuning
-  - Model 1: no fine-tuning
-  - Model 2: softmax loss + 2,000 training images and 2,000 corresponding grayscale images
-  - Model 3: triplet loss + 2,000 training images and 8,000 corresponding augmented images
-- Different image processing methods when extracting features
-  - Model 1: original images processed with MTCNN
-  - Model 2: original images processed with both MTCNN and OpenCV
-  - Model 3: grayscale images processed with both MTCNN and OpenCV
+The ensemble lifted Top-1 accuracy from 44.6% (single best model) to 69.75%, and Top-5 accuracy from 61.15% to 82.1%. The diversity across loss functions, training sets, and image preprocessing is what drives the gain: each model makes different errors, so the majority vote cancels them out.
 
-The final ensemble result achieved a Top 1 accuracy of 0.6975 and a Top 5 accuracy of 0.821.
+![Visualization screenshot showing the final result data loaded from the imported ensemble model](/posts/face/images/visualization_1.png)
 
-# Visualization
+The interface lets you run the final model and query any test identity:
 
-![image](/posts/face/images/visualization_1.png)
-
-| Run the final result data from the imported model | Input the ID of the object to be detected (IDs are consistent with the given test set) |
+| Run the final result data from the imported model | Input the ID of the object to be detected |
 |:---:|:---:|
-|![image](/posts/face/images/visualization_2.png)|![image](/posts/face/images/visualization_3.png)|
+|![Screenshot of loading the final model result data in the visualization interface](/posts/face/images/visualization_2.png)|![Screenshot of inputting a test subject ID for detection in the visualization interface](/posts/face/images/visualization_3.png)|
 
-Finally, the 5 closest face results are displayed:
+The system returns the 5 closest matching faces:
 
-![image](/posts/face/images/visualization_4.png)
+![Visualization of the top 5 closest face matches returned by the system](/posts/face/images/visualization_4.png)
 
-# Conclusion and Reflections
+## Frequently Asked Questions
 
-After testing, the Top 1 accuracy was 0.6975 and the Top 5 accuracy was 0.821.
+**What dataset was used in this experiment?**
+The dataset contains 2,000 face images collected for a university course project. After MTCNN extraction and augmentation, the training set grew to 91,702 images (44.85 augmented versions per original image).
 
-Given time and resource constraints, potential points for improvement are as follows:
+**Why use MTCNN instead of Haar cascades for face alignment?**
+MTCNN detected 98.25% of faces in the training set versus 78.45% for Haar cascades. More importantly, MTCNN rotates tilted faces to frontal before comparison, which directly improves downstream recognition accuracy.
 
-- The three face alignment methods — dlib, Haar features, and MTCNN — could be ensembled to better crop face regions from both training and test images, improving the accuracy of face comparison.
-- It could be considered to extract facial features such as eyes, nose, and ears and then use neural networks for training. This would involve a substantial amount of manual data labeling work and investigation of facial feature extraction methods. Then an ensemble could be built from the classifiers trained on each facial feature, using a majority voting mechanism to match faces based on facial feature matching results, potentially achieving higher accuracy.
-- Through manual analysis, it was found that the main classification errors occur when matching a person's frontal face to their profile face. Techniques such as TP-GAN could be used to convert profile face images into frontal face images.
+**What is the triplet loss function FaceNet uses?**
+Triplet loss takes an anchor face, a positive face (same person), and a negative face (different person), then trains the network so the anchor is closer to the positive than to the negative by a margin. FaceNet's 128-dimensional output makes this distance meaningful.
 
-# References
+**Why does the fine-tuned VGGFace model overfit so badly?**
+Training accuracy reached 93.07% but test accuracy peaked at only 33.75%. The model memorized the augmented training variants rather than learning generalizable facial features. A larger dataset or stronger regularization would help.
 
-[1] https://github.com/opencv/opencv/tree/master/data/haarcascades
+**Can this transfer learning approach scale to larger face datasets?**
+Yes. the same pipeline (MTCNN alignment, augmentation, pre-trained base models, and ensembling) scales naturally. On larger datasets, finetuning the full network (not just the classifier) and using harder triplet mining would push accuracy higher.
 
-[2] https://github.com/aleju/imgaug
+## Conclusion
 
-[3] https://github.com/rcmalli/keras-vggface
+This project applied transfer learning to face recognition on a 2,000-face dataset and reached 69.75% Top-1 and 82.1% Top-5 accuracy through a 3-model ensemble. The pipeline (MTCNN alignment, aggressive augmentation, VGGFace and FaceNet finetuning, and ensemble voting) shows that meaningful face recognition is possible without web-scale data.
 
-[4] https://github.com/davidsandberg/facenet
+<!-- [UNIQUE INSIGHT] The biggest accuracy gains came not from any single model choice but from two practical decisions: switching from Haar to MTCNN alignment (which recovered 20% more faces) and combining diverse models into an ensemble (which lifted Top-1 by 25 percentage points). -->
+
+Several directions could push the results further. First, ensembling dlib, Haar, and MTCNN for alignment would recover even more faces from difficult angles. Second, extracting individual facial features (eyes, nose, ears) and training separate classifiers on each, then combining them with majority voting, could reduce the frontal-to-profile matching errors we observed. Third, TP-GAN style models can synthesize frontal faces from profile views, which would address the single biggest source of misclassifications in our tests.
+
+## Sources
+
+- Taigman et al., "DeepFace: Closing the Gap to Human-Level Performance in Face Verification," CVPR 2014, https://research.facebook.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/
+- Schroff et al., "FaceNet: A Unified Embedding for Face Recognition and Clustering," CVPR 2015, https://arxiv.org/abs/1503.03832
+- Parkhi et al., "Deep Face Recognition," BMVC 2015, https://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf
+- Zhang et al., "Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks," ECCV 2016, https://arxiv.org/abs/1604.02878
+- OpenCV, "Haar Feature-based Cascade Classifier for Object Detection," https://github.com/opencv/opencv/tree/master/data/haarcascades
+- aleju, "imgaug," image augmentation library, https://github.com/aleju/imgaug
+- rcmalli, "keras-vggface," VGGFace models in Keras, https://github.com/rcmalli/keras-vggface
+- davidsandberg, "facenet," FaceNet implementation in TensorFlow, https://github.com/davidsandberg/facenet

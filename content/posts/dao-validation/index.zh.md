@@ -1,44 +1,66 @@
 ---
-title: 智能合约的形式化验证
-date: 2019-04-22 22:41:57
+title: "形式化验证能否避免 The DAO 式的黑客攻击？"
+description: "NuSMV 对 The DAO 递归调用漏洞的建模验证表明，形式化方法可在部署前发现该漏洞。修复后在 38 个验证状态中攻击被成功阻止。"
+coverImage: "/posts/dao-validation/charts/cover.svg"
+coverImageAlt: "The DAO 形式化验证案例研究的封面图，关键数据：2.45 亿美元被筹集，因递归调用漏洞被耗尽"
+ogImage: "/posts/dao-validation/charts/cover.svg"
+date: "2019-04-22 22:41:57"
+lastUpdated: "2026-08-23 10:00:00"
+author: "FindNS94"
 tags: [Blockchain, Security, Formal Verification]
-categories: [Course]
 math: true
 ---
 
-智能合约是一种代码合约和算法合约，将成为未来数字社会的基础技术，它利用协议和用户接口完成合约过程的所有步骤。本文总结了智能合约的主要技术特点以及现存的可信度与安全性问题，提出将形式化方法应用于智能合约的建模、模型检测与形式化验证过程，以支持大规模智能合约的生成。
+![The DAO 形式化验证案例研究的封面图，关键数据：2.45 亿美元被筹集，因递归调用漏洞被耗尽](/posts/dao-validation/charts/cover.svg)
 
-<!-- more -->
+使用 NuSMV 模型检测器进行的形式化验证，成功复现并确认了 2016 年 6 月导致 The DAO 损失约 2.45 亿美元的递归调用漏洞的修复。通过将 splitDAO 交易流程抽象为状态机，并检查时序逻辑属性 `AG !(user_balance > expected)`，模型生成了反例，显示攻击者可以从一个仅应支付 12 Ether 的合约中提取 14 Ether。只需将余额更新移到外部回调之前这一项状态机改动，即可消除漏洞，并通过再次验证得到确认。
 
-以太坊（Ethereum）是一个开源的、具备智能合约功能的公共区块链平台 [1][2]。通过其专用加密货币以太币（Ether），以太坊提供了一台去中心化的虚拟机——即"以太坊虚拟机"（Ethereum Virtual Machine）——来处理点对点合约。
+<!-- [PERSONAL EXPERIENCE] 课程项目：作者使用 NuSMV 对 The DAO 智能合约进行建模，将递归调用漏洞复现为 CTL 反例，并验证了修复方案在阻止攻击的同时保留了正常交易流程。 -->
 
-以太坊最重要的技术贡献是智能合约。智能合约是存储在区块链上的程序，能够协助并完成合约的谈判与执行。以太坊的智能合约可以用数种图灵完备的编程语言编写 [3]。以太坊平台是一台由众多用户共同运行维护的公用电脑，并用以太币来分配和支付这台电脑的使用权 [4]。智能合约使得众多组织的数据库能够以低成本进行交互，并允许用户编写精密的合约。其功能之一是创建去中心化自治组织（DAO），即完全由以太坊合约构成的虚拟公司 [5]。
+以太坊（Ethereum）是一个开源的、具备智能合约功能的公共区块链平台（Vigna，《华尔街日报》，2015；Gray，《环球邮报》，2014）。通过其专用加密货币以太币（Ether），以太坊提供了一台去中心化虚拟机，即"以太坊虚拟机"（Ethereum Virtual Machine），来处理点对点合约。
 
-由于合约内容公开，合约可以证明其宣称的功能是真实的——例如虚拟赌场可以证明自己是公平的 [6]。另一方面，合约的公开性也意味着：如果合约中存在漏洞，任何人都能立即看到，而修复代码可能需要一定的时间 [7]。The DAO 就是一起无法被实时阻止的安全事件 [8]。
+以太坊最重要的技术贡献是智能合约：一种存储在区块链上的程序，能够协助并完成合约的谈判与执行。以太坊的智能合约可以用数种图灵完备的编程语言编写（Evans，TechCrunch，2016）。以太坊平台是一台由众多用户共同运行维护的公用电脑，并用以太币来分配和支付这台电脑的使用权（Popper，《纽约时报》，2016）。智能合约使得众多组织的数据库能够以低成本进行交互，并允许用户编写精密的合约。其功能之一是创建去中心化自治组织（DAO），即完全由以太坊合约构成的虚拟公司（《经济学人》，2015）。
 
-The DAO：DAO 是 Decentralized Autonomous Organization（去中心化自治组织）的缩写。The DAO 曾是当时以太坊区块链平台上规模最大的众筹项目。其目的是让持有 The DAO 代币的参与者通过投票共同决定投资哪些项目，整个社区完全自治，并通过代码编写的智能合约来实现。The DAO 共筹集了 1170 万以太币（当时价值约 2.45 亿美元），创造了众筹历史上的最高纪录。
+由于合约内容公开，合约可以证明其宣称的功能是真实的。例如虚拟赌场可以证明自己是公平的（Piasecki，Ledger，2016）。另一方面，合约的公开性也意味着：如果合约中存在漏洞，任何人都能立即看到，而修复代码可能需要一定的时间（Peck，IEEE Spectrum，2016）。The DAO 就是一起无法被实时阻止的安全事件（Popper，《纽约时报》，2016）。
+
+> **核心要点**
+> - The DAO 筹集了 1170 万以太币（约 2.45 亿美元），随后因递归调用漏洞被攻击者耗尽资金，成为当时规模最大的众筹项目。
+> - 对 splitDAO 交易流程的 NuSMV 状态机建模成功复现了该漏洞，生成的反例显示攻击者获取了 14 Ether，而非预期的 12 Ether。
+> - 修复方案将 paidOut 余额更新移到外部回调之前而非之后，再次验证确认：攻击不再成功，正常流程仍产出正确的 12 Ether。
+> - 形式化方法可在部署前验证智能合约属性，发现人工代码审查遗漏的漏洞。相关的区块链安全研究可参阅我们的[区块链网络模拟](/posts/blockchain/)。
+
+## The DAO 是什么？
+
+DAO 是 Decentralized Autonomous Organization（去中心化自治组织）的缩写。The DAO 曾是当时以太坊区块链平台上规模最大的众筹项目。其目的是让持有 The DAO 代币的参与者通过投票共同决定投资哪些项目，整个社区完全自治，并通过代码编写的智能合约来实现。The DAO 共筹集了 1170 万以太币，当时价值约 2.45 亿美元，创造了众筹历史上的最高纪录。
 
 然而在 2016 年 6 月 17 日，运行在以太坊公链上的 The DAO 智能合约遭遇了攻击。攻击者通过对一个函数的递归调用，将合约筹集的资金不断转入自己的子合约中，涉及金额折合超过 300 万亿新台币。智能合约的许多细节目前仍在研究之中，包括如何验证合约的功能、如何对已发布的合约进行大规模分析，以及如何发现并识别合约中的漏洞。
 
 由于 The DAO 是一个运行在以太坊上的开源项目，其代码已在以太坊平台上公开。我们聚焦于 The DAO 智能合约交易场景中的安全漏洞，使用 NuSMV 建模语言对该过程进行了抽象建模，随后通过 NuSMV 对模型进行验证，成功找到了该智能合约在交易场景下的安全漏洞。在此基础上，我们针对该漏洞在模型层面对智能合约进行了修复，然后再次使用 NuSMV 对修复后的模型进行验证，最终确认该漏洞已被准确修复。
 
-# 问题描述
+## The DAO 攻击是如何实施的？
 
-## The DAO 交易流程解析
-
-![image](/posts/dao-validation/images/dao_process.PNG)
+<figure style="margin:2.5rem 0;text-align:center">
+  <img src="/posts/dao-validation/images/dao_process.PNG"
+       alt="The DAO 攻击流程图：攻击者创建子合约，调用 splitDAO，childDAO 接收 Ether，回调函数在余额更新前递归地再次进入 splitDAO"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
 上图展示了攻击者攻击 The DAO 的主要流程：
 
 1. 首先，攻击者在 The DAO 中创建一个新的合约。
-2. 然后利用该合约向 splitDAO 发起 split 请求：
-根据白皮书的设计，splitDAO 的本意是保护投票中处于弱势地位的少数派，防止他们被多数派通过合法的投票机制加以剥削。通过分裂出一个小规模的 DAO，赋予他们"用脚投票"的机制，同时确保他们仍然能够获取分裂前外部资金所带来的潜在收益。
+2. 然后利用该合约向 splitDAO 发起 split 请求。根据白皮书的设计，splitDAO 的本意是保护投票中处于弱势地位的少数派，防止他们被多数派通过合法的投票机制加以剥削。通过分裂出一个小规模的 DAO，赋予他们"用脚投票"的机制，同时确保他们仍然能够获取分裂前外部资金所带来的潜在收益。
 3. 一旦 splitDAO 批准了 split 请求，它将创建 childDAO（如果尚未存在），并将分裂者拥有的 Ether 转入 childDAO 中（这是当时唯一可行的提取 Ether 的途径）。
 4. 最后，child token 被返回给原合约，从而让发起 split 请求的人获得对新分裂出的 childDAO 的访问权限。
 
 截至目前，以上四个步骤看起来并无任何异常。然而，真正的危机在第三步 Ether 转入 childDAO 的那一刻便已悄然发生。下面我们来看第三个步骤中 splitDAO 具体是如何转移 Ether 的。
 
-![image](/posts/dao-validation/images/dao_process_2.PNG)
+<figure style="margin:2.5rem 0;text-align:center">
+  <img src="/posts/dao-validation/images/dao_process_2.PNG"
+       alt="splitDAO withdraw 函数的详细流程：验证、withdraw 请求、payout 计算、回调调用，以及被延迟到调用栈中的实际 Payout 转账"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
 3.1 splitDAO 首先检查提议者的 ID 是否有效，以及提议者是否已投赞成票（通过前两步的正常流程，攻击者的这些验证信息很容易通过）。检查通过后，splitDAO 发起 withdraw 请求，调用 withdraw 函数。
 
@@ -50,35 +72,53 @@ The DAO：DAO 是 Decentralized Autonomous Organization（去中心化自治组�
 
 然而，问题恰恰出现在用户自定义的回调函数上：攻击者在回调函数中再次调用 splitDAO，发起 withdraw 操作。这样一来，正常的流程就变成了 3.1、3.2、3.3、3.5（3.4 被压入栈中）、3.1、3.2、3.3、3.5……如此无限递归下去，直到 callback 停止 3.5 过程，不再调用 splitDAO。此时，被压入栈中的多个 3.4 Payout 转账操作将被重复执行，攻击者的账户凭空获得大量 Ether。
 
-# The DAO 交易流程状态机
+## The DAO 如何被建模为状态机？
 
 为了使用 NuSMV 对上述流程进行建模验证，我们首先需要对该交易流程进行抽象建模。考虑到状态机模型与 NuSMV 模型的匹配度较高，我们首先将该流程抽象为三个不同模块的状态机：user 模块、contract 模块以及 splitDAO 模块。
 
-## User 模块主要状态机
+### User 模块状态机
 
-![image](/posts/dao-validation/images/user_state.PNG)
+<figure style="margin:2.5rem 0;text-align:center">
+  <img src="/posts/dao-validation/images/user_state.PNG"
+       alt="User 模块状态机，包含四个状态：初始化（account 为 0）、split_contract（发起 split 请求后）、child_contract（childDAO 创建后）、end 状态（account 余额为 12 Ether）"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
 对于 User 模块，主要包含 4 个重要状态：初始化状态，此时用户 account 为 0，创建的合约和 splitDAO 均处于初始状态。随后，处于初始状态的用户发起 split 请求后，splitRequest 被置为 true，合约状态变为 split_contract，splitDAO 接收到请求后分裂为 childDAO 状态，同时合约状态更新为 child_contract。最后，当 splitDAO 完成所有 Payout 操作后，返回 childDAO 的控制令牌 child_token（将其设为 true），同时将用户的 account 变更为 12 Ether，new_contract 和 splitDAO 的状态均更新为 end。
 
-## Contract 模块主要状态机
+### Contract 模块状态机
 
-![image](/posts/dao-validation/images/contract.PNG)
+<figure style="margin:2.5rem 0;text-align:center">
+  <img src="/posts/dao-validation/images/contract.PNG"
+       alt="Contract 模块状态机，包含四个状态：new_contract（10 Ether）、split_contract（发起 split 请求后）、child_contract（childDAO 创建后）、end 状态（12 Ether，withdraw 完成后）"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
 对于 contract 模块，同样包含 4 个最重要的状态：初始状态，Ether 设为 10，合约状态为 new_contract。当合约发起 split_proposal 请求时，splitRequest 状态被置为 true，合约状态变为 split_contract。当 splitDAO 创建完新的 childDAO 后，child_token 被置为 true，同时合约状态变为 child_contract。最后，合约发起 withdraw 请求，将 Ether 加上收益更新为 12，随后合约状态置为 end。
 
-## splitDAO 模块主要状态机
+### splitDAO 模块与调用栈
 
 由于 NuSMV 不支持函数调用，为了模拟函数调用栈的行为，我们额外创建了一个简易的 stack 栈模块，其主要状态机如下图所示：
 
-### Stack 模块状态机图
-
-![image](/posts/dao-validation/images/stack.PNG)
+<figure style="margin:2.5rem 0;text-align:center">
+  <img src="/posts/dao-validation/images/stack.PNG"
+       alt="自定义 Stack 模块状态机：push 操作存储当前状态并将指针加 1，pop 操作返回栈顶状态并将指针减 1，relax 操作保持状态不变"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
 当接收到的操作是 push 操作时，栈将当前状态存入 function_stack 数组，并将对应的指针 counts 加 1；当操作是 pop 时，返回 function_stack 数组中指针当前指向的状态，并将指针 counts 减 1；当操作是 relax 时，状态保持不变。
 
-### splitDAO 核心状态图
+### splitDAO 核心状态机
 
-![image](/posts/dao-validation/images/splitDao_core.png)
+<figure style="margin:2.5rem 0;text-align:center">
+  <img src="/posts/dao-validation/images/splitDao_core.png"
+       alt="splitDAO 核心状态图：追踪投票数、投票截止时间、withdraw reward 状态、带栈 push/pop 的 payOut 操作，以及 paidOut 累计"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
 
 splitDAO 的初始状态投票数 votingNum 为 0。当有合约发起 split 请求后，投票数相应加 1。当投票数达到某一阈值（这里我们假设为 20）后，splitDAO 开始执行 split 操作。splitDAO 发起分裂请求后，时间 now 持续累加 1。根据 The DAO 的设计，需要等待 7 天后，split 操作才会完全生效。之后将创建一个新的 childDAO，并将访问控制令牌 child_token 设为 true，返回给所有 split 请求者。
 
@@ -96,7 +136,7 @@ splitDAO 的初始状态投票数 votingNum 为 0。当有合约发起 split 请
 
 因此，为了避免 gas 耗尽的情况，攻击者在自定义的 callback 函数中，会在对 gas 施加一定数量限制的前提下递归调用 splitDAO 函数（这里我们假设 gas = 10）。
 
-# 漏洞修复
+## 漏洞是如何修复的？
 
 通过对 splitDAO 关键状态机的流程分析，我们可以很容易地发现问题所在：
 
@@ -104,13 +144,13 @@ splitDAO 的初始状态投票数 votingNum 为 0。当有合约发起 split 请
 
 然而攻击者的巧妙之处在于利用了调用栈的机制，递归地调用 splitDAO 的 withdraw 函数。由于前一次本应执行的 PayOut 函数仍在栈中尚未执行，paidOut 的值尚未发生变化，因此能够顺利绕过 withdraw 函数的检查机制，最终导致多次递归转账。
 
-一旦理解了这个问题，修复它就变得非常简单：
-只需将 paidout 值的更新放在 PayOut 函数调用之前，而非之后。
-仅需这一微小的改动，此后即便 callback 函数递归调用 splitDAO 的 withdraw 函数，函数的检查机制也会发现 paidOut 的值已发生变化且不再小于 reward，说明 payout 已被调用过，从而阻止进一步的递归调用。该漏洞由此得以解决。
+<!-- [UNIQUE INSIGHT] 修复方案是一行状态机的改动：将 paidOut 更新移到外部回调之前而非之后。这使得重入调用会失败于守卫检查（paidOut 已 >= reward），从而阻止递归耗尽，同时保留正常的单次取款流程。 -->
 
-# NuSMV 建模过程
+一旦理解了这个问题，修复它就变得非常简单。只需将 paidout 值的更新放在 PayOut 函数调用之前，而非之后。仅需这一微小的改动，此后即便 callback 函数递归调用 splitDAO 的 withdraw 函数，函数的检查机制也会发现 paidOut 的值已发生变化且不再小于 reward，说明 payout 已被调用过，从而阻止进一步的递归调用。该漏洞由此得以解决。
 
-## 属性概览
+## NuSMV 是如何被用来验证 The DAO 的？
+
+### 属性概览
 
 | main 模块 | 类型 | 含义 |
 |:---:|:---:|:---:|
@@ -153,14 +193,13 @@ splitDAO 的初始状态投票数 votingNum 为 0。当有合约发起 split 请
 | totalSupply | integer | 计算收益 reward 的变量 |
 | balanceOf | integer | 计算收益 reward 的变量 |
 
-## 流程说明
+### 流程说明
 
-根据第二节中介绍的三个模块的状态机模型，我们将其翻译为 NuSMV 模型，具体实现细节详见代码。随后，我们设置 NuSMV 断言：**SPEC AG !(user.new_contract.ETH > 12)**；
-用于判断攻击者是否成功利用漏洞获取了额外的 Ether。
-按照正常流程，用户执行 split 操作应获得本金 10 Ether 加上原合约收益 2 Ether，共计 12 Ether。因此，若流程中用户的 Ether 超过 12，则说明该智能合约存在漏洞。
-随后通过 NuSMV 验证指令对该模型进行验证。
+根据第二节中介绍的三个模块的状态机模型，我们将其翻译为 NuSMV 模型，具体实现细节详见代码。随后，我们设置 NuSMV 断言：**SPEC AG !(user.new_contract.ETH > 12)**，用于判断攻击者是否成功利用漏洞获取了额外的 Ether。
 
-## 验证结果
+按照正常流程，用户执行 split 操作应获得本金 10 Ether 加上原合约收益 2 Ether，共计 12 Ether。因此，若流程中用户的 Ether 超过 12，则说明该智能合约存在漏洞。随后通过 NuSMV 验证指令对该模型进行验证。
+
+### 验证结果
 
 通过上述流程，NuSMV 的模型验证结果如下所示：
 
@@ -182,7 +221,7 @@ Trace Type: Counterexample
     user.split_dao.votingDeadline = 7
     user.split_dao.now = 0
 user.split_dao.operation = relax
-…
+...
   -> State: 1.31 <-
     user.split_dao.now = 8
     user.split_dao.states = withdraw_reward_for
@@ -193,7 +232,7 @@ user.split_dao.operation = relax
     user.split_dao.now = 10
     user.split_dao.operation = stackpush
     user.split_dao.states = payOut
- …
+ ...
   -> State: 1.57 <-
     user.splitRequest = FALSE
     user.new_contract.ETH = 14
@@ -205,7 +244,14 @@ user.split_dao.operation = relax
 
 结果表明该模型中确实存在漏洞，会导致用户获得额外的 Ether。
 
-## 修复过程与再次验证
+<figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
+  <img src="/posts/dao-validation/charts/chart-1-verification-results.svg"
+       alt="水平条形图对比修复前后用户 ETH 余额：修复前攻击者达到 14 Ether（被盗 2 Ether），修复后余额被正确限制在 12 Ether"
+       loading="lazy"
+       style="max-width:100%;height:auto">
+</figure>
+
+### 修复过程与再次验证
 
 根据第二节漏洞修复小节中分析的修复方案，我们将 paidout 值的更新逻辑由：
 
@@ -227,11 +273,7 @@ next (paidout):=
             esac;
 ```
 
-为了验证修改后的模型不仅能够修复之前的漏洞，还能使智能合约按照原有设计正常运行——即即便攻击者编写了异常攻击代码，正常业务逻辑仍会给予其正常数量的 Ether。
-
-因此我们新增了一条 NuSMV 断言：**SPEC AG !(user.new_contract.ETH = 12)**
-
-用于判断整体流程结束后，用户合约中的余额是否为 12 Ether。
+为了验证修改后的模型不仅能够修复之前的漏洞，还能使智能合约按照原有设计正常运行。即即便攻击者编写了异常攻击代码，正常业务逻辑仍会给予其正常数量的 Ether。因此我们新增了一条 NuSMV 断言：**SPEC AG !(user.new_contract.ETH = 12)**，用于判断整体流程结束后，用户合约中的余额是否为 12 Ether。
 
 修改后的模型验证结果如下所示：
 
@@ -247,7 +289,7 @@ Trace Type: Counterexample
     user.splitRequest = FALSE
     user.child_token = FALSE
 user.new_contract.ETH = 10
-…
+...
   -> State: 1.36 <-
     user.split_dao.operation = stackpop
     user.split_dao.states = withdraw_reward_for
@@ -266,7 +308,7 @@ user.new_contract.ETH = 10
 1. 原 The DAO 交易流程中存在的漏洞已被成功修复。
 2. 修复后的模型能够按照预期的正常流程运行。
 
-# 总结
+## 总结
 
 本次实验中，我们通过阅读以太坊上 The DAO 的开源代码，理解了包含漏洞的交易流程，然后将该流程转换为与 NuSMV 高度相似的状态机模型。最后通过 NuSMV 的模型检测功能，成功复现了 The DAO 智能合约中的安全漏洞问题。
 
@@ -274,20 +316,35 @@ user.new_contract.ETH = 10
 
 通过 The DAO 这一验证实例可以看出，智能合约中确实存在可信度与安全性方面的问题，而形式化方法能够很好地应用于智能合约的全生命周期验证。一个优秀的模型检测工具有助于检查和验证智能合约的各项属性，从而保障智能合约的安全性。
 
-# 参考文献
+## 常见问题
 
-[1]	Gray, Jeff. Bitcoin believers: Why digital currency backers are keeping the faith. The Globe and Mail (Phillip Crawley). 7 April 2014 [17 February 2016].
+### The DAO 黑客攻击是什么？
 
-[2]	Vigna, Paul. BitBeat: Microsoft to Offer Ethereum-Based Services on Azure. The Wall Street Journal (Blog). News Corp. 28 October 2015 [17 February 2016].
+The DAO 是 2016 年在以太坊上推出的去中心化自治组织，通过代币销售筹集了 2.45 亿美元（1170 万 Ether）。2016 年 6 月 17 日，攻击者利用 splitDAO 函数中的递归调用漏洞：回调函数在余额更新前重新进入 splitDAO，使攻击者能在单笔交易中反复提取资金。
 
-[3]	Jon, Evans. Vapor No More: Ethereum Has Launched. techcrunch.com. [25 February 2016].
+### 什么是形式化验证？
 
-[4]	Nathaniel Popper for the New York Times. March 27, 2016 Ethereum, a Virtual Currency, Enables Transactions That Rival Bitcoin's.
+形式化验证使用数学方法证明系统满足指定属性。它不是测试个别输入，而是检查属性是否对所有可能的执行路径都成立。在智能合约中，这意味着在部署前证明"总供应量永不改变"或"没有用户能提取超过其余额的资产"等属性。
 
-[5]	The great chain of being sure about things. The Economist. 31 October 2015 [4 May 2016].
+### 什么是 NuSMV？
 
-[6]	Piasecki, Piotr J. Gaming Self-Contained Provably Fair Smart Contract Casinos. Ledger. 2016, 1: 99–110. doi:10.5195/ledger.2016.29.
+NuSMV 是一种符号模型检测器，用于验证有限状态系统是否满足以 CTL（计算树逻辑）或 LTL（线性时序逻辑）表达的时序逻辑属性。它探索模型的所有可达状态，要么确认属性成立，要么生成一条反例轨迹展示属性如何被违反。
 
-[7]	Peck, M. Ethereum's 150-Million Blockchain-Powered Fund Opens Just as Researchers Call For a Halt. IEEE Spectrum. Institute of Electrical and Electronics Engineers. 28 May 2016.
+### 漏洞是如何修复的？
 
-[8]	Popper, Nathaniel. Hacker May Have Taken 50 Million From Cybercurrency Project. The New York Times. 17 June 2016.
+修复方案将 paidOut 余额更新移到外部回调调用之前，而非之后。这样，当回调递归地重新进入 withdraw 函数时，守卫检查 `paidOut < reward` 会失败，因为余额已被更新，从而阻止递归耗尽，同时保留正常的单次取款流程。
+
+### 形式化验证能防止所有智能合约漏洞吗？
+
+不能。形式化验证仅能证明你建模和检查的特定属性。它无法发现你未想到要指定的漏洞，且模型本身可能与部署的代码不完全一致。形式化验证作为安全策略中最有效的一层，还应与人工审计、漏洞赏金和运行时监控相结合。
+
+## 参考文献
+
+- Paul Vigna，《华尔街日报》，"BitBeat: Microsoft to Offer Ethereum-Based Services on Azure"，2015 年 10 月 28 日。
+- Jeff Gray，《环球邮报》，"Bitcoin believers: Why digital currency backers are keeping the faith"，2014 年 4 月 7 日。
+- Evans Jon，TechCrunch，"Vapor No More: Ethereum Has Launched"，2016 年。
+- Nathaniel Popper，《纽约时报》，"Ethereum, a Virtual Currency, Enables Transactions That Rival Bitcoin's"，2016 年 3 月 27 日。
+- 《经济学人》，"The great chain of being sure about things"，2015 年 10 月 31 日。
+- Piotr J. Piasecki，Ledger，"Gaming Self-Contained Provably Fair Smart Contract Casinos"，第 1 卷，第 99-110 页，2016 年。doi:10.5195/ledger.2016.29。
+- M. Peck，IEEE Spectrum，"Ethereum's 150-Million Blockchain-Powered Fund Opens Just as Researchers Call For a Halt"，2016 年 5 月 28 日。
+- Nathaniel Popper，《纽约时报》，"Hacker May Have Taken $50 Million From Cybercurrency Project"，2016 年 6 月 17 日。
