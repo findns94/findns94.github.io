@@ -1,10 +1,17 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { getAllPosts } from '@/lib/posts'
-import { PostList } from '@/components/PostList'
+import { PostListWithPagination } from '@/components/PostListWithPagination'
 import { getMessages } from '@/i18n/messages'
+
+const POSTS_PER_PAGE = 20
 
 export const metadata: Metadata = {
   title: 'All Posts',
+}
+
+function PaginationFallback() {
+  return <div className="mt-10 h-20" />
 }
 
 export default function PostsPage() {
@@ -18,7 +25,9 @@ export default function PostsPage() {
         <span className="en-only">{tEn.posts.allPostsTitle(posts.length)}</span>
         <span className="zh-only">{tZh.posts.allPostsTitle(posts.length)}</span>
       </h1>
-      <PostList posts={posts} compact />
+      <Suspense fallback={<PaginationFallback />}>
+        <PostListWithPagination posts={posts} postsPerPage={POSTS_PER_PAGE} />
+      </Suspense>
     </div>
   )
 }

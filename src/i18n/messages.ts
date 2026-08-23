@@ -20,6 +20,15 @@ export interface Messages {
     noPosts: string
     more: string
     allPostsTitle: (count: number) => string
+    page: string
+    prev: string
+    next: string
+    prevAria: string
+    nextAria: string
+    pageAria: (n: number) => string
+    jumpForward: string
+    jumpBackward: string
+    showing: (start: number, end: number, total: number) => string
   }
   tags: {
     title: string
@@ -49,6 +58,15 @@ const en: Messages = {
     noPosts: 'No posts yet',
     more: 'More posts',
     allPostsTitle: (count: number) => `All Posts (${count} posts)`,
+    page: 'Page',
+    prev: 'Previous',
+    next: 'Next',
+    prevAria: 'Go to previous page',
+    nextAria: 'Go to next page',
+    pageAria: (n: number) => `Go to page ${n}`,
+    jumpForward: 'Jump forward 5 pages',
+    jumpBackward: 'Jump backward 5 pages',
+    showing: (start: number, end: number, total: number) => `Showing ${start}–${end} of ${total} posts`,
   },
   tags: {
     title: 'Tags',
@@ -78,6 +96,15 @@ const zh: Messages = {
     noPosts: '暂无文章',
     more: '更多文章',
     allPostsTitle: (count: number) => `所有文章（共 ${count} 篇）`,
+    page: '第',
+    prev: '上一页',
+    next: '下一页',
+    prevAria: '跳转到上一页',
+    nextAria: '跳转到下一页',
+    pageAria: (n: number) => `跳转到第 ${n} 页`,
+    jumpForward: '向前跳5页',
+    jumpBackward: '向后跳5页',
+    showing: (start: number, end: number, total: number) => `显示第 ${start}–${end} 篇，共 ${total} 篇`,
   },
   tags: {
     title: '标签',
