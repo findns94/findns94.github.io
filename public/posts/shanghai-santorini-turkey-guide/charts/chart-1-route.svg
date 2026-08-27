@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" role="img" aria-label="Travel route flow: Shanghai to Istanbul (direct flight 11h), Istanbul to Athens (short flight 1.5h), Athens to Santorini (ferry 5-8h or flight 45min), then return Athens to Shanghai (connecting flight).">
+<title>Optimal Route: Shanghai to Santorini &amp; Turkey</title>
+<desc>A flow diagram showing the recommended travel route starting from Shanghai, flying direct to Istanbul, then connecting to Athens, traveling to Santorini, and returning via Athens.</desc>
+
+<!-- Background -->
+<rect x="0" y="0" width="560" height="320" fill="#1a1a2e" rx="12"/>
+
+<!-- Title -->
+<text x="280" y="36" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">Optimal Route: Shanghai to Santorini &amp; Turkey</text>
+<text x="280" y="56" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">No direct flights to Athens — Istanbul is your natural gateway</text>
+
+<!-- Route nodes -->
+<!-- Shanghai -->
+<rect x="20" y="100" width="100" height="60" rx="8" fill="#2d3a4a" stroke="#4a90d9" stroke-width="2"/>
+<text x="70" y="125" text-anchor="middle" fill="#4a90d9" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">Shanghai</text>
+<text x="70" y="143" text-anchor="middle" fill="#aaaaaa" font-family="'Inter', system-ui, sans-serif" font-size="10">PVG / SHA</text>
+
+<!-- Istanbul -->
+<rect x="160" y="100" width="100" height="60" rx="8" fill="#2d3a4a" stroke="#e67e22" stroke-width="2"/>
+<text x="210" y="125" text-anchor="middle" fill="#e67e22" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">Istanbul</text>
+<text x="210" y="143" text-anchor="middle" fill="#aaaaaa" font-family="'Inter', system-ui, sans-serif" font-size="10">IST</text>
+
+<!-- Athens -->
+<rect x="300" y="100" width="100" height="60" rx="8" fill="#2d3a4a" stroke="#27ae60" stroke-width="2"/>
+<text x="350" y="125" text-anchor="middle" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">Athens</text>
+<text x="350" y="143" text-anchor="middle" fill="#aaaaaa" font-family="'Inter', system-ui, sans-serif" font-size="10">ATH</text>
+
+<!-- Santorini -->
+<rect x="440" y="100" width="100" height="60" rx="8" fill="#2d3a4a" stroke="#9b59b6" stroke-width="2"/>
+<text x="490" y="125" text-anchor="middle" fill="#9b59b6" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">Santorini</text>
+<text x="490" y="143" text-anchor="middle" fill="#aaaaaa" font-family="'Inter', system-ui, sans-serif" font-size="10">JTR</text>
+
+<!-- Arrows -->
+<!-- Shanghai to Istanbul -->
+<line x1="120" y1="130" x2="158" y2="130" stroke="#4a90d9" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<text x="139" y="120" text-anchor="middle" fill="#4a90d9" font-family="'Inter', system-ui, sans-serif" font-size="9" font-weight="500">Direct 11h</text>
+
+<!-- Istanbul to Athens -->
+<line x1="260" y1="130" x2="298" y2="130" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowOrange)"/>
+<text x="279" y="120" text-anchor="middle" fill="#e67e22" font-family="'Inter', system-ui, sans-serif" font-size="9" font-weight="500">1.5h flight</text>
+
+<!-- Athens to Santorini -->
+<line x1="400" y1="130" x2="438" y2="130" stroke="#27ae60" stroke-width="2" marker-end="url(#arrowGreen)"/>
+<text x="419" y="120" text-anchor="middle" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="9" font-weight="500">Ferry/Flight</text>
+
+<!-- Return arrow (Santorini to Shanghai via Athens) -->
+<path d="M 490 170 Q 490 220 280 220 Q 70 220 70 162" fill="none" stroke="#888888" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="280" y="240" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Return: Santorini &#8594; Athens &#8594; Shanghai (connecting)</text>
+
+<!-- Duration box -->
+<rect x="20" y="260" width="520" height="45" rx="8" fill="#252540"/>
+<text x="280" y="280" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Total trip: 12 days &#8226; 3 cities &#8226; 2 countries &#8226; Best routing minimizes backtracking</text>
+<text x="280" y="296" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Source: Turkish Airlines route data, 2025</text>
+
+<!-- Arrow markers -->
+<defs>
+  <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#4a90d9"/>
+  </marker>
+  <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#e67e22"/>
+  </marker>
+  <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#27ae60"/>
+  </marker>
+</defs>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" role="img" aria-label="Daily travel cost comparison between Santorini and Turkey in peak season. Santorini: Accommodation 150-400 EUR, Food 30-60 EUR, Activities 20-50 EUR, Transport 10-20 EUR. Turkey: Accommodation 80-200 EUR, Food 15-35 EUR, Activities 15-40 EUR, Transport 5-15 EUR.">
+<title>Daily Travel Cost Comparison: Santorini vs Turkey</title>
+<desc>A grouped bar chart comparing mid-range daily travel costs in peak season (July-August) between Santorini, Greece and Turkey across four categories: accommodation, food, activities, and local transport.</desc>
+
+<!-- Background -->
+<rect x="0" y="0" width="560" height="400" fill="#1a1a2e" rx="12"/>
+
+<!-- Title -->
+<text x="280" y="36" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">Daily Travel Cost: Santorini vs Turkey</text>
+<text x="280" y="56" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Mid-range budget per person, peak season (July &#8211; August), in EUR</text>
+
+<!-- Y-axis -->
+<line x1="80" y1="80" x2="80" y2="320" stroke="#555555" stroke-width="1"/>
+<!-- Y-axis gridlines and labels -->
+<line x1="80" y1="80" x2="520" y2="80" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="84" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">400</text>
+<line x1="80" y1="140" x2="520" y2="140" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="144" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">300</text>
+<line x1="80" y1="200" x2="520" y2="200" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="204" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">200</text>
+<line x1="80" y1="260" x2="520" y2="260" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="264" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">100</text>
+<line x1="80" y1="320" x2="520" y2="320" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="324" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">0</text>
+
+<!-- Scale: px_per_unit = (320 - 80) / 400 = 0.6 -->
+<!-- bar_top = 320 - (value * 0.6) -->
+<!-- bar_height = value * 0.6 -->
+
+<!-- Category 1: Accommodation -->
+<!-- Santorini: avg 275 -> top=320-165=155, height=165 -->
+<rect x="120" y="155" width="50" height="165" rx="4" fill="#9b59b6" opacity="0.9"/>
+<text x="145" y="148" text-anchor="middle" fill="#9b59b6" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">275</text>
+<!-- Turkey: avg 140 -> top=320-84=236, height=84 -->
+<rect x="180" y="236" width="50" height="84" rx="4" fill="#e67e22" opacity="0.9"/>
+<text x="205" y="229" text-anchor="middle" fill="#e67e22" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">140</text>
+<text x="175" y="345" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="10">Accomm.</text>
+
+<!-- Category 2: Food -->
+<!-- Santorini: avg 45 -> top=320-27=293, height=27 -->
+<rect x="260" y="293" width="50" height="27" rx="4" fill="#9b59b6" opacity="0.9"/>
+<text x="285" y="286" text-anchor="middle" fill="#9b59b6" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">45</text>
+<!-- Turkey: avg 25 -> top=320-15=305, height=15 -->
+<rect x="320" y="305" width="50" height="15" rx="4" fill="#e67e22" opacity="0.9"/>
+<text x="345" y="298" text-anchor="middle" fill="#e67e22" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">25</text>
+<text x="315" y="345" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="10">Food</text>
+
+<!-- Category 3: Activities -->
+<!-- Santorini: avg 35 -> top=320-21=299, height=21 -->
+<rect x="390" y="299" width="50" height="21" rx="4" fill="#9b59b6" opacity="0.9"/>
+<text x="415" y="292" text-anchor="middle" fill="#9b59b6" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">35</text>
+<!-- Turkey: avg 27 -> top=320-16.2=303.8, height=16.2 -->
+<rect x="450" y="304" width="50" height="16" rx="4" fill="#e67e22" opacity="0.9"/>
+<text x="475" y="297" text-anchor="middle" fill="#e67e22" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">27</text>
+<text x="445" y="345" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="10">Activities</text>
+
+<!-- Legend -->
+<rect x="180" y="360" width="14" height="14" rx="3" fill="#9b59b6" opacity="0.9"/>
+<text x="200" y="372" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Santorini (avg)</text>
+<rect x="320" y="360" width="14" height="14" rx="3" fill="#e67e22" opacity="0.9"/>
+<text x="340" y="372" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Turkey (avg)</text>
+
+<!-- Source -->
+<text x="280" y="392" text-anchor="middle" fill="#666666" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: Travel industry data compiled from Booking.com, Numbeo, 2025</text>
+</svg>
