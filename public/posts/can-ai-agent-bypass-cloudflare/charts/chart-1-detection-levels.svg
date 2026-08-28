@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Bar chart showing 403 errors by Cloudflare detection level. Level 1 (UA only): 6 sites. Level 2 (browser fingerprint): 2 sites. Level 3 (JS challenge): 3 sites.">
+<title>403 Errors by Cloudflare Detection Level</title>
+<desc>A horizontal bar chart categorizing 11 sites that returned 403 errors into three detection levels: Level 1 (User-Agent only, 6 sites), Level 2 (browser fingerprint, 2 sites), and Level 3 (JavaScript challenge, 3 sites).</desc>
+
+<!-- Background -->
+<rect x="0" y="0" width="560" height="380" fill="#1a1a2e" rx="12"/>
+
+<!-- Title -->
+<text x="280" y="36" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">403 Errors by Cloudflare Detection Level</text>
+<text x="280" y="56" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">11 sites that blocked curl requests, categorized by detection method</text>
+
+<!-- Y-axis labels and bars -->
+<!-- Level 1 -->
+<text x="140" y="110" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="12">Level 1: UA Only</text>
+<rect x="150" y="97" width="294" height="26" rx="4" fill="#27ae60" opacity="0.85"/>
+<text x="450" y="115" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">6 sites</text>
+<text x="150" y="140" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">morningstar, forrester, spglobal, mfa.gov.tr, microsoft, chinatelecom</text>
+
+<!-- Level 2 -->
+<text x="140" y="180" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="12">Level 2: Fingerprint</text>
+<rect x="150" y="167" width="98" height="26" rx="4" fill="#f39c12" opacity="0.85"/>
+<text x="254" y="185" fill="#f39c12" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">2 sites</text>
+<text x="150" y="210" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">oecd.org, cbre.com.cn</text>
+
+<!-- Level 3 -->
+<text x="140" y="250" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="12">Level 3: JS Challenge</text>
+<rect x="150" y="237" width="147" height="26" rx="4" fill="#e74c3c" opacity="0.85"/>
+<text x="303" y="255" fill="#e74c3c" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600">3 sites</text>
+<text x="150" y="280" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">grandviewresearch, fortunebusinessinsights, zillow</text>
+
+<!-- Legend -->
+<rect x="150" y="310" width="14" height="14" rx="3" fill="#27ae60" opacity="0.85"/>
+<text x="170" y="322" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Bypassable with browser UA</text>
+<rect x="150" y="335" width="14" height="14" rx="3" fill="#f39c12" opacity="0.85"/>
+<text x="170" y="347" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Bypassable with real browser</text>
+<rect x="150" y="360" width="14" height="14" rx="3" fill="#e74c3c" opacity="0.85"/>
+<text x="170" y="372" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Cannot bypass (Cloudflare Turnstile)</text>
+
+<!-- Source -->
+<text x="430" y="372" text-anchor="end" fill="#666666" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: Firsthand testing of 392 URLs, 2026</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" role="img" aria-label="Grouped bar chart showing success rate by method for bypassing bot detection. curl default: 55% success. curl with browser UA: 73% success. puppeteer with Chromium CDP: 87% success.">
+<title>Success Rate by Method</title>
+<desc>A grouped bar chart comparing the success rate of three methods for accessing bot-blocked links: curl with default User-Agent (55% success, 215 of 392 links), curl with browser User-Agent (73% success, 247 of 392 links), and puppeteer with Chromium CDP (87% success, 264 of 392 links).</desc>
+
+<!-- Background -->
+<rect x="0" y="0" width="560" height="400" fill="#1a1a2e" rx="12"/>
+
+<!-- Title -->
+<text x="280" y="36" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">Success Rate by Method</text>
+<text x="280" y="56" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">How many of the 392 links became accessible with each method</text>
+
+<!-- Y-axis -->
+<line x1="80" y1="80" x2="80" y2="320" stroke="#555555" stroke-width="1"/>
+<!-- Y-axis gridlines and labels -->
+<line x1="80" y1="80" x2="520" y2="80" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="84" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">100%</text>
+<line x1="80" y1="140" x2="520" y2="140" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="144" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">75%</text>
+<line x1="80" y1="200" x2="520" y2="200" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="204" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">50%</text>
+<line x1="80" y1="260" x2="520" y2="260" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="264" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">25%</text>
+<line x1="80" y1="320" x2="520" y2="320" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="72" y="324" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">0%</text>
+
+<!-- Scale: px_per_unit = (320 - 80) / 100 = 2.4 -->
+<!-- bar_top = 320 - (value * 2.4) -->
+<!-- bar_height = value * 2.4 -->
+
+<!-- Bar 1: curl default = 55% -->
+<rect x="130" y="188" width="80" height="132" rx="4" fill="#e74c3c" opacity="0.85"/>
+<text x="170" y="180" text-anchor="middle" fill="#e74c3c" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="600">55%</text>
+<text x="170" y="345" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="10">curl</text>
+<text x="170" y="360" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">default UA</text>
+
+<!-- Bar 2: curl + browser UA = 73% -->
+<rect x="240" y="144.8" width="80" height="175.2" rx="4" fill="#f39c12" opacity="0.85"/>
+<text x="280" y="137" text-anchor="middle" fill="#f39c12" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="600">73%</text>
+<text x="280" y="345" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="10">curl</text>
+<text x="280" y="360" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">browser UA</text>
+
+<!-- Bar 3: puppeteer + CDP = 87% -->
+<rect x="350" y="111.2" width="80" height="208.8" rx="4" fill="#27ae60" opacity="0.85"/>
+<text x="390" y="103" text-anchor="middle" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="600">87%</text>
+<text x="390" y="345" text-anchor="middle" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="10">puppeteer</text>
+<text x="390" y="360" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">+ Chromium CDP</text>
+
+<!-- Annotation for remaining 13% -->
+<rect x="350" y="85" width="80" height="20" rx="3" fill="#2d3a4a" stroke="#e74c3c" stroke-width="1"/>
+<text x="390" y="99" text-anchor="middle" fill="#e74c3c" font-family="'Inter', system-ui, sans-serif" font-size="9">13% blocked</text>
+
+<!-- Source -->
+<text x="280" y="385" text-anchor="middle" fill="#666666" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: Firsthand testing of 392 URLs across a blog's link inventory, 2026</text>
+</svg>
