@@ -39,7 +39,7 @@ The Fast Gradient Sign Method (FGSM), introduced by [Goodfellow, Shlens, and Sze
 
 ### Model Preparation
 
-The target is a word-level language model trained on the [Penn Treebank (PTB)](https://catalog.ldc.upenn.edu/LDC99T42) corpus using TensorFlow's [ptb_word_lm.py](https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py). The reference code only reports perplexity, so it was extended using [Rani Nelken's modified version](https://github.com/nelken/tf/blob/master/ptb_word_lm.py), which adds bidirectional word-ID mapping, retains the logits intermediate for next-word probability output, and returns (previous-word, next-word) pairs from the test text for supervised evaluation.
+The target is a word-level language model trained on the [Penn Treebank (PTB)](https://catalog.ldc.upenn.edu/LDC99T42) corpus using TensorFlow's [ptb_word_lm.py](https://github.com/tensorflow/models). The reference code only reports perplexity, so it was extended using [Rani Nelken's modified version](https://github.com/nelken), which adds bidirectional word-ID mapping, retains the logits intermediate for next-word probability output, and returns (previous-word, next-word) pairs from the test text for supervised evaluation.
 
 <!-- [ORIGINAL DATA] PTB small-config model, trained 13 epochs, weights used for adversarial testing. -->
 

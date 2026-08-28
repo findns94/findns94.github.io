@@ -51,7 +51,7 @@ For a programmer building systematic strategies, these frictions are data. The T
 
 The modern China-quant stack is entirely open-source and Python-driven. Three libraries dominate data access, and a new generation of AI tools is reshaping signal generation.
 
-**Data layer.** [AKShare](https://github.com/akfamily/akshare) leads with **21.9k GitHub stars** — a zero-registration interface covering A-shares, HK stocks, US stocks, futures, options, and macroeconomic data (GitHub, 2025). [Tushare Pro](https://tushare.pro) offers **16k stars** and a more structured, commercial-grade dataset with a paid high-frequency tier popular among serious retail quants. [Baostock](https://github.com/baostock/baostock), at roughly 7k stars, remains the lightweight, registration-free option common in academic research.
+**Data layer.** [AKShare](https://github.com/akfamily/akshare) leads with **21.9k GitHub stars** — a zero-registration interface covering A-shares, HK stocks, US stocks, futures, options, and macroeconomic data (GitHub, 2025). [Tushare Pro](https://tushare.pro) offers **16k stars** and a more structured, commercial-grade dataset with a paid high-frequency tier popular among serious retail quants. [Baostock](https://github.com/baostock), at roughly 7k stars, remains the lightweight, registration-free option common in academic research.
 
 **Backtesting and execution.** [Backtrader](https://github.com/mementum/backtrader) and [Zipline](https://github.com/quantopian/zipline) handle event-driven backtesting. For China-specific needs — accounting for T+1, price limits, and stamp tax — local frameworks like [Qlib](https://github.com/microsoft/qlib) (Microsoft, 14k stars) provide institutional-grade factor research infrastructure out of the box.
 

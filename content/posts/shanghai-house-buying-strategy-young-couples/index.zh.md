@@ -249,6 +249,6 @@ ogImage: "/posts/shanghai-house-buying-strategy-young-couples/images/shanghai-sk
 6. 上海市公积金管理中心，*公积金贷款额度和规则*, 2025 — [https://www.shgjj.com](https://www.shgjj.com)（检索于2026年7月14日）。
 7. 上海市住建委和住建委回应平台，*购房资格和首付比例政策*, 2024-2025 — [http://fgj.sh.gov.cn](http://fgj.sh.gov.cn)（检索于2026年7月14日）。
 8. 上海人才/人才中心门户，*人才住房补贴标准*, 2025 — 各区域网站（检索于2026年7月14日）。
-9. 贝壳研究院，*上海区域级交易数据，2026Q1* — [https://sh.ke.com/research](https://sh.ke.com/research)（检索于2026年7月14日）。
+9. 贝壳研究院，*上海区域级交易数据，2026Q1* — [https://sh.ke.com](https://sh.ke.com)（检索于2026年7月14日）。
 
 *文章框架、案例说明、策略匹配和消费决策框架均为基于以上基础资料的原创编辑分析。

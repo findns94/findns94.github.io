@@ -49,7 +49,7 @@ The return leg typically routes Santorini → Athens → Istanbul (or another hu
 
 Turkey's visa policy changed dramatically in early 2026. Chinese ordinary passport holders are now **exempt from visa requirements** for stays up to 90 days within any 180-day period ([Turkish Ministry of Foreign Affairs](https://www.mfa.gov.tr), retrieved 2026). You need a passport valid for at least 6 months from arrival, plus 60 days beyond your intended stay duration (per Law No. 6458). No application, no fee, no processing wait.
 
-Greece, as a Schengen member, still requires Chinese passport holders to obtain a **short-stay Schengen visa (Type C)** before travel. The standard fee is €80 for adults (€40 for children aged 6-12, free under 6), with a typical processing time of 15 calendar days that can extend to 45 days during peak periods ([Schengen visa regulations](https://ec.europa.eu/home-affairs/policies/schengen-borders-and-visa/visa-policy_en), 2025). Apply through the Greek embassy in Beijing or a VFS Global visa application center in Shanghai, Beijing, Guangzhou, or other major Chinese cities.
+Greece, as a Schengen member, still requires Chinese passport holders to obtain a **short-stay Schengen visa (Type C)** before travel. The standard fee is €80 for adults (€40 for children aged 6-12, free under 6), with a typical processing time of 15 calendar days that can extend to 45 days during peak periods ([Schengen visa regulations](https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en), 2025). Apply through the Greek embassy in Beijing or a VFS Global visa application center in Shanghai, Beijing, Guangzhou, or other major Chinese cities.
 
 **Practical tip:** Apply for your Schengen visa at least 6-8 weeks before departure. You'll need flight reservations, hotel bookings, travel insurance (minimum €30,000 coverage), bank statements, and employment proof. Book refundable flights and hotels until the visa is approved.
 
@@ -280,6 +280,6 @@ Start with your Schengen visa application (the longest lead item), book an open-
 - SETE (Greek Tourism Confederation), Greece international arrivals 2024 annual report, 2024, https://sete.gr
 - Turkish Ministry of Culture and Tourism, 2024 tourism arrival statistics, 2024, https://www.ktb.gov.tr
 - Turkish Airlines, Shanghai-Istanbul route schedule and flight data, 2025, https://www.turkishairlines.com
-- European Commission, Schengen visa policy and fee schedule, 2025, https://ec.europa.eu/home-affairs/policies/schengen-borders-and-visa/visa-policy_en
+- European Commission, Schengen visa policy and fee schedule, 2025, https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en
 - Wikipedia, Santorini tourism and cruise passenger cap regulations, 2025, https://en.wikipedia.org/wiki/Santorini
 - Booking.com, Santorini and Istanbul accommodation price data, 2025, https://www.booking.com

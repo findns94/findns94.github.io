@@ -39,7 +39,7 @@ math: true
 
 ### 模型准备
 
-目标模型是在[Penn Treebank（PTB）](https://catalog.ldc.upenn.edu/LDC99T42)语料上使用TensorFlow的[ptb_word_lm.py](https://github.com/tensorflow/models/blob/master/tutorials/rnn/ptb/ptb_word_lm.py)训练的词级语言模型。参考代码只报告perplexity，因此使用[Rani Nelken修改的版本](https://github.com/nelken/tf/blob/master/ptb_word_lm.py)进行了扩展，该版本增加了双向词ID映射、保留logits中间输出以获取下一个词预测概率，并返回（前一个词，后一个词）对以支持有监督评估。
+目标模型是在[Penn Treebank（PTB）](https://catalog.ldc.upenn.edu/LDC99T42)语料上使用TensorFlow的[ptb_word_lm.py](https://github.com/tensorflow/models)训练的词级语言模型。参考代码只报告perplexity，因此使用[Rani Nelken修改的版本](https://github.com/nelken)进行了扩展，该版本增加了双向词ID映射、保留logits中间输出以获取下一个词预测概率，并返回（前一个词，后一个词）对以支持有监督评估。
 
 <!-- [ORIGINAL DATA] PTB small配置模型，训练13个epoch，权重用于对抗测试。 -->
 

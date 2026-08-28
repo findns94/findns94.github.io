@@ -271,7 +271,7 @@ CFS (since kernel 2.6.23) uses a virtual runtime (`vruntime`) to give each task 
 
 ### How do I read the kernel source without getting lost?
 
-Don't read linearly. Pick a concrete operation (a system call, an IRQ, a packet) and trace it through the source using `grep` or an IDE. The `include/linux/` and `kernel/` headers define the core data structures — read those first. The `Documentation/` directory (and `https://www.kernel.org/doc/html/`) explains the design rationale. And build the kernel yourself first — it makes the source tree tangible.
+Don't read linearly. Pick a concrete operation (a system call, an IRQ, a packet) and trace it through the source using `grep` or an IDE. The `include/linux/` and `kernel/` headers define the core data structures — read those first. The `Documentation/` directory (and `https://www.kernel.org/doc/html/latest/`) explains the design rationale. And build the kernel yourself first — it makes the source tree tangible.
 
 ---
 

@@ -143,7 +143,7 @@ t-SNE [3]将高维的簇分配结果投影到二维空间，同时保留局部�
 
 ## 参考文献
 
-- KKBOX, KKBOX Music Recommendation Challenge (Kaggle), https://www.kaggle.com/c/kkbox-music-recommendation-challenge
+- KKBOX, KKBOX Music Recommendation Challenge (Kaggle), https://www.kaggle.com/competitions/kkbox-music-recommendation-challenge
 - Huang ZX, Michael KN, "A fuzzy k-modes algorithm for clustering categorical data," IEEE Trans. on Fuzzy System, 1999, 7(4): 446–452
 - Hinton GE, Roweis ST, "Stochastic neighbor embedding," Advances in Neural Information Processing Systems, 2002
 - Van der Maaten L, Hinton G, "Visualizing Data using t-SNE," Journal of Machine Learning Research, 2008, 9: 2579–2605

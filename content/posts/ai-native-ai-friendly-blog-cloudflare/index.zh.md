@@ -86,7 +86,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://findns.cc/sitemap.xml
 ```
 
 对不同类型的爬虫要区别对待。**搜索索引类爬虫**（OAI-SearchBot、Claude-SearchBot、PerplexityBot）控制你的内容是否出现在实时的 AI 回答中——放行它们。**训练类爬虫**（GPTBot、ClaudeBot、CCBot）塑造未来的模型；如果你想施加影响就放行，不想则拦截。**检索类爬虫**（ChatGPT-User、Perplexity-User）由用户实时查询触发，可能无视 `robots.txt` 抓取内容，所以不要仅依赖那份文件来保护隐私。
@@ -98,7 +98,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ```bash
 curl -s -o /dev/null -w "%{http_code}" \
   -A "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)" \
-  https://yourdomain.com/
+  https://findns.cc/
 ```
 
 返回 `200` 表示爬虫畅通无阻。任何其他结果都意味着仍有东西挡路——重新检查面板开关，以及任何可能挑战未知代理的页面规则。
@@ -119,8 +119,8 @@ curl -s -o /dev/null -w "%{http_code}" \
 像爬虫那样测试你自己的页面。拉取原生 HTML 并 grep 你的主要内容——如果内容不在里面，AI 同样看不到：
 
 ```bash
-curl -s https://yourdomain.com/your-post | grep -c "<article"
-curl -s https://yourdomain.com/your-post | grep -c "id=\"__next\""
+curl -s https://findns.cc/your-post | grep -c "<article"
+curl -s https://findns.cc/your-post | grep -c "id=\"__next\""
 ```
 
 健康的 `<article` 计数加上空的 `__next` 检查，说明内容存在于 HTML 源码中。如果你看到的只是一个空的 `<div id="root"></div>`，或者文本只出现在 `<noscript>` 标签里，那么你的内容就在 JavaScript 背后，对大多数 AI 系统不可见。
@@ -143,7 +143,7 @@ curl -s https://yourdomain.com/your-post | grep -c "id=\"__next\""
 
 **结构化数据**是两者中更成熟的一个。2024 年，JSON-LD 使用率增长了 21%（从 34% 到 41%），Schema.org 标记现已覆盖 4500 万个域名和超过 4500 亿个对象（[Web Almanac 2024, Structured Data](https://almanac.httparchive.org/en/2024/structured-data)）。对于博客，为每篇文章添加 `BlogPosting` schema，为 FAQ 部分添加 `FAQPage` schema。放在 `<head>` 或 `<body>` 中的 JSON-LD 既帮助 Google 构建富结果，又为 AI 系统提供显式的实体与关系数据，而不是强迫它们从标记中推断结构。
 
-**llms.txt** 则是较新、风险更高的赌注。它由 Anthropic 在 2024 年提出，是一个放在站点根目录的 markdown 文件（`yourdomain.com/llms.txt`），向 LLM 列出你的关键页面及其用途。Claude 会主动读取它。Perplexity 表示认同这一理念。OpenAI 未确认支持（[llmstxt.org](https://llmstxt.org/), 2026）。Google 的 Gary Illyes 在 2025 年 7 月表示 Google 不使用它，Semrush 的测试在 9 个测试站点上未记录到任何 AI 爬虫访问 `llms.txt` 文件。实现它——大约花费一小时——但不要把它当作你的可见性策略依赖。
+**llms.txt** 则是较新、风险更高的赌注。它由 Anthropic 在 2024 年提出，是一个放在站点根目录的 markdown 文件（`findns.cc/llms.txt`），向 LLM 列出你的关键页面及其用途。Claude 会主动读取它。Perplexity 表示认同这一理念。OpenAI 未确认支持（[llmstxt.org](https://llmstxt.org/), 2026）。Google 的 Gary Illyes 在 2025 年 7 月表示 Google 不使用它，Semrush 的测试在 9 个测试站点上未记录到任何 AI 爬虫访问 `llms.txt` 文件。实现它——大约花费一小时——但不要把它当作你的可见性策略依赖。
 
 一份最简的 `llms.txt` 如下所示：
 
@@ -154,12 +154,12 @@ curl -s https://yourdomain.com/your-post | grep -c "id=\"__next\""
 
 ## Essential
 
-- [Home](https://yourdomain.com/): Latest articles and topic clusters
-- [About](https://yourdomain.com/about): Author background and site mission
+- [Home](https://findns.cc/): Latest articles and topic clusters
+- [About](https://findns.cc/about): Author background and site mission
 
 ## Popular Articles
 
-- [How to Make Your Blog AI-Friendly](https://yourdomain.com/blog/ai-friendly-blog): Step-by-step guide to AI crawler access and content structure.
+- [How to Make Your Blog AI-Friendly](https://findns.cc/blog/ai-friendly-blog): Step-by-step guide to AI crawler access and content structure.
 ```
 
 保持在 10KB 以内——LLM 可能会截断更大的文件。发布重要新内容时更新它。请记住：它补充 `sitemap.xml`，绝不替代它。

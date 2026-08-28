@@ -49,7 +49,7 @@ tags: ["Travel", "Greece", "Turkey"]
 
 土耳其的签证政策在2026年初发生了重大变化。中国普通护照持有人现在**免除签证要求**，每180天内停留不超过90天（[土耳其外交部](https://www.mfa.gov.tr)，2026年）。只需持有入境日起至少6个月有效期的护照，加上超过计划停留期60天的有效期（根据第6458号法律）。无需申请，无需费用，无需等待审批。
 
-希腊作为申根区成员国，仍要求中国护照持有人提前申请**短期申根签证（C类）**。标准费用为成人80欧元（6-12岁儿童40欧元，6岁以下免费），典型办理时间为15个日历日，高峰期可能延长至45天（[申根签证条例](https://ec.europa.eu/home-affairs/policies/schengen-borders-and-visa/visa-policy_en)，2025年）。可通过北京的希腊大使馆或上海、北京、广州等主要城市的VFS Global签证申请中心提交申请。
+希腊作为申根区成员国，仍要求中国护照持有人提前申请**短期申根签证（C类）**。标准费用为成人80欧元（6-12岁儿童40欧元，6岁以下免费），典型办理时间为15个日历日，高峰期可能延长至45天（[申根签证条例](https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en)，2025年）。可通过北京的希腊大使馆或上海、北京、广州等主要城市的VFS Global签证申请中心提交申请。
 
 **实用建议：** 在出发前6-8周提交申根签证申请。需要准备的材料包括：机票预订单、酒店预订证明、旅行保险（最低3万欧元保额）、银行流水和在职证明。在签证获批前，建议预订可退款的机票和酒店。
 
@@ -280,6 +280,6 @@ tags: ["Travel", "Greece", "Turkey"]
 - 希腊旅游联合会（SETE），2024年希腊国际游客年度报告，2024年，https://sete.gr
 - 土耳其文化与旅游部，2024年旅游入境统计数据，2024年，https://www.ktb.gov.tr
 - 土耳其航空，上海-伊斯坦布尔航线时刻与飞行数据，2025年，https://www.turkishairlines.com
-- 欧盟委员会，申根签证政策与费用标准，2025年，https://ec.europa.eu/home-affairs/policies/schengen-borders-and-visa/visa-policy_en
+- 欧盟委员会，申根签证政策与费用标准，2025年，https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en
 - 维基百科，圣托里尼旅游与邮轮乘客限流规定，2025年，https://en.wikipedia.org/wiki/Santorini
 - Booking.com，圣托里尼与伊斯坦布尔住宿价格数据，2025年，https://www.booking.com

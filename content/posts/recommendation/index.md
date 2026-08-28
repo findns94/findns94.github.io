@@ -12,7 +12,7 @@ tags: [Data Mining, Recommendation, Hadoop]
 
 ![Abstract visualization of data streams flowing through a network, representing automated resume screening and candidate matching at scale](/posts/recommendation/images/cover.jpg)
 
-The average corporate job posting draws **250 resumes** ([iCIMS](https://www.icims.com/resources/benchmark-report/), 2024), yet most are still screened by hand or filtered through blunt keyword rules. For IT roles at scale, that math breaks down fast: keyword filtering is fast but returns low-quality shortlists, and manual screening burns time and budget. We built a personalized resume recommendation system on Hadoop to solve exactly that — replacing conditional filters with a machine learning pipeline that ranks candidates by how well they fit a specific job posting *and* a company's own hiring history.
+The average corporate job posting draws **250 resumes** ([iCIMS](https://www.icims.com), 2024), yet most are still screened by hand or filtered through blunt keyword rules. For IT roles at scale, that math breaks down fast: keyword filtering is fast but returns low-quality shortlists, and manual screening burns time and budget. We built a personalized resume recommendation system on Hadoop to solve exactly that — replacing conditional filters with a machine learning pipeline that ranks candidates by how well they fit a specific job posting *and* a company's own hiring history.
 
 The result was a prototype that processed **1.06 million resumes**, trained a binary talent classifier on 1,300 labeled examples, and returned the top-100 most relevant candidates for any given IT job description. This post walks through how we designed the classification pipeline, the recommendation algorithm, and the offline incremental architecture that made it all run.
 
@@ -158,6 +158,6 @@ The same design patterns — offline batch scoring, implicit feedback from histo
 
 ## Sources
 
-- iCIMS. "2024 Talent Acquisition Benchmark Report." 2024. https://www.icims.com/resources/benchmark-report/
+- iCIMS. "2024 Talent Acquisition Benchmark Report." 2024. https://www.icims.com
 - Apache Mahout. https://mahout.apache.org
 - Apache Hadoop. https://hadoop.apache.org

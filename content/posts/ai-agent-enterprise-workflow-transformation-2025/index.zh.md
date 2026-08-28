@@ -65,7 +65,7 @@ AI Agent——能够感知环境、做出决策并采取行动以实现目标的
 
 其机制很直接：Agent通过API连接到订单管理、支付处理和物流系统。当客户报告缺少商品时，Agent查询订单数据库、检查物流状态、发起补发并发送确认——全程无需人工干预。
 
-Forrester的Total Economic Impact研究记录了客户服务部署中AI Agent在150-300%范围内的ROI，40-70%的咨询可在没有人工客服的情况下处理（[Forrester](https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/), 2025）。
+Forrester的Total Economic Impact研究记录了客户服务部署中AI Agent在150-300%范围内的ROI，40-70%的咨询可在没有人工客服的情况下处理（[Forrester](https://www.forrester.com), 2025）。
 
 ### IT运营：自愈基础设施
 
@@ -128,7 +128,7 @@ API连接的Agent带来的生产力提升是可量化的、显著的。微软202
 
 **治理与合规。** 当Agent通过API自主执行交易时，审计追踪和合规控制变得至关重要。金融服务和医疗组织面临监管要求，要求Agent决策可解释且高风险操作需要人工监督。
 
-LinkedIn 2025年职场学习报告将AI素养认定为最紧缺的技能，预计到2030年70%的工作技能将发生变化（[LinkedIn](https://learning.linkedin.com/workplace-learning-report), 2025）。跨越扩展鸿沟既需要API基础设施投资，也需要员工技能提升。
+LinkedIn 2025年职场学习报告将AI素养认定为最紧缺的技能，预计到2030年70%的工作技能将发生变化（[LinkedIn](https://www.linkedin.com/learning/), 2025）。跨越扩展鸿沟既需要API基础设施投资，也需要员工技能提升。
 
 ## 未来：多Agent系统与Agent市场
 
@@ -146,7 +146,7 @@ RPA（机器人流程自动化）遵循预定义的规则和脚本。AI Agent使
 
 ### 部署企业AI Agent的成本是多少？
 
-成本因复杂度而异。使用现有API的单一用途客户服务Agent每年可部署5万至20万美元（基础设施、API费用、模型使用）。跨越多个企业职能的多Agent系统通常需要50万至200万美元的初始投资。Forrester的TEI研究显示，部署良好的项目回报期为6至18个月（[Forrester](https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/), 2025）。
+成本因复杂度而异。使用现有API的单一用途客户服务Agent每年可部署5万至20万美元（基础设施、API费用、模型使用）。跨越多个企业职能的多Agent系统通常需要50万至200万美元的初始投资。Forrester的TEI研究显示，部署良好的项目回报期为6至18个月（[Forrester](https://www.forrester.com), 2025）。
 
 ### AI Agent会取代人类员工吗？
 
@@ -177,6 +177,6 @@ Agent最有价值的API分为四类：数据检索（数据库、CRM、数据仓
 - McKinsey, "The State of AI in 2025," 2025. Retrieved 2026-07-16. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-state-of-ai)
 - Reuters, "Klarna's AI Assistant Handled Two-Thirds of Customer Service Conversations," February 25, 2025. Retrieved 2026-07-16. [https://www.reuters.com/technology/klarnas-ai-assistant-handled-two-thirds-customer-service-conversations-2025-02-25/](https://www.reuters.com/technology/klarnas-ai-assistant-handled-two-thirds-customer-service-conversations-2025-02-25/)
 - Anthropic, "Building Effective Agents," December 2024. Retrieved 2026-07-16. [https://www.anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents)
-- Forrester, "The State of AI Agents in Customer Service," 2025. Retrieved 2026-07-16. [https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/](https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/)
+- Forrester, "The State of AI Agents in Customer Service," 2025. Retrieved 2026-07-16. [https://www.forrester.com](https://www.forrester.com)
 - Accenture, "Technology Vision 2025," 2025. Retrieved 2026-07-16. [https://www.accenture.com/us-en/insights/technology/technology-vision](https://www.accenture.com/us-en/insights/technology/technology-vision)
-- LinkedIn, "2025 Workplace Learning Report," 2025. Retrieved 2026-07-16. [https://learning.linkedin.com/workplace-learning-report](https://learning.linkedin.com/workplace-learning-report)
+- LinkedIn, "2025 Workplace Learning Report," 2025. Retrieved 2026-07-16. [https://www.linkedin.com/learning/](https://www.linkedin.com/learning/)

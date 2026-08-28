@@ -65,7 +65,7 @@ In 2025, AI agents handle the full lifecycle of customer interactions in leading
 
 The mechanism is straightforward: the agent connects via API to order management, payment processing, and shipping systems. When a customer reports a missing item, the agent queries the order database, checks shipping status, initiates a replacement, and sends a confirmation — all without human intervention.
 
-Forrester's Total Economic Impact studies document AI agent ROI in the range of 150–300% for customer service deployments, with deflection rates of 40–70% of inquiries handled without human agents ([Forrester](https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/), 2025).
+Forrester's Total Economic Impact studies document AI agent ROI in the range of 150–300% for customer service deployments, with deflection rates of 40–70% of inquiries handled without human agents ([Forrester](https://www.forrester.com), 2025).
 
 ### IT Operations: Self-Healing Infrastructure
 
@@ -128,7 +128,7 @@ The primary barriers are API-related:
 
 **Governance and compliance.** When agents autonomously execute transactions through APIs, audit trails and compliance controls become critical. Financial services and healthcare organizations face regulatory requirements that demand explainable agent decisions and human oversight for high-risk actions.
 
-LinkedIn's 2025 Workplace Learning Report identifies AI literacy as the most in-demand skill, with 70% of job skills expected to shift by 2030 ([LinkedIn](https://learning.linkedin.com/workplace-learning-report), 2025). Closing the scaling gap requires both API infrastructure investment and workforce upskilling.
+LinkedIn's 2025 Workplace Learning Report identifies AI literacy as the most in-demand skill, with 70% of job skills expected to shift by 2030 ([LinkedIn](https://www.linkedin.com/learning/), 2025). Closing the scaling gap requires both API infrastructure investment and workforce upskilling.
 
 ## The Future: Multi-Agent Systems and Agent Marketplaces
 
@@ -146,7 +146,7 @@ RPA (Robotic Process Automation) follows predefined rules and scripts. AI agents
 
 ### How much does it cost to deploy an enterprise AI agent?
 
-Costs vary by complexity. A single-purpose customer service agent using existing APIs can deploy for \$50,000–\$200,000 annually (infrastructure, API costs, model usage). Multi-agent systems spanning multiple enterprise functions typically require \$500,000–\$2M initial investment. Forrester's TEI studies show payback periods of 6–18 months for well-scoped deployments ([Forrester](https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/), 2025).
+Costs vary by complexity. A single-purpose customer service agent using existing APIs can deploy for \$50,000–\$200,000 annually (infrastructure, API costs, model usage). Multi-agent systems spanning multiple enterprise functions typically require \$500,000–\$2M initial investment. Forrester's TEI studies show payback periods of 6–18 months for well-scoped deployments ([Forrester](https://www.forrester.com), 2025).
 
 ### Do AI agents replace human workers?
 
@@ -177,6 +177,6 @@ Organizations that invest in unified API gateways, semantic tool descriptions, a
 - McKinsey, "The State of AI in 2025," 2025. Retrieved 2026-07-16. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-state-of-ai)
 - Reuters, "Klarna's AI Assistant Handled Two-Thirds of Customer Service Conversations," February 25, 2025. Retrieved 2026-07-16. [https://www.reuters.com/technology/klarnas-ai-assistant-handled-two-thirds-customer-service-conversations-2025-02-25/](https://www.reuters.com/technology/klarnas-ai-assistant-handled-two-thirds-customer-service-conversations-2025-02-25/)
 - Anthropic, "Building Effective Agents," December 2024. Retrieved 2026-07-16. [https://www.anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents)
-- Forrester, "The State of AI Agents in Customer Service," 2025. Retrieved 2026-07-16. [https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/](https://www.forrester.com/blogs/the-state-of-ai-agents-in-customer-service-2025/)
+- Forrester, "The State of AI Agents in Customer Service," 2025. Retrieved 2026-07-16. [https://www.forrester.com](https://www.forrester.com)
 - Accenture, "Technology Vision 2025," 2025. Retrieved 2026-07-16. [https://www.accenture.com/us-en/insights/technology/technology-vision](https://www.accenture.com/us-en/insights/technology/technology-vision)
-- LinkedIn, "2025 Workplace Learning Report," 2025. Retrieved 2026-07-16. [https://learning.linkedin.com/workplace-learning-report](https://learning.linkedin.com/workplace-learning-report)
+- LinkedIn, "2025 Workplace Learning Report," 2025. Retrieved 2026-07-16. [https://www.linkedin.com/learning/](https://www.linkedin.com/learning/)

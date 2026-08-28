@@ -51,7 +51,7 @@ mermaid: false
 
 现代中国量化技术栈完全基于开源生态、以 Python 驱动。三大库主导了数据获取，新一代 AI 工具正在重塑信号生成。
 
-**数据层。** [AKShare](https://github.com/akfamily/akshare) 以 **2.19 万 GitHub Star** 领跑——零注册即可获取 A 股、港股、美股、期货、期权及宏观经济数据（GitHub，2025）。[Tushare Pro](https://tushare.pro) 拥有 **1.6 万 Star**，提供更结构化的商业级数据集，其付费高频层深受严肃散户量化者青睐。[Baostock](https://github.com/baostock/baostock) 约 7000 Star，仍是学术研究中常见的轻量级免注册方案。
+**数据层。** [AKShare](https://github.com/akfamily/akshare) 以 **2.19 万 GitHub Star** 领跑——零注册即可获取 A 股、港股、美股、期货、期权及宏观经济数据（GitHub，2025）。[Tushare Pro](https://tushare.pro) 拥有 **1.6 万 Star**，提供更结构化的商业级数据集，其付费高频层深受严肃散户量化者青睐。[Baostock](https://github.com/baostock) 约 7000 Star，仍是学术研究中常见的轻量级免注册方案。
 
 **回测与执行层。** [Backtrader](https://github.com/mementum/backtrader) 与 [Zipline](https://github.com/quantopian/zipline) 承担事件驱动回测。针对中国市场的特殊需求——T+1、涨跌停、印花税——本地化框架如微软的 [Qlib](https://github.com/microsoft/qlib)（1.4 万 Star）开箱即用提供机构级因子研究基础设施。
 

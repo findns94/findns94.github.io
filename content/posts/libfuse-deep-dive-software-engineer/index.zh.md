@@ -529,7 +529,7 @@ libfuse 是协议库设计的一套大师级示例：高级与底层 API 的清�
 - libfuse example/hello_ll.c, https://github.com/libfuse/libfuse/blob/master/example/hello_ll.c
 - libfuse example/hello.c, https://github.com/libfuse/libfuse/blob/master/example/hello.c
 - libfuse include/fuse_kernel.h（有线协议）, https://github.com/libfuse/libfuse/blob/fuse-3.18.0/include/fuse_kernel.h
-- Kernel FUSE 文档, https://www.kernel.org/doc/html/latest/filesystems/fuse.html
+- Kernel FUSE 文档, https://www.kernel.org/doc/html/next/filesystems/fuse.html
 - Wikipedia — Filesystem in Userspace, https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - LWN.net — "A FUSE implementation for famfs", https://lwn.net/Articles/1020170/
 - LWN.net — "Famfs, FUSE, and BPF", https://lwn.net/Articles/1068686/

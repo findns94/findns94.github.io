@@ -111,7 +111,7 @@ qemu-aarch64 -L /usr/aarch64-linux-gnu/ ./hello_dyn
 
 The `-L` flag points QEMU at the ARM64 sysroot where `ld-linux-aarch64.so.1` and `libc.so.6` live. Without it, QEMU cannot find the dynamic linker and the binary fails immediately.
 
-> **Citation capsule:** QEMU user-mode emulation translates ARM64 instructions to x86_64 at runtime with roughly 5-10x overhead compared to native execution ([QEMU Documentation](https://qemu.readthedocs.io/en/latest/user/main.html), 2025). For learning and debugging assembly, this overhead is irrelevant because you are single-stepping instruction by instruction.
+> **Citation capsule:** QEMU user-mode emulation translates ARM64 instructions to x86_64 at runtime with roughly 5-10x overhead compared to native execution ([QEMU Documentation](https://www.qemu.org/docs/master/system/invocation.html), 2025). For learning and debugging assembly, this overhead is irrelevant because you are single-stepping instruction by instruction.
 
 ---
 
@@ -229,5 +229,5 @@ Start by single-stepping the `hello.c` example above. Then try writing a small f
 - Counterpoint Research, "Global Smartphone Application Processor Share, 2025," https://www.counterpointresearch.com
 - Canalys, "ARM-based server market forecast, 2025-2026," https://www.canalys.com
 - Liftr Insights, "Cloud Service Provider CPU market data, 2025," https://liftrinsights.com
-- QEMU Project, "QEMU User Emulation Documentation," https://qemu.readthedocs.io/en/latest/user/main.html
+- QEMU Project, "QEMU User Emulation Documentation," https://www.qemu.org/docs/master/system/invocation.html
 - ARM, "ARM Architecture Reference Manual (ARMv8-A)," https://developer.arm.com/documentation/ddi0487/latest

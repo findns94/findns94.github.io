@@ -476,7 +476,7 @@ The source rewards top-down reading: start with `fuse_i.h` for the data structur
 ## Sources
 
 - Linux kernel fs/fuse/ source, https://github.com/torvalds/linux/tree/master/fs/fuse
-- Kernel FUSE documentation, https://www.kernel.org/doc/html/latest/filesystems/fuse.html
-- Kernel fuse-io-uring documentation, https://www.kernel.org/doc/html/latest/filesystems/fuse-io-uring.html
+- Kernel FUSE documentation, https://www.kernel.org/doc/html/next/filesystems/fuse.html
+- Kernel fuse-io-uring documentation, https://www.kernel.org/doc/html/next/filesystems/fuse-io-uring.html
 - libfuse deep dive (companion post), /posts/libfuse-deep-dive-software-engineer/
 - include/uapi/linux/fuse.h (FUSE protocol header), https://github.com/torvalds/linux/blob/master/include/uapi/linux/fuse.h

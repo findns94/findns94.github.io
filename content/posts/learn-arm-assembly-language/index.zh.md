@@ -111,7 +111,7 @@ qemu-aarch64 -L /usr/aarch64-linux-gnu/ ./hello_dyn
 
 `-L` 参数指向 ARM64 sysroot，`ld-linux-aarch64.so.1` 和 `libc.so.6` 就在其中。没有它，QEMU 找不到动态链接器，程序会立即失败。
 
-> **引用摘要：** QEMU 用户模式模拟在运行时将 ARM64 指令翻译为 x86_64，相比原生执行大约有 5-10 倍的性能开销（[QEMU 文档](https://qemu.readthedocs.io/en/latest/user/main.html)，2025）。对于学习和调试汇编来说，这个开销无关紧要，因为你是一条一条指令单步执行的。
+> **引用摘要：** QEMU 用户模式模拟在运行时将 ARM64 指令翻译为 x86_64，相比原生执行大约有 5-10 倍的性能开销（[QEMU 文档](https://www.qemu.org/docs/master/system/invocation.html)，2025）。对于学习和调试汇编来说，这个开销无关紧要，因为你是一条一条指令单步执行的。
 
 ---
 
@@ -229,5 +229,5 @@ macOS 上通过 Homebrew 安装交叉编译器和 QEMU（`brew install aarch64-e
 - Counterpoint Research, "Global Smartphone Application Processor Share, 2025," https://www.counterpointresearch.com
 - Canalys, "ARM-based server market forecast, 2025-2026," https://www.canalys.com
 - Liftr Insights, "Cloud Service Provider CPU market data, 2025," https://liftrinsights.com
-- QEMU Project, "QEMU User Emulation Documentation," https://qemu.readthedocs.io/en/latest/user/main.html
+- QEMU Project, "QEMU User Emulation Documentation," https://www.qemu.org/docs/master/system/invocation.html
 - ARM, "ARM Architecture Reference Manual (ARMv8-A)," https://developer.arm.com/documentation/ddi0487/latest

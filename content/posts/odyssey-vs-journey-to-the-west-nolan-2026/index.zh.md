@@ -56,7 +56,7 @@ tags: ["Cinema", "Culture", "Epic"]
 
 ## 诺兰《奥德赛》与此前所有神话电影有何不同？
 
-制作本身就是故事。诺兰将《奥德赛》拍成**影史首部完全以IMAX 70mm胶片摄影机捕获的长片**（[Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_(2026_film))，2026）。整个拍摄耗用超**200万英尺IMAX 70mm胶片**，历时91天，比计划提前9天杀青。取景地横跨摩洛哥、西撒哈拉、希腊、意大利、冰岛、苏格兰、马耳他以及洛杉矶环球影城。
+制作本身就是故事。诺兰将《奥德赛》拍成**影史首部完全以IMAX 70mm胶片摄影机捕获的长片**（[Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29)，2026）。整个拍摄耗用超**200万英尺IMAX 70mm胶片**，历时91天，比计划提前9天杀青。取景地横跨摩洛哥、西撒哈拉、希腊、意大利、冰岛、苏格兰、马耳他以及洛杉矶环球影城。
 
 <!-- [PERSONAL EXPERIENCE] 2023年看70mm《奥本海默》时，那种画面密度是数字摄影难以企及的。《奥德赛》走得更远。 -->
 
@@ -101,11 +101,11 @@ tags: ["Cinema", "Culture", "Epic"]
 
 ### 诺兰为何全片使用IMAX 70mm胶片拍摄？
 
-诺兰多年来一直主张70mm胶片能捕捉数字格式无法企及的深度与分辨率。《奥德赛》在91天拍摄中耗用超200万英尺IMAX 70mm胶片，成为影史首部完全采用该格式的长片（[Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_(2026_film))，2026）。这一决定限制了取景地并需要定制摄影机，但最终呈现的视觉密度打动了观众。
+诺兰多年来一直主张70mm胶片能捕捉数字格式无法企及的深度与分辨率。《奥德赛》在91天拍摄中耗用超200万英尺IMAX 70mm胶片，成为影史首部完全采用该格式的长片（[Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29)，2026）。这一决定限制了取景地并需要定制摄影机，但最终呈现的视觉密度打动了观众。
 
 ### 《奥德赛》何时在中国大陆上映？
 
-影片于2026年7月16日在香港和澳门上映，中国大陆定档2026年8月14日（[Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_(2026_film))，2026）。鉴于《西游记》在中国的文化共鸣，大陆宣发明确将两部史诗的旅程传统进行了对照。
+影片于2026年7月16日在香港和澳门上映，中国大陆定档2026年8月14日（[Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29)，2026）。鉴于《西游记》在中国的文化共鸣，大陆宣发明确将两部史诗的旅程传统进行了对照。
 
 ### 《奥德赛》和《西游记》哪部改编更多？
 
@@ -121,9 +121,9 @@ tags: ["Cinema", "Culture", "Epic"]
 
 - Box Office Mojo，《奥德赛》（2026）票房追踪，2026-08-11，https://www.boxofficemojo.com
 - The Numbers，神话电影票房对比数据，2026-08-11，https://www.the-numbers.com
-- Wikipedia, "The Odyssey (2026 film)"，制作细节与演员表，2026-08-11，https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)
+- Wikipedia, "The Odyssey (2026 film)"，制作细节与演员表，2026-08-11，https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29
 - UNESCO Index Translationum，荷马作品翻译统计，2026-08-11，https://www.unesco.org
 - Wikipedia, "Journey to the West"，改编列表，2026-08-11，https://en.wikipedia.org/wiki/Journey_to_the_West
-- Wikipedia, "Highest-grossing R-rated films"，2026年排名，2026-08-11，https://en.wikipedia.org/wiki/Highest-grossing_R-rated_films
-- Wikipedia, "Oppenheimer (film)"，票房纪录，2026-08-11，https://en.wikipedia.org/wiki/Oppenheimer_(film)
+- Wikipedia, "Highest-grossing R-rated films"，2026年排名，2026-08-11，https://en.wikipedia.org/wiki/List_of_highest-grossing_R-rated_films
+- Wikipedia, "Oppenheimer (film)"，票房纪录，2026-08-11，https://en.wikipedia.org/wiki/Oppenheimer_%28film%29
 - CCTV，1986版《西游记》收视估算，2026-08-11，https://www.cctv.com

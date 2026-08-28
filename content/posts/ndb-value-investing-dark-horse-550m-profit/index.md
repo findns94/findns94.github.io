@@ -231,7 +231,7 @@ As NDB enters its second golden decade, the question is not whether it will grow
 - Asian Development Bank, Annual Report 2024, https://www.adb.org/documents/adb-annual-report-2024
 - Asian Infrastructure Investment Bank, Financial Statements and Annual Reports 2020-2024, https://www.aiib.org/en/about-aiib/financial-information/index.html
 - European Bank for Reconstruction and Development, Annual Report 2024, https://www.ebrd.com/publications/annual-report-2024
-- World Bank (IBRD), Financial Statements FY2024, https://treasury.worldbank.org/en/about/unit/treasury/ibrd-investor-relations
+- World Bank (IBRD), Financial Statements FY2024, https://treasury.worldbank.org
 - Inter-American Development Bank, Annual Report 2024, https://www.iadb.org/en/who-we-are/annual-report
 - NDB Annual Report 2025, Financial Statements (audited by Deloitte Touche Tohmatsu, May 2026)
 - BRICS Leaders, Rio de Janeiro Declaration, 17th BRICS Summit, July 2025

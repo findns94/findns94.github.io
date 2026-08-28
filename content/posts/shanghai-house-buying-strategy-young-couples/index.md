@@ -249,6 +249,6 @@ This is not the time for an all-in property bet. But it is a sound time for a we
 6. Shanghai Housing Fund Management Center, *Housing fund loan limits and rules*, 2025 — [https://www.shgjj.com](https://www.shgjj.com) (retrieved 14 July 2026).
 7. Shanghai Municipal Housing Commission and municipal response portals, *Purchase-qualification and down-payment circulars*, 2024–2025 — [http://fgj.sh.gov.cn](http://fgj.sh.gov.cn) (retrieved 14 July 2026).
 8. Shanghai Municipal Talent / talent-hub portals, *Talent-housing subsidy schedules*, 2025 — various district sites (retrieved 14 July 2026).
-9. Beike Research, *Shanghai district-level transaction data, Q1 2026* — [https://sh.ke.com/research](https://sh.ke.com/research) (retrieved 14 July 2026).
+9. Beike Research, *Shanghai district-level transaction data, Q1 2026* — [https://sh.ke.com](https://sh.ke.com) (retrieved 14 July 2026).
 
 *Article framework, case illustrations, strategy matching, and the consumer decision scaffolding are original editorial analysis built on these base sources.*

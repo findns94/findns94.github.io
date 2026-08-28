@@ -86,7 +86,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://findns.cc/sitemap.xml
 ```
 
 Treat each bot category differently. **Search-indexing bots** (OAI-SearchBot, Claude-SearchBot, PerplexityBot) control whether your content appears in live AI answers — allow them. **Training bots** (GPTBot, ClaudeBot, CCBot) shape future models; allow them if you want influence, block them if you don't. **Retrieval bots** (ChatGPT-User, Perplexity-User) are triggered by live user queries and may fetch content regardless of `robots.txt`, so don't rely on that file alone for privacy.
@@ -98,7 +98,7 @@ Verify the change before moving on. Simulate each bot with `curl` and watch for 
 ```bash
 curl -s -o /dev/null -w "%{http_code}" \
   -A "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)" \
-  https://yourdomain.com/
+  https://findns.cc/
 ```
 
 A `200` means the crawler gets in. Anything else means something's still in the way — recheck the dashboard toggle and any page rules that might challenge unknown agents.
@@ -119,8 +119,8 @@ This is where your choice of platform matters more than any content tweak. Stati
 Test your own pages the way a crawler sees them. Pull the raw HTML and grep for your main content — if it is not there, the AI does not see it either:
 
 ```bash
-curl -s https://yourdomain.com/your-post | grep -c "<article"
-curl -s https://yourdomain.com/your-post | grep -c "id=\"__next\""
+curl -s https://findns.cc/your-post | grep -c "<article"
+curl -s https://findns.cc/your-post | grep -c "id=\"__next\""
 ```
 
 A healthy `<article` count and an empty `__next` check tell you the content lives in the HTML source. If instead you find an empty `<div id="root"></div>` or your text only appears inside a `<noscript>` tag, your content is behind JavaScript and invisible to most AI systems.
@@ -143,7 +143,7 @@ Two signals sit at the intersection of AI-friendly and AI-native: a machine-read
 
 **Structured data** is the more proven of the two. In 2024, JSON-LD usage grew 21 percent (from 34 to 41 percent of pages), and Schema.org markup now covers 45 million domains with more than 450 billion objects ([Web Almanac 2024, Structured Data](https://almanac.httparchive.org/en/2024/structured-data)). For a blog, add `BlogPosting` schema to every post and `FAQPage` schema to your FAQ section. JSON-LD in your `<head>` or `<body>` helps Google build rich results and gives AI systems explicit entity-and-relationship data instead of forcing them to guess at your structure.
 
-**llms.txt** is the newer, riskier bet. Proposed by Anthropic in 2024, it's a markdown file at your site root (`yourdomain.com/llms.txt`) that lists your key pages and their purpose for LLM consumption. Claude actively reads it. Perplexity has expressed alignment with the idea. OpenAI hasn't confirmed support ([llmstxt.org](https://llmstxt.org/), 2026). Google's Gary Illyes stated in July 2025 that Google doesn't use it, and Semrush testing recorded zero AI crawler visits to `llms.txt` files across nine test sites. Implement it — it costs an hour — but don't rely on it as your visibility strategy.
+**llms.txt** is the newer, riskier bet. Proposed by Anthropic in 2024, it's a markdown file at your site root (`findns.cc/llms.txt`) that lists your key pages and their purpose for LLM consumption. Claude actively reads it. Perplexity has expressed alignment with the idea. OpenAI hasn't confirmed support ([llmstxt.org](https://llmstxt.org/), 2026). Google's Gary Illyes stated in July 2025 that Google doesn't use it, and Semrush testing recorded zero AI crawler visits to `llms.txt` files across nine test sites. Implement it — it costs an hour — but don't rely on it as your visibility strategy.
 
 A minimal `llms.txt` looks like this:
 
@@ -154,12 +154,12 @@ A minimal `llms.txt` looks like this:
 
 ## Essential
 
-- [Home](https://yourdomain.com/): Latest articles and topic clusters
-- [About](https://yourdomain.com/about): Author background and site mission
+- [Home](https://findns.cc/): Latest articles and topic clusters
+- [About](https://findns.cc/about): Author background and site mission
 
 ## Popular Articles
 
-- [How to Make Your Blog AI-Friendly](https://yourdomain.com/blog/ai-friendly-blog): Step-by-step guide to AI crawler access and content structure.
+- [How to Make Your Blog AI-Friendly](https://findns.cc/blog/ai-friendly-blog): Step-by-step guide to AI crawler access and content structure.
 ```
 
 Keep it under 10KB — LLMs may truncate larger files. Update it when you publish significant new content. And remember: it supplements `sitemap.xml`, never replaces it.

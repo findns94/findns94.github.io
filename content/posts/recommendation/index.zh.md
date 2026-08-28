@@ -12,7 +12,7 @@ tags: [Data Mining, Recommendation, Hadoop]
 
 ![抽象的大数据可视化：相连的节点与流动的数据流，代表自动化简历筛选与候选人匹配的规模化处理](/posts/recommendation/images/cover.jpg)
 
-企业平均每个职位收到 **250 份简历**（[iCIMS](https://www.icims.com/resources/benchmark-report/)，2024），但大多数简历仍靠人工筛选或简单的关键词过滤。面对成规模的IT招聘，这笔账很快算不过来：关键词过滤速度快，但返回的候选人质量堪忧；人工筛选质量高，却耗费大量时间与预算。我们基于Hadoop构建了一套个性化简历推荐系统，用机器学习 pipeline 取代了粗糙的条件筛选——它根据职位需求和企业自身的招聘历史，为每位候选人打出匹配度排名。
+企业平均每个职位收到 **250 份简历**（[iCIMS](https://www.icims.com)，2024），但大多数简历仍靠人工筛选或简单的关键词过滤。面对成规模的IT招聘，这笔账很快算不过来：关键词过滤速度快，但返回的候选人质量堪忧；人工筛选质量高，却耗费大量时间与预算。我们基于Hadoop构建了一套个性化简历推荐系统，用机器学习 pipeline 取代了粗糙的条件筛选——它根据职位需求和企业自身的招聘历史，为每位候选人打出匹配度排名。
 
 这套原型系统最终处理了 **106 万份简历**，在1300份人工标注样本上训练了二分类人才模型，能为任意一份IT岗位描述返回最相关的100位候选人。本文将介绍我们如何设计分类 pipeline、推荐算法，以及让整套系统跑起来的离线增量架构。
 
@@ -158,6 +158,6 @@ tags: [Data Mining, Recommendation, Hadoop]
 
 ## 数据来源
 
-- iCIMS. "2024 Talent Acquisition Benchmark Report." 2024. https://www.icims.com/resources/benchmark-report/
+- iCIMS. "2024 Talent Acquisition Benchmark Report." 2024. https://www.icims.com
 - Apache Mahout. https://mahout.apache.org
 - Apache Hadoop. https://hadoop.apache.org

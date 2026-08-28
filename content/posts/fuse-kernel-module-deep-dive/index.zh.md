@@ -474,7 +474,7 @@ FUSE 内核模块是 Linux VFS 与用户态文件系统之间的守门人。它�
 ## 来源
 
 - Linux 内核 fs/fuse/ 源码, https://github.com/torvalds/linux/tree/master/fs/fuse
-- 内核 FUSE 文档, https://www.kernel.org/doc/html/latest/filesystems/fuse.html
-- 内核 fuse-io-uring 文档, https://www.kernel.org/doc/html/latest/filesystems/fuse-io-uring.html
+- 内核 FUSE 文档, https://www.kernel.org/doc/html/next/filesystems/fuse.html
+- 内核 fuse-io-uring 文档, https://www.kernel.org/doc/html/next/filesystems/fuse-io-uring.html
 - libfuse 深度剖析（companion 文章）, /posts/libfuse-deep-dive-software-engineer/
 - include/uapi/linux/fuse.h（FUSE 协议头文件）, https://github.com/torvalds/linux/blob/master/include/uapi/linux/fuse.h

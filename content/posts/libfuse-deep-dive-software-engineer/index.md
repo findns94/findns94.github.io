@@ -530,7 +530,7 @@ The repository is at [github.com/libfuse/libfuse](https://github.com/libfuse/lib
 - libfuse example/hello_ll.c, https://github.com/libfuse/libfuse/blob/master/example/hello_ll.c
 - libfuse example/hello.c, https://github.com/libfuse/libfuse/blob/master/example/hello.c
 - libfuse include/fuse_kernel.h (wire protocol), https://github.com/libfuse/libfuse/blob/fuse-3.18.0/include/fuse_kernel.h
-- Kernel FUSE documentation, https://www.kernel.org/doc/html/latest/filesystems/fuse.html
+- Kernel FUSE documentation, https://www.kernel.org/doc/html/next/filesystems/fuse.html
 - Wikipedia — Filesystem in Userspace, https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - LWN.net — "A FUSE implementation for famfs", https://lwn.net/Articles/1020170/
 - LWN.net — "Famfs, FUSE, and BPF", https://lwn.net/Articles/1068686/

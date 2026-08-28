@@ -56,7 +56,7 @@ According to Box Office Mojo's 2026 tracking, *The Odyssey* earned $461 million 
 
 ## What Makes Nolan's Odyssey Different From Every Prior Mythology Film?
 
-The production itself is the story. Nolan shot *The Odyssey* as the **first feature film in history captured entirely on IMAX 70mm film cameras** ([Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)), 2026). The production burned through over **2 million feet of IMAX 70mm film** across a 91-day shoot that wrapped nine days early. Locations spanned Morocco, Western Sahara, Greece, Italy, Iceland, Scotland, Malta, and the Universal Studios Lot in Los Angeles.
+The production itself is the story. Nolan shot *The Odyssey* as the **first feature film in history captured entirely on IMAX 70mm film cameras** ([Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29), 2026). The production burned through over **2 million feet of IMAX 70mm film** across a 91-day shoot that wrapped nine days early. Locations spanned Morocco, Western Sahara, Greece, Italy, Iceland, Scotland, Malta, and the Universal Studios Lot in Los Angeles.
 
 <!-- [PERSONAL EXPERIENCE] Having watched Oppenheimer on 70mm in 2023, the format's density is unmistakable — every frame carries a weight digital capture rarely matches. Odyssey pushes that further. -->
 
@@ -68,7 +68,7 @@ At 173 minutes — two hours and fifty-three minutes — it is long. It is also 
 
 ## Does Journey to the West's Adaptation Legacy Outscale the Odyssey's?
 
-Here the comparison gets uncomfortable — for the West. *Journey to the West* has been adapted so many times that no definitive count exists. Estimates place the number of feature-length film adaptations at **50 to 100 or more**, spanning China, Japan, Korea, and Hollywood ([Wikipedia](https://en.wikipedia.org/wiki/Journey_to_the_West_(2026_film)), 2026). The franchise's combined box office runs **$700 million to $1 billion-plus**.
+Here the comparison gets uncomfortable — for the West. *Journey to the West* has been adapted so many times that no definitive count exists. Estimates place the number of feature-length film adaptations at **50 to 100 or more**, spanning China, Japan, Korea, and Hollywood ([Wikipedia](https://en.wikipedia.org/wiki/Journey_to_the_West_%282026_film%29), 2026). The franchise's combined box office runs **$700 million to $1 billion-plus**.
 
 But the real number is television. The 1986 CCTV adaptation starring Liu Xiao Ling Tong (Six Little Tong) has been viewed an estimated **6 billion times** over the decades since its debut — a figure that likely makes it the most-watched television series in human history ([CCTV](https://www.cctv.com), 2026). It still airs every year during Chinese New Year holidays.
 
@@ -101,11 +101,11 @@ In 2026, The Odyssey reached $1.119 billion worldwide, surpassing every prior R-
 
 ### Why did Nolan shoot the entire film on IMAX 70mm?
 
-Nolan has argued for years that 70mm film captures a depth and resolution digital formats cannot match. The Odyssey used over 2 million feet of IMAX 70mm film across 91 shooting days, making it the first feature shot entirely in the format ([Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)), 2026). The decision limited filming locations and required custom-built cameras but produced a visual density audiences responded to.
+Nolan has argued for years that 70mm film captures a depth and resolution digital formats cannot match. The Odyssey used over 2 million feet of IMAX 70mm film across 91 shooting days, making it the first feature shot entirely in the format ([Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29), 2026). The decision limited filming locations and required custom-built cameras but produced a visual density audiences responded to.
 
 ### When does The Odyssey open in China?
 
-The film released in Hong Kong and Macau on July 16, 2026, with a mainland China release scheduled for August 14, 2026 ([Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)), 2026). Given Journey to the West's cultural resonance in China, the marketing campaign there explicitly drew parallels between the two epic journey traditions.
+The film released in Hong Kong and Macau on July 16, 2026, with a mainland China release scheduled for August 14, 2026 ([Wikipedia](https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29), 2026). Given Journey to the West's cultural resonance in China, the marketing campaign there explicitly drew parallels between the two epic journey traditions.
 
 ### Which epic has more adaptations, the Odyssey or Journey to the West?
 
@@ -121,9 +121,9 @@ If you have not seen it yet, see it on the biggest screen you can find. That is 
 
 - Box Office Mojo, The Odyssey (2026) box office tracking, retrieved 2026-08-11, https://www.boxofficemojo.com
 - The Numbers, mythology film box office comparison data, retrieved 2026-08-11, https://www.the-numbers.com
-- Wikipedia, "The Odyssey (2026 film)", production details and cast, retrieved 2026-08-11, https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)
+- Wikipedia, "The Odyssey (2026 film)", production details and cast, retrieved 2026-08-11, https://en.wikipedia.org/wiki/The_Odyssey_%282026_film%29
 - UNESCO Index Translationum, Homer translation statistics, retrieved 2026-08-11, https://www.unesco.org
 - Wikipedia, "Journey to the West" adaptation list, retrieved 2026-08-11, https://en.wikipedia.org/wiki/Journey_to_the_West
-- Wikipedia, "Highest-grossing R-rated films", 2026 ranking, retrieved 2026-08-11, https://en.wikipedia.org/wiki/Highest-grossing_R-rated_films
-- Wikipedia, "Oppenheimer (film)", box office records, retrieved 2026-08-11, https://en.wikipedia.org/wiki/Oppenheimer_(film)
+- Wikipedia, "Highest-grossing R-rated films", 2026 ranking, retrieved 2026-08-11, https://en.wikipedia.org/wiki/List_of_highest-grossing_R-rated_films
+- Wikipedia, "Oppenheimer (film)", box office records, retrieved 2026-08-11, https://en.wikipedia.org/wiki/Oppenheimer_%28film%29
 - CCTV, Journey to the West 1986 series viewership estimates, retrieved 2026-08-11, https://www.cctv.com

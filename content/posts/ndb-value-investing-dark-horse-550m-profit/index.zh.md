@@ -231,7 +231,7 @@ NDB是一家会让本杰明·格雷厄姆赞同的金融机构。其资产负债
 - 亚洲开发银行，《2024年度报告》，https://www.adb.org/documents/adb-annual-report-2024
 - 亚洲基础设施投资银行，2020-2024年财务报表和年报，https://www.aiib.org/en/about-aiib/financial-information/index.html
 - 欧洲复兴开发银行，《2024年度报告》，https://www.ebrd.com/publications/annual-report-2024
-- 世界银行（国际复兴开发银行），2024财年财务报表，https://treasury.worldbank.org/en/about/unit/treasury/ibrd-investor-relations
+- 世界银行（国际复兴开发银行），2024财年财务报表，https://treasury.worldbank.org
 - 美洲开发银行，《2024年度报告》，https://www.iadb.org/en/who-we-are/annual-report
 - NDB 2025年报，财务报表（德勤审计，2026年5月）
 - 金砖领导人，《里约热内卢宣言》，第17届金砖国家峰会，2025年7月
