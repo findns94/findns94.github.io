@@ -10,7 +10,7 @@
   <text x="280" y="48" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="11" opacity="0.6">Kunming → Pu'er → Xishuangbanna route segments</text>
 
   <!-- Y-axis label -->
-  <text x="14" y="220" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.6" transform="rotate(-90, 14, 220)">Route &amp; Mode</text>
+  <text x="20" y="220" text-anchor="middle" fill="currentColor" font-family="'Inter', system-ui, sans-serif" font-size="10" opacity="0.6" transform="rotate(-90, 20, 220)">Route &amp; Mode</text>
 
   <!-- Chart area -->
   <!-- Segment header: Kunming → Pu'er -->

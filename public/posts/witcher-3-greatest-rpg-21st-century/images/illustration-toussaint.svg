@@ -75,5 +75,5 @@
   <circle cx="500" cy="380" r="3" fill="#f472b6"/><circle cx="680" cy="376" r="3" fill="#f472b6"/>
   <circle cx="160" cy="380" r="3" fill="#fbbf24"/><circle cx="580" cy="382" r="3" fill="#fbbf24"/>
 </g>
-<text x="400" y="410" text-anchor="middle" font-size="10" fill="#1e3a5f" opacity="0.7" font-family="'Segoe UI', system-ui, sans-serif">Original illustration — Toussaint-inspired vineyard, Blood and Wine</text>
+<text x="400" y="400" text-anchor="middle" font-size="10" fill="#1e3a5f" opacity="0.7" font-family="'Segoe UI', system-ui, sans-serif">Original illustration — Toussaint-inspired vineyard, Blood and Wine</text>
 </svg>

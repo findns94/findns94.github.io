@@ -13,17 +13,15 @@
   .line-grid { stroke: var(--grid); stroke-width: 0.3; }
   .axis     { stroke: var(--axis); stroke-width: 1; }
 </style>
-<g transform="translate(220,200)">
-  <circle r="110" stroke="var(--grid)" stroke-width="36" fill="none"/>
-  <!-- Full-precision layout. r=110 so C = 2*pi*110 = 691.1504. Data out of 870k (Songjiang 300, Qingpu 200, Fengxian 150, Jinshan 120, Baoshan 100).
-       Segment n occupies the clockwise arc [R_n - S_n, R_n]; successive R values decrease by the previous segment's degree span
-       so slices abut exactly. Degree spans: 124.1379, 82.7586, 62.0690, 49.6552, 41.3793 (sum = 360 exactly).
-       Rotations: R1=-90, R2=-214.1379, R3=-296.8966, R4=-358.9655, R5=-408.6207. Closure: R5 - 41.3793 = -450 = R1 - 360. -->
-  <circle r="110" stroke="#f97316" stroke-width="36" fill="none" stroke-dasharray="238.3276 452.8228" transform="rotate(-90)"/>
-  <circle r="110" stroke="#fb923c" stroke-width="36" fill="none" stroke-dasharray="158.8851 532.2653" transform="rotate(-214.1379)"/>
-  <circle r="110" stroke="#38bdf8" stroke-width="36" fill="none" stroke-dasharray="119.1638 571.9866" transform="rotate(-296.8966)"/>
-  <circle r="110" stroke="#a78bfa" stroke-width="36" fill="none" stroke-dasharray="95.3311 595.8193" transform="rotate(-358.9655)"/>
-  <circle r="110" stroke="#22c55e" stroke-width="36" fill="none" stroke-dasharray="79.4425 611.7079" transform="rotate(-408.6207)"/>
+<g>
+  <!-- Background circle -->
+  <circle cx="220" cy="200" r="110" stroke="var(--grid)" stroke-width="36" fill="none"/>
+  <!-- Donut slices using path elements for perfect tiling -->
+  <path d="M 110.00 200.00 A 110 110 0 0 1 279.26 107.33 L 259.87 137.66 A 74 74 0 0 0 146.00 200.00 Z" fill="#f97316"/>
+  <path d="M 279.26 107.33 A 110 110 0 0 1 319.37 247.18 L 286.85 231.74 A 74 74 0 0 0 259.87 137.66 Z" fill="#fb923c"/>
+  <path d="M 319.37 247.18 A 110 110 0 0 1 225.18 309.88 L 223.49 273.92 A 74 74 0 0 0 286.85 231.74 Z" fill="#38bdf8"/>
+  <path d="M 225.18 309.88 A 110 110 0 0 1 139.55 275.02 L 165.88 250.47 A 74 74 0 0 0 223.49 273.92 Z" fill="#a78bfa"/>
+  <path d="M 139.55 275.02 A 110 110 0 0 1 110.04 203.07 L 146.03 202.07 A 74 74 0 0 0 165.88 250.47 Z" fill="#22c55e"/>
   <text class="lbl" y="-6"  text-anchor="middle" font-size="14" font-weight="800">~870k</text>
   <text class="op35" y="14" text-anchor="middle" font-size="10">combined envelope</text>
 </g>

@@ -14,9 +14,9 @@
   <text x="60" y="124" fill="#8b949e" font-family="system-ui,sans-serif" font-size="10" text-anchor="end">6</text>
 
   <!-- horizontal grid lines -->
-  <line x1="70" y1="244" x2="520" y2="244" stroke="#30363d" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
-  <line x1="70" y1="184" x2="520" y2="184" stroke="#30363d" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
-  <line x1="70" y1="124" x2="520" y2="124" stroke="#30363d" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="70" y1="244" x2="520" y2="244" stroke="#30363d" stroke-width="1" stroke-dasharray="1.0 3" opacity="0.5"/>
+  <line x1="70" y1="184" x2="520" y2="184" stroke="#30363d" stroke-width="1" stroke-dasharray="1.0 3" opacity="0.5"/>
+  <line x1="70" y1="124" x2="520" y2="124" stroke="#30363d" stroke-width="1" stroke-dasharray="1.0 3" opacity="0.5"/>
 
   <!-- data: 2024=2.8, 2025=3.4, 2026=4.1, 2027=4.8, 2028=5.6, 2029=6.2, 2030=6.8 -->
   <!-- x: 70 + year*75 ; y: 300 - value*31 -->

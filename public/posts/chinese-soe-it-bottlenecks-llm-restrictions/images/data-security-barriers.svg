@@ -22,10 +22,10 @@
 
   <!-- Circle 3: State Secrets Law (bottom center) -->
   <circle cx="280" cy="270" r="110" fill="#a78bfa" opacity="0.12" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.4" />
-  <text x="280" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#a78bfa" opacity="0.9">State Secrets Law</text>
-  <text x="280" y="258" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">Criminal liability for</text>
-  <text x="280" y="272" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">mishandling classified data</text>
-  <text x="280" y="286" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">(保守国家秘密法)</text>
+  <text x="280" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="#a78bfa" opacity="0.9">State Secrets Law</text>
+  <text x="280" y="268" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">Criminal liability for</text>
+  <text x="280" y="282" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">mishandling classified data</text>
+  <text x="280" y="296" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.6">(保守国家秘密法)</text>
 
   <!-- Center overlap label -->
   <rect x="210" y="185" width="140" height="50" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />

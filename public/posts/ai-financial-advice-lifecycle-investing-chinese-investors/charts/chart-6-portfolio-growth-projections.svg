@@ -37,15 +37,15 @@
 <!-- Line 1: Age 25 (5k/mo) -->
 <polyline fill="none" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,290 184,260 288,220 392,180 496,140 600,100"/>
 <circle cx="600" cy="100" r="5" fill="#38bdf8" stroke="white" stroke-width="2"/>
-<text class="lbl" x="590" y="90" text-anchor="end" font-size="9" font-weight="700">Age 25: 8.5M</text>
+<text class="lbl" x="600" y="140" text-anchor="end" font-size="9" font-weight="700">Age 25: 8.5M</text>
 <!-- Line 2: Age 35 (10k/mo) -->
 <polyline fill="none" stroke="#f97316" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,280 184,240 288,195 392,150 496,110 600,75"/>
 <circle cx="600" cy="75" r="5" fill="#f97316" stroke="white" stroke-width="2"/>
-<text class="lbl" x="590" y="68" text-anchor="end" font-size="9" font-weight="700">Age 35: 8.0M</text>
+<text class="lbl" x="600" y="68" text-anchor="end" font-size="9" font-weight="700">Age 35: 8.0M</text>
 <!-- Line 3: Age 50 (15k/mo) -->
 <polyline fill="none" stroke="#22c55e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="80,270 184,235 288,195 392,155 496,120"/>
 <circle cx="496" cy="120" r="5" fill="#22c55e" stroke="white" stroke-width="2"/>
-<text class="lbl" x="486" y="113" text-anchor="end" font-size="9" font-weight="700">Age 50: 3.8M</text>
+<text class="lbl" x="491" y="105" text-anchor="end" font-size="9" font-weight="700">Age 50: 3.8M</text>
 <!-- Legend -->
 <line x1="100" y1="50" x2="130" y2="50" stroke="#38bdf8" stroke-width="3"/>
 <text x="135" y="54" font-size="9" fill="#1f2937">Age 25 (5k/mo)</text>
