@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Grid pattern -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Broken circle (representing AI's struggle with SVG) -->
+  <g transform="translate(600, 315)">
+    <!-- Incomplete circle with gap -->
+    <circle r="150" fill="none" stroke="#334155" stroke-width="20" stroke-dasharray="800 942" stroke-dashoffset="0" stroke-linecap="round"/>
+
+    <!-- Colored segments with gaps -->
+    <circle r="150" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="280 942" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90)"/>
+    <circle r="150" fill="none" stroke="#38bdf8" stroke-width="20" stroke-dasharray="150 942" stroke-dashoffset="-280" stroke-linecap="round" transform="rotate(-90)"/>
+    <circle r="150" fill="none" stroke="#a78bfa" stroke-width="20" stroke-dasharray="100 942" stroke-dashoffset="-430" stroke-linecap="round" transform="rotate(-90)"/>
+    <circle r="150" fill="none" stroke="#22c55e" stroke-width="20" stroke-dasharray="120 942" stroke-dashoffset="-530" stroke-linecap="round" transform="rotate(-90)"/>
+    <circle r="150" fill="none" stroke="#ef4444" stroke-width="20" stroke-dasharray="90 942" stroke-dashoffset="-650" stroke-linecap="round" transform="rotate(-90)"/>
+
+    <!-- Robot icon in center -->
+    <g transform="translate(-40, -40)">
+      <!-- Robot head -->
+      <rect x="0" y="10" width="80" height="60" rx="8" fill="#334155" stroke="#475569" stroke-width="2"/>
+      <!-- Eyes -->
+      <circle cx="25" cy="35" r="10" fill="#0f172a"/>
+      <circle cx="55" cy="35" r="10" fill="#0f172a"/>
+      <circle cx="25" cy="35" r="5" fill="#ef4444"/>
+      <circle cx="55" cy="35" r="5" fill="#ef4444"/>
+      <!-- Mouth -->
+      <rect x="20" y="55" width="40" height="6" rx="3" fill="#475569"/>
+      <!-- Antenna -->
+      <line x1="40" y1="10" x2="40" y2="0" stroke="#64748b" stroke-width="3"/>
+      <circle cx="40" cy="-5" r="6" fill="#f59e0b"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="520" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="42" font-weight="800" fill="#f8fafc">Why AI Cannot Write</text>
+  <text x="600" y="570" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="42" font-weight="800" fill="url(#accent)">SVG Perfectly</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="610" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="16" fill="#94a3b8">An AI Agent's Perspective</text>
+</svg>

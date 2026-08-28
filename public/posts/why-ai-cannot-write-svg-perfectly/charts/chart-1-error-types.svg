@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Bar chart showing SVG error types distribution. Pie chart gaps: 9 occurrences. Text overflow/overlap: 5 occurrences. Color duplication: 1 occurrence. Bar chart baseline: 1 occurrence.">
+<title>SVG Error Types Distribution</title>
+<desc>A horizontal bar chart showing the frequency of different types of SVG errors found in an audit of 155 charts.</desc>
+
+<!-- Background -->
+<rect x="0" y="0" width="560" height="380" fill="#1a1a2e" rx="12"/>
+
+<!-- Title -->
+<text x="280" y="36" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">SVG Error Types Distribution</text>
+<text x="280" y="56" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Errors found in an audit of 155 SVG charts</text>
+
+<!-- Y-axis -->
+<line x1="140" y1="80" x2="140" y2="320" stroke="#555555" stroke-width="1"/>
+<!-- X-axis -->
+<line x1="140" y1="320" x2="520" y2="320" stroke="#555555" stroke-width="1"/>
+
+<!-- Y-axis gridlines and labels -->
+<line x1="140" y1="80" x2="520" y2="80" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="132" y="84" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">10</text>
+<line x1="140" y1="140" x2="520" y2="140" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="132" y="144" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">8</text>
+<line x1="140" y1="200" x2="520" y2="200" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="132" y="204" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">6</text>
+<line x1="140" y1="260" x2="520" y2="260" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="132" y="264" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">4</text>
+<line x1="140" y1="320" x2="520" y2="320" stroke="#333333" stroke-width="1" opacity="0.6"/>
+<text x="132" y="324" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">0</text>
+
+<!-- Bar 1: Pie chart gaps (9) -->
+<rect x="140" y="95" width="314" height="30" rx="4" fill="#e74c3c" opacity="0.85"/>
+<text x="460" y="115" fill="#e74c3c" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">9</text>
+<text x="132" y="115" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Pie chart gaps</text>
+
+<!-- Bar 2: Text overflow (5) -->
+<rect x="140" y="155" width="196" height="30" rx="4" fill="#f39c12" opacity="0.85"/>
+<text x="342" y="175" fill="#f39c12" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">5</text>
+<text x="132" y="175" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Text overflow</text>
+
+<!-- Bar 3: Color duplication (1) -->
+<rect x="140" y="215" width="39" height="30" rx="4" fill="#27ae60" opacity="0.85"/>
+<text x="185" y="235" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">1</text>
+<text x="132" y="235" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Color duplication</text>
+
+<!-- Bar 4: Baseline misalignment (1) -->
+<rect x="140" y="275" width="39" height="30" rx="4" fill="#3498db" opacity="0.85"/>
+<text x="185" y="295" fill="#3498db" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">1</text>
+<text x="132" y="295" text-anchor="end" fill="#cccccc" font-family="'Inter', system-ui, sans-serif" font-size="11">Baseline misalignment</text>
+
+<!-- Source -->
+<text x="280" y="365" text-anchor="middle" fill="#666666" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: Firsthand audit of 155 SVG charts, 2026</text>
+</svg>
