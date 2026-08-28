@@ -56,7 +56,7 @@ tags: [Finance, Investment, Macroeconomics]
 
 就业数据同样存在可信度缺口。BLS的"生死模型"（birth-death model）用于估算抽样调查尚未覆盖的新增企业带来的就业，该模型在截至2024年3月的一年里，将非农就业数据高估了约**81.8万个**（[Wolf Street](https://wolfstreet.com/2024/), 2024）。该模型假设每月有10万至15万个净新增岗位来自企业创业，但在创业活动放缓、企业加速倒闭的现实面前，这一假设被证明过于乐观。
 
-CPI住房数据则存在另一个时序问题。Zillow观察租金指数（ZORI）领先CPI住房通胀约**6个月**（[Zillow Research](https://www.zillow.com/research/data/), 2024）。由于BLS统计的是续租租金而非市场新租金，官方住房分项滞后于现实长达半年甚至更久。2023至2024年间，那些看到CPI住房分项"仍然高企"便信以为真的人，实际看到的已经是半年前的数据——真实租金早已下跌。
+CPI住房数据则存在另一个时序问题。Zillow观察租金指数（ZORI）领先CPI住房通胀约**6个月**（[Zillow Research](https://www.zillow.com), 2024）。由于BLS统计的是续租租金而非市场新租金，官方住房分项滞后于现实长达半年甚至更久。2023至2024年间，那些看到CPI住房分项"仍然高企"便信以为真的人，实际看到的已经是半年前的数据——真实租金早已下跌。
 
 这里有一个令人不安的事实：最常被引用的美国经济指标，在发布时系统性地偏向回溯性。根据NBER自身的公告记录，衰退谷底平均在发生后12至15个月才被正式宣布（[NBER](https://www.nber.org/research/business-cycle-dating/business-cycle-dating-committee-announcements), 2020）。对投资者而言，这意味着实时决策需要依赖更高频的替代指标来补充。
 
@@ -88,7 +88,7 @@ CPI住房数据则存在另一个时序问题。Zillow观察租金指数（ZORI�
 
 在美国，有几种替代数据提供了实时或近实时的经济读数。ADP全国就业报告比BLS非农就业报告提前一天发布，基于2500万劳动者的实际工资数据。ISM制造业和服务业采购经理指数（PMI）提供月度情绪读数，常与硬数据出现背离，成为拐点的先行信号。
 
-在通胀追踪方面，Zillow观察租金指数（ZORI）领先CPI住房分项约6个月（[Zillow Research](https://www.zillow.com/research/data/), 2024）。在2022至2023年通胀飙升期间，ZORI见顶并开始下跌的时间，比CPI住房分项早了整整半年。跟踪Zillow数据的投资者，在官方数据确认之前就洞察到了租金的真实走向。
+在通胀追踪方面，Zillow观察租金指数（ZORI）领先CPI住房分项约6个月（[Zillow Research](https://www.zillow.com), 2024）。在2022至2023年通胀飙升期间，ZORI见顶并开始下跌的时间，比CPI住房分项早了整整半年。跟踪Zillow数据的投资者，在官方数据确认之前就洞察到了租金的真实走向。
 
 ![股票交易大厅的电子屏幕上显示着实时市场数据](/posts/investment-decisions-inaccurate-macro-statistics/images/stock-market.jpg)
 
@@ -170,7 +170,7 @@ CPI住房数据则存在另一个时序问题。Zillow观察租金指数（ZORI�
 - National Bureau of Statistics (NBS) China, 2024, https://www.stats.gov.cn/
 - Reuters, coverage of Liaoning GDP falsification, 2017, https://www.reuters.com/
 - Reuters, coverage of Inner Mongolia data falsification, 2018, https://www.reuters.com/
-- Zillow Research, ZORI Data, 2024, https://www.zillow.com/research/data/
+- Zillow Research, ZORI Data, 2024, https://www.zillow.com
 - Greenwich Associates, Institutional Investors Increase Alternative Data Adoption, 2024, https://www.greenwich.com/press-release/institutional-investors-significantly-increase-alternative-data-adoption
 - Federal Reserve Economic Data (FRED), 10-Year Treasury Yield (DGS10), 2013, https://fred.stlouisfed.org/series/DGS10
 - Wolf Street, BLS Birth-Death Model Analysis, 2024, https://wolfstreet.com/2024/

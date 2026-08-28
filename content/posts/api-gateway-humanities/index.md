@@ -109,7 +109,7 @@ The web followed the same arc. In the 1990s, a website was usually a single comp
 
 ![Area chart showing API gateway market growth from $2.8 billion in 2024 to a projected $6.8 billion by 2030](/posts/api-gateway-humanities/images/chart-market-growth.svg)
 
-The numbers tell the scale of the shift. Grand View Research estimates the API gateway market at $2.8 billion in 2024, projected to reach $6.8 billion by 2030 ([Grand View Research](https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report), 2025). MarketsandMarkets puts the 2024 figure at $2.2 billion, also forecasting $6.8 billion by 2029 ([MarketsandMarkets](https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html), 2024). Every forecaster agrees: as systems grow more complex, the gatekeeper grows more valuable. Scale has always demanded gatekeepers — the only thing that changes is who, or what, holds the gate.
+The numbers tell the scale of the shift. Grand View Research estimates the API gateway market at $2.8 billion in 2024, projected to reach $6.8 billion by 2030 ([Grand View Research](https://www.grandviewresearch.com), 2025). MarketsandMarkets puts the 2024 figure at $2.2 billion, also forecasting $6.8 billion by 2029 ([MarketsandMarkets](https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html), 2024). Every forecaster agrees: as systems grow more complex, the gatekeeper grows more valuable. Scale has always demanded gatekeepers — the only thing that changes is who, or what, holds the gate.
 
 
 ## Frequently Asked Questions
@@ -139,7 +139,7 @@ The biggest players are cloud providers: AWS API Gateway leads with 47% adoption
 
 An API gateway is the internet's gatekeeper — and "gatekeeping," far from a dirty word, is how complex systems stay legible, fair, and safe. The four jobs it performs — authentication, rate limiting, translation, and logging — map onto ideas you already know from the humanities: borders, interpreters, bouncers, and archives.
 
-The numbers confirm its importance. With 82% of organizations now using an API-first approach and the gateway market heading toward $6.8 billion, the gatekeeper isn't going anywhere ([Postman](https://www.postman.com/state-of-api/2025/), 2025; [Grand View Research](https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report), 2025). But the most important insight isn't technical. It's the one Lewin gave us in 1947: every gate is a choice. The next time you tap an app and a response appears, picture the checkpoint your request just passed through — and remember that someone, somewhere, decided the rules.
+The numbers confirm its importance. With 82% of organizations now using an API-first approach and the gateway market heading toward $6.8 billion, the gatekeeper isn't going anywhere ([Postman](https://www.postman.com/state-of-api/2025/), 2025; [Grand View Research](https://www.grandviewresearch.com), 2025). But the most important insight isn't technical. It's the one Lewin gave us in 1947: every gate is a choice. The next time you tap an app and a response appears, picture the checkpoint your request just passed through — and remember that someone, somewhere, decided the rules.
 
 
 ---
@@ -149,6 +149,6 @@ The numbers confirm its importance. With 82% of organizations now using an API-f
 - Postman. "2025 State of the API Report." 2025. Retrieved 2026-07-19. [https://www.postman.com/state-of-api/2025/](https://www.postman.com/state-of-api/2025/)
 - Salt Security. "State of API Security Report 2024." 2024. Retrieved 2026-07-19. [https://www.salt.security/resource/api-security-research-report](https://www.salt.security/resource/api-security-research-report)
 - Akamai. "State of API Security 2024." 2024. Retrieved 2026-07-19. [https://www.akamai.com/blog/security-research/state-of-api-security-2024](https://www.akamai.com/blog/security-research/state-of-api-security-2024)
-- Grand View Research. "API Gateway Market Size & Share Report, 2025–2032." 2025. Retrieved 2026-07-19. [https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report](https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report)
+- Grand View Research. "API Gateway Market Size & Share Report, 2025–2032." 2025. Retrieved 2026-07-19. [https://www.grandviewresearch.com](https://www.grandviewresearch.com)
 - MarketsandMarkets. "API Gateway Market – Global Forecast to 2029." 2024. Retrieved 2026-07-19. [https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html](https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html)
 - Traceable AI. "State of API Security 2024." 2024. Retrieved 2026-07-19. [https://www.traceable.ai/blog](https://www.traceable.ai/blog)

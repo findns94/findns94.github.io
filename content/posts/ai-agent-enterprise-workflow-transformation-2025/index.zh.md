@@ -142,7 +142,7 @@ Accenture 2025年技术愿景发现，96%的高管认为AI Agent生态系统将�
 
 ### AI Agent和RPA有什么区别？
 
-RPA（机器人流程自动化）遵循预定义的规则和脚本。AI Agent使用推理来处理新情况、做出决策并调整方法。RPA机器人点击按钮；AI Agent理解上下文并选择行动。全球RPA市场在2024年估值约35亿美元，随着AI能力集成到自动化平台中，预计到2030年将超过140亿美元（[Grand View Research](https://www.grandviewresearch.com/), 2025）。
+RPA（机器人流程自动化）遵循预定义的规则和脚本。AI Agent使用推理来处理新情况、做出决策并调整方法。RPA机器人点击按钮；AI Agent理解上下文并选择行动。全球RPA市场在2024年估值约35亿美元，随着AI能力集成到自动化平台中，预计到2030年将超过140亿美元（[Grand View Research](https://www.grandviewresearch.com), 2025）。
 
 ### 部署企业AI Agent的成本是多少？
 

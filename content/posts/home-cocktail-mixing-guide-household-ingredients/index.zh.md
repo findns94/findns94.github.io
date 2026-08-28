@@ -134,8 +134,8 @@ tags: ["Cocktails", "Home Bar", "Beverages"]
 ## 来源
 
 - Mordor Intelligence，《即饮鸡尾酒市场规模与份额分析》，2025年，https://www.mordorintelligence.com/industry-reports/ready-to-drink-cocktails-market
-- Fortune Business Insights，《即饮鸡尾酒市场规模、份额与疫情影响分析》，2025年，https://www.fortunebusinessinsights.com/ready-to-drink-cocktails-market-108657
-- Grand View Research，《即饮鸡尾酒市场规模、份额与趋势分析报告》，2025年，https://www.grandviewresearch.com/industry-analysis/ready-to-drink-cocktails-market-report
+- Fortune Business Insights，《即饮鸡尾酒市场规模、份额与疫情影响分析》，2025年，https://www.fortunebusinessinsights.com
+- Grand View Research，《即饮鸡尾酒市场规模、份额与趋势分析报告》，2025年，https://www.grandviewresearch.com
 - 美国劳工统计局，《消费者支出调查，表1300》，2024年，https://www.bls.gov/cex/
 - TheCocktailDB，《开放的众包饮品与鸡尾酒数据库》，2025年，https://www.thecocktaildb.com/
 - Difford's Guide，《经典鸡尾酒比例与配方》，2025年，https://www.diffordsguide.com/

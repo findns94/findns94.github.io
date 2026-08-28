@@ -142,7 +142,7 @@ Accenture's Technology Vision 2025 finds that 96% of executives agree AI agent e
 
 ### What is the difference between an AI agent and RPA?
 
-RPA (Robotic Process Automation) follows predefined rules and scripts. AI agents use reasoning to handle novel situations, make decisions, and adapt their approach. RPA bots click buttons; AI agents understand context and choose actions. The global RPA market, valued at approximately \$3.5 billion in 2024, is projected to exceed \$14 billion by 2030 as AI capabilities are integrated into automation platforms ([Grand View Research](https://www.grandviewresearch.com/), 2025).
+RPA (Robotic Process Automation) follows predefined rules and scripts. AI agents use reasoning to handle novel situations, make decisions, and adapt their approach. RPA bots click buttons; AI agents understand context and choose actions. The global RPA market, valued at approximately \$3.5 billion in 2024, is projected to exceed \$14 billion by 2030 as AI capabilities are integrated into automation platforms ([Grand View Research](https://www.grandviewresearch.com), 2025).
 
 ### How much does it cost to deploy an enterprise AI agent?
 

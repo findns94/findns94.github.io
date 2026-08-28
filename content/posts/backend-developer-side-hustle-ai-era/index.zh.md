@@ -22,7 +22,7 @@ math: false
 
 > **核心要点**
 > - AI 编码工具将开发时间平均压缩 55%，特定安全漏洞修复场景下提速高达 12 倍，使个人项目以过去零头的成本成为可能（[GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024/)）。
-> - 全球 SaaS 市场预计到 2030 年将达到 9199.8 亿美元（复合年增长率 17.7%），AI 集成产品在新增长中占据超额份额（[Grand View Research](https://www.grandviewresearch.com/industry-analysis/software-as-a-service-saas-market-report), 2024）。
+> - 全球 SaaS 市场预计到 2030 年将达到 9199.8 亿美元（复合年增长率 17.7%），AI 集成产品在新增长中占据超额份额（[Grand View Research](https://www.grandviewresearch.com), 2024）。
 > - 仅 2-5% 的开发者副业能达到月经常性收入 1 万美元以上，但成功项目从启动到首次收入的中位数时间仅为 3-6 个月（[Indie Hackers](https://www.indiehackers.com), 2024）。
 > - 后端开发者拥有结构性优势：API 优先思维、数据建模能力和基础设施经验直接映射到 AI 原生产品开发中。
 > - 最大的风险不是失败——而是做出没人要的东西。在写代码之前先预售，是最有效的去风险手段。
@@ -172,7 +172,7 @@ AI 时代没有让后端开发者过时——而是极大地放大了他们的�
 - GitHub Blog, "The AI wave grows among developers." 检索于 2026-07-27. [https://github.blog/news-insights/research/survey-ai-wave-grows/](https://github.blog/news-insights/research/survey-ai-wave-grows/)
 - Stack Overflow Developer Survey 2024. 检索于 2026-07-27. [https://survey.stackoverflow.co/2024/](https://survey.stackoverflow.co/2024/)
 - Indie Hackers Annual Survey 2024. 检索于 2026-07-27. [https://www.indiehackers.com](https://www.indiehackers.com)
-- Grand View Research, "Software as a Service (SaaS) Market Report." 检索于 2026-07-27. [https://www.grandviewresearch.com/industry-analysis/software-as-a-service-saas-market-report](https://www.grandviewresearch.com/industry-analysis/software-as-a-service-saas-market-report)
+- Grand View Research, "Software as a Service (SaaS) Market Report." 检索于 2026-07-27. [https://www.grandviewresearch.com](https://www.grandviewresearch.com)
 - Fortune Business Insights, "SaaS Market Forecast." 检索于 2026-07-27. [https://www.fortunebusinessinsights.com](https://www.fortunebusinessinsights.com)
 - 中国企业联合会, "企业数字化成熟度报告." 2024. 检索于 2026-07-27. [http://www.cec-ceda.org.cn/](http://www.cec-ceda.org.cn/)
 - a16z, "State of AI Applications." 2025. 检索于 2026-07-27. [https://a16z.com](https://a16z.com)

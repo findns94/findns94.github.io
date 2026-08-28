@@ -57,7 +57,7 @@ What does this mean in practice? By the time NBER says a recession ended, the ma
 
 The employment data has its own credibility gap. The BLS birth-death model — which estimates jobs created by new businesses not yet in the survey — contributed to an overestimate of approximately **818,000 payroll jobs** for the year ending March 2024 ([Wolf Street](https://wolfstreet.com/2024/), 2024). The model had been assuming 100,000-150,000 net new jobs per month from business formation, an assumption that proved wildly optimistic as startup activity slowed and closures accelerated.
 
-CPI shelter data presents yet another timing problem. The Zillow Observed Rent Index leads CPI shelter inflation by approximately **6 months** ([Zillow Research](https://www.zillow.com/research/data/), 2024). Because BLS captures lease renewals over time rather than new-market rents, the official shelter component lags reality by half a year or more. In 2023-2024, anyone reading CPI shelter as "still elevated" was actually looking at rents that had already fallen in real time.
+CPI shelter data presents yet another timing problem. The Zillow Observed Rent Index leads CPI shelter inflation by approximately **6 months** ([Zillow Research](https://www.zillow.com), 2024). Because BLS captures lease renewals over time rather than new-market rents, the official shelter component lags reality by half a year or more. In 2023-2024, anyone reading CPI shelter as "still elevated" was actually looking at rents that had already fallen in real time.
 
 Here's the uncomfortable truth: the most-cited US economic indicators are systematically backward-looking by the time they're published. According to the NBER's own announcement history, recession troughs are declared an average of 12-15 months after they occur ([NBER](https://www.nber.org/research/business-cycle-dating/business-cycle-dating-committee-announcements), 2020). For investors, this means real-time decision-making requires supplementing official data with higher-frequency alternatives.
 
@@ -90,7 +90,7 @@ If official data is unreliable, what should investors use instead? In 2024, **67
 
 In the US, several alternatives offer real-time or near-real-time reads. The ADP National Employment Report, released one day before the BLS nonfarm payrolls, provides a private-sector payroll count based on actual payroll data from 25 million workers. The ISM Purchasing Managers' Indexes — both manufacturing and services — offer monthly sentiment reads that often diverge from hard data, providing an early signal of turning points.
 
-For inflation tracking, the Zillow Observed Rent Index (ZORI) leads CPI shelter by approximately 6 months ([Zillow Research](https://www.zillow.com/research/data/), 2024). During the 2022-2023 inflation surge, ZORI peaked and began declining a full half-year before CPI shelter caught up. Investors who tracked Zillow data understood the true rent trajectory long before the official numbers confirmed it.
+For inflation tracking, the Zillow Observed Rent Index (ZORI) leads CPI shelter by approximately 6 months ([Zillow Research](https://www.zillow.com), 2024). During the 2022-2023 inflation surge, ZORI peaked and began declining a full half-year before CPI shelter caught up. Investors who tracked Zillow data understood the true rent trajectory long before the official numbers confirmed it.
 
 ![Stock market trading floor with digital screens showing live market data](/posts/investment-decisions-inaccurate-macro-statistics/images/stock-market.jpg)
 
@@ -174,7 +174,7 @@ The age of blind trust in government statistics is over. The age of data-literat
 - National Bureau of Statistics (NBS) China, 2024, https://www.stats.gov.cn/
 - Reuters, coverage of Liaoning GDP falsification, 2017, https://www.reuters.com/
 - Reuters, coverage of Inner Mongolia data falsification, 2018, https://www.reuters.com/
-- Zillow Research, ZORI Data, 2024, https://www.zillow.com/research/data/
+- Zillow Research, ZORI Data, 2024, https://www.zillow.com
 - Greenwich Associates, Institutional Investors Increase Alternative Data Adoption, 2024, https://www.greenwich.com/press-release/institutional-investors-significantly-increase-alternative-data-adoption
 - Federal Reserve Economic Data (FRED), 10-Year Treasury Yield (DGS10), 2013, https://fred.stlouisfed.org/series/DGS10
 - Wolf Street, BLS Birth-Death Model Analysis, 2024, https://wolfstreet.com/2024/

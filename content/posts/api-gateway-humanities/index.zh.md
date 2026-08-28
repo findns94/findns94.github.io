@@ -104,7 +104,7 @@ API 网关是一个单一的入口点，坐落在外部世界与一组内部服�
 
 ![面积图展示 API 网关市场从 2024 年的 28 亿美元增长至 2030 年预计的 68 亿美元](/posts/api-gateway-humanities/images/chart-market-growth.svg)
 
-数字道出了这一转变的规模。Grand View Research 估计 API 网关市场在 2024 年为 28 亿美元，预计到 2030 年达到 68 亿美元（[Grand View Research](https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report), 2025）。MarketsandMarkets 给出的 2024 年数字为 22 亿美元，同样预测到 2029 年达到 68 亿美元（[MarketsandMarkets](https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html), 2024）。每位预测者都同意：系统越复杂，守门人越有价值。规模永远需要守门人——唯一会变的，是握门的那个"谁"或"什么"。
+数字道出了这一转变的规模。Grand View Research 估计 API 网关市场在 2024 年为 28 亿美元，预计到 2030 年达到 68 亿美元（[Grand View Research](https://www.grandviewresearch.com), 2025）。MarketsandMarkets 给出的 2024 年数字为 22 亿美元，同样预测到 2029 年达到 68 亿美元（[MarketsandMarkets](https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html), 2024）。每位预测者都同意：系统越复杂，守门人越有价值。规模永远需要守门人——唯一会变的，是握门的那个"谁"或"什么"。
 
 ## 常见问题
 
@@ -132,7 +132,7 @@ API 网关是一个单一的入口点，控制与保护外部请求和组织内�
 
 API 网关是互联网的守门人——而"把关"，远非一个贬义词，正是复杂系统保持可读、公平与安全的方式。它执行的四项职能——认证、限流、转换与日志——对应你早已熟悉的人文学科概念：边防、翻译、门卫与档案馆。
 
-数字印证了它的重要性。随着 82% 的组织采用 API 优先策略、网关市场朝 68 亿美元迈进，守门人不会退场（[Postman](https://www.postman.com/state-of-api/2025/), 2025; [Grand View Research](https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report), 2025）。但最关键的洞见并非技术层面的。它是勒温在 1947 年给我们的那一条：每道门都是一个抉择。下一次你轻点应用、回复倏然出现时，请想象一下——你的请求刚刚通过的那道检查站——并且记住，在某处，有谁来定了那些规则。
+数字印证了它的重要性。随着 82% 的组织采用 API 优先策略、网关市场朝 68 亿美元迈进，守门人不会退场（[Postman](https://www.postman.com/state-of-api/2025/), 2025; [Grand View Research](https://www.grandviewresearch.com), 2025）。但最关键的洞见并非技术层面的。它是勒温在 1947 年给我们的那一条：每道门都是一个抉择。下一次你轻点应用、回复倏然出现时，请想象一下——你的请求刚刚通过的那道检查站——并且记住，在某处，有谁来定了那些规则。
 
 ---
 
@@ -141,6 +141,6 @@ API 网关是互联网的守门人——而"把关"，远非一个贬义词，�
 - Postman. "2025 State of the API Report." 2025. Retrieved 2026-07-19. [https://www.postman.com/state-of-api/2025/](https://www.postman.com/state-of-api/2025/)
 - Salt Security. "State of API Security Report 2024." 2024. Retrieved 2026-07-19. [https://www.salt.security/resource/api-security-research-report](https://www.salt.security/resource/api-security-research-report)
 - Akamai. "State of API Security 2024." 2024. Retrieved 2026-07-19. [https://www.akamai.com/blog/security-research/state-of-api-security-2024](https://www.akamai.com/blog/security-research/state-of-api-security-2024)
-- Grand View Research. "API Gateway Market Size & Share Report, 2025–2032." 2025. Retrieved 2026-07-19. [https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report](https://www.grandviewresearch.com/industry-analysis/api-gateway-market-report)
+- Grand View Research. "API Gateway Market Size & Share Report, 2025–2032." 2025. Retrieved 2026-07-19. [https://www.grandviewresearch.com](https://www.grandviewresearch.com)
 - MarketsandMarkets. "API Gateway Market – Global Forecast to 2029." 2024. Retrieved 2026-07-19. [https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html](https://www.marketsandmarkets.com/Market-Reports/api-gateway-market-248389080.html)
 - Traceable AI. "State of API Security 2024." 2024. Retrieved 2026-07-19. [https://www.traceable.ai/blog](https://www.traceable.ai/blog)

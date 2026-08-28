@@ -135,8 +135,8 @@ Start tonight. Grab a bottle of rum, squeeze a lime, dissolve some sugar in warm
 ## Sources
 
 - Mordor Intelligence, "Ready-to-Drink Cocktails Market Size & Share Analysis," 2025, https://www.mordorintelligence.com/industry-reports/ready-to-drink-cocktails-market
-- Fortune Business Insights, "Ready-to-Drink Cocktails Market Size, Share & COVID-19 Impact Analysis," 2025, https://www.fortunebusinessinsights.com/ready-to-drink-cocktails-market-108657
-- Grand View Research, "Ready-to-Drink Cocktails Market Size, Share & Trends Analysis Report," 2025, https://www.grandviewresearch.com/industry-analysis/ready-to-drink-cocktails-market-report
+- Fortune Business Insights, "Ready-to-Drink Cocktails Market Size, Share & COVID-19 Impact Analysis," 2025, https://www.fortunebusinessinsights.com
+- Grand View Research, "Ready-to-Drink Cocktails Market Size, Share & Trends Analysis Report," 2025, https://www.grandviewresearch.com
 - U.S. Bureau of Labor Statistics, "Consumer Expenditure Surveys, Table 1300," 2024, https://www.bls.gov/cex/
 - TheCocktailDB, "Open, Crowdsourced Database of Drinks and Cocktails," 2025, https://www.thecocktaildb.com/
 - Difford's Guide, "Classic Cocktail Proportions and Ratios," 2025, https://www.diffordsguide.com/
