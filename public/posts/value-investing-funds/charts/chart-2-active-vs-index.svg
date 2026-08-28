@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Active Funds vs CSI 300 Index 10-Year Performance">
+  <title>Active Funds vs CSI 300 Index: 10-Year Performance</title>
+  <desc>Grouped bar chart comparing cumulative returns of CSI 300 Index, average active fund, top quartile active fund, and bottom quartile active fund from 2015 to 2025</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .axis { stroke: #666; stroke-width: 1; }
+    .bar-index { fill: #3b82f6; }
+    .bar-avg { fill: #f59e0b; }
+    .bar-top { fill: #22c55e; }
+    .bar-bottom { fill: #ef4444; }
+    .label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: 600; }
+    .source { font-size: 9px; fill: #888; }
+    .value { font-size: 12px; font-weight: 600; }
+  </style>
+
+  <!-- Axes -->
+  <line x1="80" y1="40" x2="80" y2="300" class="axis"/>
+  <line x1="80" y1="300" x2="530" y2="300" class="axis"/>
+
+  <!-- Y-axis labels -->
+  <text x="70" y="44" text-anchor="end" class="label">70%</text>
+  <text x="70" y="100" text-anchor="end" class="label">60%</text>
+  <text x="70" y="150" text-anchor="end" class="label">40%</text>
+  <text x="70" y="200" text-anchor="end" class="label">20%</text>
+  <text x="70" y="250" text-anchor="end" class="label">10%</text>
+  <text x="70" y="304" text-anchor="end" class="label">0%</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="100" x2="530" y2="100" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="80" y1="150" x2="530" y2="150" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="80" y1="200" x2="530" y2="200" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="80" y1="250" x2="530" y2="250" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- Group 1: CSI 300 Index (45%) -->
+  <rect x="110" y="165" width="50" height="135" class="bar-index" rx="3"/>
+  <text x="135" y="158" text-anchor="middle" class="value" fill="#3b82f6">45%</text>
+  <text x="135" y="320" text-anchor="middle" class="label">CSI 300</text>
+
+  <!-- Group 2: Average Active Fund (35%) -->
+  <rect x="190" y="195" width="50" height="105" class="bar-avg" rx="3"/>
+  <text x="215" y="188" text-anchor="middle" class="value" fill="#f59e0b">35%</text>
+  <text x="215" y="320" text-anchor="middle" class="label">Avg Active</text>
+
+  <!-- Group 3: Top Quartile Active (65%) -->
+  <rect x="290" y="105" width="50" height="195" class="bar-top" rx="3"/>
+  <text x="315" y="98" text-anchor="middle" class="value" fill="#22c55e">65%</text>
+  <text x="315" y="320" text-anchor="middle" class="label">Top 25%</text>
+
+  <!-- Group 4: Bottom Quartile Active (10%) -->
+  <rect x="390" y="270" width="50" height="30" class="bar-bottom" rx="3"/>
+  <text x="415" y="263" text-anchor="middle" class="value" fill="#ef4444">10%</text>
+  <text x="415" y="320" text-anchor="middle" class="label">Bottom 25%</text>
+
+  <!-- Legend -->
+  <rect x="100" y="335" width="12" height="12" class="bar-index" rx="2"/>
+  <text x="118" y="345" class="label">CSI 300 Index</text>
+  <rect x="200" y="335" width="12" height="12" class="bar-avg" rx="2"/>
+  <text x="218" y="345" class="label">Avg Active Fund</text>
+  <rect x="310" y="335" width="12" height="12" class="bar-top" rx="2"/>
+  <text x="328" y="345" class="label">Top Quartile</text>
+  <rect x="410" y="335" width="12" height="12" class="bar-bottom" rx="2"/>
+  <text x="428" y="345" class="label">Bottom Quartile</text>
+
+  <!-- Title -->
+  <text x="280" y="20" text-anchor="middle" class="title">Active Funds vs CSI 300 Index: 10-Year Performance (2015-2025)</text>
+
+  <!-- Source -->
+  <text x="280" y="370" text-anchor="middle" class="source">Source: Wind, AMAC, 2025. Cumulative returns after fees.</text>
+</svg>

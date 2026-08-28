@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="DCA with Valuation vs Lump Sum DCA Strategy Comparison">
+  <title>DCA with Valuation vs Lump Sum: CSI 300 (2010-2025)</title>
+  <desc>Line chart comparing cumulative returns of lump-sum investment, fixed DCA, and valuation-aware DCA strategies for CSI 300 from 2010 to 2025</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .axis { stroke: #666; stroke-width: 1; }
+    .grid { stroke: #333; stroke-width: 0.5; stroke-dasharray: 4,4; }
+    .line-lump { stroke: #f59e0b; stroke-width: 2.5; fill: none; }
+    .line-dca { stroke: #8b5cf6; stroke-width: 2.5; fill: none; }
+    .line-valuation { stroke: #22c55e; stroke-width: 2.5; fill: none; }
+    .label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: 600; }
+    .source { font-size: 9px; fill: #888; }
+    .legend-text { font-size: 11px; }
+  </style>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="80" x2="530" y2="80" class="grid"/>
+  <line x1="60" y1="140" x2="530" y2="140" class="grid"/>
+  <line x1="60" y1="200" x2="530" y2="200" class="grid"/>
+  <line x1="60" y1="260" x2="530" y2="260" class="grid"/>
+  <line x1="60" y1="320" x2="530" y2="320" class="grid"/>
+
+  <!-- Axes -->
+  <line x1="60" y1="40" x2="60" y2="320" class="axis"/>
+  <line x1="60" y1="320" x2="530" y2="320" class="axis"/>
+
+  <!-- Y-axis labels -->
+  <text x="50" y="44" text-anchor="end" class="label">80%</text>
+  <text x="50" y="84" text-anchor="end" class="label">60%</text>
+  <text x="50" y="144" text-anchor="end" class="label">40%</text>
+  <text x="50" y="204" text-anchor="end" class="label">20%</text>
+  <text x="50" y="264" text-anchor="end" class="label">0%</text>
+  <text x="50" y="324" text-anchor="end" class="label">-20%</text>
+
+  <!-- X-axis labels -->
+  <text x="60" y="345" text-anchor="middle" class="label">2010</text>
+  <text x="140" y="345" text-anchor="middle" class="label">2012</text>
+  <text x="220" y="345" text-anchor="middle" class="label">2014</text>
+  <text x="300" y="345" text-anchor="middle" class="label">2016</text>
+  <text x="380" y="345" text-anchor="middle" class="label">2018</text>
+  <text x="460" y="345" text-anchor="middle" class="label">2022</text>
+  <text x="530" y="345" text-anchor="middle" class="label">2025</text>
+
+  <!-- Lump Sum line (60% final) -->
+  <polyline class="line-lump" points="
+    60,260
+    100,240
+    140,200
+    180,280
+    220,220
+    260,180
+    300,250
+    340,200
+    380,230
+    420,190
+    460,220
+    500,200
+    530,230
+  "/>
+
+  <!-- DCA line (45% final) -->
+  <polyline class="line-dca" points="
+    60,270
+    100,260
+    140,230
+    180,290
+    220,250
+    260,220
+    300,270
+    340,240
+    380,260
+    420,230
+    460,250
+    500,240
+    530,260
+  "/>
+
+  <!-- Valuation-aware DCA line (75% final) -->
+  <polyline class="line-valuation" points="
+    60,280
+    100,250
+    140,180
+    180,260
+    220,200
+    260,150
+    300,230
+    340,180
+    380,210
+    420,160
+    460,190
+    500,160
+    530,190
+  "/>
+
+  <!-- Final value markers -->
+  <circle cx="530" cy="230" r="5" fill="#f59e0b"/>
+  <text x="520" y="225" class="legend-text" fill="#f59e0b">60%</text>
+
+  <circle cx="530" cy="260" r="5" fill="#8b5cf6"/>
+  <text x="520" y="275" class="legend-text" fill="#8b5cf6">45%</text>
+
+  <circle cx="530" cy="190" r="5" fill="#22c55e"/>
+  <text x="520" y="185" class="legend-text" fill="#22c55e">75%</text>
+
+  <!-- Legend -->
+  <line x1="80" y1="355" x2="110" y2="355" class="line-valuation"/>
+  <text x="118" y="359" class="legend-text">Valuation-Aware DCA</text>
+  <line x1="230" y1="355" x2="260" y2="355" class="line-lump"/>
+  <text x="268" y="359" class="legend-text">Lump Sum</text>
+  <line x1="350" y1="355" x2="380" y2="355" class="line-dca"/>
+  <text x="388" y="359" class="legend-text">Fixed DCA</text>
+
+  <!-- Title -->
+  <text x="280" y="20" text-anchor="middle" class="title">DCA with Valuation vs Lump Sum: CSI 300 (2010-2025)</text>
+
+  <!-- Source -->
+  <text x="280" y="375" text-anchor="middle" class="source">Source: Backtest data from AKShare, 2025. Cumulative returns with dividends reinvested.</text>
+</svg>
