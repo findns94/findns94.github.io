@@ -22,6 +22,8 @@ This article walks through the kernel module source top-down: the core data stru
 
 <!-- [UNIQUE INSIGHT] The FUSE kernel module's request lifecycle is a masterclass in kernel async I/O design: a VFS call allocates a request, marks it FR_PENDING, enqueues it, then sleeps on req->waitq. The userspace daemon reads it from /dev/fuse, processes it, writes the response, and the kernel sets FR_FINISHED and wakes up the sleeper. Understanding this single pipeline explains 80% of the module. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The FUSE kernel module lives at `fs/fuse/` in the Linux source — ~13,000+ lines across 30+ files, merged in kernel 2.6.14 (2005), actively maintained by Miklos Szeredi.
 > - Every VFS call goes through a FUSE operation (e.g., `fuse_read_iter()`) that allocates a `fuse_req`, enqueues it on the connection's pending queue, and waits. Userspace reads the request from `/dev/fuse`, processes it, writes the response back, and the kernel wakes up the waiting VFS call.

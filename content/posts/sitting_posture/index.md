@@ -24,6 +24,8 @@ Prolonged sitting with improper posture causes musculoskeletal disorders — and
 > - The full pipeline — skeleton thinning, averaging process, and flexion-angle threshold — runs in real time on consumer depth-camera hardware (OpenNI/NiTE).
 > - Unlike wearable-sensor approaches, this system never touches the user, making it suitable for classrooms and offices.
 
+<!-- more -->
+
 For a related computer-vision project on this site, see [Transfer Learning for Face Recognition](/posts/face/).
 
 ## What Methods Exist for Analyzing Sitting Posture?

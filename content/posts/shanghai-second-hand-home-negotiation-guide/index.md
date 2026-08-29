@@ -20,6 +20,8 @@ Shanghai's second-hand market in 2026 is a buyer's market by every structural me
 
 This guide walks you through a research-backed negotiation framework built on Shanghai transaction data: how to read the market, how to size up your specific landlord, how to build an offer the numbers support, and how to close without leaving money on the table.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Shanghai's second-hand price index sits roughly 20% below its 2021 peak, with inventory exceeding 180,000 units — a structurally favorable market for buyers ([Beike Research Institute](https://www.ke.com), 2025–2026).
 > - Average city-wide negotiation room runs 5–8%, but outer-ring districts offer 8–15% and far suburbs 15–20%+ below asking.

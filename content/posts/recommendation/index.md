@@ -16,6 +16,8 @@ The average corporate job posting draws **250 resumes** ([iCIMS](https://www.ici
 
 The result was a prototype that processed **1.06 million resumes**, trained a binary talent classifier on 1,300 labeled examples, and returned the top-100 most relevant candidates for any given IT job description. This post walks through how we designed the classification pipeline, the recommendation algorithm, and the offline incremental architecture that made it all run.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - We processed 1.06 million resumes on Hadoop using an offline incremental pipeline — the distributed cluster runs batch jobs and pipes results into MySQL for real-time frontend display.
 > - A Mahout logistic regression classifier, trained on 1,300 manually labeled resumes (1,000 train / 300 test), assigns every resume a "talent probability" score.

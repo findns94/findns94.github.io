@@ -20,6 +20,8 @@ The first clue something was off: many of the "broken" links were to major, well
 
 This article is the story of what happened when I tried six different methods to access bot-protected links — from simple `curl` commands to a real Chromium browser connected via Chrome DevTools Protocol. I'll show you exactly what works, what doesn't, and why Cloudflare's detection is so hard to beat.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - **403 ≠ broken**: Most "broken" links return 403 because of bot detection, not because the page is gone
 > - **Three levels of protection**: Cloudflare uses UA checks, browser fingerprinting, and JavaScript challenges — each requires a different bypass strategy

@@ -18,6 +18,8 @@ Ubuntu's 24.04 LTS (Noble Numbat) ships kernel **6.8.0-90.91** — a build that 
 
 Compiling that kernel from source lets you do what pre-built packages cannot: verify exactly what code runs on your machine, add or remove kernel configuration options, test your own patches against Ubuntu's full patch stack, or build a flavour that matches your workload. This guide walks through two complete, tested paths using the real Ubuntu 6.8.0-90.91 source tree: the **Debian packaging workflow** (produces installable `.deb` packages) and the **vanilla `make` workflow** (produces raw kernel images for quick experiments).
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Ubuntu kernel source is not mainline: the `debian/` and `debian.master/` directories add packaging, ABI tracking, and flavour-specific configuration layers on top of upstream.
 > - Two build paths serve different needs — `fakeroot debian/rules binary` produces signed `.deb` packages with clean rollback; `make -j$(nproc)` produces raw images for fast iteration.

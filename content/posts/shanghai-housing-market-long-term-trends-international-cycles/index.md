@@ -22,6 +22,8 @@ Japan's six-city residential land price index peaked in 1991. By 2004, prime Tok
 
 This article compares Shanghai's current position against the full arc of real-estate cycles in Japan, the United States, the United Kingdom and Spain. The goal is not a hot take. It is a framework for thinking about the next 10 to 20 years with clear eyes.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Japan's Tokyo residential land prices took roughly 33 years to recover to just 28% of their 1991 bubble peak — a "lost generation" of returns ([Japan Real Estate Institute](https://www.reinet.or.jp), 2024).
 > - US home prices fell 27% nationally (35% in the 10/20-City composite) from 2006 to 2012 and took about a decade to recover in nominal terms ([S&P CoreLogic Case-Shiller](https://www.spglobal.com), 2024).

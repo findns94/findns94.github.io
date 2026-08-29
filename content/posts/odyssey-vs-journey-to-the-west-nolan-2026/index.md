@@ -16,6 +16,8 @@ Two civilizations, two journeys, one universal itch to come home. When Christoph
 
 The answer says as much about us as it does about the stories.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Nolan's *The Odyssey* grossed $1.119B in three weeks, nearly doubling the previous mythology-epic record held by *Troy* ($497M).
 > - Homer's *Odyssey* (~8th century BCE) is the most translated ancient work after the Bible; *Journey to the West* (16th century) has 50–100+ screen adaptations.

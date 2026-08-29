@@ -18,6 +18,8 @@ The world's second-largest economy is caught in a deflationary trap: a property 
 
 This article analyzes five major international deflation episodes spanning 100+ years — the US Great Depression, post-WWI Britain, the Gold Bloc countries, Japan's Lost Decades, and the 2009 Global Financial Crisis — to build a data-driven framework for predicting when China's economy will emerge from deflation.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - China's 2024 CPI (+0.2%) and PPI (–2.2%) mirror pre-Abe Japan — but history offers five distinct deflation exit paths (monetary regime change, fiscal stimulus, exchange rate adjustment, QE + bank rescue, or chronic trap) with very different timelines ([NBS](https://www.stats.gov.cn/english/PressRelease/), 2025; Bordo et al., 2004).
 > - Deflations ended in months-to-2 years when policymakers acted decisively (US 1933 gold exit, US 2009 QE), but lasted 7–20+ years when adjustment was delayed (Gold Bloc 1929–1936, Japan 1990–2014) — the key variable is policy decisiveness, not deflation severity.

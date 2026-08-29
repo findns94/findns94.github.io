@@ -20,6 +20,8 @@ If you're raising a family in Shanghai right now, you're watching AI reshape chi
 
 This guide gives Shanghai parents of children aged 3–12 a six-step framework for introducing AI education safely, effectively, and in line with both Chinese regulations and global developmental science.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Shanghai sits at the top of China's AI-education pyramid: tier-1 cities show 40–60% participation in AI courses versus a 12–15% national average ([iResearch](https://www.iresearch.com.cn), 2024).
 > - China's December 2024 National Health Commission guidelines cap screens at under 20 min/session for ages 3–6 — among the strictest on earth, and stricter than the WHO's 1-hour daily guideline ([China Daily](https://www.chinadaily.com.cn), 2024).

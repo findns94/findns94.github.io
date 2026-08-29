@@ -22,6 +22,8 @@ tags: [Linux, Kernel, Open Source]
 
 <!-- [UNIQUE INSIGHT] 大多数教程从消费者视角（如何编写一个文件系统）解释 FUSE。本文从库的视角（libfuse 本身如何构建）来剖析。理解库的内部实现，能让你成为更好的 FUSE 开发者——你会清楚地看到高级 API 在底层究竟引入了多少开销，以及何时应该降级使用底层 API。 -->
 
+<!-- more -->
+
 > **核心要点**
 > - libfuse 提供两套 API：**高级 API**（`fuse.c`，基于路径，同步回调）和**底层 API**（`fuse_lowlevel.c`，基于 inode，显式调用 `fuse_reply_*()`）。高级 API 本质上是底层 API 的一层薄封装。
 > - 所有 FUSE 操作遵循同一条管线：内核 → `/dev/fuse` → `fuse_session_receive()` → 基于操作码索引的分发表 → 你的回调 → `fuse_reply_*()` → 内核。分发表 `fuse_ll_ops[]` 是整个库最重要的数据结构。

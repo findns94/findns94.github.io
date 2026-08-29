@@ -22,6 +22,8 @@ This article fixes that. We will walk through the source top-down: what libfuse 
 
 <!-- [UNIQUE INSIGHT] Most tutorials explain FUSE from the consumer's side (how to write a filesystem). This post explains it from the library's side (how libfuse itself is built). Understanding the library's internals makes you a better FUSE developer because you see exactly what overhead the high-level API adds and when to drop down to the low-level API. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - libfuse provides two APIs: the **high-level** API (`fuse.c`, path-based, synchronous callbacks) and the **low-level** API (`fuse_lowlevel.c`, inode-based, explicit `fuse_reply_*()` calls). The high-level API is a thin wrapper over the low-level one.
 > - Every FUSE operation follows one pipeline: kernel → `/dev/fuse` → `fuse_session_receive()` → opcode-indexed dispatch table → your callback → `fuse_reply_*()` → kernel. The dispatch table `fuse_ll_ops[]` is the single most important data structure in the library.

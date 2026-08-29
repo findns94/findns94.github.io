@@ -18,6 +18,8 @@ In 2025, the global ready-to-drink cocktail market reached $11.13 billion ([Mord
 
 Most beginners assume cocktail mixing demands expensive tools, rare liqueurs, and years of training. That myth keeps talented home cooks from ever picking up a shaker. The truth is simpler: a bottle of spirit, a lemon, some sugar, and ice can produce drinks that rival any craft cocktail bar. This guide walks you through the creative, practical art of mixing cocktails from pantry staples — no fancy equipment required.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The RTD cocktail market hit $11.13B in 2025, yet home mixing saves 70-85% per drink versus bar prices ([Mordor Intelligence](https://www.mordorintelligence.com), 2025).
 > - The classic 2:1:1 ratio (spirit:citrus:sweet) forms the backbone of over 60% of all classic cocktails.

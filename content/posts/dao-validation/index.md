@@ -23,6 +23,8 @@ Ethereum's most important technical contribution is the smart contract: a progra
 
 Because contract contents are public, a contract can prove that its claimed features are genuine, for example a virtual casino can prove it is fair (Piasecki, Ledger, 2016). On the other hand, the public nature of contracts also means that if a vulnerability exists in the contract, anyone can immediately see it, while fixing the code may take some time (Peck, IEEE Spectrum, 2016). The DAO is an example of an incident that could not have been stopped in real time (Popper, The New York Times, 2016).
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The DAO raised 11.7M Ether (~$245M) before a recursive-call vulnerability let an attacker drain funds, making it the largest crowdfunding project of its time.
 > - A NuSMV state-machine model of the splitDAO transaction flow successfully reproduced the vulnerability, producing a counterexample where the attacker extracts 14 Ether instead of the expected 12.

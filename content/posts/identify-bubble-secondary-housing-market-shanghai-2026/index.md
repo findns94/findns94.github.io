@@ -18,6 +18,8 @@ If you own a Shanghai apartment or plan to shop for one, the question is no long
 
 Housing bubbles are easy to spot in hindsight and nearly impossible to confirm in real time — until you measure the right indicators. This article walks through six classic bubble signals drawn from decades of cross-country evidence, then applies each one to Shanghai's secondary market as it stands in 2026. The goal is a framework you can use yourself, not a forecast — because nobody can tell you exactly when a bubble pops.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Shanghai's price-to-income ratio of 29.6x is roughly six times the historical norm of 3-5x, a level consistent with past bubbles ([Numbeo](https://www.numbeo.com), 2026).
 > - Six indicators — price-to-income, price-to-rent, rental yield, inventory, transaction-volume divergence, and mortgage stress — together signal bubble risk more reliably than any single metric.

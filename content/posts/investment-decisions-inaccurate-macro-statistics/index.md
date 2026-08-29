@@ -20,6 +20,8 @@ These aren't isolated incidents. They're symptoms of a structural problem: the m
 
 So how do you invest wisely when the numbers themselves can't be fully trusted? This article examines why macro data is so unreliable, compares the US and Chinese statistical systems, and gives you a practical framework for making better decisions despite the noise.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - In 2024, US payrolls were revised down by 306,000 jobs; China's provincial GDP exceeded the national total by 2.8 trillion yuan.
 > - NBER announces recession troughs up to 21 months after they occur — investors must identify turns independently.

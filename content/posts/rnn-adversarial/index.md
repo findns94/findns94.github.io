@@ -19,6 +19,8 @@ This post summarizes two hands-on experiments from a Fall 2018 Computational Lin
 
 <!-- [PERSONAL EXPERIENCE] Course project: CL6 assignment, Fall 2018. Built and ran both attacks first-hand. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - An FGSM-style perturbation in embedding space can flip an RNN language model's next-word prediction with a single-word substitution (PTB experiment: `was` → `being`).
 > - A DeepFool-style iterative perturbation fools a seq2seq corrector by changing one character (`s` → `b`) so the model no longer corrects it.

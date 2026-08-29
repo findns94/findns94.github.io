@@ -17,6 +17,8 @@ Multicore hardware is now standard, and multithreaded JVM applications run every
 
 Existing detection methods each hit a wall. System testing and symbolic execution cannot scale to large programs because the state space explodes exponentially. Probabilistic scheduling explores more paths but has a low defect hit rate, so it misses the bugs that matter. DATE-Confu, a tool the DATE team built around dynamic program testing, takes a different approach. It combines guided schedule fuzzing with symbolic trace analysis to reach higher coverage faster, and it won second place in the Software Prototype Competition at NASAC 2017. This post walks through how the tool works: the architecture, the bytecode instrumentation, the scheduling algorithms that drive the fuzzing, and the three core detection algorithms for data races, null pointer dereferences, and deadlocks. If you're interested in how bug-detection workflows operate in other domains, the [kernel bug detection workflow](/posts/kernel-bugfix-patching-workflow-ai/) offers a useful contrast.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - DATE-Confu couples guided schedule fuzzing with symbolic trace analysis, so each technique compensates for the other's blind spots and the tool reaches higher coverage faster.
 > - It detects six defect classes, including data races, deadlocks, and null pointer dereferences (CWE-476), and users select which types to target.

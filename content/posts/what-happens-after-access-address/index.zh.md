@@ -20,6 +20,8 @@ tags: [Linux, Kernel, Open Source]
 
 <!-- [UNIQUE INSIGHT] ARM64 页表遍历是少数几处内核源码与硬件规范完全咬合的环节：每一级（PGD→PUD→PMD→PTE）对应虚拟地址中特定的位段，内核的 __handle_mm_fault 与 MMU 的硬件遍历一一对应。理解这种一一对应关系，是流畅阅读 ARM 架构手册和 fault.c 的关键。 -->
 
+<!-- more -->
+
 > **核心要点**
 > - 当 ARM64 CPU 访问一个未映射的虚拟地址时，MMU 触发数据中止（读/写）或指令中止（执行）异常，内核通过 `arch/arm64/kernel/entry-common.c` 中的 `el0t_64_sync_handler` 捕获它。
 > - 缺页处理链——`do_mem_abort` → `do_translation_fault` → `do_page_fault` → `handle_mm_fault` → `__handle_mm_fault`——负责校验 vma、遍历页表，并调用 `do_anonymous_page` 分配物理页框。

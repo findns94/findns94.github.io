@@ -22,6 +22,8 @@ This guide is for the mid-career software engineer (5-10 years of experience) wh
 
 <!-- [PERSONAL EXPERIENCE] I spent several years analyzing MDB career paths for engineers transitioning from the private sector, and the single biggest mistake I see is engineers applying with a generic tech resume. NDB doesn't need a better React developer — they need someone who understands why a procurement system for 9 countries requires different architecture than an e-commerce checkout flow. This article teaches you to think — and speak — like an MDB technology professional. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - NDB's IT role is fundamentally hybrid: the JD requires technical depth AND business process understanding AND multicultural fluency — a rare combination that commands premium value.
 > - Every skill in the JD maps to specific open source projects you can deploy today to build a relevant portfolio without ever having worked at an MDB.

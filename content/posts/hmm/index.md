@@ -19,6 +19,8 @@ This post walks through how an HMM computes sentence probability, step by step, 
 
 <!-- [PERSONAL EXPERIENCE] Course project: Computational Linguistics assignment 5, Fall 2018. We implemented and tested both the forward and backward algorithms first-hand, built the full matrices from the training corpus, and ran all experiments described below. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - An HMM models sentence probability as a sequence of hidden part-of-speech states that emit observed words. The full model is $\lambda = (A, B, \pi)$: a state transition matrix $A$, an observation probability matrix $B$, and an initial state distribution $\pi$.
 > - The forward algorithm and backward algorithm both compute $P(O|\lambda)$ and always yield the same result. On the example sentence 迈向/v 充满/v 希望/n 的/u 新/a 世纪/n, both give $0.00390625$.

@@ -20,6 +20,8 @@ Value investing has always rewarded specialization. Warren Buffett called it the
 
 <!-- [PERSONAL EXPERIENCE] I started investing in 2019 by reading the same newsletters as everyone else. The results were mediocre. The turning point came when I stopped trying to understand biotech and started applying my day job, evaluating tech business models, to my stock picks. The gap between what I understood and what I bought finally collapsed. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The average investor earned 12.19pp less than the S&P 500 in 2024; the 30-year gap averages 3.4pp annually ([Dalbar QAIB](https://www.dalbar.com), 2025).
 > - The global AI market reached $196.63B in 2024, growing at 36.6% per year ([Grand View Research](https://www.grandviewresearch.com), 2024).

@@ -28,12 +28,25 @@ export interface PostMeta {
 
 export { slugifyTag }
 
+// Clean Markdown syntax for excerpt: remove images, links (keep text), and HTML comments
+function cleanMarkdownForExcerpt(content: string): string {
+  return content
+    // Remove HTML comments: <!-- ... -->
+    .replace(/<!--[\s\S]*?-->/g, '')
+    // Remove Markdown images: ![alt](url)
+    .replace(/!\[([^\]]*)\]\(([^)]*)\)/g, '')
+    // Remove Markdown links, keep text: [text](url) → text
+    .replace(/\[([^\]]*)\]\(([^)]*)\)/g, '$1')
+    .trim()
+}
+
 // Extract excerpt from <!-- more --> separator
 function extractExcerpt(content: string): string {
   const moreIndex = content.indexOf('<!-- more -->')
-  return moreIndex > -1
+  const raw = moreIndex > -1
     ? content.slice(0, moreIndex).trim()
     : content.slice(0, 200).trim()
+  return cleanMarkdownForExcerpt(raw)
 }
 
 // Read a language-specific markdown file

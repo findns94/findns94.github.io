@@ -20,6 +20,8 @@ This overview maps those subsystems from a learner's perspective. Instead of rea
 
 <!-- [UNIQUE INSIGHT] The observability-first approach to learning the kernel: rather than reading subsystems in arbitrary order, follow the measurement tools (ftrace, perf, eBPF, /proc) to discover which subsystems matter for real workloads. Each tool's functional slice maps to a kernel subsystem — so learning the tool teaches the subsystem. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The Linux kernel has six core subsystems: interrupts, scheduler, memory, I/O, network, and drivers. Each maps to a set of source directories under `doc/linux/` that you can read top-down.
 > - The scheduler evolved from CFS (kernel 2.6.23) to EEVDF (kernel 6.6) — understanding both explains how Linux handles interactive vs. batch workloads today.

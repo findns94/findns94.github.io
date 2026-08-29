@@ -22,6 +22,8 @@ This guide gives you a repeatable framework for two things. First, how to identi
 
 <!-- [PERSONAL EXPERIENCE] I spent the last eighteen months back-testing factor strategies against A-share data, and the single clearest finding was not that value "works" or "fails" — it is that the spread between the best systematic process and the median investor's behavior is enormous, and it widens precisely during speculative bursts like the 2024 AI-fund boom. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The CSI 300 trades near 12–13x forward P/E, below its 10-year average, yet retail investors who drive 87–90% of A-share turnover earn 3–6% less annually than the funds they own ([CICC](https://www.cicc.com), [Morningstar](https://www.morningstar.com), 2024).
 > - "Quality at a value price" — combining high ROE with low P/B — returned +18.4% in 2024 versus +14.6% for the CSI 300; pure low-P/B lagged at +8.2% ([Huatai Securities](https://www.htsc.com), 2024).

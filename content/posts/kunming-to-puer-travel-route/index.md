@@ -19,6 +19,8 @@ Yunnan Province welcomed 704 million tourist visits in 2024, generating ¥1.14 t
 
 Whether you arrive in Kunming for a single evening or spend a full day exploring the Spring City, this route takes you south through three distinct climate zones — from Kunming's mild highland to Pu'er's subtropical tea country to Xishuangbanna's tropical monsoon lowlands. You will walk through thousand-year-old tea forests, taste bamboo rice cooked over an open fire, and sleep in villages where the morning fog rolls over the canopy. Every section below includes specific transport details, hotel recommendations, restaurant suggestions, and the practical information you need to book and go.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - The China-Laos Railway makes Kunming-to-Pu'er a 3-hour rail trip (¥146-200), turning this into a feasible long-weekend route from anywhere connected to Kunming ([Wikipedia — China-Laos Railway](https://en.wikipedia.org/wiki/China%E2%80%93Laos_Railway)).
 > - Jingmai Mountain is the world's first tea-themed UNESCO World Heritage site (2023) — its 1,000-year-old ancient tea forests anchor the entire journey ([UNESCO World Heritage Centre](https://whc.unesco.org/en/list/1665/)).

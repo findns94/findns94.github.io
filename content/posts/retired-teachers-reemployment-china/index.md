@@ -20,6 +20,8 @@ China's retired teachers are caught in a paradox. The country has 323 million pe
 
 This article offers a practical framework for families and caregivers who want to help retired history teachers over 60 find work that restores their sense of self-worth. We draw on data from China and Japan, examine why conventional job searches fail this demographic, and present a step-by-step approach grounded in real cases of Chinese retirees who successfully reentered the workforce.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - China's employment rate for ages 65-69 is just 15%, compared to 53% in Japan, revealing a massive gap in how the two societies utilize experienced workers ([Japan Statistics Bureau](https://www.stat.go.jp/english/data/roudou/), 2024; [CHARLS/CASS](https://charls.pku.edu.cn/en/), 2024).
 > - Retired history teachers possess transferable skills (mentoring, curriculum design, public speaking, research) that are undervalued by conventional job boards but highly sought after in tutoring, community education, and cultural institutions.

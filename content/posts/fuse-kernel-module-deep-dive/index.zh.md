@@ -22,6 +22,8 @@ tags: [Linux, Kernel, Open Source]
 
 <!-- [UNIQUE INSIGHT] FUSE 内核模块的请求生命周期是内核异步 I/O 设计的一套大师级示例：一次 VFS 调用分配一个请求，标记为 FR_PENDING，入队，然后在 req->waitq 上睡眠。用户态守护进程从 /dev/fuse 读取请求，处理它，写回响应，内核设置 FINISHED 并唤醒等待者。理解了这条管线，就理解了模块 80% 的内容。 -->
 
+<!-- more -->
+
 > **核心要点**
 > - FUSE 内核模块位于 Linux 源码的 `fs/fuse/`——30+ 个文件、约 13,000 行 C 代码，2005 年合入 kernel 2.6.14，目前由 Miklos Szeredi 积极维护。
 > - 所有 VFS 调用都经过一个 FUSE 操作（如 `fuse_read_iter()`），它分配一个 `fuse_conn`，在连接的被处理队列中入队，然后等待。用户态从 `/dev/fuse` 读取请求，处理后将响应写回，内核唤醒等待中的 VFS 调用。

@@ -20,6 +20,8 @@ This article walks the entire ARM64 page-fault path: from the moment the MMU rej
 
 <!-- [UNIQUE INSIGHT] The ARM64 page-table walk is one of the few places where kernel source and hardware specification lock step: each level (PGD→PUD→PMD→PTE) corresponds to a specific bit range of the virtual address, and the kernel's __handle_mm_fault mirrors the MMU's hardware traversal exactly. Understanding this one-to-one mapping is the key to reading both the ARM ARM and fault.c fluently. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - When an ARM64 CPU accesses an unmapped virtual address, the MMU raises a data-abort (read/write) or instruction-abort (exec) exception, which the kernel catches via `el0t_64_sync_handler` in `arch/arm64/kernel/entry-common.c`.
 > - The fault-handler chain — `do_mem_abort` → `do_translation_fault` → `do_page_fault` → `handle_mm_fault` → `__handle_mm_fault` — validates the vma, walks the page table, and calls `do_anonymous_page` to allocate a physical page.

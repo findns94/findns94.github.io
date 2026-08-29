@@ -16,6 +16,8 @@ Linux kernel 7.2.0, codenamed "Baby Opossum Posse," shipped in July 2026 with ov
 
 This guide walks through the entire process on a real Ubuntu VM running aarch64 (ARM64), from preparing the build environment to verifying the new kernel boots. Along the way, it explains what happens under the hood: how `olddefconfig` migrates your existing configuration, how `make install` hooks into Debian's packaging infrastructure, how GRUB builds its boot menu, and how initramfs bridges the gap between the kernel and your real root filesystem.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Migrating a 6.8 kernel config to 7.2.0 requires one command: `make olddefconfig`. It auto-resolves added, removed, and renamed options.
 > - On Debian/Ubuntu, `sudo make install` is a one-shot operation that copies the kernel image, generates initramfs, and updates GRUB — no manual file copying needed.

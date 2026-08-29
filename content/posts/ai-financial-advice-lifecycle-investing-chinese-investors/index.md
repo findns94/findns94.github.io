@@ -18,6 +18,8 @@ Not exactly the thrilling answer most investors are looking for. But according t
 
 The disconnect between what investors *want* (hot stock tips, market timing strategies, the next 10-bagger) and what they *actually need* (lifecycle-appropriate asset allocation, emergency buffers, diversified exposure) is at the heart of a growing body of research on AI-generated financial advice. This post explores what happens when you take lifecycle theory seriously as an investment framework, why AI naturally gravitates toward it, and—most importantly—how mainland Chinese investors can apply these principles with the products actually available to them.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - A NBER study simulating 1,000 people following AI advice found it moves 90%+ toward lifecycle theory: broader diversification, age-declining equity shares, and larger savings buffers ([NBER Working Paper 35574](http://www.nber.org/papers/w35574), 2026).
 > - AI doesn't give "hot tips" because lifecycle investing optimizes for a different goal: not maximizing returns, but minimizing the probability of running out of money before you die.

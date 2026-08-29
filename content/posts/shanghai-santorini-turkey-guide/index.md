@@ -18,6 +18,8 @@ As of January 2026, Chinese passport holders can enter Turkey **visa-free for up
 
 This guide covers everything you need to plan the journey: the smart routing logic (no direct flights to Athens exist), visa requirements for both countries, a detailed 12-day itinerary spanning Istanbul, Cappadocia, Athens, and Santorini, honest budget breakdowns, seasonal timing advice, and practical booking tips drawn from current route data and on-the-ground cost research.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - **Fly into Istanbul first** — no direct Shanghai-Athens flights exist; Turkish Airlines offers direct PVG-IST in ~11 hours, then connect to Athens
 > - **Turkey is now visa-free** for Chinese passports (90 days from Jan 2026), while Greece requires a Schengen visa (€85, ~15 days processing)

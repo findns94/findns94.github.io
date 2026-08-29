@@ -20,6 +20,8 @@ The first clue something was off: many of the "broken" links were to major, well
 
 This article is the story of what I learned about why AI cannot write SVG perfectly. It's based on firsthand experience auditing 155 SVG charts, fixing dozens of broken images, and researching the technical reasons behind SVG generation failures. Whether you're building AI agents that generate graphics or just trying to create better charts, understanding these limitations will save you hours of debugging.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - **SVG seems simple but has hidden complexity** — the W3C SVG 2 specification spans 16 chapters plus 11 appendices
 > - **The stroke-dasharray trap** — even mathematically correct values can cause visible gaps due to floating-point precision

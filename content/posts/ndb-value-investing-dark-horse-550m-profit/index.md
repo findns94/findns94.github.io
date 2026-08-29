@@ -22,6 +22,8 @@ This article is not a stock recommendation. NDB is not publicly traded — its s
 
 <!-- [PERSONAL EXPERIENCE] When I first read NDB's 2025 annual report cover-to-cover, the number that stopped me was not the $551M profit — it was the 17% capital utilization ratio. For a bank, that is the equivalent of a factory running at less than one-fifth of capacity while still posting record earnings. It implies enormous embedded growth optionality that no market is pricing, because no market can access it. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - NDB posted $551M net profit in 2025 with a 17% capital utilization ratio — leaving massive headroom for growth without any capital increase (NDB Annual Report 2025).
 > - The Bank holds AA+ (S&P), AA (Fitch), AAA (JCR) ratings — stronger than most sovereign borrowers it lends to (NDB AR 2025; S&P Global Ratings; Fitch Ratings; Japan Credit Rating Agency).

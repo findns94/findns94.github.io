@@ -16,6 +16,8 @@ Linux 内核 7.2.0，代号 "Baby Opossum Posse"，于 2026 年 7 月发布，�
 
 本指南将完整演示在一台运行 aarch64（ARM64）的真实 Ubuntu 虚拟机上的整个过程 —— 从准备构建环境到验证新内核启动。在此过程中，文章会深入解释底层原理：`olddefconfig` 如何迁移你的现有配置、`make install` 如何接入 Debian 的打包基础设施、GRUB 如何构建启动菜单、以及 initramfs 如何在内核和真实根文件系统之间架起桥梁。
 
+<!-- more -->
+
 > **核心要点**
 > - 将 6.8 内核配置迁移到 7.2.0 只需一条命令：`make olddefconfig`。它会自动处理新增、删除和重命名的选项。
 > - 在 Debian/Ubuntu 上，`sudo make install` 是一步到位的操作：复制内核镜像、生成 initramfs、更新 GRUB —— 无需手动复制文件。

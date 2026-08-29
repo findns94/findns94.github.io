@@ -20,6 +20,8 @@ In 2026, Shanghai's city-centre gross rental yield sits at just 1.77% — a pric
 
 The good news is that value investing offers a repeatable framework for this exact problem. You don't need to predict where prices go next quarter. You need to estimate what an apartment is actually worth — and then demand a margin of safety before you commit.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Shanghai's city-centre rental yield of 1.77% implies a 56.6x price-to-rent ratio — roughly double the 25x threshold that signals overvaluation ([Numbeo](https://www.numbeo.com), 2026).
 > - A value investor estimates a property's intrinsic value as the net present value of its future rental cash flows, then demands a 25-35% margin of safety.

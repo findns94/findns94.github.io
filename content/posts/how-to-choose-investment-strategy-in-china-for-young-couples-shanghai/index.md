@@ -20,6 +20,8 @@ The current macro environment demands a deliberate strategy. Full-year 2024 CPI 
 
 This guide walks you through a six-step framework for building a diversified, 10-year investment portfolio suited to Shanghai's cost structure and China's policy direction — the same approach I've applied and refined while analyzing household portfolio shifts in China's major cities.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Chinese households are rotating out of real estate (fell from ~65-70% to ~58-60% of total assets according to McKinsey/Oliver Wyman balance-sheet analyses, confirmed by the PBOC Urban Depositor Survey and CHFS, 2024).
 > - China's A-share market has 225 million investor accounts (end-2024), yet the CSI 300 returned ~15.2% total return in 2024 and trades at a ~13.5x P/E — a 30-40% discount to the S&P 500 (China Securities Index Company, Bloomberg/Wind, 2025).

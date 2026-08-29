@@ -20,6 +20,8 @@ tags: ["AI", "Web Scraping", "Cloudflare"]
 
 这篇文章记录了当我尝试用 6 种不同方法访问受机器人保护链接时发生的一切——从简单的 `curl` 命令到通过 Chrome DevTools Protocol 连接的真实 Chromium 浏览器。我会展示哪些方法有效、哪些无效，以及为什么 Cloudflare 的检测如此难以突破。
 
+<!-- more -->
+
 > **核心要点**
 > - **403 ≠ 失效**：大多数"失效"链接返回 404 是因为机器人检测，而非页面真的消失了
 > - **三级防护体系**：Cloudflare 使用 UA 检测、浏览器指纹和 JavaScript 挑战——每级需要不同的绕过策略

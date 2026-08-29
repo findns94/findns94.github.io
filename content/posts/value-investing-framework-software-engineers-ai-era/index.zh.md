@@ -20,6 +20,8 @@ tags: [Finance, Investment, AI]
 
 <!-- [PERSONAL EXPERIENCE] 2019年刚开始投资时，我读的是和所有人一样的 newsletter，成绩平平。转折点出现在我放弃研究生物科技，转而用日常工作中的科技商业模型分析能力来选股的那一刻。我真正理解的和我实际买入的之间的距离，终于缩小了。 -->
 
+<!-- more -->
+
 > **核心要点**
 > - 仅2024年一年，普通投资者就跑输标普500指数12.19个百分点；30年来，这一行为差距平均每年为3.4个百分点（[Dalbar QAIB](https://www.dalbar.com), 2025）。
 > - 2024年全球AI市场规模达1966.3亿美元，年增长率36.6%（[Grand View Research](https://www.grandviewresearch.com), 2024）。

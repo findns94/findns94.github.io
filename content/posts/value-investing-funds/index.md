@@ -20,6 +20,8 @@ But can the core principles of value investing, originally designed for individu
 
 In this article, we will explore how value investing principles can transform your approach to fund investment, examine the unique characteristics of China's A-share market that make value strategies especially relevant, and provide actionable frameworks for implementing these strategies with real funds and ETFs available to Chinese investors.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Value investing principles (margin of safety, Mr. Market, long-term holding) translate directly to fund investment through valuation-based strategies
 > - China's A-share market "bull short, bear long" pattern creates unique opportunities for value-oriented fund investors

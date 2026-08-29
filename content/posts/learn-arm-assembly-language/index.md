@@ -21,6 +21,8 @@ The problem: most developers only have an x86 machine. You do not need physical 
 
 <!-- [PERSONAL EXPERIENCE] I set this up on a 2021-era x86 laptop running WSL2 Ubuntu 20.04. The entire toolchain installed in under 10 minutes with zero configuration issues. The GDB remote-debugging workflow with QEMU's -g flag turned out to be the fastest path I have found for learning assembly without real hardware. -->
 
+<!-- more -->
+
 > **Key Takeaways**
 > - You only need two packages on WSL: `gcc-aarch64-linux-gnu` (cross-compiler) and `qemu-user` (ARM emulator). Both install with a single `apt-get` command.
 > - Static linking (`-static`) produces binaries with fixed instruction addresses, which makes debugging with GDB significantly easier. Dynamic linking is smaller but requires specifying the sysroot at runtime.

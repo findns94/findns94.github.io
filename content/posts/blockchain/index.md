@@ -15,6 +15,8 @@ math: true
 
 This project builds a full Bitcoin peer-to-peer network simulator using Mininet to study how consensus algorithms behave under real network conditions and attack scenarios. We implemented and tested Proof-of-Work (PoW), Proof-of-Stake (PoS), and Practical Byzantine Fault Tolerance (PBFT) consensus, then measured attack success rates under double-spending and BGP hijacking. The simulation reveals that attackers controlling 80% of hashing power succeed in 33.8% of double-spend attempts (22/65 mining rounds), while network-layer attacks like BGP hijacking can invalidate confirmed transactions without breaking any consensus rules.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - A full Bitcoin P2P network was simulated in Mininet to test PoW, PoS, and PBFT consensus algorithms under controlled network conditions and attack scenarios.
 > - Attackers with 80% hashing power succeeded in 33.8% of double-spend attempts (22/65 rounds); at 20% hashing power the success rate drops to 5.3% (2/38 rounds).
