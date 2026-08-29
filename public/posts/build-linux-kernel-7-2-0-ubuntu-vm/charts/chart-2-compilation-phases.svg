@@ -1,0 +1,73 @@
+<svg viewBox="0 0 560 360" role="img" aria-label="Kernel Compilation Time by Phase" xmlns="http://www.w3.org/2000/svg">
+  <title>Kernel Compilation Time by Phase (aarch64, 6 cores, 7.7GB RAM)</title>
+  <desc>Horizontal bar chart showing time spent in each compilation phase: config sync, core kernel, modules, dtbs, and linking.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .bar-core { fill: #3b82f6; }
+    .bar-modules { fill: #8b5cf6; }
+    .bar-dtbs { fill: #10b981; }
+    .bar-config { fill: #f59e0b; }
+    .bar-link { fill: #ef4444; }
+    .axis { stroke: #4b5563; stroke-width: 1; }
+    .grid { stroke: #374151; stroke-width: 0.5; stroke-dasharray: 4,4; }
+  </style>
+  <rect width="560" height="360" fill="transparent"/>
+  <!-- Title -->
+  <text x="280" y="28" text-anchor="middle" font-size="14" font-weight="600">Compilation Time by Phase</text>
+  <text x="280" y="46" text-anchor="middle" font-size="10" opacity="0.7">aarch64 build on 6-core VM with 7.7GB RAM</text>
+  <!-- Y axis -->
+  <line x1="130" y1="65" x2="130" y2="275" class="axis"/>
+  <!-- X axis -->
+  <line x1="130" y1="275" x2="520" y2="275" class="axis"/>
+  <!-- X labels (0-25 min, 380px range, 1min = 15.2px) -->
+  <text x="130" y="290" text-anchor="middle" font-size="9">0</text>
+  <text x="206" y="290" text-anchor="middle" font-size="9">5m</text>
+  <text x="282" y="290" text-anchor="middle" font-size="9">10m</text>
+  <text x="358" y="290" text-anchor="middle" font-size="9">15m</text>
+  <text x="434" y="290" text-anchor="middle" font-size="9">20m</text>
+  <text x="510" y="290" text-anchor="middle" font-size="9">25m</text>
+  <!-- Grid lines -->
+  <line x1="206" y1="65" x2="206" y2="275" class="grid"/>
+  <line x1="282" y1="65" x2="282" y2="275" class="grid"/>
+  <line x1="358" y1="65" x2="358" y2="275" class="grid"/>
+  <line x1="434" y1="65" x2="434" y2="275" class="grid"/>
+  <line x1="510" y1="65" x2="510" y2="275" class="grid"/>
+  <!-- Bar calculations: x=130 baseline, 1min=15.2px -->
+  <!-- Config sync: ~2 min, width=30 -->
+  <text x="122" y="89" text-anchor="end" font-size="10">Config Sync</text>
+  <rect x="130" y="80" width="30" height="16" class="bar-config" rx="3"/>
+  <text x="165" y="92" font-size="9" fill="#fbbf24">~2 min</text>
+  <!-- Core kernel: ~18 min, width=274 -->
+  <text x="122" y="119" text-anchor="end" font-size="10">Core Kernel</text>
+  <rect x="130" y="110" width="274" height="16" class="bar-core" rx="3"/>
+  <text x="409" y="122" font-size="9" fill="#60a5fa">~18 min</text>
+  <!-- Modules: ~22 min, width=334 -->
+  <text x="122" y="149" text-anchor="end" font-size="10">Modules</text>
+  <rect x="130" y="140" width="334" height="16" class="bar-modules" rx="3"/>
+  <text x="469" y="152" font-size="9" fill="#a78bfa">~22 min</text>
+  <!-- dtbs: ~3 min, width=46 -->
+  <text x="122" y="179" text-anchor="end" font-size="10">Device Trees</text>
+  <rect x="130" y="170" width="46" height="16" class="bar-dtbs" rx="3"/>
+  <text x="181" y="182" font-size="9" fill="#34d399">~3 min</text>
+  <!-- Linking: ~5 min, width=76 -->
+  <text x="122" y="209" text-anchor="end" font-size="10">Linking</text>
+  <rect x="130" y="200" width="76" height="16" class="bar-link" rx="3"/>
+  <text x="211" y="212" font-size="9" fill="#f87171">~5 min</text>
+  <!-- Total (dashed outline) -->
+  <text x="122" y="245" text-anchor="end" font-size="10" font-weight="600">Total</text>
+  <rect x="130" y="236" width="304" height="16" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6,3" rx="3"/>
+  <text x="439" y="248" font-size="10" font-weight="600" fill="#e5e7eb">~30-50 min</text>
+  <!-- Legend (bottom) -->
+  <rect x="70" y="308" width="12" height="12" class="bar-config" rx="2"/>
+  <text x="87" y="318" font-size="9">Config</text>
+  <rect x="145" y="308" width="12" height="12" class="bar-core" rx="2"/>
+  <text x="162" y="318" font-size="9">Core</text>
+  <rect x="220" y="308" width="12" height="12" class="bar-modules" rx="2"/>
+  <text x="237" y="318" font-size="9">Modules</text>
+  <rect x="305" y="308" width="12" height="12" class="bar-dtbs" rx="2"/>
+  <text x="322" y="318" font-size="9">DTBs</text>
+  <rect x="380" y="308" width="12" height="12" class="bar-link" rx="2"/>
+  <text x="397" y="318" font-size="9">Linking</text>
+  <!-- Source -->
+  <text x="280" y="345" text-anchor="middle" font-size="8" opacity="0.5">Source: measured on aarch64 Ubuntu VM (6 cores, 7.7GB RAM), 2026</text>
+</svg>

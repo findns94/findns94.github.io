@@ -1,77 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Best travel season calendar showing monthly recommendations for Santorini and Turkey. Shoulder months May-June and September-October rated best with pleasant weather and fewer crowds. Peak July-August is hot and crowded. November to April is low season with closures in Santorini.">
-<title>Best Travel Season: Santorini &amp; Turkey</title>
-<desc>A month-by-month calendar heatmap showing travel quality ratings for Santorini and Turkey across 12 months, considering weather, crowds, and prices.</desc>
-
-<!-- Background -->
-<rect x="0" y="0" width="560" height="380" fill="#1a1a2e" rx="12"/>
-
-<!-- Title -->
-<text x="280" y="36" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">Best Travel Season: Santorini &amp; Turkey</text>
-<text x="280" y="56" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Month-by-month travel quality rating (weather, crowds, value)</text>
-
-<!-- Month labels and bars -->
-<!-- Layout: 12 months, each row = 28px, starting at y=80 -->
-<!-- Rating scale: 1-5, bar width = rating * 60, starting at x=100 -->
-
-<!-- Jan -->
-<text x="90" y="99" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Jan</text>
-<rect x="100" y="88" width="60" height="16" rx="3" fill="#3498db" opacity="0.5"/>
-<text x="170" y="100" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Cold, rainy (Istanbul)</text>
-
-<!-- Feb -->
-<text x="90" y="127" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Feb</text>
-<rect x="100" y="116" width="60" height="16" rx="3" fill="#3498db" opacity="0.5"/>
-<text x="170" y="128" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Low season, many closures</text>
-
-<!-- Mar -->
-<text x="90" y="155" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Mar</text>
-<rect x="100" y="144" width="120" height="16" rx="3" fill="#27ae60" opacity="0.6"/>
-<text x="230" y="156" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="10">Warming up, fewer tourists</text>
-
-<!-- Apr -->
-<text x="90" y="183" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Apr</text>
-<rect x="100" y="172" width="180" height="16" rx="3" fill="#27ae60" opacity="0.8"/>
-<text x="290" y="184" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="10">Good: mild weather, spring blooms</text>
-
-<!-- May -->
-<text x="90" y="211" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">May</text>
-<rect x="100" y="200" width="300" height="16" rx="3" fill="#2ecc71" opacity="0.95"/>
-<text x="410" y="212" fill="#2ecc71" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">BEST: warm, sunny, manageable crowds</text>
-
-<!-- Jun -->
-<text x="90" y="239" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Jun</text>
-<rect x="100" y="228" width="300" height="16" rx="3" fill="#2ecc71" opacity="0.95"/>
-<text x="410" y="240" fill="#2ecc71" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">BEST: long days, warm sea, pre-peak</text>
-
-<!-- Jul -->
-<text x="90" y="267" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Jul</text>
-<rect x="100" y="256" width="240" height="16" rx="3" fill="#f39c12" opacity="0.8"/>
-<text x="350" y="268" fill="#f39c12" font-family="'Inter', system-ui, sans-serif" font-size="10">Peak: hot (25-35&#176;C), crowded, expensive</text>
-
-<!-- Aug -->
-<text x="90" y="295" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Aug</text>
-<rect x="100" y="284" width="240" height="16" rx="3" fill="#f39c12" opacity="0.8"/>
-<text x="350" y="296" fill="#f39c12" font-family="'Inter', system-ui, sans-serif" font-size="10">Peak: meltemi winds, highest prices</text>
-
-<!-- Sep -->
-<text x="90" y="323" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Sep</text>
-<rect x="100" y="312" width="300" height="16" rx="3" fill="#2ecc71" opacity="0.95"/>
-<text x="410" y="324" fill="#2ecc71" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">BEST: warm sea, thinner crowds</text>
-
-<!-- Oct -->
-<text x="90" y="351" text-anchor="end" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Oct</text>
-<rect x="100" y="340" width="240" height="16" rx="3" fill="#27ae60" opacity="0.8"/>
-<text x="350" y="352" fill="#27ae60" font-family="'Inter', system-ui, sans-serif" font-size="10">Good: cooling down, still pleasant</text>
-
-<!-- Legend -->
-<rect x="20" y="360" width="12" height="12" rx="2" fill="#2ecc71" opacity="0.95"/>
-<text x="38" y="371" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">Best (shoulder season)</text>
-<rect x="150" y="360" width="12" height="12" rx="2" fill="#f39c12" opacity="0.8"/>
-<text x="168" y="371" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">Peak (hot, crowded)</text>
-<rect x="280" y="360" width="12" height="12" rx="2" fill="#3498db" opacity="0.5"/>
-<text x="298" y="371" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="9">Low season (cool, closures)</text>
-
-<!-- Note -->
-<text x="430" y="365" fill="#666666" font-family="'Inter', system-ui, sans-serif" font-size="8">Bar length = travel quality</text>
-<text x="430" y="375" fill="#666666" font-family="'Inter', system-ui, sans-serif" font-size="8">Santorini cruise cap: 8,000/day (2025)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" role="img" aria-label="Best travel season calendar showing monthly recommendations for Santorini and Turkey. Shoulder months May-June and September-October rated best with pleasant weather and fewer crowds. Peak July-August is hot and crowded. November to April is low season with closures in Santorini.">
+  <title>Best Travel Season: Santorini &amp; Turkey</title>
+  <desc>A month-by-month calendar heatmap showing travel quality ratings for Santorini and Turkey across 12 months, considering weather, crowds, and prices.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { fill: #e0e0e0; font-size: 14px; font-weight: 600; }
+    .subtitle { fill: #888888; font-size: 10px; }
+    .month { fill: #888888; font-size: 9px; }
+    .label { font-size: 9px; }
+    .label-bright { font-size: 9px; font-weight: 600; }
+    .note { fill: #666666; font-size: 8px; }
+    .legend { fill: #888888; font-size: 9px; }
+  </style>
+  <!-- Background -->
+  <rect x="0" y="0" width="560" height="420" fill="#1a1a2e" rx="12"/>
+  <!-- Title -->
+  <text x="280" y="28" text-anchor="middle" class="title">Best Travel Season: Santorini &amp; Turkey</text>
+  <text x="280" y="46" text-anchor="middle" class="subtitle">Month-by-month travel quality rating (weather, crowds, value)</text>
+  <!-- Layout: 12 months, row height 24px, starting at y=65 -->
+  <!-- Bars: start at x=60, width = rating * 48, max 240px (ends at x=300) -->
+  <!-- Month labels: x=50, right-aligned -->
+  <!-- Jan (rating 1) -->
+  <text x="50" y="81" text-anchor="end" class="month">Jan</text>
+  <rect x="60" y="70" width="48" height="16" rx="3" fill="#3498db" opacity="0.5"/>
+  <text x="115" y="82" class="label" fill="#888888">Cold, rainy</text>
+  <!-- Feb (rating 1) -->
+  <text x="50" y="105" text-anchor="end" class="month">Feb</text>
+  <rect x="60" y="94" width="48" height="16" rx="3" fill="#3498db" opacity="0.5"/>
+  <text x="115" y="106" class="label" fill="#888888">Low season</text>
+  <!-- Mar (rating 2) -->
+  <text x="50" y="129" text-anchor="end" class="month">Mar</text>
+  <rect x="60" y="118" width="96" height="16" rx="3" fill="#27ae60" opacity="0.6"/>
+  <text x="163" y="130" class="label" fill="#888888">Warming up</text>
+  <!-- Apr (rating 3) -->
+  <text x="50" y="153" text-anchor="end" class="month">Apr</text>
+  <rect x="60" y="142" width="144" height="16" rx="3" fill="#27ae60" opacity="0.8"/>
+  <text x="211" y="154" class="label" fill="#27ae60">Mild, spring blooms</text>
+  <!-- May (rating 5) -->
+  <text x="50" y="177" text-anchor="end" class="month">May</text>
+  <rect x="60" y="166" width="240" height="16" rx="3" fill="#2ecc71" opacity="0.95"/>
+  <text x="70" y="178" class="label-bright" fill="#0a0a0a">BEST: warm, sunny, fewer crowds</text>
+  <!-- Jun (rating 5) -->
+  <text x="50" y="201" text-anchor="end" class="month">Jun</text>
+  <rect x="60" y="190" width="240" height="16" rx="3" fill="#2ecc71" opacity="0.95"/>
+  <text x="70" y="202" class="label-bright" fill="#0a0a0a">BEST: long days, warm sea</text>
+  <!-- Jul (rating 4) -->
+  <text x="50" y="225" text-anchor="end" class="month">Jul</text>
+  <rect x="60" y="214" width="192" height="16" rx="3" fill="#f39c12" opacity="0.8"/>
+  <text x="259" y="226" class="label" fill="#f39c12">Hot, crowded, pricey</text>
+  <!-- Aug (rating 4) -->
+  <text x="50" y="249" text-anchor="end" class="month">Aug</text>
+  <rect x="60" y="238" width="192" height="16" rx="3" fill="#f39c12" opacity="0.8"/>
+  <text x="259" y="250" class="label" fill="#f39c12">Peak: meltemi, high prices</text>
+  <!-- Sep (rating 5) -->
+  <text x="50" y="273" text-anchor="end" class="month">Sep</text>
+  <rect x="60" y="262" width="240" height="16" rx="3" fill="#2ecc71" opacity="0.95"/>
+  <text x="70" y="274" class="label-bright" fill="#0a0a0a">BEST: warm sea, thinner crowds</text>
+  <!-- Oct (rating 4) -->
+  <text x="50" y="297" text-anchor="end" class="month">Oct</text>
+  <rect x="60" y="286" width="192" height="16" rx="3" fill="#27ae60" opacity="0.8"/>
+  <text x="259" y="298" class="label" fill="#27ae60">Cooling, pleasant</text>
+  <!-- Nov (rating 1) -->
+  <text x="50" y="321" text-anchor="end" class="month">Nov</text>
+  <rect x="60" y="310" width="48" height="16" rx="3" fill="#3498db" opacity="0.5"/>
+  <text x="115" y="322" class="label" fill="#888888">Cold, closures</text>
+  <!-- Dec (rating 1) -->
+  <text x="50" y="345" text-anchor="end" class="month">Dec</text>
+  <rect x="60" y="334" width="48" height="16" rx="3" fill="#3498db" opacity="0.5"/>
+  <text x="115" y="346" class="label" fill="#888888">Cold, rainy</text>
+  <!-- Legend (y=355) -->
+  <rect x="20" y="355" width="12" height="12" rx="2" fill="#2ecc71" opacity="0.95"/>
+  <text x="37" y="365" class="legend">Best (shoulder)</text>
+  <rect x="130" y="355" width="12" height="12" rx="2" fill="#f39c12" opacity="0.8"/>
+  <text x="147" y="365" class="legend">Peak (hot, crowded)</text>
+  <rect x="260" y="355" width="12" height="12" rx="2" fill="#3498db" opacity="0.5"/>
+  <text x="277" y="365" class="legend">Low season</text>
+  <!-- Notes (y=380-404, right-aligned) -->
+  <text x="540" y="380" class="note" text-anchor="end">Bar length = travel quality</text>
+  <text x="540" y="394" class="note" text-anchor="end">Santorini cruise cap: 8,000/day</text>
+  <text x="540" y="408" class="note" text-anchor="end">Source: Hellenic Shipping News, 2025</text>
 </svg>
