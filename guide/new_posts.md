@@ -258,3 +258,4 @@ for the full rationale.
 - [ ] All `INTERNAL-LINK` lines removed.
 - [ ] Please Use `pnpm build` to verify if the build is success. For more information, please read `README.md`.
 - [ ] Check if `svg xmlns="http://www.w3.org/2000/svg"` exists in the SVGs.
+- [ ] Check if `<!-- more -->` before `**Key Takeaways**`

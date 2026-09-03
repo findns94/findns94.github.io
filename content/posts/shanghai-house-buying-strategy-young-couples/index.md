@@ -13,13 +13,13 @@ ogImage: "/posts/shanghai-house-buying-strategy-young-couples/images/shanghai-sk
 # How to Choose a Shanghai House-Buying Strategy for Young Couples (2026–2036)
 If you are a young couple weighing your first home purchase in Shanghai, you are working through the hardest property math in the country. By early 2026, Shanghai's second- hand price index had slipped roughly 8-12% from its 2021-2022 peak even as transaction volumes recovered ([National Bureau of Statistics](https://www.stats.gov.cn), [Shanghai Real Estate Brokers Association](http://www.shfdcrea.com), 2025–2026). Prices are no longer on a one-way bet up, and mortgage underwriting is tighter in real terms than it looks. At the same time, the city's hukou-linked benefits (school districts, housing-fund access, public services) still anchor long-term demand in a way that smaller cities cannot match. The question is no longer "buy everything now" versus "do nothing." The question is which purchase geometry — which district, what policy window, what mortgage structure, what fallback plan — makes sense for the next ten years of your life, starting from where you stand today.
 
+<!-- more -->
+
 > **Key Takeaways**
 > - Shanghai rental yields hover around 1.4–1.8%, well below what you can earn on a simple money-market fund — so renting is a stronger pure-financial play than many couples assume ([JLL China Residential Report](https://www.jll.com/en-china), 2025).
 > - The middle ring (Putuo, Hongkou, Yangpu, part of Pudong) offers the best mix of price liquidity, metro connectivity and livability for young couples wary of exurban lock-in.
 > - Shanghai's first-home mortgage rate was roughly 3.50–3.60% by early 2026 (5Y LPR minus basis points), historically low by Chinese standards and a genuine window for well-qualified buyers.
 > - The winning strategy for most couples is a 5–10 year committed "buy and live" plan in the middle ring, backed by a joint-housing-fund loan and a cash buffer that survives a six-month job-loss scenario.
-
-<!-- more -->
 
 ---
 

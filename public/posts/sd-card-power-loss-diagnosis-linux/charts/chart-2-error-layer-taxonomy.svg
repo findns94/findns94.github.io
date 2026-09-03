@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="SD Card Error Layer Taxonomy: from dmesg message to kernel source">
+  <title>SD Card Error Layer Taxonomy</title>
+  <desc>Mapping of dmesg error messages to their kernel source origin, the subsystem layer, and the root cause. Four errors shown: All phases bad (tuning), Card stuck being busy (erase timeout), Timeout sending command (CMD start), and I/O error DISCARD (block layer).</desc>
+  <defs>
+    <style>
+      text { font-family: 'Inter', system-ui, sans-serif; }
+      .title { font-size: 16px; font-weight: 700; fill: #e2e8f0; }
+      .subtitle { font-size: 11px; fill: #94a3b8; }
+      .layer-title { font-size: 12px; font-weight: 700; fill: #e2e8f0; }
+      .error-msg { font-size: 11px; fill: #f87171; font-family: 'JetBrains Mono', monospace; }
+      .source { font-size: 10px; fill: #94a3b8; font-family: 'JetBrains Mono', monospace; }
+      .cause { font-size: 11px; fill: #fbbf24; }
+      .arrow { stroke: #64748b; stroke-width: 1.5; fill: none; }
+      .layer-box { fill: #1e293b; stroke: #334155; stroke-width: 1; rx: 6; }
+      .layer-box-highlight { fill: #1e293b; stroke: #ef4444; stroke-width: 1.5; rx: 6; }
+    </style>
+  </defs>
+  <rect width="640" height="420" fill="#0f172a" rx="8"/>
+  <text x="320" y="30" text-anchor="middle" class="title">dmesg Error → Kernel Source → Root Cause</text>
+  <text x="320" y="47" text-anchor="middle" class="subtitle">Linux MMC/SD subsystem error taxonomy for Orange Pi 3B SD card failure</text>
+  <rect x="20" y="65" width="600" height="75" rx="6" class="layer-box-highlight"/>
+  <text x="35" y="85" class="layer-title">Layer 1: Host Controller (dw_mmc-rockchip.c / dw_mmc.c)</text>
+  <text x="35" y="105" class="error-msg">dmesg: "dwmmc_rockchip fe2b0000.mmc: All phases bad!"</text>
+  <text x="35" y="120" class="source">dw_mmc-rockchip.c:350 — dw_mci_rk3288_execute_tuning()</text>
+  <text x="35" y="135" class="cause">Root cause: Signal integrity — no valid clock phase at 150MHz</text>
+  <line x1="320" y1="145" x2="320" y2="165" class="arrow"/>
+  <polygon points="315,160 325,160 320,170" fill="#64748b"/>
+  <rect x="20" y="175" width="600" height="75" rx="6" class="layer-box"/>
+  <text x="35" y="195" class="layer-title">Layer 2: MMC Core (mmc_ops.c)</text>
+  <text x="35" y="215" class="error-msg">dmesg: "mmc1: Card stuck being busy! __mmc_poll_for_busy"</text>
+  <text x="35" y="230" class="source">mmc_ops.c:535 — __mmc_poll_for_busy()</text>
+  <text x="35" y="245" class="cause">Root cause: FTL cannot complete erase — NAND block partially programmed</text>
+  <line x1="320" y1="255" x2="320" y2="275" class="arrow"/>
+  <polygon points="315,270 325,270 320,280" fill="#64748b"/>
+  <rect x="20" y="285" width="600" height="55" rx="6" class="layer-box"/>
+  <text x="35" y="305" class="layer-title">Layer 3: Block Layer (blk-mq.c)</text>
+  <text x="35" y="325" class="error-msg">dmesg: "I/O error, dev mmcblk1, sector 5890048 op 0x3:(DISCARD)"</text>
+  <text x="35" y="340" class="source">blk-mq.c:843 — blk_print_req_error()</text>
+  <line x1="320" y1="345" x2="320" y2="365" class="arrow"/>
+  <polygon points="315,360 325,360 320,370" fill="#64748b"/>
+  <rect x="20" y="375" width="600" height="35" rx="6" class="layer-box-highlight"/>
+  <text x="35" y="395" class="layer-title">Layer 4: SD Card Internal (FTL Firmware)</text>
+  <text x="380" y="410" text-anchor="end" class="cause">Ultimate root cause: FTL garbage collection broken by power loss</text>
+</svg>
