@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Chart: Day 3 itinerary timeline from Shiwei to Hailar Airport via border defense road through Qi-Qia Ba-Qia Jiu-Qia to Heishantou, departing 07:00 arriving before 15:00">
+  <title>Day 3 Itinerary: Shiwei → Border Defense Road → Hailar Airport</title>
+  <desc>Timeline chart showing Day 3 route departing Shiwei at 07:00 AM, breakfast at Enhe (07:30), driving the border defense road through Qi-Qia Ba-Qia Jiu-Qia along the China-Russia border (09:00-12:00, the scenic highlight), lunch and fuel at Heishantou (12:00), then G331 national highway to Hailar Airport arriving before 15:00 with 1 hour buffer before 16:00 deadline. Total distance ~350-400km, driving time 5.5-6.5 hours.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .stop { font-weight: 600; }
+    .gravel { fill: #E85D04; opacity: 0.08; }
+    .paved { fill: #3A86FF; opacity: 0.06; }
+  </style>
+  <rect width="800" height="600" fill="transparent"/>
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-size="16" font-weight="600">Day 3: Shiwei → Border Defense Road → Hailar Airport</text>
+  <text x="400" y="55" text-anchor="middle" font-size="12" opacity="0.7">~350-400 km · Depart 07:00 · Arrive ~14:30-15:00 · The "Essence of the Grassland"</text>
+  <!-- Road type zones -->
+  <rect x="50" y="65" width="370" height="500" class="gravel" rx="6"/>
+  <text x="235" y="85" text-anchor="middle" font-size="11" fill="#E85D04" font-weight="600">UNPAVED: Border Defense Road (卡线)</text>
+  <text x="235" y="100" text-anchor="middle" font-size="10" fill="#E85D04">Gravel / Dirt · 30-50 km/h · No cell signal</text>
+  <rect x="420" y="65" width="350" height="500" class="paved" rx="6"/>
+  <text x="595" y="85" text-anchor="middle" font-size="11" fill="#3A86FF" font-weight="600">PAVED: G331 National Highway</text>
+  <text x="595" y="100" text-anchor="middle" font-size="10" fill="#3A86FF">Asphalt · 60-80 km/h · Back to civilization</text>
+  <!-- Timeline line -->
+  <line x1="60" y1="300" x2="770" y2="300" stroke="#3A86FF" stroke-width="3" opacity="0.6"/>
+  <!-- Change point marker -->
+  <line x1="420" y1="105" x2="420" y2="540" stroke="#E85D04" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <!-- Stop 1: Shiwei -->
+  <circle cx="80" cy="300" r="8" fill="#E85D04"/>
+  <text x="80" y="270" text-anchor="middle" font-size="13" class="stop">Shiwei Village</text>
+  <text x="80" y="288" text-anchor="middle" font-size="11" opacity="0.7">07:00 Depart</text>
+  <text x="80" y="340" text-anchor="middle" font-size="9" opacity="0.5">Fill up fuel if available</text>
+  <!-- Stop 2: Enhe -->
+  <circle cx="180" cy="300" r="7" fill="#2A9D8F"/>
+  <text x="180" y="230" text-anchor="middle" font-size="12" class="stop">Enhe</text>
+  <text x="180" y="248" text-anchor="middle" font-size="10" opacity="0.7">07:30 · Breakfast 30 min</text>
+  <text x="180" y="340" text-anchor="middle" font-size="9" fill="#2A9D8F">Russian bread + jam</text>
+  <!-- Stop 3: Qi-Qia -->
+  <circle cx="280" cy="300" r="7" fill="#E85D04"/>
+  <text x="280" y="270" text-anchor="middle" font-size="12" class="stop">Qi-Qia (七卡)</text>
+  <text x="280" y="288" text-anchor="middle" font-size="10" opacity="0.7">~09:00 · Enter border road</text>
+  <!-- Stop 4: Ba-Qia -->
+  <circle cx="350" cy="300" r="7" fill="#E85D04"/>
+  <text x="350" y="230" text-anchor="middle" font-size="12" class="stop">Ba-Qia (八卡)</text>
+  <text x="350" y="248" text-anchor="middle" font-size="10" opacity="0.7">Photo stop · River views</text>
+  <!-- Highlight zone -->
+  <rect x="280" y="320" width="140" height="40" fill="#E85D04" opacity="0.15" rx="4"/>
+  <text x="350" y="344" text-anchor="middle" font-size="10" fill="#E85D04" font-weight="600">⭐ Highlight Section</text>
+  <!-- Stop 5: Jiu-Qia -->
+  <circle cx="450" cy="300" r="7" fill="#E85D04"/>
+  <text x="450" y="270" text-anchor="middle" font-size="12" class="stop">Jiu-Qia (九卡)</text>
+  <text x="450" y="288" text-anchor="middle" font-size="10" opacity="0.7">~11:00 · Last gravel section</text>
+  <!-- Stop 6: Heishantou -->
+  <circle cx="560" cy="300" r="8" fill="#3A86FF"/>
+  <text x="560" y="230" text-anchor="middle" font-size="13" class="stop">Heishantou (黑山头)</text>
+  <text x="560" y="248" text-anchor="middle" font-size="11" opacity="0.7">12:00 · Fuel + Lunch</text>
+  <text x="560" y="340" text-anchor="middle" font-size="9" fill="#3A86FF">PetroChina/Sinopec available</text>
+  <!-- Stop 7: On G331 -->
+  <circle cx="650" cy="300" r="5" fill="#6C757D"/>
+  <text x="650" y="270" text-anchor="middle" font-size="10">En route</text>
+  <text x="650" y="288" text-anchor="middle" font-size="9" opacity="0.7">G331 · 60-70 km/h</text>
+  <!-- Stop 8: Airport -->
+  <circle cx="740" cy="300" r="9" fill="#2A9D8F"/>
+  <text x="740" y="270" text-anchor="middle" font-size="13" class="stop" fill="#2A9D8F">Hailar Airport</text>
+  <text x="740" y="288" text-anchor="middle" font-size="12" font-weight="600" fill="#2A9D8F">~14:30-15:00</text>
+  <text x="740" y="340" text-anchor="middle" font-size="9" fill="#2A9D8F">1+ hr before 16:00 deadline</text>
+  <!-- Distance markers -->
+  <text x="130" y="365" text-anchor="middle" font-size="9" opacity="0.5">~30km</text>
+  <text x="230" y="365" text-anchor="middle" font-size="9" opacity="0.5">~50km</text>
+  <text x="315" y="365" text-anchor="middle" font-size="9" opacity="0.5">~40km</text>
+  <text x="400" y="365" text-anchor="middle" font-size="9" opacity="0.5">~40km</text>
+  <text x="505" y="365" text-anchor="middle" font-size="9" opacity="0.5">~60km</text>
+  <text x="605" y="365" text-anchor="middle" font-size="9" opacity="0.5">~80km</text>
+  <text x="695" y="365" text-anchor="middle" font-size="9" opacity="0.5">~50km</text>
+  <!-- Driving time indicators -->
+  <rect x="80" y="380" width="100" height="18" fill="#E85D04" opacity="0.12" rx="3"/>
+  <text x="130" y="393" text-anchor="middle" font-size="9">Drive ~25 min</text>
+  <rect x="180" y="380" width="100" height="18" fill="#E85D04" opacity="0.12" rx="3"/>
+  <text x="230" y="393" text-anchor="middle" font-size="9">Drive ~40 min</text>
+  <rect x="280" y="380" width="170" height="18" fill="#E85D04" opacity="0.12" rx="3"/>
+  <text x="365" y="393" text-anchor="middle" font-size="9">Drive ~2.5 hrs (scenic, stop often)</text>
+  <rect x="450" y="380" width="110" height="18" fill="#3A86FF" opacity="0.12" rx="3"/>
+  <text x="505" y="393" text-anchor="middle" font-size="9">Drive ~50 min</text>
+  <rect x="560" y="380" width="90" height="18" fill="#3A86FF" opacity="0.12" rx="3"/>
+  <text x="605" y="393" text-anchor="middle" font-size="9">Drive ~1 hr</text>
+  <rect x="650" y="380" width="90" height="18" fill="#3A86FF" opacity="0.12" rx="3"/>
+  <text x="695" y="393" text-anchor="middle" font-size="9">Drive ~35 min</text>
+  <!-- Key info box -->
+  <rect x="60" y="420" width="700" height="140" fill="transparent" stroke="currentColor" stroke-width="1" opacity="0.2" rx="8"/>
+  <text x="80" y="445" font-size="12" font-weight="600">Route Details (Border Defense Road):</text>
+  <text x="80" y="465" font-size="11">🛣 Route: Shiwei → Enhe → Qi-Qia → Ba-Qia → Jiu-Qia → Heishantou (gravel/dirt) → Hailar (G331 paved)</text>
+  <text x="80" y="485" font-size="11">⛽ Fuel: Heishantou has full-service PetroChina/Sinopec. Fill up here — last reliable stop before Hailar.</text>
+  <text x="80" y="505" font-size="11">⚠️ Gravel road tips: Reduce tire pressure to 2.0-2.2 bar. Drive 30-50 km/h. Cross ruts at an angle. No cell signal.</text>
+  <text x="80" y="525" font-size="11">📸 This is the highlight: endless grassland, border river, no fences, no people. Stop wherever safe for photos.</text>
+  <text x="80" y="545" font-size="11">🕐 Buffer: Even with extended photo stops, you'll arrive by 15:00 at latest. Skip a stop if running late.</text>
+  <!-- Source -->
+  <text x="400" y="585" text-anchor="middle" font-size="9" opacity="0.5">Source: Amap/Baidu Maps route data, 2025; Inner Mongolia Highway Authority; Hulunbuir travel forums</text>
+</svg>
