@@ -102,6 +102,84 @@ The cover image is repeated as the first content image, right after the frontmat
 Alt text is a full descriptive sentence — not a fragment. It should read naturally
 and include relevant topic keywords.
 
+### Image Size Optimization
+
+All images MUST be compressed to **under 100KB** before committing. Large images
+significantly slow down page load time. Use the following guidelines:
+
+**Target dimensions (maintain aspect ratio):**
+- **Cover images** (`cover.jpg`): max width 1200px (OG-compatible 1200×630 recommended)
+- **Inline images**: max width 800px
+
+**Compression settings:**
+- **JPEG quality**: 85 (first try), then reduce by 5 (80, 75, 70, 65, 60, 55, 50) until under 100KB
+- **PNG**: Convert to JPEG if possible (photos); keep PNG only for diagrams/screenshots with text
+- **Resize first**, then adjust quality — resizing alone is often not enough for photos
+
+**Compression script:**
+
+```python
+from PIL import Image
+from io import BytesIO
+import os
+
+TARGET_SIZE = 100 * 1024  # 100KB
+JPEG_QUALITIES = [85, 80, 75, 70, 65, 60, 55, 50]
+COVER_MAX_W = 1200
+INLINE_MAX_W = 800
+
+def compress_image(path):
+    img = Image.open(path)
+    is_cover = os.path.basename(path).lower() == 'cover.jpg'
+    max_w = COVER_MAX_W if is_cover else INLINE_MAX_W
+
+    # Convert to RGB for JPEG
+    if img.mode in ('RGBA', 'LA', 'P'):
+        bg = Image.new('RGB', img.size, (255, 255, 255))
+        bg.paste(img, mask=img.split()[-1] if img.mode != 'P' else None)
+        img = bg
+    elif img.mode != 'RGB':
+        img = img.convert('RGB')
+
+    orig_size = os.path.getsize(path)
+    if orig_size < TARGET_SIZE:
+        return  # Already small enough
+
+    # Resize if too wide
+    if img.width > max_w:
+        ratio = max_w / img.width
+        img = img.resize((max_w, int(img.height * ratio)), Image.LANCZOS)
+
+    # Find quality that gets us under 100KB
+    for q in JPEG_QUALITIES:
+        buf = BytesIO()
+        img.save(buf, 'JPEG', quality=q, optimize=True)
+        if buf.tell() < TARGET_SIZE:
+            with open(path, 'wb') as f:
+                f.write(buf.getvalue())
+            return
+
+    # If still too large, shrink further to 600px
+    if img.width > 600:
+        ratio = 600 / img.width
+        img = img.resize((600, int(img.height * ratio)), Image.LANCZOS)
+        for q in JPEG_QUALITIES:
+            buf = BytesIO()
+            img.save(buf, 'JPEG', quality=q, optimize=True)
+            if buf.tell() < TARGET_SIZE:
+                with open(path, 'wb') as f:
+                    f.write(buf.getvalue())
+                return
+```
+
+**Verification:**
+
+```bash
+# Check for any images still over 100KB
+find public/posts -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) -size +99k
+# Should return no results
+```
+
 ## 5. Charts / SVGs
 
 Charts are generated as **separate SVG files** in `public/posts/<slug>/charts/`,
@@ -247,6 +325,7 @@ for the full rationale.
       coverImageAlt, ogImage, date/lastUpdated (YYYY-MM-DD HH:MM:SS), author, tags.
 - [ ] Tags: max 3, English, aggregated with existing inventory.
 - [ ] All images downloaded to `public/posts/<slug>/images/` (not hotlinked).
+- [ ] All images compressed to under 100KB (cover max 1200px wide, inline max 800px wide).
 - [ ] All SVGs are separate files in `public/posts/<slug>/charts/` (no inline SVG).
 - [ ] All SVGs pass `xmllint --noout` (valid XML, no bare `&`).
 - [ ] Cover image repeated as first content image.
