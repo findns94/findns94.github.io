@@ -58,9 +58,9 @@ export function PostList({ posts, emptyMessage, compact, moreHref }: Props) {
                         ))}
                       </div>
                     )}
-                    {(isZh ? post.excerptZh : post.excerpt) && (
-                      <p className="mt-2 text-sm text-gray-600 line-clamp-2">
-                        {isZh ? post.excerptZh : post.excerpt}
+                    {(isZh ? post.excerptZh : (post.description || post.excerpt)) && (
+                      <p className="mt-2 text-sm text-gray-600 line-clamp-3">
+                        {isZh ? post.excerptZh : (post.description || post.excerpt)}
                       </p>
                     )}
                   </article>

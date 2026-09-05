@@ -45,7 +45,7 @@ function extractExcerpt(content: string): string {
   const moreIndex = content.indexOf('<!-- more -->')
   const raw = moreIndex > -1
     ? content.slice(0, moreIndex).trim()
-    : content.slice(0, 200).trim()
+    : content.slice(0, 400).trim()
   return cleanMarkdownForExcerpt(raw)
 }
 
