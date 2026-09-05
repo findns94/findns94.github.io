@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="oom_score_adj scale from -1000 to +1000 showing kill probability">
+  <title>oom_score_adj vs OOM Kill Probability</title>
+  <desc>Chart showing the Linux OOM killer oom_score_adj scale from -1000 (unkillable, LONG_MIN score) through 0 (no adjustment) to +1000 (always killed first, LONG_MAX score). The adjustment formula is: adj = oom_score_adj × totalpages / 1000</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .axis { stroke: currentColor; stroke-width: 1.5; fill: none; }
+    .label { font-size: 13px; fill: currentColor; }
+    .title { font-size: 16px; font-weight: 700; fill: currentColor; }
+    .subtitle { font-size: 11px; fill: #888; }
+    .zone-label { font-size: 12px; font-weight: 600; }
+    .formula { font-size: 11px; fill: #aaa; font-style: italic; }
+  </style>
+
+  <!-- Background zones -->
+  <rect x="60" y="100" width="180" height="180" rx="8" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="270" y="100" width="180" height="180" rx="8" fill="#eab308" fill-opacity="0.08" stroke="#eab308" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="480" y="100" width="180" height="180" rx="8" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- Zone labels -->
+  <text x="150" y="130" text-anchor="middle" class="zone-label" fill="#22c55e">UNKILLABLE</text>
+  <text x="150" y="148" text-anchor="middle" class="subtitle">LONG_MIN returned</text>
+  <text x="150" y="166" text-anchor="middle" class="subtitle">oom_score_adj = -1000</text>
+  <text x="150" y="240" text-anchor="middle" class="label" fill="#22c55e">-1000</text>
+
+  <text x="360" y="130" text-anchor="middle" class="zone-label" fill="#eab308">NORMAL</text>
+  <text x="360" y="148" text-anchor="middle" class="subtitle">No adjustment</text>
+  <text x="360" y="166" text-anchor="middle" class="subtitle">Score = RSS + swap + pgtables</text>
+  <text x="360" y="240" text-anchor="middle" class="label" fill="#eab308">0</text>
+
+  <text x="570" y="130" text-anchor="middle" class="zone-label" fill="#ef4444">KILL FIRST</text>
+  <text x="570" y="148" text-anchor="middle" class="subtitle">LONG_MAX returned</text>
+  <text x="570" y="166" text-anchor="middle" class="subtitle">oom_score_adj = +1000</text>
+  <text x="570" y="240" text-anchor="middle" class="label" fill="#ef4444">+1000</text>
+
+  <!-- Main axis -->
+  <line x1="80" y1="320" x2="640" y2="320" class="axis"/>
+
+  <!-- Axis ticks -->
+  <line x1="150" y1="315" x2="150" y2="325" class="axis"/>
+  <line x1="360" y1="315" x2="360" y2="325" class="axis"/>
+  <line x1="570" y1="315" x2="570" y2="325" class="axis"/>
+
+  <!-- Axis labels -->
+  <text x="150" y="350" text-anchor="middle" class="label">-1000</text>
+  <text x="360" y="350" text-anchor="middle" class="label">0</text>
+  <text x="570" y="350" text-anchor="middle" class="label">+1000</text>
+  <text x="360" y="380" text-anchor="middle" class="subtitle">oom_score_adj value</text>
+
+  <!-- Kill probability arrow -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <line x1="100" y1="395" x2="620" y2="395" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="360" y="412" text-anchor="middle" class="subtitle" fill="#ef4444">Kill Probability →</text>
+
+  <!-- Formula -->
+  <text x="360" y="60" text-anchor="middle" class="title">oom_score_adj vs OOM Kill Probability</text>
+  <text x="360" y="80" text-anchor="middle" class="formula">adjustment = oom_score_adj × totalpages / 1000</text>
+
+  <!-- Example calculation for 4GB RAM -->
+  <text x="360" y="290" text-anchor="middle" class="subtitle">Example: 4 GB RAM (totalpages ≈ 1,048,576)</text>
+  <text x="360" y="305" text-anchor="middle" class="subtitle">oom_score_adj = +500 → adds ~524,288 points (≈ 2 GB RSS equivalent)</text>
+</svg>
