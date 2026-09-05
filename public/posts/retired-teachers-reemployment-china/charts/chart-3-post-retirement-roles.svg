@@ -19,27 +19,28 @@
   <!-- Segments clockwise from top, each segment = percentage * 3.6 degrees -->
 
   <!-- Private tutoring: 30% = 108 degrees (0 to 108) -->
-  <path d="M 175 80 A 120 120 0 0 1 283.93 154.9 L 247.93 173.3 A 72 72 0 0 1 175 128 Z" fill="#f97316" />
-  <text x="268" y="122" class="pct-label">30%</text>
+  <path d="M 175.00 80.00 A 120 120 0 0 1 289.13 237.08 L 243.48 222.25 A 72 72 0 0 0 175.00 128.00 Z" fill="#f97316" />
+  <text x="253" y="144" class="pct-label">30%</text>
 
   <!-- Community education: 20% = 72 degrees (108 to 180) -->
-  <path d="M 283.93 154.9 A 120 120 0 0 1 295 200 L 247 200 A 72 72 0 0 1 247.93 173.3 Z" fill="#38bdf8" />
+  <path d="M 289.13 237.08 A 120 120 0 0 1 175.00 320.00 L 175.00 272.00 A 72 72 0 0 0 243.48 222.25 Z" fill="#38bdf8" />
+  <text x="231" y="278" class="pct-label">20%</text>
 
   <!-- Silver Age Teaching: 15% = 54 degrees (180 to 234) -->
-  <path d="M 295 200 A 120 120 0 0 1 260.27 280.5 L 226.27 246.5 A 72 72 0 0 1 247 200 Z" fill="#a78bfa" />
-  <text x="285" y="248" class="pct-label">15%</text>
+  <path d="M 175.00 320.00 A 120 120 0 0 1 77.92 270.53 L 116.75 242.32 A 72 72 0 0 0 175.00 272.00 Z" fill="#a78bfa" />
+  <text x="131" y="286" class="pct-label">15%</text>
 
   <!-- Volunteering/NGO: 15% = 54 degrees (234 to 288) -->
-  <path d="M 260.27 280.5 A 120 120 0 0 1 175 320 L 175 272 A 72 72 0 0 1 226.27 246.5 Z" fill="#22c55e" />
-  <text x="218" y="308" class="pct-label">15%</text>
+  <path d="M 77.92 270.53 A 120 120 0 0 1 60.87 162.92 L 106.52 177.75 A 72 72 0 0 0 116.75 242.32 Z" fill="#22c55e" />
+  <text x="80" y="215" class="pct-label">15%</text>
 
   <!-- Curriculum consulting: 10% = 36 degrees (288 to 324) -->
-  <path d="M 175 320 A 120 120 0 0 1 114.73 302.8 L 137.73 262.8 A 72 72 0 0 1 175 272 Z" fill="#f59e0b" />
-  <text x="130" y="298" class="pct-label">10%</text>
+  <path d="M 60.87 162.92 A 120 120 0 0 1 104.47 102.92 L 132.68 141.75 A 72 72 0 0 0 106.52 177.75 Z" fill="#f59e0b" />
+  <text x="97" y="144" class="pct-label">10%</text>
 
   <!-- Other: 10% = 36 degrees (324 to 360) -->
-  <path d="M 114.73 302.8 A 120 120 0 0 1 55 200 L 103 200 A 72 72 0 0 1 137.73 262.8 Z" fill="#ec4899" />
-  <text x="78" y="236" class="pct-label">10%</text>
+  <path d="M 104.47 102.92 A 120 120 0 0 1 175.00 80.00 L 175.00 128.00 A 72 72 0 0 0 132.68 141.75 Z" fill="#ec4899" />
+  <text x="145" y="109" class="pct-label">10%</text>
 
   <!-- Community education label (small segment, label outside) -->
 
