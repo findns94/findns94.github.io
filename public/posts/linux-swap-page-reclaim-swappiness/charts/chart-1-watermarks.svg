@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Linux memory watermarks diagram showing kswapd behavior zones">
+  <title>Linux Memory Watermarks: kswapd Decision Boundaries</title>
+  <desc>Three watermarks diagram: pages_high (kswapd sleeps, normal operation, above ~1.17% of zone), pages_low (kswapd wakes, background reclaim, ~0.98% of zone), pages_min (direct reclaim stalls, aggressive reclaim, ~0.78% of zone). Below pages_min triggers OOM killer.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-size: 16px; font-weight: 700; fill: currentColor; }
+    .subtitle { font-size: 11px; fill: #888; }
+    .zone-label { font-size: 13px; font-weight: 600; }
+    .zone-desc { font-size: 11px; fill: #aaa; }
+    .watermark-line { stroke-width: 2; stroke-dasharray: 6 3; }
+    .axis { stroke: currentColor; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Safe zone (above pages_high) -->
+  <rect x="80" y="60" width="560" height="80" rx="6" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="360" y="85" text-anchor="middle" class="zone-label" fill="#22c55e">SAFE ZONE</text>
+  <text x="360" y="103" text-anchor="middle" class="zone-desc">kswapd sleeps • Normal operation • No reclaim</text>
+  <text x="360" y="125" text-anchor="middle" class="subtitle">Free memory above pages_high (~1.17% of zone)</text>
+
+  <!-- Warning zone (pages_low to pages_high) -->
+  <rect x="80" y="140" width="560" height="80" rx="6" fill="#eab308" fill-opacity="0.08" stroke="#eab308" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="360" y="165" text-anchor="middle" class="zone-label" fill="#eab308">WARNING ZONE</text>
+  <text x="360" y="183" text-anchor="middle" class="zone-desc">kswapd wakes • Background reclaim begins</text>
+  <text x="360" y="205" text-anchor="middle" class="subtitle">Free memory between pages_low and pages_high</text>
+
+  <!-- Critical zone (pages_min to pages_low) -->
+  <rect x="80" y="220" width="560" height="80" rx="6" fill="#f97316" fill-opacity="0.08" stroke="#f97316" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="360" y="245" text-anchor="middle" class="zone-label" fill="#f97316">CRITICAL ZONE</text>
+  <text x="360" y="263" text-anchor="middle" class="zone-desc">Direct reclaim stalls • GFP_ATOMIC only</text>
+  <text x="360" y="285" text-anchor="middle" class="subtitle">Free memory between pages_min and pages_low</text>
+
+  <!-- OOM zone (below pages_min) -->
+  <rect x="80" y="300" width="560" height="60" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="360" y="325" text-anchor="middle" class="zone-label" fill="#ef4444">OOM ZONE</text>
+  <text x="360" y="345" text-anchor="middle" class="zone-desc">OOM killer invoked • Last resort</text>
+
+  <!-- Watermark lines -->
+  <line x1="80" y1="140" x2="640" y2="140" class="watermark-line" stroke="#22c55e"/>
+  <line x1="80" y1="220" x2="640" y2="220" class="watermark-line" stroke="#eab308"/>
+  <line x1="80" y1="300" x2="640" y2="300" class="watermark-line" stroke="#ef4444"/>
+
+  <!-- Watermark labels -->
+  <text x="630" y="135" text-anchor="start" class="label" fill="#22c55e">pages_high</text>
+  <text x="630" y="215" text-anchor="start" class="label" fill="#eab308">pages_low</text>
+  <text x="630" y="295" text-anchor="start" class="label" fill="#ef4444">pages_min</text>
+
+  <!-- Free memory axis -->
+  <line x1="80" y1="60" x2="80" y2="370" class="axis"/>
+  <text x="40" y="70" text-anchor="end" class="subtitle">High</text>
+  <text x="40" y="370" text-anchor="end" class="subtitle">Low</text>
+  <text x="80" y="390" text-anchor="middle" class="subtitle">Free Memory</text>
+
+  <!-- Title -->
+  <text x="360" y="35" text-anchor="middle" class="title">Linux Memory Watermarks: kswapd Decision Boundaries</text>
+
+  <!-- Formula -->
+  <text x="360" y="55" text-anchor="middle" class="subtitle">pages_min = managed_pages / 128 | pages_low = min × 5/4 | pages_high = min × 3/2</text>
+</svg>
