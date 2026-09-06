@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: Decision flow for choosing a bare metal orchestration engine. Start from top: What is your existing ecosystem? Ubuntu leads to MAAS. OpenStack leads to Ironic. Kubernetes leads to Tinkerbell (note archived). Need config management leads to Foreman.">
+  <title>Decision Flow: Choosing Your Orchestration Engine</title>
+  <desc>Flowchart showing the decision process for selecting a bare metal orchestration engine based on existing ecosystem. Ubuntu/Debian environments should choose MAAS. OpenStack environments should choose Ironic. Kubernetes-native teams should consider Tinkerbell (note: repo archived Dec 2025). Teams needing provisioning plus configuration management should choose Foreman.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 11px; }
+    .ax { font-size: 10px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .val { font-size: 11px; font-weight: 600; }
+    .box { font-size: 11px; font-weight: 600; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">Decision Flow: Choose Your Engine</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Start from your existing ecosystem</text>
+  <!-- Start -->
+  <rect x="200" y="52" width="160" height="36" rx="18" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="280" y="74" text-anchor="middle" class="box" fill="#fff">Your Ecosystem?</text>
+  <!-- Arrows down -->
+  <line x1="280" y1="88" x2="280" y2="110" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
+  <!-- Three branches -->
+  <!-- Ubuntu -->
+  <rect x="30" y="114" width="140" height="50" rx="6" fill="#fed7aa" stroke="#f97316" stroke-width="1"/>
+  <text x="100" y="133" text-anchor="middle" class="lb" fill="#9a3412">Ubuntu/Debian</text>
+  <text x="100" y="150" text-anchor="middle" class="lb" fill="#9a3412">ecosystem</text>
+  <!-- OpenStack -->
+  <rect x="210" y="114" width="140" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="280" y="133" text-anchor="middle" class="lb" fill="#1e40af">OpenStack</text>
+  <text x="280" y="150" text-anchor="middle" class="lb" fill="#1e40af">environment</text>
+  <!-- K8s / Other -->
+  <rect x="380" y="114" width="150" height="50" rx="6" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="455" y="133" text-anchor="middle" class="lb" fill="#5b21b6">Kubernetes /</text>
+  <text x="455" y="150" text-anchor="middle" class="lb" fill="#5b21b6">Other</text>
+  <!-- Arrows to results -->
+  <line x1="100" y1="164" x2="100" y2="190" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
+  <line x1="280" y1="164" x2="280" y2="190" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
+  <line x1="455" y1="164" x2="455" y2="190" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
+  <!-- Results -->
+  <rect x="30" y="194" width="140" height="60" rx="6" fill="#f87171" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="100" y="218" text-anchor="middle" class="box" fill="#fff">MAAS</text>
+  <text x="100" y="236" text-anchor="middle" class="ax" fill="#fff">Turnkey, built-in</text>
+  <text x="100" y="248" text-anchor="middle" class="ax" fill="#fff">IPAM/DHCP/DNS</text>
+  <!-- Ironic -->
+  <rect x="210" y="194" width="140" height="60" rx="6" fill="#60a5fa" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="280" y="218" text-anchor="middle" class="box" fill="#fff">Ironic</text>
+  <text x="280" y="236" text-anchor="middle" class="ax" fill="#fff">Widest hardware</text>
+  <text x="280" y="248" text-anchor="middle" class="ax" fill="#fff">Nova integration</text>
+  <!-- Tinkerbell / Foreman -->
+  <rect x="380" y="194" width="150" height="28" rx="4" fill="#a78bfa" stroke="#7c3aed" stroke-width="1"/>
+  <text x="455" y="213" text-anchor="middle" class="box" fill="#fff">Tinkerbell</text>
+  <rect x="380" y="226" width="150" height="28" rx="4" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+  <text x="455" y="245" text-anchor="middle" class="box" fill="#fff">Foreman</text>
+  <!-- Notes -->
+  <rect x="30" y="270" width="500" height="80" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="4,4"/>
+  <text x="40" y="290" class="lb" font-weight="600">Key considerations:</text>
+  <text x="40" y="308" class="lb">MAAS: 499 GitHub stars. Best for Ubuntu. Rack controller scales across subnets.</text>
+  <text x="40" y="324" class="lb">Ironic: 564 stars. Requires OpenStack. Most complete state machine (enroll/deploy/rescue).</text>
+  <text x="40" y="340" class="lb">Tinkerbell: 989 stars (archived Dec 2025). K8s-native workflows. Foreman: 2,900 stars. +Puppet/Salt.</text>
+  <!-- Source -->
+  <text x="280" y="372" text-anchor="middle" class="src">Source: GitHub (canonical/maas, tinkerbell/tink, openstack/ironic, theforeman/foreman), 2025.</text>
+</svg>

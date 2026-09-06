@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: PXE boot sequence. Step 1: Client broadcasts DHCPDISCOVER with PXE extensions. Step 2: DHCP server responds with IP, TFTP server address, and boot filename. Step 3: Client downloads Network Bootstrap Program via TFTP. Step 4: NBP downloads OS kernel and initrd via HTTP/NFS. Step 5: OS installation begins with Kickstart/Cloud-init automation.">
+  <title>PXE Boot Sequence</title>
+  <desc>Diagram showing the PXE boot process. The client broadcasts a DHCPDISCOVER packet with PXE extensions. The DHCP server responds with IP configuration and TFTP server information. The client downloads the Network Bootstrap Program (NBP) via TFTP. The NBP then downloads the OS kernel and initrd. The operating system installation begins with automated configuration from Kickstart or Cloud-init.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 10px; }
+    .ax { font-size: 9px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .step { font-size: 10px; font-weight: 600; }
+    .arrow { stroke: currentColor; stroke-opacity: 0.4; stroke-width: 1.5; fill: none; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">PXE Boot Sequence</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">From power-on to OS installation in 5 steps</text>
+  <!-- Client and Server columns -->
+  <text x="100" y="64" text-anchor="middle" class="hd">Client (NIC Firmware)</text>
+  <text x="460" y="64" text-anchor="middle" class="hd">DHCP/TFTP Server</text>
+  <!-- Vertical lines -->
+  <line x1="100" y1="70" x2="100" y2="340" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="3,3"/>
+  <line x1="460" y1="70" x2="460" y2="340" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="3,3"/>
+  <!-- Step 1 -->
+  <rect x="110" y="80" width="340" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="280" y="97" text-anchor="middle" class="step">1. DHCPDISCOVER (PXE extensions) →</text>
+  <!-- Step 2 -->
+  <rect x="110" y="120" width="340" height="26" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="280" y="137" text-anchor="middle" class="step">← 2. DHCPOFFER (IP, TFTP server, boot filename)</text>
+  <!-- Step 3 -->
+  <rect x="110" y="160" width="340" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="280" y="177" text-anchor="middle" class="step">3. TFTP: Download NBP (pxelinux.0 / grubx64.efi) →</text>
+  <!-- Step 4 -->
+  <rect x="110" y="200" width="340" height="26" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="280" y="217" text-anchor="middle" class="step">4. HTTP/NFS: Download kernel + initrd →</text>
+  <!-- Step 5 -->
+  <rect x="110" y="240" width="340" height="26" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+  <text x="280" y="257" text-anchor="middle" class="step">5. OS boots → Kickstart/Cloud-init automates install</text>
+  <!-- Time indicator -->
+  <text x="280" y="290" text-anchor="middle" class="ax">Total time: 30-60 seconds to kernel boot</text>
+  <text x="280" y="306" text-anchor="middle" class="ax">Full unattended install: 5-15 minutes (disk dependent)</text>
+  <!-- Source -->
+  <text x="280" y="350" text-anchor="middle" class="src">Source: PXE Specification (Intel/UEFI Forum), Kickstart documentation, Cloud-init documentation.</text>
+</svg>
