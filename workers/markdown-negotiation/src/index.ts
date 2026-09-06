@@ -178,6 +178,24 @@ function handleApiCatalog(url: string): Response {
   })
 }
 
+/**
+ * Add RFC 8288 Link discovery headers to a response.
+ * Used on the homepage to advertise machine-readable resources.
+ */
+function addLinkHeaders(response: Response): Response {
+  const headers = new Headers(response.headers)
+  const links = [
+    `</.well-known/api-catalog>; rel="api-catalog"`,
+    `</llms.txt>; rel="service-desc"; type="text/plain"`,
+    `</feed.xml>; rel="service-desc"; type="application/rss+xml"`,
+    `</sitemap.xml>; rel="service-desc"; type="application/xml"`,
+    `</posts>; rel="service-doc"; type="text/html"`,
+    `</about>; rel="describedby"; type="text/html"`,
+  ]
+  headers.set('Link', links.join(', '))
+  return new Response(response.body, { status: response.status, headers })
+}
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url)
@@ -186,6 +204,12 @@ export default {
     // RFC 9727: API Catalog endpoint
     if (url.pathname === '/.well-known/api-catalog') {
       return handleApiCatalog(request.url)
+    }
+
+    // Homepage: add Link discovery headers
+    if (url.pathname === '/' || url.pathname === '/index.html') {
+      const response = await fetch(request)
+      return addLinkHeaders(response)
     }
 
     // Only intercept requests that explicitly ask for markdown
