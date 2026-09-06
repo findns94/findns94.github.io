@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: CMDB data accuracy comparison. Manual tracking achieves 24-30% accuracy, automated discovery achieves 80-95% accuracy, industry average is below 40%.">
+  <title>CMDB Data Accuracy: Manual vs Automated</title>
+  <desc>Grouped bar chart comparing CMDB data accuracy rates. Manual tracking achieves 24-30% accuracy according to ITSM.tools and Gartner surveys. Automated discovery tools achieve 80-95% accuracy. The industry average remains below 40% according to Forrester research.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 11px; }
+    .ax { font-size: 10px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .val { font-size: 12px; font-weight: 700; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">CMDB Data Accuracy: Manual vs Automated</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Percentage of configuration items with accurate data</text>
+  <!-- Y axis -->
+  <text x="14" y="200" text-anchor="middle" class="ax" transform="rotate(-90, 14, 200)">Accuracy (%)</text>
+  <!-- Grid lines -->
+  <line x1="80" y1="80" x2="520" y2="80" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="140" x2="520" y2="140" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="200" x2="520" y2="200" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="260" x2="520" y2="260" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="320" x2="520" y2="320" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <!-- Y axis labels -->
+  <text x="74" y="84" text-anchor="end" class="ax">100%</text>
+  <text x="74" y="144" text-anchor="end" class="ax">75%</text>
+  <text x="74" y="204" text-anchor="end" class="ax">50%</text>
+  <text x="74" y="264" text-anchor="end" class="ax">25%</text>
+  <text x="74" y="324" text-anchor="end" class="ax">0%</text>
+  <!-- Manual: 27% average -->
+  <rect x="110" y="244" width="80" height="76" rx="4" fill="#f87171"/>
+  <text x="150" y="238" text-anchor="middle" class="val" fill="#f87171">27%</text>
+  <text x="150" y="345" text-anchor="middle" class="lb">Manual</text>
+  <text x="150" y="360" text-anchor="middle" class="ax">(spreadsheet)</text>
+  <!-- Industry avg: 35% -->
+  <rect x="240" y="231" width="80" height="89" rx="4" fill="#fbbf24"/>
+  <text x="280" y="225" text-anchor="middle" class="val" fill="#fbbf24">35%</text>
+  <text x="280" y="345" text-anchor="middle" class="lb">Industry</text>
+  <text x="280" y="360" text-anchor="middle" class="ax">(average)</text>
+  <!-- Automated: 87% average -->
+  <rect x="370" y="109" width="80" height="211" rx="4" fill="#4ade80"/>
+  <text x="410" y="103" text-anchor="middle" class="val" fill="#4ade80">87%</text>
+  <text x="410" y="345" text-anchor="middle" class="lb">Automated</text>
+  <text x="410" y="360" text-anchor="middle" class="ax">(auto-discovery)</text>
+  <!-- Source -->
+  <text x="280" y="375" text-anchor="middle" class="src">Source: ITSM.tools, Gartner, Forrester (2023-2024). Manual average from ITSM.tools survey; automated from Device42/Nautobot case studies.</text>
+</svg>

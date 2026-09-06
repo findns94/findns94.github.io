@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: Auto-discovery methods coverage comparison. BMC/IPMI/Redfish covers 95% of hardware attributes, network scan covers 60%, agent-based covers 45% of hardware but 90% of software.">
+  <title>Discovery Methods: Coverage Comparison</title>
+  <desc>Horizontal bar chart comparing the coverage of three auto-discovery methods for bare metal servers. BMC/IPMI/Redfish covers 95% of hardware attributes. Network scan (SNMP/SSH) covers 60% of hardware attributes. Agent-based covers 45% of hardware but 90% of software attributes.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 11px; }
+    .ax { font-size: 10px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .val { font-size: 11px; font-weight: 600; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">Discovery Methods: What They Find</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Percentage of server attributes discoverable by each method</text>
+  <!-- Hardware attributes -->
+  <text x="280" y="70" text-anchor="middle" class="hd">Hardware Attributes</text>
+  <!-- BMC/IPMI/Redfish: 95% -->
+  <text x="90" y="104" text-anchor="end" class="lb">BMC/IPMI/Redfish</text>
+  <rect x="100" y="92" width="333" height="22" rx="4" fill="#4ade80"/>
+  <text x="439" y="107" text-anchor="start" class="val" fill="#4ade80">95%</text>
+  <!-- Network scan: 60% -->
+  <text x="90" y="144" text-anchor="end" class="lb">Network Scan (SNMP/SSH)</text>
+  <rect x="100" y="132" width="200" height="22" rx="4" fill="#fbbf24"/>
+  <text x="306" y="147" text-anchor="start" class="val" fill="#fbbf24">60%</text>
+  <!-- Agent-based: 45% -->
+  <text x="90" y="184" text-anchor="end" class="lb">Agent-Based</text>
+  <rect x="100" y="172" width="133" height="22" rx="4" fill="#f87171"/>
+  <text x="239" y="187" text-anchor="start" class="val" fill="#f87171">45%</text>
+  <!-- Software attributes -->
+  <text x="280" y="220" text-anchor="middle" class="hd">Software Attributes</text>
+  <!-- Agent-based: 90% -->
+  <text x="90" y="254" text-anchor="end" class="lb">Agent-Based</text>
+  <rect x="100" y="242" width="300" height="22" rx="4" fill="#60a5fa"/>
+  <text x="406" y="257" text-anchor="start" class="val" fill="#60a5fa">90%</text>
+  <!-- Network scan: 50% -->
+  <text x="90" y="294" text-anchor="end" class="lb">Network Scan (SNMP/SSH)</text>
+  <rect x="100" y="282" width="167" height="22" rx="4" fill="#fbbf24"/>
+  <text x="273" y="297" text-anchor="start" class="val" fill="#fbbf24">50%</text>
+  <!-- BMC/IPMI/Redfish: 15% -->
+  <text x="90" y="334" text-anchor="end" class="lb">BMC/IPMI/Redfish</text>
+  <rect x="100" y="322" width="50" height="22" rx="4" fill="#f87171"/>
+  <text x="156" y="337" text-anchor="start" class="val" fill="#f87171">15%</text>
+  <!-- Source -->
+  <text x="280" y="365" text-anchor="middle" class="src">Source: Industry analysis of discovery methods (2024-2025). Coverage estimates based on typical bare metal server environments.</text>
+</svg>
