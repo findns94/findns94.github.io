@@ -1,0 +1,74 @@
+{
+  "name": "Silver Bullet Content Agent",
+  "description": "A bilingual (English/Chinese) blog covering technology, finance, and lifestyle. Provides content discovery via RSS, sitemap, and markdown content negotiation for AI agents.",
+  "url": "https://findns.cc",
+  "provider": {
+    "organization": "FindNS94",
+    "url": "https://findns.cc/about"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://findns.cc/about",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "securitySchemes": {},
+  "security": [],
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "text/markdown", "application/json"],
+  "supportedInterfaces": [
+    {
+      "url": "https://findns.cc",
+      "transport": "http"
+    },
+    {
+      "url": "https://findns.cc/feed.xml",
+      "transport": "http"
+    },
+    {
+      "url": "https://findns.cc/llms.txt",
+      "transport": "http"
+    }
+  ],
+  "skills": [
+    {
+      "id": "content-discovery",
+      "name": "Content Discovery",
+      "description": "Discover blog posts and articles via RSS feed, sitemap, or llms.txt index. Supports full-text search through structured metadata.",
+      "tags": ["blog", "content", "discovery", "rss", "sitemap"],
+      "examples": [
+        "Fetch the latest blog posts from the RSS feed",
+        "List all articles tagged with 'linux' or 'kernel'",
+        "Get the full article list from llms.txt"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["application/rss+xml", "text/plain", "application/xml"]
+    },
+    {
+      "id": "markdown-content",
+      "name": "Markdown Content Negotiation",
+      "description": "Retrieve article content in markdown format by sending Accept: text/markdown header. Returns clean, formatting-stripped text optimized for AI consumption.",
+      "tags": ["markdown", "content-negotiation", "ai-friendly"],
+      "examples": [
+        "GET /posts/linux-unix-socket-gc/ with Accept: text/markdown",
+        "Retrieve any article as plain markdown for processing"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/markdown"]
+    },
+    {
+      "id": "bilingual-content",
+      "name": "Bilingual Content Access",
+      "description": "Access articles in both English and Chinese. Each post is available in two language versions at the same path with .zh.md suffix for markdown.",
+      "tags": ["bilingual", "english", "chinese", "translation"],
+      "examples": [
+        "Get English version: /posts/<slug>/ with Accept: text/markdown",
+        "Get Chinese version: /posts/<slug>/index.zh.md"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/markdown"]
+    }
+  ],
+  "supportsAuthenticatedExtendedCard": false
+}

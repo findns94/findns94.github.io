@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "content-discovery",
+      "type": "skill-md",
+      "description": "Discover and access blog content via RSS, sitemap, and llms.txt index.",
+      "url": "/.well-known/agent-skills/content-discovery/SKILL.md",
+      "digest": "sha256:ff86695070e9b5104e3e3ec3c69b86c5a84c0f4da791be0b470333d55d37a9c6"
+    },
+    {
+      "name": "markdown-negotiation",
+      "type": "skill-md",
+      "description": "Retrieve article content in markdown format via HTTP content negotiation.",
+      "url": "/.well-known/agent-skills/markdown-negotiation/SKILL.md",
+      "digest": "sha256:b1c617a2095231a1c2f304bac9ec2c212ca6860c84097181835b5f29dbb42760"
+    },
+    {
+      "name": "bilingual-access",
+      "type": "skill-md",
+      "description": "Access articles in both English and Chinese language versions.",
+      "url": "/.well-known/agent-skills/bilingual-access/SKILL.md",
+      "digest": "sha256:f18ca0f413b40faaf3ed4c1b9e8002cbba6ed2559975ac60ba462c9bc3f6b330"
+    }
+  ]
+}
