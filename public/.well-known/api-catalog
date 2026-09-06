@@ -1,0 +1,88 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://findns.cc/feed.xml",
+      "service-desc": [
+        {
+          "href": "https://findns.cc/feed.xml",
+          "type": "application/rss+xml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://findns.cc/about",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://findns.cc/feed.xml",
+          "type": "application/rss+xml"
+        }
+      ]
+    },
+    {
+      "anchor": "https://findns.cc/llms.txt",
+      "service-desc": [
+        {
+          "href": "https://findns.cc/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://findns.cc/about",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://findns.cc/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    },
+    {
+      "anchor": "https://findns.cc/sitemap.xml",
+      "service-desc": [
+        {
+          "href": "https://findns.cc/sitemap.xml",
+          "type": "application/xml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://findns.cc/about",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://findns.cc/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    },
+    {
+      "anchor": "https://findns.cc/posts",
+      "service-desc": [
+        {
+          "href": "https://findns.cc/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://findns.cc/posts",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://findns.cc/posts",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}
