@@ -1,9 +1,10 @@
 /**
- * Markdown Content Negotiation + API Catalog Worker
+ * Markdown Content Negotiation + API Catalog + OAuth Metadata Worker
  *
  * Implements:
  * - https://contentsignals.org/ Markdown-for-Agents spec
  * - RFC 9727 API Catalog at /.well-known/api-catalog
+ * - RFC 9728 OAuth Protected Resource Metadata at /.well-known/oauth-protected-resource
  *
  * When a request includes `Accept: text/markdown`, the worker fetches the
  * markdown source from the origin and returns it with the correct Content-Type.
@@ -18,6 +19,17 @@ const SITE_URL = 'https://findns.cc'
 
 // Signals we want to declare on converted responses (matches robots.txt)
 const CONTENT_SIGNAL = 'ai-train=no, search=yes, ai-input=no'
+
+// RFC 9728 OAuth Protected Resource Metadata
+const OAUTH_PROTECTED_RESOURCE = {
+  resource: `${SITE_URL}`,
+  authorization_servers: [],
+  bearer_methods_supported: [],
+  resource_name: "Silver Bullet Blog",
+  resource_documentation: `${SITE_URL}/about`,
+  resource_policy_uri: `${SITE_URL}/privacy`,
+  resource_tos_uri: `${SITE_URL}/terms`,
+}
 
 // RFC 9727 API Catalog linkset
 const API_CATALOG = {
@@ -161,6 +173,18 @@ function wantsMarkdown(accept: string | null): boolean {
 }
 
 /**
+ * Generate the OAuth Protected Resource Metadata response per RFC 9728.
+ * Serves /.well-known/oauth-protected-resource with application/json.
+ */
+function handleOAuthProtectedResource(): Response {
+  const body = JSON.stringify(OAUTH_PROTECTED_RESOURCE, null, 2)
+  const headers = new Headers()
+  headers.set('Content-Type', 'application/json; charset=utf-8')
+  headers.set('Cache-Control', 'public, max-age=3600')
+  return new Response(body, { status: 200, headers })
+}
+
+/**
  * Generate the API catalog response per RFC 9727.
  * Serves /.well-known/api-catalog with application/linkset+json.
  */
@@ -200,6 +224,11 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url)
     const accept = request.headers.get('Accept')
+
+    // RFC 9728: OAuth Protected Resource Metadata endpoint
+    if (url.pathname === '/.well-known/oauth-protected-resource') {
+      return handleOAuthProtectedResource()
+    }
 
     // RFC 9727: API Catalog endpoint
     if (url.pathname === '/.well-known/api-catalog') {
