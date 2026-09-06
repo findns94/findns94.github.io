@@ -1,0 +1,45 @@
+User-Agent: GPTBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: OAI-SearchBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: ClaudeBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: Claude-SearchBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: PerplexityBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: Google-Extended
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: CCBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: Applebot-Extended
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: Googlebot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: Bingbot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: *
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+Sitemap: https://findns.cc/sitemap.xml
