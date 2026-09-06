@@ -273,7 +273,59 @@ The source block at the bottom gives full provenance:
 - Morningstar, "Mind the Gap" annual report, 2024, https://www.morningstar.com
 ```
 
-## 10. INTERNAL-LINK Placeholders
+## 10. Bold Text Rendering Pitfall (Chinese Content)
+
+**Critical**: When writing Chinese content, bold markers `**` can fail to render
+if they contain fullwidth parentheses or are immediately followed by Chinese
+characters. This is due to the CommonMark spec requirement that closing `*`/`**`
+must be followed by a non-word character.
+
+### Problem 1: Fullwidth Parentheses Inside Bold
+
+Fullwidth Chinese parentheses `（）` inside bold markers break parsing:
+
+```markdown
+<!-- WRONG: fullwidth parens inside bold -->
+**MAAS（Metal as a Service）**由Canonical开发
+
+<!-- CORRECT: use ASCII parens inside bold -->
+**MAAS(Metal as a Service)** 由Canonical开发
+```
+
+### Problem 2: Bold Followed Immediately by Chinese Character
+
+When closing `**` is immediately followed by a Chinese word character (no space
+or punctuation), the parser fails to recognize the bold:
+
+```markdown
+<!-- WRONG: ** directly followed by Chinese character -->
+**上架与布线**(物理安装和网络连接)
+**MAAS(Metal as a Service)**由Canonical开发
+
+<!-- CORRECT: add a space after closing ** -->
+**上架与布线** (物理安装和网络连接)
+**MAAS(Metal as a Service)** 由Canonical开发
+```
+
+### Rules for Chinese Bold Text
+
+1. **Always use ASCII parentheses `()` inside bold markers** — never fullwidth `（）`.
+2. **Add a space after closing `**`** when the next character is Chinese.
+3. Fullwidth parentheses are fine OUTSIDE bold markers (normal Chinese typography).
+
+### Verification
+
+After building, verify bold renders correctly:
+
+```bash
+# Check that bold patterns appear as <strong> tags in the HTML
+grep -o '<strong>[^<]*</strong>' out/posts/<slug>/index.html | head -20
+```
+
+If you see literal `**text**` in the rendered HTML instead of `<strong>text</strong>`,
+the bold syntax was not parsed — apply the fixes above.
+
+## 11. INTERNAL-LINK Placeholders
 
 During drafting, internal linking opportunities may be marked with:
 ```markdown
@@ -283,7 +335,7 @@ During drafting, internal linking opportunities may be marked with:
 **Delete every `INTERNAL-LINK` line** from the final markdown before finishing.
 These are drafting aids, not publishable content.
 
-## 11. AI-Native & AI-Friendly Technical Requirements
+## 12. AI-Native & AI-Friendly Technical Requirements
 
 This site is optimized so AI systems (ChatGPT, Claude, Perplexity, Google AI
 Overviews) can crawl, parse, and **cite** its content. The infrastructure is
@@ -318,7 +370,7 @@ for the full rationale.
 - Keep the **heading hierarchy clean**: one H1, H2s as questions, H3s only as
   children of an H2. The build adds slug IDs to every heading via `rehype-slug`.
 
-## 12. Final Pre-Commit Checklist
+## 13. Final Pre-Commit Checklist
 
 - [ ] Both `index.md` and `index.zh.md` exist.
 - [ ] Frontmatter complete: title, description (150–160 chars + stat), coverImage,

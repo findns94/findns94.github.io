@@ -7,7 +7,7 @@ ogImage: "/posts/face/images/cover.jpg"
 date: "2019-04-03 22:49:31"
 lastUpdated: "2026-08-23 22:00:00"
 author: "FindNS94"
-tags: [Deep Learning, Computer Vision]
+tags: ["AI"]
 math: false
 ---
 

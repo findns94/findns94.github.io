@@ -7,7 +7,7 @@ ogImage: "/posts/linux-message-queue-optimization/images/cover.jpg"
 date: "2026-09-06 16:00:00"
 lastUpdated: "2026-09-06 16:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个存储芯片，代表 System V 消息队列中使用 MSG_BARRIER 和 READ_ONCE 的无锁快速路径优化](/posts/linux-message-queue-optimization/images/cover.jpg)

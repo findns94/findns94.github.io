@@ -7,7 +7,7 @@ ogImage: "/posts/kernel-regression-xfstests/cover.svg"
 date: 2026-08-06 19:45:00
 lastUpdated: 2026-08-06 19:45:00
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Testing"]
+tags: ["Career", "Kernel", "Linux"]
 categories: ["Engineering"]
 math: false
 ---

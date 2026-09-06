@@ -7,7 +7,7 @@ ogImage: "/posts/linux-pelt-load-tracking-math/images/cover.jpg"
 date: "2026-09-06 05:00:00"
 lastUpdated: "2026-09-06 05:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A ball representing the exponential moving average calculation used by PELT to track CPU load in the Linux kernel](/posts/linux-pelt-load-tracking-math/images/cover.jpg)

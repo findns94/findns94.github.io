@@ -7,7 +7,7 @@ ogImage: "/posts/linux-netfilter-hook-array/images/cover.jpg"
 date: "2026-09-06 13:00:00"
 lastUpdated: "2026-09-06 13:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![An error screen representing the Linux kernel's Netfilter hook array mechanism for packet filtering and firewall functionality](/posts/linux-netfilter-hook-array/images/cover.jpg)

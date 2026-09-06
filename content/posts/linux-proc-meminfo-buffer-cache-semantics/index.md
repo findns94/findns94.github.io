@@ -7,7 +7,7 @@ ogImage: "/posts/linux-proc-meminfo-buffer-cache-semantics/images/cover.jpg"
 date: "2026-09-05 23:30:00"
 lastUpdated: "2026-09-05 23:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![Binary code streaming on a dark background, representing the Linux kernel's memory accounting structures that distinguish Buffers from Cache in /proc/meminfo](/posts/linux-proc-meminfo-buffer-cache-semantics/images/cover.jpg)

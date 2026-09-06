@@ -7,7 +7,7 @@ ogImage: "/posts/hailar-hulunbuir-september-self-drive-guide/images/cover.jpg"
 date: "2026-09-06 10:00:00"
 lastUpdated: "2026-09-06 10:00:00"
 author: "FindNS94"
-tags: ["Travel", "Self-Drive", "Hulunbuir"]
+tags: ["Travel"]
 ---
 
 ![秋日呼伦贝尔金色草原上一条蜿蜒的公路，蓝天白云下延伸到远方](/posts/hailar-hulunbuir-september-self-drive-guide/images/cover.jpg)

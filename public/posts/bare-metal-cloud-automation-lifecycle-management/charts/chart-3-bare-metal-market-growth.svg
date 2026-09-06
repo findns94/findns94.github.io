@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: Bare metal cloud market growth from 2025 to 2030. Market size grows from 14.32 billion USD in 2025 to 36.71 billion USD in 2030, representing a 20.7% CAGR.">
+  <title>Bare Metal Cloud Market Growth (2025-2030)</title>
+  <desc>Donut chart showing the projected growth of the bare metal cloud market from 14.32 billion USD in 2025 to 36.71 billion USD in 2030, representing a compound annual growth rate of 20.7 percent.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 11px; }
+    .ax { font-size: 10px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .val { font-size: 13px; font-weight: 700; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">Bare Metal Cloud Market Growth</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Projected market size, 2025-2030 (USD Billions)</text>
+  <!-- Donut chart -->
+  <!-- 2025 segment (14.32 / 36.71 = 39%) -->
+  <circle cx="220" cy="190" r="90" fill="none" stroke="#60a5fa" stroke-width="40" stroke-dasharray="220 565" stroke-dashoffset="0" transform="rotate(-90, 220, 190)"/>
+  <!-- Growth segment -->
+  <circle cx="220" cy="190" r="90" fill="none" stroke="#4ade80" stroke-width="40" stroke-dasharray="345 565" stroke-dashoffset="-220" transform="rotate(-90, 220, 190)"/>
+  <!-- Center text -->
+  <text x="220" y="185" text-anchor="middle" font-size="20" font-weight="700">20.7%</text>
+  <text x="220" y="205" text-anchor="middle" class="ax">CAGR</text>
+  <!-- Legend -->
+  <rect x="350" y="120" width="14" height="14" rx="2" fill="#60a5fa"/>
+  <text x="370" y="132" class="lb">2025: $14.32B</text>
+  <rect x="350" y="150" width="14" height="14" rx="2" fill="#4ade80"/>
+  <text x="370" y="162" class="lb">2030: $36.71B</text>
+  <!-- Key stats on right -->
+  <text x="370" y="210" class="lb" font-weight="600">Key Stats:</text>
+  <text x="370" y="230" class="lb">+156% growth</text>
+  <text x="370" y="248" class="lb">$22.39B increase</text>
+  <text x="370" y="266" class="lb">Fastest segment of</text>
+  <text x="370" y="284" class="lb">cloud infrastructure</text>
+  <!-- Source -->
+  <text x="280" y="350" text-anchor="middle" class="src">Source: MarketsandMarkets, Bare Metal Cloud Market Report (2025). CAGR = Compound Annual Growth Rate.</text>
+</svg>

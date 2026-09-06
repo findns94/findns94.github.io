@@ -7,7 +7,7 @@ ogImage: "/posts/linux-eevdf-scheduler-time-philosophy/images/cover.jpg"
 date: "2026-09-06 01:00:00"
 lastUpdated: "2026-09-06 01:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![CPU 时间与调度的数字表示，代表 EEVDF 调度器的虚拟运行时与截止时间机制](/posts/linux-eevdf-scheduler-time-philosophy/images/cover.jpg)

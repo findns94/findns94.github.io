@@ -7,7 +7,7 @@ ogImage: "/posts/young-children-ai-education-shanghai/images/cover.jpg"
 date: "2026-07-15 22:47:02"
 lastUpdated: "2026-07-15 22:47:02"
 author: "FindNS94"
-tags: [AI, Education, Shanghai]
+tags: ["AI", "Career", "Housing"]
 ---
 
 ![A young Asian girl placing her hand on a white humanoid robot, representing early-childhood AI interaction in Shanghai](/posts/young-children-ai-education-shanghai/images/cover.jpg)

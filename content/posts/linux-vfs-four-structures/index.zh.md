@@ -7,7 +7,7 @@ ogImage: "/posts/linux-vfs-four-structures/images/cover.jpg"
 date: "2026-09-06 08:00:00"
 lastUpdated: "2026-09-06 08:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个存储芯片，代表构成 Linux 虚拟文件系统层的四个核心 VFS 结构：inode、dentry、file 和 super_block](/posts/linux-vfs-four-structures/images/cover.jpg)

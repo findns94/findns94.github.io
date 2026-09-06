@@ -7,7 +7,7 @@ ogImage: "/posts/learn-linux-step-1/images/cover.jpg"
 date: 2021-12-05 20:22:30
 lastUpdated: 2026-08-23 10:00:00
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![昏暗的服务器机房中成排的机架式设备与闪烁的状态LED灯，代表Linux内核基础设施](/posts/learn-linux-step-1/images/cover.jpg)

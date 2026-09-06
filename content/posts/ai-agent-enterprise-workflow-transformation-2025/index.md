@@ -7,7 +7,7 @@ ogImage: "/posts/ai-agent-enterprise-workflow-transformation-2025/images/cover.s
 date: 2026-07-16 21:31:42
 lastUpdated: 2026-07-16 21:31:42
 author: "FindNS94"
-tags: ["AI", "Machine Learning", "Automation"]
+tags: ["AI"]
 categories: ["AI/ML", "Enterprise Technology"]
 math: false
 ---

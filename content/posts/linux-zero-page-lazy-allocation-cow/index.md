@@ -7,7 +7,7 @@ ogImage: "/posts/linux-zero-page-lazy-allocation-cow/images/cover.jpg"
 date: "2026-09-06 00:30:00"
 lastUpdated: "2026-09-06 00:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A screen displaying an error message, representing the Linux kernel's zero page mechanism that defers physical allocation until first write in anonymous mappings](/posts/linux-zero-page-lazy-allocation-cow/images/cover.jpg)

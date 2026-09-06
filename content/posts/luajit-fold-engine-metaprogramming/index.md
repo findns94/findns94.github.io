@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-fold-engine-metaprogramming/images/cover.jpg"
 date: "2026-09-05 22:00:00"
 lastUpdated: "2026-09-05 22:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "FOLD", "Compiler"]
+tags: ["LuaJIT"]
 ---
 
 ![FOLD engine concept: a 24-bit key hashing into a table of fold functions, representing the semi-perfect hash rule lookup](/posts/luajit-fold-engine-metaprogramming/images/cover.jpg)

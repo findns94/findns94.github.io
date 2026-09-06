@@ -7,7 +7,7 @@ ogImage: "/posts/risk/images/cover.jpg"
 date: "2019-03-28 21:36:21"
 lastUpdated: "2026-08-23 12:00:00"
 author: "FindNS94"
-tags: ["Machine Learning", "Finance", "Risk Analysis"]
+tags: ["AI", "Finance"]
 ---
 
 ![笔记本电脑屏幕上的商业数据分析仪表盘，木桌桌面上显示着图表与数据可视化](/posts/risk/images/cover.jpg)

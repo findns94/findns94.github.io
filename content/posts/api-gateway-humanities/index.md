@@ -7,7 +7,7 @@ ogImage: "/posts/api-gateway-humanities/images/cover.svg"
 date: 2026-07-19 22:00:00
 lastUpdated: 2026-07-19 22:00:00
 author: "FindNS94"
-tags: ["API", "Software Architecture", "Technology"]
+tags: ["Web Development"]
 categories: ["Technology", "Software Architecture"]
 math: false
 ---

@@ -7,7 +7,7 @@ ogImage: "/posts/compile-ubuntu-kernel-source-6.8.0-90.91/images/cover.jpg"
 date: 2026-08-18 20:00:00
 lastUpdated: 2026-08-18 20:00:00
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Ubuntu"]
+tags: ["Kernel", "Linux"]
 categories: ["Engineering"]
 math: false
 ---

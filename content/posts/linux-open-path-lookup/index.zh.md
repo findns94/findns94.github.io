@@ -7,7 +7,7 @@ ogImage: "/posts/linux-open-path-lookup/images/cover.jpg"
 date: "2026-09-06 06:00:00"
 lastUpdated: "2026-09-06 06:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个存储芯片，代表 Linux 内核通过 dcache 和 RCU walk 的路径查找机制](/posts/linux-open-path-lookup/images/cover.jpg)

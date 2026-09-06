@@ -7,7 +7,7 @@ ogImage: "/posts/ease-father-daughter-relationship-chinese-family/images/cover.j
 date: 2026-07-23 22:45:00
 lastUpdated: 2026-07-23 22:45:00
 author: "FindNS94"
-tags: ["Family", "Relationships", "Culture"]
+tags: ["Culture"]
 categories: ["Life", "Family"]
 ---
 

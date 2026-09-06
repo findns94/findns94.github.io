@@ -7,7 +7,7 @@ ogImage: "/posts/shanghai-second-hand-home-negotiation-guide/images/cover.jpg"
 date: "2026-08-11 22:30:00"
 lastUpdated: "2026-08-11 22:30:00"
 author: "FindNS94"
-tags: [Housing, Finance, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![High-angle view of Shanghai high-rise residential and commercial buildings, representing the city's second-hand housing market](/posts/shanghai-second-hand-home-negotiation-guide/images/cover.jpg)

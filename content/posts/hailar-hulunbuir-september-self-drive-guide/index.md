@@ -7,7 +7,7 @@ ogImage: "/posts/hailar-hulunbuir-september-self-drive-guide/images/cover.jpg"
 date: "2026-09-06 10:00:00"
 lastUpdated: "2026-09-06 10:00:00"
 author: "FindNS94"
-tags: ["Travel", "Self-Drive", "Hulunbuir"]
+tags: ["Travel"]
 ---
 
 ![A winding road stretching through golden autumn grassland under a blue sky with scattered clouds in Hulunbuir, Inner Mongolia](/posts/hailar-hulunbuir-september-self-drive-guide/images/cover.jpg)

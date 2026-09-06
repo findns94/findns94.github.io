@@ -7,7 +7,7 @@ ogImage: "/posts/linux-vfs-four-structures/images/cover.jpg"
 date: "2026-09-06 08:00:00"
 lastUpdated: "2026-09-06 08:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A memory chip representing the four core VFS structures: inode, dentry, file, and super_block that form the Linux virtual filesystem layer](/posts/linux-vfs-four-structures/images/cover.jpg)

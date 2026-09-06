@@ -7,7 +7,7 @@ ogImage: "/posts/learn-arm-assembly-language/images/cover.svg"
 date: "2021-05-16 20:25:50"
 lastUpdated: "2026-08-23 12:00:00"
 author: "FindNS94"
-tags: [Arm, Assembly, Debugging]
+tags: ["Career", "Kernel", "Linux"]
 categories: [Engineering]
 ---
 

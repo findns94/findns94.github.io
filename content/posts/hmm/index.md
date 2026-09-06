@@ -7,7 +7,7 @@ ogImage: "/posts/hmm/images/cover.jpg"
 date: "2019-03-19 20:13:07"
 lastUpdated: "2026-08-23 14:00:00"
 author: "FindNS94"
-tags: [NLP, Machine Learning, AI]
+tags: ["AI"]
 math: true
 ---
 

@@ -7,7 +7,7 @@ ogImage: "/posts/dynasm-first-assembly-interpreter/images/cover.jpg"
 date: "2026-09-05 14:00:00"
 lastUpdated: "2026-09-05 14:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "DynASM", "Interpreter"]
+tags: ["LuaJIT"]
 ---
 
 ![A stylized CPU processor chip with assembly code flowing from its pins, representing DynASM bridging C code and machine assembly](/posts/dynasm-first-assembly-interpreter/images/cover.jpg)

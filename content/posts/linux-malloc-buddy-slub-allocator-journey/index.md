@@ -7,7 +7,7 @@ ogImage: "/posts/linux-malloc-buddy-slub-allocator-journey/images/cover.jpg"
 date: "2026-09-06 00:00:00"
 lastUpdated: "2026-09-06 00:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A screen displaying an error message, representing the complex memory allocation path from malloc through the Linux kernel's Buddy and SLUB allocators](/posts/linux-malloc-buddy-slub-allocator-journey/images/cover.jpg)

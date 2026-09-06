@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-china-a-shares-ai-era-discipline/images/cover.j
 date: "2026-08-08 22:30:00"
 lastUpdated: "2026-08-08 22:30:00"
 author: "FindNS94"
-tags: [Finance, Investment, AI]
+tags: ["AI", "Finance"]
 ---
 
 ![A candlestick stock market chart displayed on a dark trading screen, showing price movements and trading data for equity market analysis](/posts/value-investing-china-a-shares-ai-era-discipline/images/cover.jpg)

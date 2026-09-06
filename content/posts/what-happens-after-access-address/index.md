@@ -7,7 +7,7 @@ ogImage: "/posts/what-happens-after-access-address/images/cover.svg"
 date: "2021-02-21 19:34:02"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A diagram showing the ARM64 page-table walk from PGD to physical page, representing the page fault handling process in the Linux kernel](/posts/what-happens-after-access-address/images/cover.svg)

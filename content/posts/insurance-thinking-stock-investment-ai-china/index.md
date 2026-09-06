@@ -7,7 +7,7 @@ ogImage: "/posts/insurance-thinking-stock-investment-ai-china/images/cover-finan
 date: 2026-08-07 20:30:00
 lastUpdated: 2026-08-07 20:30:00
 author: "FindNS94"
-tags: ["Finance", "Investment", "AI"]
+tags: ["AI", "Finance"]
 ---
 
 ![Abstract digital visualization of financial data streams merging into a protective shield, representing insurance-style risk management for stock investing in the AI era](/posts/insurance-thinking-stock-investment-ai-china/images/cover-financial-protection.jpg)

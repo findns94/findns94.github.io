@@ -7,7 +7,7 @@ ogImage: "/posts/linux-netfilter-hook-array/images/cover.jpg"
 date: "2026-09-06 13:00:00"
 lastUpdated: "2026-09-06 13:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![错误屏幕，代表 Linux 内核的 Netfilter 钩子数组机制，用于包过滤和防火墙功能](/posts/linux-netfilter-hook-array/images/cover.jpg)

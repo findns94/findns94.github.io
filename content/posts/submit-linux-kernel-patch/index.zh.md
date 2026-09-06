@@ -1,7 +1,7 @@
 ---
 title: "如何提交你的第一个Linux内核补丁：2026年分步指南"
 date: 2026-07-14 09:00:00
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 categories: [Engineering]
 ---
 

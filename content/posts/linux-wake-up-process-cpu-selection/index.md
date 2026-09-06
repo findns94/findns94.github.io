@@ -7,7 +7,7 @@ ogImage: "/posts/linux-wake-up-process-cpu-selection/images/cover.jpg"
 date: "2026-09-06 03:00:00"
 lastUpdated: "2026-09-06 03:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A ball representing the complex CPU selection decision when waking up a sleeping process in the Linux kernel](/posts/linux-wake-up-process-cpu-selection/images/cover.jpg)

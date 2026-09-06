@@ -7,7 +7,7 @@ ogImage: "/posts/how-to-create-great-travel-vlog-beginners-aesthetics/images/cov
 date: 2026-07-23 14:30:00
 lastUpdated: 2026-07-23 14:30:00
 author: "FindNS94"
-tags: ["Travel", "Video", "Photography"]
+tags: ["Travel"]
 categories: ["Travel", "Video Production"]
 ---
 

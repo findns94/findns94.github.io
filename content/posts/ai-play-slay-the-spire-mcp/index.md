@@ -7,7 +7,7 @@ ogImage: "/posts/ai-play-slay-the-spire-mcp/images/cover.jpg"
 date: "2026-08-14 20:30:00"
 lastUpdated: "2026-08-14 20:30:00"
 author: "FindNS94"
-tags: ["AI", "Gaming", "MCP"]
+tags: ["AI", "Gaming"]
 categories: ["AI", "Gaming"]
 math: false
 ---

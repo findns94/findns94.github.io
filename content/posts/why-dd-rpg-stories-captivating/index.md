@@ -7,7 +7,7 @@ ogImage: "/posts/why-dd-rpg-stories-captivating/images/cover.png"
 date: "2026-08-10 22:30:00"
 lastUpdated: "2026-08-10 22:30:00"
 author: "FindNS94"
-tags: ["RPG", "Gaming", "Narrative Design"]
+tags: ["Gaming"]
 categories: ["Gaming", "Narrative Design"]
 math: false
 ---

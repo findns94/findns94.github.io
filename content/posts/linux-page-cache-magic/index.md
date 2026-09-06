@@ -7,7 +7,7 @@ ogImage: "/posts/linux-page-cache-magic/images/cover.jpg"
 date: "2026-09-06 07:00:00"
 lastUpdated: "2026-09-06 07:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![Digital storage media representing the Linux kernel's page cache mechanism that serves file I/O from RAM](/posts/linux-page-cache-magic/images/cover.jpg)

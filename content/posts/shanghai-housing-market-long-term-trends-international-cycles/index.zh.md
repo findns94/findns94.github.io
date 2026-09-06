@@ -7,7 +7,7 @@ ogImage: "/posts/shanghai-housing-market-long-term-trends-international-cycles/i
 date: "2026-07-22 22:30:00"
 lastUpdated: "2026-07-22 22:30:00"
 author: "FindNS94"
-tags: [Housing, Finance, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![上海陆家嘴天际线与住宅区俯瞰图，代表上海楼市长期前景](/posts/shanghai-housing-market-long-term-trends-international-cycles/images/cover.jpg)

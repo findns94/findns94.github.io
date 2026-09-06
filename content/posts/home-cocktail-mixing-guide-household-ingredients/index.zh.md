@@ -7,7 +7,7 @@ ogImage: "/posts/home-cocktail-mixing-guide-household-ingredients/images/cover.j
 date: "2026-08-11 14:30:00"
 lastUpdated: "2026-08-11 14:30:00"
 author: "FindNS94"
-tags: ["Cocktails", "Home Bar", "Beverages"]
+tags: ["Culture"]
 ---
 
 ![一杯精心装饰的鸡尾酒，杯中配有柑橘片和冰块，代表使用常见家庭原料进行家庭调酒](/posts/home-cocktail-mixing-guide-household-ingredients/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/witcher-3-greatest-rpg-21st-century/images/cover.svg"
 date: 2026-07-16 22:20:06
 lastUpdated: 2026-07-16 22:20:06
 author: "FindNS94"
-tags: ["RPG", "Gaming", "The Witcher 3"]
+tags: ["Gaming"]
 categories: ["Gaming"]
 math: false
 ---

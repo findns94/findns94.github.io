@@ -7,7 +7,7 @@ ogImage: "/posts/linux-message-queue-optimization/images/cover.jpg"
 date: "2026-09-06 16:00:00"
 lastUpdated: "2026-09-06 16:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A memory chip representing the lock-free fast path optimization in System V message queues using MSG_BARRIER and READ_ONCE](/posts/linux-message-queue-optimization/images/cover.jpg)

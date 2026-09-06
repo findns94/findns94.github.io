@@ -7,7 +7,7 @@ ogImage: "/posts/linux-malloc-buddy-slub-allocator-journey/images/cover.jpg"
 date: "2026-09-06 00:00:00"
 lastUpdated: "2026-09-06 00:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![屏幕上显示错误消息，代表从 malloc 到 Linux 内核 Buddy 和 SLUB 分配器的复杂内存分配路径](/posts/linux-malloc-buddy-slub-allocator-journey/images/cover.jpg)

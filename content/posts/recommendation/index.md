@@ -7,7 +7,7 @@ ogImage: "/posts/recommendation/images/cover.jpg"
 date: "2019-02-23 20:59:16"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Data Mining, Recommendation, Hadoop]
+tags: ["Data Science"]
 ---
 
 ![Abstract visualization of data streams flowing through a network, representing automated resume screening and candidate matching at scale](/posts/recommendation/images/cover.jpg)

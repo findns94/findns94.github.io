@@ -7,7 +7,7 @@ ogImage: "/posts/how-to-choose-investment-strategy-in-china-for-young-couples-sh
 date: "2026-07-14 22:32:23"
 lastUpdated: "2026-07-14 22:32:23"
 author: "FindNS94"
-tags: [Finance, Investment, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![Dazzling night view of Shanghai's Pudong skyline with the iconic Oriental Pearl Tower reflecting on the Huangpu River](/posts/how-to-choose-investment-strategy-in-china-for-young-couples-shanghai/images/shanghai-pudong-skyline.jpg)

@@ -1,7 +1,7 @@
 ---
 title: "How to Choose a Shanghai House-Buying Strategy for Young Couples (2026–2036)"
 date: 2026-07-14 20:09:10
-tags: [Housing, Finance, Shanghai]
+tags: ["Finance", "Housing"]
 categories: [Personal Finance]
 coverImage: "/posts/shanghai-house-buying-strategy-young-couples/images/shanghai-skyline.svg"
 coverImageAlt: "A wide aerial view of downtown Shanghai's Pudong skyline and residential towers at dusk"

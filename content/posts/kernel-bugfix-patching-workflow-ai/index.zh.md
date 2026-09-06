@@ -7,7 +7,7 @@ ogImage: "/posts/kernel-bugfix-patching-workflow-ai/cover.svg"
 date: 2026-08-07 21:30:00
 lastUpdated: 2026-08-07 21:30:00
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Testing"]
+tags: ["Career", "Kernel", "Linux"]
 categories: ["Engineering"]
 math: false
 ---

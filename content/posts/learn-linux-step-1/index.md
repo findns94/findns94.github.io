@@ -7,7 +7,7 @@ ogImage: "/posts/learn-linux-step-1/images/cover.jpg"
 date: 2021-12-05 20:22:30
 lastUpdated: 2026-08-23 10:00:00
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A dark server room with rows of rack-mounted equipment and blinking status LEDs, representing the Linux kernel infrastructure](/posts/learn-linux-step-1/images/cover.jpg)

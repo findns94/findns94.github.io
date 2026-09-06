@@ -7,7 +7,7 @@ ogImage: "/posts/shanghai-housing-market-long-term-trends-international-cycles/i
 date: "2026-07-22 22:30:00"
 lastUpdated: "2026-07-22 22:30:00"
 author: "FindNS94"
-tags: [Housing, Finance, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![A wide aerial view of Shanghai's Pudong skyline and residential towers at dusk, representing the city's long-term housing market outlook](/posts/shanghai-housing-market-long-term-trends-international-cycles/images/cover.jpg)

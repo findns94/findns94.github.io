@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-ffi-zero-cost-handshake/images/cover.jpg"
 date: "2026-09-06 02:00:00"
 lastUpdated: "2026-09-06 02:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "FFI", "C Interop"]
+tags: ["LuaJIT"]
 ---
 
 ![Two halves — C (blue) and Lua (green) — connected by a green FFI bridge in the center, representing the zero-cost handshake](/posts/luajit-ffi-zero-cost-handshake/images/cover.jpg)

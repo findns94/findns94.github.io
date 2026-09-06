@@ -7,7 +7,7 @@ ogImage: "/posts/linux-oom-killer-real-trigger-conditions/images/cover.jpg"
 date: "2026-09-05 22:30:00"
 lastUpdated: "2026-09-05 22:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A screen displaying an error message, representing the Linux kernel's OOM killer mechanism that terminates processes when memory allocation fails](/posts/linux-oom-killer-real-trigger-conditions/images/cover.jpg)

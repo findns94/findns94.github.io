@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-nanboxing-object-model/images/cover.jpg"
 date: "2026-09-05 18:00:00"
 lastUpdated: "2026-09-05 18:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "Object Model", "NaN-Boxing"]
+tags: ["LuaJIT"]
 ---
 
 ![A glowing 8-byte double exploding into all Lua types — nil, boolean, number, string, table, function — representing NaN-boxing](/posts/luajit-nanboxing-object-model/images/cover.jpg)

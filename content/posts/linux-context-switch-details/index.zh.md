@@ -7,7 +7,7 @@ ogImage: "/posts/linux-context-switch-details/images/cover.jpg"
 date: "2026-09-06 02:00:00"
 lastUpdated: "2026-09-06 02:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个运动中的球，代表 Linux 上下文切换期间复杂的状态转换](/posts/linux-context-switch-details/images/cover.jpg)

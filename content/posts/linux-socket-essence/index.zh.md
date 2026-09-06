@@ -7,7 +7,7 @@ ogImage: "/posts/linux-socket-essence/images/cover.jpg"
 date: "2026-09-06 12:00:00"
 lastUpdated: "2026-09-06 12:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个 USB 钥匙，代表 Linux 内核的 socket 实现 — 由 VFS 支持的文件描述符，桥接用户态和协议栈](/posts/linux-socket-essence/images/cover.jpg)

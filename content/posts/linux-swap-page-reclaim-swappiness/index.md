@@ -7,7 +7,7 @@ ogImage: "/posts/linux-swap-page-reclaim-swappiness/images/cover.jpg"
 date: "2026-09-05 23:00:00"
 lastUpdated: "2026-09-05 23:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A computer monitor displaying system metrics, representing the Linux kernel's proactive page reclaim and swap management mechanisms](/posts/linux-swap-page-reclaim-swappiness/images/cover.jpg)

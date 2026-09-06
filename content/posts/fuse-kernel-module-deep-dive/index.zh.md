@@ -7,7 +7,7 @@ ogImage: "/posts/fuse-kernel-module-deep-dive/images/cover.jpg"
 date: "2026-08-22 22:00:00"
 lastUpdated: "2026-08-22 22:00:00"
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![黑暗数据中心中的服务器机架，代表支撑 FUSE 内核模块的 Linux 内核基础设施](/posts/fuse-kernel-module-deep-dive/images/cover.jpg)

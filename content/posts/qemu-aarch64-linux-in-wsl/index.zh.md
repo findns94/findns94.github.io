@@ -7,7 +7,7 @@ ogImage: "/posts/qemu-aarch64-linux-in-wsl/images/cover.jpg"
 date: "2021-09-12 22:15:59"
 lastUpdated: "2026-08-23 22:15:59"
 author: "FindNS94"
-tags: [Linux, Emulation, Arm]
+tags: ["Linux"]
 ---
 
 ![一个深色 Linux 终端窗口，展示命令行界面，代表用于启动 ARM64 系统的 QEMU 串口控制台](/posts/qemu-aarch64-linux-in-wsl/images/cover.jpg)

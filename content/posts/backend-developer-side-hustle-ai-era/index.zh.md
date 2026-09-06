@@ -7,7 +7,7 @@ ogImage: "/posts/backend-developer-side-hustle-ai-era/images/cover-laptop.jpg"
 date: 2026-07-27 23:00:00
 lastUpdated: 2026-07-27 23:00:00
 author: "FindNS94"
-tags: ["AI", "Career", "Software Engineering"]
+tags: ["AI", "Career"]
 categories: ["AI/ML", "Career"]
 math: false
 ---

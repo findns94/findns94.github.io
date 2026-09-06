@@ -7,7 +7,7 @@ ogImage: "/posts/linux-packet-journey-nic-to-userspace/images/cover.jpg"
 date: "2026-09-06 10:00:00"
 lastUpdated: "2026-09-06 10:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A ball representing the complete journey of a network packet from NIC to userspace through the Linux kernel](/posts/linux-packet-journey-nic-to-userspace/images/cover.jpg)

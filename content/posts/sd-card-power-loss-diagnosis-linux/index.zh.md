@@ -7,7 +7,7 @@ ogImage: "/posts/sd-card-power-loss-diagnosis-linux/images/cover.png"
 date: "2026-09-03 22:30:00"
 lastUpdated: "2026-09-03 22:30:00"
 author: "FindNS94"
-tags: ["Linux", "Embedded", "Storage"]
+tags: ["Linux"]
 ---
 
 ![深色背景上的 microSD 卡，代表嵌入式 Linux 系统中的 SD 卡故障诊断](/posts/sd-card-power-loss-diagnosis-linux/images/cover.png)

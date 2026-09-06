@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-shanghai-resale-real-estate/images/cover.jpg"
 date: "2026-08-18 20:00:00"
 lastUpdated: "2026-08-18 20:00:00"
 author: "FindNS94"
-tags: [Housing, Finance, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![从黄浦江远眺上海陆家嘴天际线全景，代表这座城市的二手房市场——价值投资原则在此大有可为](/posts/value-investing-shanghai-resale-real-estate/images/cover.jpg)

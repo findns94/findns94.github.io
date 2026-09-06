@@ -7,7 +7,7 @@ ogImage: "/posts/linux-socket-essence/images/cover.jpg"
 date: "2026-09-06 12:00:00"
 lastUpdated: "2026-09-06 12:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A USB key representing the Linux kernel's socket implementation — a file descriptor backed by VFS that bridges userspace and the protocol stack](/posts/linux-socket-essence/images/cover.jpg)

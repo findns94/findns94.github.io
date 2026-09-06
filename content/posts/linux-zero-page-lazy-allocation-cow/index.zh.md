@@ -7,7 +7,7 @@ ogImage: "/posts/linux-zero-page-lazy-allocation-cow/images/cover.jpg"
 date: "2026-09-06 00:30:00"
 lastUpdated: "2026-09-06 00:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![屏幕上显示错误消息，代表 Linux 内核的零页机制——在匿名映射中延迟物理分配直到首次写入](/posts/linux-zero-page-lazy-allocation-cow/images/cover.jpg)

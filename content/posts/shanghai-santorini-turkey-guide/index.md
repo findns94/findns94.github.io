@@ -7,7 +7,7 @@ ogImage: "/posts/shanghai-santorini-turkey-guide/images/cover.jpg"
 date: "2026-08-27 12:00:00"
 lastUpdated: "2026-08-27 12:00:00"
 author: "FindNS94"
-tags: ["Travel", "Greece", "Turkey"]
+tags: ["Travel"]
 ---
 
 ![Iconic blue-dome church overlooking the Santorini caldera at sunset, Greece](/posts/shanghai-santorini-turkey-guide/images/cover.jpg)

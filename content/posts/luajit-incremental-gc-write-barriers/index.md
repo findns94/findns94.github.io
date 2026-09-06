@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-incremental-gc-write-barriers/images/cover.jpg"
 date: "2026-09-05 24:00:00"
 lastUpdated: "2026-09-05 24:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "Garbage Collection", "GC"]
+tags: ["LuaJIT"]
 ---
 
 ![Three color circles — white, gray, black — with arrows showing allowed transitions and a red X over the forbidden white-to-black direct transition](/posts/luajit-incremental-gc-write-barriers/images/cover.jpg)

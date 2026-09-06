@@ -7,7 +7,7 @@ ogImage: "/posts/linux-shared-memory-truth/images/cover.jpg"
 date: "2026-09-06 14:00:00"
 lastUpdated: "2026-09-06 14:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![Digital storage media representing the truth that System V shared memory is implemented on top of tmpfs in the Linux kernel](/posts/linux-shared-memory-truth/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/confu/images/cover.jpg"
 date: 2019-02-28 23:27:41
 lastUpdated: 2026-08-23 12:00:00
 author: "FindNS94"
-tags: [Concurrency, JVM, Testing]
+tags: ["Career"]
 categories: [Research]
 ---
 

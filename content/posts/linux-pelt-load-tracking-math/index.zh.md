@@ -7,7 +7,7 @@ ogImage: "/posts/linux-pelt-load-tracking-math/images/cover.jpg"
 date: "2026-09-06 05:00:00"
 lastUpdated: "2026-09-06 05:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个球，代表 PELT 用于追踪 Linux 内核 CPU 负载的指数移动平均计算](/posts/linux-pelt-load-tracking-math/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/insurance-thinking-stock-investment-ai-china/images/cover-finan
 date: 2026-08-07 20:30:00
 lastUpdated: 2026-08-07 20:30:00
 author: "FindNS94"
-tags: ["Finance", "Investment", "AI"]
+tags: ["AI", "Finance"]
 ---
 
 ![抽象的数字可视化画面：金融数据流汇聚成一面保护盾牌，象征AI时代保险式风险管理在股票投资中的应用](/posts/insurance-thinking-stock-investment-ai-china/images/cover-financial-protection.jpg)

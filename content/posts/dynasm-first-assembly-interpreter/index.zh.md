@@ -7,7 +7,7 @@ ogImage: "/posts/dynasm-first-assembly-interpreter/images/cover.jpg"
 date: "2026-09-05 14:00:00"
 lastUpdated: "2026-09-05 14:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "DynASM", "Interpreter"]
+tags: ["LuaJIT"]
 ---
 
 ![一枚风格化的 CPU 处理器芯片，引脚间流淌着汇编代码，象征着 DynASM 将 C 代码与机器汇编融为一体](/posts/dynasm-first-assembly-interpreter/images/cover.jpg)

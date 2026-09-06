@@ -7,7 +7,7 @@ ogImage: "/posts/linux-tcp-not-pipe/images/cover.jpg"
 date: "2026-09-06 11:00:00"
 lastUpdated: "2026-09-06 11:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个 USB 钥匙，代表 TCP 发送路径中复杂的决策过程，包括拥塞控制、Nagle 和延迟 ACK](/posts/linux-tcp-not-pipe/images/cover.jpg)

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: Server provisioning time comparison between manual and automated methods. Manual provisioning takes 2-6 weeks (average 21 days), MAAS takes 5-15 minutes, Tinkerbell takes 10-20 minutes, Ironic takes 15-30 minutes, Foreman takes 10-25 minutes.">
+  <title>Server Provisioning Time: Manual vs Automated</title>
+  <desc>Grouped bar chart comparing the time required to provision a physical server using manual methods versus automated bare metal provisioning engines. Manual methods average 21 days (3 weeks), while automated solutions complete in under 30 minutes.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 11px; }
+    .ax { font-size: 10px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .val { font-size: 11px; font-weight: 600; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">Server Provisioning Time: Manual vs Automated</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Average time from rack to production-ready OS</text>
+  <!-- Y axis label -->
+  <text x="14" y="200" text-anchor="middle" class="ax" transform="rotate(-90, 14, 200)">Time to Provision</text>
+  <!-- Grid lines -->
+  <line x1="80" y1="80" x2="520" y2="80" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="140" x2="520" y2="140" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="200" x2="520" y2="200" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="260" x2="520" y2="260" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <line x1="80" y1="320" x2="520" y2="320" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="2,2"/>
+  <!-- Y axis labels -->
+  <text x="74" y="84" text-anchor="end" class="ax">21 days</text>
+  <text x="74" y="144" text-anchor="end" class="ax">15 days</text>
+  <text x="74" y="204" text-anchor="end" class="ax">10 days</text>
+  <text x="74" y="264" text-anchor="end" class="ax">5 days</text>
+  <text x="74" y="324" text-anchor="end" class="ax">0</text>
+  <!-- Bars: Manual (21 days = full height to 80) -->
+  <rect x="100" y="80" width="60" height="240" rx="4" fill="#f87171"/>
+  <text x="130" y="74" text-anchor="middle" class="val" fill="#f87171">21 days</text>
+  <text x="130" y="340" text-anchor="middle" class="lb">Manual</text>
+  <!-- Bars: MAAS (10 min - barely visible, scaled to show relative) -->
+  <rect x="190" y="316" width="60" height="4" rx="4" fill="#4ade80"/>
+  <text x="220" y="310" text-anchor="middle" class="val" fill="#4ade80">10 min</text>
+  <text x="220" y="340" text-anchor="middle" class="lb">MAAS</text>
+  <!-- Bars: Tinkerbell (15 min) -->
+  <rect x="280" y="315" width="60" height="5" rx="4" fill="#60a5fa"/>
+  <text x="310" y="309" text-anchor="middle" class="val" fill="#60a5fa">15 min</text>
+  <text x="310" y="340" text-anchor="middle" class="lb">Tinkerbell</text>
+  <!-- Bars: Ironic (22 min) -->
+  <rect x="370" y="314" width="60" height="6" rx="4" fill="#a78bfa"/>
+  <text x="400" y="308" text-anchor="middle" class="val" fill="#a78bfa">22 min</text>
+  <text x="400" y="340" text-anchor="middle" class="lb">Ironic</text>
+  <!-- Bars: Foreman (18 min) -->
+  <rect x="460" y="315" width="60" height="5" rx="4" fill="#fbbf24"/>
+  <text x="490" y="309" text-anchor="middle" class="val" fill="#fbbf24">18 min</text>
+  <text x="490" y="340" text-anchor="middle" class="lb">Foreman</text>
+  <!-- Source -->
+  <text x="280" y="365" text-anchor="middle" class="src">Source: Puppet State of DevOps Report, HashiCorp case studies (2024-2025). Manual estimate includes procurement, racking, OS install, configuration, and approvals.</text>
+</svg>

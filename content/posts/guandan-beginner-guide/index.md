@@ -7,7 +7,7 @@ ogImage: "/posts/guandan-beginner-guide/images/cover.jpg"
 date: "2026-08-14 22:00:00"
 lastUpdated: "2026-08-14 22:00:00"
 author: "FindNS94"
-tags: ["Card Games", "Strategy", "Gaming"]
+tags: ["Gaming"]
 math: false
 ---
 

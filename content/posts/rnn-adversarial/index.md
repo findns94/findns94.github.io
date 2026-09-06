@@ -7,7 +7,7 @@ ogImage: "/posts/rnn-adversarial/images/cover.jpg"
 date: "2019-03-09 23:14:03"
 lastUpdated: "2026-08-23 12:00:00"
 author: "FindNS94"
-tags: [Deep Learning, NLP, Security]
+tags: ["AI", "Security"]
 math: true
 ---
 

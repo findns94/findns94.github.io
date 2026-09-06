@@ -7,7 +7,7 @@ ogImage: "/posts/linux-eevdf-scheduler-time-philosophy/images/cover.jpg"
 date: "2026-09-06 01:00:00"
 lastUpdated: "2026-09-06 01:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A digital representation of CPU time and scheduling, representing the EEVDF scheduler's virtual runtime and deadline mechanism](/posts/linux-eevdf-scheduler-time-philosophy/images/cover.jpg)

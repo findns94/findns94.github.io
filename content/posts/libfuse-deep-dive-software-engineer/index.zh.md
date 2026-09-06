@@ -7,7 +7,7 @@ ogImage: "/posts/libfuse-deep-dive-software-engineer/images/cover.png"
 date: "2026-08-22 20:00:00"
 lastUpdated: "2026-08-22 20:00:00"
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![显示 Linux 系统代码的终端屏幕，代表连接用户态文件系统与 Linux 内核的 libfuse 库](/posts/libfuse-deep-dive-software-engineer/images/cover.png)

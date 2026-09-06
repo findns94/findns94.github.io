@@ -7,7 +7,7 @@ ogImage: "/posts/ndb-value-investing-dark-horse-550m-profit/images/cover.jpg"
 date: "2026-08-22 14:00:00"
 lastUpdated: "2026-08-22 14:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, Macroeconomics]
+tags: ["Finance"]
 ---
 
 ![Modern glass headquarters building representing a development bank, with sunlight reflecting off its curved facade against a blue sky](/posts/ndb-value-investing-dark-horse-550m-profit/images/cover.jpg)

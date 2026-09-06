@@ -7,7 +7,7 @@ ogImage: "/posts/quantitative-trading-ai-china-guide/images/cover-trading-screen
 date: 2026-08-07 18:45:00
 lastUpdated: 2026-08-07 18:45:00
 author: "FindNS94"
-tags: ["Quantitative Trading", "Machine Learning", "Finance"]
+tags: ["AI", "Finance"]
 categories: ["Finance", "AI/ML"]
 mermaid: false
 ---

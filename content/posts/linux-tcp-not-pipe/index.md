@@ -7,7 +7,7 @@ ogImage: "/posts/linux-tcp-not-pipe/images/cover.jpg"
 date: "2026-09-06 11:00:00"
 lastUpdated: "2026-09-06 11:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A USB key representing the complex decision-making process in TCP's send path, including congestion control, Nagle, and delayed ACK](/posts/linux-tcp-not-pipe/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/ndb-value-investing-dark-horse-550m-profit/images/cover.jpg"
 date: "2026-08-22 14:00:00"
 lastUpdated: "2026-08-22 14:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, Macroeconomics]
+tags: ["Finance"]
 ---
 
 ![一座现代玻璃幕墙的开发银行总部建筑，阳光在弧形外墙上反射，背景是蓝天](/posts/ndb-value-investing-dark-horse-550m-profit/images/cover.jpg)

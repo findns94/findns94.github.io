@@ -7,7 +7,7 @@ ogImage: "/posts/recommendation/images/cover.jpg"
 date: "2019-02-23 20:59:16"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Data Mining, Recommendation, Hadoop]
+tags: ["Data Science"]
 ---
 
 ![抽象的大数据可视化：相连的节点与流动的数据流，代表自动化简历筛选与候选人匹配的规模化处理](/posts/recommendation/images/cover.jpg)

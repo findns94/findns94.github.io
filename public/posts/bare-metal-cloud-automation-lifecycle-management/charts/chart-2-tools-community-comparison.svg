@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Chart: Bare metal provisioning tools community comparison by GitHub stars. Foreman leads with 2,900 stars, Tinkerbell has 989 stars, Ironic has 564 stars, MAAS has 499 stars.">
+  <title>Bare Metal Provisioning Tools: Community Size (GitHub Stars)</title>
+  <desc>Horizontal bar chart comparing the community size of four major bare metal provisioning tools by GitHub stars. Foreman leads with approximately 2,900 stars, followed by Tinkerbell (989), Ironic (564), and MAAS (499).</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .hd { font-size: 12px; font-weight: 700; }
+    .lb { font-size: 11px; }
+    .ax { font-size: 10px; opacity: 0.6; }
+    .src { font-size: 9px; opacity: 0.5; }
+    .val { font-size: 11px; font-weight: 600; }
+  </style>
+  <text x="280" y="26" text-anchor="middle" font-size="14" font-weight="700">Provisioning Tools: Community Size (GitHub Stars)</text>
+  <text x="280" y="42" text-anchor="middle" class="ax">Stars as of 2025 - proxy for community adoption</text>
+  <!-- Foreman: 2900 -->
+  <text x="90" y="84" text-anchor="end" class="lb">Foreman</text>
+  <rect x="100" y="72" width="380" height="22" rx="4" fill="#fbbf24"/>
+  <text x="486" y="87" text-anchor="start" class="val" fill="#fbbf24">2,900</text>
+  <!-- Tinkerbell: 989 -->
+  <text x="90" y="134" text-anchor="end" class="lb">Tinkerbell</text>
+  <rect x="100" y="122" width="128" height="22" rx="4" fill="#60a5fa"/>
+  <text x="234" y="137" text-anchor="start" class="val" fill="#60a5fa">989</text>
+  <!-- Ironic: 564 -->
+  <text x="90" y="184" text-anchor="end" class="lb">Ironic</text>
+  <rect x="100" y="172" width="73" height="22" rx="4" fill="#a78bfa"/>
+  <text x="179" y="187" text-anchor="start" class="val" fill="#a78bfa">564</text>
+  <!-- MAAS: 499 -->
+  <text x="90" y="234" text-anchor="end" class="lb">MAAS</text>
+  <rect x="100" y="222" width="65" height="22" rx="4" fill="#4ade80"/>
+  <text x="171" y="237" text-anchor="start" class="val" fill="#4ade80">499</text>
+  <!-- X axis -->
+  <line x1="100" y1="270" x2="520" y2="270" stroke="currentColor" stroke-opacity="0.2"/>
+  <text x="100" y="286" text-anchor="middle" class="ax">0</text>
+ <text x="200" y="286" text-anchor="middle" class="ax">1,000</text>
+  <text x="300" y="286" text-anchor="middle" class="ax">2,000</text>
+  <text x="400" y="286" text-anchor="middle" class="ax">3,000</text>
+  <!-- Note -->
+  <text x="280" y="310" text-anchor="middle" class="ax">Note: Tinkerbell repo archived Dec 2025, moved to tinkerbell/tinkerbell org</text>
+  <!-- Source -->
+  <text x="280" y="340" text-anchor="middle" class="src">Source: GitHub (canonical/maas, tinkerbell/tink, openstack/ironic, theforeman/foreman), 2025. Stars are a proxy for community size, not quality.</text>
+</svg>

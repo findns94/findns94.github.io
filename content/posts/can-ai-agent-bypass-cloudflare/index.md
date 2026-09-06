@@ -7,7 +7,7 @@ ogImage: "/posts/can-ai-agent-bypass-cloudflare/images/cover.jpg"
 date: "2026-08-28 14:00:00"
 lastUpdated: "2026-08-28 14:00:00"
 author: "FindNS94"
-tags: ["AI", "Web Scraping", "Cloudflare"]
+tags: ["AI", "Web Development"]
 ---
 
 ![A robot facing a digital firewall, representing AI agents encountering Cloudflare bot protection](/posts/can-ai-agent-bypass-cloudflare/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/china-deflation-recovery-prediction-historical-data/images/cove
 date: "2026-08-23 14:00:00"
 lastUpdated: "2026-08-23 14:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, Macroeconomics]
+tags: ["Finance"]
 ---
 
 ![一家门可罗雀的中国购物中心，多家店铺拉下卷帘门，象征着内需疲软和通缩压力](/posts/china-deflation-recovery-prediction-historical-data/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/shanghai-school-district-housing-2026/images/cover.svg"
 date: 2026-07-16 20:09:03
 lastUpdated: 2026-07-16 20:09:03
 author: "FindNS94"
-tags: [Housing, Education, Shanghai]
+tags: ["Career", "Housing"]
 categories: [real estate, education]
 ---
 

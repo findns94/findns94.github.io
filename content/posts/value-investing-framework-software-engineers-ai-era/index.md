@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-framework-software-engineers-ai-era/images/cove
 date: "2026-08-18 21:30:00"
 lastUpdated: "2026-08-18 21:30:00"
 author: "FindNS94"
-tags: [Finance, Investment, AI]
+tags: ["AI", "Finance"]
 ---
 
 ![A modern stock market trading screen showing candlestick charts and financial data, representing the intersection of technology and value investing](/posts/value-investing-framework-software-engineers-ai-era/images/cover.jpg)

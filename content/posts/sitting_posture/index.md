@@ -7,7 +7,7 @@ ogImage: "/posts/sitting_posture/images/cover.svg"
 date: "2019-02-22 20:00:00"
 lastUpdated: "2026-08-23 20:00:00"
 author: "FindNS94"
-tags: [Deep Learning, Computer Vision, Health]
+tags: ["AI"]
 math: true
 ---
 

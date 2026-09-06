@@ -7,7 +7,7 @@ ogImage: "/posts/ndb-technical-position-interview-guide-career-transition/images
 date: "2026-08-22 16:00:00"
 lastUpdated: "2026-08-22 16:00:00"
 author: "FindNS94"
-tags: [Career, Finance, Interview]
+tags: ["Career", "Finance"]
 ---
 
 ![Professional business meeting in a modern office, representing the interview process for a career at a multinational development bank](/posts/ndb-technical-position-interview-guide-career-transition/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/linux-context-switch-details/images/cover.jpg"
 date: "2026-09-06 02:00:00"
 lastUpdated: "2026-09-06 02:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A ball in motion, representing the complex state transitions during a Linux context switch](/posts/linux-context-switch-details/images/cover.jpg)

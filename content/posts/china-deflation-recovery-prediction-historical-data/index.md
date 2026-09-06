@@ -7,7 +7,7 @@ ogImage: "/posts/china-deflation-recovery-prediction-historical-data/images/cove
 date: "2026-08-23 14:00:00"
 lastUpdated: "2026-08-23 14:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, Macroeconomics]
+tags: ["Finance"]
 ---
 
 ![A deserted Chinese shopping mall with shuttered storefronts, symbolizing weak domestic demand and deflationary pressure](/posts/china-deflation-recovery-prediction-historical-data/images/cover.jpg)

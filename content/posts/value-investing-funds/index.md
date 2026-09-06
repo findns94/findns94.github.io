@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-funds/images/cover.jpg"
 date: "2026-08-28 20:00:00"
 lastUpdated: "2026-08-28 20:00:00"
 author: "FindNS94"
-tags: [ValueInvestment, FundInvestment, ChinaMarket]
+tags: ["Finance"]
 ---
 
 ![Stock market candlestick chart on dark screen showing financial data and trading patterns](/posts/value-investing-funds/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/kkbox/images/cover.jpg"
 date: "2019-06-21 21:23:16"
 lastUpdated: "2026-08-23 08:00:00"
 author: "FindNS94"
-tags: [Data Mining, Recommendation, Machine Learning]
+tags: ["AI", "Data Science"]
 categories: [Course]
 math: true
 ---

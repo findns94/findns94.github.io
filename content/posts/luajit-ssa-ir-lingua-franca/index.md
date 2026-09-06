@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-ssa-ir-lingua-franca/images/cover.jpg"
 date: "2026-09-05 20:00:00"
 lastUpdated: "2026-09-05 20:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "SSA", "Compiler"]
+tags: ["LuaJIT"]
 ---
 
 ![SSA IR as a universal language — compiler passes (recorder, FOLD, FWD, assembler) connected through a central IR node](/posts/luajit-ssa-ir-lingua-franca/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-ssa-ir-lingua-franca/images/cover.jpg"
 date: "2026-09-05 20:00:00"
 lastUpdated: "2026-09-05 20:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "SSA", "Compiler"]
+tags: ["LuaJIT"]
 ---
 
 ![SSA IR 作为通用语言——编译器阶段（录制器、FOLD、FWD、发射器）通过中央 IR 节点相连](/posts/luajit-ssa-ir-lingua-franca/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/linux-open-path-lookup/images/cover.jpg"
 date: "2026-09-06 06:00:00"
 lastUpdated: "2026-09-06 06:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A memory chip representing the Linux kernel's path lookup mechanism through the dcache and RCU walk](/posts/linux-open-path-lookup/images/cover.jpg)

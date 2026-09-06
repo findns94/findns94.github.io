@@ -7,7 +7,7 @@ ogImage: "/posts/odyssey-vs-journey-to-the-west-nolan-2026/images/cover.jpg"
 date: "2026-08-11 23:00:00"
 lastUpdated: "2026-08-11 23:00:00"
 author: "FindNS94"
-tags: ["Cinema", "Culture", "Epic"]
+tags: ["Culture"]
 ---
 
 ![An ancient Greek sailing ship on open water, evoking Odysseus's long voyage home in Homer's epic poem](/posts/odyssey-vs-journey-to-the-west-nolan-2026/images/cover.jpg)

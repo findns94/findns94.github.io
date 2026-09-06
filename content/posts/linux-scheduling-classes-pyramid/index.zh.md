@@ -7,7 +7,7 @@ ogImage: "/posts/linux-scheduling-classes-pyramid/images/cover.jpg"
 date: "2026-09-06 04:00:00"
 lastUpdated: "2026-09-06 04:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一座建筑，代表 Linux 调度类层级结构，从 STOP（最高）到 IDLE（最低）](/posts/linux-scheduling-classes-pyramid/images/cover.jpg)

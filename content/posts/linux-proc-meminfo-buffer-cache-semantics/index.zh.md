@@ -7,7 +7,7 @@ ogImage: "/posts/linux-proc-meminfo-buffer-cache-semantics/images/cover.jpg"
 date: "2026-09-05 23:30:00"
 lastUpdated: "2026-09-05 23:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![黑暗背景中流动的二进制代码，代表 Linux 内核的内存会计结构——区分 /proc/meminfo 中 Buffers 与 Cache 的机制](/posts/linux-proc-meminfo-buffer-cache-semantics/images/cover.jpg)

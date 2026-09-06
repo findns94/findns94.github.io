@@ -7,7 +7,7 @@ ogImage: "/posts/linux-oom-killer-real-trigger-conditions/images/cover.jpg"
 date: "2026-09-05 22:30:00"
 lastUpdated: "2026-09-05 22:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![屏幕上显示错误信息，代表 Linux 内核的 OOM Killer 机制——当内存分配失败时终止进程](/posts/linux-oom-killer-real-trigger-conditions/images/cover.jpg)

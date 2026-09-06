@@ -7,7 +7,7 @@ ogImage: "/posts/tracing-jit-precision-strike/images/cover.jpg"
 date: "2026-09-05 16:00:00"
 lastUpdated: "2026-09-05 16:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "JIT", "Performance"]
+tags: ["LuaJIT"]
 ---
 
 ![A maze of dim execution paths with one bright glowing line tracing through it — the compiled hot path in a tracing JIT](/posts/tracing-jit-precision-strike/images/cover.jpg)

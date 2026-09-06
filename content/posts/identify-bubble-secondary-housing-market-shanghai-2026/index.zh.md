@@ -7,7 +7,7 @@ ogImage: "/posts/identify-bubble-secondary-housing-market-shanghai-2026/images/c
 date: "2026-08-12 10:00:00"
 lastUpdated: "2026-08-12 10:00:00"
 author: "FindNS94"
-tags: [Housing, Shanghai, Finance]
+tags: ["Finance", "Housing"]
 ---
 
 ![上海浦东天际线与黄浦江的广角暮色全景，代表上海楼市正处于估值十字路口](/posts/identify-bubble-secondary-housing-market-shanghai-2026/images/cover.jpg)

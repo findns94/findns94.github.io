@@ -7,7 +7,7 @@ ogImage: "/posts/kernel-contribution-guide-ai-era/images/cover.svg"
 date: 2026-07-23 23:30:00
 lastUpdated: 2026-07-23 23:30:00
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Open Source"]
+tags: ["Kernel", "Linux"]
 categories: ["Engineering", "Open Source"]
 math: false
 ---

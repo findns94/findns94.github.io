@@ -7,7 +7,7 @@ ogImage: "/posts/investment-decisions-inaccurate-macro-statistics/images/cover.j
 date: "2026-08-18 19:00:00"
 lastUpdated: "2026-08-18 19:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, Macroeconomics]
+tags: ["Finance"]
 ---
 
 ![一台股票交易显示器，屏幕上展示着金融数据图表和不断跳动的市场数字](/posts/investment-decisions-inaccurate-macro-statistics/images/cover.jpg)

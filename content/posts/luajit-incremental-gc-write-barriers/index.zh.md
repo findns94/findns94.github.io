@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-incremental-gc-write-barriers/images/cover.jpg"
 date: "2026-09-05 24:00:00"
 lastUpdated: "2026-09-05 24:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "Garbage Collection", "GC"]
+tags: ["LuaJIT"]
 ---
 
 ![三个色环——白、灰、黑——箭头表示允许的转换，红色 X 标记禁止的白到黑直接转换](/posts/luajit-incremental-gc-write-barriers/images/cover.jpg)

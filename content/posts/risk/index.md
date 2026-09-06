@@ -7,7 +7,7 @@ ogImage: "/posts/risk/images/cover.jpg"
 date: "2019-03-28 21:36:21"
 lastUpdated: "2026-08-23 12:00:00"
 author: "FindNS94"
-tags: ["Machine Learning", "Finance", "Risk Analysis"]
+tags: ["AI", "Finance"]
 ---
 
 ![Business analytics dashboard on a laptop screen showing charts and data visualizations on a wooden desk](/posts/risk/images/cover.jpg)

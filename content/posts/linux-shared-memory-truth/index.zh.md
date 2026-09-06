@@ -7,7 +7,7 @@ ogImage: "/posts/linux-shared-memory-truth/images/cover.jpg"
 date: "2026-09-06 14:00:00"
 lastUpdated: "2026-09-06 14:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![数字存储介质，代表 Linux 内核中 System V 共享内存基于 tmpfs 实现的真相](/posts/linux-shared-memory-truth/images/cover.jpg)

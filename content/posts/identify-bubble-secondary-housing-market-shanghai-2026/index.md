@@ -7,7 +7,7 @@ ogImage: "/posts/identify-bubble-secondary-housing-market-shanghai-2026/images/c
 date: "2026-08-12 10:00:00"
 lastUpdated: "2026-08-12 10:00:00"
 author: "FindNS94"
-tags: [Housing, Shanghai, Finance]
+tags: ["Finance", "Housing"]
 ---
 
 ![A wide aerial view of Shanghai's Pudong skyline and the Huangpu River at dusk, representing the city's housing market at a valuation crossroads](/posts/identify-bubble-secondary-housing-market-shanghai-2026/images/cover.jpg)

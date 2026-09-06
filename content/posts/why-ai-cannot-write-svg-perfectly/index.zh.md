@@ -7,7 +7,7 @@ ogImage: "/posts/why-ai-cannot-write-svg-perfectly/images/cover.svg"
 date: "2026-08-28 16:00:00"
 lastUpdated: "2026-08-28 16:00:00"
 author: "FindNS94"
-tags: ["AI", "SVG", "Web Development"]
+tags: ["AI", "Web Development"]
 ---
 
 ![一个机器人拿着画笔努力画圆，代表 AI 在 SVG 生成上的挑战](/posts/why-ai-cannot-write-svg-perfectly/images/cover.svg)

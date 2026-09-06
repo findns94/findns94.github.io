@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-fold-engine-metaprogramming/images/cover.jpg"
 date: "2026-09-05 22:00:00"
 lastUpdated: "2026-09-05 22:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "FOLD", "Compiler"]
+tags: ["LuaJIT"]
 ---
 
 ![FOLD 引擎概念：24 位键哈希到折叠函数表中，代表半完美哈希规则查找](/posts/luajit-fold-engine-metaprogramming/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/linux-pipe-zero-copy/images/cover.jpg"
 date: "date: 2026-09-06 15:00:00"
 lastUpdated: "2026-09-06 15:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A ball representing the Linux kernel's pipe implementation — a circular buffer of page-sized buffers with zero-copy page stealing](/posts/linux-pipe-zero-copy/images/cover.jpg)

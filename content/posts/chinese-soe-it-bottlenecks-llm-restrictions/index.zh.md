@@ -7,7 +7,7 @@ ogImage: "/posts/chinese-soe-it-bottlenecks-llm-restrictions/images/cover.svg"
 date: 2026-07-23 23:00:00
 lastUpdated: 2026-07-23 23:00:00
 author: "FindNS94"
-tags: ["AI", "Enterprise Technology", "China Tech"]
+tags: ["AI", "Career"]
 categories: ["AI/ML", "Enterprise Technology"]
 math: false
 ---

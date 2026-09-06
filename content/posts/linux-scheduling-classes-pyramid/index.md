@@ -7,7 +7,7 @@ ogImage: "/posts/linux-scheduling-classes-pyramid/images/cover.jpg"
 date: "2026-09-06 04:00:00"
 lastUpdated: "2026-09-06 04:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Scheduler"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A building representing the Linux scheduling class hierarchy from STOP (highest) to IDLE (lowest)](/posts/linux-scheduling-classes-pyramid/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/fuse-kernel-module-deep-dive/images/cover.jpg"
 date: "2026-08-22 22:00:00"
 lastUpdated: "2026-08-22 22:00:00"
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A server rack in a dark data center, representing the Linux kernel infrastructure that powers the FUSE kernel module](/posts/fuse-kernel-module-deep-dive/images/cover.jpg)

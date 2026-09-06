@@ -7,7 +7,7 @@ ogImage: "/posts/linux-ext4-extent-era/images/cover.jpg"
 date: "2026-09-06 09:00:00"
 lastUpdated: "2026-09-06 09:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一座建筑，代表 ext4 文件系统从间接块到 extent 树的演进](/posts/linux-ext4-extent-era/images/cover.jpg)

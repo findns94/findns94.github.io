@@ -7,7 +7,7 @@ ogImage: "/posts/linux-packet-journey-nic-to-userspace/images/cover.jpg"
 date: "2026-09-06 10:00:00"
 lastUpdated: "2026-09-06 10:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Network"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个球，代表网络数据包从网卡通过 Linux 内核到用户态的完整旅程](/posts/linux-packet-journey-nic-to-userspace/images/cover.jpg)

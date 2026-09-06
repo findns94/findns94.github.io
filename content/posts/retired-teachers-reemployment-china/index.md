@@ -7,7 +7,7 @@ ogImage: "/posts/retired-teachers-reemployment-china/images/cover.jpg"
 date: "2026-08-22 10:00:00"
 lastUpdated: "2026-08-22 10:00:00"
 author: "FindNS94"
-tags: ["Retirement", "Education", "China"]
+tags: ["Career", "Culture"]
 ---
 
 ![Portrait of an elderly Chinese man, representing the growing population of retirees seeking meaningful work](/posts/retired-teachers-reemployment-china/images/cover.jpg)

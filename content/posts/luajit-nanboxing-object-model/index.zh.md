@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-nanboxing-object-model/images/cover.jpg"
 date: "2026-09-05 18:00:00"
 lastUpdated: "2026-09-05 18:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "Object Model", "NaN-Boxing"]
+tags: ["LuaJIT"]
 ---
 
 ![一枚发光的 8 字节 double 爆炸式展开为所有 Lua 类型——nil、布尔、数字、字符串、表、函数——展现 NaN-boxing](/posts/luajit-nanboxing-object-model/images/cover.jpg)

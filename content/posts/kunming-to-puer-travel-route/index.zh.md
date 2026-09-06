@@ -7,7 +7,7 @@ ogImage: "/posts/kunming-to-puer-travel-route/images/cover.jpg"
 date: "2026-08-23 10:00:00"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: ["Travel", "Yunnan", "Food"]
+tags: ["Travel"]
 categories: ["Travel", "Food & Drink"]
 ---
 

@@ -7,7 +7,7 @@ ogImage: "/posts/libfuse-deep-dive-software-engineer/images/cover.png"
 date: "2026-08-22 20:00:00"
 lastUpdated: "2026-08-22 20:00:00"
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A terminal screen displaying Linux system code, representing the libfuse library that bridges userspace filesystems and the Linux kernel](/posts/libfuse-deep-dive-software-engineer/images/cover.png)

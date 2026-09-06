@@ -7,7 +7,7 @@ ogImage: "/posts/linux-ext4-extent-era/images/cover.jpg"
 date: "2026-09-06 09:00:00"
 lastUpdated: "2026-09-06 09:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A building representing the evolution from indirect blocks to extent trees in ext4 filesystem](/posts/linux-ext4-extent-era/images/cover.jpg)

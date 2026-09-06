@@ -7,7 +7,7 @@ ogImage: "/posts/tracing-jit-precision-strike/images/cover.jpg"
 date: "2026-09-05 16:00:00"
 lastUpdated: "2026-09-05 16:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "JIT", "Performance"]
+tags: ["LuaJIT"]
 ---
 
 ![一片昏暗的路径迷宫中，一道明亮的发光线穿行其中——追踪式 JIT 编译后的热路径](/posts/tracing-jit-precision-strike/images/cover.jpg)

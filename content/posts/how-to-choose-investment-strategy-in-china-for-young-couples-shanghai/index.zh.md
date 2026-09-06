@@ -7,7 +7,7 @@ ogImage: "/posts/how-to-choose-investment-strategy-in-china-for-young-couples-sh
 date: "2026-07-14 22:32:23"
 lastUpdated: "2026-07-14 22:32:23"
 author: "FindNS94"
-tags: [Finance, Investment, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![上海浦东天际线的璀璨夜景，标志性的东方明珠塔倒映在黄浦江上](/posts/how-to-choose-investment-strategy-in-china-for-young-couples-shanghai/images/shanghai-pudong-skyline.jpg)

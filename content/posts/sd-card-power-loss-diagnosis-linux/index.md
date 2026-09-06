@@ -7,7 +7,7 @@ ogImage: "/posts/sd-card-power-loss-diagnosis-linux/images/cover.png"
 date: "2026-09-03 22:30:00"
 lastUpdated: "2026-09-03 22:30:00"
 author: "FindNS94"
-tags: ["Linux", "Embedded", "Storage"]
+tags: ["Linux"]
 ---
 
 ![A microSD card on a dark background, representing SD card fault diagnosis in embedded Linux systems](/posts/sd-card-power-loss-diagnosis-linux/images/cover.png)

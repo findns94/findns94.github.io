@@ -7,7 +7,7 @@ ogImage: "/posts/ai-financial-advice-lifecycle-investing-chinese-investors/image
 date: "2026-08-23 10:00:00"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, AI]
+tags: ["AI", "Finance"]
 ---
 
 ![A person standing at a crossroads, choosing between a path of diversified stable growth and a risky path of individual stock gambling](/posts/ai-financial-advice-lifecycle-investing-chinese-investors/images/cover.jpg)

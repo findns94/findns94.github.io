@@ -7,7 +7,7 @@ ogImage: "/posts/linux-pipe-zero-copy/images/cover.jpg"
 date: "2026-09-06 15:00:00"
 lastUpdated: "2026-09-06 15:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一个球，代表 Linux 内核的 pipe 实现 — 页大小缓冲区的环形数组，具有零拷贝页窃取](/posts/linux-pipe-zero-copy/images/cover.jpg)

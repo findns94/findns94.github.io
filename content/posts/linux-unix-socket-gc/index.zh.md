@@ -7,7 +7,7 @@ ogImage: "/posts/linux-unix-socket-gc/images/cover.jpg"
 date: "2026-09-06 17:00:00"
 lastUpdated: "2026-09-06 17:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一座建筑，代表 Linux 内核对形成引用环的 Unix domain socket 的垃圾检测机制](/posts/linux-unix-socket-gc/images/cover.jpg)

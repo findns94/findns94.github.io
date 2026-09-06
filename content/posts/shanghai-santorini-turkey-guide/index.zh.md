@@ -7,7 +7,7 @@ ogImage: "/posts/shanghai-santorini-turkey-guide/images/cover.jpg"
 date: "2026-08-27 12:00:00"
 lastUpdated: "2026-08-27 12:00:00"
 author: "FindNS94"
-tags: ["Travel", "Greece", "Turkey"]
+tags: ["Travel"]
 ---
 
 ![希腊圣托里尼岛蓝色圆顶教堂俯瞰火山口日落的经典画面](/posts/shanghai-santorini-turkey-guide/images/cover.jpg)

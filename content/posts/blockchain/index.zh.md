@@ -7,7 +7,7 @@ ogImage: "/posts/blockchain/images/cover.jpg"
 date: "2019-03-19 21:14:51"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Blockchain, Security, Simulation]
+tags: ["Blockchain", "Security"]
 math: true
 ---
 

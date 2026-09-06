@@ -7,7 +7,7 @@ ogImage: "/posts/investment-decisions-inaccurate-macro-statistics/images/cover.j
 date: "2026-08-18 19:00:00"
 lastUpdated: "2026-08-18 19:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, Macroeconomics]
+tags: ["Finance"]
 ---
 
 ![A stock trading monitor displaying financial data charts and market numbers on a dark screen](/posts/investment-decisions-inaccurate-macro-statistics/images/cover.jpg)

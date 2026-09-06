@@ -7,7 +7,7 @@ ogImage: "/posts/what-happens-after-access-address/images/cover.svg"
 date: "2021-02-21 19:34:02"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Linux, Kernel, Open Source]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一幅展示 ARM64 页表从 PGD 到物理页框遍历过程的示意图，代表 Linux 内核中的缺页异常处理流程](/posts/what-happens-after-access-address/images/cover.svg)

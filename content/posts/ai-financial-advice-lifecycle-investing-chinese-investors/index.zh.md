@@ -7,7 +7,7 @@ ogImage: "/posts/ai-financial-advice-lifecycle-investing-chinese-investors/image
 date: "2026-08-23 10:00:00"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Finance, Investment, AI]
+tags: ["AI", "Finance"]
 ---
 
 ![一个人站在岔路口，一条路是分散化的稳健增长之路，另一条路是孤注一掷的个股赌博之路](/posts/ai-financial-advice-lifecycle-investing-chinese-investors/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/ai-native-ai-friendly-blog-cloudflare/images/cover.jpg"
 date: 2026-08-10 22:00:00
 lastUpdated: 2026-08-10 22:00:00
 author: "FindNS94"
-tags: ["AI", "SEO", "Web Development"]
+tags: ["AI", "Web Development"]
 categories: ["SEO", "Web Development"]
 math: false
 ---

@@ -7,7 +7,7 @@ ogImage: "/posts/dao-validation/charts/cover.svg"
 date: "2019-04-22 22:41:57"
 lastUpdated: "2026-08-23 10:00:00"
 author: "FindNS94"
-tags: [Blockchain, Security, Formal Verification]
+tags: ["Blockchain", "Security"]
 math: true
 ---
 

@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-framework-software-engineers-ai-era/images/cove
 date: "2026-08-18 21:30:00"
 lastUpdated: "2026-08-18 21:30:00"
 author: "FindNS94"
-tags: [Finance, Investment, AI]
+tags: ["AI", "Finance"]
 ---
 
 ![一张显示K线图和金融数据的现代股票交易屏幕，代表技术与价值投资的交汇](/posts/value-investing-framework-software-engineers-ai-era/images/cover.jpg)

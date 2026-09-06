@@ -7,7 +7,7 @@ ogImage: "/posts/ndb-technical-position-interview-guide-career-transition/images
 date: "2026-08-22 16:00:00"
 lastUpdated: "2026-08-22 16:00:00"
 author: "FindNS94"
-tags: [Career, Finance, Interview]
+tags: ["Career", "Finance"]
 ---
 
 ![现代办公室中的商务会议，代表多边开发银行职业的面试过程](/posts/ndb-technical-position-interview-guide-career-transition/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/fstrace-filter-parent-function/images/cover.jpg"
 date: "2023-05-07 20:40:54"
 lastUpdated: "2026-08-23 20:40:54"
 author: "FindNS94"
-tags: [Linux, Debugging, Kernel]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A dark server room with rows of rack-mounted equipment and status LEDs, representing the Linux kernel infrastructure where ftrace operates](/posts/fstrace-filter-parent-function/images/cover.jpg)

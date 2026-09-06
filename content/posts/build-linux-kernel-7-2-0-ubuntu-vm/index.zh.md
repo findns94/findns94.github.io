@@ -7,7 +7,7 @@ ogImage: "/posts/build-linux-kernel-7-2-0-ubuntu-vm/images/cover.jpg"
 date: "2026-08-29 02:30:00"
 lastUpdated: "2026-08-29 02:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Ubuntu"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![Ubuntu 终端中显示内核编译输出，包含 make 命令和构建进度](/posts/build-linux-kernel-7-2-0-ubuntu-vm/images/cover.jpg)

@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-china-a-shares-ai-era-discipline/images/cover.j
 date: "2026-08-08 22:30:00"
 lastUpdated: "2026-08-08 22:30:00"
 author: "FindNS94"
-tags: [Finance, Investment, AI]
+tags: ["AI", "Finance"]
 ---
 
 ![暗色交易屏幕上显示的K线图，展示股票价格走势与交易数据，代表股票市场分析的视觉意象](/posts/value-investing-china-a-shares-ai-era-discipline/images/cover.jpg)

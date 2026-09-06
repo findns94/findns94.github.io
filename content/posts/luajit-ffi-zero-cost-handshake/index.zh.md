@@ -7,7 +7,7 @@ ogImage: "/posts/luajit-ffi-zero-cost-handshake/images/cover.jpg"
 date: "2026-09-06 02:00:00"
 lastUpdated: "2026-09-06 02:00:00"
 author: "FindNS94"
-tags: ["LuaJIT", "FFI", "C Interop"]
+tags: ["LuaJIT"]
 ---
 
 ![两半——C（蓝）和 Lua（绿）——由中心的绿色 FFI 桥连接，代表零成本握手](/posts/luajit-ffi-zero-cost-handshake/images/cover.jpg)

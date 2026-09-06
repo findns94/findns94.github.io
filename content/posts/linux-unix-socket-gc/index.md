@@ -7,7 +7,7 @@ ogImage: "/posts/linux-unix-socket-gc/images/cover.jpg"
 date: "2026-09-06 17:00:00"
 lastUpdated: "2026-09-06 17:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "IPC"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A building representing the Linux kernel's garbage detection mechanism for Unix domain sockets that form reference cycles](/posts/linux-unix-socket-gc/images/cover.jpg)

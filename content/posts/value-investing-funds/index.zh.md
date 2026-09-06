@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-funds/images/cover.jpg"
 date: "2026-08-28 20:00:00"
 lastUpdated: "2026-08-28 20:00:00"
 author: "FindNS94"
-tags: [ValueInvestment, FundInvestment, ChinaMarket]
+tags: ["Finance"]
 ---
 
 ![暗色背景上的股票K线图，展示金融市场数据与交易模式](/posts/value-investing-funds/images/cover.jpg)

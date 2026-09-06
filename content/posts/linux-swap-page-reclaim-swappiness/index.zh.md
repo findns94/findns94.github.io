@@ -7,7 +7,7 @@ ogImage: "/posts/linux-swap-page-reclaim-swappiness/images/cover.jpg"
 date: "2026-09-05 23:00:00"
 lastUpdated: "2026-09-05 23:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Memory Management"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一台显示系统指标的电脑显示器，代表 Linux 内核主动页面回收与交换管理机制](/posts/linux-swap-page-reclaim-swappiness/images/cover.jpg)

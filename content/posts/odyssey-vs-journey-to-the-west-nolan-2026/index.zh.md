@@ -7,7 +7,7 @@ ogImage: "/posts/odyssey-vs-journey-to-the-west-nolan-2026/images/cover.jpg"
 date: "2026-08-11 23:00:00"
 lastUpdated: "2026-08-11 23:00:00"
 author: "FindNS94"
-tags: ["Cinema", "Culture", "Epic"]
+tags: ["Culture"]
 ---
 
 ![一艘古希腊帆船航行在开阔海面上，令人联想到荷马史诗中奥德修斯漫长的归家之旅](/posts/odyssey-vs-journey-to-the-west-nolan-2026/images/cover.jpg)

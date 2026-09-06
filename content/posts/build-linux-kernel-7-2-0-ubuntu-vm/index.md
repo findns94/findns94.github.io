@@ -7,7 +7,7 @@ ogImage: "/posts/build-linux-kernel-7-2-0-ubuntu-vm/images/cover.jpg"
 date: "2026-08-29 02:30:00"
 lastUpdated: "2026-08-29 02:30:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "Ubuntu"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![A terminal showing kernel compilation output on Ubuntu with make commands and build progress](/posts/build-linux-kernel-7-2-0-ubuntu-vm/images/cover.jpg)

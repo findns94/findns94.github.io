@@ -7,7 +7,7 @@ ogImage: "/posts/linux-page-cache-magic/images/cover.jpg"
 date: "2026-09-06 07:00:00"
 lastUpdated: "2026-09-06 07:00:00"
 author: "FindNS94"
-tags: ["Linux", "Kernel", "FileSystem"]
+tags: ["Kernel", "Linux"]
 ---
 
 ![数字存储介质，代表 Linux 内核的页缓存机制，从 RAM 提供文件 I/O](/posts/linux-page-cache-magic/images/cover.jpg)

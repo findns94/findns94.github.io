@@ -7,7 +7,7 @@ ogImage: "/posts/value-investing-shanghai-resale-real-estate/images/cover.jpg"
 date: "2026-08-18 20:00:00"
 lastUpdated: "2026-08-18 20:00:00"
 author: "FindNS94"
-tags: [Housing, Finance, Shanghai]
+tags: ["Finance", "Housing"]
 ---
 
 ![A wide view of Shanghai's Pudong skyline across the Huangpu River, representing the city's resale housing market where value investing principles can be applied](/posts/value-investing-shanghai-resale-real-estate/images/cover.jpg)

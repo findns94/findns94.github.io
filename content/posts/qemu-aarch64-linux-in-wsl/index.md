@@ -7,7 +7,7 @@ ogImage: "/posts/qemu-aarch64-linux-in-wsl/images/cover.jpg"
 date: "2021-09-12 22:15:59"
 lastUpdated: "2026-08-23 22:15:59"
 author: "FindNS94"
-tags: [Linux, Emulation, Arm]
+tags: ["Linux"]
 ---
 
 ![A dark Linux terminal window showing a command-line interface, representing the QEMU serial console used to boot an ARM64 system](/posts/qemu-aarch64-linux-in-wsl/images/cover.jpg)

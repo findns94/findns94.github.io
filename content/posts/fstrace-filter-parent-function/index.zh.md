@@ -7,7 +7,7 @@ ogImage: "/posts/fstrace-filter-parent-function/images/cover.jpg"
 date: "2023-05-07 20:40:54"
 lastUpdated: "2026-08-23 20:40:54"
 author: "FindNS94"
-tags: [Linux, Debugging, Kernel]
+tags: ["Kernel", "Linux"]
 ---
 
 ![一间昏暗的服务器机房, 成排的机架式设备和状态LED灯, 代表ftrace运行的Linux内核基础设施](/posts/fstrace-filter-parent-function/images/cover.jpg)
