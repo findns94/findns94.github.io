@@ -4,7 +4,9 @@ packages:
   - "."
 
 allowBuilds:
-  unrs-resolver: set this to true or false
+  esbuild: true
+  unrs-resolver: true
+  workerd: true
 
 # unrs-resolver ships a prebuilt native (N-API) binding that is selected and
 # installed via its postinstall script. pnpm >= 10 ignores dependency build
