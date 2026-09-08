@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-labelledby="chart2-title chart2-desc">
+  <title id="chart2-title">Before vs After Fix: balenaEtcher GPU Process State</title>
+  <desc id="chart2-desc">Grouped bar chart comparing system metrics before and after applying the AppArmor userns fix: GPU process status, AppArmor denials, and library load result.</desc>
+
+  <!-- Background -->
+  <rect width="560" height="380" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="280" y="30" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="600" fill="currentColor">Before vs. After the AppArmor Fix</text>
+
+  <!-- Y axis -->
+  <line x1="120" y1="60" x2="120" y2="290" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+
+  <!-- Y axis labels -->
+  <text x="110" y="110" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="currentColor">GPU Process</text>
+  <text x="110" y="185" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="currentColor">AppArmor Denials</text>
+  <text x="110" y="260" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="currentColor">Library Load</text>
+
+  <!-- Horizontal grid lines -->
+  <line x1="120" y1="80" x2="500" y2="80" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+  <line x1="120" y1="130" x2="500" y2="130" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+  <line x1="120" y1="155" x2="500" y2="155" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+  <line x1="120" y1="205" x2="500" y2="205" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+  <line x1="120" y1="230" x2="500" y2="230" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+  <line x1="120" y1="280" x2="500" y2="280" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Row 1: GPU Process (y center = 105) -->
+  <!-- Before: crashed (red bar, width ~320) -->
+  <rect x="140" y="85" width="300" height="30" rx="4" fill="#ef4444" opacity="0.8"/>
+  <text x="290" y="104" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">Crashed (restart loop)</text>
+  <!-- After: running (green bar, width ~400) -->
+  <rect x="140" y="115" width="340" height="30" rx="4" fill="#4ade80" opacity="0.8"/>
+  <text x="310" y="134" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">Running (ready-to-show)</text>
+
+  <!-- Row 2: AppArmor Denials (y center = 180) -->
+  <!-- Before: 2+ denials (red bar) -->
+  <rect x="140" y="160" width="280" height="30" rx="4" fill="#ef4444" opacity="0.8"/>
+  <text x="280" y="179" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">2+ denials (sys_admin)</text>
+  <!-- After: 0 denials (green bar) -->
+  <rect x="140" y="190" width="340" height="30" rx="4" fill="#4ade80" opacity="0.8"/>
+  <text x="310" y="209" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">0 denials (unconfined)</text>
+
+  <!-- Row 3: Library Load (y center = 255) -->
+  <!-- Before: EACCES (red bar) -->
+  <rect x="140" y="235" width="260" height="30" rx="4" fill="#ef4444" opacity="0.8"/>
+  <text x="270" y="254" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">EACCES (Permission denied)</text>
+  <!-- After: SUCCESS (green bar) -->
+  <rect x="140" y="265" width="340" height="30" rx="4" fill="#4ade80" opacity="0.8"/>
+  <text x="310" y="284" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">SUCCESS (GPU initialized)</text>
+
+  <!-- Legend -->
+  <rect x="160" y="315" width="14" height="14" rx="2" fill="#ef4444" opacity="0.8"/>
+  <text x="180" y="326" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="currentColor">Before Fix</text>
+  <rect x="280" y="315" width="14" height="14" rx="2" fill="#4ade80" opacity="0.8"/>
+  <text x="300" y="326" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="currentColor">After Fix</text>
+
+  <!-- Source -->
+  <text x="280" y="350" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="8" fill="currentColor" opacity="0.6">Source: Verified on Ubuntu 24.04, balenaEtcher 1.19.21, kernel audit log</text>
+</svg>

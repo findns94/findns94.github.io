@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-labelledby="chart1-title chart1-desc">
+  <title id="chart1-title">Root Cause Chain: How AppArmor Breaks balenaEtcher GPU Initialization</title>
+  <desc id="chart1-desc">Lollipop chart showing the 6-step causal chain from Electron startup to GLES library load failure, with each step's capability requirement or denial state.</desc>
+
+  <!-- Background -->
+  <rect width="560" height="380" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="280" y="30" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="600" fill="currentColor">Root Cause Chain: AppArmor Blocks GPU Initialization</text>
+
+  <!-- Data: step label, position (0-5), state (ok/denied) -->
+  <!-- Y positions for each lollipop: 70, 120, 170, 220, 270, 320 -->
+  <!-- X positions: base at 200, denied at 380 -->
+
+  <!-- Horizontal connection line -->
+  <line x1="200" y1="70" x2="380" y2="70" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
+  <line x1="200" y1="120" x2="380" y2="120" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
+  <line x1="200" y1="170" x2="380" y2="170" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
+  <line x1="200" y1="220" x2="380" y2="220" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
+  <line x1="200" y1="270" x2="380" y2="270" stroke="#ef4444" stroke-width="2" opacity="0.3"/>
+  <line x1="200" y1="320" x2="380" y2="320" stroke="#ef4444" stroke-width="2" opacity="0.3"/>
+
+  <!-- Step 1: Electron starts (OK) -->
+  <circle cx="200" cy="70" r="8" fill="#4ade80"/>
+  <text x="190" y="74" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="currentColor">Electron starts</text>
+  <text x="215" y="74" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#4ade80">unconfined</text>
+
+  <!-- Step 2: Create userns (transition) -->
+  <circle cx="240" cy="120" r="8" fill="#f59e0b"/>
+  <text x="190" y="124" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="currentColor">userns_create()</text>
+  <text x="255" y="124" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#f59e0b">profile transition</text>
+
+  <!-- Step 3: AppArmor intercepts -->
+  <circle cx="280" cy="170" r="8" fill="#f59e0b"/>
+  <text x="190" y="174" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="currentColor">AppArmor intercepts</text>
+  <text x="295" y="174" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#f59e0b">unprivileged_userns</text>
+
+  <!-- Step 4: sys_admin denied -->
+  <circle cx="320" cy="220" r="8" fill="#ef4444"/>
+  <text x="190" y="224" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="currentColor">sys_admin denied</text>
+  <text x="335" y="224" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#ef4444">capability 21 blocked</text>
+
+  <!-- Step 5: GPU init fails -->
+  <circle cx="360" cy="270" r="8" fill="#ef4444"/>
+  <text x="190" y="274" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="currentColor">GPU process fails</text>
+  <text x="375" y="274" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#ef4444">OpenGL/EGL broken</text>
+
+  <!-- Step 6: dlopen EACCES -->
+  <circle cx="400" cy="320" r="8" fill="#ef4444"/>
+  <text x="190" y="324" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="currentColor">dlopen() → EACCES</text>
+  <text x="415" y="324" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#ef4444">"Permission denied"</text>
+
+  <!-- Legend -->
+  <circle cx="100" cy="355" r="5" fill="#4ade80"/>
+  <text x="110" y="359" font-family="'Inter', system-ui, sans-serif" font-size="9" fill="currentColor">Normal</text>
+  <circle cx="170" cy="355" r="5" fill="#f59e0b"/>
+  <text x="180" y="359" font-family="'Inter', system-ui, sans-serif" font-size="9" fill="currentColor">Transition</text>
+  <circle cx="250" cy="355" r="5" fill="#ef4444"/>
+  <text x="260" y="359" font-family="'Inter', system-ui, sans-serif" font-size="9" fill="currentColor">Blocked</text>
+
+  <!-- Source -->
+  <text x="280" y="372" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="8" fill="currentColor" opacity="0.6">Source: Kernel audit log (dmesg), AppArmor DENIED capability 21 (sys_admin)</text>
+</svg>
