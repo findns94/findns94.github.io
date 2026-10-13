@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="REA Evidence Lifecycle State Diagram">
+  <title>REA Evidence Lifecycle</title>
+  <desc>Circular state diagram showing evidence creation, hashing, sealing, bundling, and residual unknown tracking.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .state-box { rx: 8; ry: 8; stroke-width: 1.5; }
+    .circular-arrow { stroke: currentColor; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead3); }
+    .state-label { font-size: 11px; font-weight: 600; }
+    .state-sub { font-size: 9px; opacity: 0.75; }
+    .title { font-size: 15px; font-weight: 700; }
+    .source { font-size: 9px; opacity: 0.6; }
+    .ev-id { font-size: 8px; font-family: monospace; opacity: 0.7; }
+  </style>
+  <defs>
+    <marker id="arrowhead3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="280" y="22" text-anchor="middle" class="title">Evidence Lifecycle</text>
+
+  <!-- Circular flow: 6 states arranged in a circle -->
+  <!-- Center point: (280, 195), radius: ~120 -->
+
+  <!-- State 1: Execute (top) -->
+  <rect x="215" y="52" width="130" height="40" class="state-box" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6"/>
+  <text x="280" y="70" text-anchor="middle" class="state-label" fill="#3b82f6">1. Execute</text>
+  <text x="280" y="84" text-anchor="middle" class="state-sub">Provider runs operation</text>
+
+  <!-- State 2: Create Evidence (top-right) -->
+  <rect x="390" y="105" width="130" height="40" class="state-box" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6"/>
+  <text x="455" y="123" text-anchor="middle" class="state-label" fill="#8b5cf6">2. Create Evidence</text>
+  <text x="455" y="137" text-anchor="middle" class="state-sub">createEvidence()</text>
+
+  <!-- State 3: Compute Hash (right) -->
+  <rect x="400" y="190" width="120" height="40" class="state-box" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6"/>
+  <text x="460" y="208" text-anchor="middle" class="state-label" fill="#8b5cf6">3. Hash ID</text>
+  <text x="460" y="222" text-anchor="middle" class="ev-id">ev_sha256</text>
+
+  <!-- State 4: Seal (bottom-right) -->
+  <rect x="370" y="275" width="140" height="40" class="state-box" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+  <text x="440" y="293" text-anchor="middle" class="state-label" fill="#10b981">4. Seal</text>
+  <text x="440" y="307" text-anchor="middle" class="state-sub">immutableEvidence()</text>
+
+  <!-- State 5: Bundle (bottom-left) -->
+  <rect x="150" y="275" width="140" height="40" class="state-box" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+  <text x="220" y="293" text-anchor="middle" class="state-label" fill="#10b981">5. Bundle</text>
+  <text x="220" y="307" text-anchor="middle" class="state-sub">EvidenceBundle</text>
+
+  <!-- State 6: Track Residual (left) -->
+  <rect x="50" y="190" width="140" height="40" class="state-box" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b"/>
+  <text x="120" y="208" text-anchor="middle" class="state-label" fill="#f59e0b">6. Track Residual</text>
+  <text x="120" y="222" text-anchor="middle" class="state-sub">ResidualUnknown</text>
+
+  <!-- Circular arrows connecting states -->
+  <!-- 1 -> 2 -->
+  <path d="M 345 72 Q 380 80 395 105" class="circular-arrow"/>
+  <!-- 2 -> 3 -->
+  <path d="M 470 145 Q 475 165 465 190" class="circular-arrow"/>
+  <!-- 3 -> 4 -->
+  <path d="M 455 230 Q 450 255 445 275" class="circular-arrow"/>
+  <!-- 4 -> 5 -->
+  <path d="M 370 295 Q 330 300 290 295" class="circular-arrow"/>
+  <!-- 5 -> 6 -->
+  <path d="M 150 295 Q 130 270 125 230" class="circular-arrow"/>
+  <!-- 6 -> 1 -->
+  <path d="M 110 190 Q 100 130 215 75" class="circular-arrow"/>
+
+  <!-- Center label -->
+  <text x="280" y="188" text-anchor="middle" class="state-label">Evidence</text>
+  <text x="280" y="202" text-anchor="middle" class="state-sub">Record</text>
+
+  <!-- Source attribution -->
+  <text x="280" y="370" text-anchor="middle" class="source">Source: REA GitHub, retrieved 2026-10-13</text>
+</svg>

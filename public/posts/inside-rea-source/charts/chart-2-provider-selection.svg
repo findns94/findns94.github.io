@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="REA Provider Selection Flowchart">
+  <title>REA Provider Selection Process</title>
+  <desc>Vertical flowchart showing the provider selection pipeline from target parsing through binding creation to client instantiation.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .step-box { rx: 6; ry: 6; stroke-width: 1.5; }
+    .decision-diamond { stroke-width: 1.5; }
+    .flow-arrow { stroke: currentColor; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead2); }
+    .step-label { font-size: 11px; font-weight: 600; }
+    .step-sub { font-size: 9px; opacity: 0.75; }
+    .title { font-size: 15px; font-weight: 700; }
+    .source { font-size: 9px; opacity: 0.6; }
+    .yes-label { font-size: 9px; fill: #10b981; }
+    .no-label { font-size: 9px; fill: #ef4444; }
+  </style>
+  <defs>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="280" y="22" text-anchor="middle" class="title">Provider Selection Process</text>
+
+  <!-- Step 1: Parse target -->
+  <rect x="180" y="36" width="200" height="34" class="step-box" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6"/>
+  <text x="280" y="52" text-anchor="middle" class="step-label" fill="#3b82f6">1. Parse Target</text>
+  <text x="280" y="64" text-anchor="middle" class="step-sub">BinaryTarget</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="70" x2="280" y2="86" class="flow-arrow"/>
+
+  <!-- Step 2: Router resolve -->
+  <rect x="180" y="86" width="200" height="34" class="step-box" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6"/>
+  <text x="280" y="102" text-anchor="middle" class="step-label" fill="#3b82f6">2. Router Resolve</text>
+  <text x="280" y="114" text-anchor="middle" class="step-sub">SessionProviderRouter.resolve()</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="120" x2="280" y2="136" class="flow-arrow"/>
+
+  <!-- Step 3: Registry select -->
+  <rect x="180" y="136" width="200" height="34" class="step-box" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6"/>
+  <text x="280" y="152" text-anchor="middle" class="step-label" fill="#8b5cf6">3. Registry Select</text>
+  <text x="280" y="164" text-anchor="middle" class="step-sub">AnalysisProviderRegistry.select()</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="170" x2="280" y2="186" class="flow-arrow"/>
+
+  <!-- Step 4: Decision diamond -->
+  <polygon points="280,186 380,216 280,246 180,216" class="decision-diamond" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b"/>
+  <text x="280" y="213" text-anchor="middle" class="step-label" fill="#f59e0b">4. Availability &amp;</text>
+  <text x="280" y="225" text-anchor="middle" class="step-label" fill="#f59e0b">Target Support?</text>
+
+  <!-- Yes arrow down -->
+  <line x1="280" y1="246" x2="280" y2="266" class="flow-arrow"/>
+  <text x="290" y="260" class="yes-label">Yes</text>
+
+  <!-- No arrow right -->
+  <line x1="380" y1="216" x2="430" y2="216" class="flow-arrow"/>
+  <text x="395" y="210" class="no-label">No</text>
+  <rect x="430" y="203" width="60" height="26" rx="4" ry="4" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444"/>
+  <text x="460" y="220" text-anchor="middle" class="step-sub" fill="#ef4444">Skip</text>
+
+  <!-- Step 5: resolveAnalysisProfile -->
+  <rect x="180" y="266" width="200" height="34" class="step-box" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+  <text x="280" y="282" text-anchor="middle" class="step-label" fill="#10b981">5. Resolve Profile</text>
+  <text x="280" y="294" text-anchor="middle" class="step-sub">resolveAnalysisProfile()</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="300" x2="280" y2="316" class="flow-arrow"/>
+
+  <!-- Step 6: Binding -->
+  <rect x="180" y="316" width="200" height="30" class="step-box" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+  <text x="280" y="335" text-anchor="middle" class="step-label" fill="#10b981">6. AnalysisProviderBinding</text>
+
+  <!-- Source attribution -->
+  <text x="280" y="370" text-anchor="middle" class="source">Source: REA GitHub, retrieved 2026-10-13</text>
+</svg>

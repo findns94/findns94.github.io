@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="REA Hexagonal Architecture Diagram">
+  <title>REA Hexagonal Architecture</title>
+  <desc>Four-layer architecture showing dependency flow from Adapters through Composition and Application down to Domain layer.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .layer-box { rx: 8; ry: 8; stroke-width: 1.5; }
+    .arrow { stroke: currentColor; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .layer-label { font-size: 13px; font-weight: 600; }
+    .file-label { font-size: 10px; opacity: 0.8; }
+    .title { font-size: 15px; font-weight: 700; }
+    .source { font-size: 9px; opacity: 0.6; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="280" y="24" text-anchor="middle" class="title">REA Hexagonal Architecture</text>
+
+  <!-- Layer 1: Adapters (top) -->
+  <rect x="80" y="42" width="400" height="52" class="layer-box" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6"/>
+  <text x="280" y="64" text-anchor="middle" class="layer-label" fill="#3b82f6">Adapters</text>
+  <text x="280" y="82" text-anchor="middle" class="file-label">cli.ts &#183; mcp-server.ts</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="280" y1="94" x2="280" y2="112" class="arrow"/>
+
+  <!-- Layer 2: Composition -->
+  <rect x="80" y="112" width="400" height="52" class="layer-box" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6"/>
+  <text x="280" y="134" text-anchor="middle" class="layer-label" fill="#8b5cf6">Composition</text>
+  <text x="280" y="152" text-anchor="middle" class="file-label">createBinarySession()</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="280" y1="164" x2="280" y2="182" class="arrow"/>
+
+  <!-- Layer 3: Application -->
+  <rect x="80" y="182" width="400" height="62" class="layer-box" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+  <text x="280" y="204" text-anchor="middle" class="layer-label" fill="#10b981">Application</text>
+  <text x="280" y="222" text-anchor="middle" class="file-label">BinarySession &#183; AnalysisProvider &#183; Evidence</text>
+  <text x="280" y="236" text-anchor="middle" class="file-label">session.ts &#183; provider.ts &#183; evidence.ts</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="280" y1="244" x2="280" y2="262" class="arrow"/>
+
+  <!-- Layer 4: Domain (bottom) -->
+  <rect x="80" y="262" width="400" height="62" class="layer-box" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b"/>
+  <text x="280" y="284" text-anchor="middle" class="layer-label" fill="#f59e0b">Domain</text>
+  <text x="280" y="302" text-anchor="middle" class="file-label">BinaryTarget &#183; Evidence &#183; ResidualUnknown &#183; AnalysisProfile</text>
+  <text x="280" y="316" text-anchor="middle" class="file-label">types/ &#183; evidence/ &#183; profile/</text>
+
+  <!-- Source attribution -->
+  <text x="280" y="370" text-anchor="middle" class="source">Source: REA GitHub, retrieved 2026-10-13</text>
+</svg>
