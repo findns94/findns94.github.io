@@ -10,7 +10,7 @@ import {
 } from '@/lib/shanhaijin-entities'
 import { EntityList } from '@/components/EntityList'
 
-const DATA_URL = '/shanhaijin/data.json'
+const DATA_URL = '/shanhaijin/entity-data.json'
 
 type EntityMessages = Messages['shanhaijin']['entities']
 

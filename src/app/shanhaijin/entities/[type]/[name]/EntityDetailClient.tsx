@@ -32,7 +32,7 @@ export function EntityDetailClient({ typeKey, rawName }: EntityDetailClientProps
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/shanhaijin/data.json')
+    fetch('/shanhaijin/entity-data.json')
       .then((r) => r.json())
       .then(
         (data: {

@@ -26,6 +26,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import ts from 'typescript'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -353,3 +354,114 @@ console.log(`[build-shanhaijin-data] lines=${lines.length} stations=${totalStati
   `taxonomyTypes=${Object.keys(taxonomy).length} spatialRelTypes=${Object.keys(spatialRelations).length} ` +
   `biologyRelTypes=${Object.keys(biologyRelations).length} disambiguation=${Object.keys(disambiguation).length} ` +
   `positionsChapters=${Object.keys(positions).length}`)
+
+// ── 7.5 预计算（构建期完成运行时 O(n) 计算） ────────────────────────────
+//
+// panorama：layoutChain 对每条山系做后置碰撞检测（最多 500 轮 O(n²) 推开迭代），
+//           且组件每次链切换都要重算；这里在构建期一次性算好 26 条山系的节点坐标。
+// map：buildCtx 展平 447 个站点并建 byName / chainIndex / creatureIndex 索引；
+//      这里在构建期序列化好（Map → Object），运行时直接反序列化。
+//
+// 纯函数模块用 typescript.transpileModule 编译成 ESM 后以 data-URL 动态导入
+// （与 scripts/verify-shanhaijin-map.mjs 同法；两个模块均无 React/DOM/fs 依赖，
+// 且 shanhaijin-panorama.ts 对 shanhaijin-map.ts 仅为 import type，编译后擦除）。
+
+/** 用 typescript.transpileModule + data-URL 动态 import 加载编译后的 ESM */
+async function loadTsModule(relPath) {
+  const source = readFileSync(join(root, relPath), 'utf-8')
+  const js = ts.transpileModule(source, {
+    compilerOptions: {
+      module: ts.ModuleKind.ESNext,
+      target: ts.ScriptTarget.ES2020,
+    },
+    fileName: relPath,
+  }).outputText
+  const dataUrl = 'data:text/javascript;base64,' + Buffer.from(js, 'utf-8').toString('base64')
+  return import(dataUrl)
+}
+
+const [panoramaMod, mapMod] = await Promise.all([
+  loadTsModule('src/lib/shanhaijin-panorama.ts'),
+  loadTsModule('src/lib/shanhaijin-map.ts'),
+])
+
+// 7.5.1 panorama 布局：{ chains: { [chainId]: { nodes, bounds } } }
+const panoramaChains = {}
+for (const line of lines) {
+  const chain = panoramaMod.layoutChain(line, sightings, products, positions)
+  panoramaChains[line.id] = {
+    nodes: chain.nodes,
+    bounds:
+      chain.nodes.length > 0
+        ? {
+            minX: Math.min(...chain.nodes.map((n) => n.x), 0),
+            maxX: Math.max(...chain.nodes.map((n) => n.x), 800),
+            minY: Math.min(...chain.nodes.map((n) => n.y), 0),
+            maxY: Math.max(...chain.nodes.map((n) => n.y), 100),
+          }
+        : { minX: 0, maxX: 800, minY: 0, maxY: 100 },
+  }
+}
+
+// 7.5.2 map 搜索上下文：buildCtx 的序列化产物（运行时反序列化回 Map，省去索引重建）
+const searchCtx = mapMod.buildCtx(out)
+const mapCtx = {
+  stations: searchCtx.stations,
+  byName: Object.fromEntries(searchCtx.byName),
+  chainIndex: Object.fromEntries(searchCtx.chainIndex),
+  creatureIndex: Object.fromEntries(searchCtx.creatureIndex),
+}
+
+console.log(`[build-shanhaijin-data] 预计算完成：panorama-layout ${Object.keys(panoramaChains).length} 条山系 / ` +
+  `map-ctx stations=${mapCtx.stations.length} byName=${Object.keys(mapCtx.byName).length} ` +
+  `chainIndex=${Object.keys(mapCtx.chainIndex).length} creatureIndex=${Object.keys(mapCtx.creatureIndex).length}`)
+
+// ── 8. 拆分文件（按需加载，减小首屏体积） ──────────────────────────────
+const OUT_DIR = dirname(OUT_FILE)
+
+// 8.1 各组件专属数据文件
+const SPLIT_FILES = {
+  'panorama-data.json': { lines, positions, sightings, products, meta: out.meta },
+  'panorama-layout.json': { chains: panoramaChains },
+  'map-data.json': { lines, sightings, products, texts, meta: out.meta, ctx: mapCtx },
+  'graph-data.json': { entities, spatialRelations, biologyRelations },
+  'entity-data.json': { entities, taxonomy, aliases, disambiguation, sightings, products, spatialRelations, biologyRelations },
+  'search-data.json': { entities, sightings, products, lines }
+}
+
+for (const [filename, data] of Object.entries(SPLIT_FILES)) {
+  const splitJson = JSON.stringify(data, null, 2)
+  const splitPath = join(OUT_DIR, filename)
+  writeFileSync(splitPath, splitJson, 'utf8')
+  const splitBytes = Buffer.byteLength(splitJson, 'utf8')
+  console.log(`[build-shanhaijin-data] 已生成 ${filename}（${(splitBytes / 1024).toFixed(1)} KB）`)
+}
+
+// 8.2 meta.json — 轻量元信息（供概览页 / SEO 使用）
+const entityTypeCounts = {}
+for (const e of entities) {
+  entityTypeCounts[e.typeKey] = (entityTypeCounts[e.typeKey] || 0) + 1
+}
+const chapterIds = new Set(lines.map((l) => l.chapterId))
+const totalLi = lines.reduce(
+  (sum, l) => sum + l.stations.reduce((s, st) => s + (st.li ?? 0), 0),
+  0
+)
+const totalChars = Object.values(texts).reduce((sum, t) => sum + t.length, 0)
+const META_FILE = {
+  entityTypeCounts,
+  stats: {
+    chapters: chapterIds.size,
+    mountains: totalStations,
+    chains: lines.length,
+    li: totalLi,
+    chars: totalChars
+  }
+}
+const metaJson = JSON.stringify(META_FILE, null, 2)
+const metaPath = join(OUT_DIR, 'meta.json')
+writeFileSync(metaPath, metaJson, 'utf8')
+const metaBytes = Buffer.byteLength(metaJson, 'utf8')
+console.log(`[build-shanhaijin-data] 已生成 meta.json（${(metaBytes / 1024).toFixed(1)} KB）`)
+console.log(`[build-shanhaijin-data] entityTypeCounts: ${JSON.stringify(entityTypeCounts)}`)
+console.log(`[build-shanhaijin-data] stats: ${JSON.stringify(META_FILE.stats)}`)

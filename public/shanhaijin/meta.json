@@ -1,0 +1,26 @@
+{
+  "entityTypeCounts": {
+    "mountain": 576,
+    "water": 405,
+    "mineral": 399,
+    "plant": 39,
+    "creature": 272,
+    "direction": 12,
+    "quantity": 117,
+    "sacrifice": 17,
+    "omen": 34,
+    "bird_beast": 24,
+    "deity": 9,
+    "person": 56,
+    "concept": 5,
+    "identity": 2,
+    "polity": 174
+  },
+  "stats": {
+    "chapters": 5,
+    "mountains": 447,
+    "chains": 26,
+    "li": 86439,
+    "chars": 28474
+  }
+}

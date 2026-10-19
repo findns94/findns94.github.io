@@ -9,7 +9,8 @@
  * 样式：`src/app/shanhaijin/map/shanhaijin-map.css`（作用域根 `.sh-map`，类名全部复用）
  * 文案：`src/i18n/messages.ts` 的 `shanhaijin.map`
  *
- * 数据：`public/shanhaijin/data.json`（约 505 KB，由 scripts/build-shanhaijin-data.mjs 生成）。
+ * 数据：`public/shanhaijin/map-data.json`（由 scripts/build-shanhaijin-data.mjs 生成，
+ * 内含构建期预计算的搜索索引 `ctx`，运行时直接反序列化；缺失时回退 buildCtx）。
  * 静态导出（output: 'export'）没有 API 路由，因此必须在客户端 fetch。
  *
  * 与 focus.js 的行为差异见文件末尾「与 focus.js 的行为差异」。
@@ -36,7 +37,7 @@ import {
 /* ── 常量 ─────────────────────────────────────────────────────── */
 
 /** 数据文件（public/shanhaijin/data.json；trailingSlash 下路径不变） */
-const DATA_URL = '/shanhaijin/data.json'
+const DATA_URL = '/shanhaijin/map-data.json'
 
 /** 搜索结果上限（与 focus.js 一致；lib 的 search() 内部也会截到 30 条） */
 const SEARCH_LIMIT = 30
@@ -58,6 +59,39 @@ const KIND_CLS: Record<SearchResult['kind'], string> = {
 /** 置信度徽章文案，取 i18n（CSS 类名 badge-confirmed / -inferred / -unknown） */
 function confidenceLabel(t: MapMessages, c: Confidence): string {
   return t.detail.confidence[c] ?? t.detail.confidence.unknown
+}
+
+/**
+ * map-data.json 中序列化的预计算搜索上下文（buildCtx 的产物）。
+ * Map 以 Object/Array 形式存盘（键为字符串），运行时反序列化回 Map。
+ */
+interface SerializedSearchCtx {
+  stations: Station[]
+  byName: Record<string, number>
+  chainIndex: Record<string, number>
+  creatureIndex: Record<string, string[]>
+}
+
+/** 数据文件里的 MapData + 可选预计算 ctx */
+type MapDataFile = MapData & { ctx?: SerializedSearchCtx }
+
+/**
+ * 反序列化构建期预计算的搜索上下文（flatten + 三个索引）。
+ * 字段缺失时返回 null，调用方回退到运行时 buildCtx。
+ */
+function deserializeCtx(d: MapDataFile): SearchCtx | null {
+  const c = d.ctx
+  if (!c || !Array.isArray(c.stations) || !c.byName || !c.chainIndex || !c.creatureIndex) {
+    return null
+  }
+  return {
+    stations: c.stations,
+    byName: new Map<string, number>(Object.entries(c.byName)),
+    chainIndex: new Map<string, number>(Object.entries(c.chainIndex)),
+    creatureIndex: new Map<string, string[]>(Object.entries(c.creatureIndex)),
+    lines: d.lines,
+    products: d.products,
+  }
 }
 
 /** 搜索结果类型标签，取 i18n */
@@ -443,7 +477,7 @@ export function ShanhaijinMap() {
     fetch(DATA_URL)
       .then((r) => {
         if (!r.ok) throw new Error(String(r.status))
-        return r.json() as Promise<MapData>
+        return r.json() as Promise<MapDataFile>
       })
       .then((d) => {
         if (alive) setData(d)
@@ -456,8 +490,14 @@ export function ShanhaijinMap() {
     }
   }, [])
 
-  /** 一次性构建全部索引（flatten / byName / chainIndex / creatureIndex） */
-  const ctx = useMemo(() => (data ? buildCtx(data) : null), [data])
+  /**
+   * 搜索上下文：优先反序列化构建期预计算的索引（flatten / byName / chainIndex /
+   * creatureIndex），缺失时回退运行时 buildCtx。
+   */
+  const ctx = useMemo(() => {
+    if (!data) return null
+    return deserializeCtx(data) ?? buildCtx(data)
+  }, [data])
 
   /** 把 creatureIndex（异兽 → 山名列表）反转成「山名 → 异兽列表」，供详情面板渲染 */
   const creatureByMountain = useMemo(() => {

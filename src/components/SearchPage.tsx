@@ -26,7 +26,7 @@ import {
 
 /* ── 常量 ─────────────────────────────────────────────────────── */
 
-const DATA_URL = '/shanhaijin/data.json'
+const DATA_URL = '/shanhaijin/search-data.json'
 
 const SCOPES: Scope[] = ['all', 'mountain', 'creature', 'product']
 

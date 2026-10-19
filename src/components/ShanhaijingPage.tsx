@@ -3,8 +3,7 @@
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getMessages } from '@/i18n/messages'
-import { useEffect, useState } from 'react'
-import { STATS, type ChapterMeta, type Division } from '@/lib/shanhaijing-data'
+import { STATS, ENTITY_TYPE_COUNTS, type ChapterMeta, type Division } from '@/lib/shanhaijing-data'
 
 const DIVISION_LABEL: Record<Division, { en: string; zh: string }> = {
   山经: { en: 'Classic of Mountains', zh: '五藏山经' },
@@ -26,21 +25,6 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
   const { language } = useLanguage()
   const zh = language === 'zh'
   const t = getMessages(language)
-
-  const [entityCounts, setEntityCounts] = useState<Record<string, number> | null>(null)
-
-  useEffect(() => {
-    fetch('/shanhaijin/data.json')
-      .then(r => r.json())
-      .then((data: { entities: Array<{ typeKey: string }> }) => {
-        const counts: Record<string, number> = {}
-        for (const e of data.entities) {
-          counts[e.typeKey] = (counts[e.typeKey] || 0) + 1
-        }
-        setEntityCounts(counts)
-      })
-      .catch(() => {})
-  }, [])
 
   const groups = (['山经', '海经', '附录'] as Division[]).map((d) => ({
     division: d,
@@ -169,7 +153,7 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {ENTITY_TYPE_ORDER.map((typeKey) => {
-            const count = entityCounts?.[typeKey] ?? 0
+            const count = ENTITY_TYPE_COUNTS[typeKey] ?? 0
             const typeLabel = t.shanhaijin.entities.types[typeKey as keyof typeof t.shanhaijin.entities.types] ?? typeKey
             return (
               <Link
@@ -180,11 +164,9 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
                 <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-700">
                   {typeLabel}
                 </span>
-                {entityCounts && (
-                  <span className="text-xs text-emerald-600 font-medium">
-                    {count} {zh ? '条' : 'entities'}
-                  </span>
-                )}
+                <span className="text-xs text-emerald-600 font-medium">
+                  {count} {zh ? '条' : 'entities'}
+                </span>
               </Link>
             )
           })}

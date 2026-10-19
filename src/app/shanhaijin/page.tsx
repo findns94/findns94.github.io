@@ -8,5 +8,10 @@ export const metadata = {
 }
 
 export default function Page() {
-  return <ShanhaijingPage chapters={CHAPTERS} />
+  return (
+    <>
+      <link rel="prefetch" href="/shanhaijin/panorama-data.json" as="fetch" />
+      <ShanhaijingPage chapters={CHAPTERS} />
+    </>
+  )
 }

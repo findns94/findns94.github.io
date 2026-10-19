@@ -35,7 +35,7 @@ import {
 
 /* ── 常量 ─────────────────────────────────────────────────────── */
 
-const DATA_URL = '/shanhaijin/data.json'
+const DATA_URL = '/shanhaijin/graph-data.json'
 
 /** 布局画布逻辑尺寸（SVG viewBox 基准） */
 const CANVAS_W = 1400

@@ -11,12 +11,23 @@ import {
 } from '@/lib/shanhaijin-panorama'
 import { findText, type MapData, type Line } from '@/lib/shanhaijin-map'
 
-const DATA_URL = '/shanhaijin/data.json'
-
 type PanoramaMessages = Messages['shanhaijin']['panorama']
+
+/** 构建期预计算的 bounds（与组件运行时算法一致：min 含 0 下界，max 含 800/100 兜底） */
+export interface PrecomputedChainLayout {
+  nodes: PanoramaNode[]
+  bounds: { minX: number; maxX: number; minY: number; maxY: number }
+}
+
+/** panorama-layout.json 的契约：{ chains: { [chainId]: { nodes, bounds } } } */
+export interface PrecomputedPanoramaLayout {
+  chains: Record<string, PrecomputedChainLayout>
+}
 
 interface ShanhaijinPanoramaProps {
   data: MapData
+  /** 构建期预计算的布局（panorama-layout.json）；缺失时回退运行时 layoutChain */
+  layout?: PrecomputedPanoramaLayout | null
 }
 
 /** 置信度样式类名 */
@@ -164,7 +175,7 @@ function DetailPanel({
 
 /* ── 主组件 ───────────────────────────────────────────────────── */
 
-export function ShanhaijinPanorama({ data }: ShanhaijinPanoramaProps) {
+export function ShanhaijinPanorama({ data, layout }: ShanhaijinPanoramaProps) {
   const { language } = useLanguage()
   const zh = language === 'zh'
   const t = getMessages(language).shanhaijin.panorama
@@ -178,13 +189,26 @@ export function ShanhaijinPanorama({ data }: ShanhaijinPanoramaProps) {
     return data.lines
   }, [data])
 
-  /* 当前山系 */
+  /* 当前山系：优先使用构建期预计算的节点坐标，缺失时回退运行时 layoutChain */
   const currentChain = useMemo(() => {
     if (!data || !selectedChainId) return null
     const line = allChains.find((l) => l.id === selectedChainId)
     if (!line) return null
+    const precomputed = layout?.chains[selectedChainId]
+    if (precomputed) {
+      return {
+        id: line.id,
+        name: line.name,
+        label: line.label,
+        color: line.color,
+        group: line.group,
+        chapterName: line.chapterName,
+        nodes: precomputed.nodes,
+        totalLi: line.totalLi,
+      }
+    }
     return layoutChain(line as Line, data.sightings, data.products, data.positions)
-  }, [data, selectedChainId, allChains])
+  }, [data, selectedChainId, allChains, layout])
 
   /* 原文 */
   const original = useMemo(() => {
@@ -213,15 +237,19 @@ export function ShanhaijinPanorama({ data }: ShanhaijinPanoramaProps) {
 
   if (!data) return null
 
-  /* 计算 SVG 尺寸 */
-  const bounds = currentChain
-    ? {
-        minX: Math.min(...currentChain.nodes.map((n) => n.x), 0),
-        maxX: Math.max(...currentChain.nodes.map((n) => n.x), 800),
-        minY: Math.min(...currentChain.nodes.map((n) => n.y), 0),
-        maxY: Math.max(...currentChain.nodes.map((n) => n.y), 100),
-      }
-    : { minX: 0, maxX: 800, minY: 0, maxY: 100 }
+  /* 计算 SVG 尺寸：优先使用构建期预计算的 bounds，缺失时按运行时算法计算 */
+  const precomputedBounds =
+    layout && selectedChainId ? layout.chains[selectedChainId]?.bounds : undefined
+  const bounds =
+    precomputedBounds ??
+    (currentChain
+      ? {
+          minX: Math.min(...currentChain.nodes.map((n) => n.x), 0),
+          maxX: Math.max(...currentChain.nodes.map((n) => n.x), 800),
+          minY: Math.min(...currentChain.nodes.map((n) => n.y), 0),
+          maxY: Math.max(...currentChain.nodes.map((n) => n.y), 100),
+        }
+      : { minX: 0, maxX: 800, minY: 0, maxY: 100 })
 
   return (
     <div className="sh-panorama">

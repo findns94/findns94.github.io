@@ -55,3 +55,10 @@ export const STATS = {
   li: 97358,
   chars: 32316,
 } as const
+
+/** 各实体类型条目数（与 data.json 对齐，由脚本生成后固化以避免运行时拉取 6.2MB 数据） */
+export const ENTITY_TYPE_COUNTS: Record<string, number> = {
+  mountain: 576, water: 405, mineral: 399, creature: 272, polity: 174,
+  quantity: 117, person: 56, plant: 39, omen: 34, bird_beast: 24,
+  sacrifice: 17, direction: 12, deity: 9, concept: 5, identity: 2,
+}

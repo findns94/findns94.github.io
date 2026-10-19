@@ -184,7 +184,8 @@ export function flattenStations(lines: Line[]): Station[] {
 export function buildByName(stations: Station[]): Map<string, number> {
   const m = new Map<string, number>()
   stations.forEach((s, i) => {
-    if (!m.has(s.name)) m.set(s.name, i)
+    const k = normalizeChainName(s.name)
+    if (!m.has(k)) m.set(k, i)
   })
   return m
 }

@@ -1,52 +1,21 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getMessages, type Messages } from '@/i18n/messages'
-import {
-  buildEntityIndex,
-  type EntityIndex,
-  type EntityItem,
-} from '@/lib/shanhaijin-entities'
-
-const DATA_URL = '/shanhaijin/data.json'
+import { ENTITY_TYPE_COUNTS } from '@/lib/shanhaijing-data'
 
 type EntityMessages = Messages['shanhaijin']['entities']
-
-interface TypeSummary {
-  typeKey: string
-  count: number
-}
 
 export default function EntitiesOverviewPage() {
   const { language } = useLanguage()
   const zh = language === 'zh'
   const t = getMessages(language)
-  const [index, setIndex] = useState<EntityIndex | null>(null)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch(DATA_URL)
-      .then((r) => r.json())
-      .then((data: { entities: EntityItem[]; taxonomy: Record<string, Record<string, unknown>> }) => {
-        setIndex(buildEntityIndex(data.entities, data.taxonomy as never))
-      })
-      .catch((e: Error) => setError(e.message))
-  }, [])
-
-  if (error) {
-    return <p className="text-red-600">Failed to load: {error}</p>
-  }
-
-  if (!index) {
-    return <p className="text-gray-500">Loading…</p>
-  }
 
   const typeMessages = t.shanhaijin.entities.types
-  const types: TypeSummary[] = index.typeOrder.map((tk) => ({
-    typeKey: tk,
-    count: (index.byType[tk] ?? []).length,
+  const types = Object.entries(ENTITY_TYPE_COUNTS).map(([typeKey, count]) => ({
+    typeKey,
+    count,
   }))
 
   return (
