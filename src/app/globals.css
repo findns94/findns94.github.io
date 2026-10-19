@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans), 'Noto Serif CJK SC', 'BabelStone Han', 'Songti SC', Georgia, serif;
 }
 
 /* Bilingual show/hide based on <html lang> */
@@ -79,4 +79,10 @@ code::after {
   margin-right: 1rem;
   text-align: right;
   color: hsl(var(--muted-foreground, 220 9% 46%));
+}
+
+/* 逃逸限宽容器：根布局是 max-w-3xl，全宽视图（如山海经山形聚焦）需要更宽 */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }

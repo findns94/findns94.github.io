@@ -23,6 +23,12 @@ export function Header() {
         <a href="/contact" className="hover:text-blue-600 transition-colors">{t.nav.contact}</a>
         <a href="/tags" className="hover:text-blue-600 transition-colors">{t.nav.tags}</a>
         <a href="/feed.xml" className="hover:text-blue-600 transition-colors">{t.nav.rss}</a>
+        <a
+          href="/shanhaijin"
+          className="hover:text-blue-600 transition-colors font-medium text-gray-900"
+        >
+          {t.nav.shanhaijin}
+        </a>
       </nav>
     </header>
   )

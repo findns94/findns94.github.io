@@ -1,0 +1,309 @@
+/* 山海经 · 山系全景图（地铁图风格）
+ *
+ * 作用域根：.sh-panorama
+ * 设计语言：暖纸色系，与山形聚焦视图保持一致
+ */
+
+/* ── 设计令牌 + 容器基础 ─────────────────────────────────────── */
+.sh-panorama {
+  --bg: #f7f5f0;
+  --panel: #ffffff;
+  --ink: #2b2620;
+  --muted: #8a8175;
+  --line: #e6e0d6;
+  --accent: #2e7d32;
+  --accent-soft: #e8f3e9;
+  --confirmed: #2e7d32;
+  --inferred: #8bc34a;
+  --unknown: #b0a89a;
+  --warn: #b3541e;
+  --shadow: 0 1px 3px rgba(60, 50, 40, .08), 0 4px 14px rgba(60, 50, 40, .05);
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Noto Serif CJK SC", "BabelStone Han", "Songti SC", "Source Han Serif SC", Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sh-panorama a { color: var(--accent); text-decoration: none; }
+.sh-panorama a:hover { text-decoration: underline; }
+.sh-panorama .muted { color: var(--muted); }
+
+/* ── 顶栏 ─────────────────────────────────────────────── */
+.sh-panorama .p-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(247, 245, 240, .94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.sh-panorama .p-topbar h1 {
+  font-size: 19px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+.sh-panorama .p-sub { color: var(--muted); font-size: 13px; }
+.sh-panorama .p-topbar nav { margin-left: auto; display: flex; gap: 14px; font-size: 14px; }
+.sh-panorama .p-topbar nav a { color: var(--muted); }
+.sh-panorama .p-topbar nav a.on { color: var(--ink); border-bottom: 2px solid var(--accent); }
+
+/* ── 主区域 ─────────────────────────────────────────────── */
+.sh-panorama .p-main { padding: 0 22px 40px; }
+
+/* ── 山系选择器 ─────────────────────────────────────────── */
+.sh-panorama .p-chain-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 0 10px;
+}
+.sh-panorama .p-chain-selector button {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--muted);
+  transition: all .15s;
+}
+.sh-panorama .p-chain-selector button:hover { border-color: var(--accent); color: var(--accent); }
+.sh-panorama .p-chain-selector button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── SVG 滚动区 ─────────────────────────────────────────── */
+.sh-panorama .p-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.sh-panorama .p-svg {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
+
+.sh-panorama .p-empty {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 48px 24px;
+  color: var(--muted);
+  font-size: 15px;
+  text-align: center;
+  background: #fbfaf7;
+  line-height: 2;
+  margin: 12px 0;
+}
+
+/* ── SVG 内部元素 ───────────────────────────────────────── */
+.sh-panorama .p-chain-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  dominant-baseline: middle;
+}
+.sh-panorama .p-chain-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sh-panorama .p-node {
+  transition: transform .12s;
+}
+.sh-panorama .p-node:hover {
+  transform-box: fill-box;
+  transform-origin: center;
+  filter: brightness(1.15);
+}
+.sh-panorama .p-node-circle {
+  fill: var(--panel);
+  transition: all .15s;
+}
+.sh-panorama .p-node-confirmed { fill: var(--confirmed); }
+.sh-panorama .p-node-inferred {
+  fill: var(--inferred);
+  fill-opacity: .45;
+}
+.sh-panorama .p-node-unknown {
+  fill: var(--unknown);
+  fill-opacity: .25;
+}
+.sh-panorama .p-node-marker { opacity: .8; }
+
+/* ── 悬浮提示 ─────────────────────────────────────────── */
+.sh-panorama .p-tooltip {
+  position: fixed;
+  z-index: 50;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 10px 14px;
+  pointer-events: none;
+  font-size: 14px;
+  max-width: 240px;
+}
+.sh-panorama .p-tooltip-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+.sh-panorama .p-tooltip-chain {
+  color: var(--muted);
+  font-size: 12px;
+}
+.sh-panorama .p-tooltip-dir {
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* ── 详情面板 ─────────────────────────────────────────── */
+.sh-panorama .p-detail-empty {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  background: #fbfaf7;
+}
+.sh-panorama .p-detail {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+}
+.sh-panorama .p-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.sh-panorama .p-detail-chain {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--muted);
+  border-left: 3px solid var(--accent);
+  padding-left: 8px;
+  margin-bottom: 4px;
+}
+.sh-panorama .p-detail-name {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: .5px;
+}
+.sh-panorama .p-detail-close {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+.sh-panorama .p-detail-close:hover { border-color: var(--accent); color: var(--accent); }
+
+.sh-panorama .p-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+.sh-panorama .p-detail-dir { color: var(--accent); font-weight: 500; }
+.sh-panorama .p-detail-water {
+  background: #e8f0fe;
+  color: #1a56db;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.sh-panorama .p-detail-section { margin-top: 12px; }
+.sh-panorama .p-detail-section h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.sh-panorama .p-detail-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.sh-panorama .p-tag {
+  font-size: 13px;
+  padding: 3px 12px;
+  border-radius: 14px;
+  background: #ece7de;
+  color: var(--ink);
+}
+.sh-panorama .p-tag-creature {
+  background: #fdf0e4;
+  color: var(--warn);
+}
+.sh-panorama .p-detail-text {
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: justify;
+  margin: 4px 0 0;
+}
+
+.sh-panorama .p-detail-actions {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+.sh-panorama .p-focus-link {
+  display: inline-block;
+  font-size: 14px;
+  padding: 6px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  transition: all .15s;
+}
+.sh-panorama .p-focus-link:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── 响应式 ───────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .sh-panorama .p-main { padding: 0 14px 30px; }
+  .sh-panorama .p-topbar { padding: 10px 14px; gap: 10px; }
+  .sh-panorama .p-topbar nav { width: 100%; margin-left: 0; }
+  .sh-panorama .p-toolbar { flex-direction: column; align-items: flex-start; }
+  .sh-panorama .p-detail-name { font-size: 22px; }
+}
+
+@media (max-width: 460px) {
+  .sh-panorama .p-detail-name { font-size: 19px; }
+  .sh-panorama .p-controls { flex-wrap: wrap; }
+}

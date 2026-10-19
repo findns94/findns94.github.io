@@ -1,0 +1,43 @@
+/* Self-hosted Noto Serif CJK SC — full font with @font-face + unicode-range
+ *
+ * Primary font: Noto Serif CJK SC (self-hosted WOFF2, converted from OTF)
+ * Covers: Basic CJK (U+4E00-9FFF), Extension A (U+3400-4DBF),
+ *         partial Extension B (2057 chars), CJK punctuation, etc.
+ *
+ * Fallback: BabelStone Han (self-hosted WOFF2, from babelstone.co.uk)
+ * Covers full Extension B+ including U+2A07A (𪁺) and U+29FC7 (𩩧)
+ * which are absent from Noto Serif CJK SC's cmap.
+ */
+
+@font-face {
+  font-family: 'Noto Serif CJK SC';
+  src: url('/fonts/NotoSerifCJKsc-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  /* Extension B (U+20000-2A6DF) is excluded — BabelStone Han handles those */
+  unicode-range: U+2A700-2EBEF, U+2E80-2FDF, U+3000-303F, U+3040-309F, U+30A0-30FF, U+3100-312F, U+3130-318F, U+3190-319F, U+31A0-31BF, U+31C0-31EF, U+31F0-31FF, U+3200-32FF, U+3300-33FF, U+3400-4DBF, U+4E00-9FFF, U+A000-A48F, U+A490-A4CF, U+AC00-D7AF, U+F900-FAFF, U+FE30-FE3F, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK SC';
+  src: url('/fonts/NotoSerifCJKsc-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  /* Extension B excluded — BabelStone Han handles those */
+  unicode-range: U+2A700-2EBEF, U+2E80-2FDF, U+3000-303F, U+3040-309F, U+30A0-30FF, U+3100-312F, U+3130-318F, U+3190-319F, U+31A0-31BF, U+31C0-31EF, U+31F0-31FF, U+3200-32FF, U+3300-33FF, U+3400-4DBF, U+4E00-9FFF, U+A000-A48F, U+A490-A4CF, U+AC00-D7AF, U+F900-FAFF, U+FE30-FE3F, U+FF00-FFEF;
+}
+
+/* Fallback font: BabelStone Han subset — covers Extension B chars that Noto misses.
+ * Only 50 project chars + ASCII, 25.6KB WOFF2.
+ * Loaded only when chars in unicode-range are rendered (browser skips download otherwise).
+ * Covers U+2A07A (𪁺) and U+29FE7 (𩿧) which are absent from Noto Serif CJK SC. */
+@font-face {
+  font-family: 'BabelStone Han';
+  src: url('/fonts/BabelStoneHan-ExtB-subset.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+20000-2A6DF;
+}
