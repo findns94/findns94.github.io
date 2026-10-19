@@ -23,7 +23,7 @@
  *
  * 零依赖：仅使用 node:fs / node:path / node:url。可从任意 cwd 运行。
  */
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -93,6 +93,12 @@ function extractShanXiName(route) {
   // 丙式 / 兜底：经名本身即山系标识
   if (route.chain) return route.chain
   return first.place || null
+}
+
+/** 检查输入文件是否存在；不存在时优雅退出（CI 环境使用已提交的 data.json） */
+if (!existsSync(MAP_DATA)) {
+  console.warn('[build-shanhaijin-data] doc/shanhaijin/ 不存在（CI 环境），跳过重建，使用已提交的 public/shanhaijin/data.json')
+  process.exit(0)
 }
 
 /** 读取并解析 JSON 文件 */
