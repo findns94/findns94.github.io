@@ -28,7 +28,7 @@ function getAllEntitySlugs(): { type: string; name: string }[] {
     for (const e of data.entities || []) {
       const typeSlug = TYPE_SLUG_MAP[e.typeKey]
       if (typeSlug && e.canonical) {
-        slugs.push({ type: typeSlug, name: encodeURIComponent(e.canonical) })
+        slugs.push({ type: typeSlug, name: e.canonical })
       }
     }
     return slugs

@@ -1,0 +1,154 @@
+[
+  {
+    "num": "01",
+    "part": "山经",
+    "name": "南山经",
+    "wiki_bytes": 13299,
+    "jing_chars": 2728,
+    "zhushu_count": 105
+  },
+  {
+    "num": "02",
+    "part": "山经",
+    "name": "西山经",
+    "wiki_bytes": 33142,
+    "jing_chars": 5938,
+    "zhushu_count": 280
+  },
+  {
+    "num": "03",
+    "part": "山经",
+    "name": "北山经",
+    "wiki_bytes": 16537,
+    "jing_chars": 5197,
+    "zhushu_count": 0
+  },
+  {
+    "num": "04",
+    "part": "山经",
+    "name": "东山经",
+    "wiki_bytes": 8465,
+    "jing_chars": 2616,
+    "zhushu_count": 0
+  },
+  {
+    "num": "05",
+    "part": "山经",
+    "name": "中山经",
+    "wiki_bytes": 33515,
+    "jing_chars": 10526,
+    "zhushu_count": 0
+  },
+  {
+    "num": "06",
+    "part": "海经",
+    "name": "海外南经",
+    "wiki_bytes": 2656,
+    "jing_chars": 711,
+    "zhushu_count": 0
+  },
+  {
+    "num": "07",
+    "part": "海经",
+    "name": "海外西经",
+    "wiki_bytes": 2605,
+    "jing_chars": 694,
+    "zhushu_count": 0
+  },
+  {
+    "num": "08",
+    "part": "海经",
+    "name": "海外北经",
+    "wiki_bytes": 2906,
+    "jing_chars": 744,
+    "zhushu_count": 0
+  },
+  {
+    "num": "09",
+    "part": "海经",
+    "name": "海外东经",
+    "wiki_bytes": 2433,
+    "jing_chars": 644,
+    "zhushu_count": 0
+  },
+  {
+    "num": "10",
+    "part": "海经",
+    "name": "海内南经",
+    "wiki_bytes": 1980,
+    "jing_chars": 429,
+    "zhushu_count": 0
+  },
+  {
+    "num": "11",
+    "part": "海经",
+    "name": "海内西经",
+    "wiki_bytes": 3477,
+    "jing_chars": 744,
+    "zhushu_count": 0
+  },
+  {
+    "num": "12",
+    "part": "海经",
+    "name": "海内北经",
+    "wiki_bytes": 3459,
+    "jing_chars": 623,
+    "zhushu_count": 0
+  },
+  {
+    "num": "13",
+    "part": "海经",
+    "name": "海内东经",
+    "wiki_bytes": 6861,
+    "jing_chars": 928,
+    "zhushu_count": 5
+  },
+  {
+    "num": "14",
+    "part": "海经",
+    "name": "大荒东经",
+    "wiki_bytes": 4154,
+    "jing_chars": 1119,
+    "zhushu_count": 0
+  },
+  {
+    "num": "15",
+    "part": "海经",
+    "name": "大荒南经",
+    "wiki_bytes": 4480,
+    "jing_chars": 1238,
+    "zhushu_count": 0
+  },
+  {
+    "num": "16",
+    "part": "海经",
+    "name": "大荒西经",
+    "wiki_bytes": 5562,
+    "jing_chars": 1585,
+    "zhushu_count": 0
+  },
+  {
+    "num": "17",
+    "part": "海经",
+    "name": "大荒北经",
+    "wiki_bytes": 4683,
+    "jing_chars": 1353,
+    "zhushu_count": 0
+  },
+  {
+    "num": "18",
+    "part": "海经",
+    "name": "海内经",
+    "wiki_bytes": 6242,
+    "jing_chars": 1433,
+    "zhushu_count": 0
+  },
+  {
+    "num": "00",
+    "part": "附录",
+    "name": "郭璞序",
+    "wiki_bytes": 3287,
+    "jing_chars": 1095,
+    "zhushu_count": 0
+  }
+]
