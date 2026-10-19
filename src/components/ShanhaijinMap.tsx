@@ -24,6 +24,7 @@ import {
   buildCtx,
   findText,
   neighbors,
+  normalizeChainName,
   search,
   type Confidence,
   type MapData,
@@ -123,6 +124,12 @@ function readHashIndex(ctx: SearchCtx): number | null {
     if (decoded !== raw) candidates.push(decoded)
   } catch {
     // 非法转义序列（如单独的 %）：忽略，退回原始串
+  }
+
+  // 繁简归一化候选（byName 键已归一化）
+  for (const c of [...candidates]) {
+    const normalized = normalizeChainName(c)
+    if (normalized !== c && !candidates.includes(normalized)) candidates.push(normalized)
   }
 
   for (const c of candidates) {

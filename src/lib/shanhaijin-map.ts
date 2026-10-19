@@ -307,20 +307,29 @@ export function findText(name: string, texts: Record<string, string>): string {
   const t = texts
   if (t[name]) return t[name]
 
+  // 繁简归一化查找
+  const normalized = normalizeChainName(name)
+  if (normalized !== name && t[normalized]) return t[normalized]
+
   const stripEndpoint = name.replace(/之[尾首]$/, '')
   if (t[stripEndpoint]) return t[stripEndpoint]
+  if (t[normalizeChainName(stripEndpoint)]) return t[normalizeChainName(stripEndpoint)]
 
   const stripSuffix = name.replace(/之[山丘野]$/, '')
   if (t[stripSuffix]) return t[stripSuffix]
+  if (t[normalizeChainName(stripSuffix)]) return t[normalizeChainName(stripSuffix)]
 
   const toMountain = name.replace(/之山$/, '') + '之山'
   if (t[toMountain]) return t[toMountain]
+  if (t[normalizeChainName(toMountain)]) return t[normalizeChainName(toMountain)]
 
   const toHill = name.replace(/之丘$/, '') + '之丘'
   if (t[toHill]) return t[toHill]
+  if (t[normalizeChainName(toHill)]) return t[normalizeChainName(toHill)]
 
   const toField = name.replace(/之野$/, '') + '之野'
   if (t[toField]) return t[toField]
+  if (t[normalizeChainName(toField)]) return t[normalizeChainName(toField)]
 
   return ''
 }
