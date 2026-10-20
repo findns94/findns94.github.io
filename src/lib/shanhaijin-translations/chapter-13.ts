@@ -35,10 +35,9 @@ const blocks: TranslationBlock[] = [
     { type: 'para', zh: '汾水发源于上窳以北，向西南流入黄河，在皮氏以南。', en: 'The Fen River springs from north of Shangyu and flows southwest into the Yellow River, south of Pishi.' },
     { type: 'para', zh: '沁水发源于井陘山以东，向东南流入黄河，在怀县东南。', en: 'The Qin River springs from east of Mount Jingxing and flows southeast into the Yellow River, southeast of Huai.' },
     { type: 'para', zh: '济水发源于共山南面的东丘，穿过钜鹿泽，流入渤海，在齐国琅槐东北。', en: 'The Ji River springs from the eastern hill south of Mount Gong, cuts across the Julu Marsh, and flows into the Bohai Sea, northeast of Langhuai in Qi.' },
-    { type: 'para', zh: 'http://ctext.org/library.pl?if=gb&file=56661&by_title=%E5%B1%B1%E6%B5%B7%E7%BB%8F&page=63', en: 'http://ctext.org/library.pl?if=gb&file=56661&by_title=%E5%B1%B1%E6%B5%B7%E7%BB%8F&page=63' },
-    { type: 'para', zh: '潦水发源于卫皋以东，向东南流入渤海，在辽阳以【】。', en: 'The Lao River springs from east of Weigao and flows southeast into the Bohai Sea, northeast of Liaoyang.' },
-    { type: 'para', zh: '虖沲水发源于晋阳城南，向西到阳曲以北，再向东流入渤海【】，在章武以北【】。', en: 'The Hutuo River springs from south of Jinyang City, flows west to the north of Yangqu, then turns east into the Bohai Sea, north of Zhangwu.' },
-    { type: 'para', zh: '漳水发源于山阳以东，向东流入渤海，在章武以南【】。', en: 'The Zhang River springs from east of Shanyang and flows east into the Bohai Sea, south of Zhangwu.' },
+    { type: 'para', zh: '潦水发源于卫皋以东，向东南流入渤海，在辽阳一带。', en: 'The Lao River springs from east of Weigao and flows southeast into the Bohai Sea, northeast of Liaoyang.' },
+    { type: 'para', zh: '虖沲水发源于晋阳城南，向西到阳曲以北，再向东流入渤海，在章武以北。', en: 'The Hutuo River springs from south of Jinyang City, flows west to the north of Yangqu, then turns east into the Bohai Sea, north of Zhangwu.' },
+    { type: 'para', zh: '漳水发源于山阳以东，向东流入渤海，在章武以南。', en: 'The Zhang River springs from east of Shanyang and flows east into the Bohai Sea, south of Zhangwu.' },
     { type: 'para', zh: '姑射国在东海中，属于列姑射，在西南，群山环绕。', en: 'The state of Gushe lies in the Eastern Sea, belonging to Liegushe, in the southwest, surrounded by mountains.' },
     { type: 'para', zh: '大蟹在东海中。', en: 'The giant crab is in the Eastern Sea.' },
     { type: 'para', zh: '陵鱼长着人的面孔、手和足，鱼的身体，生活在东海中。', en: 'The lingyu fish has a human face, human hands and feet, and the body of a fish. It dwells in the Eastern Sea.' },
@@ -46,7 +45,7 @@ const blocks: TranslationBlock[] = [
     { type: 'para', zh: '明组邑在东海中。', en: 'The settlement of Mingzu is in the Eastern Sea.' },
     { type: 'para', zh: '蓬莱山在东海中。', en: 'Mount Penglai is in the Eastern Sea.' },
     { type: 'para', zh: '大人的集市在东海中。', en: 'The market of the Giant People is in the Eastern Sea.' },
-    { type: 'para', zh: '建平元年四月丙戌，待诏太常属臣望校治，侍中光禄勋臣龚、侍中奉车都尉光禄大夫臣秀领主省。', en: 'In the first year of Jianping, fourth month, bingxu day, the Expectant Minister and Gentleman of the Ministry of Ceremonies, your servant Wang, collated and edited this work. The Palace Attendant and Minister of the Household, your servant Gong, and the Palace Attendant, Chariot Companion-in-Attendance, and Grand Master for Splendid Happiness, your servant Xiu, presided over and supervised the examination.' },
+    { type: 'para', zh: '建平元年四月丙戌日，待诏、太常属官臣望校勘整理此书；侍中、光禄勋臣龚，侍中、奉车都尉、光禄大夫臣秀负责总管此事。', en: 'In the first year of Jianping, fourth month, bingxu day, the Expectant Minister and Gentleman of the Ministry of Ceremonies, your servant Wang, collated and edited this work. The Palace Attendant and Minister of the Household, your servant Gong, and the Palace Attendant, Chariot Companion-in-Attendance, and Grand Master for Splendid Happiness, your servant Xiu, presided over and supervised the examination.' },
 ]
 
 export default blocks
