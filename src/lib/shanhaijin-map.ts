@@ -420,7 +420,7 @@ export function search(query: string, scope: Scope, ctx: SearchCtx): SearchResul
 
     // 3) 模糊匹配（indexOf）
     ctx.stations.forEach((s, i) => {
-      if (s.name.indexOf(q) >= 0) {
+      if (matchKey(s.name, q)) {
         out.push({ kind: 'mountain', name: s.name, idx: i, hint: s.lineName })
       }
     })
@@ -454,7 +454,7 @@ export function search(query: string, scope: Scope, ctx: SearchCtx): SearchResul
   const seenKey = new Set<string>()
   const dedup: SearchResult[] = []
   for (const r of out) {
-    const k = r.kind + '|' + r.name + '|' + r.idx
+    const k = r.kind + '|' + r.name
     if (seenKey.has(k)) continue
     seenKey.add(k)
     dedup.push(r)

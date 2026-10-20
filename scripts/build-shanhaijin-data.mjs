@@ -345,6 +345,14 @@ mkdirSync(dirname(OUT_FILE), { recursive: true })
 const json = JSON.stringify(out, null, 2)
 writeFileSync(OUT_FILE, json, 'utf8')
 
+// Output entity-names.json for client-side annotation
+const entityNames = entities.map(e => ({
+  canonical: e.canonical,
+  typeKey: e.typeKey,
+  display: e.display
+}))
+writeFileSync(join(root, 'public/shanhaijin/entity-names.json'), JSON.stringify(entityNames, null, 2))
+
 const bytes = Buffer.byteLength(json, 'utf8')
 console.log(`[build-shanhaijin-data] 已生成 ${OUT_FILE}`)
 console.log(`[build-shanhaijin-data] 字节数：${bytes}`)

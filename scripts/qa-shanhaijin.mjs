@@ -302,14 +302,15 @@ async function phaseInteractive(browser) {
       // Count visible chains before filter
       const chainsBefore = await pg.locator('.p-chain').count()
 
-      // Click "山经" filter button
-      await pg.locator('.p-filters button', { hasText: '山经' }).click()
+      // Click first chain selector button (chain buttons show full names like 南山經之首)
+      await pg.locator('.p-chain-selector button').first().click()
       await pg.waitForTimeout(1000)
 
       const chainsAfter = await pg.locator('.p-chain').count()
 
       // Click "全部" to reset
-      await pg.locator('.p-filters button', { hasText: '全部' }).click()
+      // Click another chain button to verify switching
+      await pg.locator('.p-chain-selector button').nth(1).click()
       await pg.waitForTimeout(1000)
 
       const chainsReset = await pg.locator('.p-chain').count()

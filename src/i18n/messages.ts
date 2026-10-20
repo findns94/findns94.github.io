@@ -190,6 +190,12 @@ export interface Messages {
       connections: string
       degree: string
     }
+    reader: {
+      original: { en: string; zh: string }
+      translation: { en: string; zh: string }
+      sideBySide: { en: string; zh: string }
+      single: { en: string; zh: string }
+    }
   }
 }
 
@@ -381,6 +387,12 @@ const en: Messages = {
       connections: 'Connections',
       degree: 'degree',
     },
+    reader: {
+      original: { en: 'Original', zh: '原文' },
+      translation: { en: 'Translation', zh: '译文' },
+      sideBySide: { en: 'Side by Side', zh: '对读' },
+      single: { en: 'Single', zh: '单栏' },
+    },
   },
 }
 
@@ -570,6 +582,12 @@ const zh: Messages = {
       zoomOut: '缩小',
       connections: '连接',
       degree: '度',
+    },
+    reader: {
+      original: { en: 'Original', zh: '原文' },
+      translation: { en: 'Translation', zh: '译文' },
+      sideBySide: { en: 'Side by Side', zh: '对读' },
+      single: { en: 'Single', zh: '单栏' },
     },
   },
 }

@@ -1,0 +1,10707 @@
+[
+  {
+    "canonical": "䧿山",
+    "typeKey": "mountain",
+    "display": "䧿山"
+  },
+  {
+    "canonical": "招搖之山",
+    "typeKey": "mountain",
+    "display": "招搖之山"
+  },
+  {
+    "canonical": "西海",
+    "typeKey": "water",
+    "display": "西海"
+  },
+  {
+    "canonical": "桂",
+    "typeKey": "mineral",
+    "display": "桂"
+  },
+  {
+    "canonical": "金",
+    "typeKey": "mineral",
+    "display": "金"
+  },
+  {
+    "canonical": "玉",
+    "typeKey": "mineral",
+    "display": "玉"
+  },
+  {
+    "canonical": "祝餘",
+    "typeKey": "plant",
+    "display": "祝餘"
+  },
+  {
+    "canonical": "迷穀",
+    "typeKey": "plant",
+    "display": "迷穀"
+  },
+  {
+    "canonical": "狌狌",
+    "typeKey": "creature",
+    "display": "狌狌"
+  },
+  {
+    "canonical": "麗𪊨之水",
+    "typeKey": "water",
+    "display": "麗𪊨之水"
+  },
+  {
+    "canonical": "育沛",
+    "typeKey": "mineral",
+    "display": "育沛"
+  },
+  {
+    "canonical": "東",
+    "typeKey": "direction",
+    "display": "東"
+  },
+  {
+    "canonical": "三百里",
+    "typeKey": "quantity",
+    "display": "三百里"
+  },
+  {
+    "canonical": "堂庭之山",
+    "typeKey": "mountain",
+    "display": "堂庭之山"
+  },
+  {
+    "canonical": "棪木",
+    "typeKey": "mineral",
+    "display": "棪木"
+  },
+  {
+    "canonical": "白猿",
+    "typeKey": "mineral",
+    "display": "白猿"
+  },
+  {
+    "canonical": "水玉",
+    "typeKey": "mineral",
+    "display": "水玉"
+  },
+  {
+    "canonical": "黃金",
+    "typeKey": "mineral",
+    "display": "黃金"
+  },
+  {
+    "canonical": "三百八十里",
+    "typeKey": "quantity",
+    "display": "三百八十里"
+  },
+  {
+    "canonical": "猨翼之山",
+    "typeKey": "mountain",
+    "display": "猨翼之山"
+  },
+  {
+    "canonical": "怪獸",
+    "typeKey": "mineral",
+    "display": "怪獸"
+  },
+  {
+    "canonical": "怪魚",
+    "typeKey": "mineral",
+    "display": "怪魚"
+  },
+  {
+    "canonical": "白玉",
+    "typeKey": "mineral",
+    "display": "白玉"
+  },
+  {
+    "canonical": "腹虫",
+    "typeKey": "mineral",
+    "display": "腹虫"
+  },
+  {
+    "canonical": "怪蛇",
+    "typeKey": "mineral",
+    "display": "怪蛇"
+  },
+  {
+    "canonical": "怪木",
+    "typeKey": "mineral",
+    "display": "怪木"
+  },
+  {
+    "canonical": "三百七十里",
+    "typeKey": "quantity",
+    "display": "三百七十里"
+  },
+  {
+    "canonical": "杻陽之山",
+    "typeKey": "mountain",
+    "display": "杻陽之山"
+  },
+  {
+    "canonical": "其陽",
+    "typeKey": "direction",
+    "display": "其陽"
+  },
+  {
+    "canonical": "赤金",
+    "typeKey": "mineral",
+    "display": "赤金"
+  },
+  {
+    "canonical": "其陰",
+    "typeKey": "direction",
+    "display": "其陰"
+  },
+  {
+    "canonical": "白金",
+    "typeKey": "mineral",
+    "display": "白金"
+  },
+  {
+    "canonical": "鹿蜀",
+    "typeKey": "creature",
+    "display": "鹿蜀"
+  },
+  {
+    "canonical": "怪水",
+    "typeKey": "water",
+    "display": "怪水"
+  },
+  {
+    "canonical": "玄龜",
+    "typeKey": "creature",
+    "display": "玄龜"
+  },
+  {
+    "canonical": "旋龜",
+    "typeKey": "creature",
+    "display": "旋龜"
+  },
+  {
+    "canonical": "柢山",
+    "typeKey": "mountain",
+    "display": "柢山"
+  },
+  {
+    "canonical": "鯥",
+    "typeKey": "creature",
+    "display": "鯥"
+  },
+  {
+    "canonical": "四百里",
+    "typeKey": "quantity",
+    "display": "四百里"
+  },
+  {
+    "canonical": "亶爰之山",
+    "typeKey": "mountain",
+    "display": "亶爰之山"
+  },
+  {
+    "canonical": "類",
+    "typeKey": "creature",
+    "display": "類"
+  },
+  {
+    "canonical": "基山",
+    "typeKey": "mountain",
+    "display": "基山"
+  },
+  {
+    "canonical": "猼訑",
+    "typeKey": "creature",
+    "display": "猼訑"
+  },
+  {
+    "canonical": "𪁺𩿧",
+    "typeKey": "creature",
+    "display": "𪁺𩿧"
+  },
+  {
+    "canonical": "青丘之山",
+    "typeKey": "mountain",
+    "display": "青丘之山"
+  },
+  {
+    "canonical": "青雘",
+    "typeKey": "mineral",
+    "display": "青雘"
+  },
+  {
+    "canonical": "灌灌",
+    "typeKey": "creature",
+    "display": "灌灌"
+  },
+  {
+    "canonical": "英水",
+    "typeKey": "water",
+    "display": "英水"
+  },
+  {
+    "canonical": "赤鱬",
+    "typeKey": "creature",
+    "display": "赤鱬"
+  },
+  {
+    "canonical": "三百五十里",
+    "typeKey": "quantity",
+    "display": "三百五十里"
+  },
+  {
+    "canonical": "箕尾之山",
+    "typeKey": "mountain",
+    "display": "箕尾之山"
+  },
+  {
+    "canonical": "東海",
+    "typeKey": "water",
+    "display": "東海"
+  },
+  {
+    "canonical": "沙",
+    "typeKey": "mineral",
+    "display": "沙"
+  },
+  {
+    "canonical": "石",
+    "typeKey": "mineral",
+    "display": "石"
+  },
+  {
+    "canonical": "汸水",
+    "typeKey": "water",
+    "display": "汸水"
+  },
+  {
+    "canonical": "二千九百五十里",
+    "typeKey": "quantity",
+    "display": "二千九百五十里"
+  },
+  {
+    "canonical": "糈用稌米",
+    "typeKey": "sacrifice",
+    "display": "糈用稌米"
+  },
+  {
+    "canonical": "南次二經",
+    "typeKey": "mountain",
+    "display": "南次二經"
+  },
+  {
+    "canonical": "柜山",
+    "typeKey": "mountain",
+    "display": "柜山"
+  },
+  {
+    "canonical": "南流注于赤水",
+    "typeKey": "water",
+    "display": "南流注于赤水"
+  },
+  {
+    "canonical": "丹粟",
+    "typeKey": "mineral",
+    "display": "丹粟"
+  },
+  {
+    "canonical": "貍力",
+    "typeKey": "creature",
+    "display": "貍力"
+  },
+  {
+    "canonical": "見則其縣多土功",
+    "typeKey": "omen",
+    "display": "見則其縣多土功"
+  },
+  {
+    "canonical": "鴸",
+    "typeKey": "creature",
+    "display": "鴸"
+  },
+  {
+    "canonical": "見則其縣多放放士",
+    "typeKey": "omen",
+    "display": "見則其縣多放放士"
+  },
+  {
+    "canonical": "東南",
+    "typeKey": "direction",
+    "display": "東南"
+  },
+  {
+    "canonical": "四百五十里",
+    "typeKey": "quantity",
+    "display": "四百五十里"
+  },
+  {
+    "canonical": "長右之山",
+    "typeKey": "mountain",
+    "display": "長右之山"
+  },
+  {
+    "canonical": "見則郡縣大水",
+    "typeKey": "omen",
+    "display": "見則郡縣大水"
+  },
+  {
+    "canonical": "三百四十里",
+    "typeKey": "quantity",
+    "display": "三百四十里"
+  },
+  {
+    "canonical": "堯光之山",
+    "typeKey": "mountain",
+    "display": "堯光之山"
+  },
+  {
+    "canonical": "猾褢",
+    "typeKey": "creature",
+    "display": "猾褢"
+  },
+  {
+    "canonical": "見則縣有大繇",
+    "typeKey": "omen",
+    "display": "見則縣有大繇"
+  },
+  {
+    "canonical": "羽山",
+    "typeKey": "mountain",
+    "display": "羽山"
+  },
+  {
+    "canonical": "其下多水",
+    "typeKey": "water",
+    "display": "其下多水"
+  },
+  {
+    "canonical": "雨",
+    "typeKey": "mineral",
+    "display": "雨"
+  },
+  {
+    "canonical": "蝮虫",
+    "typeKey": "bird_beast",
+    "display": "蝮虫"
+  },
+  {
+    "canonical": "瞿父之山",
+    "typeKey": "mountain",
+    "display": "瞿父之山"
+  },
+  {
+    "canonical": "句餘之山",
+    "typeKey": "mountain",
+    "display": "句餘之山"
+  },
+  {
+    "canonical": "五百里",
+    "typeKey": "quantity",
+    "display": "五百里"
+  },
+  {
+    "canonical": "浮玉之山",
+    "typeKey": "mountain",
+    "display": "浮玉之山"
+  },
+  {
+    "canonical": "彘",
+    "typeKey": "creature",
+    "display": "彘"
+  },
+  {
+    "canonical": "苕水",
+    "typeKey": "water",
+    "display": "苕水"
+  },
+  {
+    "canonical": "鮆魚",
+    "typeKey": "bird_beast",
+    "display": "鮆魚"
+  },
+  {
+    "canonical": "成山",
+    "typeKey": "mountain",
+    "display": "成山"
+  },
+  {
+    "canonical": "𨴯水",
+    "typeKey": "water",
+    "display": "𨴯水"
+  },
+  {
+    "canonical": "會稽之山",
+    "typeKey": "mountain",
+    "display": "會稽之山"
+  },
+  {
+    "canonical": "砆石",
+    "typeKey": "mineral",
+    "display": "砆石"
+  },
+  {
+    "canonical": "勺水",
+    "typeKey": "water",
+    "display": "勺水"
+  },
+  {
+    "canonical": "夷山",
+    "typeKey": "mountain",
+    "display": "夷山"
+  },
+  {
+    "canonical": "湨水",
+    "typeKey": "water",
+    "display": "湨水"
+  },
+  {
+    "canonical": "僕勾之山",
+    "typeKey": "mountain",
+    "display": "僕勾之山"
+  },
+  {
+    "canonical": "咸陰之山",
+    "typeKey": "mountain",
+    "display": "咸陰之山"
+  },
+  {
+    "canonical": "洵山",
+    "typeKey": "mountain",
+    "display": "洵山"
+  },
+  {
+    "canonical": "䍺",
+    "typeKey": "creature",
+    "display": "䍺"
+  },
+  {
+    "canonical": "洵水",
+    "typeKey": "water",
+    "display": "洵水"
+  },
+  {
+    "canonical": "南流注于閼之澤",
+    "typeKey": "water",
+    "display": "南流注于閼之澤"
+  },
+  {
+    "canonical": "芘蠃",
+    "typeKey": "mineral",
+    "display": "芘蠃"
+  },
+  {
+    "canonical": "虖勺之山",
+    "typeKey": "mountain",
+    "display": "虖勺之山"
+  },
+  {
+    "canonical": "梓枏",
+    "typeKey": "mineral",
+    "display": "梓枏"
+  },
+  {
+    "canonical": "荊杞",
+    "typeKey": "mineral",
+    "display": "荊杞"
+  },
+  {
+    "canonical": "滂水",
+    "typeKey": "water",
+    "display": "滂水"
+  },
+  {
+    "canonical": "區吳之山",
+    "typeKey": "mountain",
+    "display": "區吳之山"
+  },
+  {
+    "canonical": "鹿水",
+    "typeKey": "water",
+    "display": "鹿水"
+  },
+  {
+    "canonical": "南流注于滂水",
+    "typeKey": "water",
+    "display": "南流注于滂水"
+  },
+  {
+    "canonical": "鹿吳之山",
+    "typeKey": "mountain",
+    "display": "鹿吳之山"
+  },
+  {
+    "canonical": "澤更之水",
+    "typeKey": "water",
+    "display": "澤更之水"
+  },
+  {
+    "canonical": "蠱雕",
+    "typeKey": "creature",
+    "display": "蠱雕"
+  },
+  {
+    "canonical": "漆吳之山",
+    "typeKey": "mountain",
+    "display": "漆吳之山"
+  },
+  {
+    "canonical": "博石",
+    "typeKey": "mineral",
+    "display": "博石"
+  },
+  {
+    "canonical": "丘山",
+    "typeKey": "mountain",
+    "display": "丘山"
+  },
+  {
+    "canonical": "七千二百里",
+    "typeKey": "quantity",
+    "display": "七千二百里"
+  },
+  {
+    "canonical": "毛用一璧瘞",
+    "typeKey": "sacrifice",
+    "display": "毛用一璧瘞"
+  },
+  {
+    "canonical": "糈用稌",
+    "typeKey": "sacrifice",
+    "display": "糈用稌"
+  },
+  {
+    "canonical": "南次三經",
+    "typeKey": "mountain",
+    "display": "南次三經"
+  },
+  {
+    "canonical": "天虞之山",
+    "typeKey": "mountain",
+    "display": "天虞之山"
+  },
+  {
+    "canonical": "禱過之山",
+    "typeKey": "mountain",
+    "display": "禱過之山"
+  },
+  {
+    "canonical": "犀",
+    "typeKey": "bird_beast",
+    "display": "犀"
+  },
+  {
+    "canonical": "象",
+    "typeKey": "bird_beast",
+    "display": "象"
+  },
+  {
+    "canonical": "瞿如",
+    "typeKey": "creature",
+    "display": "瞿如"
+  },
+  {
+    "canonical": "泿水",
+    "typeKey": "water",
+    "display": "泿水"
+  },
+  {
+    "canonical": "丹穴之山",
+    "typeKey": "mountain",
+    "display": "丹穴之山"
+  },
+  {
+    "canonical": "丹水",
+    "typeKey": "water",
+    "display": "丹水"
+  },
+  {
+    "canonical": "渤海",
+    "typeKey": "water",
+    "display": "渤海"
+  },
+  {
+    "canonical": "鳳皇",
+    "typeKey": "creature",
+    "display": "鳳皇"
+  },
+  {
+    "canonical": "見則天下安寧",
+    "typeKey": "omen",
+    "display": "見則天下安寧"
+  },
+  {
+    "canonical": "發爽之山",
+    "typeKey": "mountain",
+    "display": "發爽之山"
+  },
+  {
+    "canonical": "汎水",
+    "typeKey": "water",
+    "display": "汎水"
+  },
+  {
+    "canonical": "怪鳥",
+    "typeKey": "mineral",
+    "display": "怪鳥"
+  },
+  {
+    "canonical": "陽夾之山",
+    "typeKey": "mountain",
+    "display": "陽夾之山"
+  },
+  {
+    "canonical": "灌湘之山",
+    "typeKey": "mountain",
+    "display": "灌湘之山"
+  },
+  {
+    "canonical": "雞山",
+    "typeKey": "mountain",
+    "display": "雞山"
+  },
+  {
+    "canonical": "丹雘",
+    "typeKey": "mineral",
+    "display": "丹雘"
+  },
+  {
+    "canonical": "黑水山",
+    "typeKey": "mountain",
+    "display": "黑水山"
+  },
+  {
+    "canonical": "見則天下大旱",
+    "typeKey": "omen",
+    "display": "見則天下大旱"
+  },
+  {
+    "canonical": "令丘之山",
+    "typeKey": "mountain",
+    "display": "令丘之山"
+  },
+  {
+    "canonical": "火",
+    "typeKey": "mineral",
+    "display": "火"
+  },
+  {
+    "canonical": "顒",
+    "typeKey": "creature",
+    "display": "顒"
+  },
+  {
+    "canonical": "侖者之山",
+    "typeKey": "mountain",
+    "display": "侖者之山"
+  },
+  {
+    "canonical": "白䓘",
+    "typeKey": "plant",
+    "display": "白䓘"
+  },
+  {
+    "canonical": "五百八十里",
+    "typeKey": "quantity",
+    "display": "五百八十里"
+  },
+  {
+    "canonical": "禺槀之山",
+    "typeKey": "mountain",
+    "display": "禺槀之山"
+  },
+  {
+    "canonical": "大蛇",
+    "typeKey": "mineral",
+    "display": "大蛇"
+  },
+  {
+    "canonical": "南禺之山",
+    "typeKey": "mountain",
+    "display": "南禺之山"
+  },
+  {
+    "canonical": "佐水",
+    "typeKey": "water",
+    "display": "佐水"
+  },
+  {
+    "canonical": "六千五百三十里",
+    "typeKey": "quantity",
+    "display": "六千五百三十里"
+  },
+  {
+    "canonical": "萬六千三百八十里",
+    "typeKey": "quantity",
+    "display": "萬六千三百八十里"
+  },
+  {
+    "canonical": "錢來之山",
+    "typeKey": "mountain",
+    "display": "錢來之山"
+  },
+  {
+    "canonical": "松",
+    "typeKey": "mineral",
+    "display": "松"
+  },
+  {
+    "canonical": "洗石",
+    "typeKey": "mineral",
+    "display": "洗石"
+  },
+  {
+    "canonical": "羬羊",
+    "typeKey": "creature",
+    "display": "羬羊"
+  },
+  {
+    "canonical": "西",
+    "typeKey": "direction",
+    "display": "西"
+  },
+  {
+    "canonical": "四十五里",
+    "typeKey": "quantity",
+    "display": "四十五里"
+  },
+  {
+    "canonical": "松果之山",
+    "typeKey": "mountain",
+    "display": "松果之山"
+  },
+  {
+    "canonical": "濩水",
+    "typeKey": "water",
+    "display": "濩水"
+  },
+  {
+    "canonical": "䳋渠",
+    "typeKey": "creature",
+    "display": "䳋渠"
+  },
+  {
+    "canonical": "六十里",
+    "typeKey": "quantity",
+    "display": "六十里"
+  },
+  {
+    "canonical": "太華之山",
+    "typeKey": "mountain",
+    "display": "太華之山"
+  },
+  {
+    "canonical": "五千仞",
+    "typeKey": "quantity",
+    "display": "五千仞"
+  },
+  {
+    "canonical": "十里",
+    "typeKey": "quantity",
+    "display": "十里"
+  },
+  {
+    "canonical": "肥𧔥",
+    "typeKey": "creature",
+    "display": "肥𧔥"
+  },
+  {
+    "canonical": "八十里",
+    "typeKey": "quantity",
+    "display": "八十里"
+  },
+  {
+    "canonical": "小華之山",
+    "typeKey": "mountain",
+    "display": "小華之山"
+  },
+  {
+    "canonical": "㸲牛",
+    "typeKey": "mineral",
+    "display": "㸲牛"
+  },
+  {
+    "canonical": "磬石",
+    "typeKey": "mineral",
+    "display": "磬石"
+  },
+  {
+    "canonical": "㻬琈之玉",
+    "typeKey": "mineral",
+    "display": "㻬琈之玉"
+  },
+  {
+    "canonical": "赤鷩",
+    "typeKey": "mineral",
+    "display": "赤鷩"
+  },
+  {
+    "canonical": "符禺之山",
+    "typeKey": "mountain",
+    "display": "符禺之山"
+  },
+  {
+    "canonical": "文莖",
+    "typeKey": "plant",
+    "display": "文莖"
+  },
+  {
+    "canonical": "條",
+    "typeKey": "mineral",
+    "display": "條"
+  },
+  {
+    "canonical": "符禺之水",
+    "typeKey": "water",
+    "display": "符禺之水"
+  },
+  {
+    "canonical": "蔥聾",
+    "typeKey": "mineral",
+    "display": "蔥聾"
+  },
+  {
+    "canonical": "鴖",
+    "typeKey": "mineral",
+    "display": "鴖"
+  },
+  {
+    "canonical": "石脆之山",
+    "typeKey": "mountain",
+    "display": "石脆之山"
+  },
+  {
+    "canonical": "椶柟",
+    "typeKey": "mineral",
+    "display": "椶柟"
+  },
+  {
+    "canonical": "灌水",
+    "typeKey": "water",
+    "display": "灌水"
+  },
+  {
+    "canonical": "北流注于禺水",
+    "typeKey": "water",
+    "display": "北流注于禺水"
+  },
+  {
+    "canonical": "七十里",
+    "typeKey": "quantity",
+    "display": "七十里"
+  },
+  {
+    "canonical": "英山",
+    "typeKey": "mountain",
+    "display": "英山"
+  },
+  {
+    "canonical": "杻橿",
+    "typeKey": "mineral",
+    "display": "杻橿"
+  },
+  {
+    "canonical": "禺水",
+    "typeKey": "water",
+    "display": "禺水"
+  },
+  {
+    "canonical": "北流注于招水",
+    "typeKey": "water",
+    "display": "北流注于招水"
+  },
+  {
+    "canonical": "䰷魚",
+    "typeKey": "creature",
+    "display": "䰷魚"
+  },
+  {
+    "canonical": "箭䉋",
+    "typeKey": "mineral",
+    "display": "箭䉋"
+  },
+  {
+    "canonical": "㸲牛羬羊",
+    "typeKey": "mineral",
+    "display": "㸲牛羬羊"
+  },
+  {
+    "canonical": "肥遺",
+    "typeKey": "creature",
+    "display": "肥遺"
+  },
+  {
+    "canonical": "五十二里",
+    "typeKey": "quantity",
+    "display": "五十二里"
+  },
+  {
+    "canonical": "竹山",
+    "typeKey": "mountain",
+    "display": "竹山"
+  },
+  {
+    "canonical": "喬木",
+    "typeKey": "mineral",
+    "display": "喬木"
+  },
+  {
+    "canonical": "黃雚",
+    "typeKey": "plant",
+    "display": "黃雚"
+  },
+  {
+    "canonical": "竹水",
+    "typeKey": "water",
+    "display": "竹水"
+  },
+  {
+    "canonical": "竹箭",
+    "typeKey": "mineral",
+    "display": "竹箭"
+  },
+  {
+    "canonical": "蒼玉",
+    "typeKey": "mineral",
+    "display": "蒼玉"
+  },
+  {
+    "canonical": "南流注于洛水",
+    "typeKey": "water",
+    "display": "南流注于洛水"
+  },
+  {
+    "canonical": "其中多水",
+    "typeKey": "water",
+    "display": "其中多水"
+  },
+  {
+    "canonical": "人魚",
+    "typeKey": "mineral",
+    "display": "人魚"
+  },
+  {
+    "canonical": "毫彘",
+    "typeKey": "creature",
+    "display": "毫彘"
+  },
+  {
+    "canonical": "百二十里",
+    "typeKey": "quantity",
+    "display": "百二十里"
+  },
+  {
+    "canonical": "浮山",
+    "typeKey": "mountain",
+    "display": "浮山"
+  },
+  {
+    "canonical": "盼木",
+    "typeKey": "mineral",
+    "display": "盼木"
+  },
+  {
+    "canonical": "薰草",
+    "typeKey": "plant",
+    "display": "薰草"
+  },
+  {
+    "canonical": "羭次之山",
+    "typeKey": "mountain",
+    "display": "羭次之山"
+  },
+  {
+    "canonical": "漆水",
+    "typeKey": "water",
+    "display": "漆水"
+  },
+  {
+    "canonical": "棫橿",
+    "typeKey": "mineral",
+    "display": "棫橿"
+  },
+  {
+    "canonical": "赤銅",
+    "typeKey": "mineral",
+    "display": "赤銅"
+  },
+  {
+    "canonical": "嬰垣之玉",
+    "typeKey": "mineral",
+    "display": "嬰垣之玉"
+  },
+  {
+    "canonical": "嚻",
+    "typeKey": "creature",
+    "display": "嚻"
+  },
+  {
+    "canonical": "百五十里",
+    "typeKey": "quantity",
+    "display": "百五十里"
+  },
+  {
+    "canonical": "時山",
+    "typeKey": "mountain",
+    "display": "時山"
+  },
+  {
+    "canonical": "逐水",
+    "typeKey": "water",
+    "display": "逐水"
+  },
+  {
+    "canonical": "百七十里",
+    "typeKey": "quantity",
+    "display": "百七十里"
+  },
+  {
+    "canonical": "猛豹",
+    "typeKey": "mineral",
+    "display": "猛豹"
+  },
+  {
+    "canonical": "尸鳩",
+    "typeKey": "mineral",
+    "display": "尸鳩"
+  },
+  {
+    "canonical": "四百八里",
+    "typeKey": "quantity",
+    "display": "四百八里"
+  },
+  {
+    "canonical": "大時之山",
+    "typeKey": "mountain",
+    "display": "大時之山"
+  },
+  {
+    "canonical": "榖",
+    "typeKey": "mineral",
+    "display": "榖"
+  },
+  {
+    "canonical": "杻",
+    "typeKey": "mineral",
+    "display": "杻"
+  },
+  {
+    "canonical": "涔水",
+    "typeKey": "water",
+    "display": "涔水"
+  },
+  {
+    "canonical": "清水",
+    "typeKey": "water",
+    "display": "清水"
+  },
+  {
+    "canonical": "南流注于漢水",
+    "typeKey": "water",
+    "display": "南流注于漢水"
+  },
+  {
+    "canonical": "三百二十里",
+    "typeKey": "quantity",
+    "display": "三百二十里"
+  },
+  {
+    "canonical": "嶓塚之山",
+    "typeKey": "mountain",
+    "display": "嶓塚之山"
+  },
+  {
+    "canonical": "漢水",
+    "typeKey": "water",
+    "display": "漢水"
+  },
+  {
+    "canonical": "嚻水",
+    "typeKey": "water",
+    "display": "嚻水"
+  },
+  {
+    "canonical": "北流注于湯水",
+    "typeKey": "water",
+    "display": "北流注于湯水"
+  },
+  {
+    "canonical": "桃枝鉤端",
+    "typeKey": "mineral",
+    "display": "桃枝鉤端"
+  },
+  {
+    "canonical": "犀兕熊羆",
+    "typeKey": "mineral",
+    "display": "犀兕熊羆"
+  },
+  {
+    "canonical": "白翰赤鷩",
+    "typeKey": "mineral",
+    "display": "白翰赤鷩"
+  },
+  {
+    "canonical": "蓇蓉",
+    "typeKey": "plant",
+    "display": "蓇蓉"
+  },
+  {
+    "canonical": "曰天帝",
+    "typeKey": "deity",
+    "display": "曰天帝"
+  },
+  {
+    "canonical": "椶枏",
+    "typeKey": "mineral",
+    "display": "椶枏"
+  },
+  {
+    "canonical": "菅蕙",
+    "typeKey": "mineral",
+    "display": "菅蕙"
+  },
+  {
+    "canonical": "谿邊",
+    "typeKey": "creature",
+    "display": "谿邊"
+  },
+  {
+    "canonical": "櫟",
+    "typeKey": "creature",
+    "display": "櫟"
+  },
+  {
+    "canonical": "杜衡",
+    "typeKey": "plant",
+    "display": "杜衡"
+  },
+  {
+    "canonical": "西南",
+    "typeKey": "direction",
+    "display": "西南"
+  },
+  {
+    "canonical": "塗途之山",
+    "typeKey": "mountain",
+    "display": "塗途之山"
+  },
+  {
+    "canonical": "涂水",
+    "typeKey": "water",
+    "display": "涂水"
+  },
+  {
+    "canonical": "桂木",
+    "typeKey": "mineral",
+    "display": "桂木"
+  },
+  {
+    "canonical": "礜",
+    "typeKey": "creature",
+    "display": "礜"
+  },
+  {
+    "canonical": "無條",
+    "typeKey": "plant",
+    "display": "無條"
+  },
+  {
+    "canonical": "𤣎如",
+    "typeKey": "creature",
+    "display": "𤣎如"
+  },
+  {
+    "canonical": "數斯",
+    "typeKey": "creature",
+    "display": "數斯"
+  },
+  {
+    "canonical": "百八十里",
+    "typeKey": "quantity",
+    "display": "百八十里"
+  },
+  {
+    "canonical": "黃山",
+    "typeKey": "mountain",
+    "display": "黃山"
+  },
+  {
+    "canonical": "盼水",
+    "typeKey": "water",
+    "display": "盼水"
+  },
+  {
+    "canonical": "西流注于赤水",
+    "typeKey": "water",
+    "display": "西流注于赤水"
+  },
+  {
+    "canonical": "鸚䳇",
+    "typeKey": "creature",
+    "display": "鸚䳇"
+  },
+  {
+    "canonical": "二百里",
+    "typeKey": "quantity",
+    "display": "二百里"
+  },
+  {
+    "canonical": "翠山",
+    "typeKey": "mountain",
+    "display": "翠山"
+  },
+  {
+    "canonical": "旄牛",
+    "typeKey": "mineral",
+    "display": "旄牛"
+  },
+  {
+    "canonical": "鸓",
+    "typeKey": "mineral",
+    "display": "鸓"
+  },
+  {
+    "canonical": "二百五十里",
+    "typeKey": "quantity",
+    "display": "二百五十里"
+  },
+  {
+    "canonical": "騩山",
+    "typeKey": "mountain",
+    "display": "騩山"
+  },
+  {
+    "canonical": "淒水",
+    "typeKey": "water",
+    "display": "淒水"
+  },
+  {
+    "canonical": "海",
+    "typeKey": "water",
+    "display": "海"
+  },
+  {
+    "canonical": "采石",
+    "typeKey": "mineral",
+    "display": "采石"
+  },
+  {
+    "canonical": "二千九百五十七里",
+    "typeKey": "quantity",
+    "display": "二千九百五十七里"
+  },
+  {
+    "canonical": "華山",
+    "typeKey": "mountain",
+    "display": "華山"
+  },
+  {
+    "canonical": "羭山",
+    "typeKey": "mountain",
+    "display": "羭山"
+  },
+  {
+    "canonical": "嬰以百珪百璧",
+    "typeKey": "sacrifice",
+    "display": "嬰以百珪百璧"
+  },
+  {
+    "canonical": "西次二經",
+    "typeKey": "mountain",
+    "display": "西次二經"
+  },
+  {
+    "canonical": "鈐山",
+    "typeKey": "mountain",
+    "display": "鈐山"
+  },
+  {
+    "canonical": "㤗冒之山",
+    "typeKey": "mountain",
+    "display": "㤗冒之山"
+  },
+  {
+    "canonical": "浴水",
+    "typeKey": "water",
+    "display": "浴水"
+  },
+  {
+    "canonical": "藻玉",
+    "typeKey": "mineral",
+    "display": "藻玉"
+  },
+  {
+    "canonical": "白蛇",
+    "typeKey": "bird_beast",
+    "display": "白蛇"
+  },
+  {
+    "canonical": "一百七十里",
+    "typeKey": "quantity",
+    "display": "一百七十里"
+  },
+  {
+    "canonical": "數歷之山",
+    "typeKey": "mountain",
+    "display": "數歷之山"
+  },
+  {
+    "canonical": "鸚䳇",
+    "typeKey": "mineral",
+    "display": "鸚䳇"
+  },
+  {
+    "canonical": "楚水",
+    "typeKey": "water",
+    "display": "楚水"
+  },
+  {
+    "canonical": "白珠",
+    "typeKey": "mineral",
+    "display": "白珠"
+  },
+  {
+    "canonical": "西北",
+    "typeKey": "direction",
+    "display": "西北"
+  },
+  {
+    "canonical": "五十里",
+    "typeKey": "quantity",
+    "display": "五十里"
+  },
+  {
+    "canonical": "高山",
+    "typeKey": "mountain",
+    "display": "高山"
+  },
+  {
+    "canonical": "青碧",
+    "typeKey": "mineral",
+    "display": "青碧"
+  },
+  {
+    "canonical": "椶",
+    "typeKey": "mineral",
+    "display": "椶"
+  },
+  {
+    "canonical": "涇水",
+    "typeKey": "water",
+    "display": "涇水"
+  },
+  {
+    "canonical": "女牀之山",
+    "typeKey": "mountain",
+    "display": "女牀之山"
+  },
+  {
+    "canonical": "石涅",
+    "typeKey": "mineral",
+    "display": "石涅"
+  },
+  {
+    "canonical": "虎豹犀兕",
+    "typeKey": "mineral",
+    "display": "虎豹犀兕"
+  },
+  {
+    "canonical": "鸞鳥",
+    "typeKey": "creature",
+    "display": "鸞鳥"
+  },
+  {
+    "canonical": "龍首之山",
+    "typeKey": "mountain",
+    "display": "龍首之山"
+  },
+  {
+    "canonical": "南流注于涇水",
+    "typeKey": "water",
+    "display": "南流注于涇水"
+  },
+  {
+    "canonical": "美玉",
+    "typeKey": "mineral",
+    "display": "美玉"
+  },
+  {
+    "canonical": "鹿臺之山",
+    "typeKey": "mountain",
+    "display": "鹿臺之山"
+  },
+  {
+    "canonical": "鳧徯",
+    "typeKey": "creature",
+    "display": "鳧徯"
+  },
+  {
+    "canonical": "見則有兵",
+    "typeKey": "omen",
+    "display": "見則有兵"
+  },
+  {
+    "canonical": "鳥危之山",
+    "typeKey": "mountain",
+    "display": "鳥危之山"
+  },
+  {
+    "canonical": "檀楮",
+    "typeKey": "mineral",
+    "display": "檀楮"
+  },
+  {
+    "canonical": "女牀",
+    "typeKey": "mineral",
+    "display": "女牀"
+  },
+  {
+    "canonical": "鳥危之水",
+    "typeKey": "water",
+    "display": "鳥危之水"
+  },
+  {
+    "canonical": "小次之山",
+    "typeKey": "mountain",
+    "display": "小次之山"
+  },
+  {
+    "canonical": "朱厭",
+    "typeKey": "creature",
+    "display": "朱厭"
+  },
+  {
+    "canonical": "見則大兵",
+    "typeKey": "omen",
+    "display": "見則大兵"
+  },
+  {
+    "canonical": "大次之山",
+    "typeKey": "mountain",
+    "display": "大次之山"
+  },
+  {
+    "canonical": "薰吳之山",
+    "typeKey": "mountain",
+    "display": "薰吳之山"
+  },
+  {
+    "canonical": "厎陽之山",
+    "typeKey": "mountain",
+    "display": "厎陽之山"
+  },
+  {
+    "canonical": "㮨",
+    "typeKey": "mineral",
+    "display": "㮨"
+  },
+  {
+    "canonical": "眾獸之山",
+    "typeKey": "mountain",
+    "display": "眾獸之山"
+  },
+  {
+    "canonical": "犀兕",
+    "typeKey": "mineral",
+    "display": "犀兕"
+  },
+  {
+    "canonical": "皇人之山",
+    "typeKey": "mountain",
+    "display": "皇人之山"
+  },
+  {
+    "canonical": "青雄黃",
+    "typeKey": "mineral",
+    "display": "青雄黃"
+  },
+  {
+    "canonical": "皇水",
+    "typeKey": "water",
+    "display": "皇水"
+  },
+  {
+    "canonical": "中皇之山",
+    "typeKey": "mountain",
+    "display": "中皇之山"
+  },
+  {
+    "canonical": "蕙",
+    "typeKey": "mineral",
+    "display": "蕙"
+  },
+  {
+    "canonical": "西皇之山",
+    "typeKey": "mountain",
+    "display": "西皇之山"
+  },
+  {
+    "canonical": "麋",
+    "typeKey": "mineral",
+    "display": "麋"
+  },
+  {
+    "canonical": "三百裏",
+    "typeKey": "quantity",
+    "display": "三百裏"
+  },
+  {
+    "canonical": "萊山",
+    "typeKey": "mountain",
+    "display": "萊山"
+  },
+  {
+    "canonical": "羅羅",
+    "typeKey": "mineral",
+    "display": "羅羅"
+  },
+  {
+    "canonical": "四千一百四十里",
+    "typeKey": "quantity",
+    "display": "四千一百四十里"
+  },
+  {
+    "canonical": "是為飛獸之神",
+    "typeKey": "deity",
+    "display": "是為飛獸之神"
+  },
+  {
+    "canonical": "毛用少牢",
+    "typeKey": "sacrifice",
+    "display": "毛用少牢"
+  },
+  {
+    "canonical": "白菅為席",
+    "typeKey": "sacrifice",
+    "display": "白菅為席"
+  },
+  {
+    "canonical": "西次三經",
+    "typeKey": "mountain",
+    "display": "西次三經"
+  },
+  {
+    "canonical": "崇吾之山",
+    "typeKey": "mountain",
+    "display": "崇吾之山"
+  },
+  {
+    "canonical": "南望䍃之澤",
+    "typeKey": "water",
+    "display": "南望䍃之澤"
+  },
+  {
+    "canonical": "東望䗡淵",
+    "typeKey": "water",
+    "display": "東望䗡淵"
+  },
+  {
+    "canonical": "舉父",
+    "typeKey": "creature",
+    "display": "舉父"
+  },
+  {
+    "canonical": "蠻蠻",
+    "typeKey": "creature",
+    "display": "蠻蠻"
+  },
+  {
+    "canonical": "見則天下大水",
+    "typeKey": "omen",
+    "display": "見則天下大水"
+  },
+  {
+    "canonical": "長沙之山",
+    "typeKey": "mountain",
+    "display": "長沙之山"
+  },
+  {
+    "canonical": "泚水",
+    "typeKey": "water",
+    "display": "泚水"
+  },
+  {
+    "canonical": "北流注于泑水",
+    "typeKey": "water",
+    "display": "北流注于泑水"
+  },
+  {
+    "canonical": "不周之山",
+    "typeKey": "mountain",
+    "display": "不周之山"
+  },
+  {
+    "canonical": "諸毗之山",
+    "typeKey": "mountain",
+    "display": "諸毗之山"
+  },
+  {
+    "canonical": "東望泑澤",
+    "typeKey": "water",
+    "display": "東望泑澤"
+  },
+  {
+    "canonical": "四百二十里",
+    "typeKey": "quantity",
+    "display": "四百二十里"
+  },
+  {
+    "canonical": "峚山",
+    "typeKey": "mountain",
+    "display": "峚山"
+  },
+  {
+    "canonical": "丹木",
+    "typeKey": "mineral",
+    "display": "丹木"
+  },
+  {
+    "canonical": "西流注于稷澤",
+    "typeKey": "water",
+    "display": "西流注于稷澤"
+  },
+  {
+    "canonical": "黃帝",
+    "typeKey": "person",
+    "display": "黃帝"
+  },
+  {
+    "canonical": "濁澤",
+    "typeKey": "water",
+    "display": "濁澤"
+  },
+  {
+    "canonical": "鍾山",
+    "typeKey": "mountain",
+    "display": "鍾山"
+  },
+  {
+    "canonical": "四百六十裏",
+    "typeKey": "quantity",
+    "display": "四百六十裏"
+  },
+  {
+    "canonical": "其閒盡澤",
+    "typeKey": "water",
+    "display": "其閒盡澤"
+  },
+  {
+    "canonical": "奇鳥",
+    "typeKey": "mineral",
+    "display": "奇鳥"
+  },
+  {
+    "canonical": "見則有大兵",
+    "typeKey": "omen",
+    "display": "見則有大兵"
+  },
+  {
+    "canonical": "見則其邑大旱",
+    "typeKey": "omen",
+    "display": "見則其邑大旱"
+  },
+  {
+    "canonical": "泰器之山",
+    "typeKey": "mountain",
+    "display": "泰器之山"
+  },
+  {
+    "canonical": "觀水",
+    "typeKey": "water",
+    "display": "觀水"
+  },
+  {
+    "canonical": "文鰩魚",
+    "typeKey": "mineral",
+    "display": "文鰩魚"
+  },
+  {
+    "canonical": "見則天下大穰",
+    "typeKey": "omen",
+    "display": "見則天下大穰"
+  },
+  {
+    "canonical": "槐江之山",
+    "typeKey": "mountain",
+    "display": "槐江之山"
+  },
+  {
+    "canonical": "丘時之水",
+    "typeKey": "water",
+    "display": "丘時之水"
+  },
+  {
+    "canonical": "蠃母",
+    "typeKey": "mineral",
+    "display": "蠃母"
+  },
+  {
+    "canonical": "藏琅玕",
+    "typeKey": "mineral",
+    "display": "藏琅玕"
+  },
+  {
+    "canonical": "采黃金銀",
+    "typeKey": "mineral",
+    "display": "采黃金銀"
+  },
+  {
+    "canonical": "四海",
+    "typeKey": "concept",
+    "display": "四海"
+  },
+  {
+    "canonical": "西望大澤",
+    "typeKey": "water",
+    "display": "西望大澤"
+  },
+  {
+    "canonical": "榣木之有若",
+    "typeKey": "mineral",
+    "display": "榣木之有若"
+  },
+  {
+    "canonical": "恒山",
+    "typeKey": "mountain",
+    "display": "恒山"
+  },
+  {
+    "canonical": "爰有滛水",
+    "typeKey": "water",
+    "display": "爰有滛水"
+  },
+  {
+    "canonical": "天神",
+    "typeKey": "identity",
+    "display": "天神"
+  },
+  {
+    "canonical": "見則其邑有兵",
+    "typeKey": "omen",
+    "display": "見則其邑有兵"
+  },
+  {
+    "canonical": "昆侖之丘",
+    "typeKey": "mountain",
+    "display": "昆侖之丘"
+  },
+  {
+    "canonical": "土螻",
+    "typeKey": "creature",
+    "display": "土螻"
+  },
+  {
+    "canonical": "欽原",
+    "typeKey": "creature",
+    "display": "欽原"
+  },
+  {
+    "canonical": "鶉鳥",
+    "typeKey": "creature",
+    "display": "鶉鳥"
+  },
+  {
+    "canonical": "沙棠",
+    "typeKey": "plant",
+    "display": "沙棠"
+  },
+  {
+    "canonical": "可以禦水",
+    "typeKey": "water",
+    "display": "可以禦水"
+  },
+  {
+    "canonical": "薲草",
+    "typeKey": "plant",
+    "display": "薲草"
+  },
+  {
+    "canonical": "赤水",
+    "typeKey": "water",
+    "display": "赤水"
+  },
+  {
+    "canonical": "洋水",
+    "typeKey": "water",
+    "display": "洋水"
+  },
+  {
+    "canonical": "黑水",
+    "typeKey": "water",
+    "display": "黑水"
+  },
+  {
+    "canonical": "怪鳥獸",
+    "typeKey": "mineral",
+    "display": "怪鳥獸"
+  },
+  {
+    "canonical": "樂遊之山",
+    "typeKey": "mountain",
+    "display": "樂遊之山"
+  },
+  {
+    "canonical": "桃水",
+    "typeKey": "water",
+    "display": "桃水"
+  },
+  {
+    "canonical": "䱻魚",
+    "typeKey": "creature",
+    "display": "䱻魚"
+  },
+  {
+    "canonical": "西水",
+    "typeKey": "water",
+    "display": "西水"
+  },
+  {
+    "canonical": "二百裏",
+    "typeKey": "quantity",
+    "display": "二百裏"
+  },
+  {
+    "canonical": "蠃母之山",
+    "typeKey": "mountain",
+    "display": "蠃母之山"
+  },
+  {
+    "canonical": "多青石而無水",
+    "typeKey": "water",
+    "display": "多青石而無水"
+  },
+  {
+    "canonical": "玉山",
+    "typeKey": "mountain",
+    "display": "玉山"
+  },
+  {
+    "canonical": "狡",
+    "typeKey": "creature",
+    "display": "狡"
+  },
+  {
+    "canonical": "見則其國大穰",
+    "typeKey": "omen",
+    "display": "見則其國大穰"
+  },
+  {
+    "canonical": "胜遇",
+    "typeKey": "creature",
+    "display": "胜遇"
+  },
+  {
+    "canonical": "見則其國大水",
+    "typeKey": "omen",
+    "display": "見則其國大水"
+  },
+  {
+    "canonical": "四百八十里",
+    "typeKey": "quantity",
+    "display": "四百八十里"
+  },
+  {
+    "canonical": "軒轅之丘",
+    "typeKey": "mountain",
+    "display": "軒轅之丘"
+  },
+  {
+    "canonical": "南流注于黑水",
+    "typeKey": "water",
+    "display": "南流注于黑水"
+  },
+  {
+    "canonical": "積石之山",
+    "typeKey": "mountain",
+    "display": "積石之山"
+  },
+  {
+    "canonical": "長留之山",
+    "typeKey": "mountain",
+    "display": "長留之山"
+  },
+  {
+    "canonical": "文玉石",
+    "typeKey": "mineral",
+    "display": "文玉石"
+  },
+  {
+    "canonical": "實惟員神磈氏",
+    "typeKey": "polity",
+    "display": "實惟員神磈氏"
+  },
+  {
+    "canonical": "二百八十里",
+    "typeKey": "quantity",
+    "display": "二百八十里"
+  },
+  {
+    "canonical": "章莪之山",
+    "typeKey": "mountain",
+    "display": "章莪之山"
+  },
+  {
+    "canonical": "瑤碧",
+    "typeKey": "mineral",
+    "display": "瑤碧"
+  },
+  {
+    "canonical": "畢方",
+    "typeKey": "creature",
+    "display": "畢方"
+  },
+  {
+    "canonical": "見則其邑有譌火",
+    "typeKey": "omen",
+    "display": "見則其邑有譌火"
+  },
+  {
+    "canonical": "陰山",
+    "typeKey": "mountain",
+    "display": "陰山"
+  },
+  {
+    "canonical": "濁浴之水",
+    "typeKey": "water",
+    "display": "濁浴之水"
+  },
+  {
+    "canonical": "南流注于蕃澤",
+    "typeKey": "water",
+    "display": "南流注于蕃澤"
+  },
+  {
+    "canonical": "文貝",
+    "typeKey": "mineral",
+    "display": "文貝"
+  },
+  {
+    "canonical": "天狗",
+    "typeKey": "creature",
+    "display": "天狗"
+  },
+  {
+    "canonical": "符愓之山",
+    "typeKey": "mountain",
+    "display": "符愓之山"
+  },
+  {
+    "canonical": "怪雨",
+    "typeKey": "mineral",
+    "display": "怪雨"
+  },
+  {
+    "canonical": "二百二十里",
+    "typeKey": "quantity",
+    "display": "二百二十里"
+  },
+  {
+    "canonical": "三危之山",
+    "typeKey": "mountain",
+    "display": "三危之山"
+  },
+  {
+    "canonical": "百里",
+    "typeKey": "quantity",
+    "display": "百里"
+  },
+  {
+    "canonical": "𢕟𢓨",
+    "typeKey": "creature",
+    "display": "𢕟𢓨"
+  },
+  {
+    "canonical": "三身",
+    "typeKey": "person",
+    "display": "三身"
+  },
+  {
+    "canonical": "鴟",
+    "typeKey": "creature",
+    "display": "鴟"
+  },
+  {
+    "canonical": "一百九十里",
+    "typeKey": "quantity",
+    "display": "一百九十里"
+  },
+  {
+    "canonical": "玉而無石",
+    "typeKey": "mineral",
+    "display": "玉而無石"
+  },
+  {
+    "canonical": "積蛇",
+    "typeKey": "mineral",
+    "display": "積蛇"
+  },
+  {
+    "canonical": "天山",
+    "typeKey": "mountain",
+    "display": "天山"
+  },
+  {
+    "canonical": "湯谷",
+    "typeKey": "concept",
+    "display": "湯谷"
+  },
+  {
+    "canonical": "實為帝江",
+    "typeKey": "deity",
+    "display": "實為帝江"
+  },
+  {
+    "canonical": "二百九十里",
+    "typeKey": "quantity",
+    "display": "二百九十里"
+  },
+  {
+    "canonical": "泑山",
+    "typeKey": "mountain",
+    "display": "泑山"
+  },
+  {
+    "canonical": "瑾瑜之玉",
+    "typeKey": "mineral",
+    "display": "瑾瑜之玉"
+  },
+  {
+    "canonical": "翼望之山",
+    "typeKey": "mountain",
+    "display": "翼望之山"
+  },
+  {
+    "canonical": "讙",
+    "typeKey": "creature",
+    "display": "讙"
+  },
+  {
+    "canonical": "鵸鵌",
+    "typeKey": "creature",
+    "display": "鵸鵌"
+  },
+  {
+    "canonical": "六千七百四十四里",
+    "typeKey": "quantity",
+    "display": "六千七百四十四里"
+  },
+  {
+    "canonical": "糈用稷米",
+    "typeKey": "sacrifice",
+    "display": "糈用稷米"
+  },
+  {
+    "canonical": "西次四經",
+    "typeKey": "mountain",
+    "display": "西次四經"
+  },
+  {
+    "canonical": "𦮉蕃",
+    "typeKey": "mineral",
+    "display": "𦮉蕃"
+  },
+  {
+    "canonical": "陰水",
+    "typeKey": "water",
+    "display": "陰水"
+  },
+  {
+    "canonical": "北",
+    "typeKey": "direction",
+    "display": "北"
+  },
+  {
+    "canonical": "勞山",
+    "typeKey": "mountain",
+    "display": "勞山"
+  },
+  {
+    "canonical": "茈草",
+    "typeKey": "mineral",
+    "display": "茈草"
+  },
+  {
+    "canonical": "弱水",
+    "typeKey": "water",
+    "display": "弱水"
+  },
+  {
+    "canonical": "罷父之山",
+    "typeKey": "mountain",
+    "display": "罷父之山"
+  },
+  {
+    "canonical": "洱水",
+    "typeKey": "water",
+    "display": "洱水"
+  },
+  {
+    "canonical": "茈",
+    "typeKey": "mineral",
+    "display": "茈"
+  },
+  {
+    "canonical": "申山",
+    "typeKey": "mountain",
+    "display": "申山"
+  },
+  {
+    "canonical": "榖柞",
+    "typeKey": "mineral",
+    "display": "榖柞"
+  },
+  {
+    "canonical": "區水",
+    "typeKey": "water",
+    "display": "區水"
+  },
+  {
+    "canonical": "百二百里",
+    "typeKey": "quantity",
+    "display": "百二百里"
+  },
+  {
+    "canonical": "鳥山",
+    "typeKey": "mountain",
+    "display": "鳥山"
+  },
+  {
+    "canonical": "桑",
+    "typeKey": "mineral",
+    "display": "桑"
+  },
+  {
+    "canonical": "楮",
+    "typeKey": "mineral",
+    "display": "楮"
+  },
+  {
+    "canonical": "辱水",
+    "typeKey": "water",
+    "display": "辱水"
+  },
+  {
+    "canonical": "二十里",
+    "typeKey": "quantity",
+    "display": "二十里"
+  },
+  {
+    "canonical": "上申之山",
+    "typeKey": "mountain",
+    "display": "上申之山"
+  },
+  {
+    "canonical": "硌石",
+    "typeKey": "mineral",
+    "display": "硌石"
+  },
+  {
+    "canonical": "榛楛",
+    "typeKey": "mineral",
+    "display": "榛楛"
+  },
+  {
+    "canonical": "白鹿",
+    "typeKey": "bird_beast",
+    "display": "白鹿"
+  },
+  {
+    "canonical": "當扈",
+    "typeKey": "mineral",
+    "display": "當扈"
+  },
+  {
+    "canonical": "湯水",
+    "typeKey": "water",
+    "display": "湯水"
+  },
+  {
+    "canonical": "諸次之山",
+    "typeKey": "mountain",
+    "display": "諸次之山"
+  },
+  {
+    "canonical": "諸次之水",
+    "typeKey": "water",
+    "display": "諸次之水"
+  },
+  {
+    "canonical": "木無草",
+    "typeKey": "mineral",
+    "display": "木無草"
+  },
+  {
+    "canonical": "眾蛇",
+    "typeKey": "mineral",
+    "display": "眾蛇"
+  },
+  {
+    "canonical": "號山",
+    "typeKey": "mountain",
+    "display": "號山"
+  },
+  {
+    "canonical": "漆",
+    "typeKey": "mineral",
+    "display": "漆"
+  },
+  {
+    "canonical": "葯虈芎藭",
+    "typeKey": "mineral",
+    "display": "葯虈芎藭"
+  },
+  {
+    "canonical": "汵石",
+    "typeKey": "mineral",
+    "display": "汵石"
+  },
+  {
+    "canonical": "端水",
+    "typeKey": "water",
+    "display": "端水"
+  },
+  {
+    "canonical": "盂山",
+    "typeKey": "mountain",
+    "display": "盂山"
+  },
+  {
+    "canonical": "白狼白虎",
+    "typeKey": "mineral",
+    "display": "白狼白虎"
+  },
+  {
+    "canonical": "白雉白翟",
+    "typeKey": "mineral",
+    "display": "白雉白翟"
+  },
+  {
+    "canonical": "生水",
+    "typeKey": "water",
+    "display": "生水"
+  },
+  {
+    "canonical": "白於之山",
+    "typeKey": "mountain",
+    "display": "白於之山"
+  },
+  {
+    "canonical": "松柏",
+    "typeKey": "mineral",
+    "display": "松柏"
+  },
+  {
+    "canonical": "櫟檀",
+    "typeKey": "mineral",
+    "display": "櫟檀"
+  },
+  {
+    "canonical": "鴞",
+    "typeKey": "mineral",
+    "display": "鴞"
+  },
+  {
+    "canonical": "洛水",
+    "typeKey": "water",
+    "display": "洛水"
+  },
+  {
+    "canonical": "夾水",
+    "typeKey": "water",
+    "display": "夾水"
+  },
+  {
+    "canonical": "東流注于生水",
+    "typeKey": "water",
+    "display": "東流注于生水"
+  },
+  {
+    "canonical": "申首之山",
+    "typeKey": "mountain",
+    "display": "申首之山"
+  },
+  {
+    "canonical": "申水",
+    "typeKey": "water",
+    "display": "申水"
+  },
+  {
+    "canonical": "五十五里",
+    "typeKey": "quantity",
+    "display": "五十五里"
+  },
+  {
+    "canonical": "涇谷之山",
+    "typeKey": "mountain",
+    "display": "涇谷之山"
+  },
+  {
+    "canonical": "白金白玉",
+    "typeKey": "mineral",
+    "display": "白金白玉"
+  },
+  {
+    "canonical": "剛山",
+    "typeKey": "mountain",
+    "display": "剛山"
+  },
+  {
+    "canonical": "柒木",
+    "typeKey": "mineral",
+    "display": "柒木"
+  },
+  {
+    "canonical": "剛水",
+    "typeKey": "water",
+    "display": "剛水"
+  },
+  {
+    "canonical": "神𩳁",
+    "typeKey": "mineral",
+    "display": "神𩳁"
+  },
+  {
+    "canonical": "英鞮之山",
+    "typeKey": "mountain",
+    "display": "英鞮之山"
+  },
+  {
+    "canonical": "漆木",
+    "typeKey": "mineral",
+    "display": "漆木"
+  },
+  {
+    "canonical": "涴水",
+    "typeKey": "water",
+    "display": "涴水"
+  },
+  {
+    "canonical": "冉遺之魚",
+    "typeKey": "mineral",
+    "display": "冉遺之魚"
+  },
+  {
+    "canonical": "中曲之山",
+    "typeKey": "mountain",
+    "display": "中曲之山"
+  },
+  {
+    "canonical": "雄黃",
+    "typeKey": "mineral",
+    "display": "雄黃"
+  },
+  {
+    "canonical": "駮",
+    "typeKey": "creature",
+    "display": "駮"
+  },
+  {
+    "canonical": "櫰木",
+    "typeKey": "plant",
+    "display": "櫰木"
+  },
+  {
+    "canonical": "力",
+    "typeKey": "mineral",
+    "display": "力"
+  },
+  {
+    "canonical": "二百六十里",
+    "typeKey": "quantity",
+    "display": "二百六十里"
+  },
+  {
+    "canonical": "邽山",
+    "typeKey": "mountain",
+    "display": "邽山"
+  },
+  {
+    "canonical": "窮奇",
+    "typeKey": "creature",
+    "display": "窮奇"
+  },
+  {
+    "canonical": "濛水",
+    "typeKey": "water",
+    "display": "濛水"
+  },
+  {
+    "canonical": "南流注于洋水",
+    "typeKey": "water",
+    "display": "南流注于洋水"
+  },
+  {
+    "canonical": "黃貝",
+    "typeKey": "mineral",
+    "display": "黃貝"
+  },
+  {
+    "canonical": "見則其邑大水",
+    "typeKey": "omen",
+    "display": "見則其邑大水"
+  },
+  {
+    "canonical": "白虎",
+    "typeKey": "bird_beast",
+    "display": "白虎"
+  },
+  {
+    "canonical": "渭水",
+    "typeKey": "water",
+    "display": "渭水"
+  },
+  {
+    "canonical": "鰠魚",
+    "typeKey": "creature",
+    "display": "鰠魚"
+  },
+  {
+    "canonical": "濫水",
+    "typeKey": "water",
+    "display": "濫水"
+  },
+  {
+    "canonical": "西流注于漢水",
+    "typeKey": "water",
+    "display": "西流注于漢水"
+  },
+  {
+    "canonical": "𩶯魮之魚",
+    "typeKey": "mineral",
+    "display": "𩶯魮之魚"
+  },
+  {
+    "canonical": "三百六十里",
+    "typeKey": "quantity",
+    "display": "三百六十里"
+  },
+  {
+    "canonical": "崦嵫之山",
+    "typeKey": "mountain",
+    "display": "崦嵫之山"
+  },
+  {
+    "canonical": "龜",
+    "typeKey": "bird_beast",
+    "display": "龜"
+  },
+  {
+    "canonical": "砥礪",
+    "typeKey": "mineral",
+    "display": "砥礪"
+  },
+  {
+    "canonical": "孰湖",
+    "typeKey": "creature",
+    "display": "孰湖"
+  },
+  {
+    "canonical": "三千六百八十里",
+    "typeKey": "quantity",
+    "display": "三千六百八十里"
+  },
+  {
+    "canonical": "一萬七千五百一十七里",
+    "typeKey": "quantity",
+    "display": "一萬七千五百一十七里"
+  },
+  {
+    "canonical": "單狐之山",
+    "typeKey": "mountain",
+    "display": "單狐之山"
+  },
+  {
+    "canonical": "机木",
+    "typeKey": "mineral",
+    "display": "机木"
+  },
+  {
+    "canonical": "華草",
+    "typeKey": "mineral",
+    "display": "華草"
+  },
+  {
+    "canonical": "漨水",
+    "typeKey": "water",
+    "display": "漨水"
+  },
+  {
+    "canonical": "西流注于泑水",
+    "typeKey": "water",
+    "display": "西流注于泑水"
+  },
+  {
+    "canonical": "茈石文石",
+    "typeKey": "mineral",
+    "display": "茈石文石"
+  },
+  {
+    "canonical": "求如之山",
+    "typeKey": "mountain",
+    "display": "求如之山"
+  },
+  {
+    "canonical": "滑水",
+    "typeKey": "water",
+    "display": "滑水"
+  },
+  {
+    "canonical": "滑魚",
+    "typeKey": "creature",
+    "display": "滑魚"
+  },
+  {
+    "canonical": "帶山",
+    "typeKey": "mountain",
+    "display": "帶山"
+  },
+  {
+    "canonical": "䑏疏",
+    "typeKey": "creature",
+    "display": "䑏疏"
+  },
+  {
+    "canonical": "鵸䳜",
+    "typeKey": "creature",
+    "display": "鵸䳜"
+  },
+  {
+    "canonical": "彭水",
+    "typeKey": "water",
+    "display": "彭水"
+  },
+  {
+    "canonical": "儵魚",
+    "typeKey": "creature",
+    "display": "儵魚"
+  },
+  {
+    "canonical": "譙明之山",
+    "typeKey": "mountain",
+    "display": "譙明之山"
+  },
+  {
+    "canonical": "譙水",
+    "typeKey": "water",
+    "display": "譙水"
+  },
+  {
+    "canonical": "何羅之魚",
+    "typeKey": "mineral",
+    "display": "何羅之魚"
+  },
+  {
+    "canonical": "孟槐",
+    "typeKey": "creature",
+    "display": "孟槐"
+  },
+  {
+    "canonical": "涿光之山",
+    "typeKey": "mountain",
+    "display": "涿光之山"
+  },
+  {
+    "canonical": "鰼鰼之魚",
+    "typeKey": "creature",
+    "display": "鰼鰼之魚"
+  },
+  {
+    "canonical": "麢羊",
+    "typeKey": "mineral",
+    "display": "麢羊"
+  },
+  {
+    "canonical": "蕃",
+    "typeKey": "mineral",
+    "display": "蕃"
+  },
+  {
+    "canonical": "虢山",
+    "typeKey": "mountain",
+    "display": "虢山"
+  },
+  {
+    "canonical": "桐椐",
+    "typeKey": "mineral",
+    "display": "桐椐"
+  },
+  {
+    "canonical": "伊水",
+    "typeKey": "water",
+    "display": "伊水"
+  },
+  {
+    "canonical": "橐駝",
+    "typeKey": "mineral",
+    "display": "橐駝"
+  },
+  {
+    "canonical": "寓",
+    "typeKey": "mineral",
+    "display": "寓"
+  },
+  {
+    "canonical": "魚水",
+    "typeKey": "water",
+    "display": "魚水"
+  },
+  {
+    "canonical": "丹熏之山",
+    "typeKey": "mountain",
+    "display": "丹熏之山"
+  },
+  {
+    "canonical": "樗柏",
+    "typeKey": "mineral",
+    "display": "樗柏"
+  },
+  {
+    "canonical": "韭䪥",
+    "typeKey": "mineral",
+    "display": "韭䪥"
+  },
+  {
+    "canonical": "熏水",
+    "typeKey": "water",
+    "display": "熏水"
+  },
+  {
+    "canonical": "西流注于棠水",
+    "typeKey": "water",
+    "display": "西流注于棠水"
+  },
+  {
+    "canonical": "耳鼠",
+    "typeKey": "creature",
+    "display": "耳鼠"
+  },
+  {
+    "canonical": "石者之山",
+    "typeKey": "mountain",
+    "display": "石者之山"
+  },
+  {
+    "canonical": "孟極",
+    "typeKey": "creature",
+    "display": "孟極"
+  },
+  {
+    "canonical": "百一十里",
+    "typeKey": "quantity",
+    "display": "百一十里"
+  },
+  {
+    "canonical": "邊春之山",
+    "typeKey": "mountain",
+    "display": "邊春之山"
+  },
+  {
+    "canonical": "蔥",
+    "typeKey": "mineral",
+    "display": "蔥"
+  },
+  {
+    "canonical": "杠水",
+    "typeKey": "water",
+    "display": "杠水"
+  },
+  {
+    "canonical": "西流注于泑澤",
+    "typeKey": "water",
+    "display": "西流注于泑澤"
+  },
+  {
+    "canonical": "幽鴳",
+    "typeKey": "creature",
+    "display": "幽鴳"
+  },
+  {
+    "canonical": "蔓聯之山",
+    "typeKey": "mountain",
+    "display": "蔓聯之山"
+  },
+  {
+    "canonical": "足訾",
+    "typeKey": "creature",
+    "display": "足訾"
+  },
+  {
+    "canonical": "鵁",
+    "typeKey": "creature",
+    "display": "鵁"
+  },
+  {
+    "canonical": "單張之山",
+    "typeKey": "mountain",
+    "display": "單張之山"
+  },
+  {
+    "canonical": "諸犍",
+    "typeKey": "creature",
+    "display": "諸犍"
+  },
+  {
+    "canonical": "白鵺",
+    "typeKey": "creature",
+    "display": "白鵺"
+  },
+  {
+    "canonical": "櫟水",
+    "typeKey": "water",
+    "display": "櫟水"
+  },
+  {
+    "canonical": "南流注于杠水",
+    "typeKey": "water",
+    "display": "南流注于杠水"
+  },
+  {
+    "canonical": "灌題之山",
+    "typeKey": "mountain",
+    "display": "灌題之山"
+  },
+  {
+    "canonical": "樗柘",
+    "typeKey": "mineral",
+    "display": "樗柘"
+  },
+  {
+    "canonical": "流沙",
+    "typeKey": "mineral",
+    "display": "流沙"
+  },
+  {
+    "canonical": "砥",
+    "typeKey": "mineral",
+    "display": "砥"
+  },
+  {
+    "canonical": "那父",
+    "typeKey": "creature",
+    "display": "那父"
+  },
+  {
+    "canonical": "竦斯",
+    "typeKey": "creature",
+    "display": "竦斯"
+  },
+  {
+    "canonical": "匠韓之水",
+    "typeKey": "water",
+    "display": "匠韓之水"
+  },
+  {
+    "canonical": "磁石",
+    "typeKey": "mineral",
+    "display": "磁石"
+  },
+  {
+    "canonical": "潘侯之山",
+    "typeKey": "mountain",
+    "display": "潘侯之山"
+  },
+  {
+    "canonical": "邊水",
+    "typeKey": "water",
+    "display": "邊水"
+  },
+  {
+    "canonical": "南流注于櫟澤",
+    "typeKey": "water",
+    "display": "南流注于櫟澤"
+  },
+  {
+    "canonical": "二百三十里",
+    "typeKey": "quantity",
+    "display": "二百三十里"
+  },
+  {
+    "canonical": "小咸之山",
+    "typeKey": "mountain",
+    "display": "小咸之山"
+  },
+  {
+    "canonical": "大咸之山",
+    "typeKey": "mountain",
+    "display": "大咸之山"
+  },
+  {
+    "canonical": "長蛇",
+    "typeKey": "creature",
+    "display": "長蛇"
+  },
+  {
+    "canonical": "敦薨之山",
+    "typeKey": "mountain",
+    "display": "敦薨之山"
+  },
+  {
+    "canonical": "敦薨之水",
+    "typeKey": "water",
+    "display": "敦薨之水"
+  },
+  {
+    "canonical": "赤鮭",
+    "typeKey": "mineral",
+    "display": "赤鮭"
+  },
+  {
+    "canonical": "兕",
+    "typeKey": "bird_beast",
+    "display": "兕"
+  },
+  {
+    "canonical": "鳲鳩",
+    "typeKey": "mineral",
+    "display": "鳲鳩"
+  },
+  {
+    "canonical": "少咸之山",
+    "typeKey": "mountain",
+    "display": "少咸之山"
+  },
+  {
+    "canonical": "窫窳",
+    "typeKey": "creature",
+    "display": "窫窳"
+  },
+  {
+    "canonical": "敦水",
+    "typeKey": "water",
+    "display": "敦水"
+  },
+  {
+    "canonical": "䰽䰽之魚",
+    "typeKey": "mineral",
+    "display": "䰽䰽之魚"
+  },
+  {
+    "canonical": "嶽法之山",
+    "typeKey": "mountain",
+    "display": "嶽法之山"
+  },
+  {
+    "canonical": "之水",
+    "typeKey": "water",
+    "display": "之水"
+  },
+  {
+    "canonical": "北流注于泰澤",
+    "typeKey": "water",
+    "display": "北流注于泰澤"
+  },
+  {
+    "canonical": "抄魚",
+    "typeKey": "creature",
+    "display": "抄魚"
+  },
+  {
+    "canonical": "其名山",
+    "typeKey": "mountain",
+    "display": "其名山"
+  },
+  {
+    "canonical": "見則天下大風",
+    "typeKey": "omen",
+    "display": "見則天下大風"
+  },
+  {
+    "canonical": "北嶽之山",
+    "typeKey": "mountain",
+    "display": "北嶽之山"
+  },
+  {
+    "canonical": "枳棘剛木",
+    "typeKey": "mineral",
+    "display": "枳棘剛木"
+  },
+  {
+    "canonical": "諸懷",
+    "typeKey": "creature",
+    "display": "諸懷"
+  },
+  {
+    "canonical": "諸懷之水",
+    "typeKey": "water",
+    "display": "諸懷之水"
+  },
+  {
+    "canonical": "西流注于嚻水",
+    "typeKey": "water",
+    "display": "西流注于嚻水"
+  },
+  {
+    "canonical": "鮨魚",
+    "typeKey": "mineral",
+    "display": "鮨魚"
+  },
+  {
+    "canonical": "渾夕之山",
+    "typeKey": "mountain",
+    "display": "渾夕之山"
+  },
+  {
+    "canonical": "銅玉",
+    "typeKey": "mineral",
+    "display": "銅玉"
+  },
+  {
+    "canonical": "見則其國大旱",
+    "typeKey": "omen",
+    "display": "見則其國大旱"
+  },
+  {
+    "canonical": "北單之山",
+    "typeKey": "mountain",
+    "display": "北單之山"
+  },
+  {
+    "canonical": "蔥韭",
+    "typeKey": "mineral",
+    "display": "蔥韭"
+  },
+  {
+    "canonical": "羆差之山",
+    "typeKey": "mountain",
+    "display": "羆差之山"
+  },
+  {
+    "canonical": "馬",
+    "typeKey": "bird_beast",
+    "display": "馬"
+  },
+  {
+    "canonical": "北鮮之山",
+    "typeKey": "mountain",
+    "display": "北鮮之山"
+  },
+  {
+    "canonical": "鮮水",
+    "typeKey": "water",
+    "display": "鮮水"
+  },
+  {
+    "canonical": "隄山",
+    "typeKey": "mountain",
+    "display": "隄山"
+  },
+  {
+    "canonical": "狕",
+    "typeKey": "creature",
+    "display": "狕"
+  },
+  {
+    "canonical": "隄水",
+    "typeKey": "water",
+    "display": "隄水"
+  },
+  {
+    "canonical": "東流注于泰澤",
+    "typeKey": "water",
+    "display": "東流注于泰澤"
+  },
+  {
+    "canonical": "龍龜",
+    "typeKey": "mineral",
+    "display": "龍龜"
+  },
+  {
+    "canonical": "五千四百九十里",
+    "typeKey": "quantity",
+    "display": "五千四百九十里"
+  },
+  {
+    "canonical": "毛用一雄雞彘瘞",
+    "typeKey": "sacrifice",
+    "display": "毛用一雄雞彘瘞"
+  },
+  {
+    "canonical": "北次二經",
+    "typeKey": "mountain",
+    "display": "北次二經"
+  },
+  {
+    "canonical": "管涔之山",
+    "typeKey": "creature",
+    "display": "管涔之山"
+  },
+  {
+    "canonical": "汾水",
+    "typeKey": "water",
+    "display": "汾水"
+  },
+  {
+    "canonical": "少陽之山",
+    "typeKey": "mountain",
+    "display": "少陽之山"
+  },
+  {
+    "canonical": "赤銀",
+    "typeKey": "mineral",
+    "display": "赤銀"
+  },
+  {
+    "canonical": "酸水",
+    "typeKey": "water",
+    "display": "酸水"
+  },
+  {
+    "canonical": "東流注于汾水",
+    "typeKey": "water",
+    "display": "東流注于汾水"
+  },
+  {
+    "canonical": "美赭",
+    "typeKey": "mineral",
+    "display": "美赭"
+  },
+  {
+    "canonical": "縣雍之山",
+    "typeKey": "mountain",
+    "display": "縣雍之山"
+  },
+  {
+    "canonical": "閭麋",
+    "typeKey": "mineral",
+    "display": "閭麋"
+  },
+  {
+    "canonical": "白翟白䳑",
+    "typeKey": "mineral",
+    "display": "白翟白䳑"
+  },
+  {
+    "canonical": "晋水",
+    "typeKey": "water",
+    "display": "晋水"
+  },
+  {
+    "canonical": "南流注于汾水",
+    "typeKey": "water",
+    "display": "南流注于汾水"
+  },
+  {
+    "canonical": "鮆魚",
+    "typeKey": "creature",
+    "display": "鮆魚"
+  },
+  {
+    "canonical": "狐岐之山",
+    "typeKey": "mountain",
+    "display": "狐岐之山"
+  },
+  {
+    "canonical": "勝水",
+    "typeKey": "water",
+    "display": "勝水"
+  },
+  {
+    "canonical": "北流注于汾水",
+    "typeKey": "water",
+    "display": "北流注于汾水"
+  },
+  {
+    "canonical": "白沙山",
+    "typeKey": "mountain",
+    "display": "白沙山"
+  },
+  {
+    "canonical": "鮪水",
+    "typeKey": "water",
+    "display": "鮪水"
+  },
+  {
+    "canonical": "爾是之山",
+    "typeKey": "mountain",
+    "display": "爾是之山"
+  },
+  {
+    "canonical": "狂山",
+    "typeKey": "mountain",
+    "display": "狂山"
+  },
+  {
+    "canonical": "狂水",
+    "typeKey": "water",
+    "display": "狂水"
+  },
+  {
+    "canonical": "西流注于浮水",
+    "typeKey": "water",
+    "display": "西流注于浮水"
+  },
+  {
+    "canonical": "諸餘之山",
+    "typeKey": "mountain",
+    "display": "諸餘之山"
+  },
+  {
+    "canonical": "諸餘之水",
+    "typeKey": "water",
+    "display": "諸餘之水"
+  },
+  {
+    "canonical": "東流注于旄水",
+    "typeKey": "water",
+    "display": "東流注于旄水"
+  },
+  {
+    "canonical": "敦頭之山",
+    "typeKey": "mountain",
+    "display": "敦頭之山"
+  },
+  {
+    "canonical": "旄水",
+    "typeKey": "water",
+    "display": "旄水"
+  },
+  {
+    "canonical": "東流注于印澤",
+    "typeKey": "water",
+    "display": "東流注于印澤"
+  },
+  {
+    "canonical": "𩣡馬",
+    "typeKey": "mineral",
+    "display": "𩣡馬"
+  },
+  {
+    "canonical": "鈎吾之山",
+    "typeKey": "mountain",
+    "display": "鈎吾之山"
+  },
+  {
+    "canonical": "狍鴞",
+    "typeKey": "creature",
+    "display": "狍鴞"
+  },
+  {
+    "canonical": "北嚻之山",
+    "typeKey": "mountain",
+    "display": "北嚻之山"
+  },
+  {
+    "canonical": "獨𤞞",
+    "typeKey": "creature",
+    "display": "獨𤞞"
+  },
+  {
+    "canonical": "𪄀𪃑",
+    "typeKey": "creature",
+    "display": "𪄀𪃑"
+  },
+  {
+    "canonical": "東流注于邛澤",
+    "typeKey": "water",
+    "display": "東流注于邛澤"
+  },
+  {
+    "canonical": "梁渠之山",
+    "typeKey": "mountain",
+    "display": "梁渠之山"
+  },
+  {
+    "canonical": "脩水",
+    "typeKey": "water",
+    "display": "脩水"
+  },
+  {
+    "canonical": "居暨",
+    "typeKey": "mineral",
+    "display": "居暨"
+  },
+  {
+    "canonical": "夸父",
+    "typeKey": "person",
+    "display": "夸父"
+  },
+  {
+    "canonical": "姑灌之山",
+    "typeKey": "mountain",
+    "display": "姑灌之山"
+  },
+  {
+    "canonical": "湖灌之山",
+    "typeKey": "mountain",
+    "display": "湖灌之山"
+  },
+  {
+    "canonical": "湖灌之水",
+    "typeKey": "water",
+    "display": "湖灌之水"
+  },
+  {
+    "canonical": "䱇",
+    "typeKey": "mineral",
+    "display": "䱇"
+  },
+  {
+    "canonical": "又北水",
+    "typeKey": "water",
+    "display": "又北水"
+  },
+  {
+    "canonical": "洹山",
+    "typeKey": "mountain",
+    "display": "洹山"
+  },
+  {
+    "canonical": "百仞",
+    "typeKey": "quantity",
+    "display": "百仞"
+  },
+  {
+    "canonical": "敦題之山",
+    "typeKey": "mountain",
+    "display": "敦題之山"
+  },
+  {
+    "canonical": "北海",
+    "typeKey": "water",
+    "display": "北海"
+  },
+  {
+    "canonical": "管涔之山",
+    "typeKey": "mountain",
+    "display": "管涔之山"
+  },
+  {
+    "canonical": "五千六百九十里",
+    "typeKey": "quantity",
+    "display": "五千六百九十里"
+  },
+  {
+    "canonical": "北次三經",
+    "typeKey": "mountain",
+    "display": "北次三經"
+  },
+  {
+    "canonical": "太行之山",
+    "typeKey": "mountain",
+    "display": "太行之山"
+  },
+  {
+    "canonical": "歸山",
+    "typeKey": "mountain",
+    "display": "歸山"
+  },
+  {
+    "canonical": "䮝",
+    "typeKey": "creature",
+    "display": "䮝"
+  },
+  {
+    "canonical": "䴅",
+    "typeKey": "creature",
+    "display": "䴅"
+  },
+  {
+    "canonical": "東北",
+    "typeKey": "direction",
+    "display": "東北"
+  },
+  {
+    "canonical": "龍侯之山",
+    "typeKey": "mountain",
+    "display": "龍侯之山"
+  },
+  {
+    "canonical": "决决之水",
+    "typeKey": "water",
+    "display": "决决之水"
+  },
+  {
+    "canonical": "人魚",
+    "typeKey": "creature",
+    "display": "人魚"
+  },
+  {
+    "canonical": "馬成之山",
+    "typeKey": "mountain",
+    "display": "馬成之山"
+  },
+  {
+    "canonical": "文石",
+    "typeKey": "mineral",
+    "display": "文石"
+  },
+  {
+    "canonical": "天馬",
+    "typeKey": "creature",
+    "display": "天馬"
+  },
+  {
+    "canonical": "鶌鶋",
+    "typeKey": "creature",
+    "display": "鶌鶋"
+  },
+  {
+    "canonical": "咸山",
+    "typeKey": "mountain",
+    "display": "咸山"
+  },
+  {
+    "canonical": "條菅之水",
+    "typeKey": "water",
+    "display": "條菅之水"
+  },
+  {
+    "canonical": "南流注于長澤",
+    "typeKey": "water",
+    "display": "南流注于長澤"
+  },
+  {
+    "canonical": "器酸",
+    "typeKey": "mineral",
+    "display": "器酸"
+  },
+  {
+    "canonical": "天池之山",
+    "typeKey": "mountain",
+    "display": "天池之山"
+  },
+  {
+    "canonical": "飛鼠",
+    "typeKey": "creature",
+    "display": "飛鼠"
+  },
+  {
+    "canonical": "澠水",
+    "typeKey": "water",
+    "display": "澠水"
+  },
+  {
+    "canonical": "黃堊",
+    "typeKey": "mineral",
+    "display": "黃堊"
+  },
+  {
+    "canonical": "陽山",
+    "typeKey": "mountain",
+    "display": "陽山"
+  },
+  {
+    "canonical": "金銅",
+    "typeKey": "mineral",
+    "display": "金銅"
+  },
+  {
+    "canonical": "領胡",
+    "typeKey": "creature",
+    "display": "領胡"
+  },
+  {
+    "canonical": "象蛇",
+    "typeKey": "creature",
+    "display": "象蛇"
+  },
+  {
+    "canonical": "留水",
+    "typeKey": "water",
+    "display": "留水"
+  },
+  {
+    "canonical": "賁聞之山",
+    "typeKey": "mountain",
+    "display": "賁聞之山"
+  },
+  {
+    "canonical": "涅石",
+    "typeKey": "mineral",
+    "display": "涅石"
+  },
+  {
+    "canonical": "王屋之山",
+    "typeKey": "mountain",
+    "display": "王屋之山"
+  },
+  {
+    "canonical": "㶌水",
+    "typeKey": "water",
+    "display": "㶌水"
+  },
+  {
+    "canonical": "教山",
+    "typeKey": "mountain",
+    "display": "教山"
+  },
+  {
+    "canonical": "教水",
+    "typeKey": "water",
+    "display": "教水"
+  },
+  {
+    "canonical": "是水",
+    "typeKey": "water",
+    "display": "是水"
+  },
+  {
+    "canonical": "三百步",
+    "typeKey": "quantity",
+    "display": "三百步"
+  },
+  {
+    "canonical": "發丸之山",
+    "typeKey": "creature",
+    "display": "發丸之山"
+  },
+  {
+    "canonical": "南",
+    "typeKey": "direction",
+    "display": "南"
+  },
+  {
+    "canonical": "景山",
+    "typeKey": "mountain",
+    "display": "景山"
+  },
+  {
+    "canonical": "南望鹽販之澤",
+    "typeKey": "water",
+    "display": "南望鹽販之澤"
+  },
+  {
+    "canonical": "北望少澤",
+    "typeKey": "water",
+    "display": "北望少澤"
+  },
+  {
+    "canonical": "秦椒",
+    "typeKey": "mineral",
+    "display": "秦椒"
+  },
+  {
+    "canonical": "酸與",
+    "typeKey": "creature",
+    "display": "酸與"
+  },
+  {
+    "canonical": "見則其邑有恐",
+    "typeKey": "omen",
+    "display": "見則其邑有恐"
+  },
+  {
+    "canonical": "孟門之山",
+    "typeKey": "mountain",
+    "display": "孟門之山"
+  },
+  {
+    "canonical": "平山",
+    "typeKey": "mountain",
+    "display": "平山"
+  },
+  {
+    "canonical": "平水",
+    "typeKey": "water",
+    "display": "平水"
+  },
+  {
+    "canonical": "京山",
+    "typeKey": "mountain",
+    "display": "京山"
+  },
+  {
+    "canonical": "高水",
+    "typeKey": "water",
+    "display": "高水"
+  },
+  {
+    "canonical": "虫尾之山",
+    "typeKey": "mountain",
+    "display": "虫尾之山"
+  },
+  {
+    "canonical": "薄水",
+    "typeKey": "water",
+    "display": "薄水"
+  },
+  {
+    "canonical": "南流注于黃澤",
+    "typeKey": "water",
+    "display": "南流注于黃澤"
+  },
+  {
+    "canonical": "彭毗之山",
+    "typeKey": "mountain",
+    "display": "彭毗之山"
+  },
+  {
+    "canonical": "蚤林之水",
+    "typeKey": "water",
+    "display": "蚤林之水"
+  },
+  {
+    "canonical": "肥水",
+    "typeKey": "water",
+    "display": "肥水"
+  },
+  {
+    "canonical": "南流注于牀水",
+    "typeKey": "water",
+    "display": "南流注于牀水"
+  },
+  {
+    "canonical": "肥遺之蛇",
+    "typeKey": "mineral",
+    "display": "肥遺之蛇"
+  },
+  {
+    "canonical": "小侯之山",
+    "typeKey": "mountain",
+    "display": "小侯之山"
+  },
+  {
+    "canonical": "明漳之水",
+    "typeKey": "water",
+    "display": "明漳之水"
+  },
+  {
+    "canonical": "鴣𪄶",
+    "typeKey": "creature",
+    "display": "鴣𪄶"
+  },
+  {
+    "canonical": "泰頭之山",
+    "typeKey": "mountain",
+    "display": "泰頭之山"
+  },
+  {
+    "canonical": "共水",
+    "typeKey": "water",
+    "display": "共水"
+  },
+  {
+    "canonical": "軒轅之山",
+    "typeKey": "mountain",
+    "display": "軒轅之山"
+  },
+  {
+    "canonical": "黃鳥",
+    "typeKey": "creature",
+    "display": "黃鳥"
+  },
+  {
+    "canonical": "謁戾之山",
+    "typeKey": "mountain",
+    "display": "謁戾之山"
+  },
+  {
+    "canonical": "沁水",
+    "typeKey": "water",
+    "display": "沁水"
+  },
+  {
+    "canonical": "丹林",
+    "typeKey": "creature",
+    "display": "丹林"
+  },
+  {
+    "canonical": "丹林之水",
+    "typeKey": "water",
+    "display": "丹林之水"
+  },
+  {
+    "canonical": "嬰侯之水",
+    "typeKey": "water",
+    "display": "嬰侯之水"
+  },
+  {
+    "canonical": "北流注于汜水",
+    "typeKey": "water",
+    "display": "北流注于汜水"
+  },
+  {
+    "canonical": "沮洳之山",
+    "typeKey": "mountain",
+    "display": "沮洳之山"
+  },
+  {
+    "canonical": "濝水",
+    "typeKey": "water",
+    "display": "濝水"
+  },
+  {
+    "canonical": "神囷之山",
+    "typeKey": "mountain",
+    "display": "神囷之山"
+  },
+  {
+    "canonical": "黃水",
+    "typeKey": "water",
+    "display": "黃水"
+  },
+  {
+    "canonical": "滏水",
+    "typeKey": "water",
+    "display": "滏水"
+  },
+  {
+    "canonical": "東流注于歐水",
+    "typeKey": "water",
+    "display": "東流注于歐水"
+  },
+  {
+    "canonical": "發鳩之山",
+    "typeKey": "mountain",
+    "display": "發鳩之山"
+  },
+  {
+    "canonical": "柘木",
+    "typeKey": "mineral",
+    "display": "柘木"
+  },
+  {
+    "canonical": "精衛",
+    "typeKey": "creature",
+    "display": "精衛"
+  },
+  {
+    "canonical": "炎帝",
+    "typeKey": "person",
+    "display": "炎帝"
+  },
+  {
+    "canonical": "女娃",
+    "typeKey": "creature",
+    "display": "女娃"
+  },
+  {
+    "canonical": "女娃",
+    "typeKey": "person",
+    "display": "女娃"
+  },
+  {
+    "canonical": "精衛",
+    "typeKey": "person",
+    "display": "精衛"
+  },
+  {
+    "canonical": "漳水",
+    "typeKey": "water",
+    "display": "漳水"
+  },
+  {
+    "canonical": "少山",
+    "typeKey": "mountain",
+    "display": "少山"
+  },
+  {
+    "canonical": "清漳之水",
+    "typeKey": "water",
+    "display": "清漳之水"
+  },
+  {
+    "canonical": "錫山",
+    "typeKey": "mountain",
+    "display": "錫山"
+  },
+  {
+    "canonical": "牛首之水",
+    "typeKey": "water",
+    "display": "牛首之水"
+  },
+  {
+    "canonical": "東流注于滏水",
+    "typeKey": "water",
+    "display": "東流注于滏水"
+  },
+  {
+    "canonical": "景水",
+    "typeKey": "water",
+    "display": "景水"
+  },
+  {
+    "canonical": "南流注于海澤",
+    "typeKey": "water",
+    "display": "南流注于海澤"
+  },
+  {
+    "canonical": "題首之山",
+    "typeKey": "mountain",
+    "display": "題首之山"
+  },
+  {
+    "canonical": "繡山",
+    "typeKey": "mountain",
+    "display": "繡山"
+  },
+  {
+    "canonical": "栒",
+    "typeKey": "mineral",
+    "display": "栒"
+  },
+  {
+    "canonical": "芍藥",
+    "typeKey": "mineral",
+    "display": "芍藥"
+  },
+  {
+    "canonical": "洧水",
+    "typeKey": "water",
+    "display": "洧水"
+  },
+  {
+    "canonical": "松山",
+    "typeKey": "mountain",
+    "display": "松山"
+  },
+  {
+    "canonical": "陽水",
+    "typeKey": "water",
+    "display": "陽水"
+  },
+  {
+    "canonical": "敦與之山",
+    "typeKey": "mountain",
+    "display": "敦與之山"
+  },
+  {
+    "canonical": "溹水",
+    "typeKey": "water",
+    "display": "溹水"
+  },
+  {
+    "canonical": "泜水",
+    "typeKey": "water",
+    "display": "泜水"
+  },
+  {
+    "canonical": "東流注于彭水",
+    "typeKey": "water",
+    "display": "東流注于彭水"
+  },
+  {
+    "canonical": "槐水",
+    "typeKey": "water",
+    "display": "槐水"
+  },
+  {
+    "canonical": "東流注于泜澤",
+    "typeKey": "water",
+    "display": "東流注于泜澤"
+  },
+  {
+    "canonical": "柘山",
+    "typeKey": "mountain",
+    "display": "柘山"
+  },
+  {
+    "canonical": "歷聚之水",
+    "typeKey": "water",
+    "display": "歷聚之水"
+  },
+  {
+    "canonical": "北流注于洧水",
+    "typeKey": "water",
+    "display": "北流注于洧水"
+  },
+  {
+    "canonical": "維龍之山",
+    "typeKey": "mountain",
+    "display": "維龍之山"
+  },
+  {
+    "canonical": "東流注于皋澤",
+    "typeKey": "water",
+    "display": "東流注于皋澤"
+  },
+  {
+    "canonical": "礨石",
+    "typeKey": "mineral",
+    "display": "礨石"
+  },
+  {
+    "canonical": "敞鐵之水",
+    "typeKey": "water",
+    "display": "敞鐵之水"
+  },
+  {
+    "canonical": "北流注于大澤",
+    "typeKey": "water",
+    "display": "北流注于大澤"
+  },
+  {
+    "canonical": "白馬之山",
+    "typeKey": "mountain",
+    "display": "白馬之山"
+  },
+  {
+    "canonical": "石玉",
+    "typeKey": "mineral",
+    "display": "石玉"
+  },
+  {
+    "canonical": "木馬之水",
+    "typeKey": "water",
+    "display": "木馬之水"
+  },
+  {
+    "canonical": "空桑之山",
+    "typeKey": "mountain",
+    "display": "空桑之山"
+  },
+  {
+    "canonical": "空桑之水",
+    "typeKey": "water",
+    "display": "空桑之水"
+  },
+  {
+    "canonical": "泰戲之山",
+    "typeKey": "mountain",
+    "display": "泰戲之山"
+  },
+  {
+    "canonical": "䍶䍶",
+    "typeKey": "creature",
+    "display": "䍶䍶"
+  },
+  {
+    "canonical": "虖沱之水",
+    "typeKey": "water",
+    "display": "虖沱之水"
+  },
+  {
+    "canonical": "東流注于漊水",
+    "typeKey": "water",
+    "display": "東流注于漊水"
+  },
+  {
+    "canonical": "液女之水",
+    "typeKey": "water",
+    "display": "液女之水"
+  },
+  {
+    "canonical": "南流注于沁水",
+    "typeKey": "water",
+    "display": "南流注于沁水"
+  },
+  {
+    "canonical": "石山",
+    "typeKey": "mountain",
+    "display": "石山"
+  },
+  {
+    "canonical": "藏金玉",
+    "typeKey": "mineral",
+    "display": "藏金玉"
+  },
+  {
+    "canonical": "濩濩之水",
+    "typeKey": "water",
+    "display": "濩濩之水"
+  },
+  {
+    "canonical": "鮮于之水",
+    "typeKey": "water",
+    "display": "鮮于之水"
+  },
+  {
+    "canonical": "童戎之山",
+    "typeKey": "mountain",
+    "display": "童戎之山"
+  },
+  {
+    "canonical": "皋塗之水",
+    "typeKey": "water",
+    "display": "皋塗之水"
+  },
+  {
+    "canonical": "高是之山",
+    "typeKey": "mountain",
+    "display": "高是之山"
+  },
+  {
+    "canonical": "滋水",
+    "typeKey": "water",
+    "display": "滋水"
+  },
+  {
+    "canonical": "滱水",
+    "typeKey": "water",
+    "display": "滱水"
+  },
+  {
+    "canonical": "陸山",
+    "typeKey": "mountain",
+    "display": "陸山"
+  },
+  {
+    "canonical": "𨜰水",
+    "typeKey": "water",
+    "display": "𨜰水"
+  },
+  {
+    "canonical": "沂山",
+    "typeKey": "mountain",
+    "display": "沂山"
+  },
+  {
+    "canonical": "般水",
+    "typeKey": "water",
+    "display": "般水"
+  },
+  {
+    "canonical": "燕山",
+    "typeKey": "mountain",
+    "display": "燕山"
+  },
+  {
+    "canonical": "嬰石",
+    "typeKey": "mineral",
+    "display": "嬰石"
+  },
+  {
+    "canonical": "燕水",
+    "typeKey": "water",
+    "display": "燕水"
+  },
+  {
+    "canonical": "饒山",
+    "typeKey": "mountain",
+    "display": "饒山"
+  },
+  {
+    "canonical": "橐駞",
+    "typeKey": "mineral",
+    "display": "橐駞"
+  },
+  {
+    "canonical": "鶹",
+    "typeKey": "mineral",
+    "display": "鶹"
+  },
+  {
+    "canonical": "歷虢之水",
+    "typeKey": "water",
+    "display": "歷虢之水"
+  },
+  {
+    "canonical": "乾山",
+    "typeKey": "mountain",
+    "display": "乾山"
+  },
+  {
+    "canonical": "獂",
+    "typeKey": "creature",
+    "display": "獂"
+  },
+  {
+    "canonical": "倫山",
+    "typeKey": "mountain",
+    "display": "倫山"
+  },
+  {
+    "canonical": "倫水",
+    "typeKey": "water",
+    "display": "倫水"
+  },
+  {
+    "canonical": "羆",
+    "typeKey": "creature",
+    "display": "羆"
+  },
+  {
+    "canonical": "碣石之山",
+    "typeKey": "mountain",
+    "display": "碣石之山"
+  },
+  {
+    "canonical": "繩水",
+    "typeKey": "water",
+    "display": "繩水"
+  },
+  {
+    "canonical": "蒲夷之魚",
+    "typeKey": "mineral",
+    "display": "蒲夷之魚"
+  },
+  {
+    "canonical": "鴈門之山",
+    "typeKey": "mountain",
+    "display": "鴈門之山"
+  },
+  {
+    "canonical": "泰澤",
+    "typeKey": "water",
+    "display": "泰澤"
+  },
+  {
+    "canonical": "帝都之山",
+    "typeKey": "mountain",
+    "display": "帝都之山"
+  },
+  {
+    "canonical": "毋逢之山",
+    "typeKey": "mountain",
+    "display": "毋逢之山"
+  },
+  {
+    "canonical": "鶏號之山",
+    "typeKey": "mountain",
+    "display": "鶏號之山"
+  },
+  {
+    "canonical": "幽都之山",
+    "typeKey": "mountain",
+    "display": "幽都之山"
+  },
+  {
+    "canonical": "無逢之山",
+    "typeKey": "mountain",
+    "display": "無逢之山"
+  },
+  {
+    "canonical": "萬二千三百五十里",
+    "typeKey": "quantity",
+    "display": "萬二千三百五十里"
+  },
+  {
+    "canonical": "二萬三千二百三十里",
+    "typeKey": "quantity",
+    "display": "二萬三千二百三十里"
+  },
+  {
+    "canonical": "樕𧑤之山",
+    "typeKey": "mountain",
+    "display": "樕𧑤之山"
+  },
+  {
+    "canonical": "食水",
+    "typeKey": "water",
+    "display": "食水"
+  },
+  {
+    "canonical": "鱅鱅之魚",
+    "typeKey": "creature",
+    "display": "鱅鱅之魚"
+  },
+  {
+    "canonical": "藟山",
+    "typeKey": "mountain",
+    "display": "藟山"
+  },
+  {
+    "canonical": "湖水",
+    "typeKey": "water",
+    "display": "湖水"
+  },
+  {
+    "canonical": "東流注于食水",
+    "typeKey": "water",
+    "display": "東流注于食水"
+  },
+  {
+    "canonical": "活師",
+    "typeKey": "mineral",
+    "display": "活師"
+  },
+  {
+    "canonical": "栒狀之山",
+    "typeKey": "mountain",
+    "display": "栒狀之山"
+  },
+  {
+    "canonical": "青碧石",
+    "typeKey": "mineral",
+    "display": "青碧石"
+  },
+  {
+    "canonical": "從從",
+    "typeKey": "creature",
+    "display": "從從"
+  },
+  {
+    "canonical": "䖪鼠",
+    "typeKey": "creature",
+    "display": "䖪鼠"
+  },
+  {
+    "canonical": "掛水",
+    "typeKey": "water",
+    "display": "掛水"
+  },
+  {
+    "canonical": "北流注于湖水",
+    "typeKey": "water",
+    "display": "北流注于湖水"
+  },
+  {
+    "canonical": "箴魚",
+    "typeKey": "creature",
+    "display": "箴魚"
+  },
+  {
+    "canonical": "勃亝之山",
+    "typeKey": "mountain",
+    "display": "勃亝之山"
+  },
+  {
+    "canonical": "番條之山",
+    "typeKey": "mountain",
+    "display": "番條之山"
+  },
+  {
+    "canonical": "減水",
+    "typeKey": "water",
+    "display": "減水"
+  },
+  {
+    "canonical": "鱤魚",
+    "typeKey": "mineral",
+    "display": "鱤魚"
+  },
+  {
+    "canonical": "姑兒之山",
+    "typeKey": "mountain",
+    "display": "姑兒之山"
+  },
+  {
+    "canonical": "桑柘",
+    "typeKey": "mineral",
+    "display": "桑柘"
+  },
+  {
+    "canonical": "姑兒之水",
+    "typeKey": "water",
+    "display": "姑兒之水"
+  },
+  {
+    "canonical": "曰高氏",
+    "typeKey": "polity",
+    "display": "曰高氏"
+  },
+  {
+    "canonical": "箴石",
+    "typeKey": "mineral",
+    "display": "箴石"
+  },
+  {
+    "canonical": "諸繩之水",
+    "typeKey": "water",
+    "display": "諸繩之水"
+  },
+  {
+    "canonical": "東流注于澤",
+    "typeKey": "water",
+    "display": "東流注于澤"
+  },
+  {
+    "canonical": "嶽山",
+    "typeKey": "mountain",
+    "display": "嶽山"
+  },
+  {
+    "canonical": "樗",
+    "typeKey": "mineral",
+    "display": "樗"
+  },
+  {
+    "canonical": "濼水",
+    "typeKey": "water",
+    "display": "濼水"
+  },
+  {
+    "canonical": "犲山",
+    "typeKey": "mountain",
+    "display": "犲山"
+  },
+  {
+    "canonical": "堪㐨之魚",
+    "typeKey": "mineral",
+    "display": "堪㐨之魚"
+  },
+  {
+    "canonical": "獨山",
+    "typeKey": "mountain",
+    "display": "獨山"
+  },
+  {
+    "canonical": "美石",
+    "typeKey": "mineral",
+    "display": "美石"
+  },
+  {
+    "canonical": "末塗之水",
+    "typeKey": "water",
+    "display": "末塗之水"
+  },
+  {
+    "canonical": "𧌁䗤",
+    "typeKey": "creature",
+    "display": "𧌁䗤"
+  },
+  {
+    "canonical": "泰山",
+    "typeKey": "mountain",
+    "display": "泰山"
+  },
+  {
+    "canonical": "狪狪",
+    "typeKey": "creature",
+    "display": "狪狪"
+  },
+  {
+    "canonical": "環水",
+    "typeKey": "water",
+    "display": "環水"
+  },
+  {
+    "canonical": "激水",
+    "typeKey": "water",
+    "display": "激水"
+  },
+  {
+    "canonical": "茈羸",
+    "typeKey": "mineral",
+    "display": "茈羸"
+  },
+  {
+    "canonical": "三千六百里",
+    "typeKey": "quantity",
+    "display": "三千六百里"
+  },
+  {
+    "canonical": "毛用一犬祈",
+    "typeKey": "sacrifice",
+    "display": "毛用一犬祈"
+  },
+  {
+    "canonical": "東次二經",
+    "typeKey": "mountain",
+    "display": "東次二經"
+  },
+  {
+    "canonical": "北臨食水",
+    "typeKey": "water",
+    "display": "北臨食水"
+  },
+  {
+    "canonical": "西望湣澤",
+    "typeKey": "water",
+    "display": "西望湣澤"
+  },
+  {
+    "canonical": "軨軨",
+    "typeKey": "creature",
+    "display": "軨軨"
+  },
+  {
+    "canonical": "六百里",
+    "typeKey": "quantity",
+    "display": "六百里"
+  },
+  {
+    "canonical": "曹夕之山",
+    "typeKey": "mountain",
+    "display": "曹夕之山"
+  },
+  {
+    "canonical": "下多穀而無水",
+    "typeKey": "water",
+    "display": "下多穀而無水"
+  },
+  {
+    "canonical": "嶧皋之山",
+    "typeKey": "mountain",
+    "display": "嶧皋之山"
+  },
+  {
+    "canonical": "白堊",
+    "typeKey": "mineral",
+    "display": "白堊"
+  },
+  {
+    "canonical": "嶧皋之水",
+    "typeKey": "water",
+    "display": "嶧皋之水"
+  },
+  {
+    "canonical": "蜃珧",
+    "typeKey": "mineral",
+    "display": "蜃珧"
+  },
+  {
+    "canonical": "又南水",
+    "typeKey": "water",
+    "display": "又南水"
+  },
+  {
+    "canonical": "澧水",
+    "typeKey": "water",
+    "display": "澧水"
+  },
+  {
+    "canonical": "東流注于余澤",
+    "typeKey": "water",
+    "display": "東流注于余澤"
+  },
+  {
+    "canonical": "珠蟞魚",
+    "typeKey": "creature",
+    "display": "珠蟞魚"
+  },
+  {
+    "canonical": "餘峩之山",
+    "typeKey": "mountain",
+    "display": "餘峩之山"
+  },
+  {
+    "canonical": "荊𦬊",
+    "typeKey": "mineral",
+    "display": "荊𦬊"
+  },
+  {
+    "canonical": "雜余之水",
+    "typeKey": "water",
+    "display": "雜余之水"
+  },
+  {
+    "canonical": "東流注于黃水",
+    "typeKey": "water",
+    "display": "東流注于黃水"
+  },
+  {
+    "canonical": "犰狳",
+    "typeKey": "creature",
+    "display": "犰狳"
+  },
+  {
+    "canonical": "見則螽蝗為敗",
+    "typeKey": "omen",
+    "display": "見則螽蝗為敗"
+  },
+  {
+    "canonical": "杜父之山",
+    "typeKey": "mountain",
+    "display": "杜父之山"
+  },
+  {
+    "canonical": "耿山",
+    "typeKey": "mountain",
+    "display": "耿山"
+  },
+  {
+    "canonical": "水碧",
+    "typeKey": "mineral",
+    "display": "水碧"
+  },
+  {
+    "canonical": "朱獳",
+    "typeKey": "creature",
+    "display": "朱獳"
+  },
+  {
+    "canonical": "見則其國有恐",
+    "typeKey": "omen",
+    "display": "見則其國有恐"
+  },
+  {
+    "canonical": "盧其之山",
+    "typeKey": "mountain",
+    "display": "盧其之山"
+  },
+  {
+    "canonical": "沙水",
+    "typeKey": "water",
+    "display": "沙水"
+  },
+  {
+    "canonical": "南流注于涔水",
+    "typeKey": "water",
+    "display": "南流注于涔水"
+  },
+  {
+    "canonical": "鵹鶘",
+    "typeKey": "creature",
+    "display": "鵹鶘"
+  },
+  {
+    "canonical": "見則其國多土功",
+    "typeKey": "omen",
+    "display": "見則其國多土功"
+  },
+  {
+    "canonical": "姑射之山",
+    "typeKey": "mountain",
+    "display": "姑射之山"
+  },
+  {
+    "canonical": "碧山",
+    "typeKey": "mountain",
+    "display": "碧山"
+  },
+  {
+    "canonical": "曰緱氏",
+    "typeKey": "polity",
+    "display": "曰緱氏"
+  },
+  {
+    "canonical": "原水",
+    "typeKey": "water",
+    "display": "原水"
+  },
+  {
+    "canonical": "東流注于沙澤",
+    "typeKey": "water",
+    "display": "東流注于沙澤"
+  },
+  {
+    "canonical": "姑逢之山",
+    "typeKey": "mountain",
+    "display": "姑逢之山"
+  },
+  {
+    "canonical": "獙獙",
+    "typeKey": "creature",
+    "display": "獙獙"
+  },
+  {
+    "canonical": "鳧麗之山",
+    "typeKey": "mountain",
+    "display": "鳧麗之山"
+  },
+  {
+    "canonical": "蠪姪",
+    "typeKey": "creature",
+    "display": "蠪姪"
+  },
+  {
+    "canonical": "䃌山",
+    "typeKey": "mountain",
+    "display": "䃌山"
+  },
+  {
+    "canonical": "南臨䃌水",
+    "typeKey": "water",
+    "display": "南臨䃌水"
+  },
+  {
+    "canonical": "東望湖澤",
+    "typeKey": "water",
+    "display": "東望湖澤"
+  },
+  {
+    "canonical": "峳峳",
+    "typeKey": "creature",
+    "display": "峳峳"
+  },
+  {
+    "canonical": "見則其國多狡客",
+    "typeKey": "omen",
+    "display": "見則其國多狡客"
+  },
+  {
+    "canonical": "絜鉤",
+    "typeKey": "creature",
+    "display": "絜鉤"
+  },
+  {
+    "canonical": "見則其國多疫",
+    "typeKey": "omen",
+    "display": "見則其國多疫"
+  },
+  {
+    "canonical": "六千六百四十里",
+    "typeKey": "quantity",
+    "display": "六千六百四十里"
+  },
+  {
+    "canonical": "毛用一雞祈",
+    "typeKey": "sacrifice",
+    "display": "毛用一雞祈"
+  },
+  {
+    "canonical": "東次三經",
+    "typeKey": "mountain",
+    "display": "東次三經"
+  },
+  {
+    "canonical": "尸胡之山",
+    "typeKey": "mountain",
+    "display": "尸胡之山"
+  },
+  {
+    "canonical": "𦍲山",
+    "typeKey": "mountain",
+    "display": "𦍲山"
+  },
+  {
+    "canonical": "棘",
+    "typeKey": "mineral",
+    "display": "棘"
+  },
+  {
+    "canonical": "妴胡",
+    "typeKey": "creature",
+    "display": "妴胡"
+  },
+  {
+    "canonical": "八百里",
+    "typeKey": "quantity",
+    "display": "八百里"
+  },
+  {
+    "canonical": "岐山",
+    "typeKey": "mountain",
+    "display": "岐山"
+  },
+  {
+    "canonical": "桃李",
+    "typeKey": "mineral",
+    "display": "桃李"
+  },
+  {
+    "canonical": "虎",
+    "typeKey": "bird_beast",
+    "display": "虎"
+  },
+  {
+    "canonical": "七百里",
+    "typeKey": "quantity",
+    "display": "七百里"
+  },
+  {
+    "canonical": "諸鉤之山",
+    "typeKey": "mountain",
+    "display": "諸鉤之山"
+  },
+  {
+    "canonical": "寐魚",
+    "typeKey": "mineral",
+    "display": "寐魚"
+  },
+  {
+    "canonical": "中父之山",
+    "typeKey": "mountain",
+    "display": "中父之山"
+  },
+  {
+    "canonical": "又東水",
+    "typeKey": "water",
+    "display": "又東水"
+  },
+  {
+    "canonical": "千里",
+    "typeKey": "quantity",
+    "display": "千里"
+  },
+  {
+    "canonical": "胡射之山",
+    "typeKey": "mountain",
+    "display": "胡射之山"
+  },
+  {
+    "canonical": "孟子之山",
+    "typeKey": "mountain",
+    "display": "孟子之山"
+  },
+  {
+    "canonical": "梓桐",
+    "typeKey": "mineral",
+    "display": "梓桐"
+  },
+  {
+    "canonical": "菌蒲",
+    "typeKey": "mineral",
+    "display": "菌蒲"
+  },
+  {
+    "canonical": "麋鹿",
+    "typeKey": "mineral",
+    "display": "麋鹿"
+  },
+  {
+    "canonical": "其上有水",
+    "typeKey": "water",
+    "display": "其上有水"
+  },
+  {
+    "canonical": "碧陽",
+    "typeKey": "creature",
+    "display": "碧陽"
+  },
+  {
+    "canonical": "鱣鮪",
+    "typeKey": "mineral",
+    "display": "鱣鮪"
+  },
+  {
+    "canonical": "跂踵之山",
+    "typeKey": "mountain",
+    "display": "跂踵之山"
+  },
+  {
+    "canonical": "四十里",
+    "typeKey": "quantity",
+    "display": "四十里"
+  },
+  {
+    "canonical": "其名曰深澤",
+    "typeKey": "water",
+    "display": "其名曰深澤"
+  },
+  {
+    "canonical": "蠵龜",
+    "typeKey": "mineral",
+    "display": "蠵龜"
+  },
+  {
+    "canonical": "鮯鮯之魚",
+    "typeKey": "creature",
+    "display": "鮯鮯之魚"
+  },
+  {
+    "canonical": "九百里",
+    "typeKey": "quantity",
+    "display": "九百里"
+  },
+  {
+    "canonical": "踇隅之山",
+    "typeKey": "mountain",
+    "display": "踇隅之山"
+  },
+  {
+    "canonical": "精精",
+    "typeKey": "creature",
+    "display": "精精"
+  },
+  {
+    "canonical": "無皋之山",
+    "typeKey": "mountain",
+    "display": "無皋之山"
+  },
+  {
+    "canonical": "風",
+    "typeKey": "mineral",
+    "display": "風"
+  },
+  {
+    "canonical": "六千九百里",
+    "typeKey": "quantity",
+    "display": "六千九百里"
+  },
+  {
+    "canonical": "見則風雨水為敗",
+    "typeKey": "omen",
+    "display": "見則風雨水為敗"
+  },
+  {
+    "canonical": "東次四經",
+    "typeKey": "mountain",
+    "display": "東次四經"
+  },
+  {
+    "canonical": "北號之山",
+    "typeKey": "mountain",
+    "display": "北號之山"
+  },
+  {
+    "canonical": "猲狙",
+    "typeKey": "creature",
+    "display": "猲狙"
+  },
+  {
+    "canonical": "鬿雀",
+    "typeKey": "creature",
+    "display": "鬿雀"
+  },
+  {
+    "canonical": "旄山",
+    "typeKey": "mountain",
+    "display": "旄山"
+  },
+  {
+    "canonical": "蒼體之水",
+    "typeKey": "water",
+    "display": "蒼體之水"
+  },
+  {
+    "canonical": "西流注于展水",
+    "typeKey": "water",
+    "display": "西流注于展水"
+  },
+  {
+    "canonical": "鱃魚",
+    "typeKey": "creature",
+    "display": "鱃魚"
+  },
+  {
+    "canonical": "東始之山",
+    "typeKey": "mountain",
+    "display": "東始之山"
+  },
+  {
+    "canonical": "𦬊",
+    "typeKey": "plant",
+    "display": "𦬊"
+  },
+  {
+    "canonical": "美貝",
+    "typeKey": "mineral",
+    "display": "美貝"
+  },
+  {
+    "canonical": "茈魚",
+    "typeKey": "mineral",
+    "display": "茈魚"
+  },
+  {
+    "canonical": "女烝之山",
+    "typeKey": "mountain",
+    "display": "女烝之山"
+  },
+  {
+    "canonical": "石膏水",
+    "typeKey": "water",
+    "display": "石膏水"
+  },
+  {
+    "canonical": "而西注于鬲水",
+    "typeKey": "water",
+    "display": "而西注于鬲水"
+  },
+  {
+    "canonical": "薄魚",
+    "typeKey": "creature",
+    "display": "薄魚"
+  },
+  {
+    "canonical": "欽山",
+    "typeKey": "mountain",
+    "display": "欽山"
+  },
+  {
+    "canonical": "金玉而無石",
+    "typeKey": "mineral",
+    "display": "金玉而無石"
+  },
+  {
+    "canonical": "師水",
+    "typeKey": "water",
+    "display": "師水"
+  },
+  {
+    "canonical": "北流注于皋澤",
+    "typeKey": "water",
+    "display": "北流注于皋澤"
+  },
+  {
+    "canonical": "鱃魚",
+    "typeKey": "mineral",
+    "display": "鱃魚"
+  },
+  {
+    "canonical": "當康",
+    "typeKey": "creature",
+    "display": "當康"
+  },
+  {
+    "canonical": "子桐之山",
+    "typeKey": "mountain",
+    "display": "子桐之山"
+  },
+  {
+    "canonical": "子桐之水",
+    "typeKey": "water",
+    "display": "子桐之水"
+  },
+  {
+    "canonical": "剡山",
+    "typeKey": "mountain",
+    "display": "剡山"
+  },
+  {
+    "canonical": "合窳",
+    "typeKey": "creature",
+    "display": "合窳"
+  },
+  {
+    "canonical": "太山",
+    "typeKey": "mountain",
+    "display": "太山"
+  },
+  {
+    "canonical": "蜚",
+    "typeKey": "creature",
+    "display": "蜚"
+  },
+  {
+    "canonical": "行水",
+    "typeKey": "water",
+    "display": "行水"
+  },
+  {
+    "canonical": "見則天下大疫",
+    "typeKey": "omen",
+    "display": "見則天下大疫"
+  },
+  {
+    "canonical": "鉤水",
+    "typeKey": "water",
+    "display": "鉤水"
+  },
+  {
+    "canonical": "北流注于勞水",
+    "typeKey": "water",
+    "display": "北流注于勞水"
+  },
+  {
+    "canonical": "一千七百二十里",
+    "typeKey": "quantity",
+    "display": "一千七百二十里"
+  },
+  {
+    "canonical": "萬八千八百六十里",
+    "typeKey": "quantity",
+    "display": "萬八千八百六十里"
+  },
+  {
+    "canonical": "甘棗之山",
+    "typeKey": "mountain",
+    "display": "甘棗之山"
+  },
+  {
+    "canonical": "杻木",
+    "typeKey": "mineral",
+    "display": "杻木"
+  },
+  {
+    "canonical": "籜",
+    "typeKey": "plant",
+    "display": "籜"
+  },
+  {
+    "canonical": "㔮",
+    "typeKey": "creature",
+    "display": "㔮"
+  },
+  {
+    "canonical": "歷兒之山",
+    "typeKey": "mountain",
+    "display": "歷兒之山"
+  },
+  {
+    "canonical": "橿",
+    "typeKey": "mineral",
+    "display": "橿"
+  },
+  {
+    "canonical": "櫔木",
+    "typeKey": "mineral",
+    "display": "櫔木"
+  },
+  {
+    "canonical": "十五里",
+    "typeKey": "quantity",
+    "display": "十五里"
+  },
+  {
+    "canonical": "渠豬之山",
+    "typeKey": "mountain",
+    "display": "渠豬之山"
+  },
+  {
+    "canonical": "渠豬之水",
+    "typeKey": "water",
+    "display": "渠豬之水"
+  },
+  {
+    "canonical": "豪魚",
+    "typeKey": "mineral",
+    "display": "豪魚"
+  },
+  {
+    "canonical": "三十五里",
+    "typeKey": "quantity",
+    "display": "三十五里"
+  },
+  {
+    "canonical": "蔥聾之山",
+    "typeKey": "mountain",
+    "display": "蔥聾之山"
+  },
+  {
+    "canonical": "大谷",
+    "typeKey": "mineral",
+    "display": "大谷"
+  },
+  {
+    "canonical": "涹山",
+    "typeKey": "mountain",
+    "display": "涹山"
+  },
+  {
+    "canonical": "脫扈之山",
+    "typeKey": "mountain",
+    "display": "脫扈之山"
+  },
+  {
+    "canonical": "植楮",
+    "typeKey": "plant",
+    "display": "植楮"
+  },
+  {
+    "canonical": "金星之山",
+    "typeKey": "mountain",
+    "display": "金星之山"
+  },
+  {
+    "canonical": "天嬰",
+    "typeKey": "mineral",
+    "display": "天嬰"
+  },
+  {
+    "canonical": "泰威之山",
+    "typeKey": "mountain",
+    "display": "泰威之山"
+  },
+  {
+    "canonical": "橿谷之山",
+    "typeKey": "mountain",
+    "display": "橿谷之山"
+  },
+  {
+    "canonical": "吳林之山",
+    "typeKey": "mountain",
+    "display": "吳林之山"
+  },
+  {
+    "canonical": "葌草",
+    "typeKey": "mineral",
+    "display": "葌草"
+  },
+  {
+    "canonical": "三十里",
+    "typeKey": "quantity",
+    "display": "三十里"
+  },
+  {
+    "canonical": "牛首之山",
+    "typeKey": "mountain",
+    "display": "牛首之山"
+  },
+  {
+    "canonical": "鬼草",
+    "typeKey": "plant",
+    "display": "鬼草"
+  },
+  {
+    "canonical": "勞水",
+    "typeKey": "water",
+    "display": "勞水"
+  },
+  {
+    "canonical": "西流注于潏水",
+    "typeKey": "water",
+    "display": "西流注于潏水"
+  },
+  {
+    "canonical": "飛魚",
+    "typeKey": "mineral",
+    "display": "飛魚"
+  },
+  {
+    "canonical": "霍山",
+    "typeKey": "mountain",
+    "display": "霍山"
+  },
+  {
+    "canonical": "朏朏",
+    "typeKey": "creature",
+    "display": "朏朏"
+  },
+  {
+    "canonical": "合谷之山",
+    "typeKey": "mountain",
+    "display": "合谷之山"
+  },
+  {
+    "canonical": "薝棘",
+    "typeKey": "mineral",
+    "display": "薝棘"
+  },
+  {
+    "canonical": "礪石",
+    "typeKey": "mineral",
+    "display": "礪石"
+  },
+  {
+    "canonical": "少水",
+    "typeKey": "water",
+    "display": "少水"
+  },
+  {
+    "canonical": "彫棠",
+    "typeKey": "mineral",
+    "display": "彫棠"
+  },
+  {
+    "canonical": "鼓鐙之山",
+    "typeKey": "mountain",
+    "display": "鼓鐙之山"
+  },
+  {
+    "canonical": "榮草",
+    "typeKey": "plant",
+    "display": "榮草"
+  },
+  {
+    "canonical": "六千六百七十里",
+    "typeKey": "quantity",
+    "display": "六千六百七十里"
+  },
+  {
+    "canonical": "嬰以吉玉",
+    "typeKey": "sacrifice",
+    "display": "嬰以吉玉"
+  },
+  {
+    "canonical": "毛用一羊",
+    "typeKey": "sacrifice",
+    "display": "毛用一羊"
+  },
+  {
+    "canonical": "中次二經",
+    "typeKey": "mountain",
+    "display": "中次二經"
+  },
+  {
+    "canonical": "煇諸之山",
+    "typeKey": "mountain",
+    "display": "煇諸之山"
+  },
+  {
+    "canonical": "鶡",
+    "typeKey": "mineral",
+    "display": "鶡"
+  },
+  {
+    "canonical": "發視之山",
+    "typeKey": "mountain",
+    "display": "發視之山"
+  },
+  {
+    "canonical": "即魚之水",
+    "typeKey": "water",
+    "display": "即魚之水"
+  },
+  {
+    "canonical": "西流注于伊水",
+    "typeKey": "water",
+    "display": "西流注于伊水"
+  },
+  {
+    "canonical": "豪山",
+    "typeKey": "mountain",
+    "display": "豪山"
+  },
+  {
+    "canonical": "金玉而無草木",
+    "typeKey": "mineral",
+    "display": "金玉而無草木"
+  },
+  {
+    "canonical": "鮮山",
+    "typeKey": "mountain",
+    "display": "鮮山"
+  },
+  {
+    "canonical": "北流注于伊水",
+    "typeKey": "water",
+    "display": "北流注于伊水"
+  },
+  {
+    "canonical": "鳴蛇",
+    "typeKey": "creature",
+    "display": "鳴蛇"
+  },
+  {
+    "canonical": "化蛇",
+    "typeKey": "creature",
+    "display": "化蛇"
+  },
+  {
+    "canonical": "昆吾之山",
+    "typeKey": "mountain",
+    "display": "昆吾之山"
+  },
+  {
+    "canonical": "蠪蛭",
+    "typeKey": "creature",
+    "display": "蠪蛭"
+  },
+  {
+    "canonical": "葌山",
+    "typeKey": "mountain",
+    "display": "葌山"
+  },
+  {
+    "canonical": "葌水",
+    "typeKey": "water",
+    "display": "葌水"
+  },
+  {
+    "canonical": "芒草",
+    "typeKey": "plant",
+    "display": "芒草"
+  },
+  {
+    "canonical": "一百五十里",
+    "typeKey": "quantity",
+    "display": "一百五十里"
+  },
+  {
+    "canonical": "獨蘇之山",
+    "typeKey": "mountain",
+    "display": "獨蘇之山"
+  },
+  {
+    "canonical": "無草木而多水",
+    "typeKey": "water",
+    "display": "無草木而多水"
+  },
+  {
+    "canonical": "一百二十里",
+    "typeKey": "quantity",
+    "display": "一百二十里"
+  },
+  {
+    "canonical": "蔓渠之山",
+    "typeKey": "mountain",
+    "display": "蔓渠之山"
+  },
+  {
+    "canonical": "馬腹",
+    "typeKey": "creature",
+    "display": "馬腹"
+  },
+  {
+    "canonical": "一千六百七十里",
+    "typeKey": "quantity",
+    "display": "一千六百七十里"
+  },
+  {
+    "canonical": "中次三經",
+    "typeKey": "mountain",
+    "display": "中次三經"
+  },
+  {
+    "canonical": "敖岸之山",
+    "typeKey": "mountain",
+    "display": "敖岸之山"
+  },
+  {
+    "canonical": "夫諸",
+    "typeKey": "creature",
+    "display": "夫諸"
+  },
+  {
+    "canonical": "青要之山",
+    "typeKey": "mountain",
+    "display": "青要之山"
+  },
+  {
+    "canonical": "駕鳥",
+    "typeKey": "mineral",
+    "display": "駕鳥"
+  },
+  {
+    "canonical": "禹",
+    "typeKey": "person",
+    "display": "禹"
+  },
+  {
+    "canonical": "僕累",
+    "typeKey": "mineral",
+    "display": "僕累"
+  },
+  {
+    "canonical": "畛水",
+    "typeKey": "water",
+    "display": "畛水"
+  },
+  {
+    "canonical": "鴢",
+    "typeKey": "creature",
+    "display": "鴢"
+  },
+  {
+    "canonical": "荀草",
+    "typeKey": "plant",
+    "display": "荀草"
+  },
+  {
+    "canonical": "正回之水",
+    "typeKey": "water",
+    "display": "正回之水"
+  },
+  {
+    "canonical": "飛魚",
+    "typeKey": "creature",
+    "display": "飛魚"
+  },
+  {
+    "canonical": "宜蘇之山",
+    "typeKey": "mountain",
+    "display": "宜蘇之山"
+  },
+  {
+    "canonical": "蔓居之木",
+    "typeKey": "mineral",
+    "display": "蔓居之木"
+  },
+  {
+    "canonical": "滽滽之水",
+    "typeKey": "water",
+    "display": "滽滽之水"
+  },
+  {
+    "canonical": "和山",
+    "typeKey": "mountain",
+    "display": "和山"
+  },
+  {
+    "canonical": "九水",
+    "typeKey": "water",
+    "display": "九水"
+  },
+  {
+    "canonical": "四百四十里",
+    "typeKey": "quantity",
+    "display": "四百四十里"
+  },
+  {
+    "canonical": "中次四經",
+    "typeKey": "mountain",
+    "display": "中次四經"
+  },
+  {
+    "canonical": "鹿蹄之山",
+    "typeKey": "mountain",
+    "display": "鹿蹄之山"
+  },
+  {
+    "canonical": "甘水",
+    "typeKey": "water",
+    "display": "甘水"
+  },
+  {
+    "canonical": "泠石",
+    "typeKey": "mineral",
+    "display": "泠石"
+  },
+  {
+    "canonical": "扶豬之山",
+    "typeKey": "mountain",
+    "display": "扶豬之山"
+  },
+  {
+    "canonical": "礝石",
+    "typeKey": "mineral",
+    "display": "礝石"
+  },
+  {
+    "canonical": "䴦",
+    "typeKey": "creature",
+    "display": "䴦"
+  },
+  {
+    "canonical": "虢水",
+    "typeKey": "water",
+    "display": "虢水"
+  },
+  {
+    "canonical": "瓀石",
+    "typeKey": "mineral",
+    "display": "瓀石"
+  },
+  {
+    "canonical": "釐山",
+    "typeKey": "mountain",
+    "display": "釐山"
+  },
+  {
+    "canonical": "蒐",
+    "typeKey": "mineral",
+    "display": "蒐"
+  },
+  {
+    "canonical": "犀渠",
+    "typeKey": "creature",
+    "display": "犀渠"
+  },
+  {
+    "canonical": "南流注于伊水",
+    "typeKey": "water",
+    "display": "南流注于伊水"
+  },
+  {
+    "canonical": "𤢺",
+    "typeKey": "creature",
+    "display": "𤢺"
+  },
+  {
+    "canonical": "涂石",
+    "typeKey": "mineral",
+    "display": "涂石"
+  },
+  {
+    "canonical": "柄山",
+    "typeKey": "mountain",
+    "display": "柄山"
+  },
+  {
+    "canonical": "滔雕之水",
+    "typeKey": "water",
+    "display": "滔雕之水"
+  },
+  {
+    "canonical": "羬羊",
+    "typeKey": "mineral",
+    "display": "羬羊"
+  },
+  {
+    "canonical": "茇",
+    "typeKey": "plant",
+    "display": "茇"
+  },
+  {
+    "canonical": "白邊之山",
+    "typeKey": "mountain",
+    "display": "白邊之山"
+  },
+  {
+    "canonical": "熊耳之山",
+    "typeKey": "mountain",
+    "display": "熊耳之山"
+  },
+  {
+    "canonical": "浮濠之水",
+    "typeKey": "water",
+    "display": "浮濠之水"
+  },
+  {
+    "canonical": "葶薴",
+    "typeKey": "plant",
+    "display": "葶薴"
+  },
+  {
+    "canonical": "牡山",
+    "typeKey": "mountain",
+    "display": "牡山"
+  },
+  {
+    "canonical": "竹箭竹䉋",
+    "typeKey": "mineral",
+    "display": "竹箭竹䉋"
+  },
+  {
+    "canonical": "讙舉之山",
+    "typeKey": "mountain",
+    "display": "讙舉之山"
+  },
+  {
+    "canonical": "雒水",
+    "typeKey": "water",
+    "display": "雒水"
+  },
+  {
+    "canonical": "馬腸之物",
+    "typeKey": "mineral",
+    "display": "馬腸之物"
+  },
+  {
+    "canonical": "玄扈之山",
+    "typeKey": "mountain",
+    "display": "玄扈之山"
+  },
+  {
+    "canonical": "千六百七十里",
+    "typeKey": "quantity",
+    "display": "千六百七十里"
+  },
+  {
+    "canonical": "毛用一白雞",
+    "typeKey": "sacrifice",
+    "display": "毛用一白雞"
+  },
+  {
+    "canonical": "中次五經",
+    "typeKey": "mountain",
+    "display": "中次五經"
+  },
+  {
+    "canonical": "苟牀之山",
+    "typeKey": "mountain",
+    "display": "苟牀之山"
+  },
+  {
+    "canonical": "怪石",
+    "typeKey": "mineral",
+    "display": "怪石"
+  },
+  {
+    "canonical": "首山",
+    "typeKey": "mountain",
+    "display": "首山"
+  },
+  {
+    "canonical": "𦬸芫",
+    "typeKey": "mineral",
+    "display": "𦬸芫"
+  },
+  {
+    "canonical": "槐",
+    "typeKey": "mineral",
+    "display": "槐"
+  },
+  {
+    "canonical": "䲦鳥",
+    "typeKey": "mineral",
+    "display": "䲦鳥"
+  },
+  {
+    "canonical": "縣劚之山",
+    "typeKey": "mountain",
+    "display": "縣劚之山"
+  },
+  {
+    "canonical": "𢈦石",
+    "typeKey": "mineral",
+    "display": "𢈦石"
+  },
+  {
+    "canonical": "條谷之山",
+    "typeKey": "mountain",
+    "display": "條谷之山"
+  },
+  {
+    "canonical": "槐桐",
+    "typeKey": "mineral",
+    "display": "槐桐"
+  },
+  {
+    "canonical": "超山",
+    "typeKey": "mountain",
+    "display": "超山"
+  },
+  {
+    "canonical": "冬有水",
+    "typeKey": "water",
+    "display": "冬有水"
+  },
+  {
+    "canonical": "成侯之山",
+    "typeKey": "mountain",
+    "display": "成侯之山"
+  },
+  {
+    "canonical": "櫄木",
+    "typeKey": "mineral",
+    "display": "櫄木"
+  },
+  {
+    "canonical": "芃",
+    "typeKey": "mineral",
+    "display": "芃"
+  },
+  {
+    "canonical": "朝歌之山",
+    "typeKey": "mountain",
+    "display": "朝歌之山"
+  },
+  {
+    "canonical": "美堊",
+    "typeKey": "mineral",
+    "display": "美堊"
+  },
+  {
+    "canonical": "槐山",
+    "typeKey": "mountain",
+    "display": "槐山"
+  },
+  {
+    "canonical": "金錫",
+    "typeKey": "mineral",
+    "display": "金錫"
+  },
+  {
+    "canonical": "歷山",
+    "typeKey": "mountain",
+    "display": "歷山"
+  },
+  {
+    "canonical": "尸山",
+    "typeKey": "mountain",
+    "display": "尸山"
+  },
+  {
+    "canonical": "麖",
+    "typeKey": "mineral",
+    "display": "麖"
+  },
+  {
+    "canonical": "尸水",
+    "typeKey": "water",
+    "display": "尸水"
+  },
+  {
+    "canonical": "良餘之山",
+    "typeKey": "mountain",
+    "display": "良餘之山"
+  },
+  {
+    "canonical": "穀柞",
+    "typeKey": "mineral",
+    "display": "穀柞"
+  },
+  {
+    "canonical": "餘水",
+    "typeKey": "water",
+    "display": "餘水"
+  },
+  {
+    "canonical": "乳水",
+    "typeKey": "water",
+    "display": "乳水"
+  },
+  {
+    "canonical": "蠱尾之山",
+    "typeKey": "mountain",
+    "display": "蠱尾之山"
+  },
+  {
+    "canonical": "龍餘之水",
+    "typeKey": "water",
+    "display": "龍餘之水"
+  },
+  {
+    "canonical": "升山",
+    "typeKey": "mountain",
+    "display": "升山"
+  },
+  {
+    "canonical": "榖柞棘",
+    "typeKey": "mineral",
+    "display": "榖柞棘"
+  },
+  {
+    "canonical": "藇蕙",
+    "typeKey": "mineral",
+    "display": "藇蕙"
+  },
+  {
+    "canonical": "寇脫",
+    "typeKey": "mineral",
+    "display": "寇脫"
+  },
+  {
+    "canonical": "黃酸之水",
+    "typeKey": "water",
+    "display": "黃酸之水"
+  },
+  {
+    "canonical": "璇玉",
+    "typeKey": "mineral",
+    "display": "璇玉"
+  },
+  {
+    "canonical": "陽虛之山",
+    "typeKey": "mountain",
+    "display": "陽虛之山"
+  },
+  {
+    "canonical": "臨于玄扈之水",
+    "typeKey": "water",
+    "display": "臨于玄扈之水"
+  },
+  {
+    "canonical": "苟林之山",
+    "typeKey": "mountain",
+    "display": "苟林之山"
+  },
+  {
+    "canonical": "二千九百八十二里",
+    "typeKey": "quantity",
+    "display": "二千九百八十二里"
+  },
+  {
+    "canonical": "中次六經",
+    "typeKey": "mountain",
+    "display": "中次六經"
+  },
+  {
+    "canonical": "平逢之山",
+    "typeKey": "mountain",
+    "display": "平逢之山"
+  },
+  {
+    "canonical": "穀城之山",
+    "typeKey": "mountain",
+    "display": "穀城之山"
+  },
+  {
+    "canonical": "驕蟲",
+    "typeKey": "creature",
+    "display": "驕蟲"
+  },
+  {
+    "canonical": "縞羝之山",
+    "typeKey": "mountain",
+    "display": "縞羝之山"
+  },
+  {
+    "canonical": "廆山",
+    "typeKey": "mountain",
+    "display": "廆山"
+  },
+  {
+    "canonical": "雚谷",
+    "typeKey": "creature",
+    "display": "雚谷"
+  },
+  {
+    "canonical": "柳楮",
+    "typeKey": "mineral",
+    "display": "柳楮"
+  },
+  {
+    "canonical": "狀如山",
+    "typeKey": "mountain",
+    "display": "狀如山"
+  },
+  {
+    "canonical": "鴒䳩",
+    "typeKey": "creature",
+    "display": "鴒䳩"
+  },
+  {
+    "canonical": "交觴之水",
+    "typeKey": "water",
+    "display": "交觴之水"
+  },
+  {
+    "canonical": "俞隨之水",
+    "typeKey": "water",
+    "display": "俞隨之水"
+  },
+  {
+    "canonical": "北流注于穀水",
+    "typeKey": "water",
+    "display": "北流注于穀水"
+  },
+  {
+    "canonical": "瞻諸之山",
+    "typeKey": "mountain",
+    "display": "瞻諸之山"
+  },
+  {
+    "canonical": "㴬水",
+    "typeKey": "water",
+    "display": "㴬水"
+  },
+  {
+    "canonical": "東流注于穀水",
+    "typeKey": "water",
+    "display": "東流注于穀水"
+  },
+  {
+    "canonical": "婁涿之山",
+    "typeKey": "mountain",
+    "display": "婁涿之山"
+  },
+  {
+    "canonical": "瞻水",
+    "typeKey": "water",
+    "display": "瞻水"
+  },
+  {
+    "canonical": "陂水",
+    "typeKey": "water",
+    "display": "陂水"
+  },
+  {
+    "canonical": "茈石",
+    "typeKey": "mineral",
+    "display": "茈石"
+  },
+  {
+    "canonical": "白石之山",
+    "typeKey": "mountain",
+    "display": "白石之山"
+  },
+  {
+    "canonical": "惠水",
+    "typeKey": "water",
+    "display": "惠水"
+  },
+  {
+    "canonical": "澗水",
+    "typeKey": "water",
+    "display": "澗水"
+  },
+  {
+    "canonical": "麋石",
+    "typeKey": "mineral",
+    "display": "麋石"
+  },
+  {
+    "canonical": "榖山",
+    "typeKey": "mountain",
+    "display": "榖山"
+  },
+  {
+    "canonical": "爽水",
+    "typeKey": "water",
+    "display": "爽水"
+  },
+  {
+    "canonical": "北流注于榖水",
+    "typeKey": "water",
+    "display": "北流注于榖水"
+  },
+  {
+    "canonical": "碧綠",
+    "typeKey": "mineral",
+    "display": "碧綠"
+  },
+  {
+    "canonical": "七十二里",
+    "typeKey": "quantity",
+    "display": "七十二里"
+  },
+  {
+    "canonical": "密山",
+    "typeKey": "mountain",
+    "display": "密山"
+  },
+  {
+    "canonical": "豪水",
+    "typeKey": "water",
+    "display": "豪水"
+  },
+  {
+    "canonical": "長石之山",
+    "typeKey": "mountain",
+    "display": "長石之山"
+  },
+  {
+    "canonical": "共谷",
+    "typeKey": "plant",
+    "display": "共谷"
+  },
+  {
+    "canonical": "鳴石",
+    "typeKey": "mineral",
+    "display": "鳴石"
+  },
+  {
+    "canonical": "一百四十里",
+    "typeKey": "quantity",
+    "display": "一百四十里"
+  },
+  {
+    "canonical": "傅山",
+    "typeKey": "mountain",
+    "display": "傅山"
+  },
+  {
+    "canonical": "厭染之水",
+    "typeKey": "water",
+    "display": "厭染之水"
+  },
+  {
+    "canonical": "墦冢",
+    "typeKey": "creature",
+    "display": "墦冢"
+  },
+  {
+    "canonical": "穀水",
+    "typeKey": "water",
+    "display": "穀水"
+  },
+  {
+    "canonical": "㻒玉",
+    "typeKey": "mineral",
+    "display": "㻒玉"
+  },
+  {
+    "canonical": "橐山",
+    "typeKey": "mountain",
+    "display": "橐山"
+  },
+  {
+    "canonical": "𣖾木",
+    "typeKey": "mineral",
+    "display": "𣖾木"
+  },
+  {
+    "canonical": "蕭",
+    "typeKey": "mineral",
+    "display": "蕭"
+  },
+  {
+    "canonical": "橐水",
+    "typeKey": "water",
+    "display": "橐水"
+  },
+  {
+    "canonical": "脩辟之魚",
+    "typeKey": "mineral",
+    "display": "脩辟之魚"
+  },
+  {
+    "canonical": "九十里",
+    "typeKey": "quantity",
+    "display": "九十里"
+  },
+  {
+    "canonical": "常烝之山",
+    "typeKey": "mountain",
+    "display": "常烝之山"
+  },
+  {
+    "canonical": "潐水",
+    "typeKey": "water",
+    "display": "潐水"
+  },
+  {
+    "canonical": "菑水",
+    "typeKey": "water",
+    "display": "菑水"
+  },
+  {
+    "canonical": "夸父之山",
+    "typeKey": "mountain",
+    "display": "夸父之山"
+  },
+  {
+    "canonical": "鷩",
+    "typeKey": "mineral",
+    "display": "鷩"
+  },
+  {
+    "canonical": "桃林",
+    "typeKey": "creature",
+    "display": "桃林"
+  },
+  {
+    "canonical": "陽華之山",
+    "typeKey": "mountain",
+    "display": "陽華之山"
+  },
+  {
+    "canonical": "藷藇",
+    "typeKey": "mineral",
+    "display": "藷藇"
+  },
+  {
+    "canonical": "苦辛",
+    "typeKey": "mineral",
+    "display": "苦辛"
+  },
+  {
+    "canonical": "楊水",
+    "typeKey": "water",
+    "display": "楊水"
+  },
+  {
+    "canonical": "門水",
+    "typeKey": "water",
+    "display": "門水"
+  },
+  {
+    "canonical": "玄䃤",
+    "typeKey": "mineral",
+    "display": "玄䃤"
+  },
+  {
+    "canonical": "𦁎姑之水",
+    "typeKey": "water",
+    "display": "𦁎姑之水"
+  },
+  {
+    "canonical": "東流注于門水",
+    "typeKey": "water",
+    "display": "東流注于門水"
+  },
+  {
+    "canonical": "七百九十里",
+    "typeKey": "quantity",
+    "display": "七百九十里"
+  },
+  {
+    "canonical": "中次七經",
+    "typeKey": "mountain",
+    "display": "中次七經"
+  },
+  {
+    "canonical": "休輿之山",
+    "typeKey": "mountain",
+    "display": "休輿之山"
+  },
+  {
+    "canonical": "帝臺之棋",
+    "typeKey": "creature",
+    "display": "帝臺之棋"
+  },
+  {
+    "canonical": "夙條",
+    "typeKey": "plant",
+    "display": "夙條"
+  },
+  {
+    "canonical": "鼓鍾之山",
+    "typeKey": "mountain",
+    "display": "鼓鍾之山"
+  },
+  {
+    "canonical": "焉酸",
+    "typeKey": "plant",
+    "display": "焉酸"
+  },
+  {
+    "canonical": "礪",
+    "typeKey": "mineral",
+    "display": "礪"
+  },
+  {
+    "canonical": "姑媱之山",
+    "typeKey": "mountain",
+    "display": "姑媱之山"
+  },
+  {
+    "canonical": "女尸",
+    "typeKey": "creature",
+    "display": "女尸"
+  },
+  {
+    "canonical": "苦山",
+    "typeKey": "mountain",
+    "display": "苦山"
+  },
+  {
+    "canonical": "名曰山",
+    "typeKey": "mountain",
+    "display": "名曰山"
+  },
+  {
+    "canonical": "黃棘",
+    "typeKey": "plant",
+    "display": "黃棘"
+  },
+  {
+    "canonical": "二十七里",
+    "typeKey": "quantity",
+    "display": "二十七里"
+  },
+  {
+    "canonical": "堵山",
+    "typeKey": "mountain",
+    "display": "堵山"
+  },
+  {
+    "canonical": "怪風雨",
+    "typeKey": "mineral",
+    "display": "怪風雨"
+  },
+  {
+    "canonical": "天楄",
+    "typeKey": "plant",
+    "display": "天楄"
+  },
+  {
+    "canonical": "放皋之山",
+    "typeKey": "mountain",
+    "display": "放皋之山"
+  },
+  {
+    "canonical": "明水",
+    "typeKey": "water",
+    "display": "明水"
+  },
+  {
+    "canonical": "蒙木",
+    "typeKey": "plant",
+    "display": "蒙木"
+  },
+  {
+    "canonical": "文文",
+    "typeKey": "creature",
+    "display": "文文"
+  },
+  {
+    "canonical": "五十七里",
+    "typeKey": "quantity",
+    "display": "五十七里"
+  },
+  {
+    "canonical": "大𩇵之山",
+    "typeKey": "mountain",
+    "display": "大𩇵之山"
+  },
+  {
+    "canonical": "麋玉",
+    "typeKey": "mineral",
+    "display": "麋玉"
+  },
+  {
+    "canonical": "牛傷",
+    "typeKey": "plant",
+    "display": "牛傷"
+  },
+  {
+    "canonical": "其陽狂水",
+    "typeKey": "water",
+    "display": "其陽狂水"
+  },
+  {
+    "canonical": "三足龜",
+    "typeKey": "mineral",
+    "display": "三足龜"
+  },
+  {
+    "canonical": "半石之山",
+    "typeKey": "mountain",
+    "display": "半石之山"
+  },
+  {
+    "canonical": "嘉榮",
+    "typeKey": "plant",
+    "display": "嘉榮"
+  },
+  {
+    "canonical": "來需之水",
+    "typeKey": "water",
+    "display": "來需之水"
+  },
+  {
+    "canonical": "鯩魚",
+    "typeKey": "mineral",
+    "display": "鯩魚"
+  },
+  {
+    "canonical": "合水",
+    "typeKey": "water",
+    "display": "合水"
+  },
+  {
+    "canonical": "鰧魚",
+    "typeKey": "mineral",
+    "display": "鰧魚"
+  },
+  {
+    "canonical": "少室之山",
+    "typeKey": "mountain",
+    "display": "少室之山"
+  },
+  {
+    "canonical": "帝休",
+    "typeKey": "plant",
+    "display": "帝休"
+  },
+  {
+    "canonical": "休水",
+    "typeKey": "water",
+    "display": "休水"
+  },
+  {
+    "canonical": "䱱魚",
+    "typeKey": "mineral",
+    "display": "䱱魚"
+  },
+  {
+    "canonical": "泰室之山",
+    "typeKey": "mountain",
+    "display": "泰室之山"
+  },
+  {
+    "canonical": "栯木",
+    "typeKey": "plant",
+    "display": "栯木"
+  },
+  {
+    "canonical": "䔄草",
+    "typeKey": "plant",
+    "display": "䔄草"
+  },
+  {
+    "canonical": "講山",
+    "typeKey": "mountain",
+    "display": "講山"
+  },
+  {
+    "canonical": "柘",
+    "typeKey": "mineral",
+    "display": "柘"
+  },
+  {
+    "canonical": "柏",
+    "typeKey": "mineral",
+    "display": "柏"
+  },
+  {
+    "canonical": "帝屋",
+    "typeKey": "plant",
+    "display": "帝屋"
+  },
+  {
+    "canonical": "嬰梁之山",
+    "typeKey": "mountain",
+    "display": "嬰梁之山"
+  },
+  {
+    "canonical": "浮戲之山",
+    "typeKey": "mountain",
+    "display": "浮戲之山"
+  },
+  {
+    "canonical": "亢木",
+    "typeKey": "plant",
+    "display": "亢木"
+  },
+  {
+    "canonical": "汜水",
+    "typeKey": "water",
+    "display": "汜水"
+  },
+  {
+    "canonical": "蛇谷",
+    "typeKey": "creature",
+    "display": "蛇谷"
+  },
+  {
+    "canonical": "少辛",
+    "typeKey": "mineral",
+    "display": "少辛"
+  },
+  {
+    "canonical": "少陘之山",
+    "typeKey": "mountain",
+    "display": "少陘之山"
+  },
+  {
+    "canonical": "𦱌草",
+    "typeKey": "plant",
+    "display": "𦱌草"
+  },
+  {
+    "canonical": "器難之水",
+    "typeKey": "water",
+    "display": "器難之水"
+  },
+  {
+    "canonical": "北流注于役水",
+    "typeKey": "water",
+    "display": "北流注于役水"
+  },
+  {
+    "canonical": "棃",
+    "typeKey": "plant",
+    "display": "棃"
+  },
+  {
+    "canonical": "太水",
+    "typeKey": "water",
+    "display": "太水"
+  },
+  {
+    "canonical": "東南注于役水",
+    "typeKey": "water",
+    "display": "東南注于役水"
+  },
+  {
+    "canonical": "承水",
+    "typeKey": "water",
+    "display": "承水"
+  },
+  {
+    "canonical": "末山",
+    "typeKey": "mountain",
+    "display": "末山"
+  },
+  {
+    "canonical": "末水",
+    "typeKey": "water",
+    "display": "末水"
+  },
+  {
+    "canonical": "二十五里",
+    "typeKey": "quantity",
+    "display": "二十五里"
+  },
+  {
+    "canonical": "役山",
+    "typeKey": "mountain",
+    "display": "役山"
+  },
+  {
+    "canonical": "役水",
+    "typeKey": "water",
+    "display": "役水"
+  },
+  {
+    "canonical": "敏山",
+    "typeKey": "mountain",
+    "display": "敏山"
+  },
+  {
+    "canonical": "葪柏",
+    "typeKey": "plant",
+    "display": "葪柏"
+  },
+  {
+    "canonical": "大騩之山",
+    "typeKey": "mountain",
+    "display": "大騩之山"
+  },
+  {
+    "canonical": "𦵧",
+    "typeKey": "plant",
+    "display": "𦵧"
+  },
+  {
+    "canonical": "千一百八十四里",
+    "typeKey": "quantity",
+    "display": "千一百八十四里"
+  },
+  {
+    "canonical": "中次八經",
+    "typeKey": "mountain",
+    "display": "中次八經"
+  },
+  {
+    "canonical": "杼",
+    "typeKey": "mineral",
+    "display": "杼"
+  },
+  {
+    "canonical": "雎水",
+    "typeKey": "water",
+    "display": "雎水"
+  },
+  {
+    "canonical": "文魚",
+    "typeKey": "mineral",
+    "display": "文魚"
+  },
+  {
+    "canonical": "荊山",
+    "typeKey": "mountain",
+    "display": "荊山"
+  },
+  {
+    "canonical": "犛牛",
+    "typeKey": "mineral",
+    "display": "犛牛"
+  },
+  {
+    "canonical": "豹虎",
+    "typeKey": "mineral",
+    "display": "豹虎"
+  },
+  {
+    "canonical": "橘櫾",
+    "typeKey": "mineral",
+    "display": "橘櫾"
+  },
+  {
+    "canonical": "鮫魚",
+    "typeKey": "mineral",
+    "display": "鮫魚"
+  },
+  {
+    "canonical": "驕山",
+    "typeKey": "mountain",
+    "display": "驕山"
+  },
+  {
+    "canonical": "恒遊于雎漳之淵",
+    "typeKey": "water",
+    "display": "恒遊于雎漳之淵"
+  },
+  {
+    "canonical": "女几之山",
+    "typeKey": "mountain",
+    "display": "女几之山"
+  },
+  {
+    "canonical": "閭麋麖麂",
+    "typeKey": "mineral",
+    "display": "閭麋麖麂"
+  },
+  {
+    "canonical": "白鷮",
+    "typeKey": "mineral",
+    "display": "白鷮"
+  },
+  {
+    "canonical": "翟",
+    "typeKey": "bird_beast",
+    "display": "翟"
+  },
+  {
+    "canonical": "鴆",
+    "typeKey": "mineral",
+    "display": "鴆"
+  },
+  {
+    "canonical": "宜諸之山",
+    "typeKey": "mountain",
+    "display": "宜諸之山"
+  },
+  {
+    "canonical": "洈水",
+    "typeKey": "water",
+    "display": "洈水"
+  },
+  {
+    "canonical": "綸山",
+    "typeKey": "mountain",
+    "display": "綸山"
+  },
+  {
+    "canonical": "桃枝",
+    "typeKey": "mineral",
+    "display": "桃枝"
+  },
+  {
+    "canonical": "柤粟橘櫾",
+    "typeKey": "mineral",
+    "display": "柤粟橘櫾"
+  },
+  {
+    "canonical": "閭麈麢㚟",
+    "typeKey": "mineral",
+    "display": "閭麈麢㚟"
+  },
+  {
+    "canonical": "陸䣀之山",
+    "typeKey": "mountain",
+    "display": "陸䣀之山"
+  },
+  {
+    "canonical": "百三十里",
+    "typeKey": "quantity",
+    "display": "百三十里"
+  },
+  {
+    "canonical": "光山",
+    "typeKey": "mountain",
+    "display": "光山"
+  },
+  {
+    "canonical": "恒遊于漳淵",
+    "typeKey": "water",
+    "display": "恒遊于漳淵"
+  },
+  {
+    "canonical": "白瑉",
+    "typeKey": "mineral",
+    "display": "白瑉"
+  },
+  {
+    "canonical": "銅山",
+    "typeKey": "mountain",
+    "display": "銅山"
+  },
+  {
+    "canonical": "金銀鐵",
+    "typeKey": "mineral",
+    "display": "金銀鐵"
+  },
+  {
+    "canonical": "榖柞柤栗橘櫾",
+    "typeKey": "mineral",
+    "display": "榖柞柤栗橘櫾"
+  },
+  {
+    "canonical": "犳",
+    "typeKey": "mineral",
+    "display": "犳"
+  },
+  {
+    "canonical": "一百里",
+    "typeKey": "quantity",
+    "display": "一百里"
+  },
+  {
+    "canonical": "美山",
+    "typeKey": "mountain",
+    "display": "美山"
+  },
+  {
+    "canonical": "兕牛",
+    "typeKey": "mineral",
+    "display": "兕牛"
+  },
+  {
+    "canonical": "閭麈",
+    "typeKey": "mineral",
+    "display": "閭麈"
+  },
+  {
+    "canonical": "豕鹿",
+    "typeKey": "mineral",
+    "display": "豕鹿"
+  },
+  {
+    "canonical": "大堯之山",
+    "typeKey": "mountain",
+    "display": "大堯之山"
+  },
+  {
+    "canonical": "梓桑",
+    "typeKey": "mineral",
+    "display": "梓桑"
+  },
+  {
+    "canonical": "机",
+    "typeKey": "mineral",
+    "display": "机"
+  },
+  {
+    "canonical": "豹虎麢㚟",
+    "typeKey": "mineral",
+    "display": "豹虎麢㚟"
+  },
+  {
+    "canonical": "靈山",
+    "typeKey": "mountain",
+    "display": "靈山"
+  },
+  {
+    "canonical": "桃李梅杏",
+    "typeKey": "mineral",
+    "display": "桃李梅杏"
+  },
+  {
+    "canonical": "龍山",
+    "typeKey": "mountain",
+    "display": "龍山"
+  },
+  {
+    "canonical": "寓木",
+    "typeKey": "mineral",
+    "display": "寓木"
+  },
+  {
+    "canonical": "赤錫",
+    "typeKey": "mineral",
+    "display": "赤錫"
+  },
+  {
+    "canonical": "衡山",
+    "typeKey": "mountain",
+    "display": "衡山"
+  },
+  {
+    "canonical": "寓木榖柞",
+    "typeKey": "mineral",
+    "display": "寓木榖柞"
+  },
+  {
+    "canonical": "黃堊白堊",
+    "typeKey": "mineral",
+    "display": "黃堊白堊"
+  },
+  {
+    "canonical": "若山",
+    "typeKey": "mountain",
+    "display": "若山"
+  },
+  {
+    "canonical": "㻬琈玉",
+    "typeKey": "mineral",
+    "display": "㻬琈玉"
+  },
+  {
+    "canonical": "邽石",
+    "typeKey": "mineral",
+    "display": "邽石"
+  },
+  {
+    "canonical": "彘山",
+    "typeKey": "mountain",
+    "display": "彘山"
+  },
+  {
+    "canonical": "讙山",
+    "typeKey": "mountain",
+    "display": "讙山"
+  },
+  {
+    "canonical": "檀",
+    "typeKey": "mineral",
+    "display": "檀"
+  },
+  {
+    "canonical": "封石",
+    "typeKey": "mineral",
+    "display": "封石"
+  },
+  {
+    "canonical": "白錫",
+    "typeKey": "mineral",
+    "display": "白錫"
+  },
+  {
+    "canonical": "郁水",
+    "typeKey": "water",
+    "display": "郁水"
+  },
+  {
+    "canonical": "仁舉之山",
+    "typeKey": "mountain",
+    "display": "仁舉之山"
+  },
+  {
+    "canonical": "師每之山",
+    "typeKey": "mountain",
+    "display": "師每之山"
+  },
+  {
+    "canonical": "琴鼓之山",
+    "typeKey": "mountain",
+    "display": "琴鼓之山"
+  },
+  {
+    "canonical": "榖柞椒柘",
+    "typeKey": "mineral",
+    "display": "榖柞椒柘"
+  },
+  {
+    "canonical": "白犀",
+    "typeKey": "mineral",
+    "display": "白犀"
+  },
+  {
+    "canonical": "二千八百九十里",
+    "typeKey": "quantity",
+    "display": "二千八百九十里"
+  },
+  {
+    "canonical": "中次九經",
+    "typeKey": "mountain",
+    "display": "中次九經"
+  },
+  {
+    "canonical": "菊𦬸",
+    "typeKey": "mineral",
+    "display": "菊𦬸"
+  },
+  {
+    "canonical": "虎豹",
+    "typeKey": "mineral",
+    "display": "虎豹"
+  },
+  {
+    "canonical": "岷山",
+    "typeKey": "mountain",
+    "display": "岷山"
+  },
+  {
+    "canonical": "良龜",
+    "typeKey": "mineral",
+    "display": "良龜"
+  },
+  {
+    "canonical": "鼉",
+    "typeKey": "mineral",
+    "display": "鼉"
+  },
+  {
+    "canonical": "梅棠",
+    "typeKey": "mineral",
+    "display": "梅棠"
+  },
+  {
+    "canonical": "犀象",
+    "typeKey": "mineral",
+    "display": "犀象"
+  },
+  {
+    "canonical": "夔牛",
+    "typeKey": "mineral",
+    "display": "夔牛"
+  },
+  {
+    "canonical": "翰鷩",
+    "typeKey": "mineral",
+    "display": "翰鷩"
+  },
+  {
+    "canonical": "崍山",
+    "typeKey": "mountain",
+    "display": "崍山"
+  },
+  {
+    "canonical": "麋麈",
+    "typeKey": "mineral",
+    "display": "麋麈"
+  },
+  {
+    "canonical": "檀柘",
+    "typeKey": "mineral",
+    "display": "檀柘"
+  },
+  {
+    "canonical": "䪥韭",
+    "typeKey": "mineral",
+    "display": "䪥韭"
+  },
+  {
+    "canonical": "葯",
+    "typeKey": "mineral",
+    "display": "葯"
+  },
+  {
+    "canonical": "崌山",
+    "typeKey": "mountain",
+    "display": "崌山"
+  },
+  {
+    "canonical": "䲀魚",
+    "typeKey": "mineral",
+    "display": "䲀魚"
+  },
+  {
+    "canonical": "楢杻",
+    "typeKey": "mineral",
+    "display": "楢杻"
+  },
+  {
+    "canonical": "梅梓",
+    "typeKey": "mineral",
+    "display": "梅梓"
+  },
+  {
+    "canonical": "夔牛麢㚟犀兕",
+    "typeKey": "mineral",
+    "display": "夔牛麢㚟犀兕"
+  },
+  {
+    "canonical": "竊脂",
+    "typeKey": "creature",
+    "display": "竊脂"
+  },
+  {
+    "canonical": "高梁之山",
+    "typeKey": "mountain",
+    "display": "高梁之山"
+  },
+  {
+    "canonical": "蛇山",
+    "typeKey": "mountain",
+    "display": "蛇山"
+  },
+  {
+    "canonical": "橡章",
+    "typeKey": "mineral",
+    "display": "橡章"
+  },
+  {
+    "canonical": "嘉榮",
+    "typeKey": "mineral",
+    "display": "嘉榮"
+  },
+  {
+    "canonical": "見則國內有兵",
+    "typeKey": "omen",
+    "display": "見則國內有兵"
+  },
+  {
+    "canonical": "鬲山",
+    "typeKey": "mountain",
+    "display": "鬲山"
+  },
+  {
+    "canonical": "白珉",
+    "typeKey": "mineral",
+    "display": "白珉"
+  },
+  {
+    "canonical": "蒲𪈘之水",
+    "typeKey": "water",
+    "display": "蒲𪈘之水"
+  },
+  {
+    "canonical": "犀象熊羆",
+    "typeKey": "mineral",
+    "display": "犀象熊羆"
+  },
+  {
+    "canonical": "猨蜼",
+    "typeKey": "mineral",
+    "display": "猨蜼"
+  },
+  {
+    "canonical": "隅陽之山",
+    "typeKey": "mountain",
+    "display": "隅陽之山"
+  },
+  {
+    "canonical": "徐之水",
+    "typeKey": "water",
+    "display": "徐之水"
+  },
+  {
+    "canonical": "杻楢",
+    "typeKey": "mineral",
+    "display": "杻楢"
+  },
+  {
+    "canonical": "勾檷之山",
+    "typeKey": "mountain",
+    "display": "勾檷之山"
+  },
+  {
+    "canonical": "櫟柘",
+    "typeKey": "mineral",
+    "display": "櫟柘"
+  },
+  {
+    "canonical": "風雨之山",
+    "typeKey": "mountain",
+    "display": "風雨之山"
+  },
+  {
+    "canonical": "棷椫",
+    "typeKey": "mineral",
+    "display": "棷椫"
+  },
+  {
+    "canonical": "楊",
+    "typeKey": "mineral",
+    "display": "楊"
+  },
+  {
+    "canonical": "宣余之水",
+    "typeKey": "water",
+    "display": "宣余之水"
+  },
+  {
+    "canonical": "蛇",
+    "typeKey": "bird_beast",
+    "display": "蛇"
+  },
+  {
+    "canonical": "麈豹虎",
+    "typeKey": "mineral",
+    "display": "麈豹虎"
+  },
+  {
+    "canonical": "豫章楢杻",
+    "typeKey": "mineral",
+    "display": "豫章楢杻"
+  },
+  {
+    "canonical": "豕鹿麢㚟",
+    "typeKey": "mineral",
+    "display": "豕鹿麢㚟"
+  },
+  {
+    "canonical": "熊山",
+    "typeKey": "mountain",
+    "display": "熊山"
+  },
+  {
+    "canonical": "恒出神人",
+    "typeKey": "deity",
+    "display": "恒出神人"
+  },
+  {
+    "canonical": "樗柳",
+    "typeKey": "mineral",
+    "display": "樗柳"
+  },
+  {
+    "canonical": "美玉赤金",
+    "typeKey": "mineral",
+    "display": "美玉赤金"
+  },
+  {
+    "canonical": "桃枝荊𦬊",
+    "typeKey": "mineral",
+    "display": "桃枝荊𦬊"
+  },
+  {
+    "canonical": "葛山",
+    "typeKey": "mountain",
+    "display": "葛山"
+  },
+  {
+    "canonical": "瑊石",
+    "typeKey": "mineral",
+    "display": "瑊石"
+  },
+  {
+    "canonical": "柤栗橘櫾楢杻",
+    "typeKey": "mineral",
+    "display": "柤栗橘櫾楢杻"
+  },
+  {
+    "canonical": "麢㚟",
+    "typeKey": "mineral",
+    "display": "麢㚟"
+  },
+  {
+    "canonical": "賈超之山",
+    "typeKey": "mountain",
+    "display": "賈超之山"
+  },
+  {
+    "canonical": "柤栗橘櫾",
+    "typeKey": "mineral",
+    "display": "柤栗橘櫾"
+  },
+  {
+    "canonical": "龍脩",
+    "typeKey": "mineral",
+    "display": "龍脩"
+  },
+  {
+    "canonical": "女几山",
+    "typeKey": "mountain",
+    "display": "女几山"
+  },
+  {
+    "canonical": "三千五百里",
+    "typeKey": "quantity",
+    "display": "三千五百里"
+  },
+  {
+    "canonical": "毛用一雄雞瘞",
+    "typeKey": "sacrifice",
+    "display": "毛用一雄雞瘞"
+  },
+  {
+    "canonical": "文山",
+    "typeKey": "mountain",
+    "display": "文山"
+  },
+  {
+    "canonical": "騩之山",
+    "typeKey": "mountain",
+    "display": "騩之山"
+  },
+  {
+    "canonical": "中次十經",
+    "typeKey": "mountain",
+    "display": "中次十經"
+  },
+  {
+    "canonical": "首陽之山",
+    "typeKey": "mountain",
+    "display": "首陽之山"
+  },
+  {
+    "canonical": "虎尾之山",
+    "typeKey": "mountain",
+    "display": "虎尾之山"
+  },
+  {
+    "canonical": "椒椐",
+    "typeKey": "mineral",
+    "display": "椒椐"
+  },
+  {
+    "canonical": "繁繢之山",
+    "typeKey": "mountain",
+    "display": "繁繢之山"
+  },
+  {
+    "canonical": "枝勾",
+    "typeKey": "mineral",
+    "display": "枝勾"
+  },
+  {
+    "canonical": "勇石之山",
+    "typeKey": "mountain",
+    "display": "勇石之山"
+  },
+  {
+    "canonical": "復州之山",
+    "typeKey": "mountain",
+    "display": "復州之山"
+  },
+  {
+    "canonical": "跂踵",
+    "typeKey": "creature",
+    "display": "跂踵"
+  },
+  {
+    "canonical": "見則其國大疫",
+    "typeKey": "omen",
+    "display": "見則其國大疫"
+  },
+  {
+    "canonical": "楮山",
+    "typeKey": "mountain",
+    "display": "楮山"
+  },
+  {
+    "canonical": "原之山",
+    "typeKey": "mountain",
+    "display": "原之山"
+  },
+  {
+    "canonical": "鸜鵒",
+    "typeKey": "mineral",
+    "display": "鸜鵒"
+  },
+  {
+    "canonical": "涿山",
+    "typeKey": "mountain",
+    "display": "涿山"
+  },
+  {
+    "canonical": "榖柞杻",
+    "typeKey": "mineral",
+    "display": "榖柞杻"
+  },
+  {
+    "canonical": "丙山",
+    "typeKey": "mountain",
+    "display": "丙山"
+  },
+  {
+    "canonical": "梓檀",
+    "typeKey": "mineral",
+    "display": "梓檀"
+  },
+  {
+    "canonical": "弞杻",
+    "typeKey": "mineral",
+    "display": "弞杻"
+  },
+  {
+    "canonical": "二百六十七里",
+    "typeKey": "quantity",
+    "display": "二百六十七里"
+  },
+  {
+    "canonical": "糈用五種之糈",
+    "typeKey": "sacrifice",
+    "display": "糈用五種之糈"
+  },
+  {
+    "canonical": "二人",
+    "typeKey": "quantity",
+    "display": "二人"
+  },
+  {
+    "canonical": "中次十一經",
+    "typeKey": "mountain",
+    "display": "中次十一經"
+  },
+  {
+    "canonical": "湍水",
+    "typeKey": "water",
+    "display": "湍水"
+  },
+  {
+    "canonical": "貺水",
+    "typeKey": "water",
+    "display": "貺水"
+  },
+  {
+    "canonical": "蛟",
+    "typeKey": "bird_beast",
+    "display": "蛟"
+  },
+  {
+    "canonical": "漆梓",
+    "typeKey": "mineral",
+    "display": "漆梓"
+  },
+  {
+    "canonical": "珉",
+    "typeKey": "mineral",
+    "display": "珉"
+  },
+  {
+    "canonical": "潕水",
+    "typeKey": "water",
+    "display": "潕水"
+  },
+  {
+    "canonical": "麢麋",
+    "typeKey": "mineral",
+    "display": "麢麋"
+  },
+  {
+    "canonical": "莽草",
+    "typeKey": "plant",
+    "display": "莽草"
+  },
+  {
+    "canonical": "帝囷之山",
+    "typeKey": "mountain",
+    "display": "帝囷之山"
+  },
+  {
+    "canonical": "帝囷之水",
+    "typeKey": "water",
+    "display": "帝囷之水"
+  },
+  {
+    "canonical": "鳴蛇",
+    "typeKey": "mineral",
+    "display": "鳴蛇"
+  },
+  {
+    "canonical": "視山",
+    "typeKey": "mountain",
+    "display": "視山"
+  },
+  {
+    "canonical": "韭",
+    "typeKey": "mineral",
+    "display": "韭"
+  },
+  {
+    "canonical": "天井",
+    "typeKey": "creature",
+    "display": "天井"
+  },
+  {
+    "canonical": "夏有水",
+    "typeKey": "water",
+    "display": "夏有水"
+  },
+  {
+    "canonical": "美堊金玉",
+    "typeKey": "mineral",
+    "display": "美堊金玉"
+  },
+  {
+    "canonical": "前山",
+    "typeKey": "mountain",
+    "display": "前山"
+  },
+  {
+    "canonical": "櫧",
+    "typeKey": "mineral",
+    "display": "櫧"
+  },
+  {
+    "canonical": "豐山",
+    "typeKey": "mountain",
+    "display": "豐山"
+  },
+  {
+    "canonical": "雍和",
+    "typeKey": "creature",
+    "display": "雍和"
+  },
+  {
+    "canonical": "見則國有大恐",
+    "typeKey": "omen",
+    "display": "見則國有大恐"
+  },
+  {
+    "canonical": "常遊清泠之淵",
+    "typeKey": "water",
+    "display": "常遊清泠之淵"
+  },
+  {
+    "canonical": "見則其國為敗",
+    "typeKey": "omen",
+    "display": "見則其國為敗"
+  },
+  {
+    "canonical": "榖柞杻橿",
+    "typeKey": "mineral",
+    "display": "榖柞杻橿"
+  },
+  {
+    "canonical": "兔牀之山",
+    "typeKey": "mountain",
+    "display": "兔牀之山"
+  },
+  {
+    "canonical": "藷芧",
+    "typeKey": "mineral",
+    "display": "藷芧"
+  },
+  {
+    "canonical": "雞穀",
+    "typeKey": "mineral",
+    "display": "雞穀"
+  },
+  {
+    "canonical": "皮山",
+    "typeKey": "mountain",
+    "display": "皮山"
+  },
+  {
+    "canonical": "瑤碧之山",
+    "typeKey": "mountain",
+    "display": "瑤碧之山"
+  },
+  {
+    "canonical": "鴆",
+    "typeKey": "creature",
+    "display": "鴆"
+  },
+  {
+    "canonical": "支離之山",
+    "typeKey": "mountain",
+    "display": "支離之山"
+  },
+  {
+    "canonical": "濟水",
+    "typeKey": "water",
+    "display": "濟水"
+  },
+  {
+    "canonical": "嬰勺",
+    "typeKey": "creature",
+    "display": "嬰勺"
+  },
+  {
+    "canonical": "祑𥮐之山",
+    "typeKey": "mountain",
+    "display": "祑𥮐之山"
+  },
+  {
+    "canonical": "松柏机桓",
+    "typeKey": "mineral",
+    "display": "松柏机桓"
+  },
+  {
+    "canonical": "堇理之山",
+    "typeKey": "mountain",
+    "display": "堇理之山"
+  },
+  {
+    "canonical": "美梓",
+    "typeKey": "mineral",
+    "display": "美梓"
+  },
+  {
+    "canonical": "青耕",
+    "typeKey": "creature",
+    "display": "青耕"
+  },
+  {
+    "canonical": "依軲之山",
+    "typeKey": "mountain",
+    "display": "依軲之山"
+  },
+  {
+    "canonical": "苴",
+    "typeKey": "mineral",
+    "display": "苴"
+  },
+  {
+    "canonical": "獜",
+    "typeKey": "creature",
+    "display": "獜"
+  },
+  {
+    "canonical": "即谷之山",
+    "typeKey": "mountain",
+    "display": "即谷之山"
+  },
+  {
+    "canonical": "玄豹",
+    "typeKey": "bird_beast",
+    "display": "玄豹"
+  },
+  {
+    "canonical": "高前之山",
+    "typeKey": "mountain",
+    "display": "高前之山"
+  },
+  {
+    "canonical": "遊戲之山",
+    "typeKey": "mountain",
+    "display": "遊戲之山"
+  },
+  {
+    "canonical": "杻橿榖",
+    "typeKey": "mineral",
+    "display": "杻橿榖"
+  },
+  {
+    "canonical": "從山",
+    "typeKey": "mountain",
+    "display": "從山"
+  },
+  {
+    "canonical": "從水",
+    "typeKey": "water",
+    "display": "從水"
+  },
+  {
+    "canonical": "三足鼈",
+    "typeKey": "mineral",
+    "display": "三足鼈"
+  },
+  {
+    "canonical": "嬰䃌之山",
+    "typeKey": "mountain",
+    "display": "嬰䃌之山"
+  },
+  {
+    "canonical": "梓櫄",
+    "typeKey": "mineral",
+    "display": "梓櫄"
+  },
+  {
+    "canonical": "畢山",
+    "typeKey": "mountain",
+    "display": "畢山"
+  },
+  {
+    "canonical": "帝苑之水",
+    "typeKey": "water",
+    "display": "帝苑之水"
+  },
+  {
+    "canonical": "樂馬之山",
+    "typeKey": "mountain",
+    "display": "樂馬之山"
+  },
+  {
+    "canonical": "𤟑",
+    "typeKey": "creature",
+    "display": "𤟑"
+  },
+  {
+    "canonical": "葴山",
+    "typeKey": "mountain",
+    "display": "葴山"
+  },
+  {
+    "canonical": "視水",
+    "typeKey": "water",
+    "display": "視水"
+  },
+  {
+    "canonical": "南流注于汝水",
+    "typeKey": "water",
+    "display": "南流注于汝水"
+  },
+  {
+    "canonical": "頡",
+    "typeKey": "mineral",
+    "display": "頡"
+  },
+  {
+    "canonical": "嬰山",
+    "typeKey": "mountain",
+    "display": "嬰山"
+  },
+  {
+    "canonical": "虎首之山",
+    "typeKey": "mountain",
+    "display": "虎首之山"
+  },
+  {
+    "canonical": "苴椆椐",
+    "typeKey": "mineral",
+    "display": "苴椆椐"
+  },
+  {
+    "canonical": "嬰侯之山",
+    "typeKey": "mountain",
+    "display": "嬰侯之山"
+  },
+  {
+    "canonical": "大孰之山",
+    "typeKey": "mountain",
+    "display": "大孰之山"
+  },
+  {
+    "canonical": "殺水",
+    "typeKey": "water",
+    "display": "殺水"
+  },
+  {
+    "canonical": "北流注于視水",
+    "typeKey": "water",
+    "display": "北流注于視水"
+  },
+  {
+    "canonical": "卑山",
+    "typeKey": "mountain",
+    "display": "卑山"
+  },
+  {
+    "canonical": "桃李苴梓",
+    "typeKey": "mineral",
+    "display": "桃李苴梓"
+  },
+  {
+    "canonical": "纍",
+    "typeKey": "mineral",
+    "display": "纍"
+  },
+  {
+    "canonical": "倚帝之山",
+    "typeKey": "mountain",
+    "display": "倚帝之山"
+  },
+  {
+    "canonical": "狙如",
+    "typeKey": "creature",
+    "display": "狙如"
+  },
+  {
+    "canonical": "見則其國有大兵",
+    "typeKey": "omen",
+    "display": "見則其國有大兵"
+  },
+  {
+    "canonical": "鯢山",
+    "typeKey": "mountain",
+    "display": "鯢山"
+  },
+  {
+    "canonical": "鯢水",
+    "typeKey": "water",
+    "display": "鯢水"
+  },
+  {
+    "canonical": "雅山",
+    "typeKey": "mountain",
+    "display": "雅山"
+  },
+  {
+    "canonical": "東流注于視水",
+    "typeKey": "water",
+    "display": "東流注于視水"
+  },
+  {
+    "canonical": "大魚",
+    "typeKey": "mineral",
+    "display": "大魚"
+  },
+  {
+    "canonical": "美桑",
+    "typeKey": "mineral",
+    "display": "美桑"
+  },
+  {
+    "canonical": "宣山",
+    "typeKey": "mountain",
+    "display": "宣山"
+  },
+  {
+    "canonical": "淪水",
+    "typeKey": "water",
+    "display": "淪水"
+  },
+  {
+    "canonical": "南流注于視水",
+    "typeKey": "water",
+    "display": "南流注于視水"
+  },
+  {
+    "canonical": "五十尺",
+    "typeKey": "quantity",
+    "display": "五十尺"
+  },
+  {
+    "canonical": "帝女之桑",
+    "typeKey": "creature",
+    "display": "帝女之桑"
+  },
+  {
+    "canonical": "羊桃",
+    "typeKey": "mineral",
+    "display": "羊桃"
+  },
+  {
+    "canonical": "嫗山",
+    "typeKey": "mountain",
+    "display": "嫗山"
+  },
+  {
+    "canonical": "楢杻苴",
+    "typeKey": "mineral",
+    "display": "楢杻苴"
+  },
+  {
+    "canonical": "虋冬",
+    "typeKey": "mineral",
+    "display": "虋冬"
+  },
+  {
+    "canonical": "見則其邑有火",
+    "typeKey": "omen",
+    "display": "見則其邑有火"
+  },
+  {
+    "canonical": "𤝻即",
+    "typeKey": "creature",
+    "display": "𤝻即"
+  },
+  {
+    "canonical": "章山",
+    "typeKey": "mountain",
+    "display": "章山"
+  },
+  {
+    "canonical": "臯水",
+    "typeKey": "water",
+    "display": "臯水"
+  },
+  {
+    "canonical": "東流注于豐水",
+    "typeKey": "water",
+    "display": "東流注于豐水"
+  },
+  {
+    "canonical": "脃石",
+    "typeKey": "mineral",
+    "display": "脃石"
+  },
+  {
+    "canonical": "大支之山",
+    "typeKey": "mountain",
+    "display": "大支之山"
+  },
+  {
+    "canonical": "聲匈之山",
+    "typeKey": "mountain",
+    "display": "聲匈之山"
+  },
+  {
+    "canonical": "砥石",
+    "typeKey": "mineral",
+    "display": "砥石"
+  },
+  {
+    "canonical": "踵臼之山",
+    "typeKey": "mountain",
+    "display": "踵臼之山"
+  },
+  {
+    "canonical": "歷石之山",
+    "typeKey": "mountain",
+    "display": "歷石之山"
+  },
+  {
+    "canonical": "梁渠",
+    "typeKey": "creature",
+    "display": "梁渠"
+  },
+  {
+    "canonical": "求山",
+    "typeKey": "mountain",
+    "display": "求山"
+  },
+  {
+    "canonical": "求水",
+    "typeKey": "water",
+    "display": "求水"
+  },
+  {
+    "canonical": "䉋",
+    "typeKey": "mineral",
+    "display": "䉋"
+  },
+  {
+    "canonical": "丑陽之山",
+    "typeKey": "mountain",
+    "display": "丑陽之山"
+  },
+  {
+    "canonical": "椆椐",
+    "typeKey": "mineral",
+    "display": "椆椐"
+  },
+  {
+    "canonical": "䳅鵌",
+    "typeKey": "creature",
+    "display": "䳅鵌"
+  },
+  {
+    "canonical": "奧山",
+    "typeKey": "mountain",
+    "display": "奧山"
+  },
+  {
+    "canonical": "柏杻橿",
+    "typeKey": "mineral",
+    "display": "柏杻橿"
+  },
+  {
+    "canonical": "瀁琈之玉",
+    "typeKey": "mineral",
+    "display": "瀁琈之玉"
+  },
+  {
+    "canonical": "奧水",
+    "typeKey": "water",
+    "display": "奧水"
+  },
+  {
+    "canonical": "服山",
+    "typeKey": "mountain",
+    "display": "服山"
+  },
+  {
+    "canonical": "百十里",
+    "typeKey": "quantity",
+    "display": "百十里"
+  },
+  {
+    "canonical": "杳山",
+    "typeKey": "mountain",
+    "display": "杳山"
+  },
+  {
+    "canonical": "嘉榮草",
+    "typeKey": "mineral",
+    "display": "嘉榮草"
+  },
+  {
+    "canonical": "几山",
+    "typeKey": "mountain",
+    "display": "几山"
+  },
+  {
+    "canonical": "楢檀杻",
+    "typeKey": "mineral",
+    "display": "楢檀杻"
+  },
+  {
+    "canonical": "香",
+    "typeKey": "mineral",
+    "display": "香"
+  },
+  {
+    "canonical": "聞𧲂",
+    "typeKey": "creature",
+    "display": "聞𧲂"
+  },
+  {
+    "canonical": "三千七百三十二里",
+    "typeKey": "quantity",
+    "display": "三千七百三十二里"
+  },
+  {
+    "canonical": "毛用一雄雞祈",
+    "typeKey": "sacrifice",
+    "display": "毛用一雄雞祈"
+  },
+  {
+    "canonical": "糈用五種之精",
+    "typeKey": "sacrifice",
+    "display": "糈用五種之精"
+  },
+  {
+    "canonical": "禾山",
+    "typeKey": "mountain",
+    "display": "禾山"
+  },
+  {
+    "canonical": "中次十二經",
+    "typeKey": "mountain",
+    "display": "中次十二經"
+  },
+  {
+    "canonical": "篇遇之山",
+    "typeKey": "mountain",
+    "display": "篇遇之山"
+  },
+  {
+    "canonical": "雲山",
+    "typeKey": "mountain",
+    "display": "雲山"
+  },
+  {
+    "canonical": "一百三十里",
+    "typeKey": "quantity",
+    "display": "一百三十里"
+  },
+  {
+    "canonical": "龜山",
+    "typeKey": "mountain",
+    "display": "龜山"
+  },
+  {
+    "canonical": "榖柞椆椐",
+    "typeKey": "mineral",
+    "display": "榖柞椆椐"
+  },
+  {
+    "canonical": "扶竹",
+    "typeKey": "mineral",
+    "display": "扶竹"
+  },
+  {
+    "canonical": "筀竹",
+    "typeKey": "mineral",
+    "display": "筀竹"
+  },
+  {
+    "canonical": "黃金銅鐵",
+    "typeKey": "mineral",
+    "display": "黃金銅鐵"
+  },
+  {
+    "canonical": "風伯之山",
+    "typeKey": "mountain",
+    "display": "風伯之山"
+  },
+  {
+    "canonical": "痠石",
+    "typeKey": "mineral",
+    "display": "痠石"
+  },
+  {
+    "canonical": "柳杻檀楮",
+    "typeKey": "mineral",
+    "display": "柳杻檀楮"
+  },
+  {
+    "canonical": "莽浮之林",
+    "typeKey": "creature",
+    "display": "莽浮之林"
+  },
+  {
+    "canonical": "美木鳥獸",
+    "typeKey": "mineral",
+    "display": "美木鳥獸"
+  },
+  {
+    "canonical": "夫夫之山",
+    "typeKey": "mountain",
+    "display": "夫夫之山"
+  },
+  {
+    "canonical": "桑楮",
+    "typeKey": "mineral",
+    "display": "桑楮"
+  },
+  {
+    "canonical": "常遊于江淵",
+    "typeKey": "water",
+    "display": "常遊于江淵"
+  },
+  {
+    "canonical": "洞庭之山",
+    "typeKey": "mountain",
+    "display": "洞庭之山"
+  },
+  {
+    "canonical": "銀",
+    "typeKey": "mineral",
+    "display": "銀"
+  },
+  {
+    "canonical": "柤棃橘櫾",
+    "typeKey": "mineral",
+    "display": "柤棃橘櫾"
+  },
+  {
+    "canonical": "葌",
+    "typeKey": "mineral",
+    "display": "葌"
+  },
+  {
+    "canonical": "是常遊于江淵",
+    "typeKey": "water",
+    "display": "是常遊于江淵"
+  },
+  {
+    "canonical": "交瀟湘之淵",
+    "typeKey": "water",
+    "display": "交瀟湘之淵"
+  },
+  {
+    "canonical": "怪神",
+    "typeKey": "mineral",
+    "display": "怪神"
+  },
+  {
+    "canonical": "一百八十里",
+    "typeKey": "quantity",
+    "display": "一百八十里"
+  },
+  {
+    "canonical": "暴山",
+    "typeKey": "mountain",
+    "display": "暴山"
+  },
+  {
+    "canonical": "黃金玉",
+    "typeKey": "mineral",
+    "display": "黃金玉"
+  },
+  {
+    "canonical": "文石鐵",
+    "typeKey": "mineral",
+    "display": "文石鐵"
+  },
+  {
+    "canonical": "麋鹿𪊨就",
+    "typeKey": "mineral",
+    "display": "麋鹿𪊨就"
+  },
+  {
+    "canonical": "即公之山",
+    "typeKey": "mountain",
+    "display": "即公之山"
+  },
+  {
+    "canonical": "柳杻檀桑",
+    "typeKey": "mineral",
+    "display": "柳杻檀桑"
+  },
+  {
+    "canonical": "蛫",
+    "typeKey": "creature",
+    "display": "蛫"
+  },
+  {
+    "canonical": "一百五十九里",
+    "typeKey": "quantity",
+    "display": "一百五十九里"
+  },
+  {
+    "canonical": "堯山",
+    "typeKey": "mountain",
+    "display": "堯山"
+  },
+  {
+    "canonical": "荊𦬊柳檀",
+    "typeKey": "mineral",
+    "display": "荊𦬊柳檀"
+  },
+  {
+    "canonical": "藷藇𦬸",
+    "typeKey": "mineral",
+    "display": "藷藇𦬸"
+  },
+  {
+    "canonical": "江浮之山",
+    "typeKey": "mountain",
+    "display": "江浮之山"
+  },
+  {
+    "canonical": "銀砥礪",
+    "typeKey": "mineral",
+    "display": "銀砥礪"
+  },
+  {
+    "canonical": "真陵之山",
+    "typeKey": "mountain",
+    "display": "真陵之山"
+  },
+  {
+    "canonical": "榖柞柳杻",
+    "typeKey": "mineral",
+    "display": "榖柞柳杻"
+  },
+  {
+    "canonical": "榮草",
+    "typeKey": "mineral",
+    "display": "榮草"
+  },
+  {
+    "canonical": "陽帝之山",
+    "typeKey": "mountain",
+    "display": "陽帝之山"
+  },
+  {
+    "canonical": "美銅",
+    "typeKey": "mineral",
+    "display": "美銅"
+  },
+  {
+    "canonical": "橿杻檿楮",
+    "typeKey": "mineral",
+    "display": "橿杻檿楮"
+  },
+  {
+    "canonical": "麢麝",
+    "typeKey": "mineral",
+    "display": "麢麝"
+  },
+  {
+    "canonical": "柴桑之山",
+    "typeKey": "mountain",
+    "display": "柴桑之山"
+  },
+  {
+    "canonical": "柳𦬊楮桑",
+    "typeKey": "mineral",
+    "display": "柳𦬊楮桑"
+  },
+  {
+    "canonical": "白蛇飛蛇",
+    "typeKey": "mineral",
+    "display": "白蛇飛蛇"
+  },
+  {
+    "canonical": "榮余之山",
+    "typeKey": "mountain",
+    "display": "榮余之山"
+  },
+  {
+    "canonical": "柳𦬊",
+    "typeKey": "mineral",
+    "display": "柳𦬊"
+  },
+  {
+    "canonical": "怪蛇怪蟲",
+    "typeKey": "mineral",
+    "display": "怪蛇怪蟲"
+  },
+  {
+    "canonical": "二千八百里",
+    "typeKey": "quantity",
+    "display": "二千八百里"
+  },
+  {
+    "canonical": "榮余山",
+    "typeKey": "mountain",
+    "display": "榮余山"
+  },
+  {
+    "canonical": "二萬一千三百七十一里",
+    "typeKey": "quantity",
+    "display": "二萬一千三百七十一里"
+  },
+  {
+    "canonical": "六萬四千五十六里",
+    "typeKey": "quantity",
+    "display": "六萬四千五十六里"
+  },
+  {
+    "canonical": "東西",
+    "typeKey": "direction",
+    "display": "東西"
+  },
+  {
+    "canonical": "二萬八千里",
+    "typeKey": "quantity",
+    "display": "二萬八千里"
+  },
+  {
+    "canonical": "南北",
+    "typeKey": "direction",
+    "display": "南北"
+  },
+  {
+    "canonical": "二萬六千里",
+    "typeKey": "quantity",
+    "display": "二萬六千里"
+  },
+  {
+    "canonical": "水之山",
+    "typeKey": "mountain",
+    "display": "水之山"
+  },
+  {
+    "canonical": "八千里",
+    "typeKey": "quantity",
+    "display": "八千里"
+  },
+  {
+    "canonical": "受水",
+    "typeKey": "water",
+    "display": "受水"
+  },
+  {
+    "canonical": "銅之山",
+    "typeKey": "mountain",
+    "display": "銅之山"
+  },
+  {
+    "canonical": "鐵之山",
+    "typeKey": "mountain",
+    "display": "鐵之山"
+  },
+  {
+    "canonical": "是謂國",
+    "typeKey": "polity",
+    "display": "是謂國"
+  },
+  {
+    "canonical": "六合",
+    "typeKey": "concept",
+    "display": "六合"
+  },
+  {
+    "canonical": "結匈國",
+    "typeKey": "polity",
+    "display": "結匈國"
+  },
+  {
+    "canonical": "羽民國",
+    "typeKey": "polity",
+    "display": "羽民國"
+  },
+  {
+    "canonical": "有神人",
+    "typeKey": "deity",
+    "display": "有神人"
+  },
+  {
+    "canonical": "此野",
+    "typeKey": "mountain",
+    "display": "此野"
+  },
+  {
+    "canonical": "十六人",
+    "typeKey": "quantity",
+    "display": "十六人"
+  },
+  {
+    "canonical": "讙頭國",
+    "typeKey": "polity",
+    "display": "讙頭國"
+  },
+  {
+    "canonical": "或曰讙朱國",
+    "typeKey": "polity",
+    "display": "或曰讙朱國"
+  },
+  {
+    "canonical": "厭火國",
+    "typeKey": "polity",
+    "display": "厭火國"
+  },
+  {
+    "canonical": "三苗國",
+    "typeKey": "polity",
+    "display": "三苗國"
+  },
+  {
+    "canonical": "一曰三毛國",
+    "typeKey": "polity",
+    "display": "一曰三毛國"
+  },
+  {
+    "canonical": "臷國",
+    "typeKey": "polity",
+    "display": "臷國"
+  },
+  {
+    "canonical": "一曰臷國",
+    "typeKey": "polity",
+    "display": "一曰臷國"
+  },
+  {
+    "canonical": "貫匈國",
+    "typeKey": "polity",
+    "display": "貫匈國"
+  },
+  {
+    "canonical": "一曰在臷國",
+    "typeKey": "polity",
+    "display": "一曰在臷國"
+  },
+  {
+    "canonical": "交脛國",
+    "typeKey": "polity",
+    "display": "交脛國"
+  },
+  {
+    "canonical": "一曰在穿匈國",
+    "typeKey": "polity",
+    "display": "一曰在穿匈國"
+  },
+  {
+    "canonical": "反舌國",
+    "typeKey": "polity",
+    "display": "反舌國"
+  },
+  {
+    "canonical": "一日支舌國",
+    "typeKey": "polity",
+    "display": "一日支舌國"
+  },
+  {
+    "canonical": "羿",
+    "typeKey": "person",
+    "display": "羿"
+  },
+  {
+    "canonical": "壽華之野",
+    "typeKey": "mountain",
+    "display": "壽華之野"
+  },
+  {
+    "canonical": "三首國",
+    "typeKey": "polity",
+    "display": "三首國"
+  },
+  {
+    "canonical": "周饒國",
+    "typeKey": "polity",
+    "display": "周饒國"
+  },
+  {
+    "canonical": "一曰焦僥國",
+    "typeKey": "polity",
+    "display": "一曰焦僥國"
+  },
+  {
+    "canonical": "長臂國",
+    "typeKey": "polity",
+    "display": "長臂國"
+  },
+  {
+    "canonical": "狄山",
+    "typeKey": "mountain",
+    "display": "狄山"
+  },
+  {
+    "canonical": "帝堯",
+    "typeKey": "person",
+    "display": "帝堯"
+  },
+  {
+    "canonical": "帝嚳",
+    "typeKey": "person",
+    "display": "帝嚳"
+  },
+  {
+    "canonical": "熊",
+    "typeKey": "bird_beast",
+    "display": "熊"
+  },
+  {
+    "canonical": "湯山",
+    "typeKey": "mountain",
+    "display": "湯山"
+  },
+  {
+    "canonical": "祝融",
+    "typeKey": "person",
+    "display": "祝融"
+  },
+  {
+    "canonical": "蒙鳥在結匈國",
+    "typeKey": "polity",
+    "display": "蒙鳥在結匈國"
+  },
+  {
+    "canonical": "大運山",
+    "typeKey": "mountain",
+    "display": "大運山"
+  },
+  {
+    "canonical": "三百仞",
+    "typeKey": "quantity",
+    "display": "三百仞"
+  },
+  {
+    "canonical": "大樂之野",
+    "typeKey": "mountain",
+    "display": "大樂之野"
+  },
+  {
+    "canonical": "大遺之野",
+    "typeKey": "mountain",
+    "display": "大遺之野"
+  },
+  {
+    "canonical": "三身國",
+    "typeKey": "polity",
+    "display": "三身國"
+  },
+  {
+    "canonical": "一臂國",
+    "typeKey": "polity",
+    "display": "一臂國"
+  },
+  {
+    "canonical": "奇肱之國",
+    "typeKey": "polity",
+    "display": "奇肱之國"
+  },
+  {
+    "canonical": "刑天",
+    "typeKey": "person",
+    "display": "刑天"
+  },
+  {
+    "canonical": "所經國",
+    "typeKey": "polity",
+    "display": "所經國"
+  },
+  {
+    "canonical": "丈夫國",
+    "typeKey": "polity",
+    "display": "丈夫國"
+  },
+  {
+    "canonical": "女丑",
+    "typeKey": "person",
+    "display": "女丑"
+  },
+  {
+    "canonical": "巫咸國",
+    "typeKey": "polity",
+    "display": "巫咸國"
+  },
+  {
+    "canonical": "女子國",
+    "typeKey": "polity",
+    "display": "女子國"
+  },
+  {
+    "canonical": "軒轅之國",
+    "typeKey": "polity",
+    "display": "軒轅之國"
+  },
+  {
+    "canonical": "在女子國",
+    "typeKey": "polity",
+    "display": "在女子國"
+  },
+  {
+    "canonical": "窮山",
+    "typeKey": "mountain",
+    "display": "窮山"
+  },
+  {
+    "canonical": "在軒轅國",
+    "typeKey": "polity",
+    "display": "在軒轅國"
+  },
+  {
+    "canonical": "其丘",
+    "typeKey": "mountain",
+    "display": "其丘"
+  },
+  {
+    "canonical": "諸夭之野",
+    "typeKey": "mountain",
+    "display": "諸夭之野"
+  },
+  {
+    "canonical": "九野",
+    "typeKey": "concept",
+    "display": "九野"
+  },
+  {
+    "canonical": "白民之國",
+    "typeKey": "polity",
+    "display": "白民之國"
+  },
+  {
+    "canonical": "肅慎之國",
+    "typeKey": "polity",
+    "display": "肅慎之國"
+  },
+  {
+    "canonical": "白民",
+    "typeKey": "person",
+    "display": "白民"
+  },
+  {
+    "canonical": "雒棠",
+    "typeKey": "creature",
+    "display": "雒棠"
+  },
+  {
+    "canonical": "長股之國",
+    "typeKey": "polity",
+    "display": "長股之國"
+  },
+  {
+    "canonical": "無啓之國",
+    "typeKey": "polity",
+    "display": "無啓之國"
+  },
+  {
+    "canonical": "鍾山之神",
+    "typeKey": "deity",
+    "display": "鍾山之神"
+  },
+  {
+    "canonical": "燭陰",
+    "typeKey": "creature",
+    "display": "燭陰"
+  },
+  {
+    "canonical": "一目國",
+    "typeKey": "polity",
+    "display": "一目國"
+  },
+  {
+    "canonical": "柔利國",
+    "typeKey": "polity",
+    "display": "柔利國"
+  },
+  {
+    "canonical": "一云留利之國",
+    "typeKey": "polity",
+    "display": "一云留利之國"
+  },
+  {
+    "canonical": "共工",
+    "typeKey": "person",
+    "display": "共工"
+  },
+  {
+    "canonical": "之臣曰相柳氏",
+    "typeKey": "polity",
+    "display": "之臣曰相柳氏"
+  },
+  {
+    "canonical": "厥為澤",
+    "typeKey": "water",
+    "display": "厥為澤"
+  },
+  {
+    "canonical": "三仞",
+    "typeKey": "quantity",
+    "display": "三仞"
+  },
+  {
+    "canonical": "深目國",
+    "typeKey": "polity",
+    "display": "深目國"
+  },
+  {
+    "canonical": "無腸之國",
+    "typeKey": "polity",
+    "display": "無腸之國"
+  },
+  {
+    "canonical": "聶耳之國",
+    "typeKey": "polity",
+    "display": "聶耳之國"
+  },
+  {
+    "canonical": "在無腸國",
+    "typeKey": "polity",
+    "display": "在無腸國"
+  },
+  {
+    "canonical": "及水",
+    "typeKey": "water",
+    "display": "及水"
+  },
+  {
+    "canonical": "北飲大澤",
+    "typeKey": "water",
+    "display": "北飲大澤"
+  },
+  {
+    "canonical": "夸父國",
+    "typeKey": "polity",
+    "display": "夸父國"
+  },
+  {
+    "canonical": "拘癭之國",
+    "typeKey": "polity",
+    "display": "拘癭之國"
+  },
+  {
+    "canonical": "一曰利癭之國",
+    "typeKey": "polity",
+    "display": "一曰利癭之國"
+  },
+  {
+    "canonical": "跂踵國",
+    "typeKey": "polity",
+    "display": "跂踵國"
+  },
+  {
+    "canonical": "歐絲之野",
+    "typeKey": "mountain",
+    "display": "歐絲之野"
+  },
+  {
+    "canonical": "務隅之山",
+    "typeKey": "mountain",
+    "display": "務隅之山"
+  },
+  {
+    "canonical": "帝顓頊",
+    "typeKey": "person",
+    "display": "帝顓頊"
+  },
+  {
+    "canonical": "平丘",
+    "typeKey": "mountain",
+    "display": "平丘"
+  },
+  {
+    "canonical": "平丘",
+    "typeKey": "creature",
+    "display": "平丘"
+  },
+  {
+    "canonical": "騊駼",
+    "typeKey": "creature",
+    "display": "騊駼"
+  },
+  {
+    "canonical": "蛩蛩",
+    "typeKey": "creature",
+    "display": "蛩蛩"
+  },
+  {
+    "canonical": "羅羅",
+    "typeKey": "creature",
+    "display": "羅羅"
+  },
+  {
+    "canonical": "𨲠丘",
+    "typeKey": "mountain",
+    "display": "𨲠丘"
+  },
+  {
+    "canonical": "嗟丘",
+    "typeKey": "mountain",
+    "display": "嗟丘"
+  },
+  {
+    "canonical": "大人國",
+    "typeKey": "polity",
+    "display": "大人國"
+  },
+  {
+    "canonical": "君子國",
+    "typeKey": "polity",
+    "display": "君子國"
+  },
+  {
+    "canonical": "一曰在君子國",
+    "typeKey": "polity",
+    "display": "一曰在君子國"
+  },
+  {
+    "canonical": "是為水",
+    "typeKey": "water",
+    "display": "是為水"
+  },
+  {
+    "canonical": "青丘國",
+    "typeKey": "polity",
+    "display": "青丘國"
+  },
+  {
+    "canonical": "九千八百步",
+    "typeKey": "quantity",
+    "display": "九千八百步"
+  },
+  {
+    "canonical": "十萬九千八百步",
+    "typeKey": "quantity",
+    "display": "十萬九千八百步"
+  },
+  {
+    "canonical": "黑齒國",
+    "typeKey": "polity",
+    "display": "黑齒國"
+  },
+  {
+    "canonical": "黑齒",
+    "typeKey": "person",
+    "display": "黑齒"
+  },
+  {
+    "canonical": "雨師妾國",
+    "typeKey": "polity",
+    "display": "雨師妾國"
+  },
+  {
+    "canonical": "青蛇",
+    "typeKey": "bird_beast",
+    "display": "青蛇"
+  },
+  {
+    "canonical": "赤蛇",
+    "typeKey": "bird_beast",
+    "display": "赤蛇"
+  },
+  {
+    "canonical": "玄股之國",
+    "typeKey": "polity",
+    "display": "玄股之國"
+  },
+  {
+    "canonical": "曰在雨師妾國",
+    "typeKey": "polity",
+    "display": "曰在雨師妾國"
+  },
+  {
+    "canonical": "毛民之國",
+    "typeKey": "polity",
+    "display": "毛民之國"
+  },
+  {
+    "canonical": "勞民國",
+    "typeKey": "polity",
+    "display": "勞民國"
+  },
+  {
+    "canonical": "閩中山",
+    "typeKey": "mountain",
+    "display": "閩中山"
+  },
+  {
+    "canonical": "伯慮國",
+    "typeKey": "polity",
+    "display": "伯慮國"
+  },
+  {
+    "canonical": "離耳國",
+    "typeKey": "polity",
+    "display": "離耳國"
+  },
+  {
+    "canonical": "雕題國",
+    "typeKey": "polity",
+    "display": "雕題國"
+  },
+  {
+    "canonical": "北朐國",
+    "typeKey": "polity",
+    "display": "北朐國"
+  },
+  {
+    "canonical": "鬱水",
+    "typeKey": "water",
+    "display": "鬱水"
+  },
+  {
+    "canonical": "南海",
+    "typeKey": "water",
+    "display": "南海"
+  },
+  {
+    "canonical": "梟陽國",
+    "typeKey": "polity",
+    "display": "梟陽國"
+  },
+  {
+    "canonical": "蒼梧之山",
+    "typeKey": "mountain",
+    "display": "蒼梧之山"
+  },
+  {
+    "canonical": "帝舜",
+    "typeKey": "person",
+    "display": "帝舜"
+  },
+  {
+    "canonical": "建木",
+    "typeKey": "creature",
+    "display": "建木"
+  },
+  {
+    "canonical": "氐人國",
+    "typeKey": "polity",
+    "display": "氐人國"
+  },
+  {
+    "canonical": "大澤",
+    "typeKey": "water",
+    "display": "大澤"
+  },
+  {
+    "canonical": "鴈門山",
+    "typeKey": "mountain",
+    "display": "鴈門山"
+  },
+  {
+    "canonical": "山水",
+    "typeKey": "water",
+    "display": "山水"
+  },
+  {
+    "canonical": "在氐國",
+    "typeKey": "polity",
+    "display": "在氐國"
+  },
+  {
+    "canonical": "流黃酆氏",
+    "typeKey": "polity",
+    "display": "流黃酆氏"
+  },
+  {
+    "canonical": "中有山",
+    "typeKey": "mountain",
+    "display": "中有山"
+  },
+  {
+    "canonical": "月支之國",
+    "typeKey": "polity",
+    "display": "月支之國"
+  },
+  {
+    "canonical": "昆侖山",
+    "typeKey": "mountain",
+    "display": "昆侖山"
+  },
+  {
+    "canonical": "萬仞",
+    "typeKey": "quantity",
+    "display": "萬仞"
+  },
+  {
+    "canonical": "五尋",
+    "typeKey": "quantity",
+    "display": "五尋"
+  },
+  {
+    "canonical": "青水",
+    "typeKey": "water",
+    "display": "青水"
+  },
+  {
+    "canonical": "昆侖南淵",
+    "typeKey": "water",
+    "display": "昆侖南淵"
+  },
+  {
+    "canonical": "蛇巫之山",
+    "typeKey": "mountain",
+    "display": "蛇巫之山"
+  },
+  {
+    "canonical": "開題之國",
+    "typeKey": "polity",
+    "display": "開題之國"
+  },
+  {
+    "canonical": "列人之國",
+    "typeKey": "polity",
+    "display": "列人之國"
+  },
+  {
+    "canonical": "其東有犬封國",
+    "typeKey": "polity",
+    "display": "其東有犬封國"
+  },
+  {
+    "canonical": "犬封國",
+    "typeKey": "polity",
+    "display": "犬封國"
+  },
+  {
+    "canonical": "曰犬戎國",
+    "typeKey": "polity",
+    "display": "曰犬戎國"
+  },
+  {
+    "canonical": "吉量",
+    "typeKey": "creature",
+    "display": "吉量"
+  },
+  {
+    "canonical": "鬼國",
+    "typeKey": "polity",
+    "display": "鬼國"
+  },
+  {
+    "canonical": "林氏",
+    "typeKey": "polity",
+    "display": "林氏"
+  },
+  {
+    "canonical": "騶吾",
+    "typeKey": "creature",
+    "display": "騶吾"
+  },
+  {
+    "canonical": "從極之淵",
+    "typeKey": "water",
+    "display": "從極之淵"
+  },
+  {
+    "canonical": "一曰忠極之淵",
+    "typeKey": "water",
+    "display": "一曰忠極之淵"
+  },
+  {
+    "canonical": "陽汙之山",
+    "typeKey": "mountain",
+    "display": "陽汙之山"
+  },
+  {
+    "canonical": "淩門之山",
+    "typeKey": "mountain",
+    "display": "淩門之山"
+  },
+  {
+    "canonical": "舜妻登比氏",
+    "typeKey": "polity",
+    "display": "舜妻登比氏"
+  },
+  {
+    "canonical": "處河大澤",
+    "typeKey": "water",
+    "display": "處河大澤"
+  },
+  {
+    "canonical": "一曰登北氏",
+    "typeKey": "polity",
+    "display": "一曰登北氏"
+  },
+  {
+    "canonical": "貊國",
+    "typeKey": "polity",
+    "display": "貊國"
+  },
+  {
+    "canonical": "孟鳥在貊國",
+    "typeKey": "polity",
+    "display": "孟鳥在貊國"
+  },
+  {
+    "canonical": "蓋國",
+    "typeKey": "polity",
+    "display": "蓋國"
+  },
+  {
+    "canonical": "會稽山",
+    "typeKey": "mountain",
+    "display": "會稽山"
+  },
+  {
+    "canonical": "汶山",
+    "typeKey": "mountain",
+    "display": "汶山"
+  },
+  {
+    "canonical": "淮水",
+    "typeKey": "water",
+    "display": "淮水"
+  },
+  {
+    "canonical": "餘山",
+    "typeKey": "mountain",
+    "display": "餘山"
+  },
+  {
+    "canonical": "湘水",
+    "typeKey": "water",
+    "display": "湘水"
+  },
+  {
+    "canonical": "一曰東南西澤",
+    "typeKey": "water",
+    "display": "一曰東南西澤"
+  },
+  {
+    "canonical": "鮒魚之山",
+    "typeKey": "mountain",
+    "display": "鮒魚之山"
+  },
+  {
+    "canonical": "溫水",
+    "typeKey": "water",
+    "display": "溫水"
+  },
+  {
+    "canonical": "崆峒山",
+    "typeKey": "mountain",
+    "display": "崆峒山"
+  },
+  {
+    "canonical": "潁水",
+    "typeKey": "water",
+    "display": "潁水"
+  },
+  {
+    "canonical": "少室山在雍氏",
+    "typeKey": "polity",
+    "display": "少室山在雍氏"
+  },
+  {
+    "canonical": "一曰緱氏",
+    "typeKey": "polity",
+    "display": "一曰緱氏"
+  },
+  {
+    "canonical": "汝水",
+    "typeKey": "water",
+    "display": "汝水"
+  },
+  {
+    "canonical": "天息山",
+    "typeKey": "mountain",
+    "display": "天息山"
+  },
+  {
+    "canonical": "白水",
+    "typeKey": "water",
+    "display": "白水"
+  },
+  {
+    "canonical": "沅水山",
+    "typeKey": "mountain",
+    "display": "沅水山"
+  },
+  {
+    "canonical": "贑水",
+    "typeKey": "water",
+    "display": "贑水"
+  },
+  {
+    "canonical": "彭澤",
+    "typeKey": "water",
+    "display": "彭澤"
+  },
+  {
+    "canonical": "西泗水",
+    "typeKey": "water",
+    "display": "西泗水"
+  },
+  {
+    "canonical": "肆水",
+    "typeKey": "water",
+    "display": "肆水"
+  },
+  {
+    "canonical": "潢水",
+    "typeKey": "water",
+    "display": "潢水"
+  },
+  {
+    "canonical": "東南注肆水",
+    "typeKey": "water",
+    "display": "東南注肆水"
+  },
+  {
+    "canonical": "洛西山",
+    "typeKey": "mountain",
+    "display": "洛西山"
+  },
+  {
+    "canonical": "入皮氏",
+    "typeKey": "polity",
+    "display": "入皮氏"
+  },
+  {
+    "canonical": "絕鉅鹿澤",
+    "typeKey": "water",
+    "display": "絕鉅鹿澤"
+  },
+  {
+    "canonical": "潦水",
+    "typeKey": "water",
+    "display": "潦水"
+  },
+  {
+    "canonical": "虖沲水",
+    "typeKey": "water",
+    "display": "虖沲水"
+  },
+  {
+    "canonical": "姑射國",
+    "typeKey": "polity",
+    "display": "姑射國"
+  },
+  {
+    "canonical": "蓬萊山",
+    "typeKey": "mountain",
+    "display": "蓬萊山"
+  },
+  {
+    "canonical": "少昊之國",
+    "typeKey": "polity",
+    "display": "少昊之國"
+  },
+  {
+    "canonical": "甘山",
+    "typeKey": "mountain",
+    "display": "甘山"
+  },
+  {
+    "canonical": "生甘淵",
+    "typeKey": "water",
+    "display": "生甘淵"
+  },
+  {
+    "canonical": "有羲和之國",
+    "typeKey": "polity",
+    "display": "有羲和之國"
+  },
+  {
+    "canonical": "羲和",
+    "typeKey": "creature",
+    "display": "羲和"
+  },
+  {
+    "canonical": "方浴日于甘淵",
+    "typeKey": "water",
+    "display": "方浴日于甘淵"
+  },
+  {
+    "canonical": "羲和",
+    "typeKey": "person",
+    "display": "羲和"
+  },
+  {
+    "canonical": "帝俊",
+    "typeKey": "person",
+    "display": "帝俊"
+  },
+  {
+    "canonical": "大荒",
+    "typeKey": "concept",
+    "display": "大荒"
+  },
+  {
+    "canonical": "大言",
+    "typeKey": "creature",
+    "display": "大言"
+  },
+  {
+    "canonical": "波谷山",
+    "typeKey": "mountain",
+    "display": "波谷山"
+  },
+  {
+    "canonical": "有大人之國",
+    "typeKey": "polity",
+    "display": "有大人之國"
+  },
+  {
+    "canonical": "大人之堂",
+    "typeKey": "creature",
+    "display": "大人之堂"
+  },
+  {
+    "canonical": "有小人國",
+    "typeKey": "polity",
+    "display": "有小人國"
+  },
+  {
+    "canonical": "犁𩵀之尸",
+    "typeKey": "creature",
+    "display": "犁𩵀之尸"
+  },
+  {
+    "canonical": "潏山",
+    "typeKey": "mountain",
+    "display": "潏山"
+  },
+  {
+    "canonical": "有蒍國",
+    "typeKey": "polity",
+    "display": "有蒍國"
+  },
+  {
+    "canonical": "合虛",
+    "typeKey": "creature",
+    "display": "合虛"
+  },
+  {
+    "canonical": "有中容之國",
+    "typeKey": "polity",
+    "display": "有中容之國"
+  },
+  {
+    "canonical": "中容",
+    "typeKey": "person",
+    "display": "中容"
+  },
+  {
+    "canonical": "東口之山",
+    "typeKey": "mountain",
+    "display": "東口之山"
+  },
+  {
+    "canonical": "有君子之國",
+    "typeKey": "polity",
+    "display": "有君子之國"
+  },
+  {
+    "canonical": "有司幽之國",
+    "typeKey": "polity",
+    "display": "有司幽之國"
+  },
+  {
+    "canonical": "晏龍",
+    "typeKey": "person",
+    "display": "晏龍"
+  },
+  {
+    "canonical": "思士",
+    "typeKey": "person",
+    "display": "思士"
+  },
+  {
+    "canonical": "思女",
+    "typeKey": "person",
+    "display": "思女"
+  },
+  {
+    "canonical": "大阿之山",
+    "typeKey": "mountain",
+    "display": "大阿之山"
+  },
+  {
+    "canonical": "明星",
+    "typeKey": "creature",
+    "display": "明星"
+  },
+  {
+    "canonical": "有白民之國",
+    "typeKey": "polity",
+    "display": "有白民之國"
+  },
+  {
+    "canonical": "帝俊生帝鴻",
+    "typeKey": "deity",
+    "display": "帝俊生帝鴻"
+  },
+  {
+    "canonical": "帝鴻",
+    "typeKey": "person",
+    "display": "帝鴻"
+  },
+  {
+    "canonical": "白民銷姓",
+    "typeKey": "polity",
+    "display": "白民銷姓"
+  },
+  {
+    "canonical": "有青丘之國",
+    "typeKey": "polity",
+    "display": "有青丘之國"
+  },
+  {
+    "canonical": "是維嬴土之國",
+    "typeKey": "polity",
+    "display": "是維嬴土之國"
+  },
+  {
+    "canonical": "有黑齒之國",
+    "typeKey": "polity",
+    "display": "有黑齒之國"
+  },
+  {
+    "canonical": "姜姓",
+    "typeKey": "person",
+    "display": "姜姓"
+  },
+  {
+    "canonical": "有夏州之國",
+    "typeKey": "polity",
+    "display": "有夏州之國"
+  },
+  {
+    "canonical": "有蓋余之國",
+    "typeKey": "polity",
+    "display": "有蓋余之國"
+  },
+  {
+    "canonical": "天吳",
+    "typeKey": "creature",
+    "display": "天吳"
+  },
+  {
+    "canonical": "鞠陵于天",
+    "typeKey": "creature",
+    "display": "鞠陵于天"
+  },
+  {
+    "canonical": "禺䝞",
+    "typeKey": "creature",
+    "display": "禺䝞"
+  },
+  {
+    "canonical": "海神",
+    "typeKey": "identity",
+    "display": "海神"
+  },
+  {
+    "canonical": "招搖山",
+    "typeKey": "mountain",
+    "display": "招搖山"
+  },
+  {
+    "canonical": "融水",
+    "typeKey": "water",
+    "display": "融水"
+  },
+  {
+    "canonical": "有困民國",
+    "typeKey": "polity",
+    "display": "有困民國"
+  },
+  {
+    "canonical": "勾姓",
+    "typeKey": "person",
+    "display": "勾姓"
+  },
+  {
+    "canonical": "王亥",
+    "typeKey": "person",
+    "display": "王亥"
+  },
+  {
+    "canonical": "搖民",
+    "typeKey": "creature",
+    "display": "搖民"
+  },
+  {
+    "canonical": "兩人",
+    "typeKey": "quantity",
+    "display": "兩人"
+  },
+  {
+    "canonical": "女丑",
+    "typeKey": "creature",
+    "display": "女丑"
+  },
+  {
+    "canonical": "孽搖頵羝",
+    "typeKey": "creature",
+    "display": "孽搖頵羝"
+  },
+  {
+    "canonical": "奢比尸",
+    "typeKey": "creature",
+    "display": "奢比尸"
+  },
+  {
+    "canonical": "惟帝俊",
+    "typeKey": "deity",
+    "display": "惟帝俊"
+  },
+  {
+    "canonical": "有壎民之國",
+    "typeKey": "polity",
+    "display": "有壎民之國"
+  },
+  {
+    "canonical": "綦山",
+    "typeKey": "mountain",
+    "display": "綦山"
+  },
+  {
+    "canonical": "搖山",
+    "typeKey": "mountain",
+    "display": "搖山"
+  },
+  {
+    "canonical": "䰝山",
+    "typeKey": "mountain",
+    "display": "䰝山"
+  },
+  {
+    "canonical": "門戶山",
+    "typeKey": "mountain",
+    "display": "門戶山"
+  },
+  {
+    "canonical": "盛山",
+    "typeKey": "mountain",
+    "display": "盛山"
+  },
+  {
+    "canonical": "待山",
+    "typeKey": "mountain",
+    "display": "待山"
+  },
+  {
+    "canonical": "壑明俊疾",
+    "typeKey": "creature",
+    "display": "壑明俊疾"
+  },
+  {
+    "canonical": "有女和月母之國",
+    "typeKey": "polity",
+    "display": "有女和月母之國"
+  },
+  {
+    "canonical": "𪂧",
+    "typeKey": "creature",
+    "display": "𪂧"
+  },
+  {
+    "canonical": "凶犁土丘",
+    "typeKey": "creature",
+    "display": "凶犁土丘"
+  },
+  {
+    "canonical": "蚩尤",
+    "typeKey": "person",
+    "display": "蚩尤"
+  },
+  {
+    "canonical": "流波山",
+    "typeKey": "mountain",
+    "display": "流波山"
+  },
+  {
+    "canonical": "七千里",
+    "typeKey": "quantity",
+    "display": "七千里"
+  },
+  {
+    "canonical": "夔",
+    "typeKey": "creature",
+    "display": "夔"
+  },
+  {
+    "canonical": "䟣踢",
+    "typeKey": "creature",
+    "display": "䟣踢"
+  },
+  {
+    "canonical": "雙雙",
+    "typeKey": "creature",
+    "display": "雙雙"
+  },
+  {
+    "canonical": "阿山",
+    "typeKey": "mountain",
+    "display": "阿山"
+  },
+  {
+    "canonical": "汜天之山",
+    "typeKey": "mountain",
+    "display": "汜天之山"
+  },
+  {
+    "canonical": "蒼梧之野",
+    "typeKey": "mountain",
+    "display": "蒼梧之野"
+  },
+  {
+    "canonical": "叔均",
+    "typeKey": "person",
+    "display": "叔均"
+  },
+  {
+    "canonical": "榮山",
+    "typeKey": "mountain",
+    "display": "榮山"
+  },
+  {
+    "canonical": "榮水",
+    "typeKey": "water",
+    "display": "榮水"
+  },
+  {
+    "canonical": "玄蛇",
+    "typeKey": "bird_beast",
+    "display": "玄蛇"
+  },
+  {
+    "canonical": "巫山",
+    "typeKey": "mountain",
+    "display": "巫山"
+  },
+  {
+    "canonical": "黃鳥",
+    "typeKey": "bird_beast",
+    "display": "黃鳥"
+  },
+  {
+    "canonical": "不庭之山",
+    "typeKey": "mountain",
+    "display": "不庭之山"
+  },
+  {
+    "canonical": "生此三身之國",
+    "typeKey": "polity",
+    "display": "生此三身之國"
+  },
+  {
+    "canonical": "姚姓",
+    "typeKey": "person",
+    "display": "姚姓"
+  },
+  {
+    "canonical": "有淵",
+    "typeKey": "water",
+    "display": "有淵"
+  },
+  {
+    "canonical": "北屬黑水",
+    "typeKey": "water",
+    "display": "北屬黑水"
+  },
+  {
+    "canonical": "旁名曰少和之淵",
+    "typeKey": "water",
+    "display": "旁名曰少和之淵"
+  },
+  {
+    "canonical": "南旁名曰從淵",
+    "typeKey": "water",
+    "display": "南旁名曰從淵"
+  },
+  {
+    "canonical": "有季禺之國",
+    "typeKey": "polity",
+    "display": "有季禺之國"
+  },
+  {
+    "canonical": "有羽民之國",
+    "typeKey": "polity",
+    "display": "有羽民之國"
+  },
+  {
+    "canonical": "有卵民之國",
+    "typeKey": "polity",
+    "display": "有卵民之國"
+  },
+  {
+    "canonical": "不姜之山",
+    "typeKey": "mountain",
+    "display": "不姜之山"
+  },
+  {
+    "canonical": "賈山",
+    "typeKey": "mountain",
+    "display": "賈山"
+  },
+  {
+    "canonical": "汔水",
+    "typeKey": "water",
+    "display": "汔水"
+  },
+  {
+    "canonical": "言山",
+    "typeKey": "mountain",
+    "display": "言山"
+  },
+  {
+    "canonical": "登備之山",
+    "typeKey": "mountain",
+    "display": "登備之山"
+  },
+  {
+    "canonical": "恝恝之山",
+    "typeKey": "mountain",
+    "display": "恝恝之山"
+  },
+  {
+    "canonical": "蒲山",
+    "typeKey": "mountain",
+    "display": "蒲山"
+  },
+  {
+    "canonical": "隗山",
+    "typeKey": "mountain",
+    "display": "隗山"
+  },
+  {
+    "canonical": "南有山",
+    "typeKey": "mountain",
+    "display": "南有山"
+  },
+  {
+    "canonical": "漂水",
+    "typeKey": "water",
+    "display": "漂水"
+  },
+  {
+    "canonical": "尾山",
+    "typeKey": "mountain",
+    "display": "尾山"
+  },
+  {
+    "canonical": "有盈民之國",
+    "typeKey": "polity",
+    "display": "有盈民之國"
+  },
+  {
+    "canonical": "於姓",
+    "typeKey": "polity",
+    "display": "於姓"
+  },
+  {
+    "canonical": "有不死之國",
+    "typeKey": "polity",
+    "display": "有不死之國"
+  },
+  {
+    "canonical": "阿姓",
+    "typeKey": "polity",
+    "display": "阿姓"
+  },
+  {
+    "canonical": "去痓",
+    "typeKey": "creature",
+    "display": "去痓"
+  },
+  {
+    "canonical": "因因乎",
+    "typeKey": "creature",
+    "display": "因因乎"
+  },
+  {
+    "canonical": "襄山",
+    "typeKey": "mountain",
+    "display": "襄山"
+  },
+  {
+    "canonical": "重陰之山",
+    "typeKey": "mountain",
+    "display": "重陰之山"
+  },
+  {
+    "canonical": "故曰季釐之國",
+    "typeKey": "polity",
+    "display": "故曰季釐之國"
+  },
+  {
+    "canonical": "有緡淵",
+    "typeKey": "water",
+    "display": "有緡淵"
+  },
+  {
+    "canonical": "倍伐降處緡淵",
+    "typeKey": "water",
+    "display": "倍伐降處緡淵"
+  },
+  {
+    "canonical": "俊壇",
+    "typeKey": "creature",
+    "display": "俊壇"
+  },
+  {
+    "canonical": "有臷民之國",
+    "typeKey": "polity",
+    "display": "有臷民之國"
+  },
+  {
+    "canonical": "巫臷民盼姓",
+    "typeKey": "polity",
+    "display": "巫臷民盼姓"
+  },
+  {
+    "canonical": "融天",
+    "typeKey": "creature",
+    "display": "融天"
+  },
+  {
+    "canonical": "蜮山",
+    "typeKey": "mountain",
+    "display": "蜮山"
+  },
+  {
+    "canonical": "有蜮民之國",
+    "typeKey": "polity",
+    "display": "有蜮民之國"
+  },
+  {
+    "canonical": "桑姓",
+    "typeKey": "polity",
+    "display": "桑姓"
+  },
+  {
+    "canonical": "蜮人",
+    "typeKey": "creature",
+    "display": "蜮人"
+  },
+  {
+    "canonical": "宋山",
+    "typeKey": "mountain",
+    "display": "宋山"
+  },
+  {
+    "canonical": "育蛇",
+    "typeKey": "creature",
+    "display": "育蛇"
+  },
+  {
+    "canonical": "楓木",
+    "typeKey": "creature",
+    "display": "楓木"
+  },
+  {
+    "canonical": "祖狀之尸",
+    "typeKey": "creature",
+    "display": "祖狀之尸"
+  },
+  {
+    "canonical": "名曰焦僥之國",
+    "typeKey": "polity",
+    "display": "名曰焦僥之國"
+  },
+  {
+    "canonical": "幾姓",
+    "typeKey": "polity",
+    "display": "幾姓"
+  },
+  {
+    "canonical": "雲雨之山",
+    "typeKey": "mountain",
+    "display": "雲雨之山"
+  },
+  {
+    "canonical": "欒",
+    "typeKey": "creature",
+    "display": "欒"
+  },
+  {
+    "canonical": "有鼬姓",
+    "typeKey": "polity",
+    "display": "有鼬姓"
+  },
+  {
+    "canonical": "苕山",
+    "typeKey": "mountain",
+    "display": "苕山"
+  },
+  {
+    "canonical": "宗山",
+    "typeKey": "mountain",
+    "display": "宗山"
+  },
+  {
+    "canonical": "又有姓",
+    "typeKey": "polity",
+    "display": "又有姓"
+  },
+  {
+    "canonical": "壑山",
+    "typeKey": "mountain",
+    "display": "壑山"
+  },
+  {
+    "canonical": "陳州山",
+    "typeKey": "mountain",
+    "display": "陳州山"
+  },
+  {
+    "canonical": "東州山",
+    "typeKey": "mountain",
+    "display": "東州山"
+  },
+  {
+    "canonical": "又有白水",
+    "typeKey": "water",
+    "display": "又有白水"
+  },
+  {
+    "canonical": "而生白淵",
+    "typeKey": "water",
+    "display": "而生白淵"
+  },
+  {
+    "canonical": "張弘",
+    "typeKey": "creature",
+    "display": "張弘"
+  },
+  {
+    "canonical": "海中有張弘之國",
+    "typeKey": "polity",
+    "display": "海中有張弘之國"
+  },
+  {
+    "canonical": "驩頭",
+    "typeKey": "creature",
+    "display": "驩頭"
+  },
+  {
+    "canonical": "鯀",
+    "typeKey": "person",
+    "display": "鯀"
+  },
+  {
+    "canonical": "有驩頭之國",
+    "typeKey": "polity",
+    "display": "有驩頭之國"
+  },
+  {
+    "canonical": "岳山",
+    "typeKey": "mountain",
+    "display": "岳山"
+  },
+  {
+    "canonical": "天臺",
+    "typeKey": "creature",
+    "display": "天臺"
+  },
+  {
+    "canonical": "方浴日於甘淵",
+    "typeKey": "water",
+    "display": "方浴日於甘淵"
+  },
+  {
+    "canonical": "蓋猶之山",
+    "typeKey": "mountain",
+    "display": "蓋猶之山"
+  },
+  {
+    "canonical": "三騅",
+    "typeKey": "creature",
+    "display": "三騅"
+  },
+  {
+    "canonical": "菌人",
+    "typeKey": "creature",
+    "display": "菌人"
+  },
+  {
+    "canonical": "南類之山",
+    "typeKey": "mountain",
+    "display": "南類之山"
+  },
+  {
+    "canonical": "不周",
+    "typeKey": "creature",
+    "display": "不周"
+  },
+  {
+    "canonical": "曰寒暑之水",
+    "typeKey": "water",
+    "display": "曰寒暑之水"
+  },
+  {
+    "canonical": "濕山",
+    "typeKey": "mountain",
+    "display": "濕山"
+  },
+  {
+    "canonical": "幕山",
+    "typeKey": "mountain",
+    "display": "幕山"
+  },
+  {
+    "canonical": "有禹攻共工國",
+    "typeKey": "polity",
+    "display": "有禹攻共工國"
+  },
+  {
+    "canonical": "淑士",
+    "typeKey": "creature",
+    "display": "淑士"
+  },
+  {
+    "canonical": "十人",
+    "typeKey": "quantity",
+    "display": "十人"
+  },
+  {
+    "canonical": "女媧之腸",
+    "typeKey": "creature",
+    "display": "女媧之腸"
+  },
+  {
+    "canonical": "石夷",
+    "typeKey": "creature",
+    "display": "石夷"
+  },
+  {
+    "canonical": "狂鳥",
+    "typeKey": "creature",
+    "display": "狂鳥"
+  },
+  {
+    "canonical": "有長脛之國",
+    "typeKey": "polity",
+    "display": "有長脛之國"
+  },
+  {
+    "canonical": "有西周之國",
+    "typeKey": "polity",
+    "display": "有西周之國"
+  },
+  {
+    "canonical": "姬姓",
+    "typeKey": "person",
+    "display": "姬姓"
+  },
+  {
+    "canonical": "叔均",
+    "typeKey": "creature",
+    "display": "叔均"
+  },
+  {
+    "canonical": "有赤國",
+    "typeKey": "polity",
+    "display": "有赤國"
+  },
+  {
+    "canonical": "妻氏",
+    "typeKey": "polity",
+    "display": "妻氏"
+  },
+  {
+    "canonical": "雙山",
+    "typeKey": "mountain",
+    "display": "雙山"
+  },
+  {
+    "canonical": "方山",
+    "typeKey": "mountain",
+    "display": "方山"
+  },
+  {
+    "canonical": "柜格之松",
+    "typeKey": "creature",
+    "display": "柜格之松"
+  },
+  {
+    "canonical": "有天民之國",
+    "typeKey": "polity",
+    "display": "有天民之國"
+  },
+  {
+    "canonical": "有北狄之國",
+    "typeKey": "polity",
+    "display": "有北狄之國"
+  },
+  {
+    "canonical": "黄帝",
+    "typeKey": "person",
+    "display": "黄帝"
+  },
+  {
+    "canonical": "芒山",
+    "typeKey": "mountain",
+    "display": "芒山"
+  },
+  {
+    "canonical": "桂山",
+    "typeKey": "mountain",
+    "display": "桂山"
+  },
+  {
+    "canonical": "榣山",
+    "typeKey": "mountain",
+    "display": "榣山"
+  },
+  {
+    "canonical": "豐沮玉門",
+    "typeKey": "creature",
+    "display": "豐沮玉門"
+  },
+  {
+    "canonical": "王母之山",
+    "typeKey": "mountain",
+    "display": "王母之山"
+  },
+  {
+    "canonical": "海山",
+    "typeKey": "mountain",
+    "display": "海山"
+  },
+  {
+    "canonical": "有沃民之國",
+    "typeKey": "polity",
+    "display": "有沃民之國"
+  },
+  {
+    "canonical": "沃之野",
+    "typeKey": "mountain",
+    "display": "沃之野"
+  },
+  {
+    "canonical": "大鵹",
+    "typeKey": "creature",
+    "display": "大鵹"
+  },
+  {
+    "canonical": "青鳥",
+    "typeKey": "creature",
+    "display": "青鳥"
+  },
+  {
+    "canonical": "有三澤",
+    "typeKey": "water",
+    "display": "有三澤"
+  },
+  {
+    "canonical": "三淖",
+    "typeKey": "creature",
+    "display": "三淖"
+  },
+  {
+    "canonical": "女丑之尸",
+    "typeKey": "creature",
+    "display": "女丑之尸"
+  },
+  {
+    "canonical": "有女子之國",
+    "typeKey": "polity",
+    "display": "有女子之國"
+  },
+  {
+    "canonical": "桃山",
+    "typeKey": "mountain",
+    "display": "桃山"
+  },
+  {
+    "canonical": "䖟山",
+    "typeKey": "mountain",
+    "display": "䖟山"
+  },
+  {
+    "canonical": "土山",
+    "typeKey": "mountain",
+    "display": "土山"
+  },
+  {
+    "canonical": "有丈夫之國",
+    "typeKey": "polity",
+    "display": "有丈夫之國"
+  },
+  {
+    "canonical": "弇州之山",
+    "typeKey": "mountain",
+    "display": "弇州之山"
+  },
+  {
+    "canonical": "鳴鳥",
+    "typeKey": "creature",
+    "display": "鳴鳥"
+  },
+  {
+    "canonical": "有軒轅之國",
+    "typeKey": "polity",
+    "display": "有軒轅之國"
+  },
+  {
+    "canonical": "弇茲",
+    "typeKey": "creature",
+    "display": "弇茲"
+  },
+  {
+    "canonical": "日月山",
+    "typeKey": "creature",
+    "display": "日月山"
+  },
+  {
+    "canonical": "嘘",
+    "typeKey": "creature",
+    "display": "嘘"
+  },
+  {
+    "canonical": "天虞",
+    "typeKey": "creature",
+    "display": "天虞"
+  },
+  {
+    "canonical": "常羲",
+    "typeKey": "person",
+    "display": "常羲"
+  },
+  {
+    "canonical": "玄丹之山",
+    "typeKey": "mountain",
+    "display": "玄丹之山"
+  },
+  {
+    "canonical": "其所集者其國",
+    "typeKey": "polity",
+    "display": "其所集者其國"
+  },
+  {
+    "canonical": "鏖鏊鉅",
+    "typeKey": "creature",
+    "display": "鏖鏊鉅"
+  },
+  {
+    "canonical": "屏蓬",
+    "typeKey": "creature",
+    "display": "屏蓬"
+  },
+  {
+    "canonical": "金門之山",
+    "typeKey": "mountain",
+    "display": "金門之山"
+  },
+  {
+    "canonical": "黄姖之尸",
+    "typeKey": "creature",
+    "display": "黄姖之尸"
+  },
+  {
+    "canonical": "天犬",
+    "typeKey": "creature",
+    "display": "天犬"
+  },
+  {
+    "canonical": "大山",
+    "typeKey": "mountain",
+    "display": "大山"
+  },
+  {
+    "canonical": "崑崙之丘",
+    "typeKey": "creature",
+    "display": "崑崙之丘"
+  },
+  {
+    "canonical": "之淵",
+    "typeKey": "water",
+    "display": "之淵"
+  },
+  {
+    "canonical": "炎火之山",
+    "typeKey": "mountain",
+    "display": "炎火之山"
+  },
+  {
+    "canonical": "西王母",
+    "typeKey": "creature",
+    "display": "西王母"
+  },
+  {
+    "canonical": "常陽之山",
+    "typeKey": "creature",
+    "display": "常陽之山"
+  },
+  {
+    "canonical": "有寒荒之國",
+    "typeKey": "polity",
+    "display": "有寒荒之國"
+  },
+  {
+    "canonical": "有壽麻之國",
+    "typeKey": "polity",
+    "display": "有壽麻之國"
+  },
+  {
+    "canonical": "女虔",
+    "typeKey": "creature",
+    "display": "女虔"
+  },
+  {
+    "canonical": "夏耕之尸",
+    "typeKey": "creature",
+    "display": "夏耕之尸"
+  },
+  {
+    "canonical": "吴回",
+    "typeKey": "creature",
+    "display": "吴回"
+  },
+  {
+    "canonical": "有蓋山之國",
+    "typeKey": "polity",
+    "display": "有蓋山之國"
+  },
+  {
+    "canonical": "朱木",
+    "typeKey": "creature",
+    "display": "朱木"
+  },
+  {
+    "canonical": "大荒之山",
+    "typeKey": "creature",
+    "display": "大荒之山"
+  },
+  {
+    "canonical": "夏后開",
+    "typeKey": "creature",
+    "display": "夏后開"
+  },
+  {
+    "canonical": "二千仞",
+    "typeKey": "quantity",
+    "display": "二千仞"
+  },
+  {
+    "canonical": "有氐人之國",
+    "typeKey": "polity",
+    "display": "有氐人之國"
+  },
+  {
+    "canonical": "靈恝",
+    "typeKey": "creature",
+    "display": "靈恝"
+  },
+  {
+    "canonical": "魚婦",
+    "typeKey": "creature",
+    "display": "魚婦"
+  },
+  {
+    "canonical": "天乃大水",
+    "typeKey": "water",
+    "display": "天乃大水"
+  },
+  {
+    "canonical": "青鳥",
+    "typeKey": "bird_beast",
+    "display": "青鳥"
+  },
+  {
+    "canonical": "𪇆鳥",
+    "typeKey": "creature",
+    "display": "𪇆鳥"
+  },
+  {
+    "canonical": "大巫山",
+    "typeKey": "mountain",
+    "display": "大巫山"
+  },
+  {
+    "canonical": "金之山",
+    "typeKey": "mountain",
+    "display": "金之山"
+  },
+  {
+    "canonical": "常羊之山",
+    "typeKey": "mountain",
+    "display": "常羊之山"
+  },
+  {
+    "canonical": "附禺之山",
+    "typeKey": "mountain",
+    "display": "附禺之山"
+  },
+  {
+    "canonical": "丘南帝俊",
+    "typeKey": "deity",
+    "display": "丘南帝俊"
+  },
+  {
+    "canonical": "竹南有赤澤",
+    "typeKey": "water",
+    "display": "竹南有赤澤"
+  },
+  {
+    "canonical": "名曰封淵",
+    "typeKey": "water",
+    "display": "名曰封淵"
+  },
+  {
+    "canonical": "丘西有沈淵",
+    "typeKey": "water",
+    "display": "丘西有沈淵"
+  },
+  {
+    "canonical": "有胡不與之國",
+    "typeKey": "polity",
+    "display": "有胡不與之國"
+  },
+  {
+    "canonical": "烈姓",
+    "typeKey": "polity",
+    "display": "烈姓"
+  },
+  {
+    "canonical": "不咸",
+    "typeKey": "creature",
+    "display": "不咸"
+  },
+  {
+    "canonical": "有肅慎氏",
+    "typeKey": "polity",
+    "display": "有肅慎氏"
+  },
+  {
+    "canonical": "蟲",
+    "typeKey": "bird_beast",
+    "display": "蟲"
+  },
+  {
+    "canonical": "琴蟲",
+    "typeKey": "creature",
+    "display": "琴蟲"
+  },
+  {
+    "canonical": "大人",
+    "typeKey": "creature",
+    "display": "大人"
+  },
+  {
+    "canonical": "釐姓",
+    "typeKey": "polity",
+    "display": "釐姓"
+  },
+  {
+    "canonical": "榆山",
+    "typeKey": "mountain",
+    "display": "榆山"
+  },
+  {
+    "canonical": "衡天",
+    "typeKey": "creature",
+    "display": "衡天"
+  },
+  {
+    "canonical": "先民之山",
+    "typeKey": "mountain",
+    "display": "先民之山"
+  },
+  {
+    "canonical": "有叔歜國",
+    "typeKey": "polity",
+    "display": "有叔歜國"
+  },
+  {
+    "canonical": "猎猎",
+    "typeKey": "creature",
+    "display": "猎猎"
+  },
+  {
+    "canonical": "有北齊之國",
+    "typeKey": "polity",
+    "display": "有北齊之國"
+  },
+  {
+    "canonical": "先檻大逢之山",
+    "typeKey": "creature",
+    "display": "先檻大逢之山"
+  },
+  {
+    "canonical": "禹所積石",
+    "typeKey": "creature",
+    "display": "禹所積石"
+  },
+  {
+    "canonical": "順山",
+    "typeKey": "mountain",
+    "display": "順山"
+  },
+  {
+    "canonical": "順水",
+    "typeKey": "water",
+    "display": "順水"
+  },
+  {
+    "canonical": "有始州之國",
+    "typeKey": "polity",
+    "display": "有始州之國"
+  },
+  {
+    "canonical": "丹山",
+    "typeKey": "mountain",
+    "display": "丹山"
+  },
+  {
+    "canonical": "有大澤",
+    "typeKey": "water",
+    "display": "有大澤"
+  },
+  {
+    "canonical": "有毛民之國",
+    "typeKey": "polity",
+    "display": "有毛民之國"
+  },
+  {
+    "canonical": "依姓",
+    "typeKey": "polity",
+    "display": "依姓"
+  },
+  {
+    "canonical": "禹生均國",
+    "typeKey": "polity",
+    "display": "禹生均國"
+  },
+  {
+    "canonical": "均國",
+    "typeKey": "polity",
+    "display": "均國"
+  },
+  {
+    "canonical": "潛為之國",
+    "typeKey": "polity",
+    "display": "潛為之國"
+  },
+  {
+    "canonical": "有儋耳之國",
+    "typeKey": "polity",
+    "display": "有儋耳之國"
+  },
+  {
+    "canonical": "任姓",
+    "typeKey": "polity",
+    "display": "任姓"
+  },
+  {
+    "canonical": "禺號",
+    "typeKey": "person",
+    "display": "禺號"
+  },
+  {
+    "canonical": "禺彊",
+    "typeKey": "creature",
+    "display": "禺彊"
+  },
+  {
+    "canonical": "北極天櫃",
+    "typeKey": "creature",
+    "display": "北極天櫃"
+  },
+  {
+    "canonical": "九鳳",
+    "typeKey": "creature",
+    "display": "九鳳"
+  },
+  {
+    "canonical": "彊良",
+    "typeKey": "creature",
+    "display": "彊良"
+  },
+  {
+    "canonical": "成都載天",
+    "typeKey": "creature",
+    "display": "成都載天"
+  },
+  {
+    "canonical": "夸父",
+    "typeKey": "creature",
+    "display": "夸父"
+  },
+  {
+    "canonical": "后土",
+    "typeKey": "person",
+    "display": "后土"
+  },
+  {
+    "canonical": "將走大澤",
+    "typeKey": "water",
+    "display": "將走大澤"
+  },
+  {
+    "canonical": "又有無腸之國",
+    "typeKey": "polity",
+    "display": "又有無腸之國"
+  },
+  {
+    "canonical": "是任姓",
+    "typeKey": "polity",
+    "display": "是任姓"
+  },
+  {
+    "canonical": "相繇",
+    "typeKey": "creature",
+    "display": "相繇"
+  },
+  {
+    "canonical": "即為源澤",
+    "typeKey": "water",
+    "display": "即為源澤"
+  },
+  {
+    "canonical": "禹湮洪水",
+    "typeKey": "water",
+    "display": "禹湮洪水"
+  },
+  {
+    "canonical": "其地多水",
+    "typeKey": "water",
+    "display": "其地多水"
+  },
+  {
+    "canonical": "岳之山",
+    "typeKey": "mountain",
+    "display": "岳之山"
+  },
+  {
+    "canonical": "係昆之山",
+    "typeKey": "mountain",
+    "display": "係昆之山"
+  },
+  {
+    "canonical": "黄帝女魃",
+    "typeKey": "creature",
+    "display": "黄帝女魃"
+  },
+  {
+    "canonical": "應龍畜水",
+    "typeKey": "water",
+    "display": "應龍畜水"
+  },
+  {
+    "canonical": "先除水",
+    "typeKey": "water",
+    "display": "先除水"
+  },
+  {
+    "canonical": "名曰深目民之國",
+    "typeKey": "polity",
+    "display": "名曰深目民之國"
+  },
+  {
+    "canonical": "昐姓",
+    "typeKey": "polity",
+    "display": "昐姓"
+  },
+  {
+    "canonical": "名曰赤水",
+    "typeKey": "water",
+    "display": "名曰赤水"
+  },
+  {
+    "canonical": "融父山",
+    "typeKey": "creature",
+    "display": "融父山"
+  },
+  {
+    "canonical": "犬戎",
+    "typeKey": "creature",
+    "display": "犬戎"
+  },
+  {
+    "canonical": "戎宣王尸",
+    "typeKey": "creature",
+    "display": "戎宣王尸"
+  },
+  {
+    "canonical": "齊州之山",
+    "typeKey": "creature",
+    "display": "齊州之山"
+  },
+  {
+    "canonical": "君山",
+    "typeKey": "mountain",
+    "display": "君山"
+  },
+  {
+    "canonical": "𩰿山",
+    "typeKey": "mountain",
+    "display": "𩰿山"
+  },
+  {
+    "canonical": "鮮野山",
+    "typeKey": "mountain",
+    "display": "鮮野山"
+  },
+  {
+    "canonical": "魚山",
+    "typeKey": "mountain",
+    "display": "魚山"
+  },
+  {
+    "canonical": "一曰是威姓",
+    "typeKey": "polity",
+    "display": "一曰是威姓"
+  },
+  {
+    "canonical": "無繼民任姓",
+    "typeKey": "polity",
+    "display": "無繼民任姓"
+  },
+  {
+    "canonical": "賴丘",
+    "typeKey": "creature",
+    "display": "賴丘"
+  },
+  {
+    "canonical": "有犬戎國",
+    "typeKey": "polity",
+    "display": "有犬戎國"
+  },
+  {
+    "canonical": "苗民",
+    "typeKey": "creature",
+    "display": "苗民"
+  },
+  {
+    "canonical": "苗民釐姓",
+    "typeKey": "polity",
+    "display": "苗民釐姓"
+  },
+  {
+    "canonical": "章山",
+    "typeKey": "creature",
+    "display": "章山"
+  },
+  {
+    "canonical": "衡石山",
+    "typeKey": "mountain",
+    "display": "衡石山"
+  },
+  {
+    "canonical": "灰野之山",
+    "typeKey": "mountain",
+    "display": "灰野之山"
+  },
+  {
+    "canonical": "泂野之山",
+    "typeKey": "mountain",
+    "display": "泂野之山"
+  },
+  {
+    "canonical": "若木",
+    "typeKey": "creature",
+    "display": "若木"
+  },
+  {
+    "canonical": "有牛黎之國",
+    "typeKey": "polity",
+    "display": "有牛黎之國"
+  },
+  {
+    "canonical": "章尾山",
+    "typeKey": "mountain",
+    "display": "章尾山"
+  },
+  {
+    "canonical": "朝鮮",
+    "typeKey": "creature",
+    "display": "朝鮮"
+  },
+  {
+    "canonical": "其人水",
+    "typeKey": "water",
+    "display": "其人水"
+  },
+  {
+    "canonical": "壑市",
+    "typeKey": "creature",
+    "display": "壑市"
+  },
+  {
+    "canonical": "氾葉",
+    "typeKey": "creature",
+    "display": "氾葉"
+  },
+  {
+    "canonical": "三水",
+    "typeKey": "water",
+    "display": "三水"
+  },
+  {
+    "canonical": "淮山",
+    "typeKey": "mountain",
+    "display": "淮山"
+  },
+  {
+    "canonical": "好水",
+    "typeKey": "water",
+    "display": "好水"
+  },
+  {
+    "canonical": "有朝雲之國",
+    "typeKey": "polity",
+    "display": "有朝雲之國"
+  },
+  {
+    "canonical": "司彘之國",
+    "typeKey": "polity",
+    "display": "司彘之國"
+  },
+  {
+    "canonical": "嫘祖",
+    "typeKey": "person",
+    "display": "嫘祖"
+  },
+  {
+    "canonical": "昌意",
+    "typeKey": "person",
+    "display": "昌意"
+  },
+  {
+    "canonical": "昌意降處若水",
+    "typeKey": "water",
+    "display": "昌意降處若水"
+  },
+  {
+    "canonical": "韓流",
+    "typeKey": "person",
+    "display": "韓流"
+  },
+  {
+    "canonical": "淖子",
+    "typeKey": "person",
+    "display": "淖子"
+  },
+  {
+    "canonical": "阿女",
+    "typeKey": "person",
+    "display": "阿女"
+  },
+  {
+    "canonical": "肇山",
+    "typeKey": "creature",
+    "display": "肇山"
+  },
+  {
+    "canonical": "柏子高",
+    "typeKey": "creature",
+    "display": "柏子高"
+  },
+  {
+    "canonical": "柏子高",
+    "typeKey": "person",
+    "display": "柏子高"
+  },
+  {
+    "canonical": "都廣之野",
+    "typeKey": "mountain",
+    "display": "都廣之野"
+  },
+  {
+    "canonical": "若水",
+    "typeKey": "water",
+    "display": "若水"
+  },
+  {
+    "canonical": "有禺中之國",
+    "typeKey": "polity",
+    "display": "有禺中之國"
+  },
+  {
+    "canonical": "有列襄之國",
+    "typeKey": "polity",
+    "display": "有列襄之國"
+  },
+  {
+    "canonical": "蝡蛇",
+    "typeKey": "creature",
+    "display": "蝡蛇"
+  },
+  {
+    "canonical": "有鹽長之國",
+    "typeKey": "polity",
+    "display": "有鹽長之國"
+  },
+  {
+    "canonical": "鳥民",
+    "typeKey": "creature",
+    "display": "鳥民"
+  },
+  {
+    "canonical": "以水",
+    "typeKey": "water",
+    "display": "以水"
+  },
+  {
+    "canonical": "陶唐之丘",
+    "typeKey": "creature",
+    "display": "陶唐之丘"
+  },
+  {
+    "canonical": "叔得之丘",
+    "typeKey": "mountain",
+    "display": "叔得之丘"
+  },
+  {
+    "canonical": "孟盈之丘",
+    "typeKey": "mountain",
+    "display": "孟盈之丘"
+  },
+  {
+    "canonical": "昆吾之丘",
+    "typeKey": "mountain",
+    "display": "昆吾之丘"
+  },
+  {
+    "canonical": "黑白之丘",
+    "typeKey": "mountain",
+    "display": "黑白之丘"
+  },
+  {
+    "canonical": "赤望之丘",
+    "typeKey": "mountain",
+    "display": "赤望之丘"
+  },
+  {
+    "canonical": "參衛之丘",
+    "typeKey": "mountain",
+    "display": "參衛之丘"
+  },
+  {
+    "canonical": "武夫之丘",
+    "typeKey": "mountain",
+    "display": "武夫之丘"
+  },
+  {
+    "canonical": "神民之丘",
+    "typeKey": "mountain",
+    "display": "神民之丘"
+  },
+  {
+    "canonical": "猩猩",
+    "typeKey": "creature",
+    "display": "猩猩"
+  },
+  {
+    "canonical": "西南有巴國",
+    "typeKey": "polity",
+    "display": "西南有巴國"
+  },
+  {
+    "canonical": "名曰流黄辛氏",
+    "typeKey": "polity",
+    "display": "名曰流黄辛氏"
+  },
+  {
+    "canonical": "巴遂山",
+    "typeKey": "mountain",
+    "display": "巴遂山"
+  },
+  {
+    "canonical": "又有朱卷之國",
+    "typeKey": "polity",
+    "display": "又有朱卷之國"
+  },
+  {
+    "canonical": "黑蛇",
+    "typeKey": "bird_beast",
+    "display": "黑蛇"
+  },
+  {
+    "canonical": "延維",
+    "typeKey": "creature",
+    "display": "延維"
+  },
+  {
+    "canonical": "見則天下和",
+    "typeKey": "omen",
+    "display": "見則天下和"
+  },
+  {
+    "canonical": "𡹤狗",
+    "typeKey": "creature",
+    "display": "𡹤狗"
+  },
+  {
+    "canonical": "菌山",
+    "typeKey": "mountain",
+    "display": "菌山"
+  },
+  {
+    "canonical": "蒼梧之淵",
+    "typeKey": "water",
+    "display": "蒼梧之淵"
+  },
+  {
+    "canonical": "蛇水",
+    "typeKey": "water",
+    "display": "蛇水"
+  },
+  {
+    "canonical": "翳鳥",
+    "typeKey": "creature",
+    "display": "翳鳥"
+  },
+  {
+    "canonical": "不鉅之山",
+    "typeKey": "mountain",
+    "display": "不鉅之山"
+  },
+  {
+    "canonical": "巧倕",
+    "typeKey": "person",
+    "display": "巧倕"
+  },
+  {
+    "canonical": "相顧之尸",
+    "typeKey": "creature",
+    "display": "相顧之尸"
+  },
+  {
+    "canonical": "氐羌乞姓",
+    "typeKey": "polity",
+    "display": "氐羌乞姓"
+  },
+  {
+    "canonical": "幽都之山",
+    "typeKey": "creature",
+    "display": "幽都之山"
+  },
+  {
+    "canonical": "玄鳥",
+    "typeKey": "bird_beast",
+    "display": "玄鳥"
+  },
+  {
+    "canonical": "大玄之山",
+    "typeKey": "mountain",
+    "display": "大玄之山"
+  },
+  {
+    "canonical": "有大幽之國",
+    "typeKey": "polity",
+    "display": "有大幽之國"
+  },
+  {
+    "canonical": "有釘靈之國",
+    "typeKey": "polity",
+    "display": "有釘靈之國"
+  },
+  {
+    "canonical": "駱明",
+    "typeKey": "person",
+    "display": "駱明"
+  },
+  {
+    "canonical": "淫梁",
+    "typeKey": "person",
+    "display": "淫梁"
+  },
+  {
+    "canonical": "番禺",
+    "typeKey": "person",
+    "display": "番禺"
+  },
+  {
+    "canonical": "奚仲",
+    "typeKey": "person",
+    "display": "奚仲"
+  },
+  {
+    "canonical": "吉光",
+    "typeKey": "person",
+    "display": "吉光"
+  },
+  {
+    "canonical": "以扶下國",
+    "typeKey": "polity",
+    "display": "以扶下國"
+  },
+  {
+    "canonical": "八人",
+    "typeKey": "quantity",
+    "display": "八人"
+  },
+  {
+    "canonical": "義均",
+    "typeKey": "person",
+    "display": "義均"
+  },
+  {
+    "canonical": "是始為國",
+    "typeKey": "polity",
+    "display": "是始為國"
+  },
+  {
+    "canonical": "聽訞",
+    "typeKey": "person",
+    "display": "聽訞"
+  },
+  {
+    "canonical": "炎居",
+    "typeKey": "person",
+    "display": "炎居"
+  },
+  {
+    "canonical": "節竝",
+    "typeKey": "person",
+    "display": "節竝"
+  },
+  {
+    "canonical": "戲器",
+    "typeKey": "person",
+    "display": "戲器"
+  },
+  {
+    "canonical": "術器",
+    "typeKey": "person",
+    "display": "術器"
+  },
+  {
+    "canonical": "以處江水",
+    "typeKey": "water",
+    "display": "以處江水"
+  },
+  {
+    "canonical": "噎鳴",
+    "typeKey": "person",
+    "display": "噎鳴"
+  },
+  {
+    "canonical": "洪水",
+    "typeKey": "water",
+    "display": "洪水"
+  },
+  {
+    "canonical": "息壤以堙洪水",
+    "typeKey": "water",
+    "display": "息壤以堙洪水"
+  }
+]

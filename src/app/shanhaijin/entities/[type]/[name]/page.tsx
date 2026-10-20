@@ -37,6 +37,8 @@ function getAllEntitySlugs(): { type: string; name: string }[] {
   }
 }
 
+export const dynamicParams = true
+
 export function generateStaticParams() {
   return getAllEntitySlugs()
 }

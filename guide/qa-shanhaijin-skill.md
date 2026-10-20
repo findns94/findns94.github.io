@@ -174,6 +174,12 @@ google-chrome --headless --no-sandbox --disable-gpu \
 | 导航链接可用 | 所有页面 | 顶部导航可点击，路由正确跳转 | |
 | 加载状态 | 所有页面 | 数据加载时显示 loading 而非空白 | |
 | 筛选按钮 | panorama | 只有"全部"和"山经"两个按钮 | |
+| 译文无占位符 | chapters | 不出现 [待译] 或 [Translation pending] | |
+| 双栏段落对齐 | chapters | 左右列段落数量相同、按 index 对齐 | |
+| 实体链接可见 | chapters | 原文中实体名有下划线高亮 | |
+| Tooltip 可见 | chapters | hover 实体名显示 tooltip | |
+| 搜索去重 | search | 同名山岳只返回 1 条结果 | |
+| 繁简搜索 | search | 简体查询匹配繁体数据 | |
 
 #### 4d: Playwright 交互测试
 
@@ -205,11 +211,39 @@ node scripts/qa-shanhaijin.mjs
 | P2 中 | 体验不佳、文案错位、样式问题 | 记录后修复 |
 | P3 低 | 优化建议、边角 case | 记录待排期 |
 
-## 已知问题（非前端 bug）
+## 各轮修复经验
 
-| 问题 | 原因 | 影响 |
+### 第一轮：基础功能
+- 海经/附录空状态 → 直接删除筛选按钮
+- 山点堆叠 → BFS 聚类检测 + 均匀分布碰撞解决
+- 实体原文相同 → addPassage 移入条件块
+- 标注符号 → renderMarked 正则剥离
+- 图谱堆叠 → 扩大画布 + 标签碰撞检测
+- 生僻字 tofu → Noto Serif CJK SC + BabelStone Han subset
+
+### 第二轮：UI 质量
+- 按钮名重复 → line.label 改为 line.name
+- 节点溢出画布 → resolveClusters 左边界 clamp
+- 实体入口缺失 → 主页面添加全部 15 种类型卡片
+
+### 第三轮：部署修复
+- 章节文本缺失 → 文本文件从 doc/ 移到 public/
+- 实体 404 → 移除 generateStaticParams 中的 encodeURIComponent
+- CI 构建失败 → build-shanhaijin-data.mjs 优雅降级
+
+### 第四轮：搜索 + 章节阅读
+- 搜索重复 → dedup key 移除 idx
+- 繁简搜索 → 模糊匹配改用 matchKey
+- 双栏对照 → ChapterReader 添加 sideBySide 模式
+- 翻译占位符 → 完成全部 19 章现代汉语 + 英语翻译
+- Tooltip 不显示 → ChapterReader 集成 AnnotatedText
+- 翻译文件过大 → 拆分为独立章节文件
+
+## 已知数据问题
+
+| 问题 | 影响 | 处理 |
 |------|------|------|
-| 24 个重复 canonical 名 | 上游数据管线 | 低（首次出现策略处理） |
-| 768 个悬空关系引用 | 上游数据管线 | 低（悬空引用不显示） |
-| 原文覆盖率 92.8% | 32 座山无原文 | 低（不显示原文摘录） |
-| chainIndex 繁体查询失败 | 测试脚本未归一化 | 无（已有功能正常） |
+| 24 个重复 canonical 名 | 索引中可能重复 | buildEntityIndex 首次出现策略 |
+| 768 个悬空关系引用 | 不显示 | 悬空引用不渲染 |
+| 原文覆盖率 92.8% | 32 座山无原文 | 不显示原文摘录 |
+| 5 个极缺字符无字体 | 显示为 tofu | 所有免费字体均不覆盖 |
