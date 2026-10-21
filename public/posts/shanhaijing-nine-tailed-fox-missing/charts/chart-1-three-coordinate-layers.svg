@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Donut chart of the three coordinate confidence layers in the Shanhaijing knowledge graph. Of 820 nodes, 405 are confirmed, 42 inferred, and 373 mythical. All 373 mythical nodes carry no coordinates at all.">
+<title>Three Coordinate Confidence Layers, 820 Nodes</title>
+<desc>Donut chart showing how 820 Shanhaijing location nodes are sorted into three coordinate confidence layers: confirmed 405 nodes (49.4 percent) with complete direction and distance, inferred 42 nodes (5.1 percent) which are chain-head mountains with no direction word in the text, and mythical 373 nodes (45.5 percent) which receive topology only and no coordinates.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.6; }
+  .lbl { fill: var(--fg-min); opacity: 0.85; }
+  .op35 { fill: var(--fg-min); opacity: 0.4; }
+</style>
+
+<text x="24" y="30" font-size="15" font-weight="700">Three Coordinate Confidence Layers, 820 Nodes</text>
+<text class="lbl" x="24" y="50" font-size="10.5">Every location node is labelled by how well it can be located — and one layer cannot be located at all</text>
+
+<!-- Donut: r=110, circumference = 2 * pi * 110 = 691.15 -->
+<g transform="translate(180, 218)">
+  <circle r="110" fill="none" stroke="var(--grid)" stroke-width="36"/>
+  <!-- confirmed 405 / 820 = 49.39% -> 341.42 -->
+  <circle r="110" fill="none" stroke="#2e7d32" stroke-width="36" stroke-dasharray="341.42 691.15" transform="rotate(-90)"/>
+  <!-- inferred 42 / 820 = 5.12% -> 35.40 -->
+  <circle r="110" fill="none" stroke="#8bc34a" stroke-width="36" stroke-dasharray="35.40 691.15" transform="rotate(87.81)"/>
+  <!-- mythical 373 / 820 = 45.49% -> 314.33 -->
+  <circle r="110" fill="none" stroke="#7b1fa2" stroke-width="36" stroke-dasharray="314.33 691.15" transform="rotate(106.24)"/>
+  <circle r="74" fill="none" stroke="var(--grid)" stroke-width="1"/>
+  <text x="0" y="-4" text-anchor="middle" font-size="26" font-weight="700">820</text>
+  <text class="lbl" x="0" y="14" text-anchor="middle" font-size="10">location nodes</text>
+  <text class="tick" x="0" y="32" text-anchor="middle" font-size="9">447 山经 + 373 海经</text>
+</g>
+
+<!-- Legend -->
+<rect x="366" y="112" width="13" height="13" rx="3" fill="#2e7d32"/>
+<text x="388" y="123" font-size="11" font-weight="700">confirmed — 405</text>
+<text class="lbl" x="388" y="138" font-size="9.5">49.4% · direction + distance both present</text>
+
+<rect x="366" y="172" width="13" height="13" rx="3" fill="#8bc34a"/>
+<text x="388" y="183" font-size="11" font-weight="700">inferred — 42</text>
+<text class="lbl" x="388" y="198" font-size="9.5">5.1% · chain-head mountains, no direction word</text>
+
+<rect x="366" y="232" width="13" height="13" rx="3" fill="#7b1fa2"/>
+<text x="388" y="243" font-size="11" font-weight="700">mythical — 373</text>
+<text class="lbl" x="388" y="258" font-size="9.5">45.5% · topology only, x = null, y = null</text>
+
+<line x1="366" y1="288" x2="616" y2="288" stroke="var(--axis)" stroke-width="1" opacity="0.4"/>
+<text class="lbl" x="366" y="308" font-size="9.5">373 of 820 nodes (45.5%) ship with no coordinates</text>
+<text class="lbl" x="366" y="324" font-size="9.5">by design. Not one node carries latitude/longitude.</text>
+<text class="lbl" x="366" y="340" font-size="9.5">Layer 2 values are abstract plane units in 里 (li),</text>
+<text class="lbl" x="366" y="356" font-size="9.5">each flagged estimated: true.</text>
+
+<text class="op35" x="24" y="386" font-size="9">Source: Shanhaijing knowledge graph, kg/space/data/place_coords.json (820 nodes), 2026</text>
+</svg>

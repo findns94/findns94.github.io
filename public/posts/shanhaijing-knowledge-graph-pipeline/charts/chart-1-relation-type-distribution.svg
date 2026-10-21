@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-label="Two-panel horizontal bar chart of Shanhaijing knowledge graph relation types. Spatial relations total 5,896: in_chain 4,824, adjacent_to 438, distance_from 405, water_connect 221, located_at 8. Biology relations total 1,217: produces 803, inhabits 271, has_efficacy 90, sacrificed_at 24, descends_from 20, alias_of 6, same_as 3.">
+  <title>Shanhaijing Knowledge Graph: Relation Type Distribution</title>
+  <desc>Two stacked horizontal bar panels. The upper panel shows the five spatial relation types out of 5,896 relations, dominated by in_chain at 4,824. The lower panel shows the seven biology relation types out of 1,217 relations, dominated by produces at 803. Each panel uses its own scale because the two families differ in size by a factor of five.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .ttl { font-size: 14px; font-weight: 700; }
+    .sub { font-size: 10px; opacity: 0.6; }
+    .lbl { font-size: 11.5px; }
+    .val { font-size: 11.5px; font-weight: 700; }
+    .hd { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; }
+    .src { font-size: 9px; opacity: 0.55; }
+  </style>
+
+  <text x="350" y="24" text-anchor="middle" class="ttl">7,113 Relations Across Two Families</text>
+  <text x="350" y="40" text-anchor="middle" class="sub">Each panel is scaled to its own family, not to a shared axis</text>
+
+  <!-- Panel A: spatial relations -->
+  <text x="10" y="70" class="hd" fill="#2563eb">SPATIAL RELATIONS &#183; 5,896</text>
+  <line x1="10" y1="76" x2="690" y2="76" stroke="currentColor" stroke-opacity="0.12"/>
+
+  <text x="118" y="99" text-anchor="end" class="lbl">in_chain</text>
+  <rect x="126" y="87" width="504" height="16" rx="3" fill="#2563eb"/>
+  <text x="638" y="99" class="val">4,824</text>
+
+  <text x="118" y="125" text-anchor="end" class="lbl">adjacent_to</text>
+  <rect x="126" y="113" width="45.8" height="16" rx="3" fill="#3b82f6"/>
+  <text x="180" y="125" class="val">438</text>
+
+  <text x="118" y="151" text-anchor="end" class="lbl">distance_from</text>
+  <rect x="126" y="139" width="42.3" height="16" rx="3" fill="#3b82f6"/>
+  <text x="176" y="151" class="val">405</text>
+
+  <text x="118" y="177" text-anchor="end" class="lbl">water_connect</text>
+  <rect x="126" y="165" width="23.1" height="16" rx="3" fill="#3b82f6"/>
+  <text x="157" y="177" class="val">221</text>
+
+  <text x="118" y="203" text-anchor="end" class="lbl">located_at</text>
+  <rect x="126" y="191" width="2.5" height="16" rx="1" fill="#3b82f6"/>
+  <text x="136" y="203" class="val">8</text>
+
+  <!-- Panel B: biology relations -->
+  <text x="10" y="248" class="hd" fill="#059669">BIOLOGY RELATIONS &#183; 1,217</text>
+  <line x1="10" y1="254" x2="690" y2="254" stroke="currentColor" stroke-opacity="0.12"/>
+
+  <text x="118" y="277" text-anchor="end" class="lbl">produces</text>
+  <rect x="126" y="265" width="504" height="16" rx="3" fill="#059669"/>
+  <text x="638" y="277" class="val">803</text>
+
+  <text x="118" y="303" text-anchor="end" class="lbl">inhabits</text>
+  <rect x="126" y="291" width="170" height="16" rx="3" fill="#10b981"/>
+  <text x="304" y="303" class="val">271</text>
+
+  <text x="118" y="329" text-anchor="end" class="lbl">has_efficacy</text>
+  <rect x="126" y="317" width="56.5" height="16" rx="3" fill="#10b981"/>
+  <text x="191" y="329" class="val">90</text>
+
+  <text x="118" y="355" text-anchor="end" class="lbl">sacrificed_at</text>
+  <rect x="126" y="343" width="15.1" height="16" rx="3" fill="#10b981"/>
+  <text x="149" y="355" class="val">24</text>
+
+  <text x="118" y="381" text-anchor="end" class="lbl">descends_from</text>
+  <rect x="126" y="369" width="12.6" height="16" rx="3" fill="#10b981"/>
+  <text x="146" y="381" class="val">20</text>
+
+  <text x="118" y="407" text-anchor="end" class="lbl">alias_of</text>
+  <rect x="126" y="395" width="3.8" height="16" rx="1.5" fill="#10b981"/>
+  <text x="137" y="407" class="val">6</text>
+
+  <text x="118" y="433" text-anchor="end" class="lbl">same_as</text>
+  <rect x="126" y="421" width="2" height="16" rx="1" fill="#10b981"/>
+  <text x="135" y="433" class="val">3</text>
+
+  <line x1="10" y1="455" x2="690" y2="455" stroke="currentColor" stroke-opacity="0.12"/>
+  <text x="10" y="472" class="sub">in_chain is the undirected pairwise closure of chain membership, so long chains dominate it by design.</text>
+  <text x="10" y="492" class="src">Source: project build artifacts spatial_relations.json and biology_relations.json (SKILL_05f / SKILL_05g), 2026-10-16</text>
+</svg>

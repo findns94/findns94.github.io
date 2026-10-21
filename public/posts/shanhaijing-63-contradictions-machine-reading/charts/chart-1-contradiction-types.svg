@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Stacked horizontal bar chart of the 63 machine-detected contradictions in the Shanhaijing, grouped by type and coloured by verdict. Summary mileage mismatch is the largest class with 24 items, then cross-chapter same-name conflicts with 17, textual corruption with 12, summary mountain-count mismatch with 7, and mileage-type errors with 3. Across all five types the verdicts split into 28 confirmed, 17 suspected, 14 undecidable and 4 explained.">
+  <title>63 Contradictions in the Shanhaijing, by Type and Verdict</title>
+  <desc>Stacked horizontal bars. Summary mileage mismatch (class B): 24 items, 16 confirmed and 8 suspected. Cross-chapter same-name mountain conflict (class C): 17 items, 14 undecidable and 3 suspected. Textual corruption (class D): 12 items, 6 confirmed and 6 suspected. Summary mountain-count mismatch (class A): 7 items, 6 confirmed and 1 explained. Mileage-type misclassification (class E): 3 items, all explained or archived. Total 63 items: 28 confirmed, 17 suspected, 14 undecidable, 4 explained. Source: project conflict_report.json, 2026.</desc>
+  <text x="20" y="30" font-size="15" font-weight="700" fill="currentColor">63 contradictions, five classes, four verdicts</text>
+  <text x="20" y="50" font-size="10.5" fill="currentColor" opacity="0.6">Every bar is one class of conflict; segment colour is the verdict the pipeline assigned</text>
+  <line x1="250" y1="86" x2="700" y2="86" stroke="currentColor" opacity="0.15"/>
+  <line x1="250.0" y1="86" x2="250.0" y2="306" stroke="currentColor" opacity="0.07"/>
+  <text x="250.0" y="80" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">0</text>
+  <line x1="362.5" y1="86" x2="362.5" y2="306" stroke="currentColor" opacity="0.07"/>
+  <text x="362.5" y="80" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">6</text>
+  <line x1="475.0" y1="86" x2="475.0" y2="306" stroke="currentColor" opacity="0.07"/>
+  <text x="475.0" y="80" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">12</text>
+  <line x1="587.5" y1="86" x2="587.5" y2="306" stroke="currentColor" opacity="0.07"/>
+  <text x="587.5" y="80" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">18</text>
+  <line x1="700.0" y1="86" x2="700.0" y2="306" stroke="currentColor" opacity="0.07"/>
+  <text x="700.0" y="80" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">24</text>
+  <text x="20" y="112" font-size="10.5" fill="currentColor" opacity="0.9">Summary mileage mismatch</text>
+  <text x="20" y="125" font-size="9" fill="currentColor" opacity="0.45">class B</text>
+  <rect x="250.0" y="97" width="300.0" height="18" rx="3" fill="#38bdf8" opacity="0.9"/>
+  <text x="400.0" y="110" font-size="10" font-weight="700" text-anchor="middle" fill="#0b1220">16</text>
+  <rect x="550.0" y="97" width="150.0" height="18" rx="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="625.0" y="110" font-size="10" font-weight="700" text-anchor="middle" fill="#0b1220">8</text>
+  <text x="708.0" y="112" font-size="11" font-weight="700" fill="currentColor" opacity="0.85">24</text>
+  <text x="20" y="158" font-size="10.5" fill="currentColor" opacity="0.9">Cross-chapter same-name</text>
+  <text x="20" y="171" font-size="9" fill="currentColor" opacity="0.45">class C</text>
+  <rect x="250.0" y="143" width="56.2" height="18" rx="3" fill="#fbbf24" opacity="0.9"/>
+  <rect x="306.2" y="143" width="262.5" height="18" rx="3" fill="#94a3b8" opacity="0.9"/>
+  <text x="437.5" y="156" font-size="10" font-weight="700" text-anchor="middle" fill="#0b1220">14</text>
+  <text x="576.8" y="158" font-size="11" font-weight="700" fill="currentColor" opacity="0.85">17</text>
+  <text x="20" y="204" font-size="10.5" fill="currentColor" opacity="0.9">Textual corruption</text>
+  <text x="20" y="217" font-size="9" fill="currentColor" opacity="0.45">class D</text>
+  <rect x="250.0" y="189" width="112.5" height="18" rx="3" fill="#38bdf8" opacity="0.9"/>
+  <text x="306.2" y="202" font-size="10" font-weight="700" text-anchor="middle" fill="#0b1220">6</text>
+  <rect x="362.5" y="189" width="112.5" height="18" rx="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="418.8" y="202" font-size="10" font-weight="700" text-anchor="middle" fill="#0b1220">6</text>
+  <text x="483.0" y="204" font-size="11" font-weight="700" fill="currentColor" opacity="0.85">12</text>
+  <text x="20" y="250" font-size="10.5" fill="currentColor" opacity="0.9">Summary mountain-count</text>
+  <text x="20" y="263" font-size="9" fill="currentColor" opacity="0.45">class A</text>
+  <rect x="250.0" y="235" width="112.5" height="18" rx="3" fill="#38bdf8" opacity="0.9"/>
+  <text x="306.2" y="248" font-size="10" font-weight="700" text-anchor="middle" fill="#0b1220">6</text>
+  <rect x="362.5" y="235" width="18.8" height="18" rx="3" fill="#34d399" opacity="0.9"/>
+  <text x="389.2" y="250" font-size="11" font-weight="700" fill="currentColor" opacity="0.85">7</text>
+  <text x="20" y="296" font-size="10.5" fill="currentColor" opacity="0.9">Mileage-type error</text>
+  <text x="20" y="309" font-size="9" fill="currentColor" opacity="0.45">class E</text>
+  <rect x="250.0" y="281" width="56.2" height="18" rx="3" fill="#34d399" opacity="0.9"/>
+  <text x="314.2" y="296" font-size="11" font-weight="700" fill="currentColor" opacity="0.85">3</text>
+  <rect x="20" y="372" width="11" height="11" rx="3" fill="#38bdf8" opacity="0.9"/>
+  <text x="36" y="381" font-size="9.5" fill="currentColor" opacity="0.8">Confirmed conflict</text>
+  <rect x="144" y="372" width="11" height="11" rx="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="160" y="381" font-size="9.5" fill="currentColor" opacity="0.8">Suspected</text>
+  <rect x="218" y="372" width="11" height="11" rx="3" fill="#94a3b8" opacity="0.9"/>
+  <text x="234" y="381" font-size="9.5" fill="currentColor" opacity="0.8">Undecidable</text>
+  <rect x="303" y="372" width="11" height="11" rx="3" fill="#34d399" opacity="0.9"/>
+  <text x="319" y="381" font-size="9.5" fill="currentColor" opacity="0.8">Explained / archived</text>
+  <text x="20" y="408" font-size="8.5" fill="currentColor" opacity="0.45">Source: doc/shanhaijin/kg/conflicts/conflict_report.json (63 items, 5 classes, our_bug = 0), 2026.</text>
+</svg>

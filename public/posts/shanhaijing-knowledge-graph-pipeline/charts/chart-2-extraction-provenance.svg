@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-label="Stacked horizontal bar chart of Shanhaijing relation confidence tiers. Spatial relations total 5,896: tier A 5,206 or 88.3 percent, tier B 690 or 11.7 percent, tier C zero, tier D zero. Biology relations total 1,217: tier A 1,086 or 89.2 percent, tier B 127 or 10.4 percent, tier C 1, tier D 3. LLM-inferred relations total zero; human-authored relations total eight.">
+  <title>Shanhaijing Relations by Confidence Tier and Extraction Source</title>
+  <desc>Two stacked horizontal bars showing how 5,896 spatial relations and 1,217 biology relations divide across confidence tiers A, B, C and D. Tier A covers 88.3 percent of spatial and 89.2 percent of biology relations. Zero relations in either family were produced by LLM inference.</desc>
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: currentColor; }
+    .ttl { font-size: 14px; font-weight: 700; }
+    .sub { font-size: 10px; opacity: 0.6; }
+    .lbl { font-size: 11.5px; }
+    .val { font-size: 11px; font-weight: 700; }
+    .hd { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; }
+    .lg { font-size: 10.5px; }
+    .src { font-size: 9px; opacity: 0.55; }
+    .callout { font-size: 11.5px; font-weight: 700; }
+    .calloutsub { font-size: 10px; opacity: 0.7; }
+  </style>
+
+  <text x="350" y="24" text-anchor="middle" class="ttl">Confidence Tiers of 7,113 Extracted Relations</text>
+  <text x="350" y="40" text-anchor="middle" class="sub">Tier A &#8805; 0.90 &#183; Tier B 0.60&#8211;0.89 &#183; Tier C 0.50&#8211;0.59 &#183; Tier D &lt; 0.50</text>
+
+  <text x="118" y="82" text-anchor="end" class="lbl">Spatial</text>
+  <text x="118" y="96" text-anchor="end" class="sub">5,896</text>
+  <rect x="126" y="68" width="424" height="30" rx="3" fill="#2563eb"/>
+  <rect x="550" y="68" width="56" height="30" rx="3" fill="#93c5fd"/>
+  <text x="138" y="88" class="val" fill="#ffffff">A &#183; 5,206 &#183; 88.3%</text>
+  <text x="556" y="88" class="val" fill="#1e3a8a">B &#183; 690</text>
+  <text x="616" y="88" class="lg">C 0 &#183; D 0</text>
+
+  <text x="118" y="142" text-anchor="end" class="lbl">Biology</text>
+  <text x="118" y="156" text-anchor="end" class="sub">1,217</text>
+  <rect x="126" y="128" width="428" height="30" rx="3" fill="#059669"/>
+  <rect x="554" y="128" width="50" height="30" rx="3" fill="#6ee7b7"/>
+  <rect x="604" y="128" width="3" height="30" fill="#fbbf24"/>
+  <rect x="607" y="128" width="3" height="30" rx="1.5" fill="#f87171"/>
+  <text x="138" y="148" class="val" fill="#ffffff">A &#183; 1,086 &#183; 89.2%</text>
+  <text x="560" y="148" class="val" fill="#064e3b">B &#183; 127</text>
+  <text x="620" y="148" class="lg">C 1 &#183; D 3</text>
+
+  <!-- legend -->
+  <rect x="126" y="182" width="12" height="12" rx="2" fill="#2563eb"/>
+  <text x="144" y="192" class="lg">Tier A &#8212; auto, high confidence</text>
+  <rect x="330" y="182" width="12" height="12" rx="2" fill="#93c5fd"/>
+  <text x="348" y="192" class="lg">Tier B &#8212; auto, flagged for review</text>
+  <rect x="534" y="182" width="12" height="12" rx="2" fill="#fbbf24"/>
+  <text x="552" y="192" class="lg">Tier C &#8212; manual queue</text>
+  <rect x="126" y="202" width="12" height="12" rx="2" fill="#f87171"/>
+  <text x="144" y="212" class="lg">Tier D &#8212; human judgment</text>
+
+  <!-- callout -->
+  <rect x="10" y="236" width="680" height="88" rx="8" fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-opacity="0.12"/>
+  <text x="30" y="262" class="callout">Extraction source across all 7,113 relations</text>
+  <text x="30" y="286" class="lg">Rule-based pattern match (auto)</text>
+  <text x="250" y="286" class="val">7,105</text>
+  <text x="30" y="306" class="lg">LLM inference</text>
+  <text x="250" y="306" class="val" fill="#f87171">0</text>
+  <text x="30" y="306" class="calloutsub">&#160;</text>
+  <text x="330" y="286" class="lg">Human-authored</text>
+  <text x="450" y="286" class="val">8</text>
+  <text x="330" y="306" class="calloutsub">3 disputed identities + 5 manual aliases</text>
+
+  <text x="10" y="350" class="sub">Tier B is not noise: relations in a chain whose stated total disagrees with its summed steps are downgraded, not dropped.</text>
+  <text x="10" y="366" class="sub">Only 2 of 26 chains reconcile exactly, so 11.7% of spatial relations carry a review flag.</text>
+  <line x1="10" y1="382" x2="690" y2="382" stroke="currentColor" stroke-opacity="0.12"/>
+  <text x="10" y="400" class="src">Source: project build artifacts spatial_relations.json and biology_relations.json confidence tier distributions, 2026-10-16</text>
+</svg>

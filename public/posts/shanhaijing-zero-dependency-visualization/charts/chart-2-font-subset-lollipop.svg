@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" role="img" aria-label="Log-scale lollipop chart comparing three CJK font files: the self-hosted Noto Serif CJK SC WOFF2 at 16,317 KB, the full BabelStone Han WOFF2 at 7,264 KB, and the shipped BabelStone Han Extension B subset at 25.6 KB, which is 0.35 percent of the full font and covers the 50 rare ideographs the project needs.">
+<title>Font file size: full CJK fonts vs the 25.6 KB Extension B subset</title>
+<desc>A logarithmic comparison of the three font files in the Shanhaijing build. The subset contains 159 codepoints: 95 ASCII, 14 typographic and CJK punctuation marks, and 50 CJK Extension B ideographs. 48 of those 50 ideographs are missing from the 44,777-codepoint cmap of Noto Serif CJK SC. Because the subset is declared with unicode-range U+20000-2A6DF, browsers download it only when an Extension B character is actually rendered.</desc>
+<rect x="0" y="0" width="780" height="380" fill="#1a1a2e" rx="12"/>
+<text x="390.0" y="34" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">25.6 KB instead of 7.1 MB: subsetting the rare-CJK fallback font</text>
+<text x="390.0" y="55" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Font file size, log scale (KB). The shipped subset is 0.35% of the full BabelStone Han WOFF2.</text>
+<line x1="62.0" y1="86" x2="62.0" y2="292" stroke="#4a4a66" stroke-width="1"/>
+<line x1="82.8" y1="86" x2="82.8" y2="292" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="82.8" y="308" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">25</text>
+<line x1="212.0" y1="86" x2="212.0" y2="292" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="212.0" y="308" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">100</text>
+<line x1="426.7" y1="86" x2="426.7" y2="292" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="426.7" y="308" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">1,000</text>
+<line x1="641.4" y1="86" x2="641.4" y2="292" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="641.4" y="308" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">10,000</text>
+<text x="384.0" y="324" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">KB (log scale)</text>
+<text x="62.0" y="104" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Noto Serif CJK SC Regular (self-hosted WOFF2)</text>
+<line x1="62.0" y1="118" x2="687.0" y2="118" stroke="#64748b" stroke-width="2" opacity="0.5"/>
+<circle cx="687.0" cy="118" r="7" fill="#64748b" stroke="#1a1a2e" stroke-width="2"/>
+<text x="687.0" y="108" text-anchor="end" fill="#64748b" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">16,317 KB  (15.9 MB)</text>
+<text x="62.0" y="166" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">BabelStone Han, full font (7.4 MB on disk)</text>
+<line x1="62.0" y1="180" x2="611.6" y2="180" stroke="#64748b" stroke-width="2" opacity="0.5"/>
+<circle cx="611.6" cy="180" r="7" fill="#64748b" stroke="#1a1a2e" stroke-width="2"/>
+<text x="611.6" y="170" text-anchor="end" fill="#64748b" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">7,264 KB  (7.1 MB)</text>
+<text x="62.0" y="228" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">BabelStone Han Extension B subset (shipped)</text>
+<line x1="62.0" y1="242" x2="85.0" y2="242" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+<circle cx="85.0" cy="242" r="7" fill="#22c55e" stroke="#1a1a2e" stroke-width="2"/>
+<text x="100.0" y="246" text-anchor="start" fill="#22c55e" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600">25.6 KB  (26,196 bytes)</text>
+<rect x="18" y="336" width="744" height="34" fill="#23233d" rx="6"/>
+<text x="30" y="350" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="9">Subset contents: 159 codepoints = 95 ASCII + 14 punctuation + 50 CJK Extension B ideographs. 48 of the 50 are absent from</text>
+<text x="30" y="363" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="9">the 44,777-codepoint cmap of Noto Serif CJK SC (checked with fontTools). unicode-range: U+20000-2A6DF gates the download.</text>
+</svg>

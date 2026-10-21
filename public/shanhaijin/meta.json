@@ -17,10 +17,15 @@
     "polity": 174
   },
   "stats": {
-    "chapters": 5,
+    "chapters": 18,
     "mountains": 447,
     "chains": 26,
-    "li": 86439,
-    "chars": 28474
+    "li": 97358,
+    "chars": 32316
+  },
+  "routeStats": {
+    "routeChapters": 5,
+    "routeLi": 86439,
+    "routeTextChars": 28474
   }
 }

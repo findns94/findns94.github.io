@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 880" style="max-width:100%;height:auto;font-family:'Inter',system-ui,sans-serif" role="img" aria-label="Lollipop chart on a logarithmic axis showing the mileage gap between each of the 26 Shanhaijing mountain chains and its own summary sentence, as a percentage. Only two chains reconcile exactly. The largest genuine gaps are the East Third Chain at minus 100 percent, the Central Mountains chain at minus 86 percent and the Central Third Chain at minus 82 percent. The North Third Chain is plotted at plus 0.7 percent; a dashed marker shows the 348.5 percent value our parser produced before a dropped 萬 character was found.">
+  <title>How Far Each of the 26 Mountain Chains Misses Its Own Stated Mileage</title>
+  <desc>Lollipop chart, 26 rows, logarithmic percentage axis from 0.1 to 400 percent. Blue markers are chains whose summed per-entry mileage runs above the summary sentence; amber markers run below. Only two chains, 東次四經 and 中次四經, match exactly and are drawn as green diamonds at the match line. The largest genuine deviations are 東次三經 at minus 100 percent, 中山經 at minus 86 percent and 中次三經 at minus 82 percent. 北次三經 is plotted at plus 0.7 percent, against a corrected stated value of 12,350 li; a dashed hollow marker records the 348.5 percent gap produced when our parser dropped the leading 萬 and stored 2,350 li. Source: project route_report.md and the transcribed base text, 2026.</desc>
+  <text x="20" y="30" font-size="15" font-weight="700" fill="currentColor">Only 2 of 26 mountain chains add up</text>
+  <text x="20" y="50" font-size="10.5" fill="currentColor" opacity="0.6">Gap between summed per-entry mileage and the chain summary sentence (log scale)</text>
+  <line x1="205.0" y1="92" x2="205.0" y2="806" stroke="currentColor" opacity="0.08"/>
+  <text x="205.0" y="84" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">0.1%</text>
+  <line x1="384.1" y1="92" x2="384.1" y2="806" stroke="currentColor" opacity="0.08"/>
+  <text x="384.1" y="84" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">1%</text>
+  <line x1="563.1" y1="92" x2="563.1" y2="806" stroke="currentColor" opacity="0.08"/>
+  <text x="563.1" y="84" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">10%</text>
+  <line x1="742.2" y1="92" x2="742.2" y2="806" stroke="currentColor" opacity="0.08"/>
+  <text x="742.2" y="84" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">100%</text>
+  <line x1="850.0" y1="92" x2="850.0" y2="806" stroke="currentColor" opacity="0.08"/>
+  <text x="850.0" y="84" font-size="9" text-anchor="middle" fill="currentColor" opacity="0.5">400%</text>
+  <text x="20" y="121" font-size="10" fill="currentColor" opacity="0.85">南山經之首</text>
+  <text x="20" y="132" font-size="8" fill="currentColor" opacity="0.4">ch. 001 &#183; stated 2,950 li</text>
+  <line x1="205.0" y1="118" x2="550.3" y2="118" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="550.3" cy="118" r="5" fill="#fbbf24"/>
+  <text x="559.3" y="121" font-size="9.5" fill="#fbbf24" opacity="0.95">−8.5%</text>
+  <text x="20" y="146" font-size="10" fill="currentColor" opacity="0.85">南次二經</text>
+  <text x="20" y="157" font-size="8" fill="currentColor" opacity="0.4">ch. 001 &#183; stated 7,200 li</text>
+  <line x1="205.0" y1="143" x2="230.5" y2="143" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="230.5" cy="143" r="5" fill="#38bdf8"/>
+  <text x="239.5" y="146" font-size="9.5" fill="#38bdf8" opacity="0.95">+0.1%</text>
+  <text x="20" y="171" font-size="10" fill="currentColor" opacity="0.85">南次三經</text>
+  <text x="20" y="182" font-size="8" fill="currentColor" opacity="0.4">ch. 001 &#183; stated 6,530 li</text>
+  <line x1="205.0" y1="168" x2="578.9" y2="168" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="578.9" cy="168" r="5" fill="#fbbf24"/>
+  <text x="587.9" y="171" font-size="9.5" fill="#fbbf24" opacity="0.95">−12.3%</text>
+  <text x="20" y="196" font-size="10" fill="currentColor" opacity="0.85">西山經之首</text>
+  <text x="20" y="207" font-size="8" fill="currentColor" opacity="0.4">ch. 002 &#183; stated 2,957 li</text>
+  <line x1="205.0" y1="193" x2="468.9" y2="193" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="468.9" cy="193" r="5" fill="#38bdf8"/>
+  <text x="477.9" y="196" font-size="9.5" fill="#38bdf8" opacity="0.95">+3.0%</text>
+  <text x="20" y="221" font-size="10" fill="currentColor" opacity="0.85">西次二經</text>
+  <text x="20" y="232" font-size="8" fill="currentColor" opacity="0.4">ch. 002 &#183; stated 4,140 li</text>
+  <line x1="205.0" y1="218" x2="566.1" y2="218" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="566.1" cy="218" r="5" fill="#38bdf8"/>
+  <text x="575.1" y="221" font-size="9.5" fill="#38bdf8" opacity="0.95">+10.4%</text>
+  <text x="20" y="246" font-size="10" fill="currentColor" opacity="0.85">西次三經</text>
+  <text x="20" y="257" font-size="8" fill="currentColor" opacity="0.4">ch. 002 &#183; stated 6,744 li</text>
+  <line x1="205.0" y1="243" x2="554.6" y2="243" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="554.6" cy="243" r="5" fill="#fbbf24"/>
+  <text x="563.6" y="246" font-size="9.5" fill="#fbbf24" opacity="0.95">−9.0%</text>
+  <text x="20" y="271" font-size="10" fill="currentColor" opacity="0.85">西次四經</text>
+  <text x="20" y="282" font-size="8" fill="currentColor" opacity="0.4">ch. 002 &#183; stated 3,680 li</text>
+  <line x1="205.0" y1="268" x2="545.9" y2="268" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="545.9" cy="268" r="5" fill="#fbbf24"/>
+  <text x="554.9" y="271" font-size="9.5" fill="#fbbf24" opacity="0.95">−8.0%</text>
+  <text x="20" y="296" font-size="10" fill="currentColor" opacity="0.85">北山經之首</text>
+  <text x="20" y="307" font-size="8" fill="currentColor" opacity="0.4">ch. 003 &#183; stated 5,490 li</text>
+  <line x1="205.0" y1="293" x2="480.6" y2="293" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="480.6" cy="293" r="5" fill="#38bdf8"/>
+  <text x="489.6" y="296" font-size="9.5" fill="#38bdf8" opacity="0.95">+3.5%</text>
+  <text x="20" y="321" font-size="10" fill="currentColor" opacity="0.85">北次二經</text>
+  <text x="20" y="332" font-size="8" fill="currentColor" opacity="0.4">ch. 003 &#183; stated 5,690 li</text>
+  <line x1="205.0" y1="318" x2="624.3" y2="318" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="624.3" cy="318" r="5" fill="#fbbf24"/>
+  <text x="633.3" y="321" font-size="9.5" fill="#fbbf24" opacity="0.95">−22.0%</text>
+  <text x="20" y="346" font-size="10" fill="currentColor" opacity="0.85">北次三經</text>
+  <text x="20" y="357" font-size="8" fill="currentColor" opacity="0.4">ch. 003 &#183; stated 12,350 li</text>
+  <line x1="205.0" y1="343" x2="359.5" y2="343" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="359.5" cy="343" r="5" fill="#38bdf8"/>
+  <text x="368.5" y="346" font-size="9.5" fill="#38bdf8" opacity="0.95">+0.7%</text>
+  <text x="20" y="417" font-size="10" fill="currentColor" opacity="0.85">東山經之首</text>
+  <text x="20" y="428" font-size="8" fill="currentColor" opacity="0.4">ch. 004 &#183; stated 3,600 li</text>
+  <line x1="205.0" y1="414" x2="463.5" y2="414" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="463.5" cy="414" r="5" fill="#fbbf24"/>
+  <text x="472.5" y="417" font-size="9.5" fill="#fbbf24" opacity="0.95">−2.8%</text>
+  <text x="20" y="442" font-size="10" fill="currentColor" opacity="0.85">東次二經</text>
+  <text x="20" y="453" font-size="8" fill="currentColor" opacity="0.4">ch. 004 &#183; stated 6,640 li</text>
+  <line x1="205.0" y1="439" x2="609.2" y2="439" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="609.2" cy="439" r="5" fill="#fbbf24"/>
+  <text x="618.2" y="442" font-size="9.5" fill="#fbbf24" opacity="0.95">−18.1%</text>
+  <text x="20" y="467" font-size="10" fill="currentColor" opacity="0.85">東次三經</text>
+  <text x="20" y="478" font-size="8" fill="currentColor" opacity="0.4">ch. 004 &#183; stated 6,900 li</text>
+  <line x1="205.0" y1="464" x2="742.2" y2="464" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="742.2" cy="464" r="5" fill="#fbbf24"/>
+  <text x="751.2" y="467" font-size="9.5" fill="#fbbf24" opacity="0.95">−100.0%</text>
+  <text x="20" y="492" font-size="10" fill="currentColor" opacity="0.85">東次四經</text>
+  <text x="20" y="503" font-size="8" fill="currentColor" opacity="0.4">ch. 004 &#183; stated 1,720 li</text>
+  <polygon points="200.0,489 205.0,483 210.0,489 205.0,495" fill="#34d399"/>
+  <text x="217.0" y="492" font-size="9.5" fill="#34d399">exact match &#183; 0%</text>
+  <text x="20" y="517" font-size="10" fill="currentColor" opacity="0.85">中山經</text>
+  <text x="20" y="528" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 6,670 li</text>
+  <line x1="205.0" y1="514" x2="730.4" y2="514" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="730.4" cy="514" r="5" fill="#fbbf24"/>
+  <text x="739.4" y="517" font-size="9.5" fill="#fbbf24" opacity="0.95">−86.0%</text>
+  <text x="20" y="542" font-size="10" fill="currentColor" opacity="0.85">中次二經</text>
+  <text x="20" y="553" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 1,670 li</text>
+  <line x1="205.0" y1="539" x2="398.1" y2="539" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="398.1" cy="539" r="5" fill="#38bdf8"/>
+  <text x="407.1" y="542" font-size="9.5" fill="#38bdf8" opacity="0.95">+1.2%</text>
+  <text x="20" y="567" font-size="10" fill="currentColor" opacity="0.85">中次三經</text>
+  <text x="20" y="578" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 440 li</text>
+  <line x1="205.0" y1="564" x2="726.6" y2="564" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="726.6" cy="564" r="5" fill="#fbbf24"/>
+  <text x="735.6" y="567" font-size="9.5" fill="#fbbf24" opacity="0.95">−81.8%</text>
+  <text x="20" y="592" font-size="10" fill="currentColor" opacity="0.85">中次四經</text>
+  <text x="20" y="603" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 1,670 li</text>
+  <polygon points="200.0,589 205.0,583 210.0,589 205.0,595" fill="#34d399"/>
+  <text x="217.0" y="592" font-size="9.5" fill="#34d399">exact match &#183; 0%</text>
+  <text x="20" y="617" font-size="10" fill="currentColor" opacity="0.85">中次五經</text>
+  <text x="20" y="628" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 2,982 li</text>
+  <line x1="205.0" y1="614" x2="281.7" y2="614" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="281.7" cy="614" r="5" fill="#38bdf8"/>
+  <text x="290.7" y="617" font-size="9.5" fill="#38bdf8" opacity="0.95">+0.3%</text>
+  <text x="20" y="642" font-size="10" fill="currentColor" opacity="0.85">中次六經</text>
+  <text x="20" y="653" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 790 li</text>
+  <line x1="205.0" y1="639" x2="416.6" y2="639" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="416.6" cy="639" r="5" fill="#38bdf8"/>
+  <text x="425.6" y="642" font-size="9.5" fill="#38bdf8" opacity="0.95">+1.5%</text>
+  <text x="20" y="667" font-size="10" fill="currentColor" opacity="0.85">中次七經</text>
+  <text x="20" y="678" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 1,184 li</text>
+  <line x1="205.0" y1="664" x2="569.2" y2="664" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="569.2" cy="664" r="5" fill="#fbbf24"/>
+  <text x="578.2" y="667" font-size="9.5" fill="#fbbf24" opacity="0.95">−10.8%</text>
+  <text x="20" y="692" font-size="10" fill="currentColor" opacity="0.85">中次八經</text>
+  <text x="20" y="703" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 2,890 li</text>
+  <line x1="205.0" y1="689" x2="530.5" y2="689" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="530.5" cy="689" r="5" fill="#38bdf8"/>
+  <text x="539.5" y="692" font-size="9.5" fill="#38bdf8" opacity="0.95">+6.6%</text>
+  <text x="20" y="717" font-size="10" fill="currentColor" opacity="0.85">中次九經</text>
+  <text x="20" y="728" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 3,500 li</text>
+  <line x1="205.0" y1="714" x2="497.2" y2="714" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="497.2" cy="714" r="5" fill="#38bdf8"/>
+  <text x="506.2" y="717" font-size="9.5" fill="#38bdf8" opacity="0.95">+4.3%</text>
+  <text x="20" y="742" font-size="10" fill="currentColor" opacity="0.85">中次十經</text>
+  <text x="20" y="753" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 267 li</text>
+  <line x1="205.0" y1="739" x2="600.2" y2="739" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="600.2" cy="739" r="5" fill="#38bdf8"/>
+  <text x="609.2" y="742" font-size="9.5" fill="#38bdf8" opacity="0.95">+16.1%</text>
+  <text x="20" y="767" font-size="10" fill="currentColor" opacity="0.85">中次十一經</text>
+  <text x="20" y="778" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 3,732 li</text>
+  <line x1="205.0" y1="764" x2="584.8" y2="764" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="584.8" cy="764" r="5" fill="#38bdf8"/>
+  <text x="593.8" y="767" font-size="9.5" fill="#38bdf8" opacity="0.95">+13.2%</text>
+  <text x="20" y="792" font-size="10" fill="currentColor" opacity="0.85">中次十二經</text>
+  <text x="20" y="803" font-size="8" fill="currentColor" opacity="0.4">ch. 005 &#183; stated 2,800 li</text>
+  <line x1="205.0" y1="789" x2="658.2" y2="789" stroke="#fbbf24" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="658.2" cy="789" r="5" fill="#fbbf24"/>
+  <text x="667.2" y="792" font-size="9.5" fill="#fbbf24" opacity="0.95">−34.0%</text>
+  <line x1="359.6" y1="350" x2="839.3" y2="373" stroke="#f87171" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <circle cx="839.3" cy="343" r="5" fill="none" stroke="#f87171" stroke-width="1.8"/>
+  <text x="829.3" y="333" font-size="9.5" text-anchor="end" fill="#f87171">as first recorded: 348.5% &#8212; our parser dropped the leading 萬</text>
+  <text x="369.6" y="377" font-size="9.5" fill="currentColor" opacity="0.65">summary line reads 「萬二千三百五十里」 = 12,350 li → residual 90 li</text>
+  <text x="20" y="836" font-size="9" fill="currentColor" opacity="0.5">Blue = per-entry sum above the stated figure &#183; amber = below &#183; green diamond = the two chains that reconcile</text>
+  <text x="20" y="854" font-size="8.5" fill="currentColor" opacity="0.45">Source: doc/shanhaijin/logs/route_report.md and the transcribed base text (03_北山经.txt); percentages use the summary sentence as denominator, 2026.</text>
+</svg>

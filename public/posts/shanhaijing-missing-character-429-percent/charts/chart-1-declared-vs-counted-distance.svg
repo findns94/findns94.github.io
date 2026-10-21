@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 652" width="760" height="652" role="img" aria-label="Dumbbell chart of declared versus counted distance for all 26 mountain chains of the Shanhaijing. Twenty-five chains sit within a few hundred li of each other. The North Third Chain of the Northern Mountains is the single outlier: 12,440 li counted against a declared 2,350 li, a gap of 10,090 li or 429 percent. Reading the declared value straight from the source text gives 12,350 li, which leaves a gap of only 90 li.">
+<title>Declared vs. Counted Distance, All 26 Shanhaijing Mountain Chains</title>
+<desc>Dumbbell chart of the 26 mountain chains in the Wuzang Shan Jing. Each row shows the distance declared by the chain summary sentence (grey dot) and the distance obtained by summing the individual entries (blue dot). Twenty-five of the 26 rows are short. The North Third Chain of the Northern Mountains is the exception: 12,440 li counted against a declared 2,350 li, a gap of +10,090 li or 429 percent. An amber hollow marker on that row shows the declared figure of 12,350 li exactly as the source text spells it, which leaves a gap of only 90 li. Source: Shanhaijing chain summaries and route reconciliation, findns.cc/shanhaijin, retrieved 2026-10-21.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --track: rgba(0,0,0,0.07); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --track: rgba(255,255,255,0.08); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.6; }
+  .lbl { fill: var(--fg-min); opacity: 0.9; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .grid { stroke: var(--track); stroke-width: 1; }
+  .rowlabel { fill: var(--fg-min); opacity: 0.85; }
+</style>
+<text x="30" y="30" font-size="15" font-weight="700">Declared vs. Counted Distance, All 26 Mountain Chains</text>
+<text class="tick" x="30" y="48" font-size="11">Each row is one chain of the Wuzang Shan Jing; the length of the line is the size of the discrepancy</text>
+<g>
+<circle cx="34" cy="66" r="4" fill="#60a5fa"/>
+<text class="lbl" x="44" y="70" font-size="10">Counted (sum of entries)</text>
+<circle cx="212" cy="66" r="4" fill="#9ca3af"/>
+<text class="lbl" x="222" y="70" font-size="10">Declared in the summary sentence</text>
+<circle cx="418" cy="66" r="4" fill="none" stroke="#f59e0b" stroke-width="1.6"/>
+<text class="lbl" x="428" y="70" font-size="10">Declared, as the source text spells it</text>
+</g>
+<line class="grid" x1="186.0" y1="84" x2="186.0" y2="581.0"/>
+<text class="tick" x="186.0" y="595.0" text-anchor="middle" font-size="9.5">0</text>
+<line class="grid" x1="287.2" y1="84" x2="287.2" y2="581.0"/>
+<text class="tick" x="287.2" y="595.0" text-anchor="middle" font-size="9.5">2,500</text>
+<line class="grid" x1="388.3" y1="84" x2="388.3" y2="581.0"/>
+<text class="tick" x="388.3" y="595.0" text-anchor="middle" font-size="9.5">5,000</text>
+<line class="grid" x1="489.5" y1="84" x2="489.5" y2="581.0"/>
+<text class="tick" x="489.5" y="595.0" text-anchor="middle" font-size="9.5">7,500</text>
+<line class="grid" x1="590.6" y1="84" x2="590.6" y2="581.0"/>
+<text class="tick" x="590.6" y="595.0" text-anchor="middle" font-size="9.5">10,000</text>
+<line class="grid" x1="691.8" y1="84" x2="691.8" y2="581.0"/>
+<text class="tick" x="691.8" y="595.0" text-anchor="middle" font-size="9.5">12,500</text>
+<text class="tick" x="449.0" y="609.0" text-anchor="middle" font-size="9.5">li</text>
+<text class="rowlabel" x="176" y="103.2" text-anchor="end" font-size="9.5">001 · Southern Mtns I</text>
+<line x1="295.2" y1="100.0" x2="305.4" y2="100.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="295.2" cy="100.0" r="2.8" fill="#60a5fa"/>
+<circle cx="305.4" cy="100.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="122.2" text-anchor="end" font-size="9.5">001 · South II</text>
+<line x1="477.3" y1="119.0" x2="477.7" y2="119.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="477.7" cy="119.0" r="2.8" fill="#60a5fa"/>
+<circle cx="477.3" cy="119.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="141.2" text-anchor="end" font-size="9.5">001 · South III</text>
+<line x1="417.8" y1="138.0" x2="450.2" y2="138.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="417.8" cy="138.0" r="2.8" fill="#60a5fa"/>
+<circle cx="450.2" cy="138.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="160.2" text-anchor="end" font-size="9.5">002 · Western Mtns I</text>
+<line x1="305.6" y1="157.0" x2="309.2" y2="157.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="309.2" cy="157.0" r="2.8" fill="#60a5fa"/>
+<circle cx="305.6" cy="157.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="179.2" text-anchor="end" font-size="9.5">002 · West II</text>
+<line x1="353.5" y1="176.0" x2="370.9" y2="176.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="370.9" cy="176.0" r="2.8" fill="#60a5fa"/>
+<circle cx="353.5" cy="176.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="198.2" text-anchor="end" font-size="9.5">002 · West III</text>
+<line x1="446.6" y1="195.0" x2="458.9" y2="195.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="446.6" cy="195.0" r="2.8" fill="#60a5fa"/>
+<circle cx="458.9" cy="195.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="217.2" text-anchor="end" font-size="9.5">002 · West IV</text>
+<line x1="323.0" y1="214.0" x2="334.9" y2="214.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="323.0" cy="214.0" r="2.8" fill="#60a5fa"/>
+<circle cx="334.9" cy="214.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="236.2" text-anchor="end" font-size="9.5">003 · Northern Mtns I</text>
+<line x1="408.1" y1="233.0" x2="415.8" y2="233.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="415.8" cy="233.0" r="2.8" fill="#60a5fa"/>
+<circle cx="408.1" cy="233.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="255.2" text-anchor="end" font-size="9.5">003 · North II</text>
+<line x1="398.0" y1="252.0" x2="416.2" y2="252.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="398.0" cy="252.0" r="2.8" fill="#60a5fa"/>
+<circle cx="416.2" cy="252.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="274.2" text-anchor="end" font-size="9.5" font-weight="700">003 · North III</text>
+<line x1="281.1" y1="271.0" x2="689.3" y2="271.0" stroke="#ef4444" stroke-width="3" stroke-opacity="0.95" stroke-linecap="round"/>
+<circle cx="689.3" cy="271.0" r="3.4" fill="#60a5fa"/>
+<circle cx="281.1" cy="271.0" r="3.4" fill="#ef4444"/>
+<circle cx="685.7" cy="271.0" r="3.2" fill="none" stroke="#f59e0b" stroke-width="1.7"/>
+<text class="rowlabel" x="176" y="293.2" text-anchor="end" font-size="9.5">004 · Eastern Mtns I</text>
+<line x1="327.6" y1="290.0" x2="331.7" y2="290.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="327.6" cy="290.0" r="2.8" fill="#60a5fa"/>
+<circle cx="331.7" cy="290.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="312.2" text-anchor="end" font-size="9.5">004 · East II</text>
+<line x1="454.7" y1="309.0" x2="454.7" y2="309.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="454.7" cy="309.0" r="2.8" fill="#60a5fa"/>
+<circle cx="454.7" cy="309.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="331.2" text-anchor="end" font-size="9.5">004 · East III</text>
+<line x1="432.8" y1="328.0" x2="465.2" y2="328.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="432.8" cy="328.0" r="2.8" fill="#60a5fa"/>
+<circle cx="465.2" cy="328.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="350.2" text-anchor="end" font-size="9.5">004 · East IV</text>
+<line x1="255.6" y1="347.0" x2="255.6" y2="347.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="255.6" cy="347.0" r="2.8" fill="#60a5fa"/>
+<circle cx="255.6" cy="347.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="369.2" text-anchor="end" font-size="9.5">005 · Central Mtns I</text>
+<line x1="223.9" y1="366.0" x2="455.9" y2="366.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="223.9" cy="366.0" r="2.8" fill="#60a5fa"/>
+<circle cx="455.9" cy="366.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="388.2" text-anchor="end" font-size="9.5">005 · Central II</text>
+<line x1="253.6" y1="385.0" x2="254.4" y2="385.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="254.4" cy="385.0" r="2.8" fill="#60a5fa"/>
+<circle cx="253.6" cy="385.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="407.2" text-anchor="end" font-size="9.5">005 · Central III</text>
+<line x1="189.2" y1="404.0" x2="203.8" y2="404.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="189.2" cy="404.0" r="2.8" fill="#60a5fa"/>
+<circle cx="203.8" cy="404.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="426.2" text-anchor="end" font-size="9.5">005 · Central IV</text>
+<line x1="253.6" y1="423.0" x2="253.6" y2="423.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="253.6" cy="423.0" r="2.8" fill="#60a5fa"/>
+<circle cx="253.6" cy="423.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="445.2" text-anchor="end" font-size="9.5">005 · Central V</text>
+<line x1="306.7" y1="442.0" x2="307.0" y2="442.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="307.0" cy="442.0" r="2.8" fill="#60a5fa"/>
+<circle cx="306.7" cy="442.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="464.2" text-anchor="end" font-size="9.5">005 · Central VI</text>
+<line x1="218.0" y1="461.0" x2="218.5" y2="461.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="218.5" cy="461.0" r="2.8" fill="#60a5fa"/>
+<circle cx="218.0" cy="461.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="483.2" text-anchor="end" font-size="9.5">005 · Central VII</text>
+<line x1="228.7" y1="480.0" x2="233.9" y2="480.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="228.7" cy="480.0" r="2.8" fill="#60a5fa"/>
+<circle cx="233.9" cy="480.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="502.2" text-anchor="end" font-size="9.5">005 · Central VIII</text>
+<line x1="302.9" y1="499.0" x2="310.6" y2="499.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="310.6" cy="499.0" r="2.8" fill="#60a5fa"/>
+<circle cx="302.9" cy="499.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="521.2" text-anchor="end" font-size="9.5">005 · Central IX</text>
+<line x1="327.6" y1="518.0" x2="333.7" y2="518.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="333.7" cy="518.0" r="2.8" fill="#60a5fa"/>
+<circle cx="327.6" cy="518.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="540.2" text-anchor="end" font-size="9.5">005 · Central X</text>
+<line x1="196.8" y1="537.0" x2="198.5" y2="537.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="198.5" cy="537.0" r="2.8" fill="#60a5fa"/>
+<circle cx="196.8" cy="537.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="559.2" text-anchor="end" font-size="9.5">005 · Central XI</text>
+<line x1="337.0" y1="556.0" x2="357.0" y2="556.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="357.0" cy="556.0" r="2.8" fill="#60a5fa"/>
+<circle cx="337.0" cy="556.0" r="2.8" fill="#9ca3af"/>
+<text class="rowlabel" x="176" y="578.2" text-anchor="end" font-size="9.5">005 · Central XII</text>
+<line x1="260.8" y1="575.0" x2="299.3" y2="575.0" stroke="#94a3b8" stroke-width="2" stroke-opacity="0.45" stroke-linecap="round"/>
+<circle cx="260.8" cy="575.0" r="2.8" fill="#60a5fa"/>
+<circle cx="299.3" cy="575.0" r="2.8" fill="#9ca3af"/>
+<line x1="281.1" y1="262.0" x2="281.1" y2="241.0" stroke="#ef4444" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.85"/>
+<text x="281.1" y="237.0" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ef4444">2,350 declared</text>
+<text x="695.3" y="264.0" text-anchor="end" font-size="9.5" font-weight="700" fill="#ef4444">+10,090 li · 429%</text>
+<text x="695.3" y="283.0" text-anchor="end" font-size="9" fill="#f59e0b">12,350 read from the source: the gap falls to 90 li</text>
+<text class="op35" x="30" y="633.0" font-size="9">Source: Shanhaijing chain summaries (SKILL_02a) and route reconciliation (SKILL_03n), 26 chains, findns.cc/shanhaijin, retrieved 2026-10-21.</text>
+</svg>

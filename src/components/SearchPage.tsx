@@ -31,8 +31,8 @@ const DATA_URL = '/shanhaijin/search-data.json'
 const SCOPES: Scope[] = ['all', 'mountain', 'creature', 'product']
 
 /** scope → i18n 键映射（search 部分） */
-const SCOPE_I18N_KEY: Record<Scope, 'mountains' | 'creatures' | 'products'> = {
-  all: 'mountains', // fallback，'all' 没有独立键
+const SCOPE_I18N_KEY: Record<Scope, 'all' | 'mountains' | 'creatures' | 'products'> = {
+  all: 'all',
   mountain: 'mountains',
   creature: 'creatures',
   product: 'products',
@@ -49,11 +49,9 @@ type SearchMessages = Messages['shanhaijin']['search']
 
 /* ── 工具函数 ─────────────────────────────────────────────────── */
 
-function scopeLabel(st: SearchMessages, s: Scope): string {
-  if (s === 'mountain') return st.mountains.zh
-  if (s === 'creature') return st.creatures.zh
-  if (s === 'product') return st.products.zh
-  return st.mountains.zh // 'all' fallback
+function scopeLabel(st: SearchMessages, s: Scope, zh: boolean): string {
+  const entry = st[SCOPE_I18N_KEY[s]]
+  return zh ? entry.zh : entry.en
 }
 
 function kindLabel(st: SearchMessages, k: SearchResult['kind']): string {
@@ -178,7 +176,7 @@ export function SearchPage({ initialQuery, initialScope }: SearchPageProps) {
               }`}
               onClick={() => updateScope(s)}
             >
-              {scopeLabel(st, s)}
+              {scopeLabel(st, s, zh)}
             </button>
           ))}
         </div>

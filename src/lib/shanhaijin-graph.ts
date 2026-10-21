@@ -325,7 +325,17 @@ export function buildGraphData(
 
   const edges = [...edgeMap.values()].filter((e) => keep.has(e.source) && keep.has(e.target))
 
-  return { nodes, edges }
+  // 剪除孤立节点：均衡截断按度数保留节点，但某节点的邻居可能全部被截掉，
+  // 于是它成为「无边孤立点」——UI 仍会渲染，视觉上却悬空（实测 200 保留点中
+  // 有 21 个无任何边，真正连通的是 179 个）。这里只保留至少有一条边的节点。
+  const connected = new Set<string>()
+  for (const e of edges) {
+    connected.add(e.source)
+    connected.add(e.target)
+  }
+  const connectedNodes = nodes.filter((n) => connected.has(n.id))
+
+  return { nodes: connectedNodes, edges }
 }
 
 /* ── 力导向布局 ───────────────────────────────────────────────── */

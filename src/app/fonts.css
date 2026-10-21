@@ -1,12 +1,17 @@
-/* Self-hosted Noto Serif CJK SC — full font with @font-face + unicode-range
+/* Self-hosted Noto Serif CJK SC — subset to the site's actual character set
  *
- * Primary font: Noto Serif CJK SC (self-hosted WOFF2, converted from OTF)
+ * Primary font: Noto Serif CJK SC, subset via pyftsubset to the ~4,800 unique
+ * characters used across the site (chapters, entity data, blog posts, UI).
+ * 16.7 MB + 17.8 MB full OTFs → 2.0 MB + 2.1 MB WOFF2 (~88% smaller).
  * Covers: Basic CJK (U+4E00-9FFF), Extension A (U+3400-4DBF),
- *         partial Extension B (2057 chars), CJK punctuation, etc.
+ *         CJK punctuation, etc. Extension B is deliberately excluded.
  *
- * Fallback: BabelStone Han (self-hosted WOFF2, from babelstone.co.uk)
- * Covers full Extension B+ including U+2A07A (𪁺) and U+29FC7 (𩩧)
- * which are absent from Noto Serif CJK SC's cmap.
+ * Fallback: BabelStone Han subset — covers Extension B (U+20000-2A6DF),
+ * including U+2A07A (𪁺) and U+29FE7 (𩿧), which Noto Serif CJK SC lacks.
+ * Only 50 project chars + ASCII, 26 KB.
+ *
+ * To regenerate the subsets after adding new content, collect the character set
+ * and re-run: pyftsubset <full.otf> --text-file=<charset> --flavor=woff2
  */
 
 @font-face {

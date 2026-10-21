@@ -53,6 +53,7 @@ export interface Messages {
       noResults: { en: string; zh: string }
       noQuery: { en: string; zh: string }
       viewAll: { en: string; zh: string }
+      all: { en: string; zh: string }
       mountains: { en: string; zh: string }
       creatures: { en: string; zh: string }
       products: { en: string; zh: string }
@@ -251,6 +252,7 @@ const en: Messages = {
       noResults: { en: 'No results found', zh: '未找到结果' },
       noQuery: { en: 'Enter a search term', zh: '请输入搜索词' },
       viewAll: { en: 'View all results', zh: '查看全部结果' },
+      all: { en: 'All', zh: '全部' },
       mountains: { en: 'Mountains', zh: '山岳' },
       creatures: { en: 'Creatures', zh: '异兽' },
       products: { en: 'Products', zh: '物产' },
@@ -448,6 +450,7 @@ const zh: Messages = {
       noResults: { en: 'No results found', zh: '未找到结果' },
       noQuery: { en: 'Enter a search term', zh: '请输入搜索词' },
       viewAll: { en: 'View all results', zh: '查看全部结果' },
+      all: { en: 'All', zh: '全部' },
       mountains: { en: 'Mountains', zh: '山岳' },
       creatures: { en: 'Creatures', zh: '异兽' },
       products: { en: 'Products', zh: '物产' },

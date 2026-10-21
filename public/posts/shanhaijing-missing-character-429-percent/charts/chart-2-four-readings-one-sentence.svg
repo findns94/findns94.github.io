@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Bar chart of four different numbers reported for the same summary sentence of the North Third Chain: 12,440 li counted with water-course mileage, 12,350 li as the source text spells it, 10,540 li counted without water-course mileage, and 2,350 li as recorded by the pipeline numeral parser. The top two differ by 90 li, or 0.7 percent.">
+<title>Four Numbers for One Sentence: The North Third Chain</title>
+<desc>Horizontal bar chart of four values reported for the same line of the Shanhaijing, the summary sentence of the North Third Chain. 12,440 li is the sum of the 47 entries with water-course mileage included. 12,350 li is what the source text literally says. 10,540 li is the sum with water-course mileage excluded. 2,350 li is the figure the structure layer numeral parser produced from the same string, by dropping a leading ten-thousand character. The first two differ by 90 li, or 0.7 percent; the bottom value is an artefact of parsing, not of the manuscript. Source: Shanhaijing chain summaries, route reconciliation and record units, findns.cc/shanhaijin, retrieved 2026-10-21.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --track: rgba(0,0,0,0.07); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --track: rgba(255,255,255,0.08); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.6; }
+  .lbl { fill: var(--fg-min); opacity: 0.9; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .grid { stroke: var(--track); stroke-width: 1; }
+  .rowlabel { fill: var(--fg-min); opacity: 0.85; }
+</style>
+<text x="30" y="30" font-size="15" font-weight="700">Four Numbers for One Sentence</text>
+<text class="tick" x="30" y="48" font-size="11">The summary sentence of the North Third Chain (003-3.47), as reported by four pipeline layers</text>
+<text x="30" y="99.0" font-size="13" font-weight="700" fill="#3b82f6">12,440 li</text>
+<rect x="268.0" y="84.0" width="225.8" height="30" rx="4" fill="#3b82f6"/>
+<text class="tick" x="268.0" y="131.0" font-size="10.5">Counted: the 47 entries summed, water-course mileage included</text>
+<text x="30" y="167.0" font-size="13" font-weight="700" fill="#f59e0b">12,350 li</text>
+<rect x="268.0" y="152.0" width="224.2" height="30" rx="4" fill="#f59e0b"/>
+<text class="tick" x="268.0" y="199.0" font-size="10.5">Declared: the source text literally reads 萬二千三百五十里</text>
+<text x="30" y="235.0" font-size="13" font-weight="700" fill="#64748b">10,540 li</text>
+<rect x="268.0" y="220.0" width="191.3" height="30" rx="4" fill="#64748b" fill-opacity="0.55"/>
+<text class="tick" x="268.0" y="267.0" font-size="10.5">Counted: water-course segments excluded from the stop list</text>
+<text x="30" y="303.0" font-size="13" font-weight="700" fill="#ef4444">2,350 li</text>
+<rect x="268.0" y="288.0" width="42.7" height="30" rx="4" fill="#ef4444" fill-opacity="0.55"/>
+<text class="tick" x="268.0" y="335.0" font-size="10.5">Declared: as recorded by the structure layer’s numeral parser</text>
+<text x="746.0" y="163" text-anchor="end" font-size="10" font-weight="700" fill="#10b981">+90 li · 0.7%</text>
+<text class="op35" x="746.0" y="176" text-anchor="end" font-size="9.5">the residue once the character is restored</text>
+<text class="op35" x="746.0" y="231" text-anchor="end" font-size="9.5">−1,810 li · −14.7% against the source spelling</text>
+<text x="746.0" y="299" text-anchor="end" font-size="10" font-weight="700" fill="#ef4444">+10,090 li · 429%</text>
+<text class="op35" x="746.0" y="312" text-anchor="end" font-size="9.5">the headline gap, against the counted total</text>
+<text class="op35" x="30" y="394" font-size="9">Source: Shanhaijing chain summaries (SKILL_02a), route reconciliation (SKILL_03n), record units (SKILL_04g), findns.cc/shanhaijin, retrieved 2026-10-21.</text>
+</svg>

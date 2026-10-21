@@ -77,7 +77,7 @@ const SAMPLE_ENTITIES = [
   { type: 'bird-beast', name: '蝮虫' },
   { type: 'bird-beast', name: '鮆魚' },
   { type: 'bird-beast', name: '犀' },
-  { type: 'bird-beast', name: '麢' },
+  { type: 'bird-beast', name: '象' },
   // water
   { type: 'water', name: '西海' },
   { type: 'water', name: '怪水' },
@@ -86,7 +86,7 @@ const SAMPLE_ENTITIES = [
   { type: 'mineral', name: '金' },
   { type: 'mineral', name: '玉' },
   { type: 'mineral', name: '桂' },
-  { type: 'mineral', name: '碧' },
+  { type: 'mineral', name: '育沛' },
   // plant
   { type: 'plant', name: '祝餘' },
   { type: 'plant', name: '迷穀' },

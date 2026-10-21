@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 470" role="img" aria-label="Grouped horizontal bar chart comparing the raw JSON payload each Shanhaijing view had to download before the split (6,322.8 KB from a single data.json) with the per-view file it downloads after the split; the panorama view drops to 722.1 KB, the map view to 720.9 KB, and the hub overview to zero.">
+<title>First-paint JSON payload before and after splitting data.json</title>
+<desc>Before the split, all six Shanhaijing views fetched the same 6,322.8 KB data.json. After the split, panorama fetches 722.1 KB (539.1 KB panorama-data.json + 183.0 KB panorama-layout.json), map fetches 720.9 KB, search 755.5 KB, knowledge graph 5,543.7 KB, entity detail 5,856.3 KB, and the hub overview fetches nothing because entity type counts are frozen into a TypeScript constant at build time. Gzipped sizes are annotated on each bar.</desc>
+<rect x="0" y="0" width="780" height="470" fill="#1a1a2e" rx="12"/>
+<text x="390.0" y="34" text-anchor="middle" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="600">One 6.2 MB file, six views: payload before vs after splitting</text>
+<text x="390.0" y="55" text-anchor="middle" fill="#888888" font-family="'Inter', system-ui, sans-serif" font-size="11">Raw JSON downloaded per Shanhaijing view (KB, linear scale). Gzipped size annotated on each bar.</text>
+<line x1="322.6" y1="86" x2="322.6" y2="368" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="322.6" y="384" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">2,000</text>
+<line x1="467.2" y1="86" x2="467.2" y2="368" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="467.2" y="384" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">4,000</text>
+<line x1="611.8" y1="86" x2="611.8" y2="368" stroke="#33334d" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="611.8" y="384" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">6,000</text>
+<line x1="178" y1="86" x2="178" y2="368" stroke="#4a4a66" stroke-width="1"/>
+<text x="611.8" y="398" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">KB of JSON</text>
+<rect x="178" y="66" width="9" height="9" fill="#64748b" rx="2"/>
+<text x="192" y="74" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="10">Before: /shanhaijin/data.json (6,322.8 KB)</text>
+<rect x="448" y="66" width="9" height="9" fill="#22c55e" rx="2"/>
+<text x="462" y="74" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="10">After: per-view file</text>
+<text x="762" y="74" text-anchor="end" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="10">reduction (raw)</text>
+<text x="168" y="120" text-anchor="end" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Panorama</text>
+<rect x="178" y="103" width="457.2" height="12" fill="#64748b" rx="2"/>
+<text x="641.2" y="112" fill="#8b95a6" font-family="'Inter', system-ui, sans-serif" font-size="9">302 KB gz</text>
+<rect x="178" y="119" width="52.2" height="12" fill="#22c55e" rx="2"/>
+<text x="236.2" y="128" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">40 KB gz</text>
+<text x="762" y="124" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">8.8x</text>
+<text x="168" y="166" text-anchor="end" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Map (focus)</text>
+<rect x="178" y="149" width="457.2" height="12" fill="#64748b" rx="2"/>
+<text x="641.2" y="158" fill="#8b95a6" font-family="'Inter', system-ui, sans-serif" font-size="9">302 KB gz</text>
+<rect x="178" y="165" width="52.1" height="12" fill="#22c55e" rx="2"/>
+<text x="236.1" y="174" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">64 KB gz</text>
+<text x="762" y="170" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">8.8x</text>
+<text x="168" y="212" text-anchor="end" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Search</text>
+<rect x="178" y="195" width="457.2" height="12" fill="#64748b" rx="2"/>
+<text x="641.2" y="204" fill="#8b95a6" font-family="'Inter', system-ui, sans-serif" font-size="9">302 KB gz</text>
+<rect x="178" y="211" width="54.6" height="12" fill="#22c55e" rx="2"/>
+<text x="238.6" y="220" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">49 KB gz</text>
+<text x="762" y="216" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">8.4x</text>
+<text x="168" y="258" text-anchor="end" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Knowledge graph</text>
+<rect x="178" y="241" width="457.2" height="12" fill="#64748b" rx="2"/>
+<text x="641.2" y="250" fill="#8b95a6" font-family="'Inter', system-ui, sans-serif" font-size="9">302 KB gz</text>
+<rect x="178" y="257" width="400.9" height="12" fill="#22c55e" rx="2"/>
+<text x="584.9" y="266" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">223 KB gz</text>
+<text x="762" y="262" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">1.1x</text>
+<text x="168" y="304" text-anchor="end" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Entity detail</text>
+<rect x="178" y="287" width="457.2" height="12" fill="#64748b" rx="2"/>
+<text x="641.2" y="296" fill="#8b95a6" font-family="'Inter', system-ui, sans-serif" font-size="9">302 KB gz</text>
+<rect x="178" y="303" width="423.5" height="12" fill="#22c55e" rx="2"/>
+<text x="607.5" y="312" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">256 KB gz</text>
+<text x="762" y="308" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">1.1x</text>
+<text x="168" y="350" text-anchor="end" fill="#c8c8d8" font-family="'Inter', system-ui, sans-serif" font-size="11">Hub overview</text>
+<rect x="178" y="333" width="457.2" height="12" fill="#64748b" rx="2"/>
+<text x="641.2" y="342" fill="#8b95a6" font-family="'Inter', system-ui, sans-serif" font-size="9">302 KB gz</text>
+<line x1="178" y1="349" x2="178" y2="361" stroke="#22c55e" stroke-width="2"/>
+<text x="184" y="358" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">0 KB</text>
+<text x="762" y="354" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">removed</text>
+<text x="20" y="428" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">Panorama after = panorama-data.json (539.1 KB) + panorama-layout.json (183.0 KB). Gzip figures measured with gzip -9.</text>
+<text x="20" y="444" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: measured from public/shanhaijin/*.json in the findns.cc repository, 2026-10-21.</text>
+</svg>

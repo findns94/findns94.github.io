@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" role="img" aria-label="Horizontal bar chart of the 2,141 Shanhaijing knowledge-graph entities across 15 types: mountains lead with 576, followed by water courses at 405, minerals and products at 399, creatures at 272, polities at 174, quantities at 117, persons at 56, plants at 39, omens at 34, ordinary birds and beasts at 24, sacrifices at 17, directions at 12, deities at 9, concepts at 5 and identities at 2">
+<title>2,141 Shanhaijing Entities Across 15 Types</title>
+<desc>Horizontal bar chart of entity counts by type in the Shanhaijing knowledge graph. Mountains: 576. Water courses: 405. Minerals and products: 399. Creatures: 272. Polities and clans: 174. Quantities and distances: 117. Persons: 56. Plants: 39. Omens: 34. Ordinary birds and beasts: 24. Sacrifices: 17. Directions: 12. Deities: 9. Concepts: 5. Identities: 2. Total: 2,141 entities across 15 types. Source: Shanhaijing knowledge graph entity index, findns.cc/shanhaijin, retrieved 2026-10-21.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.85; }
+  .val { fill: var(--fg-min); opacity: 0.8; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .line-grid { stroke: var(--grid); stroke-width: 0.3; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+<text x="320" y="30" text-anchor="middle" font-size="15" font-weight="700">2,141 Shanhaijing Entities Across 15 Types</text>
+<text class="tick" x="320" y="48" text-anchor="middle" font-size="11">Entity count after canonical-name de-duplication</text>
+<g>
+  <line class="line-grid" x1="260" y1="80" x2="260" y2="470"/>
+  <line class="line-grid" x1="360" y1="80" x2="360" y2="470"/>
+  <line class="line-grid" x1="460" y1="80" x2="460" y2="470"/>
+  <line class="line-grid" x1="560" y1="80" x2="560" y2="470"/>
+</g>
+<line class="axis" x1="160" y1="86" x2="160" y2="470"/>
+<text class="tick" x="160" y="488" text-anchor="middle" font-size="10">0</text>
+<text class="tick" x="260" y="488" text-anchor="middle" font-size="10">150</text>
+<text class="tick" x="360" y="488" text-anchor="middle" font-size="10">300</text>
+<text class="tick" x="460" y="488" text-anchor="middle" font-size="10">450</text>
+<text class="tick" x="560" y="488" text-anchor="middle" font-size="10">600</text>
+<text class="lbl" x="152" y="98" text-anchor="end" font-size="11" font-weight="700">Mountain</text>
+<rect x="160" y="86" width="384" height="15" rx="3" fill="#ea580c"/>
+<text class="val" x="550" y="98" text-anchor="start" font-size="10" font-weight="700">576</text>
+<text class="lbl" x="152" y="122" text-anchor="end" font-size="11">Water course</text>
+<rect x="160" y="110" width="270" height="15" rx="3" fill="#0284c7"/>
+<text class="val" x="436" y="122" text-anchor="start" font-size="10">405</text>
+<text class="lbl" x="152" y="146" text-anchor="end" font-size="11">Mineral / product</text>
+<rect x="160" y="134" width="266" height="15" rx="3" fill="#b45309"/>
+<text class="val" x="432" y="146" text-anchor="start" font-size="10">399</text>
+<text class="lbl" x="152" y="170" text-anchor="end" font-size="11">Creature</text>
+<rect x="160" y="158" width="181" height="15" rx="3" fill="#7c3aed"/>
+<text class="val" x="347" y="170" text-anchor="start" font-size="10">272</text>
+<text class="lbl" x="152" y="194" text-anchor="end" font-size="11">Polity / clan</text>
+<rect x="160" y="182" width="116" height="15" rx="3" fill="#0d9488"/>
+<text class="val" x="282" y="194" text-anchor="start" font-size="10">174</text>
+<text class="lbl" x="152" y="218" text-anchor="end" font-size="11">Quantity / distance</text>
+<rect x="160" y="206" width="78" height="15" rx="3" fill="#6b7280"/>
+<text class="val" x="244" y="218" text-anchor="start" font-size="10">117</text>
+<text class="lbl" x="152" y="242" text-anchor="end" font-size="11">Person</text>
+<rect x="160" y="230" width="37" height="15" rx="3" fill="#db2777"/>
+<text class="val" x="203" y="242" text-anchor="start" font-size="10">56</text>
+<text class="lbl" x="152" y="266" text-anchor="end" font-size="11">Plant</text>
+<rect x="160" y="254" width="26" height="15" rx="3" fill="#16a34a"/>
+<text class="val" x="192" y="266" text-anchor="start" font-size="10">39</text>
+<text class="lbl" x="152" y="290" text-anchor="end" font-size="11">Omen</text>
+<rect x="160" y="278" width="23" height="15" rx="3" fill="#dc2626"/>
+<text class="val" x="189" y="290" text-anchor="start" font-size="10">34</text>
+<text class="lbl" x="152" y="314" text-anchor="end" font-size="11">Bird / beast</text>
+<rect x="160" y="302" width="16" height="15" rx="3" fill="#65a30d"/>
+<text class="val" x="182" y="314" text-anchor="start" font-size="10">24</text>
+<text class="lbl" x="152" y="338" text-anchor="end" font-size="11">Sacrifice</text>
+<rect x="160" y="326" width="11" height="15" rx="3" fill="#9333ea"/>
+<text class="val" x="177" y="338" text-anchor="start" font-size="10">17</text>
+<text class="lbl" x="152" y="362" text-anchor="end" font-size="11">Direction</text>
+<rect x="160" y="350" width="8" height="15" rx="3" fill="#475569"/>
+<text class="val" x="174" y="362" text-anchor="start" font-size="10">12</text>
+<text class="lbl" x="152" y="386" text-anchor="end" font-size="11">Deity</text>
+<rect x="160" y="374" width="6" height="15" rx="3" fill="#c026d3"/>
+<text class="val" x="172" y="386" text-anchor="start" font-size="10">9</text>
+<text class="lbl" x="152" y="410" text-anchor="end" font-size="11">Concept</text>
+<rect x="160" y="398" width="4" height="15" rx="2" fill="#0891b2"/>
+<text class="val" x="170" y="410" text-anchor="start" font-size="10">5</text>
+<text class="lbl" x="152" y="434" text-anchor="end" font-size="11">Identity</text>
+<rect x="160" y="422" width="2" height="15" rx="1" fill="#78716c"/>
+<text class="val" x="168" y="434" text-anchor="start" font-size="10">2</text>
+<text class="op35" x="320" y="510" text-anchor="middle" font-size="9">Source: Shanhaijing knowledge-graph entity index, 2,141 entities, findns.cc/shanhaijin, retrieved 2026-10-21.</text>
+</svg>

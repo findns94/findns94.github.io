@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440" role="img" aria-label="Horizontal bar chart of 135 creature slots in the Shanhaijing text. 123 slots produced a named creature node, 12 did not. Of those 12, 8 are text-named creatures the extraction formula missed and 4 are never named in the base text, including the nine-tailed fox at 青丘之山.">
+<title>135 Creature Slots: What Became a Node and What Did Not</title>
+<desc>Horizontal bar chart. The Shanhaijing text contains 135 creature slots introduced by 有獸焉, 有鳥焉, 有魚焉, 有蛇焉 or 有蟲焉. 123 slots (91.1 percent) produced a named creature node. 12 slots (8.9 percent) produced none: 8 because the creature is named with a formula other than 名曰, and 4 because the base text never names the creature at all. The nine-tailed fox at 青丘之山 (PN 001-1.7) is one of those four.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --grid: rgba(0,0,0,0.08); --axis: rgba(0,0,0,0.32); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --grid: rgba(255,255,255,0.08); --axis: rgba(255,255,255,0.32); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.6; }
+  .lbl { fill: var(--fg-min); opacity: 0.85; }
+  .op35 { fill: var(--fg-min); opacity: 0.4; }
+  .line-grid { stroke: var(--grid); stroke-width: 1; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+</style>
+
+<text x="24" y="30" font-size="15" font-weight="700">135 Creature Slots: What Became a Node and What Did Not</text>
+<text class="lbl" x="24" y="50" font-size="10.5">A slot counts as named only if the tagged text marks a creature name (〖+ … 〗) before the next slot</text>
+
+<!-- gridlines: 0..135 mapped to x 210..600 (2.889 px per slot) -->
+<line class="line-grid" x1="355" y1="72" x2="355" y2="352"/>
+<line class="line-grid" x1="499" y1="72" x2="499" y2="352"/>
+<line class="axis" x1="210" y1="72" x2="210" y2="352"/>
+<text class="tick" x="210" y="366" text-anchor="middle" font-size="9">0</text>
+<text class="tick" x="355" y="366" text-anchor="middle" font-size="9">50</text>
+<text class="tick" x="499" y="366" text-anchor="middle" font-size="9">100</text>
+<text class="tick" x="600" y="366" text-anchor="middle" font-size="9">135</text>
+
+<!-- Row 1: 135 slots -->
+<rect x="210" y="86" width="390" height="24" rx="3" fill="#38bdf8" opacity="0.85"/>
+<text class="lbl" x="200" y="102" text-anchor="end" font-size="10">Creature slots in the text</text>
+<text x="606" y="102" font-size="10" font-weight="700">135</text>
+
+<!-- Row 2: 123 named -->
+<rect x="210" y="142" width="355.3" height="24" rx="3" fill="#2e7d32" opacity="0.9"/>
+<text class="lbl" x="200" y="158" text-anchor="end" font-size="10">Produced a named creature node</text>
+<text x="571" y="158" font-size="10" font-weight="700">123 · 91.1%</text>
+
+<!-- Row 3: 12 unnamed -->
+<rect x="210" y="198" width="34.7" height="24" rx="3" fill="#f59e0b"/>
+<text class="lbl" x="200" y="214" text-anchor="end" font-size="10">Produced no named node</text>
+<text x="250" y="214" font-size="10" font-weight="700">12 · 8.9%</text>
+
+<!-- Row 4: 8 formula misses -->
+<rect x="228" y="254" width="23.1" height="20" rx="3" fill="#fb7185"/>
+<text class="lbl" x="218" y="268" text-anchor="end" font-size="9.5">· named in the text, formula missed it</text>
+<text x="257" y="268" font-size="10" font-weight="700">8</text>
+
+<!-- Row 5: 4 never named -->
+<rect x="228" y="304" width="11.6" height="20" rx="3" fill="#a855f7"/>
+<text class="lbl" x="218" y="318" text-anchor="end" font-size="9.5">· never named in the base text</text>
+<text x="246" y="318" font-size="10" font-weight="700" fill="#a855f7">4</text>
+
+<!-- Callout for the fox -->
+<line x1="234" y1="326" x2="234" y2="356" stroke="#a855f7" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="24" y="388" font-size="10" font-weight="700" fill="#a855f7">九尾狐 — the nine-tailed fox of 青丘之山 (PN 001-1.7) is one of these four.</text>
+<text class="lbl" x="24" y="404" font-size="9.5">Its description survives verbatim inside record 001-020 as text, but it never became a graph node.</text>
+
+<text class="op35" x="24" y="428" font-size="9">Source: Shanhaijing knowledge graph, 18 tagged chapters, 135 有X焉 slots, 2026</text>
+</svg>

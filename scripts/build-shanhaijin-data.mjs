@@ -451,19 +451,29 @@ for (const e of entities) {
   entityTypeCounts[e.typeKey] = (entityTypeCounts[e.typeKey] || 0) + 1
 }
 const chapterIds = new Set(lines.map((l) => l.chapterId))
-const totalLi = lines.reduce(
+const routeLi = lines.reduce(
   (sum, l) => sum + l.stations.reduce((s, st) => s + (st.li ?? 0), 0),
   0
 )
-const totalChars = Object.values(texts).reduce((sum, t) => sum + t.length, 0)
+const routeTextChars = Object.values(texts).reduce((sum, t) => sum + t.length, 0)
+// 全书口径（与 src/lib/shanhaijing-data.ts 的 STATS 对齐）：
+//   18 篇（山经 5 + 海经 13）、447 山、26 山系、97,358 里（各山系总结句声明里程之和）、32,316 纯汉字。
+// 注意：早先的 meta.json 把「有路线的山经篇数（5）」「路线层累加里程（86,439）」「山形原文总长（28,474）」
+// 误标为 chapters/li/chars，与全书统计混淆。现拆为两套口径：stats（全书）与 routeStats（路线层）。
+const BOOK_STATS = {
+  chapters: 18,
+  mountains: totalStations,
+  chains: lines.length,
+  li: 97358,
+  chars: 32316
+}
 const META_FILE = {
   entityTypeCounts,
-  stats: {
-    chapters: chapterIds.size,
-    mountains: totalStations,
-    chains: lines.length,
-    li: totalLi,
-    chars: totalChars
+  stats: BOOK_STATS,
+  routeStats: {
+    routeChapters: chapterIds.size,
+    routeLi,
+    routeTextChars
   }
 }
 const metaJson = JSON.stringify(META_FILE, null, 2)
