@@ -16,7 +16,7 @@ tags: [Shanhaijing, Knowledge Graph, Data Science]
 
 《山海经》记下了 447 座具名山岳，分属 26 条山系，篇末总结句逐条相加声称总里程 97,358 里——约合四万公里，差不多是地球赤道周长。但全书没有告诉你任何一座山究竟在哪里：没有坐标，没有纪年，传世文本里也没有图。它给你的只是纯粹的拓扑关系：「又东三百里，曰某某之山」。这恰好就是一张地铁图承载的信息，也恰好是知识图谱能装下的信息。
 
-本文是「机器阅读《山海经》」系列 6 篇中的第 3 篇。[系列总览](/posts/machine-reading-shanhaijin-knowledge-graph/) 讲这个项目是什么、为什么要做；本篇做工程层的深潜：标注体系怎么设计、抽取管线怎么运转、知识图谱里究竟有什么，以及大多数技术文章会略过的部分——**哪些声明的 schema 至今还是空的**。
+本文是「机器阅读《山海经》」系列 6 篇中的第 3 篇。[系列总览](/posts/machine-reading-shanhaijing-knowledge-graph/) 讲这个项目是什么、为什么要做；本篇做工程层的深潜：标注体系怎么设计、抽取管线怎么运转、知识图谱里究竟有什么，以及大多数技术文章会略过的部分——**哪些声明的 schema 至今还是空的**。
 
 <!-- more -->
 
@@ -158,7 +158,7 @@ ordered = sorted(self.spans, key=lambda s: (s[0], -(s[1] - s[0]), s[2]))
 
 ## 构建脚本内部：12 个源、6 个文件、29 条断言
 
-它把 12 个只读 JSON 源合并成 6 个按组件拆分的文件，校验 29 条硬断言，任何不变量被打破就拒绝产出。脚本是 `scripts/build-shanhaijin-data.mjs`，挂在 `prebuild` 上运行。
+它把 12 个只读 JSON 源合并成 6 个按组件拆分的文件，校验 29 条硬断言，任何不变量被打破就拒绝产出。脚本是 `scripts/build-shanhaijing-data.mjs`，挂在 `prebuild` 上运行。
 
 12 个输入是：山系地图、26 个路线文件、异兽分布、物产产地、篇章原文、实体索引、分类树、别名表、空间关系、生物关系、消歧表、447 山坐标。产物是一个单体 `data.json` 加 6 个拆分文件——`panorama-data`、`panorama-layout`、`map-data`、`graph-data`、`entity-data`、`search-data`——再加一个轻量 `meta.json` 与一个扁平 `entity-names.json` 供客户端标注用。
 
@@ -183,7 +183,7 @@ const EXPECTED_SHANXI = {
 
 ```js
 if (!existsSync(MAP_DATA)) {
-  console.warn('[build-shanhaijin-data] source corpus absent; skipping rebuild')
+  console.warn('[build-shanhaijing-data] source corpus absent; skipping rebuild')
   process.exit(0)
 }
 ```
@@ -200,7 +200,7 @@ CI 检出的是博客仓库，不是研究语料库。输入缺失就硬失败�
 
 图谱对这个区别是诚实的。坐标靠沿链累加里程推算，因此每个坐标都标为「估算」而非「实测」；实体层被切成三个置信层，而不是当成一份同质数据集端上来。九尾狐的缺口与 63 条已记录矛盾出于同一原则：图谱报告文本说了什么，也包括文本沉默或自相矛盾的地方。
 
-这张图如何在不依赖任何图表库的前提下渲染出来——26 条线的地铁视图、单山聚焦视图、在构建期而非浏览器里完成的布局预计算——是[本系列第 4 篇](/posts/shanhaijing-zero-dependency-visualization/)的内容。想先看全貌，请从[系列总览](/posts/machine-reading-shanhaijin-knowledge-graph/)开始。
+这张图如何在不依赖任何图表库的前提下渲染出来——26 条线的地铁视图、单山聚焦视图、在构建期而非浏览器里完成的布局预计算——是[本系列第 4 篇](/posts/shanhaijing-zero-dependency-visualization/)的内容。想先看全貌，请从[系列总览](/posts/machine-reading-shanhaijing-knowledge-graph/)开始。
 
 ## 常见问题
 
@@ -230,13 +230,13 @@ CI 检出的是博客仓库，不是研究语料库。输入缺失就硬失败�
 
 最重要的部分恰恰是缺失的部分。5 个声明的实体类是空的；熟语族定义了却从未使用；内联消歧语法存在，而语料实际走的是外挂映射表；书里最著名的异兽之一没有关系，因为原文从未为它命名。每一个缺口都是一个「宁可不猜」的决定，而每一个都被写进数据里，而不是塞进脚注。
 
-想看全貌请从[系列总览](/posts/machine-reading-shanhaijin-knowledge-graph/)开始，想直接看 447 个站怎么画出来请跳到[可视化那篇](/posts/shanhaijing-zero-dependency-visualization/)。图谱本身可以在 [findns.cc/shanhaijin](https://findns.cc/shanhaijin) 直接浏览。
+想看全貌请从[系列总览](/posts/machine-reading-shanhaijing-knowledge-graph/)开始，想直接看 447 个站怎么画出来请跳到[可视化那篇](/posts/shanhaijing-zero-dependency-visualization/)。图谱本身可以在 [findns.cc/shanhaijing](https://findns.cc/shanhaijing) 直接浏览。
 
 ## 参考来源
 
-- 项目构建产物，`entity_index.json`、`entity_aliases.json`、`disambiguation_map.json`、`spatial_relations.json`、`biology_relations.json`、`records.json`，检索于 2026-10-21，https://findns.cc/shanhaijin
-- 项目管线规范，SKILL_03m 实体标注、SKILL_03n 方位与里程消歧、SKILL_04g 记载单元识别、SKILL_05f 空间关系、SKILL_05g 物产与异兽关系，检索于 2026-10-21，https://findns.cc/shanhaijin
-- 项目构建脚本，`scripts/build-shanhaijin-data.mjs`，检索于 2026-10-21，https://github.com/findns94/findns94.github.io/blob/hexo/scripts/build-shanhaijin-data.mjs
+- 项目构建产物，`entity_index.json`、`entity_aliases.json`、`disambiguation_map.json`、`spatial_relations.json`、`biology_relations.json`、`records.json`，检索于 2026-10-21，https://findns.cc/shanhaijing
+- 项目管线规范，SKILL_03m 实体标注、SKILL_03n 方位与里程消歧、SKILL_04g 记载单元识别、SKILL_05f 空间关系、SKILL_05g 物产与异兽关系，检索于 2026-10-21，https://findns.cc/shanhaijing
+- 项目构建脚本，`scripts/build-shanhaijing-data.mjs`，检索于 2026-10-21，https://github.com/findns94/findns94.github.io/blob/hexo/scripts/build-shanhaijing-data.mjs
 - 维基文库，《山海經》（郭璞注本，公有领域），检索于 2026-10-21，https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93
 - 维基共享资源，王希孟《千里江山图》(1113)，北京故宫博物院藏，公有领域，检索于 2026-10-21，https://commons.wikimedia.org/wiki/File:1c_Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._(51,3x1191,5cm)1113._(section)_Palace_museum,_Beijing.jpg
 - 维基共享资源，吴任臣《山海經廣注》(1667) 夔木刻插图，公有领域，检索于 2026-10-21，https://commons.wikimedia.org/wiki/File:Wu-Renchen-Shanhai-jing-guangzhu-Kui.jpg

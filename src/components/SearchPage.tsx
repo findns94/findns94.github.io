@@ -3,11 +3,11 @@
 /**
  * 山海经 · 搜索结果页组件
  *
- * 数据：`public/shanhaijin/data.json`（客户端 fetch，与 ShanhaijinMap 一致）
- * 搜索逻辑：复用 `src/lib/shanhaijin-map.ts` 的 `buildCtx` + `search`
- * 文案：`src/i18n/messages.ts` 的 `shanhaijin.search`
+ * 数据：`public/shanhaijing/data.json`（客户端 fetch，与 ShanhaijingMap 一致）
+ * 搜索逻辑：复用 `src/lib/shanhaijing-map.ts` 的 `buildCtx` + `search`
+ * 文案：`src/i18n/messages.ts` 的 `shanhaijing.search`
  *
- * 由 `src/app/shanhaijin/search/page.tsx` 包裹在 Suspense 中，
+ * 由 `src/app/shanhaijing/search/page.tsx` 包裹在 Suspense 中，
  * 从 URL `?q=xxx&scope=xxx` 读取初始查询词与 scope，作为 props 传入。
  */
 
@@ -22,11 +22,11 @@ import {
   type MapData,
   type Scope,
   type SearchResult,
-} from '@/lib/shanhaijin-map'
+} from '@/lib/shanhaijing-map'
 
 /* ── 常量 ─────────────────────────────────────────────────────── */
 
-const DATA_URL = '/shanhaijin/search-data.json'
+const DATA_URL = '/shanhaijing/search-data.json'
 
 const SCOPES: Scope[] = ['all', 'mountain', 'creature', 'product']
 
@@ -38,14 +38,14 @@ const SCOPE_I18N_KEY: Record<Scope, 'all' | 'mountains' | 'creatures' | 'product
   product: 'products',
 }
 
-/** 结果类型的 CSS 类名（与 ShanhaijinMap 的 KIND_CLS 一致） */
+/** 结果类型的 CSS 类名（与 ShanhaijingMap 的 KIND_CLS 一致） */
 const KIND_CLS: Record<SearchResult['kind'], string> = {
   mountain: 'si-kind-山',
   creature: 'si-kind-异兽',
   product: 'si-kind-物产',
 }
 
-type SearchMessages = Messages['shanhaijin']['search']
+type SearchMessages = Messages['shanhaijing']['search']
 
 /* ── 工具函数 ─────────────────────────────────────────────────── */
 
@@ -62,9 +62,9 @@ function kindLabel(st: SearchMessages, k: SearchResult['kind']): string {
 
 /** 各类结果的跳转链接 */
 function resultLink(r: SearchResult): string {
-  if (r.kind === 'mountain') return `/shanhaijin/map/#${encodeURIComponent(r.name)}`
-  if (r.kind === 'creature') return `/shanhaijin/entities/creature/${encodeURIComponent(r.name)}`
-  return `/shanhaijin/entities/mineral/${encodeURIComponent(r.name)}`
+  if (r.kind === 'mountain') return `/shanhaijing/map/#${encodeURIComponent(r.name)}`
+  if (r.kind === 'creature') return `/shanhaijing/entities/creature/${encodeURIComponent(r.name)}`
+  return `/shanhaijing/entities/mineral/${encodeURIComponent(r.name)}`
 }
 
 /* ── 组件 ─────────────────────────────────────────────────────── */
@@ -78,7 +78,7 @@ export function SearchPage({ initialQuery, initialScope }: SearchPageProps) {
   const { language } = useLanguage()
   const zh = language === 'zh'
   const t = getMessages(language)
-  const st = t.shanhaijin.search
+  const st = t.shanhaijing.search
   const router = useRouter()
 
   const [data, setData] = useState<MapData | null>(null)
@@ -122,7 +122,7 @@ export function SearchPage({ initialQuery, initialScope }: SearchPageProps) {
     (newScope: Scope) => {
       setScope(newScope)
       const params = new URLSearchParams({ q: query, scope: newScope })
-      router.replace(`/shanhaijin/search/?${params.toString()}`)
+      router.replace(`/shanhaijing/search/?${params.toString()}`)
     },
     [query, router],
   )
@@ -133,7 +133,7 @@ export function SearchPage({ initialQuery, initialScope }: SearchPageProps) {
 
   const viewAllHref = useMemo(() => {
     const params = new URLSearchParams({ q: query, scope })
-    return `/shanhaijin/search/?${params.toString()}`
+    return `/shanhaijing/search/?${params.toString()}`
   }, [query, scope])
 
   /* ── 加载态 ─────────────────────────────────────────── */

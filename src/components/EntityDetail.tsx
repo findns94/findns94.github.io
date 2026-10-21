@@ -3,13 +3,13 @@
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getMessages, type Messages } from '@/i18n/messages'
-import { type Product } from '@/lib/shanhaijin-map'
+import { type Product } from '@/lib/shanhaijing-map'
 import {
   type EntityRelations,
   type TaxonomyEntry,
-} from '@/lib/shanhaijin-entities'
+} from '@/lib/shanhaijing-entities'
 
-type EntityMessages = Messages['shanhaijin']['entities']
+type EntityMessages = Messages['shanhaijing']['entities']
 
 interface EntityDetailProps {
   canonical: string
@@ -63,8 +63,8 @@ export function EntityDetail({
   chapter,
 }: EntityDetailProps) {
   const typeSlug = typeKey === 'bird_beast' ? 'bird-beast' : typeKey
-  const entityUrl = `/shanhaijin/entities/${typeSlug}/${encodeURIComponent(canonical)}/`
-  const typeUrl = `/shanhaijin/entities/${typeSlug}/`
+  const entityUrl = `/shanhaijing/entities/${typeSlug}/${encodeURIComponent(canonical)}/`
+  const typeUrl = `/shanhaijing/entities/${typeSlug}/`
 
   return (
     <div className="space-y-8">
@@ -91,7 +91,7 @@ export function EntityDetail({
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/shanhaijin/entities/" className="hover:text-blue-600 hover:underline">
+              <Link href="/shanhaijing/entities/" className="hover:text-blue-600 hover:underline">
                 {t.title}
               </Link>
             </li>
@@ -150,7 +150,7 @@ export function EntityDetail({
             {relations.mountains.map((m) => (
               <li key={m}>
                 <Link
-                  href={`/shanhaijin/map/#${encodeURIComponent(m)}`}
+                  href={`/shanhaijing/map/#${encodeURIComponent(m)}`}
                   className="block rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:border-blue-400 hover:text-blue-600 no-underline"
                 >
                   <span className="mr-2 font-mono text-xs text-gray-400">=</span>
@@ -191,7 +191,7 @@ export function EntityDetail({
             {relations.inhabitedBy.map((name) => (
               <li key={name}>
                 <Link
-                  href={`/shanhaijin/entities/${typeSlug}/${encodeURIComponent(name)}/`}
+                  href={`/shanhaijing/entities/${typeSlug}/${encodeURIComponent(name)}/`}
                   className="block rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:border-blue-400 hover:text-blue-600 no-underline"
                 >
                   <span className="mr-2 font-mono text-xs text-gray-400">+</span>

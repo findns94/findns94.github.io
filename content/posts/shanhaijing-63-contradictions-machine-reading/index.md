@@ -32,7 +32,7 @@ This post is the research layer of a six-part series on machine-reading the *Sha
 
 ## What Does a Machine Actually Find Inside a 2,300-Year-Old Book?
 
-It finds a text with internal arithmetic, and that arithmetic fails 63 times. A structural pass over all 18 chapters — 447 mountain entries organised into 26 chains, roughly 97,358 li of stated distance, about 32,316 Chinese characters of scripture — produced 63 contradictions, sorted into five classes and four verdicts ([project conflict report](https://findns.cc/shanhaijin/), 2026).
+It finds a text with internal arithmetic, and that arithmetic fails 63 times. A structural pass over all 18 chapters — 447 mountain entries organised into 26 chains, roughly 97,358 li of stated distance, about 32,316 Chinese characters of scripture — produced 63 contradictions, sorted into five classes and four verdicts ([project conflict report](https://findns.cc/shanhaijing/), 2026).
 
 The pipeline is deliberately boring. One stage cuts the text into numbered units with stable IDs like `（003-3.46）`. A second stage parses every direction phrase — 「又東三百里」 becomes *east, 300 li* — and sums the legs of each chain. A third stage reads the summary sentence that closes each chain and compares the two totals. A fourth stage classifies each mismatch, attaches the original text on both sides, and assigns a verdict.
 
@@ -170,7 +170,7 @@ A 2,300-year-old book that contradicts itself 63 times is not a defective book. 
 
 The three numbers to remember are 63, 28 and 0. Sixty-three contradictions across five classes. Twenty-eight confirmed, with the rest honestly hedged. And zero flagged as the parser's fault, after 22 of our own bugs were found and fixed — a zero we then had to audit, because the report's loudest entry turned out to be a character we dropped. That last step is what makes the first two numbers worth anything: without it, "63 contradictions" is just an accusation.
 
-This is post 2 of 6. The [hub post](/posts/machine-reading-shanhaijin-knowledge-graph/) explains why the *Shanhaijing* is a good machine-reading target at all; [the pipeline post](/posts/shanhaijing-knowledge-graph-pipeline/) walks through how the knowledge graph is built; [the visualisation post](/posts/shanhaijing-zero-dependency-visualization/) renders it with hand-written SVG; [the nine-tailed fox post](/posts/shanhaijing-nine-tailed-fox-missing/) shows what happens when the data honestly refuses to answer a question you were sure it could; and [the missing-character post](/posts/shanhaijing-missing-character-429-percent/) goes deep on the single character behind the 429% case. You can read the base text and the extracted entities side by side at [findns.cc/shanhaijin](https://findns.cc/shanhaijin/).
+This is post 2 of 6. The [hub post](/posts/machine-reading-shanhaijing-knowledge-graph/) explains why the *Shanhaijing* is a good machine-reading target at all; [the pipeline post](/posts/shanhaijing-knowledge-graph-pipeline/) walks through how the knowledge graph is built; [the visualisation post](/posts/shanhaijing-zero-dependency-visualization/) renders it with hand-written SVG; [the nine-tailed fox post](/posts/shanhaijing-nine-tailed-fox-missing/) shows what happens when the data honestly refuses to answer a question you were sure it could; and [the missing-character post](/posts/shanhaijing-missing-character-429-percent/) goes deep on the single character behind the 429% case. You can read the base text and the extracted entities side by side at [findns.cc/shanhaijing](https://findns.cc/shanhaijing/).
 
 ## FAQ
 
@@ -197,12 +197,12 @@ Because a name is not an identity. Mountains in the Shanhaijing are named in one
 ## Sources
 
 - Wikimedia Wikisource, 《山海經》 (Guo Pu annotated edition, public domain), retrieved 2026-10-21, https://zh.wikisource.org/wiki/山海經
-- Project data file, `doc/shanhaijin/kg/conflicts/conflict_report.json` — 63-item conflict report with type, verdict, confidence, hypotheses and `our_bug` flags, 2026
-- Project data file, `doc/shanhaijin/kg/conflicts/conflict_report.md` — five-class taxonomy, the 26-chain reconciliation table, and the top-five case analyses, 2026
-- Project report, `doc/shanhaijin/logs/structure_build_report.md` — per-chain counted vs. stated mountain counts and mileage, and the text-integrity check, 2026
-- Project report, `doc/shanhaijin/logs/route_report.md` — per-leg mileage reconciliation, `check_status` distribution, water-travel extraction, 2026
-- Project README, `doc/shanhaijin/000_README.md` — corpus statistics (447 mountains, 26 chains, 97,358 li, 32,316 characters) and the `our_bug: 0` verification, 2026
+- Project data file, `doc/shanhaijing/kg/conflicts/conflict_report.json` — 63-item conflict report with type, verdict, confidence, hypotheses and `our_bug` flags, 2026
+- Project data file, `doc/shanhaijing/kg/conflicts/conflict_report.md` — five-class taxonomy, the 26-chain reconciliation table, and the top-five case analyses, 2026
+- Project report, `doc/shanhaijing/logs/structure_build_report.md` — per-chain counted vs. stated mountain counts and mileage, and the text-integrity check, 2026
+- Project report, `doc/shanhaijing/logs/route_report.md` — per-leg mileage reconciliation, `check_status` distribution, water-travel extraction, 2026
+- Project README, `doc/shanhaijing/000_README.md` — corpus statistics (447 mountains, 26 chains, 97,358 li, 32,316 characters) and the `our_bug: 0` verification, 2026
 - Loewe, Michael (ed.), *Early Chinese Texts: A Bibliographical Guide*, Society for the Study of Early China and the Institute of East Asian Studies, 1993 — background on the date and composition of the *Shanhaijing*
-- Live reader and knowledge graph, https://findns.cc/shanhaijin/
+- Live reader and knowledge graph, https://findns.cc/shanhaijing/
 
 **Images:** Cover and inline illustrations are public-domain woodblock pages from illustrated Chinese editions of the *Shanhaijing*, retrieved from Wikimedia Commons on 2026-10-21. Cover: table of contents of 《山海經圖》 vol. 2, National Library of China scan. Inline: 九鳳, from a colour edition of the *Shan Hai Jing*; 夔 (Kui), from 《山海經廣注》 by Wu Renchen (1628–1689).

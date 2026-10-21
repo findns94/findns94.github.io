@@ -4,9 +4,9 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getMessages, type Messages } from '@/i18n/messages'
-import { searchEntities, type EntityIndex, type EntityItem } from '@/lib/shanhaijin-entities'
+import { searchEntities, type EntityIndex, type EntityItem } from '@/lib/shanhaijing-entities'
 
-type EntityMessages = Messages['shanhaijin']['entities']
+type EntityMessages = Messages['shanhaijing']['entities']
 
 const PAGE_SIZE = 20
 
@@ -30,11 +30,11 @@ function EntityCard({
 }) {
   const { language } = useLanguage()
   const msgs = getMessages(language)
-  const typeLabel = msgs.shanhaijin.entities.types[typeKey as keyof typeof msgs.shanhaijin.entities.types] ?? typeKey
+  const typeLabel = msgs.shanhaijing.entities.types[typeKey as keyof typeof msgs.shanhaijing.entities.types] ?? typeKey
 
   return (
     <Link
-      href={`/shanhaijin/entities/${typeKey === 'bird_beast' ? 'bird-beast' : typeKey}/${encodeURIComponent(entity.canonical)}/`}
+      href={`/shanhaijing/entities/${typeKey === 'bird_beast' ? 'bird-beast' : typeKey}/${encodeURIComponent(entity.canonical)}/`}
       className="group block rounded-lg border border-gray-200 bg-white p-4 no-underline transition-colors hover:border-blue-400 hover:shadow-sm"
     >
       <div className="flex items-start gap-3">

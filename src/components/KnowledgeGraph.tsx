@@ -3,11 +3,11 @@
 /**
  * 山海经 · 知识图谱（力导向 SVG 交互图）
  *
- * 数据：`public/shanhaijin/data.json`（客户端 fetch，无 API 路由）。
- * 纯逻辑：`src/lib/shanhaijin-graph.ts`（buildGraphData / forceDirectedLayout /
+ * 数据：`public/shanhaijing/data.json`（客户端 fetch，无 API 路由）。
+ * 纯逻辑：`src/lib/shanhaijing-graph.ts`（buildGraphData / forceDirectedLayout /
  *   filterByRelationType / getConnectedSubgraph，一律 import，不重写）。
- * 文案：`src/i18n/messages.ts` 的 `shanhaijin.graph`。
- * 样式：`src/app/shanhaijin/graph/graph.css`（作用域根 `.kg`）。
+ * 文案：`src/i18n/messages.ts` 的 `shanhaijing.graph`。
+ * 样式：`src/app/shanhaijing/graph/graph.css`（作用域根 `.kg`）。
  *
  * 渲染为自实现 SVG（无 D3 / 无外部图库）：
  *   拖拽节点、悬停高亮邻域、点击查看详情、关系类型筛选、
@@ -31,11 +31,11 @@ import {
   type GraphData,
   type GraphEdge,
   type GraphNode,
-} from '@/lib/shanhaijin-graph'
+} from '@/lib/shanhaijing-graph'
 
 /* ── 常量 ─────────────────────────────────────────────────────── */
 
-const DATA_URL = '/shanhaijin/graph-data.json'
+const DATA_URL = '/shanhaijing/graph-data.json'
 
 /** 布局画布逻辑尺寸（SVG viewBox 基准） */
 const CANVAS_W = 1400
@@ -45,7 +45,7 @@ const CANVAS_H = 900
 const DEFAULT_MAX_NODES = 200
 
 /** 关系类型显示顺序与 i18n 键 */
-const RELATION_I18N: Record<string, keyof Messages['shanhaijin']['graph']> = {
+const RELATION_I18N: Record<string, keyof Messages['shanhaijing']['graph']> = {
   produces: 'produces',
   inhabits: 'inhabits',
   has_efficacy: 'hasEfficacy',
@@ -72,7 +72,7 @@ const NODE_TYPE_I18N: Record<string, string> = {
   other: 'other',
 }
 
-type GraphMessages = Messages['shanhaijin']['graph']
+type GraphMessages = Messages['shanhaijing']['graph']
 
 interface ViewTransform {
   x: number
@@ -85,7 +85,7 @@ interface ViewTransform {
 export function KnowledgeGraph() {
   const { language } = useLanguage()
   const zh = language === 'zh'
-  const t = getMessages(language).shanhaijin.graph
+  const t = getMessages(language).shanhaijing.graph
 
   // ── 数据 ──
   const [data, setData] = useState<Record<string, unknown> | null>(null)
@@ -502,9 +502,9 @@ export function KnowledgeGraph() {
               {selectedNode.type === 'mountain' && (
                 <Link
                   className="kg-panel-link"
-                  href={`/shanhaijin/map#${encodeURIComponent(selectedNode.label)}`}
+                  href={`/shanhaijing/map#${encodeURIComponent(selectedNode.label)}`}
                 >
-                  → /shanhaijin/map#{selectedNode.label}
+                  → /shanhaijing/map#{selectedNode.label}
                 </Link>
               )}
               {focusNodeId === selectedNode.id ? (

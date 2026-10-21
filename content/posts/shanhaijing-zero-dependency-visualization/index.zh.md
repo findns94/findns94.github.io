@@ -14,13 +14,13 @@ tags: [Shanhaijing, Web Development, Knowledge Graph]
 
 ## 引言
 
-山海经站点的第一版只有一个数据文件，而每个页面都会去取它。`/shanhaijin/data.json` 有 6,474,522 字节——6.2 MB 的 JSON，gzip 之后 302 KB。全景图页面下载全部内容，只为画出 26 条山系；山形聚焦页面下载全部内容，只为显示一座山；首页也下载全部内容，只为显示十五个数字——十五种实体各自的条目数。
+山海经站点的第一版只有一个数据文件，而每个页面都会去取它。`/shanhaijing/data.json` 有 6,474,522 字节——6.2 MB 的 JSON，gzip 之后 302 KB。全景图页面下载全部内容，只为画出 26 条山系；山形聚焦页面下载全部内容，只为显示一座山；首页也下载全部内容，只为显示十五个数字——十五种实体各自的条目数。
 
 站点没有崩。它一直能用。它只是慢得不像一个 bug，而像一个设计缺陷——因为它确实就是：一个 6.2 MB 的数据块作为构建产物很合理，作为运行时接口很糟糕。
 
 修它的过程变成了一次前端工程实践，分三块：把单体文件拆成 6 个按视图划分的文件；把昂贵的几何计算从浏览器搬进构建期；以及——我真正想写的部分——用 TypeScript 和 SVG 手写这两个可视化，不引入 D3、不引入 cytoscape、不引入任何图表库。
 
-本文讲的是工程本身。它假设你知道力导向布局是什么，但想知道自己动手实现会发生什么、Fruchterman-Reingold 的那几个常数为什么重要、一张地铁图如何从「又东三百里」这句话里推导出来，以及「零依赖」这个说法在哪里诚实、在哪里只是营销。项目的数据侧请见[知识图谱管线那篇](/posts/shanhaijing-knowledge-graph-pipeline/)；站点到底装了什么，请见[系列总览](/posts/machine-reading-shanhaijin-knowledge-graph/)。
+本文讲的是工程本身。它假设你知道力导向布局是什么，但想知道自己动手实现会发生什么、Fruchterman-Reingold 的那几个常数为什么重要、一张地铁图如何从「又东三百里」这句话里推导出来，以及「零依赖」这个说法在哪里诚实、在哪里只是营销。项目的数据侧请见[知识图谱管线那篇](/posts/shanhaijing-knowledge-graph-pipeline/)；站点到底装了什么，请见[系列总览](/posts/machine-reading-shanhaijing-knowledge-graph/)。
 
 <!-- more -->
 
@@ -45,13 +45,13 @@ tags: [Shanhaijing, Web Development, Knowledge Graph]
 
 **第三，只有预渲染的 HTML 才是非 JS 爬虫能看到的内容。** 交互视图渲染进一个空的 `<div>`，再由 JavaScript 填充，所以 GPTBot 和 ClaudeBot 从这里什么也拿不到。需要被引用的部分——实体页、经文页、总览页——因此必须在构建期生成完整 HTML。这是真实的取舍，不是白捡的便宜，也正是站点宁可要 2,141 个静态实体页、也不要一个快速的客户端实体浏览器的原因。
 
-一句话总结这个约束：由于本站是无 route handler 的静态导出，所有数据必须以静态 JSON 交付，所有可被引用的内容必须预渲染——这就是为什么构建期要从一个 6,474,522 字节的 `data.json` 生成 2,141 个实体页、15 个类型页和 19 个经文页([项目数据](https://findns.cc/shanhaijin)，2026)。
+一句话总结这个约束：由于本站是无 route handler 的静态导出，所有数据必须以静态 JSON 交付，所有可被引用的内容必须预渲染——这就是为什么构建期要从一个 6,474,522 字节的 `data.json` 生成 2,141 个实体页、15 个类型页和 19 个经文页([项目数据](https://findns.cc/shanhaijing)，2026)。
 
 ---
 
 ## 为什么要手写力导向布局？
 
-因为布局本身是最简单的部分，它周围的一切都不是。Fruchterman-Reingold 算法大约四十行算术；`src/lib/shanhaijin-graph.ts` 剩下那 580 行是图谱构建、均衡截断、连通分量分离、标签碰撞，以及 UI 需要的四种筛选操作。库能给我那四十行，其余部分我照样得写——只不过是在别人的数据模型上写。默认视图渲染 179 个节点、250 条边，而这 100% 是手写 TypeScript。
+因为布局本身是最简单的部分，它周围的一切都不是。Fruchterman-Reingold 算法大约四十行算术；`src/lib/shanhaijing-graph.ts` 剩下那 580 行是图谱构建、均衡截断、连通分量分离、标签碰撞，以及 UI 需要的四种筛选操作。库能给我那四十行，其余部分我照样得写——只不过是在别人的数据模型上写。默认视图渲染 179 个节点、250 条边，而这 100% 是手写 TypeScript。
 
 那四十行到底在做什么，下面逐条说。
 
@@ -142,13 +142,13 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 
 最后还有一道硬钳位：任何节点都不得位于 `PADDING_X = 60` 左侧。因为均匀重排是以质心为中心的对称操作，密集簇最左侧的站点可能被推出画布。
 
-一句话总结这个布局：地铁图全景把每座山的「方位 + 里程」短语转成按里数缩放的向量，沿山系累加，再重缩放使山系至少跨 1,128 单位、把纵轴压平到 60 单位，最后用邻近簇重排加迭代推开消解碰撞——26 条山系全部算完 10.0 ms([项目数据](https://findns.cc/shanhaijin)，2026)。
+一句话总结这个布局：地铁图全景把每座山的「方位 + 里程」短语转成按里数缩放的向量，沿山系累加，再重缩放使山系至少跨 1,128 单位、把纵轴压平到 60 单位，最后用邻近簇重排加迭代推开消解碰撞——26 条山系全部算完 10.0 ms([项目数据](https://findns.cc/shanhaijing)，2026)。
 
 ---
 
 ## 为什么要把布局算在构建期？
 
-因为静态站点可以这么做，而另一种做法是让每位访客的浏览器在每个交互动作上重算同样的算术。`scripts/build-shanhaijin-data.mjs` 在构建时对 26 条山系各跑一次 `layoutChain`，把得到的节点坐标写进 `public/shanhaijin/panorama-layout.json`——原始 187,347 字节，gzip 后 12.0 KB。客户端组件读这些坐标直接渲染，只有在预计算文件缺失时才回退到运行时调用 `layoutChain`。
+因为静态站点可以这么做，而另一种做法是让每位访客的浏览器在每个交互动作上重算同样的算术。`scripts/build-shanhaijing-data.mjs` 在构建时对 26 条山系各跑一次 `layoutChain`，把得到的节点坐标写进 `public/shanhaijing/panorama-layout.json`——原始 187,347 字节，gzip 后 12.0 KB。客户端组件读这些坐标直接渲染，只有在预计算文件缺失时才回退到运行时调用 `layoutChain`。
 
 同样的模式也用在山形聚焦视图的搜索索引上。`buildCtx` 把 447 个站点展平，并建立四份查找表：`byName`(419 项)、`chainIndex`(69 项)、`creatureIndex`(202 项)以及扁平站点数组。这些在 TypeScript 里是 `Map` 对象，无法直接 JSON 序列化，所以构建脚本用 `Object.fromEntries` 转成普通对象写进 `map-data.json` 的 `ctx` 键，客户端再用 `new Map(Object.entries(...))` 转回去。反序列化函数在结构不匹配时返回 `null`，组件随即回退到 `buildCtx`——两行优雅降级，让这次改动不必挑日子上线。
 
@@ -193,9 +193,9 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 
 **有两个视图没有改善，我不打算假装它们改善了。** `graph-data.json` 是 5.5 MB，因为力导向图确实需要全部 2,141 个实体和 7,113 条关系，才能从中挑出 200 个节点的子集；`entity-data.json` 是 5.9 MB，因为实体页需要分类学、别名、消歧记录和两套关系。这两个的正确解法不是拆分而是**投影**——预先生成一份截断到 200 节点的图，以及按实体切好的关系切片——那是一次比这轮重构更大的改动。
 
-还有一件小事很重要：总览页会输出 `<link rel="prefetch" href="/shanhaijin/panorama-data.json" as="fetch">`，让那 539 KB 的全景图数据在读者还在看总览时就开始下载。在静态站点上你没有任何服务端提示可用，但 HTML 在你手里，而 prefetch 提示是最便宜的一次延迟优化。
+还有一件小事很重要：总览页会输出 `<link rel="prefetch" href="/shanhaijing/panorama-data.json" as="fetch">`，让那 539 KB 的全景图数据在读者还在看总览时就开始下载。在静态站点上你没有任何服务端提示可用，但 HTML 在你手里，而 prefetch 提示是最便宜的一次延迟优化。
 
-<!-- [ORIGINAL DATA] 所有体积用 `stat` 在 `public/shanhaijin/` 下的已提交文件上测得，gzip 使用 `gzip -9`。JSON.parse 耗时在 Node 20 测得，并在 Chromium 中用 `performance.now()` 包住 fetch 加解析复核：`data.json` 5,106,894 字符 / 解析 7.2 ms；`panorama-data.json` 507,153 字符 / 0.7 ms；`map-data.json` 620,136 字符 / 1.3 ms。Chromium 的数字比 Node 好 2.5 倍，这提醒我们 Node 不是浏览器基准。 -->
+<!-- [ORIGINAL DATA] 所有体积用 `stat` 在 `public/shanhaijing/` 下的已提交文件上测得，gzip 使用 `gzip -9`。JSON.parse 耗时在 Node 20 测得，并在 Chromium 中用 `performance.now()` 包住 fetch 加解析复核：`data.json` 5,106,894 字符 / 解析 7.2 ms；`panorama-data.json` 507,153 字符 / 0.7 ms；`map-data.json` 620,136 字符 / 1.3 ms。Chromium 的数字比 Node 好 2.5 倍，这提醒我们 Node 不是浏览器基准。 -->
 
 ---
 
@@ -224,7 +224,7 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 
 ## 2,141 个静态页面要付什么代价？
 
-代价是构建时间和磁盘，换来的是可抓取性。`src/app/shanhaijin/entities/[type]/[name]/page.tsx` 里的 `generateStaticParams` 在构建期用 `readFileSync` 同步读取 `public/shanhaijin/data.json`，遍历 2,141 个实体，把每个 `typeKey` 过一个 15 项的表映射成 slug(`bird_beast` → `bird-beast`)，返回 2,141 组 `{ type, name }`([Next.js](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)，2026)。产物是 2,141 个预渲染实体页，加上 15 个类型索引页和 19 个经文页——18 篇正文加郭璞序。
+代价是构建时间和磁盘，换来的是可抓取性。`src/app/shanhaijing/entities/[type]/[name]/page.tsx` 里的 `generateStaticParams` 在构建期用 `readFileSync` 同步读取 `public/shanhaijing/data.json`，遍历 2,141 个实体，把每个 `typeKey` 过一个 15 项的表映射成 slug(`bird_beast` → `bird-beast`)，返回 2,141 组 `{ type, name }`([Next.js](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)，2026)。产物是 2,141 个预渲染实体页，加上 15 个类型索引页和 19 个经文页——18 篇正文加郭璞序。
 
 构建产物里的数字：
 
@@ -240,7 +240,7 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 
 这个设计有两点必须点出来，因为它们是锋利的边角而不是特性。
 
-**`generateStaticParams` 会吞掉失败。** 这个函数包在 `try/catch` 里，读不到文件就返回 `[]`。静态导出没有服务器可以按需渲染缺失路径，所以如果某次构建时 `data.json` 不在——比如某个 `.gitignore` 改动把它排除了——构建会成功，并输出零个实体页。站点会带着 2,141 个死链上线，一声不吭。这个 catch 本来是为 CI 环境准备的(那里没有 `doc/shanhaijin/`，预构建脚本会提前退出)，但它同时兼任了一个静默失败模式。
+**`generateStaticParams` 会吞掉失败。** 这个函数包在 `try/catch` 里，读不到文件就返回 `[]`。静态导出没有服务器可以按需渲染缺失路径，所以如果某次构建时 `data.json` 不在——比如某个 `.gitignore` 改动把它排除了——构建会成功，并输出零个实体页。站点会带着 2,141 个死链上线，一声不吭。这个 catch 本来是为 CI 环境准备的(那里没有 `doc/shanhaijing/`，预构建脚本会提前退出)，但它同时兼任了一个静默失败模式。
 
 **预渲染不免费，也不总是正确答案。** 一个博客产出 222 MB 是很多；光山海经部分就 81 MB。每个实体页都把自己的关系数据和章节上下文以 HTML 形式再嵌一遍。若换成客户端实体浏览器加一个 5.9 MB 的 JSON 文件，磁盘占用更小，重复访问时渲染更快——而它对所有不执行 JavaScript 的爬虫都是隐形的。考虑到这个项目的全部意义就是让一部 2,300 年前的文本可被机器读取、可被引用，预渲染 2,141 个页面是正确取舍。但它不是显然正确的取舍，下一个同类型的项目完全有理由做出不同选择。
 
@@ -250,7 +250,7 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 
 ### 真的可以不用 D3 写出力导向图吗？
 
-可以，而且算法比它周围的管道更小。Fruchterman-Reingold 模拟大约 40 行，`src/lib/shanhaijin-graph.ts` 里另外 580 行负责图谱构建、200 节点的均衡截断、连通分量装箱和标签碰撞。完整的交互图谱——布局、SVG 渲染、拖拽、平移、缩放、筛选——打包后 27,861 字节原始、9,704 字节 gzip([项目数据](https://findns.cc/shanhaijin)，2026)。
+可以，而且算法比它周围的管道更小。Fruchterman-Reingold 模拟大约 40 行，`src/lib/shanhaijing-graph.ts` 里另外 580 行负责图谱构建、200 节点的均衡截断、连通分量装箱和标签碰撞。完整的交互图谱——布局、SVG 渲染、拖拽、平移、缩放、筛选——打包后 27,861 字节原始、9,704 字节 gzip([项目数据](https://findns.cc/shanhaijing)，2026)。
 
 ### 力导向布局需要迭代多少轮？
 
@@ -276,9 +276,9 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 
 手写可视化是我原本以为会后悔、结果没有的部分。不是因为库不好——d3-force 只有 3 KB(gzip)，久经考验，在它擅长的事情上比我写得好——而是因为我要画的图不是通用图。它是一张碎裂的图，带着刻意的 200 节点预算、跨关系类型的均衡采样需求、按节点大小决定标签优先级的需求，以及「视视图而定，布局要么冻结要么新鲜」的需求。每一条需求都是通用库需要绕道的地方，而其中大多数只需要十五行手写代码。
 
-诚实的保留意见都写在上文里了：21 个节点掉进了截断与筛选之间的缝隙；总览页用一个可能漂移的常量换掉了一次请求；六个拆分文件里有两个仍然超过 5 MB；自托管的主字体有 16.7 MB，因为我目前只子集化了**生僻**字。站点在 [findns.cc/shanhaijin](https://findns.cc/shanhaijin)，你可以打开[知识图谱](https://findns.cc/shanhaijin/graph)、[全景图](https://findns.cc/shanhaijin/panorama)或[山形聚焦视图](https://findns.cc/shanhaijin/map)，用你自己的浏览器核对这里的任何一个数字。
+诚实的保留意见都写在上文里了：21 个节点掉进了截断与筛选之间的缝隙；总览页用一个可能漂移的常量换掉了一次请求；六个拆分文件里有两个仍然超过 5 MB；自托管的主字体有 16.7 MB，因为我目前只子集化了**生僻**字。站点在 [findns.cc/shanhaijing](https://findns.cc/shanhaijing)，你可以打开[知识图谱](https://findns.cc/shanhaijing/graph)、[全景图](https://findns.cc/shanhaijing/panorama)或[山形聚焦视图](https://findns.cc/shanhaijing/map)，用你自己的浏览器核对这里的任何一个数字。
 
-如果你想看项目的其余部分：[系列总览](/posts/machine-reading-shanhaijin-knowledge-graph/)讲图谱里有什么，[63 处矛盾那篇](/posts/shanhaijing-63-contradictions-machine-reading/)讲机器发现了什么，[管线那篇](/posts/shanhaijing-knowledge-graph-pipeline/)讲关系是怎么抽出来的，[九尾狐那篇](/posts/shanhaijing-nine-tailed-fox-missing/)讲数据里最有名的那个「不存在」，[缺字那篇](/posts/shanhaijing-missing-character-429-percent/)讲一个 萬 如何让一条山系差了 10,090 里。
+如果你想看项目的其余部分：[系列总览](/posts/machine-reading-shanhaijing-knowledge-graph/)讲图谱里有什么，[63 处矛盾那篇](/posts/shanhaijing-63-contradictions-machine-reading/)讲机器发现了什么，[管线那篇](/posts/shanhaijing-knowledge-graph-pipeline/)讲关系是怎么抽出来的，[九尾狐那篇](/posts/shanhaijing-nine-tailed-fox-missing/)讲数据里最有名的那个「不存在」，[缺字那篇](/posts/shanhaijing-missing-character-429-percent/)讲一个 萬 如何让一条山系差了 10,090 里。
 
 ---
 
@@ -294,4 +294,4 @@ b.vx -= (dx / d) * f2;  b.vy -= (dy / d) * f2
 - Cytoscape.js, "Graph theory library for visualization and analysis"(v3.30.2，压缩后 373,304 字节)，检索于 2026-10-21，https://js.cytoscape.org
 - vis.js, "vis-network"(v9.1.9，压缩后 476,620 字节)，检索于 2026-10-21，https://github.com/visjs/vis-network
 - npm/unpkg 包分发文件，压缩与 gzip -9 体积实测，检索于 2026-10-21，https://unpkg.com/d3-force@3.0.0/dist/d3-force.min.js
-- 项目数据，"山海经知识图谱"(源文件、布局产物与实测载荷体积)，检索于 2026-10-21，https://findns.cc/shanhaijin
+- 项目数据，"山海经知识图谱"(源文件、布局产物与实测载荷体积)，检索于 2026-10-21，https://findns.cc/shanhaijing

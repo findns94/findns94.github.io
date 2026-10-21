@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState, type ReactNode } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { annotateText, type AnnotatedSegment } from '@/lib/shanhaijin-annotator'
+import { annotateText, type AnnotatedSegment } from '@/lib/shanhaijing-annotator'
 
 /** typeKey → URL slug 映射（与 EntityDetail 保持一致） */
 function typeKeyToSlug(typeKey: string): string {
@@ -44,7 +44,7 @@ export function EntityLink({ canonical, typeKey, display, zh, children }: Entity
   const [hover, setHover] = useState(false)
   const slug = typeKeyToSlug(typeKey)
   const typeLabel = TYPE_LABELS[typeKey] ?? typeKey
-  const entityUrl = `/shanhaijin/entities/${slug}/${canonical}/`
+  const entityUrl = `/shanhaijing/entities/${slug}/${canonical}/`
 
   return (
     <span className="relative inline-block">

@@ -22,7 +22,7 @@ tags: [Shanhaijing, Culture, AI]
 
 我没有修它，也不打算修它。这篇文章要解释的就是：为什么这个空缺不是 bug，而是整个项目里最重要的一个设计决定。
 
-这是「机器读《山海经》」系列的第 5 篇(共 6 篇)。[总览篇](/posts/machine-reading-shanhaijin-knowledge-graph/) 讲整个项目，这一篇只讲一个刻意留下的洞，以及它对「如何构建一个语言模型和人类都能信任的知识库」意味着什么。
+这是「机器读《山海经》」系列的第 5 篇(共 6 篇)。[总览篇](/posts/machine-reading-shanhaijing-knowledge-graph/) 讲整个项目，这一篇只讲一个刻意留下的洞，以及它对「如何构建一个语言模型和人类都能信任的知识库」意味着什么。
 
 <!-- more -->
 
@@ -138,7 +138,7 @@ INHABITS_PATTERN = re.compile(r'有(兽|鸟|鱼|蛇|虫)焉[^\n]{0,80}?其名曰
 
 ## 一个版权到期日，凭什么决定你读哪个版本？
 
-因为《山海经》最方便的那个版本，被锁到 2051 年。现代最通行的校注本——袁珂《山海经校注》——在中国受著作权保护至 **2051-12-31**：袁珂逝世于 2001-07-14，著作权保护期为作者终生加 50 年，届满于第 50 年的年末([项目文档](/posts/shanhaijing-63-contradictions-machine-reading/)，`doc/shanhaijin/08_适配方案与行动清单.md`，2026)。
+因为《山海经》最方便的那个版本，被锁到 2051 年。现代最通行的校注本——袁珂《山海经校注》——在中国受著作权保护至 **2051-12-31**：袁珂逝世于 2001-07-14，著作权保护期为作者终生加 50 年，届满于第 50 年的年末([项目文档](/posts/shanhaijing-63-contradictions-machine-reading/)，`doc/shanhaijing/08_适配方案与行动清单.md`，2026)。
 
 这不是一句「古籍早就没有版权了」就能绕过去的。《山海经》本身有两千年历史，毫无疑问属于公有领域；但一部现代校注本承载着校勘、标点、改字取舍与注释，那是一层新的、受保护的学术劳动。在一个知识图谱里照搬袁珂的编辑判断，复制的不是古诗，而是受保护的整理成果。
 
@@ -231,17 +231,17 @@ INHABITS_PATTERN = re.compile(r'有(兽|鸟|鱼|蛇|虫)焉[^\n]{0,80}?其名曰
 
 如果这个系列只能带走一件事，请带走论证的形状而不是那些具体数字：**知识图谱里最有价值的字段，常常是写着 `null` 的那一个；最有价值的文档，是解释它为什么是 null 的那一份。** 下一篇会把同一套纪律带进一个校勘学谜题：一个脱漏的字，如何造成 429% 的距离误差，而项目选择记录它、拒绝修改它。
 
-想一次看完整项目，从[总览篇](/posts/machine-reading-shanhaijin-knowledge-graph/) 开始；想逐条核对本文的断言，可以直接翻[在线《山海经》阅读器](/shanhaijin) 对照原文。本文引用的每一项数据，都可以在仓库里验证。
+想一次看完整项目，从[总览篇](/posts/machine-reading-shanhaijing-knowledge-graph/) 开始；想逐条核对本文的断言，可以直接翻[在线《山海经》阅读器](/shanhaijing) 对照原文。本文引用的每一项数据，都可以在仓库里验证。
 
 ## 资料来源
 
-- 《山海经》知识图谱项目仓库，`doc/shanhaijin/000_README.md`(异兽分布、三层设计、决策记录 D1–D10、已知缺陷)，检索于 2026-10-21
+- 《山海经》知识图谱项目仓库，`doc/shanhaijing/000_README.md`(异兽分布、三层设计、决策记录 D1–D10、已知缺陷)，检索于 2026-10-21
 - 《山海经》知识图谱，`kg/space/data/place_coords.json`(820 个节点；`confirmed` 405 / `inferred` 42 / `mythical` 373；`layer_basis`、`estimated` 标记)，检索于 2026-10-21
 - 《山海经》知识图谱，`kg/space/data/creature_sightings.json`(202 种异兽、217 次出现、166 个地点、9 种跨篇异兽)，检索于 2026-10-21
 - 《山海经》知识图谱，`kg/space/data/layers.json` 与 `logs/place_coords_report.md`(互相矛盾的 0 / 447 / 373 分层计数)，检索于 2026-10-21
 - 《山海经》知识图谱，`kg/relations/biology_relations.json`(271 条 `inhabits` 关系，含置信度等级与段落编号)，检索于 2026-10-21
 - 《山海经》知识图谱，`skills/SKILL_05g_物产与异兽关系.md`(§4 `INHABITS_PATTERN`、§9.3 硬规则 R1–R15)，检索于 2026-10-21
-- 《山海经》知识图谱，`doc/shanhaijin/08_适配方案与行动清单.md`(§1.5–1.6 版本选择与袁珂 2051-12-31 版权边界)，检索于 2026-10-21
+- 《山海经》知识图谱，`doc/shanhaijing/08_适配方案与行动清单.md`(§1.5–1.6 版本选择与袁珂 2051-12-31 版权边界)，检索于 2026-10-21
 - 《山海经》知识图谱，`chapter_md/001_南山经.tagged.md` 与 `kg/records/data/records.json`(青丘之山 PN 001-1.7；记载 001-020 至 001-023)，检索于 2026-10-21
 - 维基文库，《山海經》(郭璞注本，PD-old)，https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93 ，检索于 2026-10-21
 - Wikimedia Commons，「南山經-九尾狐」，出自胡文焕《山海经图》(明代，公有领域)，https://commons.wikimedia.org/wiki/File:%E5%8D%97%E5%B1%B1%E7%B6%93-%E4%B9%9D%E5%B0%BE%E7%8B%90.svg ，检索于 2026-10-21

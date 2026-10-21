@@ -16,7 +16,7 @@ tags: [Shanhaijing, Knowledge Graph, Data Science]
 
 The *Classic of Mountains and Seas* (山海经) lists 447 named mountains arranged in 26 chains, and its closing sentences claim the walk between them adds up to 97,358 *li* — roughly 40,000 kilometres, about the circumference of the Earth. Nowhere does the text tell you where any of those mountains actually are. There are no coordinates, no dynastic dates, no maps in the received text. What the book gives you instead is pure topology: "three hundred *li* further east, there is such-and-such mountain." That is exactly the information a subway map carries, and it is exactly the information a knowledge graph can hold.
 
-This is post 3 of a 6-post series on machine-reading the *Shanhaijing*. The [series hub](/posts/machine-reading-shanhaijin-knowledge-graph/) covers what the project is and why it exists. This post is the engineering deep dive: how the annotation system is designed, how the extraction pipeline works, what the knowledge graph actually contains, and — the part most write-ups skip — which parts of the declared schema are still empty.
+This is post 3 of a 6-post series on machine-reading the *Shanhaijing*. The [series hub](/posts/machine-reading-shanhaijing-knowledge-graph/) covers what the project is and why it exists. This post is the engineering deep dive: how the annotation system is designed, how the extraction pipeline works, what the knowledge graph actually contains, and — the part most write-ups skip — which parts of the declared schema are still empty.
 
 <!-- more -->
 
@@ -158,7 +158,7 @@ That discipline is also why one famous creature is missing from the graph. The n
 
 ## Inside the Build Script: 12 Sources, 6 Files, 29 Assertions
 
-It merges 12 read-only JSON sources into 6 per-component files, checks 29 hard assertions, and refuses to emit anything if an invariant breaks. The script is `scripts/build-shanhaijin-data.mjs`, and it runs as a `prebuild` step.
+It merges 12 read-only JSON sources into 6 per-component files, checks 29 hard assertions, and refuses to emit anything if an invariant breaks. The script is `scripts/build-shanhaijing-data.mjs`, and it runs as a `prebuild` step.
 
 The 12 inputs are the chain map, 26 route files, creature sightings, place products, chapter texts, the entity index, the taxonomy, the alias map, spatial relations, biology relations, the disambiguation map, and the 447 mountain positions. The outputs are one monolithic `data.json` plus six split files — `panorama-data`, `panorama-layout`, `map-data`, `graph-data`, `entity-data`, `search-data` — plus a lightweight `meta.json` and a flat `entity-names.json` used for client-side annotation.
 
@@ -183,7 +183,7 @@ Two operational details are worth copying. The script imports only `node:fs`, `n
 
 ```js
 if (!existsSync(MAP_DATA)) {
-  console.warn('[build-shanhaijin-data] source corpus absent; skipping rebuild')
+  console.warn('[build-shanhaijing-data] source corpus absent; skipping rebuild')
   process.exit(0)
 }
 ```
@@ -200,7 +200,7 @@ A subway map deliberately discards real geography and keeps only order, adjacenc
 
 The graph is honest about the difference. Positions are computed by walking the chains and accumulating distance, so every coordinate is flagged as estimated rather than surveyed, and the entity layer is split into three confidence bands rather than presented as one uniform dataset. The nine-tailed fox gap and the 63 recorded contradictions belong to the same principle: the graph reports what the text says, including where the text is silent or self-contradictory.
 
-How that graph gets rendered without a charting library — the 26-line metro view, the single-mountain focus view, the precomputed layout that runs at build time rather than in the browser — is [post 4 in this series](/posts/shanhaijing-zero-dependency-visualization/). And if you want the whole picture first, start at the [series hub](/posts/machine-reading-shanhaijin-knowledge-graph/).
+How that graph gets rendered without a charting library — the 26-line metro view, the single-mountain focus view, the precomputed layout that runs at build time rather than in the browser — is [post 4 in this series](/posts/shanhaijing-zero-dependency-visualization/). And if you want the whole picture first, start at the [series hub](/posts/machine-reading-shanhaijing-knowledge-graph/).
 
 ## FAQ
 
@@ -230,13 +230,13 @@ The engineering claim of this project is narrow and testable: a 32,316-character
 
 The parts that matter most are the parts that are missing. Five declared entity classes are empty. The idiom family is defined and never used. The inline disambiguation syntax exists and the corpus relies on the external map instead. One of the book's most famous creatures has no relation because the text never names it. Every one of those gaps is a decision to stay silent rather than guess, and every one is recorded in the data rather than in a footnote.
 
-Start with the [series hub](/posts/machine-reading-shanhaijin-knowledge-graph/) if you want the whole picture, or jump to [the visualisation post](/posts/shanhaijing-zero-dependency-visualization/) to see how 447 stations get drawn. The graph itself is browsable at [findns.cc/shanhaijin](https://findns.cc/shanhaijin).
+Start with the [series hub](/posts/machine-reading-shanhaijing-knowledge-graph/) if you want the whole picture, or jump to [the visualisation post](/posts/shanhaijing-zero-dependency-visualization/) to see how 447 stations get drawn. The graph itself is browsable at [findns.cc/shanhaijing](https://findns.cc/shanhaijing).
 
 ## Sources
 
-- Project build artifacts, `entity_index.json`, `entity_aliases.json`, `disambiguation_map.json`, `spatial_relations.json`, `biology_relations.json`, `records.json`, retrieved 2026-10-21, https://findns.cc/shanhaijin
-- Project pipeline specification, SKILL_03m entity annotation, SKILL_03n bearing and distance disambiguation, SKILL_04g record-unit recognition, SKILL_05f spatial relations, SKILL_05g product and creature relations, retrieved 2026-10-21, https://findns.cc/shanhaijin
-- Project build script, `scripts/build-shanhaijin-data.mjs`, retrieved 2026-10-21, https://github.com/findns94/findns94.github.io/blob/hexo/scripts/build-shanhaijin-data.mjs
+- Project build artifacts, `entity_index.json`, `entity_aliases.json`, `disambiguation_map.json`, `spatial_relations.json`, `biology_relations.json`, `records.json`, retrieved 2026-10-21, https://findns.cc/shanhaijing
+- Project pipeline specification, SKILL_03m entity annotation, SKILL_03n bearing and distance disambiguation, SKILL_04g record-unit recognition, SKILL_05f spatial relations, SKILL_05g product and creature relations, retrieved 2026-10-21, https://findns.cc/shanhaijing
+- Project build script, `scripts/build-shanhaijing-data.mjs`, retrieved 2026-10-21, https://github.com/findns94/findns94.github.io/blob/hexo/scripts/build-shanhaijing-data.mjs
 - Wikisource, 《山海經》 (Guo Pu annotated edition, public domain), retrieved 2026-10-21, https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93
 - Wikimedia Commons, Wang Ximeng, *A Thousand Li of Rivers and Mountains* (1113), Palace Museum, Beijing, public domain, retrieved 2026-10-21, https://commons.wikimedia.org/wiki/File:1c_Wang_Ximeng._A_Thousand_Li_of_Rivers_and_Mountains._(51,3x1191,5cm)1113._(section)_Palace_museum,_Beijing.jpg
 - Wikimedia Commons, Wu Renchen, 《山海經廣注》 (1667), woodblock illustration of Kui, public domain, retrieved 2026-10-21, https://commons.wikimedia.org/wiki/File:Wu-Renchen-Shanhai-jing-guangzhu-Kui.jpg

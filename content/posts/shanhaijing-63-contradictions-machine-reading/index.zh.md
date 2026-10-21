@@ -32,7 +32,7 @@ math: false
 
 ## 机器精读一部两千年前的典籍，究竟能读出什么？
 
-它读出的是一部自带算术的书，而这套算术在 63 个地方失算了。对全部 18 篇做一遍结构解析——447 条山条目归入 26 条山系，声明里程合计约 97,358 里，经文约 32,316 个汉字——共得到 63 处矛盾，分成 5 类、4 种判定([项目矛盾报告](https://findns.cc/shanhaijin/)，2026)。
+它读出的是一部自带算术的书，而这套算术在 63 个地方失算了。对全部 18 篇做一遍结构解析——447 条山条目归入 26 条山系，声明里程合计约 97,358 里，经文约 32,316 个汉字——共得到 63 处矛盾，分成 5 类、4 种判定([项目矛盾报告](https://findns.cc/shanhaijing/)，2026)。
 
 管线的每一步都刻意做得很笨。第一步把经文切成带稳定编号的单元，例如 `（003-3.46）`。第二步解析每一处方位的里程短语——「又东三百里」变成「东，三百里」——再把一条山系内的各段里程相加。第三步读出山系末尾的总结句，把两个总数摆在一起。第四步给每处不一致分类，把双方的原文都附上，再给出判定。
 
@@ -170,7 +170,7 @@ math: false
 
 要记住的三个数字是 63、28 和 0。63 处矛盾，分属五类。28 处确认，其余都诚实地挂了保留。以及 0——在找出并修掉我们自己的 22 处 bug 之后，被判为解析器错误的为零；而这个零我们随后又复核了一遍，因为报告里叫得最响的那一条，最后查出来是我们丢的一个字。最后这一步才让前两个数字有意义：没有它，「63 处矛盾」只是一句指控。
 
-本文是六篇系列的第二篇。系列枢纽篇[《机器精读《山海经》：为什么值得做》](/posts/machine-reading-shanhaijin-knowledge-graph/)讲这本书为什么适合被机器读；[知识图谱管线篇](/posts/shanhaijing-knowledge-graph-pipeline/)拆解图谱怎么搭起来；[零依赖可视化篇](/posts/shanhaijing-zero-dependency-visualization/)用手写 SVG 把它画出来；[九尾狐篇](/posts/shanhaijing-nine-tailed-fox-missing/)展示当数据诚实地拒绝回答一个你确信它答得出的问题时会发生什么；[缺字篇](/posts/shanhaijing-missing-character-429-percent/)围绕那 429% 与它背后的一个字展开。你也可以在 [findns.cc/shanhaijin](https://findns.cc/shanhaijin/) 对照阅读底本原文与抽取出的实体。
+本文是六篇系列的第二篇。系列枢纽篇[《机器精读《山海经》：为什么值得做》](/posts/machine-reading-shanhaijing-knowledge-graph/)讲这本书为什么适合被机器读；[知识图谱管线篇](/posts/shanhaijing-knowledge-graph-pipeline/)拆解图谱怎么搭起来；[零依赖可视化篇](/posts/shanhaijing-zero-dependency-visualization/)用手写 SVG 把它画出来；[九尾狐篇](/posts/shanhaijing-nine-tailed-fox-missing/)展示当数据诚实地拒绝回答一个你确信它答得出的问题时会发生什么；[缺字篇](/posts/shanhaijing-missing-character-429-percent/)围绕那 429% 与它背后的一个字展开。你也可以在 [findns.cc/shanhaijing](https://findns.cc/shanhaijing/) 对照阅读底本原文与抽取出的实体。
 
 ## 常见问题
 
@@ -197,12 +197,12 @@ math: false
 ## 来源
 
 - 维基文库，《山海經》(郭璞注本，公有领域)，检索于 2026-10-21，https://zh.wikisource.org/wiki/山海經
-- 项目数据文件 `doc/shanhaijin/kg/conflicts/conflict_report.json` —— 63 条矛盾报告，含类型、判定、置信度、竞争假设与 `our_bug` 字段，2026
-- 项目数据文件 `doc/shanhaijin/kg/conflicts/conflict_report.md` —— 五类矛盾分类、26 条山系对账表与五大案例逐条分析，2026
-- 项目报告 `doc/shanhaijin/logs/structure_build_report.md` —— 逐山系的逐条 vs 声明山数与里程、原文完整性校验，2026
-- 项目报告 `doc/shanhaijin/logs/route_report.md` —— 逐段里程验算、`check_status` 分布、水程剥离记录，2026
-- 项目 README `doc/shanhaijin/000_README.md` —— 语料统计(447 山 / 26 山系 / 97,358 里 / 32,316 字)与 `our_bug: 0` 验证，2026
+- 项目数据文件 `doc/shanhaijing/kg/conflicts/conflict_report.json` —— 63 条矛盾报告，含类型、判定、置信度、竞争假设与 `our_bug` 字段，2026
+- 项目数据文件 `doc/shanhaijing/kg/conflicts/conflict_report.md` —— 五类矛盾分类、26 条山系对账表与五大案例逐条分析，2026
+- 项目报告 `doc/shanhaijing/logs/structure_build_report.md` —— 逐山系的逐条 vs 声明山数与里程、原文完整性校验，2026
+- 项目报告 `doc/shanhaijing/logs/route_report.md` —— 逐段里程验算、`check_status` 分布、水程剥离记录，2026
+- 项目 README `doc/shanhaijing/000_README.md` —— 语料统计(447 山 / 26 山系 / 97,358 里 / 32,316 字)与 `our_bug: 0` 验证，2026
 - Loewe, Michael (ed.), *Early Chinese Texts: A Bibliographical Guide*, Society for the Study of Early China and the Institute of East Asian Studies, 1993 —— 《山海经》成书年代与性质的背景参考
-- 在线阅读器与知识图谱，https://findns.cc/shanhaijin/
+- 在线阅读器与知识图谱，https://findns.cc/shanhaijing/
 
 **图片：** 封面与插图均为公有领域的《山海经》插图本木刻书页，取自维基共享资源(检索于 2026-10-21)。封面：《山海經圖》卷二目录，中国国家图书馆扫描本。插图：九凤，出自彩绘《山海经》插图本；夔，出自吴任臣《山海經廣注》(1628–1689)。

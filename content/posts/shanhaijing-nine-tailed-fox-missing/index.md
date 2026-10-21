@@ -22,7 +22,7 @@ My Shanhaijing knowledge graph indexes **202 distinct creatures** across **217 r
 
 I did not fix this. I am not going to fix it. And this post is the explanation of why that is a feature rather than a bug — and why I think it is the single most important design decision in the whole project.
 
-This is post 5 of 6 in a series about machine-reading the Shanhaijing. The [hub post](/posts/machine-reading-shanhaijin-knowledge-graph/) covers the project as a whole; here I want to zoom in on one deliberate hole and what it says about building knowledge bases that a language model, or a human, can actually trust.
+This is post 5 of 6 in a series about machine-reading the Shanhaijing. The [hub post](/posts/machine-reading-shanhaijing-knowledge-graph/) covers the project as a whole; here I want to zoom in on one deliberate hole and what it says about building knowledge bases that a language model, or a human, can actually trust.
 
 <!-- more -->
 
@@ -142,7 +142,7 @@ That is the design goal stated in one word: **不误导** — do not mislead. A 
 
 ## Why Does a Copyright Date Decide Which Edition You Can Read?
 
-Because the most convenient edition of the Shanhaijing is locked until 2051. The standard modern annotated edition, 袁珂's 《山海经校注》, is under copyright in China until **2051-12-31** — 袁珂 died on 2001-07-14, and Chinese copyright runs for the author's life plus 50 years, expiring at the end of the fiftieth year ([project documentation](/posts/shanhaijing-63-contradictions-machine-reading/), `doc/shanhaijin/08_适配方案与行动清单.md`, 2026).
+Because the most convenient edition of the Shanhaijing is locked until 2051. The standard modern annotated edition, 袁珂's 《山海经校注》, is under copyright in China until **2051-12-31** — 袁珂 died on 2001-07-14, and Chinese copyright runs for the author's life plus 50 years, expiring at the end of the fiftieth year ([project documentation](/posts/shanhaijing-63-contradictions-machine-reading/), `doc/shanhaijing/08_适配方案与行动清单.md`, 2026).
 
 That is not a technicality to be waved away by "it's an ancient text." The *Shanhaijing* itself is two millennia old and unambiguously public domain. But a modern 校注 edition carries the editor's collation, punctuation, emendation choices and notes — and those are a new, protected work. Building a knowledge graph on top of 袁珂's editorial decisions would mean copying a protected layer of scholarship, not an ancient poem.
 
@@ -235,17 +235,17 @@ The nine-tailed fox is the most famous creature in the *Classic of Mountains and
 
 If you take one thing from this series, take the shape of the argument rather than the specific numbers: **a knowledge graph's most valuable field is often the one that says `null`, and its most valuable document is the one that says why.** The next post takes that same discipline into a textual-criticism puzzle, where a single dropped character produces a 429% distance error that the project records and refuses to correct.
 
-Start with the [hub post](/posts/machine-reading-shanhaijin-knowledge-graph/) if you want the whole project in one place, or browse the [live Shanhaijing reader](/shanhaijin) to check any of these claims against the source text yourself. Everything cited in this post is verifiable from the repository.
+Start with the [hub post](/posts/machine-reading-shanhaijing-knowledge-graph/) if you want the whole project in one place, or browse the [live Shanhaijing reader](/shanhaijing) to check any of these claims against the source text yourself. Everything cited in this post is verifiable from the repository.
 
 ## Sources
 
-- Shanhaijing knowledge graph, project repository, `doc/shanhaijin/000_README.md` (creature distribution, three-layer design, decision log D1–D10, known defects), retrieved 2026-10-21
+- Shanhaijing knowledge graph, project repository, `doc/shanhaijing/000_README.md` (creature distribution, three-layer design, decision log D1–D10, known defects), retrieved 2026-10-21
 - Shanhaijing knowledge graph, `kg/space/data/place_coords.json` (820 nodes; `confirmed` 405 / `inferred` 42 / `mythical` 373; `layer_basis`, `estimated` flags), retrieved 2026-10-21
 - Shanhaijing knowledge graph, `kg/space/data/creature_sightings.json` (202 distinct creatures, 217 sightings, 166 place names, 9 multi-chapter creatures), retrieved 2026-10-21
 - Shanhaijing knowledge graph, `kg/space/data/layers.json` and `logs/place_coords_report.md` (the divergent 0 / 447 / 373 layer counts), retrieved 2026-10-21
 - Shanhaijing knowledge graph, `kg/relations/biology_relations.json` (271 `inhabits` relations with confidence tiers and paragraph numbers), retrieved 2026-10-21
 - Shanhaijing knowledge graph, `skills/SKILL_05g_物产与异兽关系.md` (§4 `INHABITS_PATTERN`, §9.3 hard rules R1–R15), retrieved 2026-10-21
-- Shanhaijing knowledge graph, `doc/shanhaijin/08_适配方案与行动清单.md` (§1.5–1.6 edition selection and the 袁珂 2051-12-31 copyright boundary), retrieved 2026-10-21
+- Shanhaijing knowledge graph, `doc/shanhaijing/08_适配方案与行动清单.md` (§1.5–1.6 edition selection and the 袁珂 2051-12-31 copyright boundary), retrieved 2026-10-21
 - Shanhaijing knowledge graph, `chapter_md/001_南山经.tagged.md` and `kg/records/data/records.json` (青丘之山 at PN 001-1.7; records 001-020 through 001-023), retrieved 2026-10-21
 - Wikisource, 《山海經》 (郭璞 annotated edition, PD-old), https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93, retrieved 2026-10-21
 - Wikimedia Commons, "南山經-九尾狐" from 胡文焕 《山海经图》 (Ming dynasty, public domain), https://commons.wikimedia.org/wiki/File:%E5%8D%97%E5%B1%B1%E7%B6%93-%E4%B9%9D%E5%B0%BE%E7%8B%90.svg, retrieved 2026-10-21

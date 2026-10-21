@@ -13,7 +13,7 @@
 <line x1="178" y1="86" x2="178" y2="368" stroke="#4a4a66" stroke-width="1"/>
 <text x="611.8" y="398" text-anchor="middle" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">KB of JSON</text>
 <rect x="178" y="66" width="9" height="9" fill="#64748b" rx="2"/>
-<text x="192" y="74" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="10">Before: /shanhaijin/data.json (6,322.8 KB)</text>
+<text x="192" y="74" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="10">Before: /shanhaijing/data.json (6,322.8 KB)</text>
 <rect x="448" y="66" width="9" height="9" fill="#22c55e" rx="2"/>
 <text x="462" y="74" fill="#94a3b8" font-family="'Inter', system-ui, sans-serif" font-size="10">After: per-view file</text>
 <text x="762" y="74" text-anchor="end" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="10">reduction (raw)</text>
@@ -54,5 +54,5 @@
 <text x="184" y="358" fill="#5fd08a" font-family="'Inter', system-ui, sans-serif" font-size="9">0 KB</text>
 <text x="762" y="354" text-anchor="end" fill="#e0e0e0" font-family="'Inter', system-ui, sans-serif" font-size="10" font-weight="600">removed</text>
 <text x="20" y="428" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">Panorama after = panorama-data.json (539.1 KB) + panorama-layout.json (183.0 KB). Gzip figures measured with gzip -9.</text>
-<text x="20" y="444" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: measured from public/shanhaijin/*.json in the findns.cc repository, 2026-10-21.</text>
+<text x="20" y="444" fill="#666680" font-family="'Inter', system-ui, sans-serif" font-size="9">Source: measured from public/shanhaijing/*.json in the findns.cc repository, 2026-10-21.</text>
 </svg>

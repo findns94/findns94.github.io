@@ -147,5 +147,5 @@
   <text x="829.3" y="333" font-size="9.5" text-anchor="end" fill="#f87171">as first recorded: 348.5% &#8212; our parser dropped the leading 萬</text>
   <text x="369.6" y="377" font-size="9.5" fill="currentColor" opacity="0.65">summary line reads 「萬二千三百五十里」 = 12,350 li → residual 90 li</text>
   <text x="20" y="836" font-size="9" fill="currentColor" opacity="0.5">Blue = per-entry sum above the stated figure &#183; amber = below &#183; green diamond = the two chains that reconcile</text>
-  <text x="20" y="854" font-size="8.5" fill="currentColor" opacity="0.45">Source: doc/shanhaijin/logs/route_report.md and the transcribed base text (03_北山经.txt); percentages use the summary sentence as denominator, 2026.</text>
+  <text x="20" y="854" font-size="8.5" fill="currentColor" opacity="0.45">Source: doc/shanhaijing/logs/route_report.md and the transcribed base text (03_北山经.txt); percentages use the summary sentence as denominator, 2026.</text>
 </svg>

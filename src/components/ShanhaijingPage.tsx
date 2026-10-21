@@ -47,7 +47,7 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
 
       {/* 搜索入口 */}
       <section className="mb-10">
-        <form action="/shanhaijin/search/" method="get" className="flex gap-2">
+        <form action="/shanhaijing/search/" method="get" className="flex gap-2">
           <input
             type="text"
             name="q"
@@ -67,10 +67,10 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
       {/* 入口卡片 */}
       <section className="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { href: '/shanhaijin/panorama/', zh: '山系全景图', en: 'Panorama' },
-          { href: '/shanhaijin/entities/creature/', zh: '异兽谱', en: 'Creatures' },
-          { href: '/shanhaijin/entities/mineral/', zh: '物产志', en: 'Products' },
-          { href: '/shanhaijin/graph/', zh: '知识图谱', en: 'Knowledge Graph' },
+          { href: '/shanhaijing/panorama/', zh: '山系全景图', en: 'Panorama' },
+          { href: '/shanhaijing/entities/creature/', zh: '异兽谱', en: 'Creatures' },
+          { href: '/shanhaijing/entities/mineral/', zh: '物产志', en: 'Products' },
+          { href: '/shanhaijing/graph/', zh: '知识图谱', en: 'Knowledge Graph' },
         ].map((card) => (
           <Link
             key={card.href}
@@ -107,15 +107,15 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
       {/* 山形聚焦入口：一次只看一座山的方位与里程 */}
       <section className="mb-12">
         <Link
-          href="/shanhaijin/map/"
+          href="/shanhaijing/map/"
           className="group flex items-center justify-between gap-4 rounded-lg border border-blue-200 bg-blue-50 p-5 no-underline transition-colors hover:border-blue-300 hover:bg-blue-100"
         >
           <div>
             <h2 className="mb-1 text-lg font-semibold text-gray-900">
-              {t.shanhaijin.map.title}
+              {t.shanhaijing.map.title}
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed">
-              {t.shanhaijin.map.subtitle}
+              {t.shanhaijing.map.subtitle}
             </p>
           </div>
           <span className="shrink-0 text-blue-600 transition-transform group-hover:translate-x-0.5">
@@ -127,12 +127,12 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
       {/* 实体总览入口 */}
       <section className="mb-12">
         <Link
-          href="/shanhaijin/entities/"
+          href="/shanhaijing/entities/"
           className="group flex items-center justify-between gap-4 rounded-lg border border-emerald-200 bg-emerald-50 p-5 no-underline transition-colors hover:border-emerald-300 hover:bg-emerald-100"
         >
           <div>
             <h2 className="mb-1 text-lg font-semibold text-gray-900">
-              {t.shanhaijin.entities.title}
+              {t.shanhaijing.entities.title}
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed">
               {zh
@@ -154,11 +154,11 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {ENTITY_TYPE_ORDER.map((typeKey) => {
             const count = ENTITY_TYPE_COUNTS[typeKey] ?? 0
-            const typeLabel = t.shanhaijin.entities.types[typeKey as keyof typeof t.shanhaijin.entities.types] ?? typeKey
+            const typeLabel = t.shanhaijing.entities.types[typeKey as keyof typeof t.shanhaijing.entities.types] ?? typeKey
             return (
               <Link
                 key={typeKey}
-                href={`/shanhaijin/entities/${typeSlug(typeKey)}/`}
+                href={`/shanhaijing/entities/${typeSlug(typeKey)}/`}
                 className="group flex flex-col items-center gap-1 rounded-lg border border-gray-200 bg-white p-4 no-underline transition-colors hover:border-emerald-400 hover:bg-emerald-50"
               >
                 <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-700">
@@ -185,7 +185,7 @@ export function ShanhaijingPage({ chapters }: { chapters: ChapterMeta[] }) {
             {g.items.map((c) => (
               <li key={c.num}>
                 <Link
-                  href={`/shanhaijin/chapters/${c.num}`}
+                  href={`/shanhaijing/chapters/${c.num}`}
                   className="flex items-baseline gap-3 px-3 py-2 rounded border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors no-underline text-gray-700"
                 >
                   <span className="text-xs text-gray-400 tabular-nums">{c.num}</span>

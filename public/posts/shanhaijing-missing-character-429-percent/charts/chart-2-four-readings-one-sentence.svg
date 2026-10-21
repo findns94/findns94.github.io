@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Bar chart of four different numbers reported for the same summary sentence of the North Third Chain: 12,440 li counted with water-course mileage, 12,350 li as the source text spells it, 10,540 li counted without water-course mileage, and 2,350 li as recorded by the pipeline numeral parser. The top two differ by 90 li, or 0.7 percent.">
 <title>Four Numbers for One Sentence: The North Third Chain</title>
-<desc>Horizontal bar chart of four values reported for the same line of the Shanhaijing, the summary sentence of the North Third Chain. 12,440 li is the sum of the 47 entries with water-course mileage included. 12,350 li is what the source text literally says. 10,540 li is the sum with water-course mileage excluded. 2,350 li is the figure the structure layer numeral parser produced from the same string, by dropping a leading ten-thousand character. The first two differ by 90 li, or 0.7 percent; the bottom value is an artefact of parsing, not of the manuscript. Source: Shanhaijing chain summaries, route reconciliation and record units, findns.cc/shanhaijin, retrieved 2026-10-21.</desc>
+<desc>Horizontal bar chart of four values reported for the same line of the Shanhaijing, the summary sentence of the North Third Chain. 12,440 li is the sum of the 47 entries with water-course mileage included. 12,350 li is what the source text literally says. 10,540 li is the sum with water-course mileage excluded. 2,350 li is the figure the structure layer numeral parser produced from the same string, by dropping a leading ten-thousand character. The first two differ by 90 li, or 0.7 percent; the bottom value is an artefact of parsing, not of the manuscript. Source: Shanhaijing chain summaries, route reconciliation and record units, findns.cc/shanhaijing, retrieved 2026-10-21.</desc>
 <style>
   :root { --fg: #1f2937; --fg-min: #374151; --track: rgba(0,0,0,0.07); }
   @media (prefers-color-scheme: dark) {
@@ -32,5 +32,5 @@
 <text class="op35" x="746.0" y="231" text-anchor="end" font-size="9.5">−1,810 li · −14.7% against the source spelling</text>
 <text x="746.0" y="299" text-anchor="end" font-size="10" font-weight="700" fill="#ef4444">+10,090 li · 429%</text>
 <text class="op35" x="746.0" y="312" text-anchor="end" font-size="9.5">the headline gap, against the counted total</text>
-<text class="op35" x="30" y="394" font-size="9">Source: Shanhaijing chain summaries (SKILL_02a), route reconciliation (SKILL_03n), record units (SKILL_04g), findns.cc/shanhaijin, retrieved 2026-10-21.</text>
+<text class="op35" x="30" y="394" font-size="9">Source: Shanhaijing chain summaries (SKILL_02a), route reconciliation (SKILL_03n), record units (SKILL_04g), findns.cc/shanhaijing, retrieved 2026-10-21.</text>
 </svg>

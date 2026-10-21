@@ -53,5 +53,5 @@
   <text x="234" y="381" font-size="9.5" fill="currentColor" opacity="0.8">Undecidable</text>
   <rect x="303" y="372" width="11" height="11" rx="3" fill="#34d399" opacity="0.9"/>
   <text x="319" y="381" font-size="9.5" fill="currentColor" opacity="0.8">Explained / archived</text>
-  <text x="20" y="408" font-size="8.5" fill="currentColor" opacity="0.45">Source: doc/shanhaijin/kg/conflicts/conflict_report.json (63 items, 5 classes, our_bug = 0), 2026.</text>
+  <text x="20" y="408" font-size="8.5" fill="currentColor" opacity="0.45">Source: doc/shanhaijing/kg/conflicts/conflict_report.json (63 items, 5 classes, our_bug = 0), 2026.</text>
 </svg>

@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getMessages } from '@/i18n/messages'
-import { TRANSLATIONS } from '@/lib/shanhaijin-translations'
+import { TRANSLATIONS } from '@/lib/shanhaijing-translations'
 import { CHAPTERS } from '@/lib/shanhaijing-data'
 import { AnnotatedText } from '@/components/EntityAnnotator'
 
-/** 实体典名条目（来自 /shanhaijin/entity-names.json） */
+/** 实体典名条目（来自 /shanhaijing/entity-names.json） */
 interface EntityNameEntry {
   canonical: string
   typeKey: string
@@ -37,13 +37,13 @@ interface Props {
 export function ChapterReader({ num, name, text }: Props) {
   const { language } = useLanguage()
   const zh = language === 'zh'
-  const t = getMessages(language).shanhaijin.reader
+  const t = getMessages(language).shanhaijing.reader
 
   const [mode, setMode] = useState<'single' | 'sideBySide'>('sideBySide')
   const [entityNames, setEntityNames] = useState<EntityNameEntry[]>([])
 
   useEffect(() => {
-    fetch('/shanhaijin/entity-names.json')
+    fetch('/shanhaijing/entity-names.json')
       .then((r) => (r.ok ? r.json() : []))
       .then((data) => {
         if (Array.isArray(data)) setEntityNames(data)
@@ -58,7 +58,7 @@ export function ChapterReader({ num, name, text }: Props) {
   return (
     <article>
       <nav className="mb-6 text-sm">
-        <Link href="/shanhaijin" className="text-blue-600 hover:underline">
+        <Link href="/shanhaijing" className="text-blue-600 hover:underline">
           ← {zh ? '山海经' : 'Shanhaijing'}
         </Link>
       </nav>
@@ -177,7 +177,7 @@ export function ChapterReader({ num, name, text }: Props) {
             <nav className="mt-6 flex justify-between gap-4 border-t border-gray-100 pt-4">
               {prev ? (
                 <Link
-                  href={`/shanhaijin/chapters/${prev.num}`}
+                  href={`/shanhaijing/chapters/${prev.num}`}
                   className="text-blue-600 hover:underline"
                 >
                   ← {zh ? `上一章：${prev.name}` : `Prev: ${prev.name}`}
@@ -185,7 +185,7 @@ export function ChapterReader({ num, name, text }: Props) {
               ) : <span />}
               {next ? (
                 <Link
-                  href={`/shanhaijin/chapters/${next.num}`}
+                  href={`/shanhaijing/chapters/${next.num}`}
                   className="text-blue-600 hover:underline"
                 >
                   {zh ? `下一章：${next.name}` : `Next: ${next.name}`} →
@@ -196,7 +196,7 @@ export function ChapterReader({ num, name, text }: Props) {
         })()}
 
         <p className="mt-4">
-          <Link href="/shanhaijin" className="text-blue-600 hover:underline">
+          <Link href="/shanhaijing" className="text-blue-600 hover:underline">
             ← {zh ? '返回山海经' : 'Back to Shanhaijing'}
           </Link>
         </p>

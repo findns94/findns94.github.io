@@ -45,7 +45,7 @@ export function getChapterMeta(num: string): ChapterMeta | undefined {
 }
 
 /**
- * 全书统计（已逐篇验证，见 doc/shanhaijin/origin/README.md）
+ * 全书统计（已逐篇验证，见 doc/shanhaijing/origin/README.md）
  * 纯汉字 32,316 字；447 山 / 26 山系 / 97,358 里
  */
 export const STATS = {

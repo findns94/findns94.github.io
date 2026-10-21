@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Donut chart breaking down the 63 recorded Shanhaijing contradictions by type: 24 are distance mismatches between chain tallies and chapter summary sentences, 17 are cross-chapter clashes over same-named mountains, 12 are textual corruptions, 7 are mountain-count mismatches, and 3 are distance type errors">
+<title>The 63 Shanhaijing Contradictions, by Type</title>
+<desc>Donut chart of 63 contradictions recorded by the Shanhaijing knowledge-graph pipeline. Summary-sentence versus tally mismatches for distance: 24 (38%). Cross-chapter conflicts over same-named mountains: 17 (27%). Textual corruption and dropped characters: 12 (19%). Summary-sentence versus tally mismatches for mountain count: 7 (11%). Distance type errors: 3 (5%). The pipeline flagged zero of these as its own parsing bug. Source: Shanhaijing conflict report, findns.cc/shanhaijing, retrieved 2026-10-21.</desc>
+<style>
+  :root { --fg: #1f2937; --fg-min: #374151; --track: rgba(0,0,0,0.07); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #f3f4f6; --fg-min: #9ca3af; --track: rgba(255,255,255,0.08); }
+  }
+  text { fill: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+  .tick { fill: var(--fg-min); opacity: 0.55; }
+  .lbl { fill: var(--fg-min); opacity: 0.85; }
+  .op35 { fill: var(--fg-min); opacity: 0.35; }
+  .donut { fill: none; stroke-width: 34; }
+</style>
+<text x="320" y="30" text-anchor="middle" font-size="15" font-weight="700">The 63 Shanhaijing Contradictions, by Type</text>
+<text class="tick" x="320" y="48" text-anchor="middle" font-size="11">Recorded by the pipeline, not corrected in the source text</text>
+<g transform="rotate(-90 150 190)">
+  <circle class="donut" cx="150" cy="190" r="70" stroke="var(--track)"/>
+  <circle class="donut" cx="150" cy="190" r="70" stroke="#ef4444" stroke-dasharray="167.58 272.24" stroke-dashoffset="0"/>
+  <circle class="donut" cx="150" cy="190" r="70" stroke="#f59e0b" stroke-dasharray="118.69 321.13" stroke-dashoffset="-167.58"/>
+  <circle class="donut" cx="150" cy="190" r="70" stroke="#6366f1" stroke-dasharray="83.78 356.04" stroke-dashoffset="-286.27"/>
+  <circle class="donut" cx="150" cy="190" r="70" stroke="#10b981" stroke-dasharray="48.87 390.95" stroke-dashoffset="-370.05"/>
+  <circle class="donut" cx="150" cy="190" r="70" stroke="#6b7280" stroke-dasharray="20.95 418.87" stroke-dashoffset="-418.92"/>
+</g>
+<text x="150" y="185" text-anchor="middle" font-size="30" font-weight="700">63</text>
+<text class="tick" x="150" y="206" text-anchor="middle" font-size="11">contradictions</text>
+<text class="tick" x="150" y="284" text-anchor="middle" font-size="10">0 flagged as pipeline bugs</text>
+<g>
+  <rect x="272" y="118" width="14" height="14" rx="3" fill="#ef4444"/>
+  <text class="lbl" x="296" y="130" font-size="11">Summary vs. tally: distance</text>
+  <text class="tick" x="600" y="130" text-anchor="end" font-size="10">24</text>
+  <rect x="272" y="154" width="14" height="14" rx="3" fill="#f59e0b"/>
+  <text class="lbl" x="296" y="166" font-size="11">Cross-chapter clashes</text>
+  <text class="tick" x="600" y="166" text-anchor="end" font-size="10">17</text>
+  <rect x="272" y="190" width="14" height="14" rx="3" fill="#6366f1"/>
+  <text class="lbl" x="296" y="202" font-size="11">Textual corruption</text>
+  <text class="tick" x="600" y="202" text-anchor="end" font-size="10">12</text>
+  <rect x="272" y="226" width="14" height="14" rx="3" fill="#10b981"/>
+  <text class="lbl" x="296" y="238" font-size="11">Summary vs. tally: mountains</text>
+  <text class="tick" x="600" y="238" text-anchor="end" font-size="10">7</text>
+  <rect x="272" y="262" width="14" height="14" rx="3" fill="#6b7280"/>
+  <text class="lbl" x="296" y="274" font-size="11">Distance type errors</text>
+  <text class="tick" x="600" y="274" text-anchor="end" font-size="10">3</text>
+</g>
+<text class="op35" x="320" y="330" text-anchor="middle" font-size="9">28 are confirmed conflicts, 17 suspected, 14 undecidable, 4 explained; 32 carry high confidence.</text>
+<text class="op35" x="320" y="352" text-anchor="middle" font-size="9">Source: Shanhaijing conflict report (SKILL_07g), 63 conflicts across 26 mountain chains, findns.cc/shanhaijing, retrieved 2026-10-21.</text>
+</svg>

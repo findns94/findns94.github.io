@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-shanhaijin-data.mjs",
+    "prebuild": "node scripts/build-shanhaijing-data.mjs",
     "build": "next build && node scripts/copy-markdown.mjs",
     "start": "next start",
     "lint": "next lint",

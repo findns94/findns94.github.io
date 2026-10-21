@@ -25,16 +25,16 @@ This post is the audit that followed: how a plausible textual-criticism hypothes
 <!-- more -->
 
 > **Key Takeaways**
-> - The North Third Chain tallies 12,440 li against a summary sentence declaring 2,350 li — a +10,090 li gap, or 429%, the largest in the book ([project data](https://findns.cc/shanhaijin), 2026).
+> - The North Third Chain tallies 12,440 li against a summary sentence declaring 2,350 li — a +10,090 li gap, or 429%, the largest in the book ([project data](https://findns.cc/shanhaijing), 2026).
 > - The gap was a numeral-parser bug that dropped a leading 萬. The 2,300-year-old manuscript reads 萬二千三百五十里 = 12,350 li, so the real residue is 90 li, or 0.7%.
 > - Two pipeline layers parse the same string differently — the structure layer logs 2,350 li, the record layer logs 12,350 li — and both numbers ship in the published data.
 > - The project's one genuine same-sentence numeric contradiction is the 豎亥 survey in the Overseas East chapter, where 一曰 ("another account says") preserves 509,800 and 510,009,800 steps for the same walk.
 
 ## What Was the 429% Shanhaijing Mileage Gap?
 
-It was the distance between a tally and a summary inside a single chain. The *Wuzang Shan Jing* (五藏山经) is 26 mountain chains covering 447 mountains and a declared 97,358 li, drawn from a base text of 32,316 characters ([project data](https://findns.cc/shanhaijin), 2026). Each chain ends with a summary sentence of the form 凡N山，M里 — "altogether N mountains, M li." The North Third Chain is the outlier: 47 parsed entries summing to 12,440 li against a declared 2,350 li, a gap of +10,090 li, or 429% ([project conflict report](https://findns.cc/shanhaijin), 2026).
+It was the distance between a tally and a summary inside a single chain. The *Wuzang Shan Jing* (五藏山经) is 26 mountain chains covering 447 mountains and a declared 97,358 li, drawn from a base text of 32,316 characters ([project data](https://findns.cc/shanhaijing), 2026). Each chain ends with a summary sentence of the form 凡N山，M里 — "altogether N mountains, M li." The North Third Chain is the outlier: 47 parsed entries summing to 12,440 li against a declared 2,350 li, a gap of +10,090 li, or 429% ([project conflict report](https://findns.cc/shanhaijing), 2026).
 
-Nothing else in the book is close. On the structure layer's tally, the other 25 chains miss their own summaries by a median of 190 li, and only one misses by more than 1,000 ([project data](https://findns.cc/shanhaijin), 2026). A 429% gap is not rounding. It is either a catastrophe in the manuscript or a catastrophe in the code, and from the output side those two possibilities look identical.
+Nothing else in the book is close. On the structure layer's tally, the other 25 chains miss their own summaries by a median of 190 li, and only one misses by more than 1,000 ([project data](https://findns.cc/shanhaijing), 2026). A 429% gap is not rounding. It is either a catastrophe in the manuscript or a catastrophe in the code, and from the output side those two possibilities look identical.
 
 <figure class="chart-img" style="margin:2.5rem 0;text-align:center;padding:1.5rem 0">
   <img src="/posts/shanhaijing-missing-character-429-percent/charts/chart-1-declared-vs-counted-distance.svg"
@@ -45,7 +45,7 @@ Nothing else in the book is close. On the structure layer's tally, the other 25 
 
 ## Why Did the Project Report Two Different Gaps for the Same Chain?
 
-Because two counting conventions are defensible, and the project runs both. The structure layer sums every distance phrase it finds, including water-course and sand-travel segments, and reports 12,440 li counted versus 2,350 li declared — a gap of +10,090 li, or 429% ([structure build report](https://findns.cc/shanhaijin), 2026). The route layer deliberately excludes water-course mileage from its stop list, because a boat journey is not a mountain-to-mountain distance, and reports 10,540 li counted versus the same 2,350 li declared — a gap of +8,190 li, or 348.5% ([conflict report](https://findns.cc/shanhaijin), 2026).
+Because two counting conventions are defensible, and the project runs both. The structure layer sums every distance phrase it finds, including water-course and sand-travel segments, and reports 12,440 li counted versus 2,350 li declared — a gap of +10,090 li, or 429% ([structure build report](https://findns.cc/shanhaijing), 2026). The route layer deliberately excludes water-course mileage from its stop list, because a boat journey is not a mountain-to-mountain distance, and reports 10,540 li counted versus the same 2,350 li declared — a gap of +8,190 li, or 348.5% ([conflict report](https://findns.cc/shanhaijing), 2026).
 
 The difference between the two tallies is exactly 1,900 li: the water-course and travel segments inside the chain that the route layer sets aside. Both conventions appear in the same repository, applied to the same sentence, and neither is wrong on its own terms. What is wrong is that a reader has no way to tell which number they are looking at without opening two JSON files.
 
@@ -60,7 +60,7 @@ The difference between the two tallies is exactly 1,900 li: the water-course and
 
 From the arithmetic, which is exactly the problem. If the declared figure is 2,350 and the counted figure is 12,440, then the difference is 10,090, and 10,090 is very nearly 10,000. A dropped 萬 is the cheapest explanation that fits: restore it and you get 12,350, which sits 90 li from 12,440 — a 0.7% residual, well inside the noise of the other chains. The hypothesis was recorded in the project README as the academic explanation, and it is a good hypothesis. It is also unfalsified only because nobody re-read the sentence it was about.
 
-The conflict report, meanwhile, rejected the same hypothesis. Working from the water-excluded tally of 10,540 li, restoring a 萬 gives 12,350, which overshoots by 1,810 li. The report's own inference reads: "「萬」字脱漏假设不成立（补「萬」后差 -1,810 里）" — the dropped-萬 hypothesis does not hold ([conflict report](https://findns.cc/shanhaijin), 2026). So the same project simultaneously asserts the hypothesis and rejects it, in two files, using two tallies of the same chain.
+The conflict report, meanwhile, rejected the same hypothesis. Working from the water-excluded tally of 10,540 li, restoring a 萬 gives 12,350, which overshoots by 1,810 li. The report's own inference reads: "「萬」字脱漏假设不成立（补「萬」后差 -1,810 里）" — the dropped-萬 hypothesis does not hold ([conflict report](https://findns.cc/shanhaijing), 2026). So the same project simultaneously asserts the hypothesis and rejects it, in two files, using two tallies of the same chain.
 
 <!-- [UNIQUE INSIGHT] Both verdicts are artefacts of the same missing step. The conflict report compared a route-layer tally (10,540 li, water excluded) against a structure-layer declared value (2,350 li, parser-mangled). Neither file recorded which layer produced which number, so the comparison was never apples to apples. Provenance, not arithmetic, was the failure. -->
 
@@ -74,7 +74,7 @@ That is 12,350 li, written with 萬. No restoration is required. The 2,350 in th
 
 <!-- [PERSONAL EXPERIENCE] I found this by running the two parsers side by side on the same string. The structure layer's local copy returned 2350. The shared `cn2int.py` used by the later route and record layers returned 12350, because its ten-thousand branch reads `section = (section + (number or 1)) * unit` — the `or 1` is the whole difference. Two files, thirty lines apart in logic, one character apart in behaviour. -->
 
-The later layers never inherited the bug. The record layer, which extracts the summary sentences as structured "record units", parsed the same string correctly: `records.json` stores `stated_total.li: 12350` with `li_raw: 萬二千三百五十` for record `003-213` ([project record units](https://findns.cc/shanhaijin), 2026). So the project has held both readings since the day the record layer was built — 2,350 in `chain_summaries.json` and `route_index.json`, 12,350 in `records.json` — and no lint rule compared them.
+The later layers never inherited the bug. The record layer, which extracts the summary sentences as structured "record units", parsed the same string correctly: `records.json` stores `stated_total.li: 12350` with `li_raw: 萬二千三百五十` for record `003-213` ([project record units](https://findns.cc/shanhaijing), 2026). So the project has held both readings since the day the record layer was built — 2,350 in `chain_summaries.json` and `route_index.json`, 12,350 in `records.json` — and no lint rule compared them.
 
 ## How Did One Dropped Character Become a 429% Error?
 
@@ -84,7 +84,7 @@ Every one of those steps is arithmetically correct. None of them re-read the sen
 
 ## Why Is It Dangerous for a Pipeline to Confuse Its Own Bugs With the Text's Problems?
 
-Because the confusion is invisible in the output and authoritative in the citation. The project's conflict report records 63 contradictions across five categories and assigns every one of them `our_bug: false` — a deliberate claim that all 63 are properties of the *Shanhaijing* and none are parsing failures ([conflict report](https://findns.cc/shanhaijin), 2026). The 429% gap was never classified as corruption; it sits in the mileage category, with a corruption hypothesis attached in prose. The twelve entries that *are* classified as corruption are all genuine properties of the text, which makes the prose hypothesis the weak link rather than the classifier.
+Because the confusion is invisible in the output and authoritative in the citation. The project's conflict report records 63 contradictions across five categories and assigns every one of them `our_bug: false` — a deliberate claim that all 63 are properties of the *Shanhaijing* and none are parsing failures ([conflict report](https://findns.cc/shanhaijing), 2026). The 429% gap was never classified as corruption; it sits in the mileage category, with a corruption hypothesis attached in prose. The twelve entries that *are* classified as corruption are all genuine properties of the text, which makes the prose hypothesis the weak link rather than the classifier.
 
 The stakes are not academic tidiness. A knowledge graph is a citation surface. An LLM asked "what is the largest internal contradiction in the *Shanhaijing*?" will read a report that says 429% and will repeat it, with a source, confidently. A reader who then goes looking for scholarship on a lost 萬 will find none, because there is nothing to find. The pipeline has not just made an error; it has manufactured evidence for a textual corruption that does not exist, and stamped it with a provenance trail.
 
@@ -96,7 +96,7 @@ The 豎亥 survey in the Overseas East chapter (海外東經), where the text it
 
 > 帝命豎亥步，自東極至于西極，五億十選九千八百步。豎亥右手把筭，左手指青丘北。一曰禹令豎亥。**一曰五億十萬九千八百步**。
 
-The first reading gives 五億十選九千八百步; the second, introduced by 一曰 — "another account says" — gives 五億十萬九千八百步. The difference is a single character, 選 against 萬, and the two are close enough in sound and shape to be a textbook 形近/音近 corruption. The project's conflict record assigns 509,800 to the first reading and 510,009,800 to the second and labels the divergence 10,009× ([conflict report](https://findns.cc/shanhaijin), 2026).
+The first reading gives 五億十選九千八百步; the second, introduced by 一曰 — "another account says" — gives 五億十萬九千八百步. The difference is a single character, 選 against 萬, and the two are close enough in sound and shape to be a textbook 形近/音近 corruption. The project's conflict record assigns 509,800 to the first reading and 510,009,800 to the second and labels the divergence 10,009× ([conflict report](https://findns.cc/shanhaijing), 2026).
 
 This is the case the 429% story was imitating, and the difference between them is decisive. Here the variant is *in the text*: 一曰 is a scribal marker that says "the manuscripts disagree," so the corruption is documented by the tradition rather than inferred by the machine. There is no parser involved, no derived number, and no hypothesis — just a sentence that contradicts itself, 2,300 years old and still visible on the page.
 
@@ -110,7 +110,7 @@ Classical practice also prescribes the method. 对校 compares against other edi
 
 ## What Does "Record, Don't Fix" Actually Protect?
 
-It protects the evidence from the tooling. The project's first hard rule is 只记录，不修正原文 — record, never correct the source. The pipeline writes an annotated copy of every chapter, but the base text in `origin/` is never edited, and an integrity lint verifies that all 18 chapter files match it character for character, with zero substantive differences ([structure build report](https://findns.cc/shanhaijin), 2026). No emendation, not even a confident one, is ever written back.
+It protects the evidence from the tooling. The project's first hard rule is 只记录，不修正原文 — record, never correct the source. The pipeline writes an annotated copy of every chapter, but the base text in `origin/` is never edited, and an integrity lint verifies that all 18 chapter files match it character for character, with zero substantive differences ([structure build report](https://findns.cc/shanhaijing), 2026). No emendation, not even a confident one, is ever written back.
 
 The rule exists because the *Shanhaijing*'s contradictions are the most valuable thing in it. The 十萬 mountain count in the Central Mountains chain, the 苟牀/苟林 variant, the 46-versus-47 mountain tally — these are the traces of a text that was copied by hand for two millennia, and normalising them would destroy exactly the signal a philologist wants. What this post adds is the corollary the project had not written down: if you refuse to fix the source, you inherit a much heavier obligation to know when the anomaly is yours. "Record, don't fix" is only honest if "record" includes recording your own failures.
 
@@ -128,7 +128,7 @@ Reconcile every derived number against the string it came from, and treat disagr
 
 ## What Does This Change About the 429% Headline?
 
-It removes it, and replaces it with a smaller number and a much better question. The North Third Chain's genuine residual is 90 li — 0.7% of the declared total, squarely inside the band occupied by the other 25 chains. What remains genuinely unresolved is the mountain count: the chain lists 47 entries against a declared 46, and the discrepancy traces to a two-level place name at the head of the chain, 太行之山。其首曰歸山, where one line may name either one mountain or two ([structure build report](https://findns.cc/shanhaijin), 2026).
+It removes it, and replaces it with a smaller number and a much better question. The North Third Chain's genuine residual is 90 li — 0.7% of the declared total, squarely inside the band occupied by the other 25 chains. What remains genuinely unresolved is the mountain count: the chain lists 47 entries against a declared 46, and the discrepancy traces to a two-level place name at the head of the chain, 太行之山。其首曰歸山, where one line may name either one mountain or two ([structure build report](https://findns.cc/shanhaijing), 2026).
 
 That is a real 校勘 question, of exactly the kind the project exists to surface, and it is a one-mountain question rather than a 10,090-li one. The lesson is not that machine reading failed. The machine found the anomaly, ranked it correctly as the largest in the book, and preserved every number needed to diagnose it — including, eventually, the number that proved the diagnosis wrong. What it could not do was notice that the anomaly was its own.
 
@@ -136,7 +136,7 @@ That is a real 校勘 question, of exactly the kind the project exists to surfac
 
 ### Did the Shanhaijing really lose a character?
 
-No. The summary sentence of the North Third Chain reads 萬二千三百五十里 in the Guo Pu edition on Wikisource — 12,350 li, with the 萬 present. The 2,350 recorded in the knowledge graph was produced by a numeral parser that discarded a leading 萬, so the dropped character was in the software, not in the manuscript ([project data](https://findns.cc/shanhaijin), 2026).
+No. The summary sentence of the North Third Chain reads 萬二千三百五十里 in the Guo Pu edition on Wikisource — 12,350 li, with the 萬 present. The 2,350 recorded in the knowledge graph was produced by a numeral parser that discarded a leading 萬, so the dropped character was in the software, not in the manuscript ([project data](https://findns.cc/shanhaijing), 2026).
 
 ### How large is the North Third Chain discrepancy, really?
 
@@ -148,11 +148,11 @@ Because they used two different numeral parsers. The structure layer has its own
 
 ### Is the 豎亥 step count a real textual corruption?
 
-Yes. The Overseas East chapter gives 五億十選九千八百步 and, in a 一曰 variant clause, 五億十萬九千八百步 — the same measurement recorded twice, differing by one character. The project records 509,800 and 510,009,800 steps for the two readings and flags the divergence as a genuine same-sentence contradiction ([conflict report](https://findns.cc/shanhaijin), 2026).
+Yes. The Overseas East chapter gives 五億十選九千八百步 and, in a 一曰 variant clause, 五億十萬九千八百步 — the same measurement recorded twice, differing by one character. The project records 509,800 and 510,009,800 steps for the two readings and flags the divergence as a genuine same-sentence contradiction ([conflict report](https://findns.cc/shanhaijing), 2026).
 
 ### How many contradictions did the project record, and how many were its own bugs?
 
-Sixty-three, across five categories, with every entry marked `our_bug: false` — a claim that none were parsing failures ([conflict report](https://findns.cc/shanhaijin), 2026). The North Third Chain mileage gap should have been the exception. It was the largest recorded contradiction in the project and it belonged to the code, not the text.
+Sixty-three, across five categories, with every entry marked `our_bug: false` — a claim that none were parsing failures ([conflict report](https://findns.cc/shanhaijing), 2026). The North Third Chain mileage gap should have been the exception. It was the largest recorded contradiction in the project and it belonged to the code, not the text.
 
 ## Conclusion
 
@@ -162,15 +162,15 @@ That is not an argument against machine reading. The pipeline counted 447 mounta
 
 The *Shanhaijing*'s real contradictions are still there, and they are still worth having: a chain that counts 46 mountains and lists 47, a summary that opens with 白甘棗之山 where its siblings open with 自, a step count that contradicts itself in the same breath. Those are 2,300 years old. The 429% was four months old. The whole discipline is telling them apart.
 
-If you want the machine's own inventory of what it found, [the 63 contradictions](/posts/shanhaijing-63-contradictions-machine-reading/) is the full tour, and [the pipeline post](/posts/shanhaijing-knowledge-graph-pipeline/) shows the layers this number travelled through. For the shape of the book itself, start with [the hub](/posts/machine-reading-shanhaijin-knowledge-graph/).
+If you want the machine's own inventory of what it found, [the 63 contradictions](/posts/shanhaijing-63-contradictions-machine-reading/) is the full tour, and [the pipeline post](/posts/shanhaijing-knowledge-graph-pipeline/) shows the layers this number travelled through. For the shape of the book itself, start with [the hub](/posts/machine-reading-shanhaijing-knowledge-graph/).
 
 ## Sources
 
 - Wikisource, 《山海經》 (Guo Pu annotated edition, public-domain base text; chapter 003 line 186 and chapter 009 line 19), retrieved 2026-10-21, https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93
-- Shanhaijing structure build report (SKILL_02a), per-chain counted versus declared distance and mountain totals for all 26 chains, retrieved 2026-10-21, https://findns.cc/shanhaijin
-- Shanhaijing conflict report (SKILL_07g), 63 recorded contradictions with verdicts, confidence tiers and `our_bug` status, retrieved 2026-10-21, https://findns.cc/shanhaijin
-- Shanhaijing route reconciliation (SKILL_03n), `ROUTE-003-3.json` and `route_index.json` per-chain stop counts and distances, retrieved 2026-10-21, https://findns.cc/shanhaijin
-- Shanhaijing record units (SKILL_04g), `records.json` entry 003-213 with the declared total of 12,350 li, retrieved 2026-10-21, https://findns.cc/shanhaijin
-- Shanhaijing knowledge graph, entity index, relation tables and site statistics (18 chapters / 447 mountains / 26 chains / 97,358 li / 32,316 characters), retrieved 2026-10-21, https://findns.cc/shanhaijin
+- Shanhaijing structure build report (SKILL_02a), per-chain counted versus declared distance and mountain totals for all 26 chains, retrieved 2026-10-21, https://findns.cc/shanhaijing
+- Shanhaijing conflict report (SKILL_07g), 63 recorded contradictions with verdicts, confidence tiers and `our_bug` status, retrieved 2026-10-21, https://findns.cc/shanhaijing
+- Shanhaijing route reconciliation (SKILL_03n), `ROUTE-003-3.json` and `route_index.json` per-chain stop counts and distances, retrieved 2026-10-21, https://findns.cc/shanhaijing
+- Shanhaijing record units (SKILL_04g), `records.json` entry 003-213 with the declared total of 12,350 li, retrieved 2026-10-21, https://findns.cc/shanhaijing
+- Shanhaijing knowledge graph, entity index, relation tables and site statistics (18 chapters / 447 mountains / 26 chains / 97,358 li / 32,316 characters), retrieved 2026-10-21, https://findns.cc/shanhaijing
 - Wikipedia, "山海经" (authorship, dating, chapter structure and the 447 / 477 / 550 mountain-counting conventions), retrieved 2026-10-21, https://zh.wikipedia.org/wiki/%E5%B1%B1%E6%B5%B7%E7%BB%8F
 - Wikipedia, "校勘学" (讹文 / 脱文 / 衍文 / 异文 categories and the 对校 / 本校 / 他校 / 理校 methods), retrieved 2026-10-21, https://zh.wikipedia.org/wiki/%E6%A0%A1%E5%8B%98%E5%AD%B8

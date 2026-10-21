@@ -9,7 +9,7 @@ export interface Messages {
     contact: string
     tags: string
     rss: string
-    shanhaijin: string
+    shanhaijing: string
   }
   footer: {
     builtWith: string
@@ -38,7 +38,7 @@ export interface Messages {
     tagPageTitle: (tag: string) => string
   }
   // 山海经「山形聚焦」视图文案
-  shanhaijin: {
+  shanhaijing: {
     nav: {
       panorama: { en: string; zh: string }
       entities: { en: string; zh: string }
@@ -209,7 +209,7 @@ const en: Messages = {
     contact: 'Contact',
     tags: 'Tags',
     rss: 'RSS',
-    shanhaijin: ' Shanhaijing',
+    shanhaijing: ' Shanhaijing',
   },
   footer: {
     builtWith: 'Built with Next.js',
@@ -237,7 +237,7 @@ const en: Messages = {
     postCount: (n: number) => `${n} post${n !== 1 ? 's' : ''}`,
     tagPageTitle: (tag: string) => `Tag: ${tag}`,
   },
-  shanhaijin: {
+  shanhaijing: {
     nav: {
       panorama: { en: 'Panorama', zh: '山系全景' },
       entities: { en: 'Entities', zh: '实体总览' },
@@ -407,7 +407,7 @@ const zh: Messages = {
     contact: '联系',
     tags: '标签',
     rss: 'RSS',
-    shanhaijin: '山海经',
+    shanhaijing: '山海经',
   },
   footer: {
     builtWith: '使用 Next.js 构建',
@@ -435,7 +435,7 @@ const zh: Messages = {
     postCount: (n: number) => `${n} 篇文章`,
     tagPageTitle: (tag: string) => `标签：${tag}`,
   },
-  shanhaijin: {
+  shanhaijing: {
     nav: {
       panorama: { en: 'Panorama', zh: '山系全景' },
       entities: { en: 'Entities', zh: '实体总览' },
